@@ -1,0 +1,138 @@
+{
+ "task": "wheeled_dumpster",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Waste Storage",
+   "function": "Holds waste securely until collection.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "container body",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "lid",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Lifting Interface",
+   "function": "Provides attachment points for garbage truck prongs to lift and tip the container.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "lifting arms or slots",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "container body",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "lifting arms or slots",
+     "to": "container body",
+     "carries": "force",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Mobility",
+   "function": "Allows the heavy container to be moved by trucks or manually rolled.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "wheels or casters",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "container body",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "wheels or casters",
+     "to": "container body",
+     "carries": "load",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1",
+    "K2",
+    "K3"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "dumpster",
+     "type": "revolute",
+     "axis": "axis formed by truck prongs",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "dumpster",
+     "type": "continuous",
+     "axis": "horizontal path",
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheels",
+     "type": "revolute",
+     "axis": "axle center",
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "it holds waste and rolls",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "container body",
+     "placement": "inside",
+     "margin_m": 0.04,
+     "min_free": 0.5,
+     "claim": "P1"
+    },
+    {
+     "pred": "ground_contact",
+     "role": "wheels",
+     "min_clusters": 2,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

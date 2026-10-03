@@ -1,0 +1,193 @@
+{
+ "task": "camera",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Optical System",
+   "function": "Gathers and focuses light to form an image for viewing and capture.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "lens",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "aperture",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "viewfinder",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Exposure Control",
+   "function": "Regulates the quantity and duration of light reaching the sensor or film.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "shutter",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "aperture",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "light meter",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Image Capture",
+   "function": "Records the light pattern as a latent or digital image.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "image sensor",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "film",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "shutter",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "Focusing Mechanism",
+   "function": "Adjusts lens elements to sharpen the image of the subject.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "lens elements",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "focus ring",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "autofocus motor",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "focus ring",
+     "to": "lens elements",
+     "carries": "motion",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "autofocus motor",
+     "to": "lens elements",
+     "carries": "motion",
+     "claim": "F4"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "lens elements",
+     "type": "prismatic",
+     "axis": "along the optical axis",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "shutter curtains",
+     "type": "prismatic",
+     "axis": "across the film plane",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P4",
+    "P6",
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "image sensor or film",
+     "claim": "P4"
+    },
+    {
+     "pred": "part_present",
+     "role": "shutter release",
+     "claim": "P6"
+    },
+    {
+     "pred": "part_present",
+     "role": "camera body",
+     "claim": "P7"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the shutter release sits on the body under a finger",
+   "claims": [
+    "P6"
+   ],
+   "requirements": [
+    {
+     "pred": "colocated",
+     "a": "shutter release",
+     "b": "camera body",
+     "max_gap_m": 0.03,
+     "claim": "P6"
+    },
+    {
+     "pred": "part_present",
+     "role": "viewfinder",
+     "claim": "P5"
+    }
+   ]
+  }
+ ]
+}

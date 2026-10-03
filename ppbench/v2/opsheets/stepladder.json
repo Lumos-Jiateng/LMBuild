@@ -1,0 +1,96 @@
+{
+ "task": "stepladder",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Folding Mechanism",
+   "function": "Allows the ladder to fold for storage and lock into an inverted V shape for use.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "hinge",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "stays",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "ladder halves",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1",
+    "P2",
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "stringers",
+     "claim": "P1"
+    },
+    {
+     "pred": "part_present",
+     "role": "steps",
+     "claim": "P2"
+    },
+    {
+     "pred": "part_present",
+     "role": "feet",
+     "claim": "P5"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the steps can be climbed",
+   "claims": [
+    "P2"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "steps",
+     "min_area_m2": 0.03,
+     "claim": "P2"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "steps",
+     "placement": "above",
+     "w": 0.35,
+     "d": 0.25,
+     "h": 0.6,
+     "min_free": 0.7,
+     "claim": "P2"
+    }
+   ]
+  }
+ ]
+}

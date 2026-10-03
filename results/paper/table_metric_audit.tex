@@ -1,0 +1,35 @@
+\begin{table}[t]
+\centering
+\caption{Metric revisions after the audit (200-object means; before $\rightarrow$ after). Every rule is applied to all 30 systems. $^{*}$Before the revision PhysX-Anything's R.2 was averaged over the 109 objects with at least one recognised part; after it, over all 200.}
+\label{tab:metric_audit}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{lllcc}
+\toprule
+\textbf{Metric} & \textbf{Revision} & \textbf{System} & \textbf{Before} & \textbf{After} \\
+\midrule
+S.2 Collision & pitch and thresholds scale with the design & LegoACE & 100.0 & 97.1 \\
+ &  & BrickGPT & 100.0 & 100.0 \\
+ &  & Closed APIs (mean) & 96.7 & 95.0 \\
+ &  & Open models (mean) & 63.2 & 55.8 \\
+\midrule
+S.1 Connectivity & (same instrument) & Closed APIs (mean) & 84.6 & 83.3 \\
+\midrule
+S.3 Stability & ground band scales with the design & LegoACE & 63.5 & 44.4 \\
+\midrule
+A.2 Parts & a name must be confirmed by geometry & Cube3D+CubePart & 61.0 & 32.7 \\
+ &  & Closed APIs (mean) & 54.8 & 40.4 \\
+ &  & Open models (mean) & 25.9 & 17.1 \\
+\midrule
+R.3 Operability & part presence uses verified roles & Cube3D+CubePart & 24.0 & 13.4 \\
+ &  & Closed APIs (mean) & 19.6 & 18.3 \\
+\midrule
+R.2 Material & role by name or geometry; no part skipped & PhysX-Anything$^{*}$ & 60.5 & 61.4 \\
+ &  & Closed APIs (mean) & 82.5 & 82.5 \\
+\midrule
+D.1--D.3 Design & both judges on every design & Closed APIs (mean D.2) & 65.1 & 65.0 \\
+ &  & Open models (mean D.2) & 36.6 & 28.9 \\
+ &  & Cube3D$^{\dagger}$(P) (D.2) & 77.2 & 82.2 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

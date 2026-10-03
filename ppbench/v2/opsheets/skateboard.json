@@ -1,0 +1,154 @@
+{
+ "task": "skateboard",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Steering and Suspension",
+   "function": "Allows the board to turn by swiveling the wheels relative to the deck.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "trucks",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "kingpin",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "hanger",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "baseplate",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Rolling Mechanism",
+   "function": "Reduces friction to enable smooth rolling motion over the ground.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "axle",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "bearings",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "axle",
+     "to": "wheels",
+     "carries": "load",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "bearings",
+     "to": "axle",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheels",
+     "type": "revolute",
+     "axis": "axle centerline",
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "bearings",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "truck hanger",
+     "type": "revolute",
+     "axis": "kingpin",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "deck",
+     "claim": "P1"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a person stands on the deck and it rolls",
+   "claims": [
+    "P1",
+    "P3"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "deck",
+     "min_area_m2": 0.08,
+     "height_range_m": [
+      0.02,
+      0.25
+     ],
+     "claim": "P1"
+    },
+    {
+     "pred": "ground_contact",
+     "role": "wheels",
+     "min_clusters": 2,
+     "claim": "P3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheels",
+     "type": "revolute",
+     "claim": "P3"
+    }
+   ]
+  }
+ ]
+}

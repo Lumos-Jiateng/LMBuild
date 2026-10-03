@@ -1,0 +1,225 @@
+{
+ "task": "bench_drill_press",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Drive System",
+   "function": "Generates and transmits rotational motion to the drill bit.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Motor",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Spindle",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Chuck",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Motor",
+     "to": "Spindle",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Spindle",
+     "to": "Chuck",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Spindle",
+     "type": "prismatic",
+     "axis": "vertical axis along the column",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Feed Mechanism",
+   "function": "Controls the vertical movement of the spindle to engage the workpiece.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Feed Handle",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Spindle",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Column",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Feed Handle",
+     "to": "Spindle",
+     "carries": "force",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Spindle",
+     "to": "Column",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Spindle",
+     "type": "prismatic",
+     "axis": "vertical axis along the column",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Workholding System",
+   "function": "Secures the workpiece in a fixed position relative to the drill bit.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Table",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Vise",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Clamp",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "Vise",
+     "to": "Table",
+     "carries": "load",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "Clamp",
+     "to": "Table",
+     "carries": "load",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Table",
+     "type": "prismatic",
+     "axis": "vertical axis along the column",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "Adjustment System",
+   "function": "Allows vertical positioning of the table to accommodate different workpiece heights.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Table",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Column",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Rack and Pinion",
+     "claim": "F4"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Table",
+     "type": "prismatic",
+     "axis": "vertical axis along the column",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P4",
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Base",
+     "claim": "P4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Depth Stop",
+     "claim": "P7"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "an operator can feed the spindle and use the table",
+   "claims": [
+    "P5",
+    "P3"
+   ],
+   "requirements": [
+    {
+     "pred": "grip",
+     "role": "Feed Handle",
+     "claim": "P5"
+    },
+    {
+     "pred": "reachable",
+     "target": "Feed Handle",
+     "claim": "P5"
+    },
+    {
+     "pred": "surface",
+     "role": "Table",
+     "min_area_m2": 0.02,
+     "claim": "P3"
+    }
+   ]
+  }
+ ]
+}

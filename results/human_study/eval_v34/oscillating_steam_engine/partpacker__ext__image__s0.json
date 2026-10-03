@@ -1,0 +1,857 @@
+{
+ "system": "partpacker",
+ "tier": "external",
+ "meta": {
+  "scale_mode": "unitless",
+  "declares": {
+   "roles": false,
+   "materials": false,
+   "joints": false,
+   "sequence": false
+  },
+  "family": "part-decomposed 3D generation (image -> part meshes)",
+  "input": "core task, condition image",
+  "producer_meta": {
+   "system": "partpacker",
+   "model": "PartPacker",
+   "code_repo": "https://github.com/NVlabs/PartPacker",
+   "code_commit": "178d6c9408ecde857e6e716bab2763df6ce8bdc0",
+   "weights": {
+    "repo": "nvidia/PartPacker",
+    "revision": "17046fe1729d05db99cb11d7cc6885d777fcfc73",
+    "files": [
+     "flow.pt",
+     "vae.pt"
+    ],
+    "image_encoder": {
+     "repo": "facebook/dinov2-giant",
+     "revision": "611a9d42f2335e0f921f1e313ad3c1b7178d206d",
+     "note": "flow/model.py's Dinov2Model.from_pretrained('facebook/dinov2-giant') redirected to this pinned snapshot (official code loads branch main)"
+    }
+   },
+   "bg_removal": {
+    "method": "rembg 2.0.60, rembg.new_session() default model 'u2net' (onnxruntime CPU), applied only if input has no alpha; then recenter_foreground(border_ratio=0.1), resize 518x518 INTER_LINEAR, composite on white (flow/scripts/infer.py)",
+    "u2net_onnx_md5": "60024c5c889badc19c04ad937298a77b (rembg release v0.0.0 u2net.onnx)",
+    "applied": true
+   },
+   "input_image": "reference_data/benchmark_v2/images/oscillating_steam_engine/wild_01.png",
+   "seed": 0,
+   "seeding": "kiui.seed_everything(seed) immediately before sampling, as official infer.py with num_repeats=1; with the official module-level imports this seeds numpy, torch and torch.cuda (python random is not seeded)",
+   "settings": {
+    "config": "flow.configs.big_parts_strict_pvae",
+    "dtype": "bfloat16",
+    "num_steps": 50,
+    "cfg_scale": 7.0,
+    "grid_res": 384,
+    "vae_decode_mode": "hierarchical (default)",
+    "num_faces": -1,
+    "component_min_faces": 11
+   },
+   "wall_s": 24.6,
+   "wall_s_generation_only": 24.1,
+   "n_parts": 12,
+   "n_parts_per_volume": [
+    1,
+    11
+   ],
+   "parts": [
+    {
+     "index": 0,
+     "file": "parts/part_00.glb",
+     "volume": 0,
+     "n_vertices": 660656,
+     "n_faces": 1321476,
+     "watertight": false
+    },
+    {
+     "index": 1,
+     "file": "parts/part_01.glb",
+     "volume": 1,
+     "n_vertices": 184168,
+     "n_faces": 368410,
+     "watertight": false
+    },
+    {
+     "index": 2,
+     "file": "parts/part_02.glb",
+     "volume": 1,
+     "n_vertices": 9167,
+     "n_faces": 18338,
+     "watertight": true
+    },
+    {
+     "index": 3,
+     "file": "parts/part_03.glb",
+     "volume": 1,
+     "n_vertices": 2425,
+     "n_faces": 4846,
+     "watertight": true
+    },
+    {
+     "index": 4,
+     "file": "parts/part_04.glb",
+     "volume": 1,
+     "n_vertices": 3207,
+     "n_faces": 6418,
+     "watertight": true
+    },
+    {
+     "index": 5,
+     "file": "parts/part_05.glb",
+     "volume": 1,
+     "n_vertices": 472,
+     "n_faces": 940,
+     "watertight": true
+    },
+    {
+     "index": 6,
+     "file": "parts/part_06.glb",
+     "volume": 1,
+     "n_vertices": 1805,
+     "n_faces": 3606,
+     "watertight": true
+    },
+    {
+     "index": 7,
+     "file": "parts/part_07.glb",
+     "volume": 1,
+     "n_vertices": 17,
+     "n_faces": 30,
+     "watertight": true
+    },
+    {
+     "index": 8,
+     "file": "parts/part_08.glb",
+     "volume": 1,
+     "n_vertices": 46,
+     "n_faces": 88,
+     "watertight": true
+    },
+    {
+     "index": 9,
+     "file": "parts/part_09.glb",
+     "volume": 1,
+     "n_vertices": 3605,
+     "n_faces": 7206,
+     "watertight": true
+    },
+    {
+     "index": 10,
+     "file": "parts/part_10.glb",
+     "volume": 1,
+     "n_vertices": 3984,
+     "n_faces": 7968,
+     "watertight": true
+    },
+    {
+     "index": 11,
+     "file": "parts/part_11.glb",
+     "volume": 1,
+     "n_vertices": 472,
+     "n_faces": 940,
+     "watertight": true
+    }
+   ],
+   "merged_mesh": "merged.glb",
+   "dual_volumes": [
+    "dual_volumes/vol0.glb",
+    "dual_volumes/vol1.glb"
+   ],
+   "output_convention": {
+    "frame": "PartPacker VAE space [-1,1]^3 (object normalized), then permuted by the official TRIMESH_GLB_EXPORT matrix [[0,1,0],[0,0,1],[1,0,0]] (new = (y, z, x)) for GLB export; all parts share one frame",
+    "units": "unitless (normalized), no metric scale",
+    "up_axis": "Y-up (glTF) after the official export permutation. Empirical check in 'bbox'."
+   },
+   "bbox": {
+    "min": [
+     -0.938,
+     -0.9524,
+     -0.5479
+    ],
+    "max": [
+     0.8214,
+     0.9541,
+     0.5473
+    ],
+    "extent": [
+     1.7594,
+     1.9066,
+     1.0952
+    ]
+   },
+   "peak_gpu_mem_gb": {
+    "torch_max_allocated": 5.81,
+    "torch_max_reserved": 8.8
+   },
+   "gpu": "0",
+   "torch": "2.5.1+cu121",
+   "warnings": [
+    "parts are connected components of the two decoded volumes (official export), not semantic parts; one semantic part may be split into several components and components with <=10 faces are dropped",
+    "27 components with <=10 faces dropped (official filter)"
+   ]
+  },
+  "oracle_scale": 0.06426740062022374,
+  "oracle_yaw_deg": 0
+ },
+ "item": {
+  "key": "partpacker__ext__image__s0",
+  "kind": "external",
+  "system": "partpacker",
+  "prefix": "partpacker",
+  "tier": "external",
+  "condition": "image",
+  "input": "core task, condition image",
+  "seed": 0,
+  "task": "oscillating_steam_engine",
+  "snapshot": "task_snapshot_core.json",
+  "path": "results/v2/oscillating_steam_engine/external_core/image/partpacker_s0"
+ },
+ "notes": [
+  "unitless output scaled by 0.064 to the reference diagonal (oracle scale); size is not scored",
+  "no declared front: rotated 0 deg about Z to best match the reference (oracle yaw)",
+  "Level 1 recomputed under spec v3.3 (external design: oracle scale/yaw applied first, fix of 2026-09-21): unitless output scaled by 0.064 to the reference diagonal (oracle scale); size is not scored; no declared front: rotated 0 deg about Z to best match the reference (oracle yaw)",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.6666666666666666,
+   "metrics": {
+    "n_parts": 12,
+    "n_components": 1,
+    "n_breaks": 0,
+    "anchored_volume_frac": 1.0,
+    "break_score": 1.0,
+    "fastening_spec_rate": 0.0,
+    "n_fastened_connections": 0,
+    "connections_needed_to_span": 11,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 0.5774452756996398,
+    "n_components_fastened_only": 12,
+    "n_interfacing_pairs": 19,
+    "connection_evidence": {
+     "interlock": 0,
+     "fastened_joint": 0,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 19,
+    "resting_contacts": [
+     [
+      "part_00",
+      "part_01"
+     ],
+     [
+      "part_00",
+      "part_02"
+     ],
+     [
+      "part_00",
+      "part_03"
+     ],
+     [
+      "part_00",
+      "part_04"
+     ],
+     [
+      "part_00",
+      "part_05"
+     ],
+     [
+      "part_00",
+      "part_06"
+     ],
+     [
+      "part_00",
+      "part_07"
+     ],
+     [
+      "part_00",
+      "part_08"
+     ],
+     [
+      "part_00",
+      "part_09"
+     ],
+     [
+      "part_00",
+      "part_10"
+     ],
+     [
+      "part_00",
+      "part_11"
+     ],
+     [
+      "part_01",
+      "part_02"
+     ],
+     [
+      "part_01",
+      "part_03"
+     ],
+     [
+      "part_01",
+      "part_08"
+     ],
+     [
+      "part_01",
+      "part_10"
+     ],
+     [
+      "part_02",
+      "part_04"
+     ],
+     [
+      "part_03",
+      "part_04"
+     ],
+     [
+      "part_03",
+      "part_07"
+     ],
+     [
+      "part_04",
+      "part_07"
+     ]
+    ],
+    "n_declared_joint_pairs": 0,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [],
+    "shell_only_parts": [
+     "part_00",
+     "part_01",
+     "part_02",
+     "part_03",
+     "part_04",
+     "part_05",
+     "part_06",
+     "part_07",
+     "part_08",
+     "part_09",
+     "part_10",
+     "part_11"
+    ]
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "collision_free_pair_rate": 1.0,
+    "n_interfacing_pairs": 19,
+    "n_colliding_pairs": 0,
+    "n_declared_joint_pairs": 0,
+    "n_colliding_joint_pairs": 0,
+    "pen_volume_frac": 0.0,
+    "pen_volume_cm3": 0.0,
+    "worst_pair_frac_of_smaller": 0.0,
+    "graded_penetration_score": 1.0,
+    "voxel_res_m": 0.004,
+    "colliding_pairs": []
+   },
+   "notes": [
+    "score = 1 - n_colliding / n_interfacing_pairs over EVERY interfacing pair, declared joints included",
+    "a pair collides when the eroded-core overlap exceeds 1 cm3 and 10% of the smaller part (25% when the design declares a joint there)"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.8940532193754737,
+   "metrics": {
+    "critical_tilt_deg": 35.62448934572734,
+    "tilt_direction_deg": 270.0,
+    "support_margin_m": 0.0337973455346713,
+    "support_margin_norm": 0.7616265885935888,
+    "support_area_m2": 0.006186298368499998,
+    "n_support_vertices": 60,
+    "com_height_m": 0.04716502890912167,
+    "ground_z": 3.3403142297765673e-06,
+    "total_weight": 0.0007219239045838739,
+    "com": [
+     -0.0015770740914568516,
+     -0.0013936544653286918,
+     0.04716836922335145
+    ],
+    "ground_band_m": 0.005,
+    "z_top_m": 0.12252973984195989,
+    "push_force_ratio": 0.27583725356283156,
+    "shell_corrected_parts": [
+     {
+      "part": "part_00",
+      "voxel_m3": 0.00016915200000000002,
+      "hull_m3": 0.00043605436990877474
+     },
+     {
+      "part": "part_01",
+      "voxel_m3": 4.8768000000000005e-05,
+      "hull_m3": 0.0002728135346750992
+     }
+    ],
+    "n_parts_in_main_group": 12,
+    "n_parts": 12,
+    "stand_score": 1.0,
+    "push_score": 0.7881064387509473,
+    "target_tilt_deg": 30.0,
+    "target_push_ratio": 0.35,
+    "reference_tilt_deg": 51.22998416492878,
+    "reference_push_ratio": 0.3785525524792948,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge",
+    "2 open-mesh part(s) re-weighted by their convex hull"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.5222787482838612,
+   "metrics": {
+    "shape_normalised": {
+     "chamfer_m": 0.04140105187040183,
+     "fscore@0.01": 0.24969501664382224,
+     "fscore@0.025": 0.5222787482838612
+    },
+    "best_yaw_deg": 270,
+    "front_consistent": false,
+    "shape_normalised_as_oriented": {
+     "chamfer_m": 0.034204627563420714,
+     "fscore@0.01": 0.22047724656927845,
+     "fscore@0.025": 0.49515936381709735
+    },
+    "design_diagonal_m": 0.18069675616385383,
+    "reference_diagonal_m": 0.18097559095067026,
+    "scale_ratio": 0.9984592685380846,
+    "size_log2_ratio_vs_reference": -0.0022245197736446704,
+    "tau_rel": [
+     0.01,
+     0.025
+    ]
+   },
+   "notes": [
+    "the reference is rescaled to the design's bounding diagonal: 2.1 is shape only",
+    "absolute size is reported as scale_ratio and size_log2_ratio_vs_reference, and is not scored"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "n_joints": 0,
+    "n_moving": 0,
+    "n_claimed_mechanisms": 4
+   },
+   "notes": [
+    "the task claims kinematics and the design declares no moving joint"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.7305555555555555,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6296296296296297,
+     "qwen2.5-vl-32b": 0.7407407407407408
+    },
+    "judge_mean": 0.6851851851851852,
+    "n_judges": 2,
+    "computed_score": 0.75,
+    "computed": {
+     "granularity_score": 0.75,
+     "consolidation_score": null,
+     "joint_placement_rate": null,
+     "consolidation_violations": 0,
+     "n_declared_joint_pairs": 0
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.6111111111111112,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5555555555555556,
+     "qwen2.5-vl-32b": 0.6666666666666666
+    },
+    "judge_mean": 0.6111111111111112,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": 0.7728745986121573
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "declared": false,
+    "n_parts_with_material": 0
+   },
+   "notes": [
+    "no part carries a material"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "declared": false
+   },
+   "notes": [
+    "no assembly sequence declared"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": true,
+    "n_requirements_disabled_by_ceiling": 6,
+    "n_requirements_declared_only": 3,
+    "declared_part_coverage": 0.0,
+    "n_capabilities": 3,
+    "n_capabilities_zero": 3,
+    "capability_scores": {
+     "F1": 0.0,
+     "F2": 0.0,
+     "H1": 0.0
+    },
+    "mean_of_means": 0.0,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Steam admission and exhaust",
+      "claims": [
+       "F1"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 3,
+      "n_disabled": 1,
+      "n_declared_only": 1,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "cylinder",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "trunnion",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "port face",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "cylinder",
+        "to": "port face",
+        "carries": "fluid",
+        "claim": "F1",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "cylinder",
+        "type": "revolute",
+        "axis": null,
+        "claim": "K1",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     },
+     {
+      "id": "F2",
+      "name": "Motion conversion",
+      "claims": [
+       "F2"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 2,
+      "n_disabled": 4,
+      "n_declared_only": 2,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "piston",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "piston rod",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "connecting rod",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "crankshaft",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "connecting rod",
+        "to": "crankshaft",
+        "carries": "motion",
+        "claim": "F2",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "role": "piston",
+        "type": "prismatic",
+        "axis": "longitudinal axis of the cylinder",
+        "claim": "K2",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "role": "crankshaft",
+        "type": "revolute",
+        "axis": "central axis of the crankshaft",
+        "claim": "K3",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "role": "connecting rod",
+        "type": "revolute",
+        "axis": "axis of the crankpin and piston rod connection",
+        "claim": "K4",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "the piston drives the crankshaft",
+      "claims": [
+       "P2",
+       "P5"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 1,
+      "n_disabled": 1,
+      "n_declared_only": 0,
+      "weakest": "chain",
+      "requirements": [
+       {
+        "from": "piston",
+        "to": "crankshaft",
+        "carries": "motion",
+        "max_hops": 4,
+        "claim": "P2",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        },
+        "reference_score": 0.5
+       },
+       {
+        "role": "crankshaft",
+        "type": "revolute",
+        "claim": "P5",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     }
+    ],
+    "score_when_roleless_v31": 0.0
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared",
+    "6 requirement(s) disabled: the task's own reference object does not pass them",
+    "3 part(s) the reference cannot show either are reported as declared_part_coverage, not scored",
+    "no part carries a role: capabilities cannot be located"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "declared_roles": false,
+    "n_parts": 12,
+    "claims": {
+     "required_parts": 6,
+     "subsystem_parts": 7,
+     "kinematic_parts": 7
+    },
+    "subsystem_connection": null,
+    "subsystem_presence_v31": null
+   },
+   "notes": [
+    "no part carries a role: which part is which cannot be located, so presence is not measurable"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.670817284622522,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.7222222222222221,
+     "qwen2.5-vl-32b": 0.75
+    },
+    "judge_mean": 0.736111111111111,
+    "n_judges": 2,
+    "computed_score": 0.518465022815814,
+    "computed": {
+     "part_correspondence_iou": 0.05008605878764101,
+     "symmetry_match": 0.9868439868439869,
+     "symmetry_iou": 0.8416988416988417,
+     "reference_symmetry_iou": 0.8307692307692308
+    }
+   },
+   "notes": [
+    "0.70 judge + 0.30 computed"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [
+   "2.3"
+  ],
+  "buildable": true,
+  "overall": 0.6369353232018988,
+  "n_scored_dims": 8,
+  "gate_pending": true
+ },
+ "stamp": "1789556715.7554302|v3.1|v3.2|v3.3|v3.4.3"
+}

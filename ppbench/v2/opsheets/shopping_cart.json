@@ -1,0 +1,165 @@
+{
+ "task": "shopping_cart",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Cargo System",
+   "function": "Provides a container to hold and secure merchandise during transport.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "basket",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Control System",
+   "function": "Allows the user to grasp the cart for pushing and secures the cart to a chain or other cart.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "handle",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "lock mechanism",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1",
+    "K2",
+    "K3",
+    "K4"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "front wheels",
+     "type": "revolute",
+     "axis": "vertical axis through the caster stem",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "front wheels",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "rear wheels",
+     "type": "revolute",
+     "axis": "horizontal axle",
+     "claim": "K3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "swivel caster fork",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K4"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P3",
+    "P5",
+    "P6",
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "P3"
+    },
+    {
+     "pred": "part_present",
+     "role": "axles",
+     "claim": "P5"
+    },
+    {
+     "pred": "part_present",
+     "role": "swivel casters",
+     "claim": "P6"
+    },
+    {
+     "pred": "part_present",
+     "role": "rigid casters",
+     "claim": "P7"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "it is pushed by the handle on four casters",
+   "claims": [
+    "P4",
+    "P3"
+   ],
+   "requirements": [
+    {
+     "pred": "grip",
+     "role": "handle",
+     "claim": "P4"
+    },
+    {
+     "pred": "reachable",
+     "target": "handle",
+     "reach_m": 1.2,
+     "claim": "P4"
+    },
+    {
+     "pred": "ground_contact",
+     "role": "wheels",
+     "min_clusters": 4,
+     "claim": "P3"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "the basket holds goods",
+   "claims": [
+    "P2"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "basket",
+     "placement": "inside",
+     "margin_m": 0.03,
+     "min_free": 0.5,
+     "claim": "P2"
+    }
+   ]
+  }
+ ]
+}

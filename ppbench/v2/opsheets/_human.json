@@ -1,0 +1,234 @@
+{
+ "_comment": "The human-interaction layer of the capability sheets: what a person does with the object, which the cited F/K/P claims do not spell out. Merged into every sheet by `operability generate`. Every requirement cites the claim (P/F/K id) whose part it is about; role phrases must come from the task's own vocabulary or the validator rejects them.",
+
+ "baby_stroller": [
+  {"id": "H1", "name": "seats and contains a child", "claims": ["P2"], "requirements": [
+   {"pred": "surface", "role": "seat", "min_area_m2": 0.05, "claim": "P2"},
+   {"pred": "clearance", "anchor": "seat", "placement": "above", "w": 0.30, "d": 0.25, "h": 0.45, "min_free": 0.85, "claim": "P2"}]},
+  {"id": "H2", "name": "stands and rolls on its wheels", "claims": ["P1"], "requirements": [
+   {"pred": "ground_contact", "role": "wheels", "min_clusters": 3, "claim": "P1"}]}],
+
+ "barbecue_grill": [
+  {"id": "H1", "name": "food sits on the grate at working height", "claims": ["P1"], "requirements": [
+   {"pred": "surface", "role": "cooking grate", "min_area_m2": 0.06, "height_range_m": [0.4, 1.3], "claim": "P1"},
+   {"pred": "clearance", "anchor": "cooking grate", "placement": "above", "w": 0.30, "d": 0.30, "h": 0.12, "min_free": 0.8, "claim": "P1"}]}],
+
+ "bed_frame": [
+  {"id": "H1", "name": "a person can lie on it", "claims": ["P3"], "requirements": [
+   {"pred": "surface", "role": "bed base", "min_area_m2": 1.2, "height_range_m": [0.1, 0.8], "claim": "P3"},
+   {"pred": "clearance", "anchor": "bed base", "placement": "above", "w": 0.80, "d": 1.70, "h": 0.35, "min_free": 0.85, "claim": "P3"}]}],
+
+ "bench_drill_press": [
+  {"id": "H1", "name": "an operator can feed the spindle and use the table", "claims": ["P5", "P3"], "requirements": [
+   {"pred": "grip", "role": "Feed Handle", "claim": "P5"},
+   {"pred": "reachable", "target": "Feed Handle", "claim": "P5"},
+   {"pred": "surface", "role": "Table", "min_area_m2": 0.02, "claim": "P3"}]}],
+
+ "bookcase": [
+  {"id": "H1", "name": "shelves hold contents and admit them", "claims": ["P1"], "requirements": [
+   {"pred": "surface", "role": "shelf", "min_area_m2": 0.08, "claim": "P1"},
+   {"pred": "clearance", "anchor": "shelf", "placement": "above", "w": 0.25, "d": 0.20, "h": 0.22, "min_free": 0.8, "claim": "P1"}]}],
+
+ "camera": [
+  {"id": "H1", "name": "the shutter release sits on the body under a finger", "claims": ["P6"], "requirements": [
+   {"pred": "colocated", "a": "shutter release", "b": "camera body", "max_gap_m": 0.03, "claim": "P6"},
+   {"pred": "part_present", "role": "viewfinder", "claim": "P5"}]}],
+
+ "casement_window": [
+  {"id": "H1", "name": "the latch is on the sash and within reach", "claims": ["P4"], "requirements": [
+   {"pred": "colocated", "a": "latch", "b": "sash", "max_gap_m": 0.05, "claim": "P4"},
+   {"pred": "reachable", "target": "latch", "reach_m": 1.0, "claim": "P4"}]}],
+
+ "chest_of_drawers": [
+  {"id": "H1", "name": "drawers hold contents and open by hand", "claims": ["P1", "P4"], "requirements": [
+   {"pred": "clearance", "anchor": "drawers", "placement": "inside", "margin_m": 0.02, "min_free": 0.6, "claim": "P1"},
+   {"pred": "grip", "role": "handles", "claim": "P4"},
+   {"pred": "reachable", "target": "handles", "reach_m": 1.2, "claim": "P4"}]}],
+
+ "desk_lamp": [
+  {"id": "H1", "name": "the head is carried at the end of the arm", "claims": ["P5"], "requirements": [
+   {"pred": "colocated", "a": "lamp head", "b": "forearm", "max_gap_m": 0.06, "claim": "P5"},
+   {"pred": "clearance", "anchor": "lamp head", "placement": "below", "w": 0.25, "d": 0.25, "h": 0.25, "min_free": 0.7, "claim": "P5"}]}],
+
+ "dining_chair": [
+  {"id": "H1", "name": "a person can sit on it", "claims": ["P2"], "requirements": [
+   {"pred": "surface", "role": "seat", "min_area_m2": 0.08, "height_range_m": [0.35, 0.55], "claim": "P2"},
+   {"pred": "clearance", "anchor": "seat", "placement": "above", "box": "seated_torso", "min_free": 0.8, "claim": "P2"}]}],
+
+ "dining_table": [
+  {"id": "H1", "name": "a usable top with legroom under it", "claims": ["P1"], "requirements": [
+   {"pred": "surface", "role": "tabletop", "min_area_m2": 0.5, "height_range_m": [0.6, 0.85], "claim": "P1"},
+   {"pred": "clearance", "anchor": "tabletop", "placement": "below", "box": "seated_legs", "min_free": 0.8, "claim": "P1"}]}],
+
+ "dishwasher": [
+  {"id": "H1", "name": "dishes load into the racks through the door", "claims": ["P6", "P5"], "requirements": [
+   {"pred": "clearance", "anchor": "Racks", "placement": "above", "w": 0.30, "d": 0.30, "h": 0.15, "min_free": 0.7, "claim": "P6"},
+   {"pred": "joint_enables", "role": "Door", "type": "revolute", "claim": "P5"}]}],
+
+ "farm_tractor": [
+  {"id": "H1", "name": "an operator can sit on it", "claims": ["P9"], "requirements": [
+   {"pred": "surface", "role": "operator seat", "min_area_m2": 0.06, "claim": "P9"},
+   {"pred": "clearance", "anchor": "operator seat", "placement": "above", "box": "seated_torso", "min_free": 0.7, "claim": "P9"}]},
+  {"id": "H2", "name": "can be stopped", "claims": ["P8"], "requirements": [
+   {"pred": "part_present", "role": "brakes", "claim": "P8"},
+   {"pred": "colocated", "a": "brakes", "b": "wheels", "max_gap_m": 0.20, "claim": "P8"}]}],
+
+ "helicopter": [
+  {"id": "H1", "name": "the main rotor is mounted on the mast and can turn", "claims": ["P1", "P8"], "requirements": [
+   {"pred": "colocated", "a": "Main rotor", "b": "Mast", "max_gap_m": 0.20, "claim": "P8"},
+   {"pred": "joint_enables", "role": "Main rotor", "type": "revolute", "axis": "vertical", "claim": "P1"}]}],
+
+ "hinged_door": [
+  {"id": "H1", "name": "a person can open it by the handle", "claims": ["P5"], "requirements": [
+   {"pred": "grip", "role": "Door handle", "claim": "P5"},
+   {"pred": "colocated", "a": "Door handle", "b": "Door panel", "max_gap_m": 0.08, "claim": "P5"},
+   {"pred": "reachable", "target": "Door handle", "reach_m": 1.1, "claim": "P5"}]}],
+
+ "kitchen_oven": [
+  {"id": "H1", "name": "the cavity holds food on a rack", "claims": ["P1", "P3"], "requirements": [
+   {"pred": "clearance", "anchor": "heating chamber", "placement": "inside", "margin_m": 0.03, "min_free": 0.5, "claim": "P1"},
+   {"pred": "surface", "role": "rack", "min_area_m2": 0.04, "claim": "P3"}]}],
+
+ "laptop": [
+  {"id": "H1", "name": "it opens to a screen above a keyboard", "claims": ["P10", "P3"], "requirements": [
+   {"pred": "joint_enables", "role": "hinge", "type": "revolute", "claim": "P10"},
+   {"pred": "surface", "role": "keyboard", "min_area_m2": 0.02, "claim": "P3"},
+   {"pred": "colocated", "a": "display screen", "b": "hinge", "max_gap_m": 0.15, "claim": "P2"}]}],
+
+ "microwave_oven": [
+  {"id": "H1", "name": "food goes into the chamber through the door", "claims": ["P2", "P5"], "requirements": [
+   {"pred": "clearance", "anchor": "cooking chamber", "placement": "inside", "margin_m": 0.03, "min_free": 0.5, "claim": "P2"},
+   {"pred": "joint_enables", "role": "oven door", "type": "revolute", "claim": "P5"},
+   {"pred": "reachable", "target": "control panel", "reach_m": 0.9, "claim": "P6"}]}],
+
+ "mixer_faucet": [
+  {"id": "H1", "name": "the handle is grippable and on the valve body", "claims": ["P2"], "requirements": [
+   {"pred": "grip", "role": "handle", "claim": "P2"},
+   {"pred": "colocated", "a": "handle", "b": "valve body", "max_gap_m": 0.06, "claim": "P2"}]}],
+
+ "monitor_arm": [
+  {"id": "H1", "name": "the arm carries a display away from its base", "claims": ["P2"], "requirements": [
+   {"pred": "colocated", "a": "Arm", "b": "Mounting base", "max_gap_m": 0.08, "claim": "P2"},
+   {"pred": "joint_enables", "role": "Arm", "claim": "P2"}]}],
+
+ "office_desk": [
+  {"id": "H1", "name": "a usable work surface with legroom", "claims": ["P1"], "requirements": [
+   {"pred": "surface", "role": "work surface", "min_area_m2": 0.4, "height_range_m": [0.6, 0.85], "claim": "P1"},
+   {"pred": "clearance", "anchor": "work surface", "placement": "below", "box": "seated_legs", "min_free": 0.8, "claim": "P1"}]}],
+
+ "offroad_jeep": [
+  {"id": "H1", "name": "can be stopped", "claims": ["P10"], "requirements": [
+   {"pred": "part_present", "role": "brakes", "claim": "P10"},
+   {"pred": "colocated", "a": "brakes", "b": "wheels", "max_gap_m": 0.20, "claim": "P10"}]},
+  {"id": "H2", "name": "rolls on a wheel at each corner", "claims": ["P1"], "requirements": [
+   {"pred": "ground_contact", "role": "wheels", "min_clusters": 4, "claim": "P1"}]}],
+
+ "oscillating_fan": [
+  {"id": "H1", "name": "the blades turn inside the guard", "claims": ["P1", "P5"], "requirements": [
+   {"pred": "joint_enables", "role": "blades", "type": "revolute", "claim": "P1"},
+   {"pred": "colocated", "a": "blade guard", "b": "blades", "max_gap_m": 0.10, "claim": "P5"}]}],
+
+ "oscillating_steam_engine": [
+  {"id": "H1", "name": "the piston drives the crankshaft", "claims": ["P2", "P5"], "requirements": [
+   {"pred": "chain", "from": "piston", "to": "crankshaft", "carries": "motion", "max_hops": 4, "claim": "P2"},
+   {"pred": "joint_enables", "role": "crankshaft", "type": "revolute", "claim": "P5"}]}],
+
+ "passenger_car": [
+  {"id": "H1", "name": "can be stopped", "claims": ["P4"], "requirements": [
+   {"pred": "part_present", "role": "Brakes", "claim": "P4"},
+   {"pred": "colocated", "a": "Brakes", "b": "Wheels", "max_gap_m": 0.20, "claim": "P4"}]},
+  {"id": "H2", "name": "seats an occupant", "claims": ["P7"], "requirements": [
+   {"pred": "surface", "role": "Seats", "min_area_m2": 0.08, "claim": "P7"},
+   {"pred": "clearance", "anchor": "Seats", "placement": "above", "box": "seated_torso", "min_free": 0.6, "claim": "P7"}]}],
+
+ "refrigerator": [
+  {"id": "H1", "name": "the compartment holds food behind a door", "claims": ["P1", "P7"], "requirements": [
+   {"pred": "clearance", "anchor": "thermally insulated compartment", "placement": "inside", "margin_m": 0.03, "min_free": 0.5, "claim": "P1"},
+   {"pred": "joint_enables", "role": "door", "type": "revolute", "claim": "P7"}]}],
+
+ "rolling_suitcase": [
+  {"id": "H1", "name": "it is pulled by the handle on its wheels", "claims": ["P2", "P3"], "requirements": [
+   {"pred": "grip", "role": "handle", "claim": "P2"},
+   {"pred": "ground_contact", "role": "wheels", "min_clusters": 2, "claim": "P3"}]},
+  {"id": "H2", "name": "it holds luggage", "claims": ["P1"], "requirements": [
+   {"pred": "clearance", "anchor": "container body", "placement": "inside", "margin_m": 0.03, "min_free": 0.4, "claim": "P1"}]}],
+
+ "scissor_car_jack": [
+  {"id": "H1", "name": "the screw drives the linkage", "claims": ["P1", "P2"], "requirements": [
+   {"pred": "chain", "from": "leadscrew", "to": "scissor linkage", "carries": "motion", "max_hops": 3, "claim": "P1"},
+   {"pred": "joint_enables", "role": "scissor linkage", "claim": "P2"}]}],
+
+ "scissors": [
+  {"id": "H1", "name": "a hand closes the handles and the blades follow", "claims": ["P2", "P1"], "requirements": [
+   {"pred": "grip", "role": "handle", "claim": "P2"},
+   {"pred": "chain", "from": "handle", "to": "blade", "carries": "motion", "max_hops": 3, "claim": "P1"},
+   {"pred": "joint_enables", "role": "blade", "type": "revolute", "claim": "P1"}]}],
+
+ "shopping_cart": [
+  {"id": "H1", "name": "it is pushed by the handle on four casters", "claims": ["P4", "P3"], "requirements": [
+   {"pred": "grip", "role": "handle", "claim": "P4"},
+   {"pred": "reachable", "target": "handle", "reach_m": 1.2, "claim": "P4"},
+   {"pred": "ground_contact", "role": "wheels", "min_clusters": 4, "claim": "P3"}]},
+  {"id": "H2", "name": "the basket holds goods", "claims": ["P2"], "requirements": [
+   {"pred": "clearance", "anchor": "basket", "placement": "inside", "margin_m": 0.03, "min_free": 0.5, "claim": "P2"}]}],
+
+ "skateboard": [
+  {"id": "H1", "name": "a person stands on the deck and it rolls", "claims": ["P1", "P3"], "requirements": [
+   {"pred": "surface", "role": "deck", "min_area_m2": 0.08, "height_range_m": [0.02, 0.25], "claim": "P1"},
+   {"pred": "ground_contact", "role": "wheels", "min_clusters": 2, "claim": "P3"},
+   {"pred": "joint_enables", "role": "wheels", "type": "revolute", "claim": "P3"}]}],
+
+ "stepladder": [
+  {"id": "H1", "name": "the steps can be climbed", "claims": ["P2"], "requirements": [
+   {"pred": "surface", "role": "steps", "min_area_m2": 0.03, "claim": "P2"},
+   {"pred": "clearance", "anchor": "steps", "placement": "above", "w": 0.35, "d": 0.25, "h": 0.60, "min_free": 0.7, "claim": "P2"}]}],
+
+ "swivel_office_chair": [
+  {"id": "H1", "name": "a person can sit on it", "claims": ["P1"], "requirements": [
+   {"pred": "surface", "role": "seat", "min_area_m2": 0.09, "height_range_m": [0.35, 0.60], "claim": "P1"},
+   {"pred": "clearance", "anchor": "seat", "placement": "above", "box": "seated_torso", "min_free": 0.75, "claim": "P1"}]},
+  {"id": "H2", "name": "it rolls on its casters", "claims": ["P3"], "requirements": [
+   {"pred": "ground_contact", "role": "casters", "min_clusters": 4, "claim": "P3"}]}],
+
+ "toilet": [
+  {"id": "H1", "name": "a person can sit on the bowl and flush it", "claims": ["P1", "P4"], "requirements": [
+   {"pred": "surface", "role": "bowl", "min_area_m2": 0.05, "height_range_m": [0.3, 0.55], "claim": "P1"},
+   {"pred": "reachable", "target": "flush mechanism", "from": "bowl", "reach_m": 0.8, "claim": "P4"}]}],
+
+ "tool_box": [
+  {"id": "H1", "name": "it is carried by the handle and opens", "claims": ["P4", "P2"], "requirements": [
+   {"pred": "grip", "role": "handle", "claim": "P4"},
+   {"pred": "joint_enables", "role": "lid", "type": "revolute", "claim": "P2"}]},
+  {"id": "H2", "name": "it holds tools", "claims": ["P1"], "requirements": [
+   {"pred": "clearance", "anchor": "container body", "placement": "inside", "margin_m": 0.02, "min_free": 0.4, "claim": "P1"}]}],
+
+ "umbrella": [
+  {"id": "H1", "name": "it is held by the handle under the canopy", "claims": ["P4", "P1"], "requirements": [
+   {"pred": "grip", "role": "handle", "claim": "P4"},
+   {"pred": "colocated", "a": "handle", "b": "pole", "max_gap_m": 0.06, "claim": "P4"},
+   {"pred": "clearance", "anchor": "canopy", "placement": "below", "w": 0.50, "d": 0.35, "h": 0.60, "min_free": 0.7, "claim": "P1"}]}],
+
+ "washing_machine": [
+  {"id": "H1", "name": "laundry goes into the drum through the door", "claims": ["P1", "P6"], "requirements": [
+   {"pred": "clearance", "anchor": "Drum", "placement": "inside", "margin_m": 0.03, "min_free": 0.5, "claim": "P1"},
+   {"pred": "joint_enables", "role": "Door", "claim": "P6"}]}],
+
+ "wheelchair": [
+  {"id": "H1", "name": "a person sits and can reach the push-rims", "claims": ["P2", "P6"], "requirements": [
+   {"pred": "surface", "role": "seat", "min_area_m2": 0.09, "height_range_m": [0.35, 0.60], "claim": "P2"},
+   {"pred": "clearance", "anchor": "seat", "placement": "above", "box": "seated_torso", "min_free": 0.7, "claim": "P2"},
+   {"pred": "reachable", "target": "push-rims", "from": "seat", "reach_m": 0.8, "claim": "P6"}]},
+  {"id": "H2", "name": "can be stopped", "claims": ["P7"], "requirements": [
+   {"pred": "part_present", "role": "brakes", "claim": "P7"},
+   {"pred": "colocated", "a": "brakes", "b": "wheels", "max_gap_m": 0.15, "claim": "P7"}]}],
+
+ "wheeled_dumpster": [
+  {"id": "H1", "name": "it holds waste and rolls", "claims": ["P1"], "requirements": [
+   {"pred": "clearance", "anchor": "container body", "placement": "inside", "margin_m": 0.04, "min_free": 0.5, "claim": "P1"},
+   {"pred": "ground_contact", "role": "wheels", "min_clusters": 2, "claim": "P1"}]}],
+
+ "wheeled_excavator": [
+  {"id": "H1", "name": "the arm reaches out and the bucket moves", "claims": ["P3", "P5"], "requirements": [
+   {"pred": "chain", "from": "Boom", "to": "Bucket", "carries": "motion", "max_hops": 4, "claim": "P3"},
+   {"pred": "joint_enables", "role": "Boom", "type": "revolute", "claim": "P3"}]}]
+}

@@ -1,0 +1,500 @@
+<title>Office Chair Build Trials</title>
+<meta name="description" content="PP-Bench v2: every system's office chair, scored on structure, affordance, design and realization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+:root{
+  --ground:#F2F4F3; --surface:#FFFFFF; --sunk:#E8ECEB; --ink:#16202A; --graphite:#5B686F; --rule:#D3DAD9;
+  --accent:#0F6E75; --accent-ink:#FFFFFF; --accent-soft:rgba(15,110,117,.12);
+  --pass:#2F7D4E; --warn:#A86A12; --fail:#B8322A; --skip:#8C969B;
+  --heat:15,110,117;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1417; --surface:#161D21; --sunk:#1C252A; --ink:#E3E9EA; --graphite:#94A2A7; --rule:#2B363B;
+    --accent:#5BBCC3; --accent-ink:#0F1417; --accent-soft:rgba(91,188,195,.14);
+    --pass:#6CC28F; --warn:#E0A84A; --fail:#EE7B70; --skip:#7C888D; --heat:91,188,195;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1417; --surface:#161D21; --sunk:#1C252A; --ink:#E3E9EA; --graphite:#94A2A7; --rule:#2B363B;
+  --accent:#5BBCC3; --accent-ink:#0F1417; --accent-soft:rgba(91,188,195,.14);
+  --pass:#6CC28F; --warn:#E0A84A; --fail:#EE7B70; --skip:#7C888D; --heat:91,188,195;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--ink);font:16px/1.55 var(--body);margin:0;padding-inline:clamp(16px,3vw,40px);padding-block:0 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.01em;text-wrap:balance;margin:0}
+h2{font-size:1.9rem;line-height:1.1}
+h3{font-size:1.25rem}
+.wrap{max-width:1320px;margin-inline:auto}
+.mono,.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.label{font-family:var(--display);text-transform:uppercase;letter-spacing:.09em;font-size:.8rem;color:var(--graphite);font-weight:600}
+a{color:var(--accent)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* title block, as on a drawing sheet */
+header.sheet{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(4,minmax(0,1fr));border:1.5px solid var(--ink);margin-block:28px 0;background:var(--surface)}
+header.sheet>div{padding:12px 16px;border-left:1px solid var(--rule)}
+header.sheet>div:first-child{border-left:0}
+header.sheet h1{font-size:clamp(2rem,4vw,3.1rem);line-height:.95;font-weight:700}
+header.sheet .v{font-family:var(--mono);font-size:.92rem;margin-top:4px}
+nav.tabs{position:sticky;top:0;z-index:5;background:var(--ground);display:flex;gap:4px;flex-wrap:wrap;padding-block:10px;border-bottom:1px solid var(--rule)}
+nav.tabs a{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;text-decoration:none;color:var(--graphite);padding:6px 10px;border-radius:3px}
+nav.tabs a:hover{color:var(--ink);background:var(--sunk)}
+nav.tabs .theme{margin-left:auto;border:1px solid var(--rule);background:var(--surface);border-radius:3px;padding:4px 10px;cursor:pointer;font-size:.85rem}
+section{padding-block:40px 8px}
+.lede{max-width:68ch;color:var(--graphite);margin:8px 0 0}
+
+/* task */
+.task{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:28px;margin-top:20px}
+.photo{margin:0}
+.photo img{width:100%;display:block;border:1px solid var(--rule)}
+.photo figcaption{font-size:.85rem;color:var(--graphite);margin-top:6px}
+.prompt{font-family:var(--mono);font-size:.95rem;background:var(--surface);border:1px solid var(--rule);padding:10px 12px;margin:10px 0 18px}
+.claims{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 28px}
+.claims ol{list-style:none;padding:0;margin:6px 0 0;display:grid;gap:5px}
+.claims li{display:grid;grid-template-columns:2.6rem 1fr;gap:6px;font-size:.93rem;line-height:1.35}
+.cid{font-family:var(--mono);font-size:.8rem;color:var(--accent);padding-top:2px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:18px}
+.facts div{display:grid}
+.facts .v{font-family:var(--mono);font-size:1.05rem}
+
+/* scoreboard */
+.board-wrap{overflow-x:auto;margin-top:18px;border:1px solid var(--rule);background:var(--surface)}
+table.board{border-collapse:collapse;width:100%;min-width:980px;font-size:.84rem}
+.board th,.board td{padding:6px 5px;border-bottom:1px solid var(--rule);text-align:center;white-space:nowrap}
+.board thead th{position:sticky;top:0;background:var(--surface);vertical-align:bottom;font-weight:600}
+.board thead .code{font-family:var(--display);font-size:1.1rem;display:block;color:var(--ink)}
+.board thead .nm{font-size:.72rem;color:var(--graphite);font-weight:400;display:block;letter-spacing:.02em}
+.board thead .depth{font-size:.66rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;display:block}
+.board th.lvl{border-left:1.5px solid var(--ink)}
+.board td.lvl{border-left:1.5px solid var(--rule)}
+.board td.sys{text-align:left;min-width:180px;white-space:normal}
+.board tr.group td{background:var(--sunk);text-align:left;font-family:var(--display);text-transform:uppercase;letter-spacing:.09em;font-size:.82rem;color:var(--graphite);font-weight:600}
+.board tbody tr.row{cursor:pointer}
+.board tbody tr.row:hover td.sys{color:var(--accent)}
+.board tbody tr.row.sel td{box-shadow:inset 0 2px 0 var(--accent),inset 0 -2px 0 var(--accent)}
+.sysname{font-weight:600}
+.sub{display:block;font-size:.75rem;color:var(--graphite);font-weight:400}
+.cell{position:relative;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.cell .sd{color:var(--graphite);font-size:.7rem}
+.mark{display:inline-block;width:.55rem;height:.55rem;border-radius:50%;margin-right:5px;vertical-align:1px}
+.m-pass{background:var(--pass)}
+.m-degraded{background:transparent;box-shadow:inset 0 0 0 2px var(--warn)}
+.m-fail{background:var(--fail);border-radius:1px;transform:rotate(45deg)}
+.m-skipped,.m-not_built{background:transparent;box-shadow:inset 0 0 0 1px var(--skip)}
+.na{color:var(--skip)}
+.tri{display:inline-flex;gap:3px}
+.tri span{font-size:.75rem}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem;color:var(--graphite);margin-top:10px}
+
+/* detail */
+.detail{margin-top:22px;background:var(--surface);border:1px solid var(--rule);padding:18px 20px}
+.detail-head{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;justify-content:space-between}
+.seeds{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:14px}
+.seed{border:1px solid var(--rule);background:var(--ground)}
+.seed img{width:100%;display:block}
+.seed .cap{padding:8px 10px;font-size:.84rem;display:grid;gap:3px}
+.metrics{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:18px}
+.mblock h4{font-family:var(--display);font-weight:600;font-size:1.05rem;margin:0 0 4px;display:flex;justify-content:space-between;gap:8px}
+.mblock dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;font-size:.84rem}
+.mblock dt{color:var(--graphite);overflow-wrap:anywhere}
+.mblock dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.notes{font-size:.84rem;color:var(--graphite);margin:6px 0 0;padding-left:18px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;margin-top:18px}
+.card{background:var(--surface);border:1px solid var(--rule);cursor:pointer;text-align:left;padding:0;display:grid}
+.card:hover{border-color:var(--accent)}
+.card img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--sunk)}
+.card .cap{padding:7px 9px 9px;font-size:.84rem;display:grid;gap:1px}
+
+/* claims matrix */
+table.cm{border-collapse:collapse;font-size:.85rem;min-width:900px;width:100%}
+.cm th,.cm td{border-bottom:1px solid var(--rule);padding:6px 6px;text-align:center}
+.cm td.sys{text-align:left;white-space:nowrap}
+.cm th{font-family:var(--mono);font-weight:600;font-size:.78rem}
+.cm th .t{display:block;font-family:var(--body);font-weight:400;color:var(--graphite);font-size:.7rem;white-space:normal;max-width:9ch;margin-inline:auto;line-height:1.15}
+.dot{display:inline-block;width:22px;height:22px;border-radius:50%;border:1px solid var(--rule);vertical-align:middle}
+
+/* method */
+table.method{border-collapse:collapse;width:100%;min-width:900px;font-size:.88rem;background:var(--surface)}
+.method th,.method td{border-bottom:1px solid var(--rule);padding:9px 10px;text-align:left;vertical-align:top}
+.method th{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--graphite)}
+.method td:first-child{font-family:var(--display);font-size:1.05rem;white-space:nowrap}
+.method code{font-family:var(--mono);font-size:.8rem}
+.scroll{overflow-x:auto;margin-top:18px;border:1px solid var(--rule)}
+.pool img{width:100%;display:block;border:1px solid var(--rule);margin-top:14px}
+details summary{cursor:pointer;font-family:var(--display);font-weight:600;letter-spacing:.04em;margin-top:16px}
+@media (max-width:860px){
+  header.sheet{grid-template-columns:1fr 1fr}
+  header.sheet>div:first-child{grid-column:1/-1}
+  header.sheet>div{border-left:0;border-top:1px solid var(--rule)}
+  .task{grid-template-columns:1fr}
+  .claims{grid-template-columns:1fr}
+}
+</style>
+
+<div class="wrap">
+<header class="sheet" aria-label="Title block">
+  <div><span class="label">PP-Bench v2 · results sheet</span><h1>Office Chair Build Trials</h1></div>
+  <div><span class="label">Task</span><div class="v" id="tb-task"></div></div>
+  <div><span class="label">Condition</span><div class="v">name only + image W2</div></div>
+  <div><span class="label">Arms</span><div class="v" id="tb-arms"></div></div>
+  <div><span class="label">Protocol</span><div class="v">v2.1 · 2 rounds · seed-level</div></div>
+</header>
+<nav class="tabs" aria-label="Sections">
+  <a href="#task">Task</a><a href="#board">Scoreboard</a><a href="#designs">Designs</a><a href="#claims">Claims</a><a href="#method">Method</a><a href="#caveats">Caveats</a>
+  <button class="theme" id="theme" type="button">Theme: system</button>
+</nav>
+
+<section id="task">
+  <h2>What every system was asked to build</h2>
+  <p class="lede">One core-set object with a reference assembly, cited real-world claims and annotated joints. Each system received the prompt and the in-the-wild photo; tool-using models also received the 57-part mixed pool (Tier A) or the pool plus part creation (Tier B).</p>
+  <div class="task">
+    <figure class="photo"><img id="cond-img" alt="Condition image W2: a black quilted swivel office chair with armrests and a five-star base, on a wooden floor"><figcaption>Condition image W2 · generated from the reference render (Qwen-Image-Edit-2511), fidelity check passed</figcaption></figure>
+    <div>
+      <span class="label">Prompt given</span>
+      <div class="prompt" id="prompt"></div>
+      <div class="claims" id="claims"></div>
+      <div class="facts" id="facts"></div>
+    </div>
+  </div>
+</section>
+
+<section id="board">
+  <h2>Scoreboard</h2>
+  <p class="lede">Graded scores in [0, 1], mean over seeds (± spread). The mark gives the worst status across seeds. Tiers are never averaged together. Click a row to open its designs and every raw measurement.</p>
+  <div class="legend" id="legend"></div>
+  <div class="board-wrap"><table class="board" id="board-table"></table></div>
+  <div class="detail" id="detail"></div>
+</section>
+
+<section id="designs">
+  <h2>Designs</h2>
+  <p class="lede">Seed 0 of every system, rendered from the condition image's camera and three standard views. Parts are coloured individually.</p>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<section id="claims">
+  <h2>Claim coverage</h2>
+  <p class="lede">Every sentence of the task's attribute and functional prompts is backed by a claim. Each cell is the rule-based score for that claim (mean over seeds): required parts P by role coverage, attributes A by computed proxies, subsystems F as presence · placement · connection, kinematics K by joint matching.</p>
+  <div class="scroll"><table class="cm" id="cm"></table></div>
+</section>
+
+<section id="method">
+  <h2>How each number is computed</h2>
+  <p class="lede">Rule-based first. Every design is voxelised once (4 mm) and every dimension reads that grid, the declared roles, materials, joints and sequence, the task's claims, the reference, and a population of 117 other Artiverse swivel chairs.</p>
+  <div class="scroll"><table class="method" id="method-table"></table></div>
+</section>
+
+<section id="caveats">
+  <h2>Caveats</h2>
+  <ul class="lede" id="caveat-list"></ul>
+  <details class="pool"><summary>The 57-part pool the tool arms chose from</summary><img id="pool-img" alt="Thumbnails of all 57 catalog parts with ids, names and sizes"></details>
+</section>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+
+const DIMS = [
+  {k:"1.1", n:"Integrity", d:"computed", L:1},
+  {k:"1.2", n:"Stability", d:"computed", L:1},
+  {k:"2.1", n:"Geometry", d:"computed", L:2},
+  {k:"2.2", n:"Kinematics", d:"computed", L:2},
+  {k:"3.1", n:"Decomposition", d:"computed", L:3},
+  {k:"3.2", n:"Aesthetics", d:"comp.+adjud.", L:3},
+  {k:"4.1", n:"Material", d:"declared+comp.", L:4},
+  {k:"4.2", n:"Assembly", d:"computed", L:4},
+  {k:"4.3", n:"Function", d:"presence·place·conn", L:4},
+];
+const ARMS = [["A","Tier A · catalog only"],["B","Tier B · catalog + creation"],["external","External generators · no catalog, no tools"],["ref","Reference object · ceiling"]];
+const STATUS_RANK = {fail:4, degraded:3, pass:2, skipped:1, not_built:0};
+const PRETTY = {"claude-fable-5.1":"Claude Fable 5.1","claude-opus-5":"Claude Opus 5","claude-sonnet-5":"Claude Sonnet 5","claude-haiku-4.5":"Claude Haiku 4.5",
+  "gemma-4-31b-it":"Gemma 4 31B","qwen3-vl-8b-instruct":"Qwen3-VL 8B","qwen3-vl-32b-instruct":"Qwen3-VL 32B","qwen3.5-27b":"Qwen3.5 27B",
+  "internvl3.5-8b":"InternVL3.5 8B","qwen3-4b-instruct-2507":"Qwen3 4B (text only)","brickgpt":"BrickGPT","bricknet-0.6b":"BrickNet 0.6B","legoace":"LegoACE",
+  "partcrafter_np15":"PartCrafter (15 parts)","partcrafter_np8":"PartCrafter (8 parts)","partpacker":"PartPacker","cubepart_short_full":"Cube3D + CubePart",
+  "cubepart_short_short":"Cube3D + CubePart (6-part schema)","physx-anything":"PhysX-Anything","reference":"Reference (Artiverse)"};
+
+const $ = s => document.querySelector(s);
+const el = (t, a={}, ...kids) => { const e=document.createElement(t); for (const [k,v] of Object.entries(a)) { if(k==="class") e.className=v; else if(k==="html") e.innerHTML=v; else e.setAttribute(k,v);} for (const c of kids) if(c!=null) e.append(c); return e; };
+const fmt = (v, d=2) => v==null || Number.isNaN(v) ? "—" : (typeof v==="number" ? (Math.abs(v)>=1000? v.toFixed(0) : v.toFixed(d)) : String(v));
+const mean = a => a.length ? a.reduce((s,x)=>s+x,0)/a.length : null;
+const sd = a => a.length>1 ? Math.sqrt(mean(a.map(x=>(x-mean(a))**2))) : null;
+const get = (o, path) => path.split(".").reduce((x,k)=> x==null? null : x[k], o);
+
+// ---------------- theme toggle
+(function(){
+  const b=$("#theme"); const states=["system","light","dark"]; let i=0;
+  try { const s=localStorage.getItem("oct-theme"); if(s && states.includes(s)) i=states.indexOf(s); } catch(e){}
+  const apply=()=>{ const s=states[i]; if(s==="system") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", s); b.textContent="Theme: "+s; try{localStorage.setItem("oct-theme", s);}catch(e){} };
+  b.addEventListener("click", ()=>{ i=(i+1)%3; apply(); }); apply();
+})();
+
+// ---------------- groups
+const recs = Object.entries(DATA.records).map(([key,r])=>({key, ...r}));
+const groups = {};
+for (const r of recs) {
+  const it = r.item; const gk = it.tier + "|" + it.system;
+  (groups[gk] ||= {tier: it.tier, system: it.system, kind: it.kind, seeds: []}).seeds.push(r);
+}
+for (const g of Object.values(groups)) g.seeds.sort((a,b)=>a.item.seed-b.item.seed);
+const judgeOverall = (() => {
+  const out = {}; const J = DATA.judges || {};
+  for (const [name, j] of Object.entries(J)) {
+    if (!j.ratings || !j.ratings.overall) continue;
+    for (const [k, v] of Object.entries(j.ratings.overall)) (out[k] ||= []).push(v.win_rate);
+  }
+  return out;
+})();
+const hasJudge = Object.keys(judgeOverall).length > 0;
+const hasSim = Object.keys(DATA.imagesim||{}).length > 0;
+
+function dimAgg(g, k) {
+  const ss = g.seeds.map(r=>r.dims[k]).filter(Boolean);
+  if (!ss.length) return null;
+  const scores = ss.map(d=>d.score).filter(v=>v!=null);
+  const worst = ss.map(d=>d.status).sort((a,b)=>STATUS_RANK[b]-STATUS_RANK[a])[0];
+  return {mean: mean(scores), sd: sd(scores), status: worst, n: scores.length};
+}
+
+// ---------------- header + task
+(function(){
+  const T = DATA.task;
+  $("#tb-task").textContent = T.id;
+  const arms = new Set(recs.map(r=>r.item.tier));
+  $("#tb-arms").textContent = `${Object.keys(groups).length} systems · ${recs.length} designs`;
+  $("#cond-img").src = DATA.condition_image;
+  $("#prompt").textContent = T.condition.text;
+  if (DATA.pool_sheet) $("#pool-img").src = DATA.pool_sheet;
+  const blocks = [
+    ["Required parts", T.required_parts.map(p=>[p.id, p.part + " — " + p.why])],
+    ["Attributes", T.attributes.map(a=>[a.id, a.statement])],
+    ["Functional subsystems", T.subsystems.map(f=>[f.id, `${f.subsystem}: ${f.parts.join(", ")}`])],
+    ["Kinematics", T.kinematics.map(k=>[k.id, `${k.moving_part} ${k.motion} relative to ${k.relative_to} (${k.joint_type}, ${k.axis})`])],
+  ];
+  for (const [title, rows] of blocks) {
+    const ol = el("ol"); for (const [id, t] of rows) ol.append(el("li", {}, el("span",{class:"cid"}, id), el("span",{}, t)));
+    $("#claims").append(el("div",{}, el("span",{class:"label"}, title), ol));
+  }
+  const ref = DATA.records.reference; const A = DATA.anchors || {}; const P = (DATA.population||{}).extent_m || {};
+  const facts = [
+    ["Reference", "Artiverse swivel chair · 18 parts · 12 joints"],
+    ["Reference extent (W×D×H)", ref ? `${fmt(ref.dims["2.1"].metrics.extent_m.width)}×${fmt(ref.dims["2.1"].metrics.extent_m.depth)}×${fmt(ref.dims["2.1"].metrics.extent_m.height)} m` : "—"],
+    ["Population height p5–p95", P.height ? `${fmt(P.height.p5)}–${fmt(P.height.p95)} m (n=117)` : "—"],
+    ["Reference tilt · loaded", `${fmt(A.tilt_deg,1)}° · ${fmt(A.loaded_tilt_deg,1)}°`],
+    ["Reference mass", `${fmt(A.mass_kg,1)} kg`],
+  ];
+  for (const [k,v] of facts) $("#facts").append(el("div",{}, el("span",{class:"label"},k), el("span",{class:"v"},v)));
+})();
+
+// ---------------- scoreboard
+function heat(v) { if (v==null) return "transparent"; return `rgba(var(--heat),${(0.06 + 0.5*v).toFixed(3)})`; }
+function markEl(status){ return el("span",{class:"mark m-"+status, title: status.replace("_"," ")}); }
+function buildLegend(){
+  const L = $("#legend");
+  for (const [s, t] of [["pass","pass"],["degraded","degraded: part measured with a weaker instrument"],["fail","fail: a critical threshold fired"],["skipped","skipped: the producer does not declare it"]])
+    L.append(el("span",{}, markEl(s), t));
+  L.append(el("span",{}, "cell shade = score"));
+}
+let selected = null;
+function buildBoard(){
+  const t = $("#board-table");
+  const head = el("tr",{}, el("th",{style:"text-align:left"}, el("span",{class:"label"},"System")));
+  let lastL = 0;
+  for (const D of DIMS) {
+    const th = el("th",{class: D.L!==lastL ? "lvl":""}, el("span",{class:"code"}, D.k), el("span",{class:"nm"}, D.n), el("span",{class:"depth"}, D.d));
+    lastL = D.L; head.append(th);
+  }
+  if (hasSim) head.append(el("th",{class:"lvl"}, el("span",{class:"code"},"img"), el("span",{class:"nm"},"DINOv2 cos"), el("span",{class:"depth"},"model-computed")));
+  if (hasJudge) head.append(el("th",{}, el("span",{class:"code"},"judge"), el("span",{class:"nm"},"overall win rate"), el("span",{class:"depth"},"adjudicated")));
+  head.append(el("th",{class:"lvl"}, el("span",{class:"code"},"cost"), el("span",{class:"nm"},"tool calls / parts"), el("span",{class:"depth"},"episode")));
+  t.append(el("thead",{}, head));
+  const body = el("tbody");
+  for (const [tier, title] of ARMS) {
+    const gs = Object.values(groups).filter(g=>g.tier===tier);
+    if (!gs.length) continue;
+    body.append(el("tr",{class:"group"}, el("td",{colspan: String(DIMS.length + 2 + (hasSim?1:0) + (hasJudge?1:0))}, title)));
+    gs.sort((a,b)=> (dimAgg(b,"2.1")?.mean??0) - (dimAgg(a,"2.1")?.mean??0));
+    for (const g of gs) {
+      const tr = el("tr",{class:"row", tabindex:"0", "data-g": g.tier+"|"+g.system});
+      const fam = g.seeds[0].meta.family || (g.tier==="ref" ? "ceiling" : (g.seeds[0].meta.transport||""));
+      tr.append(el("td",{class:"sys"}, el("span",{class:"sysname"}, PRETTY[g.system]||g.system), el("span",{class:"sub"}, `${g.seeds.length} seed${g.seeds.length>1?"s":""} · ${fam}`)));
+      lastL = 0;
+      for (const D of DIMS) {
+        const td = el("td",{class:"cell" + (D.L!==lastL?" lvl":"")}); lastL = D.L;
+        if (D.k === "4.3") {
+          const ms = g.seeds.map(r=>r.dims["4.3"]).filter(Boolean);
+          const st = ms.map(d=>d.status).sort((a,b)=>STATUS_RANK[b]-STATUS_RANK[a])[0];
+          if (!ms.length || st==="skipped") { td.append(markEl("skipped"), el("span",{class:"na"},"—")); }
+          else {
+            const tri = el("span",{class:"tri"});
+            for (const f of ["presence","placement","connection"]) { const v = mean(ms.map(d=>d.metrics[f]).filter(x=>x!=null)); tri.append(el("span",{title:f, style:`background:${heat(v)};padding:1px 3px`}, fmt(v,1))); }
+            td.append(tri);
+          }
+        } else {
+          const a = dimAgg(g, D.k);
+          if (!a || a.mean==null) { td.append(markEl(a?a.status:"not_built"), el("span",{class:"na"},"—")); }
+          else { td.style.background = heat(a.mean); td.append(markEl(a.status), fmt(a.mean)); if (a.sd!=null) td.append(el("span",{class:"sd"}, " ±"+fmt(a.sd))); }
+        }
+        tr.append(td);
+      }
+      if (hasSim) { const v = mean(g.seeds.map(r=>DATA.imagesim[r.key]).filter(x=>x!=null)); tr.append(el("td",{class:"cell lvl"}, fmt(v))); }
+      if (hasJudge) { const v = mean(g.seeds.flatMap(r=>judgeOverall[r.key]||[])); tr.append(el("td",{class:"cell", style:`background:${heat(v)}`}, fmt(v))); }
+      const calls = mean(g.seeds.map(r=>get(r,"meta.counters.tool_calls")).filter(x=>x!=null));
+      const nparts = mean(g.seeds.map(r=>get(r,"dims.1.1.metrics.n_parts")).filter(x=>x!=null));
+      tr.append(el("td",{class:"cell lvl"}, `${calls==null?"—":fmt(calls,0)} / ${fmt(nparts,0)}`));
+      tr.addEventListener("click", ()=>select(tr.dataset.g));
+      tr.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); select(tr.dataset.g);} });
+      body.append(tr);
+    }
+  }
+  t.append(body);
+}
+
+const SHOW = {
+  "1.1": ["collision_free_pair_rate","n_colliding_pairs","pen_volume_frac","n_components","connected_part_frac","largest_component_volume_frac","whole_body_rate","below_ground_m"],
+  "1.2": ["critical_tilt_deg","reference_tilt_deg","support_margin_m","support_area_m2","n_parts_in_main_group","ground_band_m"],
+  "2.1": ["size_score","within_population_p5_p95_frac","shape_vs_reference_as_oriented.fscore@0.05","shape_vs_reference_as_oriented.fscore@0.02","shape_vs_reference_as_oriented.chamfer_m","extent_m.height","extent_m.width","role_predicates.seat_height.score","role_predicates.wheel_round_horizontal_axle.score","role_predicates.ground_contact_points.n","role_predicates.backrest_above_behind_upright.score"],
+  "2.2": ["n_moving","reference_n_moving","declaration_completeness","joint_on_boundary","claims_recall","reference_recall","reference_precision","reference_f1","achievable_range_ratio"],
+  "3.1": ["required_part_coverage","role_histogram_score","n_parts","granularity_score","unrecognised_role_frac","consolidation_violations","part_iou_vs_reference_volume_weighted"],
+  "3.2": ["symmetry_iou","reference_symmetry_iou","proportion_score"],
+  "3.3": ["distinct_pool_parts","created_instances","created_frac","novelty_1_minus_fscore@0.05"],
+  "4.1": ["coverage_volume_frac","claim_class_coverage","reference_role_material_agreement","population_material_likelihood","total_mass_kg","reference_mass_kg","loaded_tilt_deg","reference_loaded_tilt_deg"],
+  "4.2": ["coverage","insertion_feasible_frac","declared_direction_feasible_frac","supported_prefix_frac","stable_prefix_frac","first_infeasible_step"],
+  "4.3": ["presence","placement","connection"],
+};
+const DNAME = {"1.1":"Integrity","1.2":"Stability","2.1":"Geometry","2.2":"Kinematics","3.1":"Decomposition","3.2":"Aesthetics (computed half)","3.3":"Creativity","4.1":"Material","4.2":"Assembly sequence","4.3":"Functional completeness"};
+
+function select(gk){
+  selected = gk;
+  document.querySelectorAll(".board tr.row").forEach(r=>r.classList.toggle("sel", r.dataset.g===gk));
+  const g = groups[gk]; const D = $("#detail"); D.innerHTML = "";
+  const head = el("div",{class:"detail-head"}, el("h3",{}, `${PRETTY[g.system]||g.system} · ${ARMS.find(a=>a[0]===g.tier)[1]}`));
+  const r0 = g.seeds[0];
+  const info = [];
+  if (r0.meta.transport) info.push(r0.meta.transport);
+  if (r0.meta.input) info.push("input: " + r0.meta.input);
+  if (r0.meta.protocol) info.push("protocol " + r0.meta.protocol);
+  head.append(el("span",{class:"sub"}, info.join(" · ")));
+  D.append(head);
+  const seeds = el("div",{class:"seeds"});
+  for (const r of g.seeds) {
+    const im = (DATA.images[r.key]||{}).grid;
+    const c = r.meta.counters || {};
+    const cap = el("div",{class:"cap"}, el("span",{class:"mono"}, `seed ${r.item.seed}`),
+      el("span",{}, `${r.dims["1.1"]?.metrics.n_parts ?? "—"} parts · ${r.dims["2.2"]?.metrics?.n_moving ?? 0} moving joints` + (c.tool_calls!=null ? ` · ${c.tool_calls} tool calls, ${c.check} checks, ${c.render} renders${c.create?`, ${c.create} created`:""}` : "")));
+    for (const n of r.notes||[]) cap.append(el("span",{class:"sub"}, n));
+    seeds.append(el("div",{class:"seed"}, im ? el("img",{src:im, alt:`Renders of ${PRETTY[g.system]||g.system} seed ${r.item.seed}: condition view, iso, front, side`, loading:"lazy"}) : null, cap));
+  }
+  D.append(seeds);
+  const M = el("div",{class:"metrics"});
+  for (const k of Object.keys(SHOW)) {
+    const ds = g.seeds.map(r=>r.dims[k]).filter(Boolean); if (!ds.length) continue;
+    const a = dimAgg(g,k);
+    const h = el("h4",{}, el("span",{}, `${k} ${DNAME[k]}`), el("span",{class:"mono"}, a && a.mean!=null ? fmt(a.mean) : (a? a.status.replace("_"," ") : "")));
+    const dl = el("dl");
+    for (const f of SHOW[k]) {
+      const vals = ds.map(d=>get(d.metrics,f)).filter(v=>v!=null && typeof v !== "object");
+      if (!vals.length) continue;
+      const v = typeof vals[0]==="number" ? mean(vals) : vals[0];
+      dl.append(el("dt",{}, f.replaceAll("_"," ").replace("shape vs reference as oriented.","shape: ").replace("role predicates.","")), el("dd",{}, fmt(v, Math.abs(v)<10?3:1)));
+    }
+    const blk = el("div",{class:"mblock"}, h, dl);
+    const notes = [...new Set(ds.flatMap(d=>d.notes||[]))];
+    if (notes.length) { const ul = el("ul",{class:"notes"}); notes.forEach(n=>ul.append(el("li",{},n))); blk.append(ul); }
+    M.append(blk);
+  }
+  D.append(M);
+}
+
+// ---------------- gallery
+function buildGallery(){
+  const G = $("#gallery");
+  for (const [tier] of ARMS) for (const g of Object.values(groups).filter(x=>x.tier===tier)) {
+    const r = g.seeds[0]; const im = (DATA.images[r.key]||{}).grid; if (!im) continue;
+    const b = el("button",{class:"card", type:"button"}, el("img",{src:im, alt:`${PRETTY[g.system]||g.system}, ${tier} seed 0`, loading:"lazy"}),
+      el("span",{class:"cap"}, el("span",{class:"sysname"}, PRETTY[g.system]||g.system), el("span",{class:"sub"}, ARMS.find(a=>a[0]===tier)[1].split(" · ")[0])));
+    b.addEventListener("click", ()=>{ select(g.tier+"|"+g.system); $("#board").scrollIntoView(); });
+    G.append(b);
+  }
+}
+
+// ---------------- claims matrix
+function claimScores(r){
+  const out = {};
+  for (const p of r.dims["3.1"]?.metrics?.required_parts || []) out[p.id] = p.score;
+  if (r.dims["3.1"]?.status === "skipped") for (const p of DATA.task.required_parts) out[p.id] = null;
+  for (const a of r.attributes || []) out[a.id] = a.score;
+  for (const k of r.dims["2.2"]?.metrics?.claims || []) out[k.id] = k.score;
+  for (const f of r.dims["4.3"]?.metrics?.subsystems || []) out[f.id] = r.dims["4.3"].status==="skipped" ? null : mean([f.presence, f.placement, f.connection].map(x=>x??0));
+  return out;
+}
+function buildClaims(){
+  const T = DATA.task;
+  const cols = [...T.required_parts.map(p=>[p.id,p.part]), ...T.attributes.map(a=>[a.id,a.kind.replace("_"," ")]), ...T.subsystems.map(f=>[f.id,f.subsystem]), ...T.kinematics.map(k=>[k.id,`${k.moving_part} ${k.motion}`])];
+  const t = $("#cm");
+  const h = el("tr",{}, el("th",{style:"text-align:left"},"system"));
+  for (const [id,t2] of cols) h.append(el("th",{}, id, el("span",{class:"t"}, t2)));
+  t.append(el("thead",{},h));
+  const body = el("tbody");
+  for (const [tier, title] of ARMS) {
+    const gs = Object.values(groups).filter(g=>g.tier===tier); if (!gs.length) continue;
+    body.append(el("tr",{class:"group"}, el("td",{colspan:String(cols.length+1), style:"text-align:left;background:var(--sunk);font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--graphite)"}, title)));
+    for (const g of gs) {
+      const tr = el("tr",{}, el("td",{class:"sys"}, PRETTY[g.system]||g.system));
+      const S = g.seeds.map(claimScores);
+      for (const [id] of cols) {
+        const vals = S.map(s=>s[id]).filter(v=>v!=null);
+        const v = vals.length ? mean(vals) : null;
+        tr.append(el("td",{title: v==null ? `${id}: not declared` : `${id}: ${fmt(v)}`}, v==null ? el("span",{class:"na"},"·") : el("span",{class:"dot", style:`background:${heat(v)}`})));
+      }
+      body.append(tr);
+    }
+  }
+  t.append(body);
+}
+
+// ---------------- method
+function buildMethod(){
+  const rows = [
+    ["Gate", "adjudicated + computed", "category judge on clay renders (two non-contestant VLMs); role coverage", "judge answers is_target; reported beside scores, not as a filter"],
+    ["1.1 Integrity", "computed", "the design itself", "score = mean(collision-free touching-pair rate, (largest-group volume share + part share)/2, whole-body rate). A pair collides when eroded-core overlap > 1 cm³ and > 10% of the smaller part (reference chair: 5.4%). Fail: largest group < 95% of volume or < 90% of parts, or interpenetration > 10% of volume."],
+    ["1.2 Stability", "computed", "reference tilt 22.1°", "critical tilt angle of the largest connected group, uniform density: min over 720 azimuths of atan(d(u)/h). Ground band = max(5 mm, 1% of height). score = tilt / reference tilt. Fail: tilt ≤ 0."],
+    ["2.1 Geometry", "computed", "reference geometry; population extents; reference seat height + its 56 mm gas-lift travel", "mean(size score 2^−mean|log2 ratio|, F-score@5 cm vs reference surface, role predicates: seat height, backrest above/behind/upright, wheel roundness + horizontal axle, column verticality, ground-contact clusters vs 5, armrests both sides). Unitless outputs: oracle scale and yaw, size not scored."],
+    ["2.2 Kinematics", "computed", "claims K1–K5; 12 annotated reference joints", "mean(claim recall, reference-joint F1 by Hungarian matching on role · type · axis angle · origin distance, achievable range ratio from a collision-checked sweep, declaration completeness). Axis tolerance 45°, origin scale 25% of reference diagonal."],
+    ["3.1 Decomposition", "computed", "claims P1–P6; reference role counts", "mean(required-part coverage with counts, 1 − role-histogram L1, granularity 2^−|log2(n/18)|, 1 − unrecognised-role share). Part IoU vs reference parts reported, not scored."],
+    ["3.2 Aesthetics", "computed + adjudicated", "reference symmetry 0.97; condition photo", "computed half: mean(min(1, mirror IoU / reference), aspect-ratio score). DINOv2 cosine to the photo and pairwise VLM ratings (both orders, Bradley–Terry, position bias reported) shown in separate columns."],
+    ["4.1 Material", "declared + computed", "claim A1 groups; reference Artiverse materials; P(material | role) over 117 chairs", "mean(declared coverage by volume, population likelihood P(c|r)/max P, reference role agreement, loaded tilt with Artiverse densities + 75 kg occupant / reference loaded tilt)."],
+    ["4.2 Assembly", "computed", "the declared sequence", "mean(coverage, straight-line insertion feasible along the declared direction or an axis, supported prefixes (no loose part held in the air), stable prefixes)."],
+    ["4.3 Function", "computed", "subsystems F1–F3", "presence of named parts; placement = 1 − distance of role centres to the reference's (normalised) / 0.5; connection = path ≤ 4 hops, through a moving joint when it carries motion. Three numbers, never merged."],
+    ["Attributes A", "computed proxies", "A1–A4", "A1 material groups covered; A2 seat height in reference range; A3 an adjustable (prismatic/cylindrical) joint on seat, back or arms; A4 a lever within 8 cm of column, swivel or seat."],
+  ];
+  const t = $("#method-table");
+  t.append(el("thead",{}, el("tr",{}, el("th",{},"Dimension"), el("th",{},"Depth"), el("th",{},"Compared against"), el("th",{},"Rule"))));
+  const b = el("tbody"); for (const r of rows) b.append(el("tr",{}, ...r.map(x=>el("td",{},x)))); t.append(b);
+  const cav = [
+    "One task, one condition (name only + image), two rounds, protocol v2.1. Claude arms ran one seed through a shell session (Claude Code subagents); open models ran three seeds through an OpenAI-compatible endpoint with text tool calls and at most two images in context.",
+    "Scores are rule-based and graded; the constants that turn raw numbers into scores are named in the method table and in ppbench/v2/evaluate.py. The judge columns have no human agreement figure yet.",
+    "Voxel resolution is 4 mm. Open pool meshes (e.g. the reference gas column) fill as shells, so their volume and mass are under-counted; those designs carry a degraded status.",
+    "External generators emit no roles, materials, joints or sequences (Cube3D + CubePart emits schema names as roles; PhysX-Anything emits joints and densities). Undeclared dimensions are skipped, never scored zero.",
+    "Brick generators produce real LEGO-scale output (0.4 mm per LDraw unit), so their size score is honest and low; their front is not declared, so yaw is aligned to the reference.",
+    "Dimension 2.3 (operability) and the simulated settle tests are not built.",
+    "Touching is decided on the 4 mm voxel grid (one dilated cell), so the effective contact tolerance is 4 mm to about 1 cm depending on alignment; the prompt says 'about 4 mm'. The same grid scores every design.",
+    "Tool-arm results are protocol v2.2. v2.0 and v2.1 runs were pilots: v2.1 added the measure tool; v2.2 made the check tool, the prompt and the evaluator share one joint-connection rule (a joint connects parts only when its origin is within 2 cm of both). Pilot runs are archived, not reported.",
+    "Role names are mapped to canonical roles by a hand-written table (ppbench/v2/lexicon.py); every name declared in these runs was checked against it, and the mapping cases are golden assertions.",
+  ];
+  for (const c of cav) $("#caveat-list").append(el("li",{},c));
+}
+
+buildLegend(); buildBoard(); buildGallery(); buildClaims(); buildMethod();
+const firstTool = Object.keys(groups).find(k=>k.startsWith("A|")) || Object.keys(groups)[0];
+if (firstTool) select(firstTool);
+</script>

@@ -1,0 +1,671 @@
+{
+ "system": "gemma-4-31b-it",
+ "tier": "B",
+ "meta": {
+  "protocol": "v2.2",
+  "task_id": "desk_lamp",
+  "tier": "B",
+  "condition_id": "name_only+image",
+  "rounds": 3,
+  "rounds_completed": 1,
+  "submitted_final": false,
+  "counters": {
+   "tool_calls": 18,
+   "errors": 10,
+   "check": 0,
+   "render": 0,
+   "create": 1
+  },
+  "round_counters": [
+   {
+    "tool_calls": 18,
+    "errors": 10,
+    "check": 0,
+    "render": 0,
+    "create": 1
+   }
+  ],
+  "created_parts": {},
+  "scale_mode": "metric",
+  "declares": {
+   "roles": true,
+   "materials": true,
+   "joints": true,
+   "sequence": true
+  },
+  "task_source": {
+   "file": "reference_data/benchmark_v2/core_v2.json",
+   "frozen_for": "core-set runs, harness v2.3",
+   "frozen": "2026-09-14",
+   "sha256": "442ae84645556b8876c5130c3443ee8f9c02ac701ee173c2c9c4f56c79efa486"
+  },
+  "wall_s": 116.5,
+  "pool_mesh_version": 2,
+  "transport": "openai-compatible text tool calls",
+  "checkpoint_round": 1
+ },
+ "item": {
+  "kind": "tool",
+  "system": "gemma-4-31b-it",
+  "tier": "B",
+  "condition": "name_only+image",
+  "trajectory_rounds": 3,
+  "seed": 0,
+  "namespace": "core_v2.4",
+  "task": "desk_lamp",
+  "snapshot": "task_snapshot_core.json",
+  "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+  "rounds": 1,
+  "checkpoint_round": 1,
+  "path": "results/v2/desk_lamp/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design"
+ },
+ "notes": [
+  "Level 1 recomputed under spec v3.3",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.2465580596571012,
+   "metrics": {
+    "n_parts": 3,
+    "n_components": 3,
+    "n_breaks": 2,
+    "anchored_volume_frac": 0.7396741789713036,
+    "break_score": 0.0,
+    "fastening_spec_rate": 0.0,
+    "n_fastened_connections": 0,
+    "connections_needed_to_span": 2,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 0.5798913929904345,
+    "n_components_fastened_only": 3,
+    "n_interfacing_pairs": 0,
+    "connection_evidence": {
+     "interlock": 0,
+     "fastened_joint": 0,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 0,
+    "resting_contacts": [],
+    "n_declared_joint_pairs": 0,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [
+     "shade",
+     "bulb"
+    ],
+    "shell_only_parts": []
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "not_applicable",
+   "score": null,
+   "metrics": {
+    "n_parts": 3,
+    "n_interfacing_pairs": 0
+   },
+   "notes": [
+    "no pair of parts interfaces at all: there is no interface to check for collision"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 1.0,
+   "metrics": {
+    "critical_tilt_deg": 27.267522113672733,
+    "tilt_direction_deg": 5.5,
+    "support_margin_m": 0.12235995599299045,
+    "support_margin_norm": 0.9387736899805866,
+    "support_area_m2": 0.053371164380499984,
+    "n_support_vertices": 189,
+    "com_height_m": 0.2373981521457559,
+    "ground_z": 0.0,
+    "total_weight": 0.004447104,
+    "com": [
+     0.007825864202861002,
+     8.571510807933105e-05,
+     0.2373981521457559
+    ],
+    "ground_band_m": 0.009246788620948791,
+    "z_top_m": 0.9246788620948792,
+    "push_force_ratio": 0.13232697427059317,
+    "shell_corrected_parts": [],
+    "n_parts_in_main_group": 1,
+    "n_parts": 3,
+    "stand_score": 1.0,
+    "push_score": 1.0,
+    "target_tilt_deg": 5.0,
+    "target_push_ratio": 0.05,
+    "reference_tilt_deg": 4.940247624877326,
+    "reference_push_ratio": 0.035747785872880654,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge",
+    "the design is in pieces (1 of 3 parts in the largest connected group): unattached parts still carry their mass, and support only where they reach the ground"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.2098305,
+   "metrics": {
+    "shape_normalised": {
+     "chamfer_m": 0.08602297815283663,
+     "fscore@0.01": 0.12504785927029038,
+     "fscore@0.025": 0.2098305
+    },
+    "best_yaw_deg": 180,
+    "front_consistent": false,
+    "shape_normalised_as_oriented": {
+     "chamfer_m": 0.09698206668297274,
+     "fscore@0.01": 0.10781224446337306,
+     "fscore@0.025": 0.1612468030324703
+    },
+    "design_diagonal_m": 0.9955245526132498,
+    "reference_diagonal_m": 0.7644762704778542,
+    "scale_ratio": 1.302230809585461,
+    "size_log2_ratio_vs_reference": 0.3809851768698517,
+    "tau_rel": [
+     0.01,
+     0.025
+    ]
+   },
+   "notes": [
+    "the reference is rescaled to the design's bounding diagonal: 2.1 is shape only",
+    "absolute size is reported as scale_ratio and size_log2_ratio_vs_reference, and is not scored"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "n_joints": 0,
+    "n_moving": 0,
+    "n_claimed_mechanisms": 3
+   },
+   "notes": [
+    "the task claims kinematics and the design declares no moving joint"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.7044444444444444,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6666666666666666,
+     "qwen2.5-vl-32b": 0.2962962962962963
+    },
+    "judge_mean": 0.48148148148148145,
+    "n_judges": 2,
+    "computed_score": 0.8,
+    "computed": {
+     "granularity_score": 0.6,
+     "consolidation_score": 1.0,
+     "joint_placement_rate": null,
+     "consolidation_violations": 0,
+     "n_declared_joint_pairs": 0
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.5555555555555556,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6666666666666666,
+     "qwen2.5-vl-32b": 0.4444444444444444
+    },
+    "judge_mean": 0.5555555555555556,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": 0.42731908030354493
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "declared+computed",
+   "status": "pass",
+   "score": 0.75,
+   "metrics": {
+    "coverage_volume_frac": 1.0,
+    "claim_class_coverage": 0.5,
+    "claimed_class_groups": [
+     [
+      "glass"
+     ],
+     [
+      "textile"
+     ]
+    ],
+    "design_classes": [
+     "glass",
+     "heavy_metal"
+    ],
+    "total_mass_kg": 34.8624888704
+   },
+   "notes": [
+    "densities are Artiverse medians; volumes of open meshes are under-counted",
+    "the population prior and the per-task load case of v2 are dropped as task-specific"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "declared": false
+   },
+   "notes": [
+    "no assembly sequence declared"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.3333333333333333,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": true,
+    "n_requirements_disabled_by_ceiling": 3,
+    "n_requirements_declared_only": 7,
+    "declared_part_coverage": 0.14285714285714285,
+    "n_capabilities": 3,
+    "n_capabilities_zero": 2,
+    "capability_scores": {
+     "F1": 0.0,
+     "F3": 1.0,
+     "H1": 0.0
+    },
+    "mean_of_means": 0.611111111111111,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Support and Positioning",
+      "claims": [
+       "F1"
+      ],
+      "score": 0.0,
+      "mean": 0.3333333333333333,
+      "n_requirements": 6,
+      "n_disabled": 1,
+      "n_declared_only": 1,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "base",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "base"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "stand or body",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "upper arm",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "forearm",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "lamp head",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "shade"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "stand or body",
+        "type": "revolute",
+        "axis": "vertical axis through the base",
+        "claim": "K1",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "role": "upper arm",
+        "type": "revolute",
+        "axis": null,
+        "claim": "K2",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "forearm",
+        "type": "revolute",
+        "axis": null,
+        "claim": "K3",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "F3",
+      "name": "Lighting System",
+      "claims": [
+       "F3"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 1,
+      "n_disabled": 2,
+      "n_declared_only": 2,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "lightbulb socket",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "electric light",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "bulb"
+         ]
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "lampshade",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "shade"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "electric light",
+        "to": "lightbulb socket",
+        "carries": "electricity",
+        "claim": "F3",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 1,
+         "to_n": 0
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "from": "lampshade",
+        "to": "electric light",
+        "carries": "light",
+        "claim": "F3",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "from_n": 1,
+         "to_n": 1,
+         "carries": "light"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "the head is carried at the end of the arm",
+      "claims": [
+       "P5"
+      ],
+      "score": 0.0,
+      "mean": 0.5,
+      "n_requirements": 2,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "colocated",
+      "requirements": [
+       {
+        "a": "lamp head",
+        "b": "forearm",
+        "max_gap_m": 0.06,
+        "claim": "P5",
+        "pred": "colocated",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "a_n": 1,
+         "b_n": 0
+        },
+        "reference_score": 1.0
+       },
+       {
+        "anchor": "lamp head",
+        "placement": "below",
+        "w": 0.25,
+        "d": 0.25,
+        "h": 0.25,
+        "min_free": 0.7,
+        "claim": "P5",
+        "pred": "clearance",
+        "score": 1.0,
+        "detail": {
+         "free_frac": 1.0,
+         "need_free": 0.7,
+         "box_m3": 0.015,
+         "placement": "below",
+         "anchor": [
+          "shade"
+         ]
+        },
+        "reference_score": 1.0
+       }
+      ]
+     }
+    ]
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared",
+    "3 requirement(s) disabled: the task's own reference object does not pass them",
+    "7 part(s) the reference cannot show either are reported as declared_part_coverage, not scored"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.24242424242424243,
+   "metrics": {
+    "declared_roles": true,
+    "n_parts": 3,
+    "required_part_coverage": 0.25,
+    "subsystem_part_coverage": 0.22727272727272727,
+    "kinematic_part_coverage": 0.25,
+    "groups": {
+     "required_parts": {
+      "n": 6,
+      "score": 0.25,
+      "missing": [
+       "stand or body",
+       "upper arm",
+       "forearm",
+       "balancing mechanism"
+      ],
+      "present_but_floating": [
+       "lamp head"
+      ]
+     },
+     "subsystem_parts": {
+      "n": 11,
+      "score": 0.22727272727272727,
+      "missing": [
+       "counterweights",
+       "forearm",
+       "friction elements",
+       "lightbulb socket",
+       "springs",
+       "stand or body",
+       "upper arm"
+      ],
+      "present_but_floating": [
+       "electric light",
+       "lamp head",
+       "lampshade"
+      ]
+     },
+     "kinematic_parts": {
+      "n": 4,
+      "score": 0.25,
+      "missing": [
+       "forearm",
+       "stand or body",
+       "upper arm"
+      ],
+      "present_but_floating": []
+     }
+    },
+    "unrecognised_roles": [],
+    "unrecognised_role_frac": 0.0,
+    "subsystem_connection": 0.0,
+    "subsystem_presence_v31": 0.35555555555555557
+   },
+   "notes": [
+    "score = mean of the three claim-group coverages; a role that exists but floats off the assembly scores 0.5",
+    "matching is the task's own auto lexicon plus its authored bridges, never a hand-written per-object predicate"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.5208235177518614,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.75,
+     "qwen2.5-vl-32b": 0.2777777777777778
+    },
+    "judge_mean": 0.5138888888888888,
+    "n_judges": 2,
+    "computed_score": 0.5370043184321306,
+    "computed": {
+     "part_correspondence_iou": 0.08466278378347518,
+     "symmetry_match": 0.989345853080786,
+     "symmetry_iou": 0.9431028779358254,
+     "reference_symmetry_iou": 0.933160845191893
+    }
+   },
+   "notes": [
+    "0.70 judge + 0.30 computed"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [
+   "1.1",
+   "2.3",
+   "4.2"
+  ],
+  "buildable": false,
+  "overall": 0.41481542301513985,
+  "n_scored_dims": 11,
+  "gate_pending": true
+ },
+ "stamp": "1789541165.347114|v3.1|v3.2|v3.3|v3.4.3"
+}

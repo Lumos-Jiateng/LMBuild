@@ -1,0 +1,54 @@
+{
+ "task": "bookcase",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Storage System",
+   "function": "Provides horizontal surfaces to hold and organize books and other items.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "shelf",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame or cabinet structure",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "shelves hold contents and admit them",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "shelf",
+     "min_area_m2": 0.08,
+     "claim": "P1"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "shelf",
+     "placement": "above",
+     "w": 0.25,
+     "d": 0.2,
+     "h": 0.22,
+     "min_free": 0.8,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

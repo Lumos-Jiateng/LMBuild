@@ -1,0 +1,30 @@
+\begin{table}[t]
+\centering
+\caption{Agreement of system-level scores across task sets: Pearson $r$ (Spearman $\rho$ in parentheses) over the 30 systems' means (19 agents for Realization, where generators are N/A). A vs.\ B compares two disjoint 50-object samples; the last two columns repeat the stratified draw 1{,}000 times (mean, 95\% interval in brackets). Sample-vs-full correlations are an upper bound because each sample is part of the full set.}
+\label{tab:resample_corr}
+\resizebox{\columnwidth}{!}{
+\begin{tabular}{l|ccc|cc}
+\toprule
+\multirow{2}{*}{\textbf{Metric}} & \multirow{2}{*}{\textbf{A vs.\ 200}} & \multirow{2}{*}{\textbf{B vs.\ 200}} & \multirow{2}{*}{\textbf{A vs.\ B}} & \multicolumn{2}{c}{\textbf{1{,}000 resamples}} \\
+\cmidrule(lr){5-6}
+ & & & & \textbf{50 vs.\ 200} & \textbf{disjoint pairs} \\
+\midrule
+S.1 & 0.982 (0.97) & 0.986 (0.97) & 0.960 (0.95) & 0.987 [0.98, 0.99] & 0.967 [0.94, 0.98] \\
+S.2 & 0.990 (0.96) & 0.995 (0.98) & 0.981 (0.96) & 0.989 [0.98, 1.00] & 0.972 [0.95, 0.99] \\
+S.3 & 0.991 (0.99) & 0.978 (0.97) & 0.960 (0.96) & 0.983 [0.97, 0.99] & 0.957 [0.93, 0.98] \\
+\midrule
+A.1 & 0.994 (0.99) & 0.981 (0.98) & 0.967 (0.96) & 0.990 [0.98, 1.00] & 0.975 [0.95, 0.99] \\
+A.2 & 0.991 (0.98) & 0.986 (0.99) & 0.966 (0.95) & 0.991 [0.98, 1.00] & 0.977 [0.96, 0.99] \\
+A.3 & 0.992 (0.94) & 0.995 (0.98) & 0.987 (0.92) & 0.992 [0.99, 1.00] & 0.980 [0.96, 0.99] \\
+\midrule
+D.1 & 0.992 (0.99) & 0.995 (0.99) & 0.988 (0.99) & 0.991 [0.98, 1.00] & 0.977 [0.96, 0.99] \\
+D.2 & 0.993 (0.98) & 0.989 (0.98) & 0.975 (0.97) & 0.988 [0.98, 0.99] & 0.970 [0.95, 0.98] \\
+D.3 & 0.994 (1.00) & 0.990 (0.98) & 0.979 (0.97) & 0.990 [0.98, 1.00] & 0.975 [0.96, 0.99] \\
+\midrule
+R.1 & 0.984 (0.96) & 0.988 (0.98) & 0.959 (0.94) & 0.989 [0.98, 1.00] & 0.970 [0.94, 0.99] \\
+R.2 & 0.982 (0.95) & 0.979 (0.95) & 0.937 (0.86) & 0.982 [0.96, 0.99] & 0.953 [0.91, 0.98] \\
+R.3 & 0.987 (0.95) & 0.994 (0.98) & 0.980 (0.93) & 0.987 [0.98, 0.99] & 0.967 [0.94, 0.98] \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

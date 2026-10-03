@@ -1,0 +1,668 @@
+{
+ "system": "qwen3.5-27b",
+ "tier": "B",
+ "meta": {
+  "protocol": "v2.2",
+  "task_id": "stepladder",
+  "tier": "B",
+  "condition_id": "name_only+image",
+  "rounds": 3,
+  "rounds_completed": 1,
+  "submitted_final": false,
+  "counters": {
+   "tool_calls": 61,
+   "errors": 0,
+   "check": 3,
+   "render": 1,
+   "create": 5
+  },
+  "round_counters": [
+   {
+    "tool_calls": 61,
+    "errors": 0,
+    "check": 3,
+    "render": 1,
+    "create": 5
+   }
+  ],
+  "created_parts": {
+   "ladder_side": {
+    "size_m": [
+     0.6083,
+     0.1366,
+     1.6
+    ],
+    "volume_m3": 0.04406969297815021,
+    "n_pieces": 1,
+    "piece_volumes_m3": [
+     0.044069693
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     -0.8
+    ],
+    "n_triangles": 156
+   },
+   "ladder_step": {
+    "size_m": [
+     0.65,
+     0.25,
+     0.03
+    ],
+    "volume_m3": 0.004875,
+    "n_pieces": 1,
+    "piece_volumes_m3": [
+     0.004875
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     -0.0
+    ],
+    "n_triangles": 12
+   },
+   "ladder_leg_pair": {
+    "size_m": [
+     0.8987,
+     0.2757,
+     1.74
+    ],
+    "volume_m3": 0.03228470332051367,
+    "n_pieces": 3,
+    "piece_volumes_m3": [
+     0.015242352,
+     0.015242352,
+     0.0018
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     -0.87
+    ],
+    "n_triangles": 84
+   },
+   "ladder_side_frame": {
+    "size_m": [
+     0.6,
+     0.1144,
+     1.7
+    ],
+    "volume_m3": 0.031538489752058786,
+    "n_pieces": 1,
+    "piece_volumes_m3": [
+     0.03153849
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     -0.85
+    ],
+    "n_triangles": 120
+   },
+   "top_platform": {
+    "size_m": [
+     0.6,
+     0.4,
+     0.03
+    ],
+    "volume_m3": 0.0072,
+    "n_pieces": 1,
+    "piece_volumes_m3": [
+     0.0072
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     -0.0
+    ],
+    "n_triangles": 12
+   }
+  },
+  "scale_mode": "metric",
+  "declares": {
+   "roles": true,
+   "materials": true,
+   "joints": true,
+   "sequence": true
+  },
+  "task_source": {
+   "file": "reference_data/benchmark_v2/core_v2.json",
+   "frozen_for": "core-set runs, harness v2.3",
+   "frozen": "2026-09-14",
+   "sha256": "442ae84645556b8876c5130c3443ee8f9c02ac701ee173c2c9c4f56c79efa486"
+  },
+  "wall_s": 3255.1,
+  "pool_mesh_version": 2,
+  "transport": "openai-compatible text tool calls",
+  "checkpoint_round": 1
+ },
+ "item": {
+  "kind": "tool",
+  "system": "qwen3.5-27b",
+  "tier": "B",
+  "condition": "name_only+image",
+  "trajectory_rounds": 3,
+  "seed": 0,
+  "namespace": "core_v2.4",
+  "task": "stepladder",
+  "snapshot": "task_snapshot_core.json",
+  "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+  "rounds": 1,
+  "checkpoint_round": 1,
+  "path": "results/v2/stepladder/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design"
+ },
+ "notes": [
+  "Level 1 recomputed under spec v3.3",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "n_parts": 8,
+    "n_components": 1,
+    "n_breaks": 0,
+    "anchored_volume_frac": 1.0,
+    "break_score": 1.0,
+    "fastening_spec_rate": 1.0,
+    "n_fastened_connections": 12,
+    "connections_needed_to_span": 7,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 1.0,
+    "n_components_fastened_only": 1,
+    "n_interfacing_pairs": 12,
+    "connection_evidence": {
+     "interlock": 12,
+     "fastened_joint": 0,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 0,
+    "resting_contacts": [],
+    "n_declared_joint_pairs": 0,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [],
+    "shell_only_parts": []
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "collision_free_pair_rate": 1.0,
+    "n_interfacing_pairs": 12,
+    "n_colliding_pairs": 0,
+    "n_declared_joint_pairs": 0,
+    "n_colliding_joint_pairs": 0,
+    "pen_volume_frac": 0.030407399640975358,
+    "pen_volume_cm3": 3211.0720000000006,
+    "worst_pair_frac_of_smaller": 0.07985030755774773,
+    "graded_penetration_score": 0.6959260035902464,
+    "voxel_res_m": 0.004,
+    "colliding_pairs": []
+   },
+   "notes": [
+    "score = 1 - n_colliding / n_interfacing_pairs over EVERY interfacing pair, declared joints included",
+    "a pair collides when the eroded-core overlap exceeds 1 cm3 and 10% of the smaller part (25% when the design declares a joint there)"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.17180405924680714,
+   "metrics": {
+    "critical_tilt_deg": 3.5104866110365065,
+    "tilt_direction_deg": 90.0,
+    "support_margin_m": 0.0569653057648789,
+    "support_margin_norm": 0.2705626295030725,
+    "support_area_m2": 0.13926279791200002,
+    "n_support_vertices": 31,
+    "com_height_m": 0.9285853479519025,
+    "ground_z": -2.3841858265427618e-08,
+    "total_weight": 0.10560166400000001,
+    "com": [
+     -3.262978886384255e-06,
+     1.969423512113942e-05,
+     0.9285853241100442
+    ],
+    "ground_band_m": 0.01700000071525574,
+    "z_top_m": 1.7000000476837158,
+    "push_force_ratio": 0.03350900198125194,
+    "shell_corrected_parts": [],
+    "n_parts_in_main_group": 8,
+    "n_parts": 8,
+    "stand_score": 0.1680052845240748,
+    "push_score": 0.17560283396953952,
+    "target_tilt_deg": 20.89509637140885,
+    "target_push_ratio": 0.1908226719567891,
+    "reference_tilt_deg": 20.89509637140885,
+    "reference_push_ratio": 0.1908226719567891,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.25889759652509653,
+   "metrics": {
+    "shape_normalised": {
+     "chamfer_m": 0.05807677727514057,
+     "fscore@0.01": 0.09414584761402585,
+     "fscore@0.025": 0.25889759652509653
+    },
+    "best_yaw_deg": 0,
+    "front_consistent": true,
+    "shape_normalised_as_oriented": {
+     "chamfer_m": 0.05807677727514057,
+     "fscore@0.01": 0.09414584761402585,
+     "fscore@0.025": 0.25889759652509653
+    },
+    "design_diagonal_m": 2.1476732172179567,
+    "reference_diagonal_m": 1.7653858597449514,
+    "scale_ratio": 1.2165460629260025,
+    "size_log2_ratio_vs_reference": 0.28279094707189134,
+    "tau_rel": [
+     0.01,
+     0.025
+    ]
+   },
+   "notes": [
+    "the reference is rescaled to the design's bounding diagonal: 2.1 is shape only",
+    "absolute size is reported as scale_ratio and size_log2_ratio_vs_reference, and is not scored"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "n_joints": 0,
+    "n_moving": 0,
+    "n_claimed_mechanisms": 1
+   },
+   "notes": [
+    "the task claims kinematics and the design declares no moving joint"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.701111111111111,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6666666666666666,
+     "qwen2.5-vl-32b": 0.7407407407407408
+    },
+    "judge_mean": 0.7037037037037037,
+    "n_judges": 2,
+    "computed_score": 0.7,
+    "computed": {
+     "granularity_score": 0.4,
+     "consolidation_score": 1.0,
+     "joint_placement_rate": null,
+     "consolidation_violations": 0,
+     "n_declared_joint_pairs": 0
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.5555555555555556,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5555555555555556,
+     "qwen2.5-vl-32b": 0.5555555555555556
+    },
+    "judge_mean": 0.5555555555555556,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": 0.521854681474994
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "declared+computed",
+   "status": "pass",
+   "score": 0.6666666666666666,
+   "metrics": {
+    "coverage_volume_frac": 1.0,
+    "claim_class_coverage": 0.3333333333333333,
+    "claimed_class_groups": [
+     [
+      "heavy_metal",
+      "light_metal"
+     ],
+     [
+      "wood"
+     ],
+     [
+      "plastic"
+     ]
+    ],
+    "design_classes": [
+     "wood"
+    ],
+    "total_mass_kg": 68.65164176640002
+   },
+   "notes": [
+    "densities are Artiverse medians; volumes of open meshes are under-counted",
+    "the population prior and the per-task load case of v2 are dropped as task-specific"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "coverage": 1.0,
+    "insertion_feasible_frac": 1.0,
+    "declared_direction_feasible_frac": 0.5,
+    "first_infeasible_step": null,
+    "supported_prefix_frac": 1.0,
+    "stable_prefix_frac": 1.0,
+    "n_steps": 8
+   },
+   "notes": [
+    "insertion paths are straight translations along the declared direction or the six axes"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.3333333333333333,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": true,
+    "n_requirements_disabled_by_ceiling": 1,
+    "n_requirements_declared_only": 2,
+    "declared_part_coverage": 0.0,
+    "n_capabilities": 3,
+    "n_capabilities_zero": 2,
+    "capability_scores": {
+     "F1": 0.0,
+     "P": 0.0,
+     "H1": 1.0
+    },
+    "mean_of_means": 0.5,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Folding Mechanism",
+      "claims": [
+       "F1"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 1,
+      "n_disabled": 0,
+      "n_declared_only": 1,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "hinge",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "stays",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "P",
+      "name": "required subsystems the claims name but no subsystem covers",
+      "claims": [
+       "P1",
+       "P2",
+       "P5"
+      ],
+      "score": 0.0,
+      "mean": 0.5,
+      "n_requirements": 2,
+      "n_disabled": 0,
+      "n_declared_only": 1,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "stringers",
+        "claim": "P1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "steps",
+        "claim": "P2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 5,
+         "need": 1,
+         "parts": [
+          "step1",
+          "step2",
+          "step3",
+          "step4",
+          "step5"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "feet",
+        "claim": "P5",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "the steps can be climbed",
+      "claims": [
+       "P2"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 2,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "surface",
+      "requirements": [
+       {
+        "role": "steps",
+        "min_area_m2": 0.03,
+        "claim": "P2",
+        "pred": "surface",
+        "score": 1.0,
+        "detail": {
+         "area_m2": 0.167936,
+         "need_m2": 0.03,
+         "top_z_m": 1.5149999856948853
+        },
+        "reference_score": 1.0
+       },
+       {
+        "anchor": "steps",
+        "placement": "above",
+        "w": 0.35,
+        "d": 0.25,
+        "h": 0.6,
+        "min_free": 0.7,
+        "claim": "P2",
+        "pred": "clearance",
+        "score": 1.0,
+        "detail": {
+         "free_frac": 0.868,
+         "need_free": 0.7,
+         "box_m3": 0.052499999999999984,
+         "placement": "above",
+         "anchor": [
+          "step1",
+          "step2",
+          "step3",
+          "step4",
+          "step5"
+         ]
+        },
+        "reference_score": 1.0
+       }
+      ]
+     }
+    ]
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared",
+    "1 requirement(s) disabled: the task's own reference object does not pass them",
+    "2 part(s) the reference cannot show either are reported as declared_part_coverage, not scored"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.06666666666666667,
+   "metrics": {
+    "declared_roles": true,
+    "n_parts": 8,
+    "required_part_coverage": 0.2,
+    "subsystem_part_coverage": 0.0,
+    "kinematic_part_coverage": 0.0,
+    "groups": {
+     "required_parts": {
+      "n": 5,
+      "score": 0.2,
+      "missing": [
+       "stringers",
+       "hinge",
+       "stays",
+       "feet"
+      ],
+      "present_but_floating": []
+     },
+     "subsystem_parts": {
+      "n": 2,
+      "score": 0.0,
+      "missing": [
+       "hinge",
+       "stays"
+      ],
+      "present_but_floating": []
+     },
+     "kinematic_parts": {
+      "n": 2,
+      "score": 0.0,
+      "missing": [
+       "each other",
+       "ladder halves"
+      ],
+      "present_but_floating": []
+     }
+    },
+    "unrecognised_roles": [
+     "left ladder frame",
+     "right ladder frame",
+     "top platform"
+    ],
+    "unrecognised_role_frac": 0.375,
+    "subsystem_connection": null,
+    "subsystem_presence_v31": 0.0
+   },
+   "notes": [
+    "score = mean of the three claim-group coverages; a role that exists but floats off the assembly scores 0.5",
+    "matching is the task's own auto lexicon plus its authored bridges, never a hand-written per-object predicate"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.6524488149360772,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.75,
+     "qwen2.5-vl-32b": 0.7222222222222221
+    },
+    "judge_mean": 0.736111111111111,
+    "n_judges": 2,
+    "computed_score": 0.4572367905276651,
+    "computed": {
+     "part_correspondence_iou": 0.013509826681617348,
+     "symmetry_match": 0.9009637543737128,
+     "symmetry_iou": 0.9748432860442098,
+     "reference_symmetry_iou": 0.8869983041266252
+    }
+   },
+   "notes": [
+    "0.70 judge + 0.30 computed"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [
+   "2.3"
+  ],
+  "buildable": true,
+  "overall": 0.5338736503367761,
+  "n_scored_dims": 12,
+  "gate_pending": true
+ },
+ "stamp": "1789531394.8535995|v3.1|v3.2|v3.3|v3.4.3"
+}

@@ -1,0 +1,91 @@
+annotator,item_id,design,task,system,role,eval_key,dim,dim_name,score_1_5,score_norm,seconds,saved_at
+A1,d1049_3.1,d1049,swivel_office_chair,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.1,decomposition,2,0.25,6,2026-09-21T11:43:04
+A1,d1134_3.2,d1134,swivel_office_chair,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.2,aesthetics,4,0.75,4,2026-09-21T11:36:38
+A1,d1167_3.1,d1167,oscillating_fan,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.1,decomposition,2,0.25,3,2026-09-21T11:44:17
+A1,d1167_3.3,d1167,oscillating_fan,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.3,structure_alignment,3,0.5,3,2026-09-21T11:40:19
+A1,d1332_3.3,d1332,desk_lamp,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.3,structure_alignment,1,0.0,6,2026-09-21T11:40:04
+A1,d1456_3.3,d1456,wheeled_excavator,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.3,structure_alignment,1,0.0,4,2026-09-21T11:39:43
+A1,d1573_3.3,d1573,bench_drill_press,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.3,structure_alignment,4,0.75,7,2026-09-21T11:39:16
+A1,d1602_3.1,d1602,offroad_jeep,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,5,2026-09-21T11:43:52
+A1,d1635_3.3,d1635,swivel_office_chair,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.3,structure_alignment,5,1.0,2,2026-09-21T11:40:40
+A1,d1669_3.1,d1669,bed_frame,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,6,2026-09-21T11:44:02
+A1,d1745_3.2,d1745,offroad_jeep,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.2,aesthetics,4,0.75,4,2026-09-21T11:38:28
+A1,d1746_3.2,d1746,chest_of_drawers,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.2,aesthetics,5,1.0,6,2026-09-21T11:38:24
+A1,d1922_3.2,d1922,bench_drill_press,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.2,aesthetics,1,0.0,2,2026-09-21T11:38:18
+A1,d2019_3.1,d2019,dining_table,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,23,2026-09-21T11:41:20
+A1,d2137_3.2,d2137,wheeled_excavator,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.2,aesthetics,2,0.25,2,2026-09-21T11:36:27
+A1,d2153_3.1,d2153,passenger_car,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.1,decomposition,1,0.0,2,2026-09-21T11:43:47
+A1,d2274_3.3,d2274,offroad_jeep,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.3,structure_alignment,2,0.25,4,2026-09-21T11:40:23
+A1,d2830_3.1,d2830,oscillating_fan,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.1,decomposition,1,0.0,2,2026-09-21T11:43:20
+A1,d3017_3.3,d3017,bed_frame,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.3,structure_alignment,5,1.0,2,2026-09-21T11:39:24
+A1,d3055_3.1,d3055,bench_drill_press,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.1,decomposition,4,0.75,5,2026-09-21T11:42:13
+A1,d3066_3.1,d3066,stepladder,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.1,decomposition,4,0.75,7,2026-09-21T11:43:27
+A1,d3189_3.3,d3189,chest_of_drawers,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.3,structure_alignment,1,0.0,4,2026-09-21T11:40:27
+A1,d3221_3.3,d3221,refrigerator,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.3,structure_alignment,5,1.0,4,2026-09-21T11:39:06
+A1,d3262_3.3,d3262,dining_table,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.3,structure_alignment,5,1.0,4,2026-09-21T11:40:38
+A1,d3486_3.2,d3486,desk_lamp,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.2,aesthetics,4,0.75,3,2026-09-21T11:37:30
+A1,d3541_3.2,d3541,oscillating_fan,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.2,aesthetics,3,0.5,2,2026-09-21T11:36:29
+A1,d3585_3.1,d3585,stepladder,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.1,decomposition,3,0.5,10,2026-09-21T11:42:44
+A1,d3586_3.3,d3586,refrigerator,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.3,structure_alignment,4,0.75,4,2026-09-21T11:39:59
+A1,d3791_3.1,d3791,oscillating_steam_engine,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.1,decomposition,2,0.25,12,2026-09-21T11:41:54
+A1,d3973_3.2,d3973,refrigerator,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.2,aesthetics,4,0.75,5,2026-09-21T11:37:26
+A1,d3993_3.3,d3993,oscillating_steam_engine,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.3,structure_alignment,4,0.75,4,2026-09-21T11:40:12
+A1,d4024_3.1,d4024,swivel_office_chair,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,8,2026-09-21T11:44:25
+A1,d4081_3.1,d4081,passenger_car,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.1,decomposition,2,0.25,10,2026-09-21T11:42:54
+A1,d4081_3.3,d4081,passenger_car,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.3,structure_alignment,3,0.5,20,2026-09-21T11:39:01
+A1,d4085_3.3,d4085,chest_of_drawers,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.3,structure_alignment,4,0.75,3,2026-09-21T11:39:33
+A1,d4120_3.1,d4120,offroad_jeep,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.1,decomposition,2,0.25,4,2026-09-21T11:43:56
+A1,d4160_3.3,d4160,bed_frame,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.3,structure_alignment,5,1.0,2,2026-09-21T11:39:40
+A1,d4179_3.2,d4179,bed_frame,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.2,aesthetics,5,1.0,4,2026-09-21T11:37:05
+A1,d4245_3.2,d4245,scissor_car_jack,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.2,aesthetics,2,0.25,1,2026-09-21T11:37:42
+A1,d4245_3.3,d4245,scissor_car_jack,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.3,structure_alignment,4,0.75,4,2026-09-21T11:40:16
+A1,d4253_3.1,d4253,wheeled_excavator,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.1,decomposition,5,1.0,3,2026-09-21T11:43:17
+A1,d4342_3.2,d4342,oscillating_steam_engine,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.2,aesthetics,4,0.75,1,2026-09-21T11:37:01
+A1,d4675_3.1,d4675,oscillating_fan,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,6,2026-09-21T11:42:08
+A1,d4806_3.1,d4806,stepladder,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.1,decomposition,1,0.0,1,2026-09-21T11:43:40
+A1,d4960_3.2,d4960,offroad_jeep,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.2,aesthetics,4,0.75,3,2026-09-21T11:37:35
+A1,d5335_3.2,d5335,desk_lamp,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.2,aesthetics,2,0.25,5,2026-09-21T11:37:47
+A1,d5356_3.2,d5356,oscillating_steam_engine,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.2,aesthetics,5,1.0,1,2026-09-21T11:37:00
+A1,d5366_3.3,d5366,desk_lamp,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.3,structure_alignment,2,0.25,1,2026-09-21T11:40:45
+A1,d5529_3.2,d5529,wheelchair,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.2,aesthetics,1,0.0,8,2026-09-21T11:38:06
+A1,d5680_3.3,d5680,scissor_car_jack,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.3,structure_alignment,4,0.75,6,2026-09-21T11:40:35
+A1,d5691_3.1,d5691,chest_of_drawers,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.1,decomposition,2,0.25,7,2026-09-21T11:44:33
+A1,d5698_3.3,d5698,wheeled_excavator,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.3,structure_alignment,5,1.0,4,2026-09-21T11:39:55
+A1,d6218_3.3,d6218,swivel_office_chair,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.3,structure_alignment,5,1.0,2,2026-09-21T11:40:57
+A1,d6271_3.3,d6271,wheelchair,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.3,structure_alignment,4,0.75,7,2026-09-21T11:39:51
+A1,d6353_3.1,d6353,dining_table,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,4,2026-09-21T11:42:57
+A1,d6358_3.1,d6358,passenger_car,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.1,decomposition,5,1.0,3,2026-09-21T11:43:14
+A1,d6417_3.2,d6417,passenger_car,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.2,aesthetics,2,0.25,3,2026-09-21T11:38:31
+A1,d6656_3.1,d6656,refrigerator,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.1,decomposition,3,0.5,8,2026-09-21T11:42:02
+A1,d6715_3.1,d6715,passenger_car,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,23,2026-09-21T11:41:42
+A1,d6861_3.1,d6861,wheeled_excavator,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.1,decomposition,4,0.75,12,2026-09-21T11:44:14
+A1,d7211_3.2,d7211,passenger_car,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.2,aesthetics,4,0.75,8,2026-09-21T11:37:22
+A1,d7261_3.2,d7261,swivel_office_chair,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.2,aesthetics,1,0.0,6,2026-09-21T11:38:12
+A1,d7270_3.3,d7270,dining_table,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.3,structure_alignment,2,0.25,4,2026-09-21T11:39:37
+A1,d7287_3.1,d7287,desk_lamp,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.1,decomposition,1,0.0,7,2026-09-21T11:43:11
+A1,d7293_3.2,d7293,desk_lamp,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.2,aesthetics,4,0.75,2,2026-09-21T11:37:32
+A1,d7337_3.3,d7337,stepladder,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.3,structure_alignment,2,0.25,3,2026-09-21T11:40:53
+A1,d7491_3.1,d7491,dining_table,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.1,decomposition,4,0.75,5,2026-09-21T11:44:38
+A1,d7645_3.2,d7645,wheeled_excavator,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.2,aesthetics,1,0.0,2,2026-09-21T11:38:34
+A1,d7735_3.2,d7735,chest_of_drawers,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.2,aesthetics,3,0.5,9,2026-09-21T11:37:14
+A1,d7950_3.1,d7950,oscillating_steam_engine,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.1,decomposition,4,0.75,6,2026-09-21T11:42:34
+A1,d7955_3.1,d7955,scissor_car_jack,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.1,decomposition,4,0.75,1,2026-09-21T11:42:27
+A1,d8108_3.2,d8108,bench_drill_press,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.2,aesthetics,4,0.75,6,2026-09-21T11:36:50
+A1,d8272_3.1,d8272,bed_frame,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,3,2026-09-21T11:43:30
+A1,d8426_3.3,d8426,wheelchair,gemma-4-31b-it,"open, weaker (Gemma)",gemma-4-31b-it__B__name_only+image__r3__s0__round1,3.3,structure_alignment,1,0.0,2,2026-09-21T11:40:29
+A1,d8429_3.3,d8429,stepladder,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.3,structure_alignment,4,0.75,3,2026-09-21T11:40:08
+A1,d8613_3.2,d8613,scissor_car_jack,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.2,aesthetics,1,0.0,2,2026-09-21T11:38:35
+A1,d8731_3.1,d8731,wheelchair,partpacker,domain-specific: image -> part-level 3D,partpacker__ext__image__s0,3.1,decomposition,3,0.5,8,2026-09-21T11:42:21
+A1,d8737_3.3,d8737,chest_of_drawers,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.3,structure_alignment,5,1.0,2,2026-09-21T11:40:50
+A1,d8991_3.2,d8991,bed_frame,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.2,aesthetics,1,0.0,4,2026-09-21T11:36:34
+A1,d8991_3.3,d8991,bed_frame,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.3,structure_alignment,1,0.0,2,2026-09-21T11:40:55
+A1,d9090_3.3,d9090,oscillating_steam_engine,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.3,structure_alignment,2,0.25,3,2026-09-21T11:40:48
+A1,d9230_3.2,d9230,scissor_car_jack,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.2,aesthetics,1,0.0,4,2026-09-21T11:38:16
+A1,d9345_3.2,d9345,bench_drill_press,claude-sonnet-5,closed API (Anthropic),claude-sonnet-5__B__name_only+image__r3__s0__round1,3.2,aesthetics,4,0.75,7,2026-09-21T11:36:44
+A1,d9558_3.2,d9558,refrigerator,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.2,aesthetics,1,0.0,3,2026-09-21T11:38:42
+A1,d9690_3.2,d9690,dining_table,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.2,aesthetics,3,0.5,3,2026-09-21T11:37:58
+A1,d9723_3.1,d9723,wheelchair,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.1,decomposition,5,1.0,4,2026-09-21T11:43:44
+A1,d9787_3.2,d9787,bench_drill_press,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.2,aesthetics,3,0.5,8,2026-09-21T11:37:55
+A1,d9798_3.2,d9798,stepladder,qwen3.5-27b,"open, strong (Qwen)",qwen3.5-27b__B__name_only+image__r3__s0__round1,3.2,aesthetics,2,0.25,3,2026-09-21T11:38:39
+A1,d9833_3.3,d9833,wheelchair,brickgpt,domain-specific: LEGO (text -> bricks),brickgpt__ext__name_only__s0,3.3,structure_alignment,4,0.75,3,2026-09-21T11:39:09
+A1,d9987_3.3,d9987,scissor_car_jack,gpt-6-astra,closed API (OpenAI),gpt-6-astra__B__name_only+image__r3__s0__round1,3.3,structure_alignment,5,1.0,6,2026-09-21T11:39:22

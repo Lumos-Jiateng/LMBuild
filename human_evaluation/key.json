@@ -1,0 +1,864 @@
+{
+ "version": 2,
+ "systems": [
+  [
+   "gpt-6-astra",
+   "closed API (OpenAI)",
+   "__B__name_only+image__r3__s0__round1"
+  ],
+  [
+   "claude-sonnet-5",
+   "closed API (Anthropic)",
+   "__B__name_only+image__r3__s0__round1"
+  ],
+  [
+   "qwen3.5-27b",
+   "open, strong (Qwen)",
+   "__B__name_only+image__r3__s0__round1"
+  ],
+  [
+   "gemma-4-31b-it",
+   "open, weaker (Gemma)",
+   "__B__name_only+image__r3__s0__round1"
+  ],
+  [
+   "partpacker",
+   "domain-specific: image -> part-level 3D",
+   "__ext__image__s0"
+  ],
+  [
+   "brickgpt",
+   "domain-specific: LEGO (text -> bricks)",
+   "__ext__name_only__s0"
+  ]
+ ],
+ "tasks": [
+  "offroad_jeep",
+  "passenger_car",
+  "wheeled_excavator",
+  "scissor_car_jack",
+  "bench_drill_press",
+  "oscillating_steam_engine",
+  "dining_table",
+  "bed_frame",
+  "chest_of_drawers",
+  "swivel_office_chair",
+  "stepladder",
+  "refrigerator",
+  "desk_lamp",
+  "oscillating_fan",
+  "wheelchair"
+ ],
+ "designs": [
+  {
+   "task": "offroad_jeep",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 26,
+   "design_path": "results/v2/offroad_jeep/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4960"
+  },
+  {
+   "task": "offroad_jeep",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 21,
+   "design_path": "results/v2/offroad_jeep/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d1602"
+  },
+  {
+   "task": "offroad_jeep",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 41,
+   "design_path": "results/v2/offroad_jeep/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4120"
+  },
+  {
+   "task": "offroad_jeep",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 12,
+   "design_path": "results/v2/offroad_jeep/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d2274"
+  },
+  {
+   "task": "offroad_jeep",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 12,
+   "design_path": "results/v2/offroad_jeep/external_core/image/partpacker_s0",
+   "id": "d1745"
+  },
+  {
+   "task": "offroad_jeep",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 147,
+   "design_path": "results/v2/offroad_jeep/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d3580"
+  },
+  {
+   "task": "passenger_car",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 27,
+   "design_path": "results/v2/passenger_car/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d7211"
+  },
+  {
+   "task": "passenger_car",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 31,
+   "design_path": "results/v2/passenger_car/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d6715"
+  },
+  {
+   "task": "passenger_car",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 14,
+   "design_path": "results/v2/passenger_car/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4081"
+  },
+  {
+   "task": "passenger_car",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 11,
+   "design_path": "results/v2/passenger_car/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d6417"
+  },
+  {
+   "task": "passenger_car",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 22,
+   "design_path": "results/v2/passenger_car/external_core/image/partpacker_s0",
+   "id": "d6358"
+  },
+  {
+   "task": "passenger_car",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 209,
+   "design_path": "results/v2/passenger_car/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d2153"
+  },
+  {
+   "task": "wheeled_excavator",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 29,
+   "design_path": "results/v2/wheeled_excavator/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d6861"
+  },
+  {
+   "task": "wheeled_excavator",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 32,
+   "design_path": "results/v2/wheeled_excavator/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d5698"
+  },
+  {
+   "task": "wheeled_excavator",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 6,
+   "design_path": "results/v2/wheeled_excavator/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d2137"
+  },
+  {
+   "task": "wheeled_excavator",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 7,
+   "design_path": "results/v2/wheeled_excavator/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d7645"
+  },
+  {
+   "task": "wheeled_excavator",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 18,
+   "design_path": "results/v2/wheeled_excavator/external_core/image/partpacker_s0",
+   "id": "d4253"
+  },
+  {
+   "task": "wheeled_excavator",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 488,
+   "design_path": "results/v2/wheeled_excavator/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d1456"
+  },
+  {
+   "task": "scissor_car_jack",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 13,
+   "design_path": "results/v2/scissor_car_jack/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d9987"
+  },
+  {
+   "task": "scissor_car_jack",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 12,
+   "design_path": "results/v2/scissor_car_jack/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d9230"
+  },
+  {
+   "task": "scissor_car_jack",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 6,
+   "design_path": "results/v2/scissor_car_jack/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4245"
+  },
+  {
+   "task": "scissor_car_jack",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 4,
+   "design_path": "results/v2/scissor_car_jack/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d7955"
+  },
+  {
+   "task": "scissor_car_jack",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 22,
+   "design_path": "results/v2/scissor_car_jack/external_core/image/partpacker_s0",
+   "id": "d5680"
+  },
+  {
+   "task": "scissor_car_jack",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 69,
+   "design_path": "results/v2/scissor_car_jack/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d8613"
+  },
+  {
+   "task": "bench_drill_press",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 10,
+   "design_path": "results/v2/bench_drill_press/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d9787"
+  },
+  {
+   "task": "bench_drill_press",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 15,
+   "design_path": "results/v2/bench_drill_press/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d9345"
+  },
+  {
+   "task": "bench_drill_press",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 8,
+   "design_path": "results/v2/bench_drill_press/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d3055"
+  },
+  {
+   "task": "bench_drill_press",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 3,
+   "design_path": "results/v2/bench_drill_press/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d1573"
+  },
+  {
+   "task": "bench_drill_press",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 9,
+   "design_path": "results/v2/bench_drill_press/external_core/image/partpacker_s0",
+   "id": "d8108"
+  },
+  {
+   "task": "bench_drill_press",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 90,
+   "design_path": "results/v2/bench_drill_press/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d1922"
+  },
+  {
+   "task": "oscillating_steam_engine",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 10,
+   "design_path": "results/v2/oscillating_steam_engine/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d5356"
+  },
+  {
+   "task": "oscillating_steam_engine",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 15,
+   "design_path": "results/v2/oscillating_steam_engine/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d7950"
+  },
+  {
+   "task": "oscillating_steam_engine",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 6,
+   "design_path": "results/v2/oscillating_steam_engine/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d9090"
+  },
+  {
+   "task": "oscillating_steam_engine",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 6,
+   "design_path": "results/v2/oscillating_steam_engine/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4342"
+  },
+  {
+   "task": "oscillating_steam_engine",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 12,
+   "design_path": "results/v2/oscillating_steam_engine/external_core/image/partpacker_s0",
+   "id": "d3993"
+  },
+  {
+   "task": "oscillating_steam_engine",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 69,
+   "design_path": "results/v2/oscillating_steam_engine/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d3791"
+  },
+  {
+   "task": "dining_table",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/dining_table/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d2019"
+  },
+  {
+   "task": "dining_table",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 9,
+   "design_path": "results/v2/dining_table/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d3262"
+  },
+  {
+   "task": "dining_table",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 9,
+   "design_path": "results/v2/dining_table/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d9690"
+  },
+  {
+   "task": "dining_table",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/dining_table/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d6353"
+  },
+  {
+   "task": "dining_table",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 6,
+   "design_path": "results/v2/dining_table/external_core/image/partpacker_s0",
+   "id": "d7491"
+  },
+  {
+   "task": "dining_table",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 64,
+   "design_path": "results/v2/dining_table/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d7270"
+  },
+  {
+   "task": "bed_frame",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/bed_frame/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4160"
+  },
+  {
+   "task": "bed_frame",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 3,
+   "design_path": "results/v2/bed_frame/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4179"
+  },
+  {
+   "task": "bed_frame",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 19,
+   "design_path": "results/v2/bed_frame/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d1669"
+  },
+  {
+   "task": "bed_frame",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/bed_frame/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d8272"
+  },
+  {
+   "task": "bed_frame",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 2,
+   "design_path": "results/v2/bed_frame/external_core/image/partpacker_s0",
+   "id": "d3017"
+  },
+  {
+   "task": "bed_frame",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 172,
+   "design_path": "results/v2/bed_frame/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d8991"
+  },
+  {
+   "task": "chest_of_drawers",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 12,
+   "design_path": "results/v2/chest_of_drawers/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d1746"
+  },
+  {
+   "task": "chest_of_drawers",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 16,
+   "design_path": "results/v2/chest_of_drawers/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d8737"
+  },
+  {
+   "task": "chest_of_drawers",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 13,
+   "design_path": "results/v2/chest_of_drawers/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d5691"
+  },
+  {
+   "task": "chest_of_drawers",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 15,
+   "design_path": "results/v2/chest_of_drawers/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4085"
+  },
+  {
+   "task": "chest_of_drawers",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 6,
+   "design_path": "results/v2/chest_of_drawers/external_core/image/partpacker_s0",
+   "id": "d7735"
+  },
+  {
+   "task": "chest_of_drawers",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 79,
+   "design_path": "results/v2/chest_of_drawers/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d3189"
+  },
+  {
+   "task": "swivel_office_chair",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 16,
+   "design_path": "results/v2/swivel_office_chair/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d1635"
+  },
+  {
+   "task": "swivel_office_chair",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 13,
+   "design_path": "results/v2/swivel_office_chair/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4024"
+  },
+  {
+   "task": "swivel_office_chair",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 12,
+   "design_path": "results/v2/swivel_office_chair/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d6218"
+  },
+  {
+   "task": "swivel_office_chair",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 6,
+   "design_path": "results/v2/swivel_office_chair/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d7261"
+  },
+  {
+   "task": "swivel_office_chair",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 10,
+   "design_path": "results/v2/swivel_office_chair/external_core/image/partpacker_s0",
+   "id": "d1134"
+  },
+  {
+   "task": "swivel_office_chair",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 107,
+   "design_path": "results/v2/swivel_office_chair/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d1049"
+  },
+  {
+   "task": "stepladder",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 18,
+   "design_path": "results/v2/stepladder/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d3066"
+  },
+  {
+   "task": "stepladder",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 15,
+   "design_path": "results/v2/stepladder/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d8429"
+  },
+  {
+   "task": "stepladder",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 8,
+   "design_path": "results/v2/stepladder/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d9798"
+  },
+  {
+   "task": "stepladder",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 3,
+   "design_path": "results/v2/stepladder/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4806"
+  },
+  {
+   "task": "stepladder",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 2,
+   "design_path": "results/v2/stepladder/external_core/image/partpacker_s0",
+   "id": "d3585"
+  },
+  {
+   "task": "stepladder",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 288,
+   "design_path": "results/v2/stepladder/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d7337"
+  },
+  {
+   "task": "refrigerator",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/refrigerator/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d3221"
+  },
+  {
+   "task": "refrigerator",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/refrigerator/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d3973"
+  },
+  {
+   "task": "refrigerator",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/refrigerator/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d2975"
+  },
+  {
+   "task": "refrigerator",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/refrigerator/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d6656"
+  },
+  {
+   "task": "refrigerator",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 4,
+   "design_path": "results/v2/refrigerator/external_core/image/partpacker_s0",
+   "id": "d3586"
+  },
+  {
+   "task": "refrigerator",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 105,
+   "design_path": "results/v2/refrigerator/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d9558"
+  },
+  {
+   "task": "desk_lamp",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/desk_lamp/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d7293"
+  },
+  {
+   "task": "desk_lamp",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 7,
+   "design_path": "results/v2/desk_lamp/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d5335"
+  },
+  {
+   "task": "desk_lamp",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 5,
+   "design_path": "results/v2/desk_lamp/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d7287"
+  },
+  {
+   "task": "desk_lamp",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 3,
+   "design_path": "results/v2/desk_lamp/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d5366"
+  },
+  {
+   "task": "desk_lamp",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 15,
+   "design_path": "results/v2/desk_lamp/external_core/image/partpacker_s0",
+   "id": "d3486"
+  },
+  {
+   "task": "desk_lamp",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 105,
+   "design_path": "results/v2/desk_lamp/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d1332"
+  },
+  {
+   "task": "oscillating_fan",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 8,
+   "design_path": "results/v2/oscillating_fan/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4007"
+  },
+  {
+   "task": "oscillating_fan",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 8,
+   "design_path": "results/v2/oscillating_fan/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d4675"
+  },
+  {
+   "task": "oscillating_fan",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 6,
+   "design_path": "results/v2/oscillating_fan/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d1167"
+  },
+  {
+   "task": "oscillating_fan",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 3,
+   "design_path": "results/v2/oscillating_fan/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d3541"
+  },
+  {
+   "task": "oscillating_fan",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 4,
+   "design_path": "results/v2/oscillating_fan/external_core/image/partpacker_s0",
+   "id": "d6704"
+  },
+  {
+   "task": "oscillating_fan",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 357,
+   "design_path": "results/v2/oscillating_fan/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d2830"
+  },
+  {
+   "task": "wheelchair",
+   "system": "gpt-6-astra",
+   "role": "closed API (OpenAI)",
+   "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+   "n_parts": 19,
+   "design_path": "results/v2/wheelchair/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d9723"
+  },
+  {
+   "task": "wheelchair",
+   "system": "claude-sonnet-5",
+   "role": "closed API (Anthropic)",
+   "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+   "n_parts": 17,
+   "design_path": "results/v2/wheelchair/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d6271"
+  },
+  {
+   "task": "wheelchair",
+   "system": "qwen3.5-27b",
+   "role": "open, strong (Qwen)",
+   "key": "qwen3.5-27b__B__name_only+image__r3__s0__round1",
+   "n_parts": 11,
+   "design_path": "results/v2/wheelchair/runs/core_v2.4/qwen3.5-27b__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d5529"
+  },
+  {
+   "task": "wheelchair",
+   "system": "gemma-4-31b-it",
+   "role": "open, weaker (Gemma)",
+   "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+   "n_parts": 15,
+   "design_path": "results/v2/wheelchair/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design",
+   "id": "d8426"
+  },
+  {
+   "task": "wheelchair",
+   "system": "partpacker",
+   "role": "domain-specific: image -> part-level 3D",
+   "key": "partpacker__ext__image__s0",
+   "n_parts": 5,
+   "design_path": "results/v2/wheelchair/external_core/image/partpacker_s0",
+   "id": "d8731"
+  },
+  {
+   "task": "wheelchair",
+   "system": "brickgpt",
+   "role": "domain-specific: LEGO (text -> bricks)",
+   "key": "brickgpt__ext__name_only__s0",
+   "n_parts": 347,
+   "design_path": "results/v2/wheelchair/external_core/name_only/brickgpt_s0.ldr",
+   "id": "d9833"
+  }
+ ]
+}

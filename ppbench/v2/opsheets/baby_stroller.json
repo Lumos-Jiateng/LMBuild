@@ -1,0 +1,196 @@
+{
+ "task": "baby_stroller",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Propulsion and Steering",
+   "function": "Enables the user to move the stroller and direct its path via rolling wheels.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "axles",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "handle",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "wheels",
+     "to": "axles",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheels",
+     "type": "revolute",
+     "axis": "axle",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "frame",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Child Support",
+   "function": "Provides a secure and comfortable position for the child to sit or lie down.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "seat",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "safety restraints",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "frame",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "seat",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K4"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Storage",
+   "function": "Holds personal items such as diaper bags and other accessories.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "basket",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "frame",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K2"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "front wheels (casters)",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "folding mechanism",
+     "claim": "P4"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "seats and contains a child",
+   "claims": [
+    "P2"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "seat",
+     "min_area_m2": 0.05,
+     "claim": "P2"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "seat",
+     "placement": "above",
+     "w": 0.3,
+     "d": 0.25,
+     "h": 0.45,
+     "min_free": 0.85,
+     "claim": "P2"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "stands and rolls on its wheels",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "ground_contact",
+     "role": "wheels",
+     "min_clusters": 3,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,319 @@
+{
+ "task": "farm_tractor",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [
+  {
+   "capability": "F3",
+   "pred": "chain",
+   "unresolved": [
+    "to='implement'"
+   ],
+   "claim": "F3"
+  },
+  {
+   "capability": "F3",
+   "pred": "chain",
+   "unresolved": [
+    "to='implement'"
+   ],
+   "claim": "F3"
+  },
+  {
+   "capability": "F3",
+   "pred": "chain",
+   "unresolved": [
+    "to='implement'"
+   ],
+   "claim": "F3"
+  },
+  {
+   "capability": "P",
+   "pred": "part_present",
+   "unresolved": [
+    "role='power take-off (PTO)'"
+   ],
+   "claim": "P6"
+  }
+ ],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Hydraulic System",
+   "function": "Generates fluid pressure to lift implements and operate steering or attachments.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "hydraulic pump",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "control valves",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "lift arms",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "cylinders",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "lift arms",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K4"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Steering System",
+   "function": "Directs the vehicle's path by turning the front wheels or articulating the chassis.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "steering wheel",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "steering column",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "linkage",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "front wheels",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "steering wheel",
+     "to": "linkage",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "linkage",
+     "to": "front wheels",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "front wheels",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Implement Attachment",
+   "function": "Connects external machinery to the tractor for towing, lifting, or powering.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "three-point hitch",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "drawbar",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "PTO shaft",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "PTO shaft",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "Braking System",
+   "function": "Slows or stops the vehicle and enables differential steering.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "brake pedals",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "brake drums/discs",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "brake pedals",
+     "to": "brake drums/discs",
+     "carries": "signal",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "brake drums/discs",
+     "to": "wheels",
+     "carries": "force",
+     "claim": "F4"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheels",
+     "type": "revolute",
+     "axis": "axle centerline",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K5"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "top link",
+     "type": "prismatic",
+     "axis": null,
+     "claim": "K5"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P6",
+    "P7",
+    "P8",
+    "P9"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "engine",
+     "claim": "P1"
+    },
+    {
+     "pred": "part_present",
+     "role": "transmission",
+     "claim": "P2"
+    },
+    {
+     "pred": "part_present",
+     "role": "wheels or tracks",
+     "claim": "P3"
+    },
+    {
+     "pred": "part_present",
+     "role": "steering mechanism",
+     "claim": "P4"
+    },
+    {
+     "pred": "part_present",
+     "role": "hydraulic system",
+     "claim": "P7"
+    },
+    {
+     "pred": "part_present",
+     "role": "brakes",
+     "claim": "P8"
+    },
+    {
+     "pred": "part_present",
+     "role": "operator seat",
+     "claim": "P9"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "an operator can sit on it",
+   "claims": [
+    "P9"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "operator seat",
+     "min_area_m2": 0.06,
+     "claim": "P9"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "operator seat",
+     "placement": "above",
+     "box": "seated_torso",
+     "min_free": 0.7,
+     "claim": "P9"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "can be stopped",
+   "claims": [
+    "P8"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "brakes",
+     "claim": "P8"
+    },
+    {
+     "pred": "colocated",
+     "a": "brakes",
+     "b": "wheels",
+     "max_gap_m": 0.2,
+     "claim": "P8"
+    }
+   ]
+  }
+ ]
+}

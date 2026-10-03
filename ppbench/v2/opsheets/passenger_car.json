@@ -1,0 +1,278 @@
+{
+ "task": "passenger_car",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Propulsion System",
+   "function": "Generates power from fuel and transmits it to the wheels to move the vehicle.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Engine",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Fuel Tank",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Transmission",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Clutch",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Drive Shaft",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Differential",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Axle",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Engine",
+     "to": "Transmission",
+     "carries": "power",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Differential",
+     "to": "Axle",
+     "carries": "motion",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Steering System",
+   "function": "Translates driver input into the turning of the front wheels to change direction.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Steering Wheel",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Steering Column",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Rack and Pinion",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Tie Rods",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Steering Knuckle",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Ball Joint",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Steering Wheel",
+     "to": "Steering Column",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Steering Column",
+     "to": "Rack and Pinion",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Rack and Pinion",
+     "to": "Tie Rods",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Tie Rods",
+     "to": "Steering Knuckle",
+     "carries": "force",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Steering Knuckle",
+     "to": "Ball Joint",
+     "carries": "force",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Steering Wheel",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K2",
+    "K3",
+    "K4",
+    "K5"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "Front Wheels",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Car Door",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Side Windows",
+     "type": "prismatic",
+     "axis": "vertical axis",
+     "claim": "K4"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Brake Pedal",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K5"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P2",
+    "P3",
+    "P4",
+    "P7",
+    "P8",
+    "P9"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Wheels and Tires",
+     "claim": "P2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Steering System",
+     "claim": "P3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Brakes",
+     "claim": "P4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Seats",
+     "claim": "P7"
+    },
+    {
+     "pred": "part_present",
+     "role": "Doors",
+     "claim": "P8"
+    },
+    {
+     "pred": "part_present",
+     "role": "Suspension",
+     "claim": "P9"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "can be stopped",
+   "claims": [
+    "P4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Brakes",
+     "claim": "P4"
+    },
+    {
+     "pred": "colocated",
+     "a": "Brakes",
+     "b": "Wheels",
+     "max_gap_m": 0.2,
+     "claim": "P4"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "seats an occupant",
+   "claims": [
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "Seats",
+     "min_area_m2": 0.08,
+     "claim": "P7"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "Seats",
+     "placement": "above",
+     "box": "seated_torso",
+     "min_free": 0.6,
+     "claim": "P7"
+    }
+   ]
+  }
+ ]
+}

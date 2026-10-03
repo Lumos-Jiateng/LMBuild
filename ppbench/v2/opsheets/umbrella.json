@@ -1,0 +1,95 @@
+{
+ "task": "umbrella",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "canopy",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1",
+    "P2",
+    "P3",
+    "P4",
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "canopy",
+     "claim": "P1"
+    },
+    {
+     "pred": "part_present",
+     "role": "ribs",
+     "claim": "P2"
+    },
+    {
+     "pred": "part_present",
+     "role": "pole",
+     "claim": "P3"
+    },
+    {
+     "pred": "part_present",
+     "role": "handle",
+     "claim": "P4"
+    },
+    {
+     "pred": "part_present",
+     "role": "gore",
+     "claim": "P5"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "it is held by the handle under the canopy",
+   "claims": [
+    "P4",
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "grip",
+     "role": "handle",
+     "claim": "P4"
+    },
+    {
+     "pred": "colocated",
+     "a": "handle",
+     "b": "pole",
+     "max_gap_m": 0.06,
+     "claim": "P4"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "canopy",
+     "placement": "below",
+     "w": 0.5,
+     "d": 0.35,
+     "h": 0.6,
+     "min_free": 0.7,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

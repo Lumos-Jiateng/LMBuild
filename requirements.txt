@@ -1,0 +1,14 @@
+# Environment + evaluator (Python 3.11). Pinned to the versions the paper's runs and scores were produced with.
+numpy==2.4.6
+scipy==1.17.1
+trimesh==5.1.0
+manifold3d==3.5.3
+shapely==2.1.2
+rtree==1.4.1
+networkx==3.6.1
+scikit-image==0.26.0
+fast_simplification==0.2.0
+python-fcl==0.7.0.11
+mujoco==3.14.0
+pillow==12.3.0
+openai==3.13.0

@@ -1,0 +1,815 @@
+{
+ "system": "gemma-4-31b-it",
+ "tier": "B",
+ "meta": {
+  "protocol": "v2.2",
+  "task_id": "wheeled_excavator",
+  "tier": "B",
+  "condition_id": "name_only+image",
+  "rounds": 3,
+  "rounds_completed": 1,
+  "submitted_final": false,
+  "counters": {
+   "tool_calls": 21,
+   "errors": 11,
+   "check": 0,
+   "render": 0,
+   "create": 3
+  },
+  "round_counters": [
+   {
+    "tool_calls": 21,
+    "errors": 11,
+    "check": 0,
+    "render": 0,
+    "create": 3
+   }
+  ],
+  "created_parts": {},
+  "scale_mode": "metric",
+  "declares": {
+   "roles": true,
+   "materials": true,
+   "joints": true,
+   "sequence": true
+  },
+  "task_source": {
+   "file": "reference_data/benchmark_v2/core_v2.json",
+   "frozen_for": "core-set runs, harness v2.3",
+   "frozen": "2026-09-14",
+   "sha256": "442ae84645556b8876c5130c3443ee8f9c02ac701ee173c2c9c4f56c79efa486"
+  },
+  "wall_s": 201.3,
+  "pool_mesh_version": 2,
+  "transport": "openai-compatible text tool calls",
+  "checkpoint_round": 1
+ },
+ "item": {
+  "kind": "tool",
+  "system": "gemma-4-31b-it",
+  "tier": "B",
+  "condition": "name_only+image",
+  "trajectory_rounds": 3,
+  "seed": 0,
+  "namespace": "core_v2.4",
+  "task": "wheeled_excavator",
+  "snapshot": "task_snapshot_core.json",
+  "key": "gemma-4-31b-it__B__name_only+image__r3__s0__round1",
+  "rounds": 1,
+  "checkpoint_round": 1,
+  "path": "results/v2/wheeled_excavator/runs/core_v2.4/gemma-4-31b-it__B__name_only+image__r3__s0/rounds/round_1/design"
+ },
+ "notes": [
+  "no reference object for this task: reference terms are dropped, not scored 0",
+  "Level 1 recomputed under spec v3.3",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.057052297939778125,
+   "metrics": {
+    "n_parts": 7,
+    "n_components": 7,
+    "n_breaks": 6,
+    "anchored_volume_frac": 0.17115689381933438,
+    "break_score": 0.0,
+    "fastening_spec_rate": 0.0,
+    "n_fastened_connections": 0,
+    "connections_needed_to_span": 6,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 0.3903856312731115,
+    "n_components_fastened_only": 7,
+    "n_interfacing_pairs": 0,
+    "connection_evidence": {
+     "interlock": 0,
+     "fastened_joint": 0,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 0,
+    "resting_contacts": [],
+    "n_declared_joint_pairs": 0,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [
+     "wheel_fl",
+     "wheel_fr",
+     "wheel_bl",
+     "wheel_br",
+     "wheel_r_mid",
+     "wheel_l_mid"
+    ],
+    "shell_only_parts": [
+     "wheel_fl",
+     "wheel_fr",
+     "wheel_bl",
+     "wheel_br",
+     "wheel_l_mid",
+     "wheel_r_mid",
+     "bucket"
+    ]
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "not_applicable",
+   "score": null,
+   "metrics": {
+    "n_parts": 7,
+    "n_interfacing_pairs": 0
+   },
+   "notes": [
+    "no pair of parts interfaces at all: there is no interface to check for collision"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.13128209845451866,
+   "metrics": {
+    "critical_tilt_deg": 4.904670909602298,
+    "tilt_direction_deg": 180.0,
+    "support_margin_m": 0.0029188050713153807,
+    "support_margin_norm": 0.09740368085045355,
+    "support_area_m2": 0.002821040486000001,
+    "n_support_vertices": 10,
+    "com_height_m": 0.034013805541264666,
+    "ground_z": -0.00010255356028210372,
+    "total_weight": 4.0384000000000005e-05,
+    "com": [
+     0.02833280507131537,
+     -0.03116640253565769,
+     0.03391125198098256
+    ],
+    "ground_band_m": 0.005,
+    "z_top_m": 0.14720000326633453,
+    "push_force_ratio": 0.019815033317792153,
+    "shell_corrected_parts": [],
+    "n_parts_in_main_group": 1,
+    "n_parts": 7,
+    "stand_score": 0.16348903032007658,
+    "push_score": 0.09907516658896076,
+    "target_tilt_deg": 30.0,
+    "target_push_ratio": 0.2,
+    "reference_tilt_deg": null,
+    "reference_push_ratio": null,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge",
+    "the design is in pieces (1 of 7 parts in the largest connected group): unattached parts still carry their mass, and support only where they reach the ground"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {},
+   "notes": [
+    "no reference object: shape is not measurable for this task"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "n_joints": 0,
+    "n_moving": 0,
+    "n_claimed_mechanisms": 4
+   },
+   "notes": [
+    "the task claims kinematics and the design declares no moving joint"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.8388888888888888,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5925925925925927,
+     "qwen2.5-vl-32b": 0.3333333333333333
+    },
+    "judge_mean": 0.462962962962963,
+    "n_judges": 2,
+    "computed_score": 1.0,
+    "computed": {
+     "granularity_score": null,
+     "consolidation_score": 1.0,
+     "joint_placement_rate": null,
+     "consolidation_violations": 0,
+     "n_declared_joint_pairs": 0
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.3888888888888889,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5555555555555556,
+     "qwen2.5-vl-32b": 0.22222222222222224
+    },
+    "judge_mean": 0.3888888888888889,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": null
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "declared+computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "coverage_volume_frac": 1.0,
+    "claim_class_coverage": null,
+    "claimed_class_groups": [],
+    "design_classes": [
+     "heavy_metal",
+     "rubber"
+    ],
+    "total_mass_kg": 0.09262361599999999
+   },
+   "notes": [
+    "densities are Artiverse medians; volumes of open meshes are under-counted",
+    "the population prior and the per-task load case of v2 are dropped as task-specific"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "declared": false
+   },
+   "notes": [
+    "no assembly sequence declared"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": false,
+    "n_requirements_disabled_by_ceiling": 0,
+    "n_requirements_declared_only": 0,
+    "declared_part_coverage": null,
+    "n_capabilities": 6,
+    "n_capabilities_zero": 6,
+    "capability_scores": {
+     "F1": 0.0,
+     "F2": 0.0,
+     "F3": 0.0,
+     "K": 0.0,
+     "P": 0.0,
+     "H1": 0.0
+    },
+    "mean_of_means": 0.020833333333333332,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Hydraulic Power System",
+      "claims": [
+       "F1"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 6,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "Engine",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Hydraulic Pumps",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Hydraulic Oil Tanks",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Hydraulic Cylinders",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Hydraulic Motors",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "from": "Engine",
+        "to": "Hydraulic Pumps",
+        "carries": "power",
+        "claim": "F1",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        }
+       }
+      ]
+     },
+     {
+      "id": "F2",
+      "name": "Arm Assembly",
+      "claims": [
+       "F2"
+      ],
+      "score": 0.0,
+      "mean": 0.125,
+      "n_requirements": 8,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "Boom",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Stick",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Bucket",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "bucket"
+         ]
+        }
+       },
+       {
+        "role": "Hydraulic Cylinders",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "from": "Boom",
+        "to": "Stick",
+        "carries": "load",
+        "claim": "F2",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        }
+       },
+       {
+        "from": "Stick",
+        "to": "Bucket",
+        "carries": "load",
+        "claim": "F2",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 1
+        }
+       },
+       {
+        "role": "Stick",
+        "type": "revolute",
+        "axis": null,
+        "claim": "K2",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        }
+       },
+       {
+        "role": "Bucket",
+        "type": "revolute",
+        "axis": null,
+        "claim": "K3",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no joint moves this role",
+         "min_sweep": 0.5
+        }
+       }
+      ]
+     },
+     {
+      "id": "F3",
+      "name": "Travel System",
+      "claims": [
+       "F3"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 6,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "Undercarriage",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Tracks",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Track Motors",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Final Drives",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "from": "Track Motors",
+        "to": "Tracks",
+        "carries": "motion",
+        "claim": "F3",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        }
+       },
+       {
+        "from": "Final Drives",
+        "to": "Tracks",
+        "carries": "motion",
+        "claim": "F3",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        }
+       }
+      ]
+     },
+     {
+      "id": "K",
+      "name": "declared mechanisms move",
+      "claims": [
+       "K1",
+       "K4"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 2,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "joint_enables",
+      "requirements": [
+       {
+        "role": "House",
+        "type": "revolute",
+        "axis": "vertical center pin",
+        "claim": "K1",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        }
+       },
+       {
+        "role": "Piston Rod",
+        "type": "prismatic",
+        "axis": null,
+        "claim": "K4",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        }
+       }
+      ]
+     },
+     {
+      "id": "P",
+      "name": "required subsystems the claims name but no subsystem covers",
+      "claims": [
+       "P2",
+       "P4",
+       "P9"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 3,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "House",
+        "claim": "P2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Stick (Dipper)",
+        "claim": "P4",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "Swing Motor",
+        "claim": "P9",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "the arm reaches out and the bucket moves",
+      "claims": [
+       "P3",
+       "P5"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 2,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "chain",
+      "requirements": [
+       {
+        "from": "Boom",
+        "to": "Bucket",
+        "carries": "motion",
+        "max_hops": 4,
+        "claim": "P3",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 1
+        }
+       },
+       {
+        "role": "Boom",
+        "type": "revolute",
+        "claim": "P3",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.11243386243386243,
+   "metrics": {
+    "declared_roles": true,
+    "n_parts": 7,
+    "required_part_coverage": 0.1111111111111111,
+    "subsystem_part_coverage": 0.08333333333333333,
+    "kinematic_part_coverage": 0.14285714285714285,
+    "groups": {
+     "required_parts": {
+      "n": 9,
+      "score": 0.1111111111111111,
+      "missing": [
+       "Undercarriage",
+       "House",
+       "Boom",
+       "Stick (Dipper)",
+       "Engine",
+       "Hydraulic Pumps",
+       "Hydraulic Cylinders",
+       "Swing Motor"
+      ],
+      "present_but_floating": []
+     },
+     "subsystem_parts": {
+      "n": 12,
+      "score": 0.08333333333333333,
+      "missing": [
+       "Boom",
+       "Engine",
+       "Final Drives",
+       "Hydraulic Cylinders",
+       "Hydraulic Motors",
+       "Hydraulic Oil Tanks",
+       "Hydraulic Pumps",
+       "Stick",
+       "Track Motors",
+       "Tracks",
+       "Undercarriage"
+      ],
+      "present_but_floating": []
+     },
+     "kinematic_parts": {
+      "n": 7,
+      "score": 0.14285714285714285,
+      "missing": [
+       "Boom",
+       "Cylinder Barrel",
+       "House",
+       "Piston Rod",
+       "Stick",
+       "Undercarriage"
+      ],
+      "present_but_floating": []
+     }
+    },
+    "unrecognised_roles": [
+     "wheel"
+    ],
+    "unrecognised_role_frac": 0.14285714285714285,
+    "subsystem_connection": 0.0,
+    "subsystem_presence_v31": 0.08333333333333333
+   },
+   "notes": [
+    "score = mean of the three claim-group coverages; a role that exists but floats off the assembly scores 0.5",
+    "matching is the task's own auto lexicon plus its authored bridges, never a hand-written per-object predicate"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.5694444444444444,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5277777777777778,
+     "qwen2.5-vl-32b": 0.6111111111111112
+    },
+    "judge_mean": 0.5694444444444444,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "part_correspondence_iou": null,
+     "symmetry_match": null,
+     "symmetry_iou": 0.43575418994413406,
+     "reference_symmetry_iou": null
+    }
+   },
+   "notes": [
+    "judge only (no computed half for this task)"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [
+   "1.1",
+   "2.3",
+   "4.2"
+  ],
+  "buildable": false,
+  "overall": 0.3097990481050381,
+  "n_scored_dims": 10,
+  "gate_pending": true
+ },
+ "stamp": "1789541250.1924744|v3.1|v3.2|v3.3|v3.4.3"
+}

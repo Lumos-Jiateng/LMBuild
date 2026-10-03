@@ -1,0 +1,170 @@
+{
+ "task": "dishwasher",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Washing System",
+   "function": "Circulates heated water and detergent to clean dishes.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Pump",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Sprayers",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Heating element",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Wash chamber",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Pump",
+     "to": "Sprayers",
+     "carries": "fluid",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Sprayers",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Loading System",
+   "function": "Allows user access to load and unload dishes securely.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Door",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Racks",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Hinges",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Door",
+     "to": "Wash chamber",
+     "carries": "load",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Racks",
+     "to": "Wash chamber",
+     "carries": "load",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Door",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Racks",
+     "type": "prismatic",
+     "axis": null,
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1",
+    "P7",
+    "P8",
+    "P9",
+    "P10"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Wash chamber (tub)",
+     "claim": "P1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Solenoid valve",
+     "claim": "P7"
+    },
+    {
+     "pred": "part_present",
+     "role": "Control system",
+     "claim": "P8"
+    },
+    {
+     "pred": "part_present",
+     "role": "Drain system",
+     "claim": "P9"
+    },
+    {
+     "pred": "part_present",
+     "role": "Detergent dispenser",
+     "claim": "P10"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "dishes load into the racks through the door",
+   "claims": [
+    "P6",
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "Racks",
+     "placement": "above",
+     "w": 0.3,
+     "d": 0.3,
+     "h": 0.15,
+     "min_free": 0.7,
+     "claim": "P6"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Door",
+     "type": "revolute",
+     "claim": "P5"
+    }
+   ]
+  }
+ ]
+}

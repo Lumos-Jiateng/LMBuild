@@ -1,0 +1,744 @@
+{
+ "_source": "Artiverse material.json (material + exterior_material) x segmented.glb labels, per task category; counts of parts",
+ "tasks": {
+  "chest_of_drawers": {
+   "category": "chest_of_drawers",
+   "n_objects": 463,
+   "roles": {
+    "legs": {
+     "wood": 460,
+     "light_metal": 3
+    },
+    "drawers": {
+     "wood": 4831,
+     "light_metal": 26,
+     "heavy_metal": 1
+    },
+    "handles": {
+     "light_metal": 2796,
+     "wood": 25
+    }
+   },
+   "all": {
+    "wood": 5341,
+    "light_metal": 2825,
+    "heavy_metal": 1
+   }
+  },
+  "office_desk": {
+   "category": "desk",
+   "n_objects": 279,
+   "roles": {
+    "drawers": {
+     "wood": 1503,
+     "light_metal": 6,
+     "plastic": 2
+    },
+    "handle": {
+     "light_metal": 866,
+     "wood": 7
+    }
+   },
+   "all": {
+    "wood": 2019,
+    "light_metal": 874,
+    "plastic": 27,
+    "heavy_metal": 11
+   }
+  },
+  "swivel_office_chair": {
+   "category": "swivel_chair",
+   "n_objects": 124,
+   "roles": {
+    "armrest": {
+     "rubber": 134,
+     "plastic": 240,
+     "textile": 3,
+     "foam": 3,
+     "heavy_metal": 3
+    },
+    "backrest": {
+     "textile": 75,
+     "foam": 83,
+     "plastic": 6,
+     "heavy_metal": 3
+    },
+    "caster": {
+     "plastic": 565,
+     "textile": 5,
+     "foam": 5,
+     "heavy_metal": 8,
+     "rubber": 1
+    },
+    "base": {
+     "plastic": 123,
+     "heavy_metal": 1
+    },
+    "lever": {
+     "plastic": 276,
+     "heavy_metal": 85,
+     "textile": 4,
+     "foam": 4,
+     "rubber": 2
+    },
+    "seat": {
+     "textile": 106,
+     "foam": 116,
+     "plastic": 7,
+     "heavy_metal": 1
+    },
+    "gas lift cylinder": {
+     "heavy_metal": 113,
+     "plastic": 6,
+     "textile": 3,
+     "foam": 3
+    },
+    "caster wheel": {
+     "plastic": 561,
+     "rubber": 9,
+     "textile": 5,
+     "foam": 5,
+     "heavy_metal": 4
+    }
+   },
+   "all": {
+    "rubber": 147,
+    "textile": 205,
+    "foam": 223,
+    "plastic": 1987,
+    "heavy_metal": 261
+   }
+  },
+  "hinged_door": {
+   "category": "door",
+   "n_objects": 211,
+   "roles": {
+    "Door frame": {
+     "wood": 181
+    },
+    "Door panel": {
+     "wood": 221
+    },
+    "Door handle": {
+     "light_metal": 414,
+     "heavy_metal": 294,
+     "wood": 4
+    },
+    "Latch bolt": {
+     "heavy_metal": 3,
+     "light_metal": 1
+    }
+   },
+   "all": {
+    "wood": 406,
+    "light_metal": 417,
+    "heavy_metal": 331
+   }
+  },
+  "casement_window": {
+   "category": "window",
+   "n_objects": 24,
+   "roles": {
+    "frame": {
+     "light_metal": 23,
+     "heavy_metal": 1
+    },
+    "sash": {
+     "glass": 51
+    },
+    "latch": {
+     "light_metal": 12
+    }
+   },
+   "all": {
+    "light_metal": 35,
+    "glass": 51,
+    "heavy_metal": 1
+   }
+  },
+  "refrigerator": {
+   "category": "refrigerator",
+   "n_objects": 283,
+   "roles": {
+    "door": {
+     "heavy_metal": 420,
+     "plastic": 528,
+     "glass": 3,
+     "metal": 11
+    },
+    "handle": {
+     "heavy_metal": 385,
+     "plastic": 481,
+     "glass": 4,
+     "metal": 7
+    },
+    "shelf": {
+     "glass": 1542,
+     "plastic": 154,
+     "heavy_metal": 18
+    },
+    "drawer": {
+     "plastic": 620,
+     "glass": 90,
+     "heavy_metal": 95,
+     "metal": 2
+    },
+    "door bin": {
+     "plastic": 1092,
+     "glass": 226,
+     "heavy_metal": 21
+    }
+   },
+   "all": {
+    "heavy_metal": 1169,
+    "plastic": 3327,
+    "glass": 1879,
+    "metal": 25
+   }
+  },
+  "microwave_oven": {
+   "category": "microwave",
+   "n_objects": 67,
+   "roles": {
+    "door": {
+     "heavy_metal": 25,
+     "plastic": 68
+    },
+    "handle": {
+     "heavy_metal": 18,
+     "plastic": 36
+    },
+    "turntable": {
+     "glass": 63
+    },
+    "oven door": {
+     "glass": 18
+    },
+    "control panel": {
+     "plastic": 303
+    }
+   },
+   "all": {
+    "heavy_metal": 89,
+    "plastic": 475,
+    "glass": 81
+   }
+  },
+  "kitchen_oven": {
+   "category": "oven",
+   "n_objects": 190,
+   "roles": {
+    "door": {
+     "heavy_metal": 503,
+     "plastic": 5
+    },
+    "handle": {
+     "heavy_metal": 265,
+     "plastic": 10
+    },
+    "rack": {
+     "heavy_metal": 612,
+     "plastic": 1
+    },
+    "control interface": {
+     "plastic": 622,
+     "heavy_metal": 33
+    },
+    "heating element": {
+     "heavy_metal": 331
+    }
+   },
+   "all": {
+    "heavy_metal": 2295,
+    "plastic": 1077
+   }
+  },
+  "washing_machine": {
+   "category": "washing_machine",
+   "n_objects": 37,
+   "roles": {
+    "Control system": {
+     "plastic": 205
+    },
+    "detergent drawer": {
+     "plastic": 54
+    },
+    "handle": {
+     "plastic": 33,
+     "heavy_metal": 1
+    },
+    "filter cover": {
+     "light_metal": 20,
+     "heavy_metal": 1
+    },
+    "Drum": {
+     "light_metal": 30,
+     "plastic": 6,
+     "heavy_metal": 1
+    },
+    "Door or Lid": {
+     "light_metal": 35,
+     "heavy_metal": 2
+    }
+   },
+   "all": {
+    "plastic": 318,
+    "light_metal": 115,
+    "heavy_metal": 12
+   }
+  },
+  "dishwasher": {
+   "category": "dishwasher",
+   "n_objects": 57,
+   "roles": {
+    "door panel": {
+     "heavy_metal": 53,
+     "plastic": 1
+    },
+    "handle": {
+     "plastic": 51,
+     "metal": 1
+    },
+    "Wash chamber": {
+     "plastic": 57,
+     "heavy_metal": 41,
+     "metal": 3
+    },
+    "Control system": {
+     "plastic": 173,
+     "heavy_metal": 3,
+     "metal": 1
+    },
+    "Door": {
+     "plastic": 48,
+     "heavy_metal": 5,
+     "rubber": 1
+    },
+    "Racks": {
+     "heavy_metal": 123,
+     "plastic": 5
+    },
+    "spray bar": {
+     "heavy_metal": 4,
+     "plastic": 36
+    }
+   },
+   "all": {
+    "heavy_metal": 234,
+    "plastic": 383,
+    "metal": 5,
+    "rubber": 25
+   }
+  },
+  "oscillating_fan": {
+   "category": "electric_fan",
+   "n_objects": 96,
+   "roles": {
+    "housing": {
+     "heavy_metal": 99
+    },
+    "blades": {
+     "plastic": 356,
+     "heavy_metal": 1
+    },
+    "base": {
+     "plastic": 96
+    },
+    "pole": {
+     "plastic": 81
+    },
+    "hub": {
+     "heavy_metal": 82
+    }
+   },
+   "all": {
+    "heavy_metal": 182,
+    "plastic": 773
+   }
+  },
+  "desk_lamp": {
+   "category": "table_lamp",
+   "n_objects": 152,
+   "roles": {
+    "base": {
+     "plastic": 151
+    },
+    "forearm": {
+     "plastic": 296
+    },
+    "lamp head": {
+     "plastic": 150,
+     "glass": 1
+    },
+    "lightbulb": {
+     "glass": 107,
+     "plastic": 6
+    }
+   },
+   "all": {
+    "plastic": 782,
+    "glass": 109
+   }
+  },
+  "toilet": {
+   "category": "toilet",
+   "n_objects": 153,
+   "roles": {
+    "seat": {
+     "plastic": 107,
+     "light_metal": 1
+    },
+    "lid": {
+     "plastic": 121,
+     "ceramic": 100,
+     "light_metal": 2
+    },
+    "flush mechanism": {
+     "light_metal": 84,
+     "plastic": 1,
+     "ceramic": 1,
+     "heavy_metal": 3
+    },
+    "flush button": {
+     "light_metal": 60
+    }
+   },
+   "all": {
+    "ceramic": 254,
+    "plastic": 229,
+    "light_metal": 158,
+    "heavy_metal": 3
+   }
+  },
+  "mixer_faucet": {
+   "category": "faucet",
+   "n_objects": 213,
+   "roles": {
+    "spout": {
+     "heavy_metal": 216
+    },
+    "handle": {
+     "heavy_metal": 24
+    }
+   },
+   "all": {
+    "heavy_metal": 681
+   }
+  },
+  "tool_box": {
+   "category": "tool_box",
+   "n_objects": 13,
+   "roles": {
+    "container body": {
+     "plastic": 13
+    },
+    "drawer": {
+     "plastic": 8
+    },
+    "handle": {
+     "plastic": 27
+    },
+    "latch": {
+     "heavy_metal": 28
+    },
+    "lid": {
+     "plastic": 17
+    }
+   },
+   "all": {
+    "plastic": 65,
+    "rubber": 4,
+    "heavy_metal": 28
+   }
+  },
+  "wheeled_dumpster": {
+   "category": "dumpster",
+   "n_objects": 83,
+   "roles": {
+    "caster": {
+     "heavy_metal": 202,
+     "plastic": 3,
+     "rubber": 3
+    },
+    "wheels": {
+     "rubber": 222,
+     "heavy_metal": 4,
+     "light_metal": 2
+    },
+    "lid": {
+     "plastic": 130,
+     "heavy_metal": 1
+    },
+    "handle": {
+     "light_metal": 121,
+     "rubber": 2
+    }
+   },
+   "all": {
+    "heavy_metal": 229,
+    "plastic": 215,
+    "rubber": 228,
+    "light_metal": 123
+   }
+  },
+  "skateboard": {
+   "category": "skateboard",
+   "n_objects": 23,
+   "roles": {
+    "trucks": {
+     "light_metal": 45
+    },
+    "wheels": {
+     "rubber": 92
+    },
+    "deck": {
+     "wood": 23
+    }
+   },
+   "all": {
+    "light_metal": 45,
+    "rubber": 92,
+    "wood": 23
+   }
+  },
+  "baby_stroller": {
+   "category": "stroller",
+   "n_objects": 16,
+   "roles": {
+    "seat": {
+     "textile": 17,
+     "foam": 17,
+     "rubber": 2
+    },
+    "handle": {
+     "heavy_metal": 26,
+     "rubber": 26
+    },
+    "frame": {
+     "heavy_metal": 16,
+     "rubber": 1
+    },
+    "bag": {
+     "textile": 9,
+     "rubber": 2
+    },
+    "wheels": {
+     "rubber": 61,
+     "heavy_metal": 1,
+     "textile": 5,
+     "foam": 2
+    },
+    "caster": {
+     "heavy_metal": 51,
+     "textile": 1
+    }
+   },
+   "all": {
+    "textile": 49,
+    "foam": 19,
+    "heavy_metal": 106,
+    "rubber": 93
+   }
+  },
+  "shopping_cart": {
+   "category": "shopping_cart",
+   "n_objects": 8,
+   "roles": {
+    "frame": {
+     "heavy_metal": 8
+    },
+    "basket": {
+     "heavy_metal": 8
+    },
+    "wheels": {
+     "heavy_metal": 48,
+     "rubber": 32
+    },
+    "handle": {
+     "heavy_metal": 4,
+     "plastic": 4
+    }
+   },
+   "all": {
+    "heavy_metal": 69,
+    "rubber": 32,
+    "plastic": 8
+   }
+  },
+  "wheelchair": {
+   "category": "wheelchair",
+   "n_objects": 5,
+   "roles": {
+    "footrests": {
+     "textile": 10
+    },
+    "seat": {
+     "textile": 5
+    },
+    "frame": {
+     "light_metal": 5
+    },
+    "armrests": {
+     "textile": 8
+    },
+    "wheel": {
+     "light_metal": 40,
+     "rubber": 20
+    },
+    "caster connector": {
+     "light_metal": 10
+    },
+    "push-rims": {
+     "light_metal": 10
+    },
+    "handle": {
+     "light_metal": 10
+    },
+    "brakes": {
+     "light_metal": 4
+    },
+    "backrest": {
+     "textile": 3
+    }
+   },
+   "all": {
+    "textile": 26,
+    "light_metal": 83,
+    "rubber": 20,
+    "plastic": 2
+   }
+  },
+  "rolling_suitcase": {
+   "category": "suitcase",
+   "n_objects": 6,
+   "roles": {
+    "container body": {
+     "plastic": 12
+    },
+    "handle": {
+     "plastic": 11
+    },
+    "caster connector": {
+     "plastic": 6
+    },
+    "wheels": {
+     "rubber": 12
+    }
+   },
+   "all": {
+    "plastic": 29,
+    "rubber": 12
+   }
+  },
+  "scissors": {
+   "category": "scissors",
+   "n_objects": 56,
+   "roles": {
+    "pivot": {
+     "heavy_metal": 52
+    },
+    "blade": {
+     "heavy_metal": 112
+    },
+    "handle": {
+     "plastic": 96
+    }
+   },
+   "all": {
+    "heavy_metal": 276,
+    "plastic": 96
+   }
+  },
+  "laptop": {
+   "category": "laptop",
+   "n_objects": 57,
+   "roles": {
+    "clamshell chassis": {
+     "plastic": 48,
+     "heavy_metal": 9
+    },
+    "screen": {
+     "plastic": 48,
+     "heavy_metal": 10
+    },
+    "keyboard": {
+     "plastic": 4908
+    },
+    "pointing device": {
+     "heavy_metal": 5,
+     "plastic": 29
+    }
+   },
+   "all": {
+    "plastic": 5092,
+    "heavy_metal": 43
+   }
+  },
+  "camera": {
+   "category": "camera",
+   "n_objects": 4,
+   "roles": {
+    "camera body": {
+     "plastic": 4
+    },
+    "knob": {
+     "plastic": 4
+    },
+    "shutter release": {
+     "plastic": 17
+    }
+   },
+   "all": {
+    "plastic": 26
+   }
+  },
+  "monitor_arm": {
+   "category": "monitor_arm",
+   "n_objects": 15,
+   "roles": {
+    "monitor mount": {
+     "heavy_metal": 18
+    },
+    "Arm": {
+     "heavy_metal": 45
+    },
+    "base": {
+     "heavy_metal": 15
+    },
+    "Monitor": {
+     "plastic": 3
+    }
+   },
+   "all": {
+    "heavy_metal": 88,
+    "plastic": 3
+   }
+  },
+  "barbecue_grill": {
+   "category": "grill",
+   "n_objects": 10,
+   "roles": {
+    "support structure": {
+     "heavy_metal": 10
+    },
+    "lid": {
+     "heavy_metal": 11
+    },
+    "wheel": {
+     "heavy_metal": 15
+    },
+    "handle": {
+     "light_metal": 22
+    },
+    "cooking grate": {
+     "heavy_metal": 4
+    }
+   },
+   "all": {
+    "heavy_metal": 56,
+    "plastic": 31,
+    "light_metal": 22
+   }
+  }
+ }
+}

@@ -1,0 +1,5284 @@
+{
+ "tasks": {
+  "baby_stroller": {
+   "parts": {
+    "wheels": {
+     "materials": [
+      "aluminum",
+      "plastic",
+      "synthetic fabric"
+     ],
+     "classes": [
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Stroller components are typically a mixture of aluminum framing, plastic, and synthetic fabric.",
+     "page": "Stroller (revision 1369780036)",
+     "pages": [
+      {
+       "title": "Stroller",
+       "revision": 1369780036,
+       "url": "https://en.wikipedia.org/w/index.php?title=Stroller&oldid=1369780036"
+      }
+     ]
+    },
+    "seat": {
+     "materials": [
+      "aluminum framing",
+      "plastic",
+      "synthetic fabric"
+     ],
+     "classes": [
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Stroller components are typically a mixture of aluminum framing, plastic, and synthetic fabric.",
+     "page": "Stroller (revision 1369780036)",
+     "pages": [
+      {
+       "title": "Stroller",
+       "revision": 1369780036,
+       "url": "https://en.wikipedia.org/w/index.php?title=Stroller&oldid=1369780036"
+      }
+     ]
+    },
+    "folding mechanism": {
+     "materials": [
+      "aluminum framing",
+      "plastic",
+      "synthetic fabric"
+     ],
+     "classes": [
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Stroller components are typically a mixture of aluminum framing, plastic, and synthetic fabric.",
+     "page": "Stroller (revision 1369780036)",
+     "pages": [
+      {
+       "title": "Stroller",
+       "revision": 1369780036,
+       "url": "https://en.wikipedia.org/w/index.php?title=Stroller&oldid=1369780036"
+      }
+     ]
+    },
+    "axles": {
+     "materials": [
+      "aluminum",
+      "plastic",
+      "synthetic fabric"
+     ],
+     "classes": [
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Stroller components are typically a mixture of aluminum framing, plastic, and synthetic fabric.",
+     "page": "Stroller (revision 1369780036)",
+     "pages": [
+      {
+       "title": "Stroller",
+       "revision": 1369780036,
+       "url": "https://en.wikipedia.org/w/index.php?title=Stroller&oldid=1369780036"
+      }
+     ]
+    },
+    "safety restraints": {
+     "materials": [
+      "aluminum framing",
+      "plastic",
+      "synthetic fabric"
+     ],
+     "classes": [
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Stroller components are typically a mixture of aluminum framing, plastic, and synthetic fabric.",
+     "page": "Stroller (revision 1369780036)",
+     "pages": [
+      {
+       "title": "Stroller",
+       "revision": 1369780036,
+       "url": "https://en.wikipedia.org/w/index.php?title=Stroller&oldid=1369780036"
+      }
+     ]
+    },
+    "basket": {
+     "materials": [
+      "aluminum framing",
+      "plastic",
+      "synthetic fabric"
+     ],
+     "classes": [
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Stroller components are typically a mixture of aluminum framing, plastic, and synthetic fabric.",
+     "page": "Stroller (revision 1369780036)",
+     "pages": [
+      {
+       "title": "Stroller",
+       "revision": 1369780036,
+       "url": "https://en.wikipedia.org/w/index.php?title=Stroller&oldid=1369780036"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "handle": {
+     "reason": "text does not say (pages tried: Stroller)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Stroller (revision 1369780036)\"}"
+    },
+    "front wheels (casters)": {
+     "reason": "text does not say (pages tried: Wheel, Wheel, Caster, Stroller)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Stroller (revision 1369780036)\"}"
+    },
+    "frame": {
+     "reason": "quote is about history",
+     "raw": "In the late 19th century, the frames, like those of the carriages they replaced, might be made of wood (commonly ash), reinforced by steel flitch plates, but in the early 20th century, steel ladder frames or chassis rapidly became standard."
+    }
+   }
+  },
+  "barbecue_grill": {
+   "parts": {
+    "heat source": {
+     "materials": [
+      "stainless steel",
+      "aluminized steel",
+      "cast iron"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Gas grill burners are typically constructed of: stainless steel, aluminized steel, or cast iron, occasionally porcelain-coated.",
+     "page": "Barbecue grill (revision 1364985701)",
+     "pages": [
+      {
+       "title": "Barbecue grill",
+       "revision": 1364985701,
+       "url": "https://en.wikipedia.org/w/index.php?title=Barbecue_grill&oldid=1364985701"
+      }
+     ]
+    },
+    "support structure": {
+     "materials": [
+      "steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Stephen was tired of the wind blowing ash onto his food when he grilled so he took the lower half of a buoy, welded three steel legs onto it, and fabricated a shallower hemisphere for use as a lid.",
+     "page": "Barbecue grill (revision 1364985701)",
+     "pages": [
+      {
+       "title": "Barbecue grill",
+       "revision": 1364985701,
+       "url": "https://en.wikipedia.org/w/index.php?title=Barbecue_grill&oldid=1364985701"
+      }
+     ]
+    },
+    "lid": {
+     "materials": [
+      "steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Stephen was tired of the wind blowing ash onto his food when he grilled so he took the lower half of a buoy, welded three steel legs onto it, and fabricated a shallower hemisphere for use as a lid.",
+     "page": "Barbecue grill (revision 1364985701)",
+     "pages": [
+      {
+       "title": "Barbecue grill",
+       "revision": 1364985701,
+       "url": "https://en.wikipedia.org/w/index.php?title=Barbecue_grill&oldid=1364985701"
+      }
+     ]
+    },
+    "burner": {
+     "materials": [
+      "stainless steel",
+      "aluminized steel",
+      "cast iron"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Gas grill burners are typically constructed of: stainless steel, aluminized steel, or cast iron, occasionally porcelain-coated.",
+     "page": "Barbecue grill (revision 1364985701)",
+     "pages": [
+      {
+       "title": "Barbecue grill",
+       "revision": 1364985701,
+       "url": "https://en.wikipedia.org/w/index.php?title=Barbecue_grill&oldid=1364985701"
+      }
+     ]
+    },
+    "legs": {
+     "materials": [
+      "steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Stephen was tired of the wind blowing ash onto his food when he grilled so he took the lower half of a buoy, welded three steel legs onto it, and fabricated a shallower hemisphere for use as a lid.",
+     "page": "Barbecue grill (revision 1364985701)",
+     "pages": [
+      {
+       "title": "Barbecue grill",
+       "revision": 1364985701,
+       "url": "https://en.wikipedia.org/w/index.php?title=Barbecue_grill&oldid=1364985701"
+      }
+     ]
+    },
+    "rotisserie skewer": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "A meat item (whole chicken, beef roast, pork loin roast) is placed on a metal skewer that is rotated by an electric motor.",
+     "page": "Barbecue grill (revision 1364985701)",
+     "pages": [
+      {
+       "title": "Barbecue grill",
+       "revision": 1364985701,
+       "url": "https://en.wikipedia.org/w/index.php?title=Barbecue_grill&oldid=1364985701"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "cooking grate": {
+     "reason": "material 'aluminum' not in the quote as a material word (pages tried: Barbecue grill)",
+     "raw": "{\"materials\": [\"stainless steel\", \"aluminized steel\", \"cast iron\", \"porcelain-coated\", \"sheet steel\", \"cast iron\", \"aluminum\"], \"quote\": \"Gas grill burners are typically constructed of: stainless steel, aluminized steel, or cast iron, occasionally porcelain-coated.\", \"page\": \"Barbecue grill (revisio"
+    },
+    "fuel tank": {
+     "reason": "text does not say (pages tried: Barbecue grill)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Barbecue grill (revision 1364985701)\"}"
+    },
+    "valves": {
+     "reason": "text does not say (pages tried: Barbecue grill)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Barbecue grill (revision 1364985701)\"}"
+    },
+    "venturi": {
+     "reason": "text does not say (pages tried: Barbecue grill)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Barbecue grill (revision 1364985701)\"}"
+    },
+    "charcoal pan": {
+     "reason": "material 'sheet metal' not in the quote as a material word (pages tried: Barbecue grill)",
+     "raw": "{\"materials\": [\"sheet metal\", \"sheet steel\", \"cast iron\"], \"quote\": \"In its most common form, the hibachi is an inexpensive grill made of either sheet steel or cast iron and composed of a charcoal pan and two small, independent cooking grids.\", \"page\": \"Barbecue grill (revision 1364985701)\"}"
+    },
+    "heat shield": {
+     "reason": "text does not say (pages tried: Heat, Barbecue grill)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Barbecue grill (revision 1364985701)\"}"
+    },
+    "rock grate": {
+     "reason": "text does not say (pages tried: Barbecue grill)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Barbecue grill (revision 1364985701)\"}"
+    },
+    "wheels": {
+     "reason": "text does not say (pages tried: Wheel, Barbecue grill)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Barbecue grill (revision 1364985701)\"}"
+    },
+    "frame": {
+     "reason": "material 'steel' not in the quote as a material word (pages tried: Barbecue grill)",
+     "raw": "{\"materials\": [\"steel\"], \"quote\": \"The majority of gas grills follow the cart grill design concept: the grill unit itself is attached to a wheeled frame that holds the fuel tank.\", \"page\": \"Barbecue grill (revision 1364985701)\"}"
+    }
+   }
+  },
+  "bc_bulldozer": {
+   "parts": {
+    "continuous tracks": {
+     "materials": [
+      "steel plates",
+      "synthetic rubber",
+      "steel wires",
+      "manganese alloy steel"
+     ],
+     "classes": [
+      "heavy_metal",
+      "rubber"
+     ],
+     "quote": "Modern continuous tracks can be made with soft belts of synthetic rubber, reinforced with steel wires, in the case of lighter agricultural machinery. The more common classical type is a solid chain track made of steel plates (with or without rubber pads), also called caterpillar tread or tank tread, which is preferred for robust and heavy construction vehicles and military vehicles.",
+     "page": "Continuous track (revision 1370312114)",
+     "pages": [
+      {
+       "title": "Continuous track",
+       "revision": 1370312114,
+       "url": "https://en.wikipedia.org/w/index.php?title=Continuous_track&oldid=1370312114"
+      }
+     ]
+    },
+    "ripper": {
+     "materials": [
+      "hard steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Ripper, a moveable hard steel hook on the back of a bulldozer used to break up hard soil or pavement",
+     "page": "Ripper (revision 1369620197)",
+     "pages": [
+      {
+       "title": "Ripper",
+       "revision": 1369620197,
+       "url": "https://en.wikipedia.org/w/index.php?title=Ripper&oldid=1369620197"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "engine": {
+     "reason": "text does not say (pages tried: Engine, Bulldozer)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bulldozer (revision 1371704852)\"}"
+    },
+    "hydraulic cylinders": {
+     "reason": "text does not say (pages tried: Hydraulic pump, Hydraulic cylinder, Bulldozer)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bulldozer (revision 1371704852)\"}"
+    },
+    "drive sprocket": {
+     "reason": "text does not say (pages tried: Bulldozer)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bulldozer (revision 1371704852)\"}"
+    },
+    "idler wheel": {
+     "reason": "text does not say (pages tried: Rim (wheel), Bulldozer)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bulldozer (revision 1371704852)\"}"
+    },
+    "road wheels": {
+     "reason": "text does not say (pages tried: Rim (wheel), Bulldozer)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bulldozer (revision 1371704852)\"}"
+    },
+    "transmission": {
+     "reason": "text does not say (pages tried: Bulldozer)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bulldozer (revision 1371704852)\"}"
+    },
+    "hydraulic pump": {
+     "reason": "text does not say (pages tried: Hydraulic pump, Hydraulic cylinder, Bulldozer)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bulldozer (revision 1371704852)\"}"
+    },
+    "blade": {
+     "reason": "quote is about history",
+     "raw": "This includes early examples made from flaked stones like flint or obsidian, evolving through the ages into metal forms like copper, bronze, and iron, and culminating in modern versions made from steel or ceramics."
+    }
+   }
+  },
+  "bc_fire_engine": {
+   "parts": {
+    "Chassis": {
+     "materials": [
+      "stainless steel",
+      "carbon fibre"
+     ],
+     "classes": [
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Modern firetrucks are generally made out of high grade material such as stainless steel, polypropylene and sometimes carbon fibre.",
+     "page": "Fire engine (revision 1374527608)",
+     "pages": [
+      {
+       "title": "Fire engine",
+       "revision": 1374527608,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fire_engine&oldid=1374527608"
+      }
+     ]
+    },
+    "Water tank": {
+     "materials": [
+      "stainless steel",
+      "carbon fibre"
+     ],
+     "classes": [
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Modern firetrucks are generally made out of high grade material such as stainless steel, polypropylene and sometimes carbon fibre.",
+     "page": "Fire engine (revision 1374527608)",
+     "pages": [
+      {
+       "title": "Fire engine",
+       "revision": 1374527608,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fire_engine&oldid=1374527608"
+      }
+     ]
+    },
+    "Fire hose": {
+     "materials": [
+      "natural and synthetic fabrics",
+      "elastomers"
+     ],
+     "classes": [
+      "rubber",
+      "textile"
+     ],
+     "quote": "Modern fire hoses use a variety of natural and synthetic fabrics and elastomers in their construction.",
+     "page": "Fire hose (revision 1371998966)",
+     "pages": [
+      {
+       "title": "Fire hose",
+       "revision": 1371998966,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fire_hose&oldid=1371998966"
+      }
+     ]
+    },
+    "Wheels": {
+     "materials": [
+      "magnesium",
+      "aluminum"
+     ],
+     "classes": [
+      "light_metal"
+     ],
+     "quote": "Commonly seen are alloy (magnesium and aluminum), mag (magnesium), aluminum, and chrome.",
+     "page": "Rim (wheel)",
+     "pages": [
+      {
+       "title": "Rim (wheel)",
+       "revision": 1286347829,
+       "url": "https://en.wikipedia.org/w/index.php?title=Rim_%28wheel%29&oldid=1286347829"
+      }
+     ]
+    },
+    "Ladders": {
+     "materials": [
+      "metal",
+      "wood",
+      "fiberglass",
+      "tough plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "They are commonly made of metal, wood, fiberglass, or tough plastic.",
+     "page": "Ladder (revision 1372260707)",
+     "pages": [
+      {
+       "title": "Ladder",
+       "revision": 1372260707,
+       "url": "https://en.wikipedia.org/w/index.php?title=Ladder&oldid=1372260707"
+      }
+     ]
+    },
+    "Engine": {
+     "materials": [
+      "stainless steel",
+      "carbon fibre"
+     ],
+     "classes": [
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Modern firetrucks are generally made out of high grade material such as stainless steel, polypropylene and sometimes carbon fibre.",
+     "page": "Fire engine (revision 1374527608)",
+     "pages": [
+      {
+       "title": "Fire engine",
+       "revision": 1374527608,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fire_engine&oldid=1374527608"
+      }
+     ]
+    },
+    "Ladder sections": {
+     "materials": [
+      "metal",
+      "wood",
+      "fiberglass",
+      "tough plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "They are commonly made of metal, wood, fiberglass, or tough plastic.",
+     "page": "Ladder (revision 1372260707)",
+     "pages": [
+      {
+       "title": "Ladder",
+       "revision": 1372260707,
+       "url": "https://en.wikipedia.org/w/index.php?title=Ladder&oldid=1372260707"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Pump": {
+     "reason": "text does not say (pages tried: Pump, Pump, Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Cab": {
+     "reason": "text does not say (pages tried: Cab, Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Emergency lights and sirens": {
+     "reason": "text does not say (pages tried: Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Steering system": {
+     "reason": "text does not say (pages tried: Steering, Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Deluge gun": {
+     "reason": "text does not say (pages tried: Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Turntable ladder": {
+     "reason": "text does not say (pages tried: Ladder, Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Boom": {
+     "reason": "text does not say (pages tried: Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Platform": {
+     "reason": "text does not say (pages tried: Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Emergency lights": {
+     "reason": "text does not say (pages tried: Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Sirens": {
+     "reason": "text does not say (pages tried: Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    },
+    "Two-way radios": {
+     "reason": "text does not say (pages tried: Fire engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fire engine (revision 1374527608)\"}"
+    }
+   }
+  },
+  "bc_forklift": {
+   "parts": {
+    "Forks": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "In cutlery or kitchenware, a fork (from Latin: furca 'pitchfork') is a utensil, now usually made of metal, whose long handle terminates in a head that branches into several narrow and often slightly curved tines with which one can spear foods either to hold them to cut with a knife or to lift them to the mouth.",
+     "page": "Fork (revision 1361156638)",
+     "pages": [
+      {
+       "title": "Fork",
+       "revision": 1361156638,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fork&oldid=1361156638"
+      }
+     ]
+    },
+    "Truck frame": {
+     "materials": [
+      "carbon steel",
+      "aluminum alloys"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "Typically, the material used to construct vehicle chassis and frames include carbon steel for strength or aluminum alloys to achieve a more lightweight construction.",
+     "page": "Vehicle frame (revision 1333772113)",
+     "pages": [
+      {
+       "title": "Vehicle frame",
+       "revision": 1333772113,
+       "url": "https://en.wikipedia.org/w/index.php?title=Vehicle_frame&oldid=1333772113"
+      }
+     ]
+    },
+    "Wheels": {
+     "materials": [
+      "magnesium",
+      "aluminum"
+     ],
+     "classes": [
+      "light_metal"
+     ],
+     "quote": "Commonly seen are alloy (magnesium and aluminum), mag (magnesium), aluminum, and chrome.",
+     "page": "Rim (wheel)",
+     "pages": [
+      {
+       "title": "Rim (wheel)",
+       "revision": 1286347829,
+       "url": "https://en.wikipedia.org/w/index.php?title=Rim_%28wheel%29&oldid=1286347829"
+      }
+     ]
+    },
+    "Overhead guard": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "Overhead guard \u2013 a metal roof supported by posts at each corner of the cab that helps protect the operator from any falling objects.",
+     "page": "Forklift (revision 1365336804)",
+     "pages": [
+      {
+       "title": "Forklift",
+       "revision": 1365336804,
+       "url": "https://en.wikipedia.org/w/index.php?title=Forklift&oldid=1365336804"
+      }
+     ]
+    },
+    "Tilt cylinders": {
+     "materials": [
+      "honed seamless steel tubes"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "It acts as a pressure vessel containing high-pressure fluid, typically manufactured from honed seamless steel tubes to provide a wear-resistant interior surface for smooth piston movement and seal efficiency.",
+     "page": "Hydraulic cylinder (revision 1373421738)",
+     "pages": [
+      {
+       "title": "Hydraulic cylinder",
+       "revision": 1373421738,
+       "url": "https://en.wikipedia.org/w/index.php?title=Hydraulic_cylinder&oldid=1373421738"
+      }
+     ]
+    },
+    "All wheels": {
+     "materials": [
+      "magnesium",
+      "aluminum"
+     ],
+     "classes": [
+      "light_metal"
+     ],
+     "quote": "Commonly seen are alloy (magnesium and aluminum), mag (magnesium), aluminum, and chrome.",
+     "page": "Rim (wheel)",
+     "pages": [
+      {
+       "title": "Rim (wheel)",
+       "revision": 1286347829,
+       "url": "https://en.wikipedia.org/w/index.php?title=Rim_%28wheel%29&oldid=1286347829"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Mast": {
+     "reason": "text does not say (pages tried: Mast (sailing), Mast, Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Carriage": {
+     "reason": "text does not say (pages tried: Carriage, Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Counterweight": {
+     "reason": "text does not say (pages tried: Counterweight, Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Power source": {
+     "reason": "text does not say (pages tried: Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Hydraulic cylinders": {
+     "reason": "text does not say (pages tried: Hydraulic cylinder, Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Cab": {
+     "reason": "text does not say (pages tried: Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Chains": {
+     "reason": "text does not say (pages tried: Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Axles": {
+     "reason": "text does not say (pages tried: Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Steering wheel": {
+     "reason": "text does not say (pages tried: Steering, Wheel, Rim (wheel), Steering, Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Rear wheels": {
+     "reason": "text does not say (pages tried: Wheel, Rim (wheel), Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    },
+    "Linkages": {
+     "reason": "text does not say (pages tried: Forklift)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Forklift (revision 1365336804)\"}"
+    }
+   }
+  },
+  "bc_tower_crane": {
+   "parts": {
+    "Counterweights": {
+     "materials": [
+      "concrete"
+     ],
+     "classes": [
+      "ceramic"
+     ],
+     "quote": "The short arm is called the machinery arm; this holds the motors and electronics to operate the crane, as well as the concrete counterweights.",
+     "page": "Counterweight (revision 1194009001)",
+     "pages": [
+      {
+       "title": "Counterweight",
+       "revision": 1194009001,
+       "url": "https://en.wikipedia.org/w/index.php?title=Counterweight&oldid=1194009001"
+      }
+     ]
+    },
+    "Hook": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "A hook is a tool consisting of a length of material, typically metal, that contains a portion that is curved/bent back or has a deeply grooved indentation, which serves to grab, latch or in any way attach itself onto another object.",
+     "page": "Hook (revision 1345909324)",
+     "pages": [
+      {
+       "title": "Hook",
+       "revision": 1345909324,
+       "url": "https://en.wikipedia.org/w/index.php?title=Hook&oldid=1345909324"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Mast": {
+     "reason": "text does not say (pages tried: Mast, Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Slewing unit": {
+     "reason": "text does not say (pages tried: Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Jib": {
+     "reason": "text does not say (pages tried: Jib, Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Counter-jib": {
+     "reason": "text does not say (pages tried: Jib, Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Hoist winch": {
+     "reason": "text does not say (pages tried: Winch, Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Wire rope": {
+     "reason": "text does not say (pages tried: Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Operating cabin": {
+     "reason": "text does not say (pages tried: Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Sheaves": {
+     "reason": "text does not say (pages tried: Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Upper structure (Jib, Counter-jib, Cabin)": {
+     "reason": "text does not say (pages tried: Jib, Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    },
+    "Trolley": {
+     "reason": "text does not say (pages tried: Trolley, Crane (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Crane (machine)\"}"
+    }
+   }
+  },
+  "bc_wind_turbine": {
+   "parts": {
+    "Generator": {
+     "materials": [
+      "copper"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Modern turbines use some two tons of copper for wiring, generators, transformers, and grounding systems due to its exceptional electrical conductivity and durability.",
+     "page": "Wind turbine (revision 1374478937)",
+     "pages": [
+      {
+       "title": "Wind turbine",
+       "revision": 1374478937,
+       "url": "https://en.wikipedia.org/w/index.php?title=Wind_turbine&oldid=1374478937"
+      }
+     ]
+    },
+    "Rotor (Blades and Hub)": {
+     "materials": [
+      "glass fiber composites",
+      "carbon fiber"
+     ],
+     "classes": [
+      "plastic"
+     ],
+     "quote": "Blades are most commonly made of glass fiber composites, but carbon fiber which is stiffer, stronger, and less dense is also used.",
+     "page": "Wind turbine (revision 1374478937)",
+     "pages": [
+      {
+       "title": "Wind turbine",
+       "revision": 1374478937,
+       "url": "https://en.wikipedia.org/w/index.php?title=Wind_turbine&oldid=1374478937"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Hub": {
+     "reason": "material 'aluminum alloys' not in the quote as a material word (pages tried: Hub, Wind turbine)",
+     "raw": "{\"materials\": [\"steel\", \"aluminum alloys\"], \"quote\": \"Wind turbine parts other than the rotor blades (including the rotor hub, gearbox, frame, and tower) are largely made of steel.\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Nacelle": {
+     "reason": "text does not say (pages tried: Nacelle (wind turbine), Nacelle, Wind turbine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Tower": {
+     "reason": "material 'aluminum alloys' not in the quote as a material word (pages tried: Tower, Wind turbine)",
+     "raw": "{\"materials\": [\"steel\", \"aluminum alloys\", \"pre-stressed concrete\"], \"quote\": \"Wind turbine parts other than the rotor blades (including the rotor hub, gearbox, frame, and tower) are largely made of steel.\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Yaw system": {
+     "reason": "text does not say (pages tried: Yaw bearing, Wind turbine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Gearbox": {
+     "reason": "material 'aluminum alloys' not in the quote as a material word (pages tried: Wind turbine)",
+     "raw": "{\"materials\": [\"steel\", \"aluminum alloys\"], \"quote\": \"Wind turbine parts other than the rotor blades (including the rotor hub, gearbox, frame, and tower) are largely made of steel.\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Pitch bearings": {
+     "reason": "text does not say (pages tried: Pitch bearing, Load-bearing wall, Yaw bearing, Wind turbine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Main shaft": {
+     "reason": "text does not say (pages tried: Wind turbine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Yaw bearing": {
+     "reason": "text does not say (pages tried: Pitch bearing, Load-bearing wall, Yaw bearing, Wind turbine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Yaw drives": {
+     "reason": "text does not say (pages tried: Yaw bearing, Wind turbine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Wind sensor": {
+     "reason": "text does not say (pages tried: Nacelle (wind turbine), Wind farm, Wind turbine design, Wind turbine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Pitch actuators": {
+     "reason": "text does not say (pages tried: Pitch bearing, Wind turbine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wind turbine (revision 1374478937)\"}"
+    },
+    "Blades": {
+     "reason": "quote is about history",
+     "raw": "This includes early examples made from flaked stones like flint or obsidian, evolving through the ages into metal forms like copper, bronze, and iron, and culminating in modern versions made from steel or ceramics."
+    }
+   }
+  },
+  "bed_frame": {
+   "parts": {
+    "bed frame": {
+     "materials": [
+      "wood",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "There are several types of bed frames, and they are typically made of wood or metal.",
+     "page": "Bed frame (revision 1373686508)",
+     "pages": [
+      {
+       "title": "Bed frame",
+       "revision": 1373686508,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bed_frame&oldid=1373686508"
+      }
+     ]
+    },
+    "bed base": {
+     "materials": [
+      "wood",
+      "steel"
+     ],
+     "classes": [
+      "heavy_metal",
+      "wood"
+     ],
+     "quote": "A grid-top foundation is a combination of steel and wood.",
+     "page": "Bed base (revision 1363921727)",
+     "pages": [
+      {
+       "title": "Bed base",
+       "revision": 1363921727,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bed_base&oldid=1363921727"
+      }
+     ]
+    },
+    "side rails": {
+     "materials": [
+      "wood",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "Bed rails are made of wood or metal and are attached to a headboard and footboard.",
+     "page": "Bed (revision 1374078842)",
+     "pages": [
+      {
+       "title": "Bed",
+       "revision": 1374078842,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bed&oldid=1374078842"
+      }
+     ]
+    },
+    "headboard": {
+     "materials": [
+      "wood",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "Headboards and footboards can be wood or metal.",
+     "page": "Bed (revision 1374078842)",
+     "pages": [
+      {
+       "title": "Bed",
+       "revision": 1374078842,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bed&oldid=1374078842"
+      }
+     ]
+    },
+    "footboard": {
+     "materials": [
+      "wood",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "Headboards and footboards can be wood or metal.",
+     "page": "Bed (revision 1374078842)",
+     "pages": [
+      {
+       "title": "Bed",
+       "revision": 1374078842,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bed&oldid=1374078842"
+      }
+     ]
+    },
+    "box spring": {
+     "materials": [
+      "wood"
+     ],
+     "classes": [
+      "wood"
+     ],
+     "quote": "Many beds include a box spring inner-sprung base, which is a large mattress-sized box containing wood and springs that provide additional support and suspension for the mattress.",
+     "page": "Bed (revision 1374078842)",
+     "pages": [
+      {
+       "title": "Bed",
+       "revision": 1374078842,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bed&oldid=1374078842"
+      }
+     ]
+    },
+    "roll-away bed frame": {
+     "materials": [
+      "wood",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "Bed frames, also called bed steads, are made of wood or metal.",
+     "page": "Bed (revision 1374078842)",
+     "pages": [
+      {
+       "title": "Bed",
+       "revision": 1374078842,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bed&oldid=1374078842"
+      }
+     ]
+    },
+    "sofa bed frame": {
+     "materials": [
+      "wood",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "There are several types of bed frames, and they are typically made of wood or metal.",
+     "page": "Bed frame (revision 1373686508)",
+     "pages": [
+      {
+       "title": "Bed frame",
+       "revision": 1373686508,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bed_frame&oldid=1373686508"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "mattress": {
+     "reason": "text does not say (pages tried: Mattress, Mattress, Bed)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bed (revision 1374078842)\"}"
+    },
+    "center support rail": {
+     "reason": "text does not say (pages tried: National Center for Sex Education, Bed)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Bed (revision 1374078842)\"}"
+    },
+    "wooden slats": {
+     "reason": "material 'wood' not in the quote as a material word (pages tried: Bed)",
+     "raw": "{\"materials\": [\"wood\"], \"quote\": \"Wooden slats are placed perpendicular to the bed rails to support the mattress/mattress box spring.\", \"page\": \"Bed (revision 1374078842)\"}"
+    }
+   }
+  },
+  "bench_drill_press": {
+   "parts": {},
+   "dropped": {
+    "Spindle": {
+     "reason": "text does not say (pages tried: Spindle, Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Chuck": {
+     "reason": "text does not say (pages tried: Chuck (engineering), Chuck, Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Table": {
+     "reason": "text does not say (pages tried: Table, Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Base": {
+     "reason": "text does not say (pages tried: Base, Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Feed Handle": {
+     "reason": "text does not say (pages tried: Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Motor": {
+     "reason": "text does not say (pages tried: Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Depth Stop": {
+     "reason": "text does not say (pages tried: Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Column": {
+     "reason": "text does not say (pages tried: Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Vise": {
+     "reason": "text does not say (pages tried: Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Clamp": {
+     "reason": "text does not say (pages tried: Clamp, Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    },
+    "Rack and Pinion": {
+     "reason": "text does not say (pages tried: Drill press)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Drill press (revision 1356239403)\"}"
+    }
+   }
+  },
+  "bookcase": {
+   "parts": {},
+   "dropped": {
+    "shelf": {
+     "reason": "no material maps to a library class (pages tried: Shelf (storage), Shelf, Bookcase)",
+     "raw": "{\"materials\": [\"oak\", \"black walnut\", \"western ash\", \"Philippine mahogany\"], \"quote\": \"The woods were oak, black walnut, western ash, and Philippine mahogany.\", \"page\": \"Bookcase (revision 1367511995)\"}"
+    },
+    "frame or cabinet structure": {
+     "reason": "no material maps to a library class (pages tried: Bookcase)",
+     "raw": "{\"materials\": [\"oak\", \"black walnut\", \"western ash\", \"Philippine mahogany\"], \"quote\": \"The woods were oak, black walnut, western ash, and Philippine mahogany.\", \"page\": \"Bookcase (revision 1367511995)\"}"
+    }
+   }
+  },
+  "camera": {
+   "parts": {
+    "lens": {
+     "materials": [
+      "glass",
+      "plastic"
+     ],
+     "classes": [
+      "glass",
+      "plastic"
+     ],
+     "quote": "Lenses are made from materials such as glass or plastic and are ground, polished, or molded to the required shape.",
+     "page": "Lens (revision 1372120088)",
+     "pages": [
+      {
+       "title": "Lens",
+       "revision": 1372120088,
+       "url": "https://en.wikipedia.org/w/index.php?title=Lens&oldid=1372120088"
+      }
+     ]
+    },
+    "shutter": {
+     "materials": [
+      "cloth",
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Focal-plane shutters are usually implemented as a pair of light-tight cloth, metal, or plastic curtains.",
+     "page": "Shutter (photography)",
+     "pages": [
+      {
+       "title": "Shutter (photography)",
+       "revision": 1361940348,
+       "url": "https://en.wikipedia.org/w/index.php?title=Shutter_%28photography%29&oldid=1361940348"
+      }
+     ]
+    },
+    "shutter release": {
+     "materials": [
+      "cloth",
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Focal-plane shutters are usually implemented as a pair of light-tight cloth, metal, or plastic curtains.",
+     "page": "Shutter (photography)",
+     "pages": [
+      {
+       "title": "Shutter (photography)",
+       "revision": 1361940348,
+       "url": "https://en.wikipedia.org/w/index.php?title=Shutter_%28photography%29&oldid=1361940348"
+      }
+     ]
+    },
+    "lens elements": {
+     "materials": [
+      "glass",
+      "plastic"
+     ],
+     "classes": [
+      "glass",
+      "plastic"
+     ],
+     "quote": "Lenses are made from materials such as glass or plastic and are ground, polished, or molded to the required shape.",
+     "page": "Lens (revision 1372120088)",
+     "pages": [
+      {
+       "title": "Lens",
+       "revision": 1372120088,
+       "url": "https://en.wikipedia.org/w/index.php?title=Lens&oldid=1372120088"
+      }
+     ]
+    },
+    "shutter curtains": {
+     "materials": [
+      "cloth",
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Focal-plane shutters are usually implemented as a pair of light-tight cloth, metal, or plastic curtains.",
+     "page": "Shutter (photography)",
+     "pages": [
+      {
+       "title": "Shutter (photography)",
+       "revision": 1361940348,
+       "url": "https://en.wikipedia.org/w/index.php?title=Shutter_%28photography%29&oldid=1361940348"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "aperture": {
+     "reason": "text does not say (pages tried: Aperture, Aperture, Camera)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Camera (revision 1373295745)\"}"
+    },
+    "image sensor or film": {
+     "reason": "no material maps to a library class (pages tried: Photographic film, Sensor, Image sensor, Camera)",
+     "raw": "{\"materials\": [\"Charge-Coupled Devices (CCDs)\", \"Complementary Metal-Oxide-Semiconductor (CMOS) chips\"], \"quote\": \"In digital cameras, sensors typically comprise Charge-Coupled Devices (CCDs) or Complementary Metal-Oxide-Semiconductor (CMOS) chips, both of which convert incoming light into electrica"
+    },
+    "viewfinder": {
+     "reason": "text does not say (pages tried: Viewfinder, Viewfinder, Camera)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Camera (revision 1373295745)\"}"
+    },
+    "camera body": {
+     "reason": "text does not say (pages tried: Camera lens, System camera, Camera, Movie camera, Camera, Body camera, Camera)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Camera (revision 1373295745)\"}"
+    },
+    "light meter": {
+     "reason": "text does not say (pages tried: Light meter, Camera)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Camera (revision 1373295745)\"}"
+    },
+    "image sensor": {
+     "reason": "no material maps to a library class (pages tried: Sensor, Image sensor, Camera)",
+     "raw": "{\"materials\": [\"Charge-Coupled Devices (CCDs)\", \"Complementary Metal-Oxide-Semiconductor (CMOS) chips\"], \"quote\": \"In digital cameras, sensors typically comprise Charge-Coupled Devices (CCDs) or Complementary Metal-Oxide-Semiconductor (CMOS) chips, both of which convert incoming light into electrica"
+    },
+    "film": {
+     "reason": "text does not say (pages tried: Photographic film, Camera)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Camera (revision 1373295745)\"}"
+    },
+    "focus ring": {
+     "reason": "text does not say (pages tried: Camera)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Camera (revision 1373295745)\"}"
+    },
+    "autofocus motor": {
+     "reason": "text does not say (pages tried: Camera)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Camera (revision 1373295745)\"}"
+    }
+   }
+  },
+  "casement_window": {
+   "parts": {
+    "frame": {
+     "materials": [
+      "wood",
+      "iron"
+     ],
+     "classes": [
+      "heavy_metal",
+      "wood"
+     ],
+     "quote": "Over time, windows were built that both protected the inhabitants from the elements and transmitted light, using multiple small pieces of translucent material, such as flattened pieces of translucent animal horn, paper sheets, thin slices of marble (such as fengite), or pieces of glass, set in frameworks of wood, iron or lead.",
+     "page": "Window (revision 1372964996)",
+     "pages": [
+      {
+       "title": "Window",
+       "revision": 1372964996,
+       "url": "https://en.wikipedia.org/w/index.php?title=Window&oldid=1372964996"
+      }
+     ]
+    },
+    "sash": {
+     "materials": [
+      "wood",
+      "iron"
+     ],
+     "classes": [
+      "heavy_metal",
+      "wood"
+     ],
+     "quote": "Over time, windows were built that both protected the inhabitants from the elements and transmitted light, using multiple small pieces of translucent material, such as flattened pieces of translucent animal horn, paper sheets, thin slices of marble (such as fengite), or pieces of glass, set in frameworks of wood, iron or lead.",
+     "page": "Window (revision 1372964996)",
+     "pages": [
+      {
+       "title": "Window",
+       "revision": 1372964996,
+       "url": "https://en.wikipedia.org/w/index.php?title=Window&oldid=1372964996"
+      }
+     ]
+    },
+    "glazing": {
+     "materials": [
+      "glass"
+     ],
+     "classes": [
+      "glass"
+     ],
+     "quote": "Glazing, which derives from the Middle English for 'glass', is a part of a wall or window, made of glass.",
+     "page": "Glazing (window)",
+     "pages": [
+      {
+       "title": "Glazing (window)",
+       "revision": 1360678595,
+       "url": "https://en.wikipedia.org/w/index.php?title=Glazing_%28window%29&oldid=1360678595"
+      }
+     ]
+    },
+    "latch": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Latches range in complexity from flexible one-piece flat springs of metal or plastic, such as are used to keep blow molded plastic power tool cases closed, to multi-point cammed latches used to keep large doors closed.",
+     "page": "Latch (revision 1359969425)",
+     "pages": [
+      {
+       "title": "Latch",
+       "revision": 1359969425,
+       "url": "https://en.wikipedia.org/w/index.php?title=Latch&oldid=1359969425"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "sill": {
+     "reason": "text does not say (pages tried: Sill, Window)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Window (revision 1372964996)\"}"
+    },
+    "glazing points or putty": {
+     "reason": "text does not say (pages tried: Glazing (window), Glazing (window), Window)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Window (revision 1372964996)\"}"
+    }
+   }
+  },
+  "chest_of_drawers": {
+   "parts": {
+    "drawers": {
+     "materials": [
+      "wood",
+      "various wood composites",
+      "sheet metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Drawers can be built in various ways using a variety of materials, including wood, various wood composites, sheet metal, and plastic.",
+     "page": "Drawer (revision 1369592629)",
+     "pages": [
+      {
+       "title": "Drawer",
+       "revision": 1369592629,
+       "url": "https://en.wikipedia.org/w/index.php?title=Drawer&oldid=1369592629"
+      }
+     ]
+    },
+    "cabinet frame": {
+     "materials": [
+      "wood"
+     ],
+     "classes": [
+      "wood"
+     ],
+     "quote": "They are commonly made of wood, similar to many other kinds of furniture, but of course can be made of other materials.",
+     "page": "Chest of drawers (revision 1297288996)",
+     "pages": [
+      {
+       "title": "Chest of drawers",
+       "revision": 1297288996,
+       "url": "https://en.wikipedia.org/w/index.php?title=Chest_of_drawers&oldid=1297288996"
+      }
+     ]
+    },
+    "drawer slides": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "Most modern cabinets (such as Filing cabinets) use roll-out shelf sliders, made of metal, with rollers.",
+     "page": "Chest of drawers (revision 1297288996)",
+     "pages": [
+      {
+       "title": "Chest of drawers",
+       "revision": 1297288996,
+       "url": "https://en.wikipedia.org/w/index.php?title=Chest_of_drawers&oldid=1297288996"
+      }
+     ]
+    },
+    "drawer": {
+     "materials": [
+      "wood",
+      "various wood composites",
+      "sheet metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Drawers can be built in various ways using a variety of materials, including wood, various wood composites, sheet metal, and plastic.",
+     "page": "Drawer (revision 1369592629)",
+     "pages": [
+      {
+       "title": "Drawer",
+       "revision": 1369592629,
+       "url": "https://en.wikipedia.org/w/index.php?title=Drawer&oldid=1369592629"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "handles": {
+     "reason": "text does not say (pages tried: Handle, Chest of drawers)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Chest of drawers (revision 1297288996)\"}"
+    },
+    "legs": {
+     "reason": "text does not say (pages tried: Leg, Chest of drawers)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Chest of drawers (revision 1297288996)\"}"
+    },
+    "top surface": {
+     "reason": "text does not say (pages tried: Chest of drawers)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Chest of drawers (revision 1297288996)\"}"
+    }
+   }
+  },
+  "computer_mouse": {
+   "parts": {
+    "mouse buttons": {
+     "materials": [
+      "plastic",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Buttons are typically made out of hard material, usually plastic or metal.",
+     "page": "Push-button (revision 1373727786)",
+     "pages": [
+      {
+       "title": "Push-button",
+       "revision": 1373727786,
+       "url": "https://en.wikipedia.org/w/index.php?title=Push-button&oldid=1373727786"
+      }
+     ]
+    },
+    "scroll wheel": {
+     "materials": [
+      "hard plastic",
+      "rubbery surface"
+     ],
+     "classes": [
+      "plastic",
+      "rubber"
+     ],
+     "quote": "It is often made of hard plastic with a rubbery surface, centred around an internal rotary encoder.",
+     "page": "Scroll wheel (revision 1372729738)",
+     "pages": [
+      {
+       "title": "Scroll wheel",
+       "revision": 1372729738,
+       "url": "https://en.wikipedia.org/w/index.php?title=Scroll_wheel&oldid=1372729738"
+      }
+     ]
+    },
+    "printed circuit board": {
+     "materials": [
+      "copper"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "A printed circuit board (PCB), also known as a printed wiring board (PWB), is a laminated sandwich structure of conductive and insulating layers, each with a pattern of traces, planes and other features (similar to wires on a flat surface) etched from one or more sheet layers of copper laminated onto or between sheet layers of a non-conductive substrate.",
+     "page": "Printed circuit board (revision 1370932150)",
+     "pages": [
+      {
+       "title": "Printed circuit board",
+       "revision": 1370932150,
+       "url": "https://en.wikipedia.org/w/index.php?title=Printed_circuit_board&oldid=1370932150"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "motion sensor": {
+     "reason": "text does not say (pages tried: Computer mouse)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Computer mouse (revision 1374684050)\"}"
+    },
+    "communication interface": {
+     "reason": "text does not say (pages tried: Cursor (user interface), Selection (user interface), Computer mouse)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Computer mouse (revision 1374684050)\"}"
+    }
+   }
+  },
+  "desk_lamp": {
+   "parts": {
+    "friction elements": {
+     "materials": [
+      "rubber"
+     ],
+     "classes": [
+      "rubber"
+     ],
+     "quote": "This in turn increases pressure on the rubber in the gap, and the resulting friction holds the arm in place.",
+     "page": "Balanced-arm lamp (revision 1220839608)",
+     "pages": [
+      {
+       "title": "Balanced-arm lamp",
+       "revision": 1220839608,
+       "url": "https://en.wikipedia.org/w/index.php?title=Balanced-arm_lamp&oldid=1220839608"
+      }
+     ]
+    },
+    "electric light": {
+     "materials": [
+      "ceramic",
+      "metal",
+      "glass",
+      "plastic"
+     ],
+     "classes": [
+      "ceramic",
+      "glass",
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Lamps usually have a base made of ceramic, metal, glass, or plastic that secures them in the socket of a light fixture.",
+     "page": "Electric light (revision 1374432727)",
+     "pages": [
+      {
+       "title": "Electric light",
+       "revision": 1374432727,
+       "url": "https://en.wikipedia.org/w/index.php?title=Electric_light&oldid=1374432727"
+      }
+     ]
+    },
+    "lampshade": {
+     "materials": [
+      "fabric",
+      "glass",
+      "Tiffany glass",
+      "paper",
+      "plastic"
+     ],
+     "classes": [
+      "glass",
+      "plastic",
+      "textile",
+      "wood"
+     ],
+     "quote": "Lampshades are made of fabric, parchment, glass, Tiffany glass, paper or plastic.",
+     "page": "Lampshade (revision 1371353769)",
+     "pages": [
+      {
+       "title": "Lampshade",
+       "revision": 1371353769,
+       "url": "https://en.wikipedia.org/w/index.php?title=Lampshade&oldid=1371353769"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "base": {
+     "reason": "text does not say (pages tried: Base, Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp (revision 1220839608)\"}"
+    },
+    "stand or body": {
+     "reason": "text does not say (pages tried: Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp (revision 1220839608)\"}"
+    },
+    "upper arm": {
+     "reason": "text does not say (pages tried: Arm, Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp\"}"
+    },
+    "forearm": {
+     "reason": "text does not say (pages tried: Forearm, Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp\"}"
+    },
+    "lamp head": {
+     "reason": "text does not say (pages tried: Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp\"}"
+    },
+    "balancing mechanism": {
+     "reason": "text does not say (pages tried: Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp\"}"
+    },
+    "springs": {
+     "reason": "text does not say (pages tried: Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp\"}"
+    },
+    "counterweights": {
+     "reason": "text does not say (pages tried: Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp\"}"
+    },
+    "lightbulb socket": {
+     "reason": "text does not say (pages tried: Lightbulb socket, Balanced-arm lamp)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Balanced-arm lamp\"}"
+    }
+   }
+  },
+  "dining_chair": {
+   "parts": {
+    "legs": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "In some cases, multiple materials are used to construct a chair; for example, the legs and frame may be made from metal and the seat and back may be made from plastic.",
+     "page": "Chair (revision 1351961321)",
+     "pages": [
+      {
+       "title": "Chair",
+       "revision": 1351961321,
+       "url": "https://en.wikipedia.org/w/index.php?title=Chair&oldid=1351961321"
+      }
+     ]
+    },
+    "seat": {
+     "materials": [
+      "wood",
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Chairs may have hard surfaces of wood, metal, plastic, or other materials, or some or all of these hard surfaces may be covered with upholstery or padding.",
+     "page": "Chair (revision 1351961321)",
+     "pages": [
+      {
+       "title": "Chair",
+       "revision": 1351961321,
+       "url": "https://en.wikipedia.org/w/index.php?title=Chair&oldid=1351961321"
+      }
+     ]
+    },
+    "upholstery": {
+     "materials": [
+      "fabrics"
+     ],
+     "classes": [
+      "textile"
+     ],
+     "quote": "It may be made of wood, metal, or synthetic materials, and may be padded or upholstered in various colors and fabrics.",
+     "page": "Chair (revision 1351961321)",
+     "pages": [
+      {
+       "title": "Chair",
+       "revision": 1351961321,
+       "url": "https://en.wikipedia.org/w/index.php?title=Chair&oldid=1351961321"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "back-rest": {
+     "reason": "material 'wood' not in the quote as a material word (pages tried: Chair)",
+     "raw": "{\"materials\": [\"wood\", \"metal\", \"plastic\"], \"quote\": \"In some cases, multiple materials are used to construct a chair; for example, the legs and frame may be made from metal and the seat and back may be made from plastic.\", \"page\": \"Chair (revision 1351961321)\"}"
+    },
+    "padding": {
+     "reason": "text does not say (pages tried: Chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Chair (revision 1351961321)\"}"
+    },
+    "contoured seat": {
+     "reason": "text does not say (pages tried: SEAT, Chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Chair (revision 1351961321)\"}"
+    }
+   }
+  },
+  "dining_table": {
+   "parts": {
+    "tabletop": {
+     "materials": [
+      "wood",
+      "metal",
+      "glass"
+     ],
+     "classes": [
+      "glass",
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "Many tables are made of wood or wood-based products; some are made of other materials including metal and glass.",
+     "page": "Table (furniture)",
+     "pages": [
+      {
+       "title": "Table (furniture)",
+       "revision": 1342499022,
+       "url": "https://en.wikipedia.org/w/index.php?title=Table_%28furniture%29&oldid=1342499022"
+      }
+     ]
+    },
+    "drawers": {
+     "materials": [
+      "wood",
+      "various wood composites",
+      "sheet metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Drawers can be built in various ways using a variety of materials, including wood, various wood composites, sheet metal, and plastic.",
+     "page": "Drawer (revision 1369592629)",
+     "pages": [
+      {
+       "title": "Drawer",
+       "revision": 1369592629,
+       "url": "https://en.wikipedia.org/w/index.php?title=Drawer&oldid=1369592629"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "legs": {
+     "reason": "text does not say (pages tried: Leg, Table (furniture))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Table (furniture)\"}"
+    },
+    "pedestal": {
+     "reason": "text does not say (pages tried: Table (furniture))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Table (furniture)\"}"
+    },
+    "stretchers": {
+     "reason": "text does not say (pages tried: Table (furniture))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Table (furniture)\"}"
+    },
+    "leaves": {
+     "reason": "text does not say (pages tried: Table (furniture))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Table (furniture)\"}"
+    },
+    "shelves": {
+     "reason": "text does not say (pages tried: Table (furniture))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Table (furniture)\"}"
+    }
+   }
+  },
+  "dishwasher": {
+   "parts": {
+    "Wash chamber (tub)": {
+     "materials": [
+      "plastic",
+      "stainless steel"
+     ],
+     "classes": [
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Dishwashers might use either plastic or stainless steel for the construction of the wash chamber; stainless steel generally provides advantages over plastic construction.",
+     "page": "Dishwasher (revision 1369490945)",
+     "pages": [
+      {
+       "title": "Dishwasher",
+       "revision": 1369490945,
+       "url": "https://en.wikipedia.org/w/index.php?title=Dishwasher&oldid=1369490945"
+      }
+     ]
+    },
+    "Heating element": {
+     "materials": [
+      "copper",
+      "steel alloy"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Insulation is typically a magnesium oxide powder and the sheath is normally constructed of a copper or steel alloy.",
+     "page": "Heating element (revision 1368884069)",
+     "pages": [
+      {
+       "title": "Heating element",
+       "revision": 1368884069,
+       "url": "https://en.wikipedia.org/w/index.php?title=Heating_element&oldid=1368884069"
+      }
+     ]
+    },
+    "Door": {
+     "materials": [
+      "wood",
+      "steel",
+      "fiberglass",
+      "aluminum",
+      "composite",
+      "glass"
+     ],
+     "classes": [
+      "glass",
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "New exterior doors are largely defined by the type of materials they are made from: wood, steel, fiberglass, UPVC/vinyl, aluminum, composite, glass (patio doors), etc.",
+     "page": "Door (revision 1371307890)",
+     "pages": [
+      {
+       "title": "Door",
+       "revision": 1371307890,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door&oldid=1371307890"
+      }
+     ]
+    },
+    "Racks": {
+     "materials": [
+      "plastic"
+     ],
+     "classes": [
+      "plastic"
+     ],
+     "quote": "Most of them are stainless steel body and plastic made racks.",
+     "page": "Dishwasher (revision 1369490945)",
+     "pages": [
+      {
+       "title": "Dishwasher",
+       "revision": 1369490945,
+       "url": "https://en.wikipedia.org/w/index.php?title=Dishwasher&oldid=1369490945"
+      }
+     ]
+    },
+    "Solenoid valve": {
+     "materials": [
+      "brass",
+      "stainless steel",
+      "aluminum",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "The valve body must be compatible with the fluid; common materials are brass, stainless steel, aluminum, and plastic.",
+     "page": "Solenoid valve (revision 1362673426)",
+     "pages": [
+      {
+       "title": "Solenoid valve",
+       "revision": 1362673426,
+       "url": "https://en.wikipedia.org/w/index.php?title=Solenoid_valve&oldid=1362673426"
+      }
+     ]
+    },
+    "Wash chamber": {
+     "materials": [
+      "plastic",
+      "stainless steel"
+     ],
+     "classes": [
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Dishwashers might use either plastic or stainless steel for the construction of the wash chamber; stainless steel generally provides advantages over plastic construction.",
+     "page": "Dishwasher (revision 1369490945)",
+     "pages": [
+      {
+       "title": "Dishwasher",
+       "revision": 1369490945,
+       "url": "https://en.wikipedia.org/w/index.php?title=Dishwasher&oldid=1369490945"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Sprayers": {
+     "reason": "text does not say (pages tried: Sprayer, Dishwasher)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dishwasher (revision 1369490945)\"}"
+    },
+    "Pump": {
+     "reason": "text does not say (pages tried: Pump, Dishwasher)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dishwasher (revision 1369490945)\"}"
+    },
+    "Control system": {
+     "reason": "text does not say (pages tried: Control system, Dishwasher)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dishwasher (revision 1369490945)\"}"
+    },
+    "Drain system": {
+     "reason": "text does not say (pages tried: Control system, Dishwasher)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dishwasher (revision 1369490945)\"}"
+    },
+    "Detergent dispenser": {
+     "reason": "text does not say (pages tried: Dishwasher)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dishwasher (revision 1369490945)\"}"
+    },
+    "Hinges": {
+     "reason": "text does not say (pages tried: Hinge, Dishwasher)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dishwasher (revision 1369490945)\"}"
+    }
+   }
+  },
+  "farm_tractor": {
+   "parts": {
+    "wheels or tracks": {
+     "materials": [
+      "synthetic rubber",
+      "natural rubber",
+      "fabric",
+      "wire"
+     ],
+     "classes": [
+      "heavy_metal",
+      "rubber",
+      "textile"
+     ],
+     "quote": "The fundamental materials of modern tires are synthetic rubber, natural rubber, fabric, and wire, along with other compound chemicals.",
+     "page": "Wheel (revision 1372796054)",
+     "pages": [
+      {
+       "title": "Wheel",
+       "revision": 1372796054,
+       "url": "https://en.wikipedia.org/w/index.php?title=Wheel&oldid=1372796054"
+      }
+     ]
+    },
+    "steering mechanism": {
+     "materials": [
+      "steel",
+      "magnesium",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "A typical design for circular steering wheels is a steel or magnesium rim with a plastic or rubberized grip molded over and around it.",
+     "page": "Steering wheel (revision 1373489650)",
+     "pages": [
+      {
+       "title": "Steering wheel",
+       "revision": 1373489650,
+       "url": "https://en.wikipedia.org/w/index.php?title=Steering_wheel&oldid=1373489650"
+      }
+     ]
+    },
+    "brakes": {
+     "materials": [
+      "cast iron",
+      "ceramic"
+     ],
+     "classes": [
+      "ceramic",
+      "heavy_metal"
+     ],
+     "quote": "A brake disc (or rotor in U.S. English), usually made of cast iron or ceramic, is connected to the wheel or the axle.",
+     "page": "Brake (revision 1373688342)",
+     "pages": [
+      {
+       "title": "Brake",
+       "revision": 1373688342,
+       "url": "https://en.wikipedia.org/w/index.php?title=Brake&oldid=1373688342"
+      }
+     ]
+    },
+    "steering wheel": {
+     "materials": [
+      "steel",
+      "magnesium",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "A typical design for circular steering wheels is a steel or magnesium rim with a plastic or rubberized grip molded over and around it.",
+     "page": "Steering wheel (revision 1373489650)",
+     "pages": [
+      {
+       "title": "Steering wheel",
+       "revision": 1373489650,
+       "url": "https://en.wikipedia.org/w/index.php?title=Steering_wheel&oldid=1373489650"
+      }
+     ]
+    },
+    "brake drums/discs": {
+     "materials": [
+      "cast iron",
+      "ceramic"
+     ],
+     "classes": [
+      "ceramic",
+      "heavy_metal"
+     ],
+     "quote": "A brake disc (or rotor in U.S. English), usually made of cast iron or ceramic, is connected to the wheel or the axle.",
+     "page": "Brake (revision 1373688342)",
+     "pages": [
+      {
+       "title": "Brake",
+       "revision": 1373688342,
+       "url": "https://en.wikipedia.org/w/index.php?title=Brake&oldid=1373688342"
+      }
+     ]
+    },
+    "wheels": {
+     "materials": [
+      "steel",
+      "magnesium",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "A typical design for circular steering wheels is a steel or magnesium rim with a plastic or rubberized grip molded over and around it.",
+     "page": "Steering wheel (revision 1373489650)",
+     "pages": [
+      {
+       "title": "Steering wheel",
+       "revision": 1373489650,
+       "url": "https://en.wikipedia.org/w/index.php?title=Steering_wheel&oldid=1373489650"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "engine": {
+     "reason": "text does not say (pages tried: Engine, Engine, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "transmission": {
+     "reason": "text does not say (pages tried: Transmission (mechanical device), Transmission, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "three-point hitch": {
+     "reason": "text does not say (pages tried: Three-point hitch, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "power take-off (PTO)": {
+     "reason": "text does not say (pages tried: Power take-off, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "hydraulic system": {
+     "reason": "text does not say (pages tried: Advanced driver-assistance system, Lane departure warning system, Hydraulics, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "operator seat": {
+     "reason": "text does not say (pages tried: Seat, Seat belt, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "hydraulic pump": {
+     "reason": "text does not say (pages tried: Hydraulics, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "control valves": {
+     "reason": "text does not say (pages tried: Cruise control, Car controls, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "lift arms": {
+     "reason": "text does not say (pages tried: Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "cylinders": {
+     "reason": "text does not say (pages tried: Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "steering column": {
+     "reason": "text does not say (pages tried: Steering, Steering wheel, Steering, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "linkage": {
+     "reason": "text does not say (pages tried: Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "front wheels": {
+     "reason": "text does not say (pages tried: Steering wheel, Wheel, Wheel, Wheels & Tracks, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "PTO shaft": {
+     "reason": "text does not say (pages tried: Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "brake pedals": {
+     "reason": "text does not say (pages tried: Brake, Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "top link": {
+     "reason": "text does not say (pages tried: Tractor)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tractor (revision 1367676150)\"}"
+    },
+    "drawbar": {
+     "reason": "quote is about history",
+     "raw": "The classic drawbar is simply a steel bar attached to the tractor (or in some cases, as in the early Fordsons, cast as part of the rear transmission housing) to which the hitch of the implement was attached with a pin or by a loop and clevis."
+    }
+   }
+  },
+  "headphones": {
+   "parts": {
+    "driver (transducer)": {
+     "materials": [
+      "cellulose",
+      "paper"
+     ],
+     "classes": [
+      "wood"
+     ],
+     "quote": "The magnet in headphones is typically composed of ferrite or neodymium. A voice coil, a light coil of wire, is suspended in the magnetic field of the magnet, attached to a diaphragm, typically fabricated from lightweight, high-stiffness-to-mass-ratio cellulose, polymer, carbon material, paper or the like.",
+     "page": "Headphones (revision 1367069934)",
+     "pages": [
+      {
+       "title": "Headphones",
+       "revision": 1367069934,
+       "url": "https://en.wikipedia.org/w/index.php?title=Headphones&oldid=1367069934"
+      }
+     ]
+    },
+    "headband": {
+     "materials": [
+      "textile",
+      "plastic",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "textile"
+     ],
+     "quote": "Headbands generally consist of a textile loop of elasticised and sometimes absorptive or padded material, or a horseshoe-shaped piece of flexible plastic or metal.",
+     "page": "Headband (revision 1371577479)",
+     "pages": [
+      {
+       "title": "Headband",
+       "revision": 1371577479,
+       "url": "https://en.wikipedia.org/w/index.php?title=Headband&oldid=1371577479"
+      }
+     ]
+    },
+    "earpads": {
+     "materials": [
+      "foam",
+      "rubber"
+     ],
+     "classes": [
+      "foam",
+      "rubber"
+     ],
+     "quote": "They are sold at times with foam or rubber pads for comfort.",
+     "page": "Headphones (revision 1367069934)",
+     "pages": [
+      {
+       "title": "Headphones",
+       "revision": 1367069934,
+       "url": "https://en.wikipedia.org/w/index.php?title=Headphones&oldid=1367069934"
+      }
+     ]
+    },
+    "driver": {
+     "materials": [
+      "cellulose",
+      "paper"
+     ],
+     "classes": [
+      "wood"
+     ],
+     "quote": "The magnet in headphones is typically composed of ferrite or neodymium. A voice coil, a light coil of wire, is suspended in the magnetic field of the magnet, attached to a diaphragm, typically fabricated from lightweight, high-stiffness-to-mass-ratio cellulose, polymer, carbon material, paper or the like.",
+     "page": "Headphones (revision 1367069934)",
+     "pages": [
+      {
+       "title": "Headphones",
+       "revision": 1367069934,
+       "url": "https://en.wikipedia.org/w/index.php?title=Headphones&oldid=1367069934"
+      }
+     ]
+    },
+    "voice coil": {
+     "materials": [
+      "wire"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "A voice coil, a light coil of wire, is suspended in the magnetic field of the magnet, attached to a diaphragm, typically fabricated from lightweight, high-stiffness-to-mass-ratio cellulose, polymer, carbon material, paper or the like.",
+     "page": "Headphones (revision 1367069934)",
+     "pages": [
+      {
+       "title": "Headphones",
+       "revision": 1367069934,
+       "url": "https://en.wikipedia.org/w/index.php?title=Headphones&oldid=1367069934"
+      }
+     ]
+    },
+    "diaphragm": {
+     "materials": [
+      "cellulose",
+      "paper"
+     ],
+     "classes": [
+      "wood"
+     ],
+     "quote": "A voice coil, a light coil of wire, is suspended in the magnetic field of the magnet, attached to a diaphragm, typically fabricated from lightweight, high-stiffness-to-mass-ratio cellulose, polymer, carbon material, paper or the like.",
+     "page": "Headphones (revision 1367069934)",
+     "pages": [
+      {
+       "title": "Headphones",
+       "revision": 1367069934,
+       "url": "https://en.wikipedia.org/w/index.php?title=Headphones&oldid=1367069934"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "cable or wireless receiver": {
+     "reason": "text does not say (pages tried: Headphones)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Headphones (revision 1367069934)\"}"
+    },
+    "connector plug": {
+     "reason": "text does not say (pages tried: Headphones)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Headphones (revision 1367069934)\"}"
+    },
+    "magnet": {
+     "reason": "no material maps to a library class (pages tried: Headphones)",
+     "raw": "{\"materials\": [\"ferrite\", \"neodymium\"], \"quote\": \"The magnet in headphones is typically composed of ferrite or neodymium.\", \"page\": \"Headphones (revision 1367069934)\"}"
+    },
+    "cable": {
+     "reason": "text does not say (pages tried: Headphones)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Headphones (revision 1367069934)\"}"
+    },
+    "connector": {
+     "reason": "text does not say (pages tried: Headphones)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Headphones (revision 1367069934)\"}"
+    },
+    "wireless transceiver": {
+     "reason": "text does not say (pages tried: Headphones)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Headphones (revision 1367069934)\"}"
+    }
+   }
+  },
+  "helicopter": {
+   "parts": {
+    "Main rotor": {
+     "materials": [
+      "aluminium",
+      "composite structure",
+      "steel",
+      "titanium"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Rotor blades are made out of various materials, including aluminium, composite structure, and steel or titanium, with abrasion shields along the leading edge.",
+     "page": "Helicopter rotor (revision 1374683921)",
+     "pages": [
+      {
+       "title": "Helicopter rotor",
+       "revision": 1374683921,
+       "url": "https://en.wikipedia.org/w/index.php?title=Helicopter_rotor&oldid=1374683921"
+      }
+     ]
+    },
+    "Tail rotor": {
+     "materials": [
+      "composite material",
+      "aluminum honeycomb",
+      "plasticized paper honeycomb",
+      "aluminum",
+      "carbon fiber composite"
+     ],
+     "classes": [
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "The blades most often utilize a composite material construction, such as a core made of aluminum honeycomb or plasticized paper honeycomb, covered in a skin made of aluminum or carbon fiber composite.",
+     "page": "Tail rotor (revision 1369987354)",
+     "pages": [
+      {
+       "title": "Tail rotor",
+       "revision": 1369987354,
+       "url": "https://en.wikipedia.org/w/index.php?title=Tail_rotor&oldid=1369987354"
+      }
+     ]
+    },
+    "Rotor blades": {
+     "materials": [
+      "aluminium",
+      "composite structure",
+      "steel",
+      "titanium"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Rotor blades are made out of various materials, including aluminium, composite structure, and steel or titanium, with abrasion shields along the leading edge.",
+     "page": "Helicopter rotor (revision 1374683921)",
+     "pages": [
+      {
+       "title": "Helicopter rotor",
+       "revision": 1374683921,
+       "url": "https://en.wikipedia.org/w/index.php?title=Helicopter_rotor&oldid=1374683921"
+      }
+     ]
+    },
+    "Mast": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "The mast is a cylindrical metal shaft that extends upwards from the transmission.",
+     "page": "Helicopter (revision 1373885559)",
+     "pages": [
+      {
+       "title": "Helicopter",
+       "revision": 1373885559,
+       "url": "https://en.wikipedia.org/w/index.php?title=Helicopter&oldid=1373885559"
+      }
+     ]
+    },
+    "Main rotor blades": {
+     "materials": [
+      "aluminium",
+      "composite structure",
+      "steel",
+      "titanium"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Rotor blades are made out of various materials, including aluminium, composite structure, and steel or titanium, with abrasion shields along the leading edge.",
+     "page": "Helicopter rotor (revision 1374683921)",
+     "pages": [
+      {
+       "title": "Helicopter rotor",
+       "revision": 1374683921,
+       "url": "https://en.wikipedia.org/w/index.php?title=Helicopter_rotor&oldid=1374683921"
+      }
+     ]
+    },
+    "Tail rotor blades": {
+     "materials": [
+      "aluminium",
+      "composite structure",
+      "steel",
+      "titanium"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Rotor blades are made out of various materials, including aluminium, composite structure, and steel or titanium, with abrasion shields along the leading edge.",
+     "page": "Helicopter rotor (revision 1374683921)",
+     "pages": [
+      {
+       "title": "Helicopter rotor",
+       "revision": 1374683921,
+       "url": "https://en.wikipedia.org/w/index.php?title=Helicopter_rotor&oldid=1374683921"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Engine": {
+     "reason": "text does not say (pages tried: Aircraft engine, Engine, Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Transmission": {
+     "reason": "text does not say (pages tried: Transmission, Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Swashplate": {
+     "reason": "text does not say (pages tried: Swashplate (aeronautics), Swashplate (aeronautics), Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Flight controls": {
+     "reason": "text does not say (pages tried: Environmental control system, Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Rotor hub": {
+     "reason": "text does not say (pages tried: Helicopter rotor, Tail rotor, Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Tail rotor drive shaft": {
+     "reason": "text does not say (pages tried: Helicopter rotor, Tail rotor, Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter (revision 1373885559)\"}"
+    },
+    "Tail rotor gearbox": {
+     "reason": "text does not say (pages tried: Helicopter rotor, Tail rotor, Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Cyclic": {
+     "reason": "text does not say (pages tried: Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Collective": {
+     "reason": "text does not say (pages tried: Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Anti-torque pedals": {
+     "reason": "text does not say (pages tried: Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Pitch links": {
+     "reason": "text does not say (pages tried: Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter (revision 1373885559)\"}"
+    },
+    "Drive shafts": {
+     "reason": "text does not say (pages tried: Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter (revision 1373885559)\"}"
+    },
+    "Clutches": {
+     "reason": "text does not say (pages tried: Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter (revision 1373885559)\"}"
+    },
+    "Swashplate (rotating)": {
+     "reason": "text does not say (pages tried: Swashplate (aeronautics), Swashplate (aeronautics), Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter (revision 1373885559)\"}"
+    },
+    "Swashplate (stationary)": {
+     "reason": "text does not say (pages tried: Swashplate (aeronautics), Swashplate (aeronautics), Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    },
+    "Swashplate (entire assembly)": {
+     "reason": "text does not say (pages tried: Swashplate (aeronautics), Swashplate (aeronautics), Helicopter)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Helicopter\"}"
+    }
+   }
+  },
+  "hinged_door": {
+   "parts": {
+    "Door panel (leaf)": {
+     "materials": [
+      "wood",
+      "steel",
+      "fiberglass",
+      "aluminum",
+      "composite",
+      "glass"
+     ],
+     "classes": [
+      "glass",
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "New exterior doors are largely defined by the type of materials they are made from: wood, steel, fiberglass, UPVC/vinyl, aluminum, composite, glass (patio doors), etc.",
+     "page": "Door (revision 1371307890)",
+     "pages": [
+      {
+       "title": "Door",
+       "revision": 1371307890,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door&oldid=1371307890"
+      }
+     ]
+    },
+    "Latch or lock": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "Most modern draw bolts are made of metal, and may be used to secure a door from the outside or the in.",
+     "page": "Latch (revision 1359969425)",
+     "pages": [
+      {
+       "title": "Latch",
+       "revision": 1359969425,
+       "url": "https://en.wikipedia.org/w/index.php?title=Latch&oldid=1359969425"
+      }
+     ]
+    },
+    "Door handle": {
+     "materials": [
+      "brass",
+      "porcelain",
+      "cut glass",
+      "wood",
+      "bronze"
+     ],
+     "classes": [
+      "ceramic",
+      "glass",
+      "heavy_metal",
+      "wood"
+     ],
+     "quote": "Examples include brass, porcelain, cut glass, wood, and bronze.",
+     "page": "Door handle (revision 1373957368)",
+     "pages": [
+      {
+       "title": "Door handle",
+       "revision": 1373957368,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door_handle&oldid=1373957368"
+      }
+     ]
+    },
+    "Door panel": {
+     "materials": [
+      "brass",
+      "porcelain",
+      "cut glass",
+      "wood",
+      "bronze"
+     ],
+     "classes": [
+      "ceramic",
+      "glass",
+      "heavy_metal",
+      "wood"
+     ],
+     "quote": "Examples include brass, porcelain, cut glass, wood, and bronze.",
+     "page": "Door handle (revision 1373957368)",
+     "pages": [
+      {
+       "title": "Door handle",
+       "revision": 1373957368,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door_handle&oldid=1373957368"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Hinges": {
+     "reason": "text does not say (pages tried: Hinge, Door)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Door (revision 1371307890)\"}"
+    },
+    "Door frame (jamb)": {
+     "reason": "text does not say (pages tried: Door handle, Door furniture, Door handle, Door, Jamb, Door)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Door (revision 1371307890)\"}"
+    },
+    "Door frame": {
+     "reason": "text does not say (pages tried: Door handle, Door furniture, Door handle, Door, Door)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Door (revision 1371307890)\"}"
+    },
+    "Latch bolt": {
+     "reason": "text does not say (pages tried: Latch, Door)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Door (revision 1371307890)\"}"
+    },
+    "Strike plate": {
+     "reason": "text does not say (pages tried: Door)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Door (revision 1371307890)\"}"
+    }
+   }
+  },
+  "kitchen_oven": {
+   "parts": {
+    "heating chamber": {
+     "materials": [
+      "fireproof brick",
+      "concrete",
+      "stone",
+      "clay"
+     ],
+     "classes": [
+      "ceramic"
+     ],
+     "quote": "Masonry ovens consist of a baking chamber made of fireproof brick, concrete, stone, or clay.",
+     "page": "Oven (revision 1371293019)",
+     "pages": [
+      {
+       "title": "Oven",
+       "revision": 1371293019,
+       "url": "https://en.wikipedia.org/w/index.php?title=Oven&oldid=1371293019"
+      }
+     ]
+    },
+    "heating element": {
+     "materials": [
+      "copper",
+      "steel alloy"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Insulation is typically a magnesium oxide powder and the sheath is normally constructed of a copper or steel alloy.",
+     "page": "Heating element (revision 1368884069)",
+     "pages": [
+      {
+       "title": "Heating element",
+       "revision": 1368884069,
+       "url": "https://en.wikipedia.org/w/index.php?title=Heating_element&oldid=1368884069"
+      }
+     ]
+    },
+    "rack": {
+     "materials": [
+      "wire"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Toaster ovens are small electric ovens with a front door, wire rack and removable baking pan.",
+     "page": "Oven (revision 1371293019)",
+     "pages": [
+      {
+       "title": "Oven",
+       "revision": 1371293019,
+       "url": "https://en.wikipedia.org/w/index.php?title=Oven&oldid=1371293019"
+      }
+     ]
+    },
+    "door": {
+     "materials": [
+      "wood",
+      "steel",
+      "fiberglass",
+      "aluminum",
+      "composite",
+      "glass"
+     ],
+     "classes": [
+      "glass",
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "New exterior doors are largely defined by the type of materials they are made from: wood, steel, fiberglass, UPVC/vinyl, aluminum, composite, glass (patio doors), etc.",
+     "page": "Door (revision 1371307890)",
+     "pages": [
+      {
+       "title": "Door",
+       "revision": 1371307890,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door&oldid=1371307890"
+      }
+     ]
+    },
+    "handle": {
+     "materials": [
+      "stainless steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Pull door handles or simply pull handles are U-shaped, and are typically used in kitchens and on drawers. They are usually made of stainless steel.",
+     "page": "Door handle (revision 1373957368)",
+     "pages": [
+      {
+       "title": "Door handle",
+       "revision": 1373957368,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door_handle&oldid=1373957368"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "thermostat": {
+     "reason": "text does not say (pages tried: Thermostat, Oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oven (revision 1371293019)\"}"
+    },
+    "control interface": {
+     "reason": "text does not say (pages tried: Oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oven (revision 1371293019)\"}"
+    },
+    "fuel source": {
+     "reason": "text does not say (pages tried: Oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oven (revision 1371293019)\"}"
+    },
+    "combustion chamber": {
+     "reason": "text does not say (pages tried: Oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oven (revision 1371293019)\"}"
+    },
+    "sensors": {
+     "reason": "text does not say (pages tried: Oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oven (revision 1371293019)\"}"
+    },
+    "hinge": {
+     "reason": "text does not say (pages tried: Hinge, Oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oven (revision 1371293019)\"}"
+    },
+    "shelf": {
+     "reason": "text does not say (pages tried: Oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oven\"}"
+    },
+    "rotisserie spit": {
+     "reason": "text does not say (pages tried: Rotisserie, Oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oven\"}"
+    }
+   }
+  },
+  "laptop": {
+   "parts": {
+    "pointing device": {
+     "materials": [
+      "rubber"
+     ],
+     "classes": [
+      "rubber"
+     ],
+     "quote": "Pointing sticks typically have a replaceable rubber cap, called a nub, which can be a slightly rough \"eraser head\" material or another shape.",
+     "page": "Pointing stick (revision 1361385189)",
+     "pages": [
+      {
+       "title": "Pointing stick",
+       "revision": 1361385189,
+       "url": "https://en.wikipedia.org/w/index.php?title=Pointing_stick&oldid=1361385189"
+      }
+     ]
+    },
+    "Fan": {
+     "materials": [
+      "wood",
+      "plastic",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "A fan consists of rotating vanes or blades, generally made of wood, plastic, or metal, which act on the air.",
+     "page": "Fan (machine)",
+     "pages": [
+      {
+       "title": "Fan (machine)",
+       "revision": 1373582830,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fan_%28machine%29&oldid=1373582830"
+      }
+     ]
+    },
+    "fan blades": {
+     "materials": [
+      "wood",
+      "plastic",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "A fan consists of rotating vanes or blades, generally made of wood, plastic, or metal, which act on the air.",
+     "page": "Fan (machine)",
+     "pages": [
+      {
+       "title": "Fan (machine)",
+       "revision": 1373582830,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fan_%28machine%29&oldid=1373582830"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "clamshell chassis": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "display screen": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "keyboard": {
+     "reason": "text does not say (pages tried: Computer keyboard, Keyboard, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "motherboard": {
+     "reason": "text does not say (pages tried: Motherboard, Motherboard form factor, Motherboard, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "central processing unit (CPU)": {
+     "reason": "text does not say (pages tried: Central processing unit, Graphics processing unit, Central processing unit, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "random-access memory (RAM)": {
+     "reason": "text does not say (pages tried: Random-access memory, Computer memory, Static random-access memory, Random-access memory, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "storage drive": {
+     "reason": "text does not say (pages tried: Data storage, Computer data storage, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "battery": {
+     "reason": "no material maps to a library class (pages tried: Electric battery, Battery, Laptop)",
+     "raw": "{\"materials\": [\"lithium ion\", \"lithium polymer\"], \"quote\": \"Since the late 1990s, laptops have typically used lithium ion or lithium polymer batteries\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "hinge": {
+     "reason": "text does not say (pages tried: Hinge, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "CPU": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "RAM": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "Storage": {
+     "reason": "text does not say (pages tried: Data storage, Computer data storage, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "Screen": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "GPU": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop\"}"
+    },
+    "Touchpad": {
+     "reason": "text does not say (pages tried: Touchpad, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop\"}"
+    },
+    "Webcam": {
+     "reason": "text does not say (pages tried: Webcam, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop\"}"
+    },
+    "Microphone": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "Power Supply": {
+     "reason": "text does not say (pages tried: Power supply, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "Power Jack": {
+     "reason": "text does not say (pages tried: Power supply, Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "Heat Pipe": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "Heat Sink": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    },
+    "screen lid": {
+     "reason": "text does not say (pages tried: Laptop)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Laptop (revision 1372920109)\"}"
+    }
+   }
+  },
+  "microwave_oven": {
+   "parts": {
+    "cavity magnetron": {
+     "materials": [
+      "copper"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "The anode is constructed of a highly conductive material, almost always copper, so these differences in voltage cause currents to appear to even them out.",
+     "page": "Cavity magnetron (revision 1371749203)",
+     "pages": [
+      {
+       "title": "Cavity magnetron",
+       "revision": 1371749203,
+       "url": "https://en.wikipedia.org/w/index.php?title=Cavity_magnetron&oldid=1371749203"
+      }
+     ]
+    },
+    "waveguide": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "The original and most common meaning is a hollow conductive metal pipe used to carry high frequency radio waves, particularly microwaves.",
+     "page": "Waveguide (revision 1370925544)",
+     "pages": [
+      {
+       "title": "Waveguide",
+       "revision": 1370925544,
+       "url": "https://en.wikipedia.org/w/index.php?title=Waveguide&oldid=1370925544"
+      }
+     ]
+    },
+    "oven door": {
+     "materials": [
+      "conductive mesh"
+     ],
+     "classes": [
+      "textile"
+     ],
+     "quote": "The oven door usually has a window for easy viewing, with a layer of conductive mesh some distance from the outer panel to maintain the shielding.",
+     "page": "Microwave oven (revision 1371994924)",
+     "pages": [
+      {
+       "title": "Microwave oven",
+       "revision": 1371994924,
+       "url": "https://en.wikipedia.org/w/index.php?title=Microwave_oven&oldid=1371994924"
+      }
+     ]
+    },
+    "magnetron": {
+     "materials": [
+      "copper"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "The anode is constructed of a highly conductive material, almost always copper, so these differences in voltage cause currents to appear to even them out.",
+     "page": "Cavity magnetron (revision 1371749203)",
+     "pages": [
+      {
+       "title": "Cavity magnetron",
+       "revision": 1371749203,
+       "url": "https://en.wikipedia.org/w/index.php?title=Cavity_magnetron&oldid=1371749203"
+      }
+     ]
+    },
+    "turntable": {
+     "materials": [
+      "glass"
+     ],
+     "classes": [
+      "glass"
+     ],
+     "quote": "In a non-flatbed unit there is either a glass tray shaped to fit the chamber, keeping the food some distance from the reflective bottom, or, in a unit with a turntable, the turntable itself is microwave-transparent and sits above the reflective bottom.",
+     "page": "Microwave oven (revision 1371994924)",
+     "pages": [
+      {
+       "title": "Microwave oven",
+       "revision": 1371994924,
+       "url": "https://en.wikipedia.org/w/index.php?title=Microwave_oven&oldid=1371994924"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "cooking chamber": {
+     "reason": "text does not say (pages tried: Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven (revision 1371994924)\"}"
+    },
+    "high-voltage power source": {
+     "reason": "text does not say (pages tried: Power cord, Voltage source, Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven (revision 1371994924)\"}"
+    },
+    "control panel": {
+     "reason": "text does not say (pages tried: Control Panel (Windows), Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven\"}"
+    },
+    "safety interlocks": {
+     "reason": "text does not say (pages tried: Interlock (engineering), Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven (revision 1371994924)\"}"
+    },
+    "turntable or stirrer": {
+     "reason": "text does not say (pages tried: TurnTable, Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven (revision 1371994924)\"}"
+    },
+    "high-voltage transformer": {
+     "reason": "text does not say (pages tried: Voltage source, Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven (revision 1371994924)\"}"
+    },
+    "voltage doubler": {
+     "reason": "no material maps to a library class (pages tried: Voltage source, Microwave oven)",
+     "raw": "{\"materials\": [\"a high-voltage capacitor\", \"a diode\"], \"quote\": \"a large high voltage transformer with a voltage doubler (a high-voltage capacitor and a diode)\", \"page\": \"Microwave oven (revision 1371994924)\"}"
+    },
+    "stirrer fan": {
+     "reason": "text does not say (pages tried: Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven (revision 1371994924)\"}"
+    },
+    "microcontroller": {
+     "reason": "text does not say (pages tried: Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven\"}"
+    },
+    "timer": {
+     "reason": "text does not say (pages tried: Microwave oven)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Microwave oven\"}"
+    }
+   }
+  },
+  "mixer_faucet": {
+   "parts": {
+    "valve body": {
+     "materials": [
+      "Brass"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Brass is commonly used in the manufacture of taps because of its durability and resistance to corrosion.",
+     "page": "Tap (valve)",
+     "pages": [
+      {
+       "title": "Tap (valve)",
+       "revision": 1365695335,
+       "url": "https://en.wikipedia.org/w/index.php?title=Tap_%28valve%29&oldid=1365695335"
+      }
+     ]
+    },
+    "sealing element": {
+     "materials": [
+      "ceramic",
+      "plastic"
+     ],
+     "classes": [
+      "ceramic",
+      "plastic"
+     ],
+     "quote": "Modern bathroom and kitchen taps often use ceramic or plastic surfaces sliding against other spring-loaded ceramic surfaces or plastic washers.",
+     "page": "Tap (valve)",
+     "pages": [
+      {
+       "title": "Tap (valve)",
+       "revision": 1365695335,
+       "url": "https://en.wikipedia.org/w/index.php?title=Tap_%28valve%29&oldid=1365695335"
+      }
+     ]
+    },
+    "outlet spout": {
+     "materials": [
+      "Brass"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Brass is commonly used in the manufacture of taps because of its durability and resistance to corrosion.",
+     "page": "Tap (valve)",
+     "pages": [
+      {
+       "title": "Tap (valve)",
+       "revision": 1365695335,
+       "url": "https://en.wikipedia.org/w/index.php?title=Tap_%28valve%29&oldid=1365695335"
+      }
+     ]
+    },
+    "valve seat": {
+     "materials": [
+      "ceramic",
+      "plastic"
+     ],
+     "classes": [
+      "ceramic",
+      "plastic"
+     ],
+     "quote": "Modern bathroom and kitchen taps often use ceramic or plastic surfaces sliding against other spring-loaded ceramic surfaces or plastic washers.",
+     "page": "Tap (valve)",
+     "pages": [
+      {
+       "title": "Tap (valve)",
+       "revision": 1365695335,
+       "url": "https://en.wikipedia.org/w/index.php?title=Tap_%28valve%29&oldid=1365695335"
+      }
+     ]
+    },
+    "hot inlet": {
+     "materials": [
+      "Brass"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Brass is commonly used in the manufacture of taps because of its durability and resistance to corrosion.",
+     "page": "Tap (valve)",
+     "pages": [
+      {
+       "title": "Tap (valve)",
+       "revision": 1365695335,
+       "url": "https://en.wikipedia.org/w/index.php?title=Tap_%28valve%29&oldid=1365695335"
+      }
+     ]
+    },
+    "cold inlet": {
+     "materials": [
+      "Brass"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Brass is commonly used in the manufacture of taps because of its durability and resistance to corrosion.",
+     "page": "Tap (valve)",
+     "pages": [
+      {
+       "title": "Tap (valve)",
+       "revision": 1365695335,
+       "url": "https://en.wikipedia.org/w/index.php?title=Tap_%28valve%29&oldid=1365695335"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "handle": {
+     "reason": "text does not say (pages tried: Handle, Tap (valve))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tap (valve)\"}"
+    },
+    "aerator": {
+     "reason": "text does not say (pages tried: Faucet aerator, Aerator, Tap (valve))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tap (valve)\"}"
+    },
+    "valve shaft": {
+     "reason": "text does not say (pages tried: Valve, Tap (valve))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tap (valve)\"}"
+    },
+    "mixing chamber": {
+     "reason": "text does not say (pages tried: Tap (valve))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Tap (valve)\"}"
+    }
+   }
+  },
+  "monitor_arm": {
+   "parts": {},
+   "dropped": {
+    "Mounting base": {
+     "reason": "text does not say (pages tried: Monitor mount)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Monitor mount\"}"
+    },
+    "Arm": {
+     "reason": "text does not say (pages tried: Arm, Monitor mount)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Monitor mount\"}"
+    },
+    "Clamp hardware": {
+     "reason": "text does not say (pages tried: Builders hardware, Monitor mount)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Monitor mount (revision 1346207651)\"}"
+    },
+    "Grommet hardware": {
+     "reason": "text does not say (pages tried: Builders hardware, Monitor mount)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Monitor mount (revision 1346207651)\"}"
+    },
+    "Joints": {
+     "reason": "text does not say (pages tried: Monitor mount)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Monitor mount (revision 1346207651)\"}"
+    },
+    "VESA plate": {
+     "reason": "text does not say (pages tried: Monitor mount)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Monitor mount\"}"
+    },
+    "Monitor": {
+     "reason": "text does not say (pages tried: Monitor mount, Monitor mount)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Monitor mount (revision 1346207651)\"}"
+    }
+   }
+  },
+  "office_desk": {
+   "parts": {
+    "work surface": {
+     "materials": [
+      "wood",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "Desks are usually made of wood or metal, although materials such as glass are sometimes seen.",
+     "page": "Desk (revision 1365992693)",
+     "pages": [
+      {
+       "title": "Desk",
+       "revision": 1365992693,
+       "url": "https://en.wikipedia.org/w/index.php?title=Desk&oldid=1365992693"
+      }
+     ]
+    },
+    "drawers": {
+     "materials": [
+      "wood",
+      "various wood composites",
+      "sheet metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Drawers can be built in various ways using a variety of materials, including wood, various wood composites, sheet metal, and plastic.",
+     "page": "Drawer (revision 1369592629)",
+     "pages": [
+      {
+       "title": "Drawer",
+       "revision": 1369592629,
+       "url": "https://en.wikipedia.org/w/index.php?title=Drawer&oldid=1369592629"
+      }
+     ]
+    },
+    "drawer": {
+     "materials": [
+      "wood",
+      "various wood composites",
+      "sheet metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Drawers can be built in various ways using a variety of materials, including wood, various wood composites, sheet metal, and plastic.",
+     "page": "Drawer (revision 1369592629)",
+     "pages": [
+      {
+       "title": "Drawer",
+       "revision": 1369592629,
+       "url": "https://en.wikipedia.org/w/index.php?title=Drawer&oldid=1369592629"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "compartments": {
+     "reason": "text does not say (pages tried: Desk)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Desk (revision 1365992693)\"}"
+    },
+    "pigeonholes": {
+     "reason": "text does not say (pages tried: Desk)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Desk (revision 1365992693)\"}"
+    }
+   }
+  },
+  "offroad_jeep": {
+   "parts": {
+    "tires": {
+     "materials": [
+      "synthetic rubber",
+      "natural rubber",
+      "fabric",
+      "wire"
+     ],
+     "classes": [
+      "heavy_metal",
+      "rubber",
+      "textile"
+     ],
+     "quote": "The materials of modern pneumatic tires are synthetic rubber, natural rubber, fabric, and wire, along with carbon black and other chemical compounds.",
+     "page": "Tire (revision 1373644838)",
+     "pages": [
+      {
+       "title": "Tire",
+       "revision": 1373644838,
+       "url": "https://en.wikipedia.org/w/index.php?title=Tire&oldid=1373644838"
+      }
+     ]
+    },
+    "fuel tank": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "The most common materials for fuel tanks are metal or plastic.",
+     "page": "Fuel tank (revision 1372003689)",
+     "pages": [
+      {
+       "title": "Fuel tank",
+       "revision": 1372003689,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fuel_tank&oldid=1372003689"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "wheels": {
+     "reason": "text does not say (pages tried: Wheel, Four-wheel drive, Wheel, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "suspension system": {
+     "reason": "text does not say (pages tried: Steering system, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "four-wheel drive system": {
+     "reason": "text does not say (pages tried: Wheel, Four-wheel drive, Wheel, Steering system, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "engine": {
+     "reason": "text does not say (pages tried: Engine, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "steering system": {
+     "reason": "text does not say (pages tried: Steering, Steering, Steering system, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "transfer case": {
+     "reason": "text does not say (pages tried: Transfer case, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "differentials": {
+     "reason": "text does not say (pages tried: Differential, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "brakes": {
+     "reason": "text does not say (pages tried: Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "axles": {
+     "reason": "text does not say (pages tried: Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "springs": {
+     "reason": "text does not say (pages tried: Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "shock absorbers": {
+     "reason": "text does not say (pages tried: Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "steering wheel": {
+     "reason": "text does not say (pages tried: Wheel, Steering, Four-wheel drive, Steering, Wheel, Steering system, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "steering column": {
+     "reason": "text does not say (pages tried: Steering, Steering, Steering system, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "linkages": {
+     "reason": "text does not say (pages tried: Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "front wheels": {
+     "reason": "text does not say (pages tried: Wheel, Four-wheel drive, Wheel, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    },
+    "fuel pump": {
+     "reason": "text does not say (pages tried: Fuel tank, Fuel tank, Off-road vehicle)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Off-road vehicle (revision 1373374399)\"}"
+    }
+   }
+  },
+  "oscillating_fan": {
+   "parts": {
+    "fan head": {
+     "materials": [
+      "wood",
+      "plastic",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "A fan consists of rotating vanes or blades, generally made of wood, plastic, or metal, which act on the air.",
+     "page": "Fan (machine)",
+     "pages": [
+      {
+       "title": "Fan (machine)",
+       "revision": 1373582830,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fan_%28machine%29&oldid=1373582830"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "electric motor": {
+     "reason": "text does not say (pages tried: Electric motor, Rotor (electric), Electric motor, Fan (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fan (machine)\"}"
+    },
+    "hub": {
+     "reason": "text does not say (pages tried: Hub, Fan (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fan (machine)\"}"
+    },
+    "housing": {
+     "reason": "text does not say (pages tried: Housing (engineering), Housing, Fan (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fan (machine)\"}"
+    },
+    "blade guard": {
+     "reason": "text does not say (pages tried: Blade, Guard, Fan (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fan (machine)\"}"
+    },
+    "oscillator gearbox": {
+     "reason": "text does not say (pages tried: Fan (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fan (machine)\"}"
+    },
+    "base": {
+     "reason": "text does not say (pages tried: Base, Fan (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fan (machine)\"}"
+    },
+    "oscillator shaft": {
+     "reason": "text does not say (pages tried: Ventilation shaft, Fan (machine))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Fan (machine)\"}"
+    },
+    "blades": {
+     "reason": "quote is about history",
+     "raw": "This includes early examples made from flaked stones like flint or obsidian, evolving through the ages into metal forms like copper, bronze, and iron, and culminating in modern versions made from steel or ceramics."
+    }
+   }
+  },
+  "oscillating_steam_engine": {
+   "parts": {
+    "piston": {
+     "materials": [
+      "aluminium alloys"
+     ],
+     "classes": [
+      "light_metal"
+     ],
+     "quote": "Pistons are usually cast or forged from aluminium alloys.",
+     "page": "Piston (revision 1358234752)",
+     "pages": [
+      {
+       "title": "Piston",
+       "revision": 1358234752,
+       "url": "https://en.wikipedia.org/w/index.php?title=Piston&oldid=1358234752"
+      }
+     ]
+    },
+    "piston rod": {
+     "materials": [
+      "steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Compressor piston rods are made from various types of steel depending on the stress levels and gas compression.",
+     "page": "Piston rod (revision 1290023055)",
+     "pages": [
+      {
+       "title": "Piston rod",
+       "revision": 1290023055,
+       "url": "https://en.wikipedia.org/w/index.php?title=Piston_rod&oldid=1290023055"
+      }
+     ]
+    },
+    "connecting rod": {
+     "materials": [
+      "steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "In mass-produced automotive engines, the connecting rods are most usually made of steel.",
+     "page": "Connecting rod (revision 1363839016)",
+     "pages": [
+      {
+       "title": "Connecting rod",
+       "revision": 1363839016,
+       "url": "https://en.wikipedia.org/w/index.php?title=Connecting_rod&oldid=1363839016"
+      }
+     ]
+    },
+    "crankshaft": {
+     "materials": [
+      "steel",
+      "cast iron"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "They are made from steel or cast iron, using either a forging, casting or machining process.",
+     "page": "Crankshaft (revision 1368517177)",
+     "pages": [
+      {
+       "title": "Crankshaft",
+       "revision": 1368517177,
+       "url": "https://en.wikipedia.org/w/index.php?title=Crankshaft&oldid=1368517177"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "cylinder": {
+     "reason": "text does not say (pages tried: Cylinder, Oscillating cylinder steam engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oscillating cylinder steam engine\"}"
+    },
+    "port face": {
+     "reason": "text does not say (pages tried: Oscillating cylinder steam engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oscillating cylinder steam engine\"}"
+    },
+    "trunnion": {
+     "reason": "text does not say (pages tried: Oscillating cylinder steam engine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Oscillating cylinder steam engine\"}"
+    }
+   }
+  },
+  "passenger_car": {
+   "parts": {
+    "Engine": {
+     "materials": [
+      "cast iron",
+      "aluminum"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "The base of a reciprocating internal combustion engine is the engine block, which is typically made of cast iron (due to its good wear resistance and low cost) or aluminum.",
+     "page": "Internal combustion engine (revision 1365074183)",
+     "pages": [
+      {
+       "title": "Internal combustion engine",
+       "revision": 1365074183,
+       "url": "https://en.wikipedia.org/w/index.php?title=Internal_combustion_engine&oldid=1365074183"
+      }
+     ]
+    },
+    "Wheels and Tires": {
+     "materials": [
+      "synthetic rubber",
+      "natural rubber",
+      "fabric",
+      "wire"
+     ],
+     "classes": [
+      "heavy_metal",
+      "rubber",
+      "textile"
+     ],
+     "quote": "The fundamental materials of modern tires are synthetic rubber, natural rubber, fabric, and wire, along with other compound chemicals.",
+     "page": "Wheel (revision 1372796054)",
+     "pages": [
+      {
+       "title": "Wheel",
+       "revision": 1372796054,
+       "url": "https://en.wikipedia.org/w/index.php?title=Wheel&oldid=1372796054"
+      }
+     ]
+    },
+    "Brakes": {
+     "materials": [
+      "cast iron",
+      "ceramic"
+     ],
+     "classes": [
+      "ceramic",
+      "heavy_metal"
+     ],
+     "quote": "A brake disc (or rotor in U.S. English), usually made of cast iron or ceramic, is connected to the wheel or the axle.",
+     "page": "Brake (revision 1373688342)",
+     "pages": [
+      {
+       "title": "Brake",
+       "revision": 1373688342,
+       "url": "https://en.wikipedia.org/w/index.php?title=Brake&oldid=1373688342"
+      }
+     ]
+    },
+    "Fuel Tank": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "The most common materials for fuel tanks are metal or plastic.",
+     "page": "Fuel tank (revision 1372003689)",
+     "pages": [
+      {
+       "title": "Fuel tank",
+       "revision": 1372003689,
+       "url": "https://en.wikipedia.org/w/index.php?title=Fuel_tank&oldid=1372003689"
+      }
+     ]
+    },
+    "Seats": {
+     "materials": [
+      "polyester"
+     ],
+     "classes": [
+      "textile"
+     ],
+     "quote": "The most common material is polyester.",
+     "page": "Car seat (revision 1372378055)",
+     "pages": [
+      {
+       "title": "Car seat",
+       "revision": 1372378055,
+       "url": "https://en.wikipedia.org/w/index.php?title=Car_seat&oldid=1372378055"
+      }
+     ]
+    },
+    "Doors": {
+     "materials": [
+      "wood",
+      "steel",
+      "fiberglass",
+      "aluminum",
+      "composite",
+      "glass"
+     ],
+     "classes": [
+      "glass",
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "New exterior doors are largely defined by the type of materials they are made from: wood, steel, fiberglass, UPVC/vinyl, aluminum, composite, glass (patio doors), etc.",
+     "page": "Door (revision 1371307890)",
+     "pages": [
+      {
+       "title": "Door",
+       "revision": 1371307890,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door&oldid=1371307890"
+      }
+     ]
+    },
+    "Clutch": {
+     "materials": [
+      "copper wire",
+      "ceramic material"
+     ],
+     "classes": [
+      "ceramic",
+      "heavy_metal"
+     ],
+     "quote": "The friction material used for the clutch disk varies, with a common material being an organic compound resin with a copper wire facing or a ceramic material.",
+     "page": "Clutch (revision 1339925193)",
+     "pages": [
+      {
+       "title": "Clutch",
+       "revision": 1339925193,
+       "url": "https://en.wikipedia.org/w/index.php?title=Clutch&oldid=1339925193"
+      }
+     ]
+    },
+    "Drive Shaft": {
+     "materials": [
+      "stainless steel",
+      "composite materials"
+     ],
+     "classes": [
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Shafts can be made of stainless steel or composite materials depending on what type of ship will install them.",
+     "page": "Drive shaft (revision 1365995491)",
+     "pages": [
+      {
+       "title": "Drive shaft",
+       "revision": 1365995491,
+       "url": "https://en.wikipedia.org/w/index.php?title=Drive_shaft&oldid=1365995491"
+      }
+     ]
+    },
+    "Axle": {
+     "materials": [
+      "SAE grade 41xx steel",
+      "SAE grade 10xx steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Axles are typically made from SAE grade 41xx steel or SAE grade 10xx steel.",
+     "page": "Axle (revision 1328210386)",
+     "pages": [
+      {
+       "title": "Axle",
+       "revision": 1328210386,
+       "url": "https://en.wikipedia.org/w/index.php?title=Axle&oldid=1328210386"
+      }
+     ]
+    },
+    "Ball Joint": {
+     "materials": [
+      "steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "A ball joint consists of a bearing stud and socket enclosed in a casing; all these parts are made of steel.",
+     "page": "Ball joint (revision 1373361357)",
+     "pages": [
+      {
+       "title": "Ball joint",
+       "revision": 1373361357,
+       "url": "https://en.wikipedia.org/w/index.php?title=Ball_joint&oldid=1373361357"
+      }
+     ]
+    },
+    "Car Door": {
+     "materials": [
+      "wood",
+      "steel",
+      "fiberglass",
+      "aluminum",
+      "composite",
+      "glass"
+     ],
+     "classes": [
+      "glass",
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "New exterior doors are largely defined by the type of materials they are made from: wood, steel, fiberglass, UPVC/vinyl, aluminum, composite, glass (patio doors), etc.",
+     "page": "Door (revision 1371307890)",
+     "pages": [
+      {
+       "title": "Door",
+       "revision": 1371307890,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door&oldid=1371307890"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Steering System": {
+     "reason": "text does not say (pages tried: Intelligent Parking Assist System, Steering, Steering system, Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Transmission": {
+     "reason": "text does not say (pages tried: Automatic transmission, Transmission, Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Suspension": {
+     "reason": "text does not say (pages tried: Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Differential": {
+     "reason": "text does not say (pages tried: Differential (mechanical device), Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Steering Wheel": {
+     "reason": "text does not say (pages tried: Steering, Wheel, Steering system, Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Steering Column": {
+     "reason": "text does not say (pages tried: Steering, Steering system, Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Rack and Pinion": {
+     "reason": "text does not say (pages tried: Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Tie Rods": {
+     "reason": "text does not say (pages tried: Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Steering Knuckle": {
+     "reason": "text does not say (pages tried: Steering, Steering system, Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Front Wheels": {
+     "reason": "text does not say (pages tried: Wheel, Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Side Windows": {
+     "reason": "text does not say (pages tried: Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    },
+    "Brake Pedal": {
+     "reason": "text does not say (pages tried: Brake, Car)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Car (revision 1374198624)\"}"
+    }
+   }
+  },
+  "refrigerator": {
+   "parts": {
+    "door": {
+     "materials": [
+      "glass"
+     ],
+     "classes": [
+      "glass"
+     ],
+     "quote": "Doors, made of glass to allow inspection of contents, improve efficiency significantly over open display cases, which use 1.3 times the energy.",
+     "page": "Refrigerator (revision 1370339781)",
+     "pages": [
+      {
+       "title": "Refrigerator",
+       "revision": 1370339781,
+       "url": "https://en.wikipedia.org/w/index.php?title=Refrigerator&oldid=1370339781"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "thermally insulated compartment": {
+     "reason": "text does not say (pages tried: Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "compressor": {
+     "reason": "text does not say (pages tried: Compressor, Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "condenser": {
+     "reason": "text does not say (pages tried: Condenser, Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "expansion valve": {
+     "reason": "text does not say (pages tried: Thermal expansion valve, Expansion valve, Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "evaporator": {
+     "reason": "text does not say (pages tried: Evaporator, Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "refrigerant": {
+     "reason": "no material maps to a library class (pages tried: Refrigerant, Refrigerator)",
+     "raw": "{\"materials\": [\"ammonia\", \"sulfur dioxide\", \"Freon-12\", \"R-134a\", \"tetrafluoroethane\"], \"quote\": \"They used gas systems such as ammonia (R-717) or sulfur dioxide (R-764), which occasionally leaked, making them unsafe for home use.\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "thermostat": {
+     "reason": "text does not say (pages tried: Thermostat, Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "fan": {
+     "reason": "text does not say (pages tried: Fan, Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "ducts": {
+     "reason": "text does not say (pages tried: Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "vents": {
+     "reason": "text does not say (pages tried: Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "fan blades": {
+     "reason": "text does not say (pages tried: Fan, Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    },
+    "compressor piston": {
+     "reason": "text does not say (pages tried: Compressor, Refrigerator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Refrigerator (revision 1370339781)\"}"
+    }
+   }
+  },
+  "robot_arm": {
+   "parts": {},
+   "dropped": {
+    "Actuators": {
+     "reason": "text does not say (pages tried: Actuator, Actuator, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "End effector": {
+     "reason": "text does not say (pages tried: Robot end effector, Robot end effector, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "Sensors": {
+     "reason": "text does not say (pages tried: Sensor, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "Base": {
+     "reason": "text does not say (pages tried: Base, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "Links": {
+     "reason": "text does not say (pages tried: Link, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "Joints": {
+     "reason": "text does not say (pages tried: Mechanical joint, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "Controller": {
+     "reason": "text does not say (pages tried: Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "Gripper": {
+     "reason": "text does not say (pages tried: Gripper, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "Tool": {
+     "reason": "text does not say (pages tried: Tool, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    },
+    "Link": {
+     "reason": "text does not say (pages tried: Link, Robotic arm)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Robotic arm (revision 1373537214)\"}"
+    }
+   }
+  },
+  "rolling_suitcase": {
+   "parts": {
+    "caster assembly": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "Today, many industrial caster bodies are made by laser cutting the body from a single metal blank and then using a press brake to shape the legs to the required ninety degree angle, thus producing a mechanically stronger device.",
+     "page": "Caster (revision 1368704635)",
+     "pages": [
+      {
+       "title": "Caster",
+       "revision": 1368704635,
+       "url": "https://en.wikipedia.org/w/index.php?title=Caster&oldid=1368704635"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "handle": {
+     "reason": "material 'wood' not in the quote as a material word (pages tried: Handle, Suitcase)",
+     "raw": "{\"materials\": [\"wood\"], \"quote\": \"During her second world tour in 1928, American artist Anita Willets-Burnham made the first recorded wheeled suitcase, which had two baby carriage wheels attached to it and a telescoping wooden handle.\", \"page\": \"Suitcase (revision 1371383722)\"}"
+    },
+    "wheels": {
+     "reason": "text does not say (pages tried: Wheel, Suitcase)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Suitcase (revision 1371383722)\"}"
+    },
+    "caster fork": {
+     "reason": "text does not say (pages tried: Caster, Suitcase)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Suitcase (revision 1371383722)\"}"
+    },
+    "container body": {
+     "reason": "quote is about history",
+     "raw": "They were originally made using heavier materials such as leather or steel, but, beginning in the 1930s, were constructed with more lightweight materials like plastic and cardboard."
+    },
+    "telescoping handle": {
+     "reason": "quote is about history",
+     "raw": "During her second world tour in 1928, American artist Anita Willets-Burnham made the first recorded wheeled suitcase, which had two baby carriage wheels attached to it and a telescoping wooden handle."
+    },
+    "lid": {
+     "reason": "quote is about history",
+     "raw": "They were originally made using heavier materials such as leather or steel, but, beginning in the 1930s, were constructed with more lightweight materials like plastic and cardboard."
+    }
+   }
+  },
+  "scissor_car_jack": {
+   "parts": {},
+   "dropped": {
+    "leadscrew": {
+     "reason": "text does not say (pages tried: Leadscrew, Jack (device))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Jack (device)\"}"
+    },
+    "scissor linkage": {
+     "reason": "text does not say (pages tried: Linkage (mechanical), Jack (device))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Jack (device)\"}"
+    },
+    "handle socket": {
+     "reason": "text does not say (pages tried: Jack (device))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Jack (device)\"}"
+    },
+    "threaded nut": {
+     "reason": "text does not say (pages tried: Nut, Jack (device))",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Jack (device)\"}"
+    }
+   }
+  },
+  "scissors": {
+   "parts": {},
+   "dropped": {
+    "pivot": {
+     "reason": "text does not say (pages tried: Pivot, Scissors)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Scissors (revision 1328554762)\"}"
+    },
+    "blade": {
+     "reason": "quote is about history",
+     "raw": "This includes early examples made from flaked stones like flint or obsidian, evolving through the ages into metal forms like copper, bronze, and iron, and culminating in modern versions made from steel or ceramics."
+    },
+    "handle": {
+     "reason": "quote is about history",
+     "raw": "While historically inexpensive, mass-produced scissors often have bare metal handles, modern scissors are often designed ergonomically with composite thermoplastic and rubber covering on handles, which are more comfortable for the hand."
+    },
+    "blade edge": {
+     "reason": "quote is about history",
+     "raw": "This includes early examples made from flaked stones like flint or obsidian, evolving through the ages into metal forms like copper, bronze, and iron, and culminating in modern versions made from steel or ceramics."
+    }
+   }
+  },
+  "shopping_cart": {
+   "parts": {
+    "frame": {
+     "materials": [
+      "carbon steel",
+      "aluminum alloys"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "Typically, the material used to construct vehicle chassis and frames include carbon steel for strength or aluminum alloys to achieve a more lightweight construction.",
+     "page": "Vehicle frame (revision 1333772113)",
+     "pages": [
+      {
+       "title": "Vehicle frame",
+       "revision": 1333772113,
+       "url": "https://en.wikipedia.org/w/index.php?title=Vehicle_frame&oldid=1333772113"
+      }
+     ]
+    },
+    "basket": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Most modern shopping carts are made of metal or a combination of metal and plastic and have been designed to nest within each other in a line to facilitate collecting and moving many at one time and also to save on storage space.",
+     "page": "Shopping cart (revision 1372224864)",
+     "pages": [
+      {
+       "title": "Shopping cart",
+       "revision": 1372224864,
+       "url": "https://en.wikipedia.org/w/index.php?title=Shopping_cart&oldid=1372224864"
+      }
+     ]
+    },
+    "wheels": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Most modern shopping carts are made of metal or a combination of metal and plastic and have been designed to nest within each other in a line to facilitate collecting and moving many at one time and also to save on storage space.",
+     "page": "Shopping cart (revision 1372224864)",
+     "pages": [
+      {
+       "title": "Shopping cart",
+       "revision": 1372224864,
+       "url": "https://en.wikipedia.org/w/index.php?title=Shopping_cart&oldid=1372224864"
+      }
+     ]
+    },
+    "handle": {
+     "materials": [
+      "plastic"
+     ],
+     "classes": [
+      "plastic"
+     ],
+     "quote": "Some retailers, such as Target, have begun using carts fully made of recycled plastic with the only metal part being the wheel axles, drawing away from the established metal cart design.",
+     "page": "Shopping cart (revision 1372224864)",
+     "pages": [
+      {
+       "title": "Shopping cart",
+       "revision": 1372224864,
+       "url": "https://en.wikipedia.org/w/index.php?title=Shopping_cart&oldid=1372224864"
+      }
+     ]
+    },
+    "axles": {
+     "materials": [
+      "SAE grade 41xx steel",
+      "SAE grade 10xx steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Axles are typically made from SAE grade 41xx steel or SAE grade 10xx steel.",
+     "page": "Axle (revision 1328210386)",
+     "pages": [
+      {
+       "title": "Axle",
+       "revision": 1328210386,
+       "url": "https://en.wikipedia.org/w/index.php?title=Axle&oldid=1328210386"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "swivel casters": {
+     "reason": "text does not say (pages tried: Caster, Shopping cart)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Shopping cart (revision 1372224864)\"}"
+    },
+    "rigid casters": {
+     "reason": "text does not say (pages tried: Caster, Shopping cart)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Shopping cart (revision 1372224864)\"}"
+    },
+    "lock mechanism": {
+     "reason": "text does not say (pages tried: Mechanism (engineering), Shopping cart)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Shopping cart (revision 1372224864)\"}"
+    },
+    "front wheels": {
+     "reason": "text does not say (pages tried: Wheel, Shopping cart)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Shopping cart (revision 1372224864)\"}"
+    },
+    "rear wheels": {
+     "reason": "text does not say (pages tried: Wheel, Shopping cart)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Shopping cart (revision 1372224864)\"}"
+    },
+    "swivel caster fork": {
+     "reason": "text does not say (pages tried: Caster, Shopping cart)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Shopping cart (revision 1372224864)\"}"
+    }
+   }
+  },
+  "skateboard": {
+   "parts": {
+    "deck": {
+     "materials": [
+      "maple plywood"
+     ],
+     "classes": [
+      "wood"
+     ],
+     "quote": "It is usually made of a specially designed 7\u20138-ply maple plywood deck and has polyurethane wheels attached to the underside by a pair of skateboarding trucks.",
+     "page": "Skateboard (revision 1373723582)",
+     "pages": [
+      {
+       "title": "Skateboard",
+       "revision": 1373723582,
+       "url": "https://en.wikipedia.org/w/index.php?title=Skateboard&oldid=1373723582"
+      }
+     ]
+    },
+    "trucks": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "The metal parts known as skateboard trucks are what hold a skateboard's wheels to the deck.",
+     "page": "Skateboard (revision 1373723582)",
+     "pages": [
+      {
+       "title": "Skateboard",
+       "revision": 1373723582,
+       "url": "https://en.wikipedia.org/w/index.php?title=Skateboard&oldid=1373723582"
+      }
+     ]
+    },
+    "wheels": {
+     "materials": [
+      "polyurethane"
+     ],
+     "classes": [
+      "plastic"
+     ],
+     "quote": "The wheels are typically made of polyurethane (PU) and come in different grades of PU.",
+     "page": "Skateboard (revision 1373723582)",
+     "pages": [
+      {
+       "title": "Skateboard",
+       "revision": 1373723582,
+       "url": "https://en.wikipedia.org/w/index.php?title=Skateboard&oldid=1373723582"
+      }
+     ]
+    },
+    "bearings": {
+     "materials": [
+      "steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "These are usually made of steel, though silicon nitride, a high-tech ceramic, is sometimes used.",
+     "page": "Skateboard (revision 1373723582)",
+     "pages": [
+      {
+       "title": "Skateboard",
+       "revision": 1373723582,
+       "url": "https://en.wikipedia.org/w/index.php?title=Skateboard&oldid=1373723582"
+      }
+     ]
+    },
+    "axle": {
+     "materials": [
+      "SAE grade 41xx steel",
+      "SAE grade 10xx steel"
+     ],
+     "classes": [
+      "heavy_metal"
+     ],
+     "quote": "Axles are typically made from SAE grade 41xx steel or SAE grade 10xx steel.",
+     "page": "Axle (revision 1328210386)",
+     "pages": [
+      {
+       "title": "Axle",
+       "revision": 1328210386,
+       "url": "https://en.wikipedia.org/w/index.php?title=Axle&oldid=1328210386"
+      }
+     ]
+    },
+    "hanger": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "The metal parts known as skateboard trucks are what hold a skateboard's wheels to the deck.",
+     "page": "Skateboard (revision 1373723582)",
+     "pages": [
+      {
+       "title": "Skateboard",
+       "revision": 1373723582,
+       "url": "https://en.wikipedia.org/w/index.php?title=Skateboard&oldid=1373723582"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "kingpin": {
+     "reason": "text does not say (pages tried: Skateboard)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Skateboard (revision 1373723582)\"}"
+    },
+    "baseplate": {
+     "reason": "text does not say (pages tried: Skateboard)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Skateboard (revision 1373723582)\"}"
+    },
+    "truck hanger": {
+     "reason": "text does not say (pages tried: Truck, Hanger (film), Skateboard)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Skateboard (revision 1373723582)\"}"
+    }
+   }
+  },
+  "spinal_quadruped_robot": {
+   "parts": {},
+   "dropped": {
+    "articulated limbs": {
+     "reason": "text does not say (pages tried: Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "leg actuators": {
+     "reason": "text does not say (pages tried: Actuator, Actuator, Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "sensors": {
+     "reason": "text does not say (pages tried: Sensor, Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "control system": {
+     "reason": "text does not say (pages tried: Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "power source": {
+     "reason": "text does not say (pages tried: Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "joints": {
+     "reason": "text does not say (pages tried: Mechanical joint, Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "servomotors": {
+     "reason": "text does not say (pages tried: Servomotor, Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "accelerometers": {
+     "reason": "text does not say (pages tried: Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "gyroscopes": {
+     "reason": "text does not say (pages tried: Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "foot sensors": {
+     "reason": "text does not say (pages tried: Sensor, Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    },
+    "leg": {
+     "reason": "text does not say (pages tried: Legged robot)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Legged robot (revision 1349387338)\"}"
+    }
+   }
+  },
+  "stepladder": {
+   "parts": {
+    "stringers": {
+     "materials": [
+      "metal",
+      "wood",
+      "fiberglass",
+      "tough plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "They are commonly made of metal, wood, fiberglass, or tough plastic.",
+     "page": "Ladder (revision 1372260707)",
+     "pages": [
+      {
+       "title": "Ladder",
+       "revision": 1372260707,
+       "url": "https://en.wikipedia.org/w/index.php?title=Ladder&oldid=1372260707"
+      }
+     ]
+    },
+    "steps": {
+     "materials": [
+      "plastic",
+      "wood",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Swimming pool ladders are usually made from plastic, wood or metal steps with a textured upper surface for grip and metal rails at the sides to support the steps and as handrails for the user, and are usually fixed in place.",
+     "page": "Ladder (revision 1372260707)",
+     "pages": [
+      {
+       "title": "Ladder",
+       "revision": 1372260707,
+       "url": "https://en.wikipedia.org/w/index.php?title=Ladder&oldid=1372260707"
+      }
+     ]
+    },
+    "feet": {
+     "materials": [
+      "plastic",
+      "rubber"
+     ],
+     "classes": [
+      "plastic",
+      "rubber"
+     ],
+     "quote": "To avoid this, many ladders have flexible plastic or rubber feet or base pads which increase friction with the ground.",
+     "page": "Ladder (revision 1372260707)",
+     "pages": [
+      {
+       "title": "Ladder",
+       "revision": 1372260707,
+       "url": "https://en.wikipedia.org/w/index.php?title=Ladder&oldid=1372260707"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "hinge": {
+     "reason": "text does not say (pages tried: Hinge, Ladder)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Ladder (revision 1372260707)\"}"
+    },
+    "stays": {
+     "reason": "text does not say (pages tried: Stay, Ladder)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Ladder (revision 1372260707)\"}"
+    },
+    "ladder halves": {
+     "reason": "text does not say (pages tried: Ladder, Ladder, Ladder)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Ladder (revision 1372260707)\"}"
+    }
+   }
+  },
+  "swivel_office_chair": {
+   "parts": {
+    "casters": {
+     "materials": [
+      "cast iron",
+      "high profile polyurethane"
+     ],
+     "classes": [
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Also, harder wheel materials (e.g., cast iron, high profile polyurethane) are less sensitive to and tend to not track dirt and debris on floors.",
+     "page": "Caster (revision 1368704635)",
+     "pages": [
+      {
+       "title": "Caster",
+       "revision": 1368704635,
+       "url": "https://en.wikipedia.org/w/index.php?title=Caster&oldid=1368704635"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "seat": {
+     "reason": "text does not say (pages tried: SEAT, Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "backrest": {
+     "reason": "text does not say (pages tried: Backrest, Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "gas lift": {
+     "reason": "text does not say (pages tried: Gas spring, Gas lift, Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "armrests": {
+     "reason": "text does not say (pages tried: Armrest, Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "lever": {
+     "reason": "text does not say (pages tried: Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "base": {
+     "reason": "text does not say (pages tried: Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "wheels": {
+     "reason": "text does not say (pages tried: Wheel, Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair (revision 1372810643)\"}"
+    },
+    "lumbar support": {
+     "reason": "text does not say (pages tried: Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "caster fork": {
+     "reason": "text does not say (pages tried: Caster, Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "wheel": {
+     "reason": "text does not say (pages tried: Wheel, Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    },
+    "armrest": {
+     "reason": "text does not say (pages tried: Armrest, Office chair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Office chair\"}"
+    }
+   }
+  },
+  "toilet": {
+   "parts": {
+    "bowl": {
+     "materials": [
+      "ceramic",
+      "metal",
+      "wood",
+      "plastic"
+     ],
+     "classes": [
+      "ceramic",
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Modern bowls can be made of ceramic, metal, wood, plastic, and other materials.",
+     "page": "Bowl (revision 1360977580)",
+     "pages": [
+      {
+       "title": "Bowl",
+       "revision": 1360977580,
+       "url": "https://en.wikipedia.org/w/index.php?title=Bowl&oldid=1360977580"
+      }
+     ]
+    },
+    "trap": {
+     "materials": [
+      "ceramic (porcelain)",
+      "concrete",
+      "plastic",
+      "wood"
+     ],
+     "classes": [
+      "ceramic",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Toilets are commonly made of ceramic (porcelain), concrete, plastic, or wood.",
+     "page": "Toilet (revision 1371171980)",
+     "pages": [
+      {
+       "title": "Toilet",
+       "revision": 1371171980,
+       "url": "https://en.wikipedia.org/w/index.php?title=Toilet&oldid=1371171980"
+      }
+     ]
+    },
+    "flush mechanism": {
+     "materials": [
+      "plastic",
+      "rubber"
+     ],
+     "classes": [
+      "plastic",
+      "rubber"
+     ],
+     "quote": "In tanks using a flapper-flush valve, the outlet at the bottom of the tank is covered by a buoyant (plastic or rubber) cover, or flapper, which is held in place against a fitting (the flush valve seat) by water pressure.",
+     "page": "Flush toilet (revision 1374354910)",
+     "pages": [
+      {
+       "title": "Flush toilet",
+       "revision": 1374354910,
+       "url": "https://en.wikipedia.org/w/index.php?title=Flush_toilet&oldid=1374354910"
+      }
+     ]
+    },
+    "cistern": {
+     "materials": [
+      "plastic"
+     ],
+     "classes": [
+      "plastic"
+     ],
+     "quote": "Modern cisterns are manufactured out of plastic (in Brazil with a characteristic bright blue color, round, in capacities of  10 to 50 kilolitres (2,600 to 13,200 US gal).",
+     "page": "Cistern (revision 1356054636)",
+     "pages": [
+      {
+       "title": "Cistern",
+       "revision": 1356054636,
+       "url": "https://en.wikipedia.org/w/index.php?title=Cistern&oldid=1356054636"
+      }
+     ]
+    },
+    "flush valve": {
+     "materials": [
+      "plastic",
+      "rubber"
+     ],
+     "classes": [
+      "plastic",
+      "rubber"
+     ],
+     "quote": "In tanks using a flapper-flush valve, the outlet at the bottom of the tank is covered by a buoyant (plastic or rubber) cover, or flapper, which is held in place against a fitting (the flush valve seat) by water pressure.",
+     "page": "Flush toilet (revision 1374354910)",
+     "pages": [
+      {
+       "title": "Flush toilet",
+       "revision": 1374354910,
+       "url": "https://en.wikipedia.org/w/index.php?title=Flush_toilet&oldid=1374354910"
+      }
+     ]
+    },
+    "flush valve (flapper)": {
+     "materials": [
+      "plastic",
+      "rubber"
+     ],
+     "classes": [
+      "plastic",
+      "rubber"
+     ],
+     "quote": "In tanks using a flapper-flush valve, the outlet at the bottom of the tank is covered by a buoyant (plastic or rubber) cover, or flapper, which is held in place against a fitting (the flush valve seat) by water pressure.",
+     "page": "Flush toilet (revision 1374354910)",
+     "pages": [
+      {
+       "title": "Flush toilet",
+       "revision": 1374354910,
+       "url": "https://en.wikipedia.org/w/index.php?title=Flush_toilet&oldid=1374354910"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "drain pipe": {
+     "reason": "text does not say (pages tried: Toilet)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toilet (revision 1371171980)\"}"
+    },
+    "fill valve": {
+     "reason": "text does not say (pages tried: Toilet)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toilet (revision 1371171980)\"}"
+    },
+    "flush handle": {
+     "reason": "text does not say (pages tried: Flush toilet, Flush toilet, Toilet)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toilet (revision 1371171980)\"}"
+    },
+    "flush button": {
+     "reason": "text does not say (pages tried: Flush toilet, Flush toilet, Toilet)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toilet (revision 1371171980)\"}"
+    },
+    "seat": {
+     "reason": "text does not say (pages tried: SEAT, Toilet)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toilet (revision 1371171980)\"}"
+    }
+   }
+  },
+  "tool_box": {
+   "parts": {
+    "container body": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Modern toolboxes are predominantly made of metal or plastic, although some luxury models may be made of hardwoods.",
+     "page": "Toolbox (revision 1370453475)",
+     "pages": [
+      {
+       "title": "Toolbox",
+       "revision": 1370453475,
+       "url": "https://en.wikipedia.org/w/index.php?title=Toolbox&oldid=1370453475"
+      }
+     ]
+    },
+    "lid": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Modern toolboxes are predominantly made of metal or plastic, although some luxury models may be made of hardwoods.",
+     "page": "Toolbox (revision 1370453475)",
+     "pages": [
+      {
+       "title": "Toolbox",
+       "revision": 1370453475,
+       "url": "https://en.wikipedia.org/w/index.php?title=Toolbox&oldid=1370453475"
+      }
+     ]
+    },
+    "drawers": {
+     "materials": [
+      "wood",
+      "various wood composites",
+      "sheet metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "Drawers can be built in various ways using a variety of materials, including wood, various wood composites, sheet metal, and plastic.",
+     "page": "Drawer (revision 1369592629)",
+     "pages": [
+      {
+       "title": "Drawer",
+       "revision": 1369592629,
+       "url": "https://en.wikipedia.org/w/index.php?title=Drawer&oldid=1369592629"
+      }
+     ]
+    },
+    "latch": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Latches range in complexity from flexible one-piece flat springs of metal or plastic, such as are used to keep blow molded plastic power tool cases closed, to multi-point cammed latches used to keep large doors closed.",
+     "page": "Latch (revision 1359969425)",
+     "pages": [
+      {
+       "title": "Latch",
+       "revision": 1359969425,
+       "url": "https://en.wikipedia.org/w/index.php?title=Latch&oldid=1359969425"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "hinge": {
+     "reason": "text does not say (pages tried: Hinge, Toolbox)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toolbox\"}"
+    },
+    "handle": {
+     "reason": "text does not say (pages tried: Handle, Toolbox)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toolbox\"}"
+    },
+    "tote tray": {
+     "reason": "text does not say (pages tried: Toolbox)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toolbox\"}"
+    },
+    "casters": {
+     "reason": "text does not say (pages tried: Toolbox)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Toolbox\"}"
+    }
+   }
+  },
+  "trackball": {
+   "parts": {
+    "ball": {
+     "materials": [
+      "stainless steel",
+      "chrome steel",
+      "ceramic"
+     ],
+     "classes": [
+      "ceramic",
+      "heavy_metal"
+     ],
+     "quote": "They can be made from many different materials, including stainless steel, chrome steel, and ceramic (silicon nitride, Si3N4).",
+     "page": "Ball bearing",
+     "pages": [
+      {
+       "title": "Ball bearing",
+       "revision": 1361348640,
+       "url": "https://en.wikipedia.org/w/index.php?title=Ball_bearing&oldid=1361348640"
+      }
+     ]
+    },
+    "buttons": {
+     "materials": [
+      "hard plastic",
+      "wood"
+     ],
+     "classes": [
+      "plastic",
+      "wood"
+     ],
+     "quote": "Nowadays, hard plastic, seashell, metals, and wood are the most common materials used in button-making; the others tending to be used only in premium or antique apparel, or found in collections.",
+     "page": "Button (revision 1370294499)",
+     "pages": [
+      {
+       "title": "Button",
+       "revision": 1370294499,
+       "url": "https://en.wikipedia.org/w/index.php?title=Button&oldid=1370294499"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "socket": {
+     "reason": "text does not say (pages tried: Trackball)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Trackball (revision 1360325149)\"}"
+    },
+    "sensors": {
+     "reason": "text does not say (pages tried: Trackball)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Trackball (revision 1360325149)\"}"
+    },
+    "finger/thumb": {
+     "reason": "no material maps to a library class (pages tried: Trackball)",
+     "raw": "{\"materials\": [\"phenolic resin\"], \"quote\": \"Some trackballs have notably low friction, as well as being made of a dense material such as phenolic resin, so they can be spun to make them coast.\", \"page\": \"Trackball (revision 1360325149)\"}"
+    }
+   }
+  },
+  "umbrella": {
+   "parts": {
+    "canopy": {
+     "materials": [
+      "cotton",
+      "plastic film",
+      "nylon"
+     ],
+     "classes": [
+      "plastic",
+      "textile"
+     ],
+     "quote": "Modern designs usually employ a telescoping steel trunk; new materials such as cotton, plastic film and nylon often replace the original silk.",
+     "page": "Umbrella (revision 1374168583)",
+     "pages": [
+      {
+       "title": "Umbrella",
+       "revision": 1374168583,
+       "url": "https://en.wikipedia.org/w/index.php?title=Umbrella&oldid=1374168583"
+      }
+     ]
+    },
+    "ribs": {
+     "materials": [
+      "wooden",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "wood"
+     ],
+     "quote": "An umbrella (parasol or rarely parapluie) is a folding canopy supported by wooden or metal ribs that is mounted on a wooden, metal, or plastic pole.",
+     "page": "Umbrella (revision 1374168583)",
+     "pages": [
+      {
+       "title": "Umbrella",
+       "revision": 1374168583,
+       "url": "https://en.wikipedia.org/w/index.php?title=Umbrella&oldid=1374168583"
+      }
+     ]
+    },
+    "pole": {
+     "materials": [
+      "wooden",
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "An umbrella (parasol or rarely parapluie) is a folding canopy supported by wooden or metal ribs that is mounted on a wooden, metal, or plastic pole.",
+     "page": "Umbrella (revision 1374168583)",
+     "pages": [
+      {
+       "title": "Umbrella",
+       "revision": 1374168583,
+       "url": "https://en.wikipedia.org/w/index.php?title=Umbrella&oldid=1374168583"
+      }
+     ]
+    },
+    "handle": {
+     "materials": [
+      "wood",
+      "plastic"
+     ],
+     "classes": [
+      "plastic",
+      "wood"
+     ],
+     "quote": "Handheld umbrellas have a type of handle which can be made from wood or plastic in a bent \"crook\" handle (like the handle of a cane).",
+     "page": "Umbrella (revision 1374168583)",
+     "pages": [
+      {
+       "title": "Umbrella",
+       "revision": 1374168583,
+       "url": "https://en.wikipedia.org/w/index.php?title=Umbrella&oldid=1374168583"
+      }
+     ]
+    },
+    "gore": {
+     "materials": [
+      "cotton",
+      "plastic film",
+      "nylon"
+     ],
+     "classes": [
+      "plastic",
+      "textile"
+     ],
+     "quote": "Modern designs usually employ a telescoping steel trunk; new materials such as cotton, plastic film and nylon often replace the original silk.",
+     "page": "Umbrella (revision 1374168583)",
+     "pages": [
+      {
+       "title": "Umbrella",
+       "revision": 1374168583,
+       "url": "https://en.wikipedia.org/w/index.php?title=Umbrella&oldid=1374168583"
+      }
+     ]
+    }
+   },
+   "dropped": {}
+  },
+  "washing_machine": {
+   "parts": {
+    "Drum": {
+     "materials": [
+      "plastic",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Even on some expensive washers, the outer drum of front-loading machines is often (but not always) made of plastic (it can also be made out of metal, but this is expensive).",
+     "page": "Washing machine (revision 1374246093)",
+     "pages": [
+      {
+       "title": "Washing machine",
+       "revision": 1374246093,
+       "url": "https://en.wikipedia.org/w/index.php?title=Washing_machine&oldid=1374246093"
+      }
+     ]
+    },
+    "Outer tub": {
+     "materials": [
+      "plastic",
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Even on some expensive washers, the outer drum of front-loading machines is often (but not always) made of plastic (it can also be made out of metal, but this is expensive).",
+     "page": "Washing machine (revision 1374246093)",
+     "pages": [
+      {
+       "title": "Washing machine",
+       "revision": 1374246093,
+       "url": "https://en.wikipedia.org/w/index.php?title=Washing_machine&oldid=1374246093"
+      }
+     ]
+    },
+    "Motor": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "It can be made of metal or plastic.",
+     "page": "Washing machine (revision 1374246093)",
+     "pages": [
+      {
+       "title": "Washing machine",
+       "revision": 1374246093,
+       "url": "https://en.wikipedia.org/w/index.php?title=Washing_machine&oldid=1374246093"
+      }
+     ]
+    },
+    "Suspension system": {
+     "materials": [
+      "concrete",
+      "plastic",
+      "steel"
+     ],
+     "classes": [
+      "ceramic",
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Many residential front-loading washing machines typically have a 25 kg (55 lb) concrete block to dampen vibration. Alternatives include a plastic counterweight that can be filled with water after delivery, reducing or controlling motor speeds, using hydraulic suspensions instead of spring suspensions, and having freely moving steel balls or liquid contained inside a ring mounted on both the top and bottom of the drum to counter the weight of the clothes and reduce vibration.",
+     "page": "Washing machine (revision 1374246093)",
+     "pages": [
+      {
+       "title": "Washing machine",
+       "revision": 1374246093,
+       "url": "https://en.wikipedia.org/w/index.php?title=Washing_machine&oldid=1374246093"
+      }
+     ]
+    },
+    "Motors": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "It can be made of metal or plastic.",
+     "page": "Washing machine (revision 1374246093)",
+     "pages": [
+      {
+       "title": "Washing machine",
+       "revision": 1374246093,
+       "url": "https://en.wikipedia.org/w/index.php?title=Washing_machine&oldid=1374246093"
+      }
+     ]
+    },
+    "Door": {
+     "materials": [
+      "wood",
+      "steel",
+      "fiberglass",
+      "aluminum",
+      "composite",
+      "glass"
+     ],
+     "classes": [
+      "glass",
+      "heavy_metal",
+      "light_metal",
+      "plastic",
+      "wood"
+     ],
+     "quote": "New exterior doors are largely defined by the type of materials they are made from: wood, steel, fiberglass, UPVC/vinyl, aluminum, composite, glass (patio doors), etc.",
+     "page": "Door (revision 1371307890)",
+     "pages": [
+      {
+       "title": "Door",
+       "revision": 1371307890,
+       "url": "https://en.wikipedia.org/w/index.php?title=Door&oldid=1371307890"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Water inlet valve": {
+     "reason": "text does not say (pages tried: Valve, Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Drain pump": {
+     "reason": "text does not say (pages tried: Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Door or Lid": {
+     "reason": "text does not say (pages tried: Door, Lid, Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Control system": {
+     "reason": "text does not say (pages tried: Control system, Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Agitator": {
+     "reason": "text does not say (pages tried: Agitator (device), Agitator, Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Transmission": {
+     "reason": "text does not say (pages tried: Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Balance ring": {
+     "reason": "no material maps to a library class (pages tried: Washing machine)",
+     "raw": "{\"materials\": [\"liquid such as a calcium chloride salt water solution\", \"oil\"], \"quote\": \"Washing machines often incorporate balance rings filled with a liquid such as a calcium chloride salt water solution, that are designed to balance the inner drum of the washer during spin cycles.\", \"page\": \"Was"
+    },
+    "Controller": {
+     "reason": "text does not say (pages tried: Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Sensors": {
+     "reason": "text does not say (pages tried: Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Valves": {
+     "reason": "text does not say (pages tried: Valve, Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    },
+    "Lid": {
+     "reason": "text does not say (pages tried: Lid, Washing machine)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Washing machine (revision 1374246093)\"}"
+    }
+   }
+  },
+  "wheelchair": {
+   "parts": {
+    "frame": {
+     "materials": [
+      "aluminium",
+      "titanium",
+      "carbon-fibre"
+     ],
+     "classes": [
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "Many rigid models are made with light materials such as aluminium and titanium, and wheelchairs of composite materials such as carbon-fibre have started to appear.",
+     "page": "Wheelchair (revision 1373565586)",
+     "pages": [
+      {
+       "title": "Wheelchair",
+       "revision": 1373565586,
+       "url": "https://en.wikipedia.org/w/index.php?title=Wheelchair&oldid=1373565586"
+      }
+     ]
+    },
+    "brakes": {
+     "materials": [
+      "cast iron",
+      "ceramic"
+     ],
+     "classes": [
+      "ceramic",
+      "heavy_metal"
+     ],
+     "quote": "A brake disc (or rotor in U.S. English), usually made of cast iron or ceramic, is connected to the wheel or the axle.",
+     "page": "Brake (revision 1373688342)",
+     "pages": [
+      {
+       "title": "Brake",
+       "revision": 1373688342,
+       "url": "https://en.wikipedia.org/w/index.php?title=Brake&oldid=1373688342"
+      }
+     ]
+    },
+    "caster wheels": {
+     "materials": [
+      "cast iron",
+      "high profile polyurethane"
+     ],
+     "classes": [
+      "heavy_metal",
+      "plastic"
+     ],
+     "quote": "Also, harder wheel materials (e.g., cast iron, high profile polyurethane) are less sensitive to and tend to not track dirt and debris on floors.",
+     "page": "Caster (revision 1368704635)",
+     "pages": [
+      {
+       "title": "Caster",
+       "revision": 1368704635,
+       "url": "https://en.wikipedia.org/w/index.php?title=Caster&oldid=1368704635"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "seat": {
+     "reason": "text does not say (pages tried: Seat, SEAT, Wheelchair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wheelchair (revision 1373565586)\"}"
+    },
+    "wheels": {
+     "reason": "material 'rubber' not in the quote as a material word (pages tried: Wheel, Wheel, Wheelchair)",
+     "raw": "{\"materials\": [\"rubber\"], \"quote\": \"Wheels are rubber-tired and may be solid, pneumatic or gel-filled.\", \"page\": \"Wheelchair (revision 1373565586)\"}"
+    },
+    "footrests": {
+     "reason": "text does not say (pages tried: Wheelchair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wheelchair (revision 1373565586)\"}"
+    },
+    "armrests": {
+     "reason": "text does not say (pages tried: Armrest, Wheelchair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wheelchair (revision 1373565586)\"}"
+    },
+    "push-rims": {
+     "reason": "text does not say (pages tried: Rim (firearms), Wheelchair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wheelchair (revision 1373565586)\"}"
+    },
+    "rear wheels": {
+     "reason": "material 'rubber' not in the quote as a material word (pages tried: Wheel, Wheel, Wheelchair)",
+     "raw": "{\"materials\": [\"rubber\"], \"quote\": \"Wheels are rubber-tired and may be solid, pneumatic or gel-filled.\", \"page\": \"Wheelchair (revision 1373565586)\"}"
+    },
+    "caster forks": {
+     "reason": "text does not say (pages tried: Caster, Wheelchair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wheelchair (revision 1373565586)\"}"
+    },
+    "backrest": {
+     "reason": "text does not say (pages tried: Backrest, Wheelchair)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Wheelchair (revision 1373565586)\"}"
+    }
+   }
+  },
+  "wheeled_dumpster": {
+   "parts": {
+    "container body": {
+     "materials": [
+      "metal",
+      "plastic"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal",
+      "plastic"
+     ],
+     "quote": "It is usually made out of metal or plastic.",
+     "page": "Waste container (revision 1374517683)",
+     "pages": [
+      {
+       "title": "Waste container",
+       "revision": 1374517683,
+       "url": "https://en.wikipedia.org/w/index.php?title=Waste_container&oldid=1374517683"
+      }
+     ]
+    },
+    "wheels or casters": {
+     "materials": [
+      "metal"
+     ],
+     "classes": [
+      "heavy_metal",
+      "light_metal"
+     ],
+     "quote": "Today, many industrial caster bodies are made by laser cutting the body from a single metal blank and then using a press brake to shape the legs to the required ninety degree angle, thus producing a mechanically stronger device.",
+     "page": "Caster (revision 1368704635)",
+     "pages": [
+      {
+       "title": "Caster",
+       "revision": 1368704635,
+       "url": "https://en.wikipedia.org/w/index.php?title=Caster&oldid=1368704635"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "lifting arms or slots": {
+     "reason": "text does not say (pages tried: Dumpster)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dumpster (revision 1371828351)\"}"
+    },
+    "lid": {
+     "reason": "text does not say (pages tried: Lid, Lid, Dumpster)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dumpster (revision 1371828351)\"}"
+    },
+    "dumpster": {
+     "reason": "material 'plastic' not in the quote as a material word (pages tried: Dumpster, Dumpster)",
+     "raw": "{\"materials\": [\"steel\", \"fiberglass\", \"plastic\"], \"quote\": \"Waste storage containers can be made from a wide variety of materials, including steel and fiberglass.\", \"page\": \"Dumpster (revision 1371828351)\"}"
+    },
+    "wheels": {
+     "reason": "text does not say (pages tried: Wheel, Dumpster)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Dumpster (revision 1371828351)\"}"
+    }
+   }
+  },
+  "wheeled_excavator": {
+   "parts": {
+    "House": {
+     "materials": [
+      "wood",
+      "concrete"
+     ],
+     "classes": [
+      "ceramic",
+      "wood"
+     ],
+     "quote": "It may range in complexity from a rudimentary hut to a complex structure of wood, masonry, concrete or other material, outfitted with plumbing, electrical, and heating, ventilation, and air conditioning systems.",
+     "page": "House (revision 1367245960)",
+     "pages": [
+      {
+       "title": "House",
+       "revision": 1367245960,
+       "url": "https://en.wikipedia.org/w/index.php?title=House&oldid=1367245960"
+      }
+     ]
+    }
+   },
+   "dropped": {
+    "Undercarriage": {
+     "reason": "text does not say (pages tried: Undercarriage, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Boom": {
+     "reason": "text does not say (pages tried: Boom, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Stick (Dipper)": {
+     "reason": "text does not say (pages tried: Stick, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Bucket": {
+     "reason": "text does not say (pages tried: Bucket (machine part), Bucket, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Engine": {
+     "reason": "text does not say (pages tried: Engine, Engine, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Hydraulic Pumps": {
+     "reason": "text does not say (pages tried: Hydraulic pump, Hydraulic cylinder, Hydraulic pump, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Hydraulic Cylinders": {
+     "reason": "text does not say (pages tried: Hydraulic pump, Hydraulic cylinder, Hydraulic pump, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Swing Motor": {
+     "reason": "text does not say (pages tried: Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Hydraulic Oil Tanks": {
+     "reason": "text does not say (pages tried: Hydraulic pump, Fuel tank, Hydraulic cylinder, Hydraulic pump, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Hydraulic Motors": {
+     "reason": "text does not say (pages tried: Hydraulic pump, Hydraulic cylinder, Hydraulic pump, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Stick": {
+     "reason": "text does not say (pages tried: Stick, Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Tracks": {
+     "reason": "text does not say (pages tried: Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Track Motors": {
+     "reason": "text does not say (pages tried: Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Final Drives": {
+     "reason": "text does not say (pages tried: Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    },
+    "Piston Rod": {
+     "reason": "text does not say (pages tried: Excavator)",
+     "raw": "{\"materials\": [], \"quote\": \"\", \"page\": \"Excavator (revision 1373013480)\"}"
+    }
+   }
+  }
+ },
+ "_source": {
+  "model": "qwen3.5-27b-extract",
+  "weights": "Qwen/Qwen3.5-27B (fp8), thinking off, temperature 0",
+  "pages": "the task's knowledge bundle, one page per question: title-matched part pages (full cached text at the cited revision, lead + material paragraphs) first, the object page last; first verified answer kept",
+  "checks": "quote verbatim in the given text; every named material in the quote and in MAT_WORDS",
+  "generated": "2026-09-22 17:54"
+ }
+}

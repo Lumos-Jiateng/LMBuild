@@ -1,0 +1,89 @@
+{
+ "task": "casement_window",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Latching System",
+   "function": "Secures the sash to the frame to prevent unauthorized opening or wind damage.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "latch",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "sash",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "latch",
+     "to": "frame",
+     "carries": "force",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P3",
+    "P5",
+    "P6"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "glazing",
+     "claim": "P3"
+    },
+    {
+     "pred": "part_present",
+     "role": "sill",
+     "claim": "P5"
+    },
+    {
+     "pred": "part_present",
+     "role": "glazing points or putty",
+     "claim": "P6"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the latch is on the sash and within reach",
+   "claims": [
+    "P4"
+   ],
+   "requirements": [
+    {
+     "pred": "colocated",
+     "a": "latch",
+     "b": "sash",
+     "max_gap_m": 0.05,
+     "claim": "P4"
+    },
+    {
+     "pred": "reachable",
+     "target": "latch",
+     "reach_m": 1.0,
+     "claim": "P4"
+    }
+   ]
+  }
+ ]
+}

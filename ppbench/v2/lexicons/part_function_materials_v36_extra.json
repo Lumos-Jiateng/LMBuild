@@ -1,0 +1,4046 @@
+{
+ "tasks": {
+  "av_bathroom_vanity": {
+   "cabinet frame": {
+    "name": "Cabinet Frame",
+    "function": "Provides the primary structural support and defines the shape of the cabinet.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "av_blender": {
+   "knob": {
+    "name": "Knob",
+    "function": "The knob controls the blender's speed settings or power level.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "av_electric_kettle": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Holds and heats water to boiling point.",
+    "classes": [
+     "ceramic",
+     "glass",
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "av_flashlight": {
+   "frame": {
+    "name": "Frame",
+    "function": "The frame provides structural rigidity, protects internal components, and often aids in heat dissipation.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "spout": {
+    "name": "Spout",
+    "function": "The term 'spout' is not a standard part of a flashlight; the user likely refers to the head or lens housing which directs and protects the light beam.",
+    "classes": [
+     "glass",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "av_game_controller": {
+   "frame": {
+    "name": "Frame",
+    "function": "Provides structural rigidity and houses internal components while defining the device's shape.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "screen": {
+    "name": "Screen",
+    "function": "Displays visual feedback, menus, or player status information.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   },
+   "surface": {
+    "name": "Surface",
+    "function": "Provides a durable, non-slip grip and structural housing for the user's hands.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "av_pedal_bin": {
+   "container box": {
+    "name": "container_box",
+    "function": "Holds waste and provides the main storage volume for the bin.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "container foot tap": {
+    "name": "container_foot_tap",
+    "function": "Transfers foot pressure to the internal linkage to open the lid.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "container handle": {
+    "name": "container_handle",
+    "function": "Provides a grip for lifting or carrying the bin.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "cover lid": {
+    "name": "cover_lid",
+    "function": "Seals the bin to contain odors and hide waste while opening via a foot pedal.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "av_recliner": {
+   "foot": {
+    "name": "Back Left Foot",
+    "function": "Provides structural support and stability to the recliner frame while bearing the user's weight.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "av_soap_dispenser": {
+   "pressing lid": {
+    "name": "Pressing Lid",
+    "function": "Activates the internal pump mechanism to dispense soap when pressed.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "av_standing_mirror": {
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable, weighted foundation to support the mirror's height and prevent tipping.",
+    "classes": [
+     "ceramic",
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "tabletop frame": {
+    "name": "tabletop_frame",
+    "function": "Provides a stable base and structural support for the mirror to stand upright on a surface.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "tabletop surface": {
+    "name": "tabletop_surface",
+    "function": "Provides a stable, flat base to support the mirror's weight and prevent tipping.",
+    "classes": [
+     "ceramic",
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "av_tv_stand": {
+   "board": {
+    "name": "Board",
+    "function": "Provides a flat, stable surface to support and display electronic devices and media components.",
+    "classes": [
+     "glass",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "baby_stroller": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame to support the seat, wheels, and child's weight.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "none": {
+    "name": "None",
+    "function": "No part exists to perform a function.",
+    "classes": []
+   },
+   "outlier": {
+    "name": "Outlier",
+    "function": "Provides a flexible, shock-absorbing connection to the ground for smooth rolling and traction.",
+    "classes": [
+     "rubber"
+    ]
+   }
+  },
+  "barbecue_grill": {
+   "connector": {
+    "name": "connector",
+    "function": "Connects the fuel tank to the burner assembly to regulate gas flow.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "lamp head": {
+    "name": "lamp_head",
+    "function": "Provides illumination for cooking in low-light conditions.",
+    "classes": [
+     "glass",
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_airliner": {
+   "container": {
+    "name": "Container",
+    "function": "Stores cargo, luggage, or mail securely within the aircraft fuselage.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "foot": {
+    "name": "Left Foot",
+    "function": "The left foot pedal controls the rudder for yaw and the left brake for ground steering.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "rubber"
+    ]
+   },
+   "liquid or soil": {
+    "name": "Liquid or Soil",
+    "function": "Stores and transports fuel or hydraulic fluid within the aircraft structure.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_airport_tug": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the structural foundation to support the engine, transmission, and operator while transmitting high tractive forces.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "bc_auto_rickshaw": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and chassis to support the engine, passengers, and body panels.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "bc_backhoe_loader": {
+   "spout": {
+    "name": "Spout",
+    "function": "The spout (or discharge chute) directs excavated material from the bucket into a pile or transport vehicle.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "The switch controls the activation of electrical circuits for lights, hydraulics, or engine functions.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "vertical support": {
+    "name": "Vertical Support",
+    "function": "Provides structural rigidity and load-bearing support for the boom and arm assembly during digging and lifting operations.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_box_truck": {
+   "board": {
+    "name": "Board",
+    "function": "Provides a flat, load-bearing surface for securing cargo inside the truck.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "table base": {
+    "name": "Table Base",
+    "function": "Provides a stable mounting surface for interior tables or workstations.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "bc_boxcar": {
+   "board": {
+    "name": "Board",
+    "function": "Provides a structural floor surface to support and distribute the weight of cargo.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "table base": {
+    "name": "Table Base",
+    "function": "Provides structural support and stability for the boxcar's floor or internal fixtures.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "bc_bulldozer": {
+   "armrest": {
+    "name": "Left Armrest",
+    "function": "Provides a stable resting surface for the operator's arm to reduce fatigue and improve control.",
+    "classes": [
+     "foam",
+     "heavy_metal",
+     "rubber"
+    ]
+   },
+   "backrest": {
+    "name": "Backrest",
+    "function": "Provides structural support and comfort for the operator's back while seated.",
+    "classes": [
+     "foam",
+     "heavy_metal",
+     "textile"
+    ]
+   },
+   "leg": {
+    "name": "Back Left Leg",
+    "function": "Provides structural support and stability for the bulldozer's chassis and tracks.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "seat support": {
+    "name": "Seat Support",
+    "function": "Provides structural rigidity and load-bearing support for the operator's seat.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "seat surface": {
+    "name": "Seat Surface",
+    "function": "Provides a comfortable and stable seating surface for the operator to control the machine.",
+    "classes": [
+     "foam",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "sloping engine cover": {
+    "name": "sloping engine cover",
+    "function": "Protects the engine from debris and weather while aiding airflow.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_bus": {
+   "lens": {
+    "name": "Lens",
+    "function": "The lens focuses and directs light from the headlight bulb to illuminate the road.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   }
+  },
+  "bc_caboose": {
+   "board": {
+    "name": "Board",
+    "function": "Provides a structural walking surface for crew members on the roof or platform.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "table base": {
+    "name": "Table Base",
+    "function": "Provides a stable, load-bearing foundation for a table surface.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "bc_carousel": {
+   "bed frame base": {
+    "name": "Bed Frame Base",
+    "function": "Provides the structural foundation and support for the carousel's rotating platform and animals.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "bed frame horizontal surface": {
+    "name": "Bed Frame Horizontal Surface",
+    "function": "Provides a stable, flat platform for riders to sit or stand on while the carousel rotates.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "blanket": {
+    "name": "Blanket",
+    "function": "Provides a soft, padded surface for riders to sit on for comfort and safety.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "footboard": {
+    "name": "Footboard",
+    "function": "Provides a stable base for riders to rest their feet and prevents them from falling off the platform.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "headboard": {
+    "name": "Headboard",
+    "function": "Provides a decorative backrest and structural support for riders.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "mattress": {
+    "name": "Mattress",
+    "function": "Provides a padded, comfortable seating surface for riders.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "pillow": {
+    "name": "Pillow",
+    "function": "Provides cushioning and comfort for riders seated on the carousel animals.",
+    "classes": [
+     "foam",
+     "textile"
+    ]
+   }
+  },
+  "bc_carriage": {
+   "handle": {
+    "name": "Handle",
+    "function": "Provides a grip for the driver to steer and control the carriage.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "bc_diesel_locomotive": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and housing for the engine, fuel, and electrical systems.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "Provides access to internal components while protecting them from weather and debris.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_dump_truck": {
+   "drawer box": {
+    "name": "drawer_box",
+    "function": "Holds and transports bulk materials like gravel, sand, or debris.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "shelf": {
+    "name": "shelf",
+    "function": "Provides a structural platform for securing tools or equipment on the truck chassis.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_fire_engine": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the structural chassis and frame to support the vehicle's weight, equipment, and crew while withstanding extreme stress and heat.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "rotation blade": {
+    "name": "Rotation Blade",
+    "function": "Rotation blades are not a standard component of real fire engines.",
+    "classes": []
+   },
+   "translation blade": {
+    "name": "Translation Blade",
+    "function": "This part does not exist on a real fire engine.",
+    "classes": []
+   }
+  },
+  "bc_fishing_boat": {
+   "cap": {
+    "name": "Cap",
+    "function": "Protects the propeller shaft and reduces drag by sealing the hull opening.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_food_truck": {
+   "armrest": {
+    "name": "Left Armrest",
+    "function": "Provides ergonomic support and stability for the operator's arm while preparing food.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "chair base": {
+    "name": "Chair Base (Ottoman)",
+    "function": "Provides a stable, elevated seating surface for customers to rest their feet or sit on.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "chair seat": {
+    "name": "Chair Seat (Ottoman)",
+    "function": "Provides a padded, elevated surface for customers to rest their feet or sit on while waiting for food.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "ground surface": {
+    "name": "Ground Surface",
+    "function": "Provides a stable, durable, and weather-resistant foundation for the truck to rest on while parked.",
+    "classes": [
+     "ceramic",
+     "heavy_metal",
+     "rubber"
+    ]
+   },
+   "pillow": {
+    "name": "Pillow",
+    "function": "Provides cushioning and comfort for staff seating or storage.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "seat support": {
+    "name": "Seat Support",
+    "function": "Provides structural stability and ergonomic comfort for customers seated at the truck's counter.",
+    "classes": [
+     "foam",
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "seat surface": {
+    "name": "Seat Surface",
+    "function": "Provides a stable and comfortable surface for customers to sit while eating.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Provides structural integrity, weather protection, and a surface for branding or ventilation.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_forklift": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body provides the structural foundation to support the engine, operator, and load while absorbing operational vibrations.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_garbage_truck": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and chassis to support the vehicle's weight and lifting mechanisms.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_go_kart": {
+   "base surface": {
+    "name": "base_surface",
+    "function": "Provides the structural foundation to support the chassis, engine, and driver while absorbing vibrations.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "seat single surface": {
+    "name": "seat_single_surface",
+    "function": "Supports the driver's weight and provides a stable seating position for control.",
+    "classes": [
+     "foam",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "support": {
+    "name": "back_support",
+    "function": "Provides structural support and comfort for the driver's back while maintaining a low profile.",
+    "classes": [
+     "foam",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "surface": {
+    "name": "back_surface",
+    "function": "Protects the driver from debris and provides a mounting point for the roll cage or seat.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_hopper_car": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body forms the structural container that holds and supports the bulk cargo while withstanding heavy loads and abrasion.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_limousine": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and chassis to support the vehicle's weight and passengers.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "Activates interior features like lighting, partitions, or entertainment systems.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "textile"
+    ]
+   }
+  },
+  "bc_logging_truck": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and chassis to support the engine, cab, and heavy timber loads.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "none": {
+    "name": "None",
+    "function": "No part exists to perform a function.",
+    "classes": []
+   }
+  },
+  "bc_mobile_crane": {
+   "frame": {
+    "name": "Frame",
+    "function": "The frame provides the primary structural support to bear heavy loads and resist bending and torsional forces during lifting operations.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "hose": {
+    "name": "Hose",
+    "function": "Transfers hydraulic fluid under high pressure to power the crane's lifting and movement mechanisms.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "spout": {
+    "name": "Spout",
+    "function": "The term 'spout' is not a standard component of a mobile crane; cranes use a boom, jib, or hook block for lifting, while spouts are found on fluid-handling equipment like concrete pumps or fuel trucks",
+    "classes": []
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "Controls the activation or deactivation of electrical circuits and systems within the crane.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "bc_motor_grader": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and mounting points for the engine, cab, and blade assembly.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_motorhome": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural chassis and load-bearing foundation for the vehicle.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "knob": {
+    "name": "Knob 1",
+    "function": "Controls the opening and closing of a storage compartment or appliance door.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_piano": {
+   "armrest": {
+    "name": "Left Armrest",
+    "function": "Provides a comfortable resting surface for the player's arm to reduce fatigue and stabilize posture.",
+    "classes": [
+     "plastic",
+     "textile",
+     "wood"
+    ]
+   },
+   "backrest": {
+    "name": "Backrest",
+    "function": "Provides structural support and acoustic resonance for the piano's frame and strings.",
+    "classes": [
+     "wood"
+    ]
+   },
+   "seat cushion": {
+    "name": "Seat Cushion",
+    "function": "Provides comfortable seating support for the pianist during performance.",
+    "classes": [
+     "foam",
+     "textile"
+    ]
+   }
+  },
+  "bc_pickup_truck": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and cargo bed to support heavy loads and withstand road impacts.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "handle": {
+    "name": "Handle",
+    "function": "The handle allows the user to grip and pull the door open.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "bc_pipe_organ": {
+   "base surface": {
+    "name": "base_surface",
+    "function": "Provides structural stability and houses the wind chest and mechanical action components.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "box": {
+    "name": "box",
+    "function": "The box, or case, houses the pipes and wind system while shaping the instrument's acoustics and providing structural support.",
+    "classes": [
+     "wood"
+    ]
+   },
+   "chain": {
+    "name": "chain",
+    "function": "Transmits mechanical force from the key to the valve to open the windway.",
+    "classes": [
+     "heavy_metal",
+     "textile"
+    ]
+   },
+   "clock body": {
+    "name": "clock_body",
+    "function": "Houses the mechanical action and wind supply systems to control airflow to the pipes.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "pendulum body": {
+    "name": "pendulum_body",
+    "function": "The pendulum body acts as a weighted counterbalance to regulate the speed of the action mechanism or wind supply.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "pendulum clock": {
+    "name": "pendulum_clock_top",
+    "function": "The pendulum clock top is not a functional part of a pipe organ.",
+    "classes": []
+   }
+  },
+  "bc_police_car": {
+   "armrest": {
+    "name": "Left Armrest",
+    "function": "Provides a comfortable resting surface for the driver's arm and often houses storage or controls.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "ground support": {
+    "name": "Left Ground Support",
+    "function": "Supports the vehicle's weight and provides traction for driving and braking.",
+    "classes": [
+     "heavy_metal",
+     "rubber"
+    ]
+   },
+   "support": {
+    "name": "Back Support",
+    "function": "Provides structural support and comfort for the officer's back while seated.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Provides structural integrity, weather protection, and a mounting surface for rear lights and emergency equipment.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_race_car": {
+   "blade handle set": {
+    "name": "Blade Handle Set",
+    "function": "The term 'Blade Handle Set' does not exist as a component in a real Formula One car.",
+    "classes": []
+   },
+   "screw": {
+    "name": "Screw",
+    "function": "Fastens and secures critical components like suspension, engine, and bodywork under extreme vibration and load.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "bc_road_roller": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body provides the structural frame to support the engine, operator cabin, and heavy drum while withstanding extreme vibration and load.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "connector": {
+    "name": "Connector (Other)",
+    "function": "Links hydraulic hoses or electrical cables to the main chassis to transmit fluid or power.",
+    "classes": [
+     "heavy_metal",
+     "rubber"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "The lid provides access to the fuel tank or hydraulic fluid reservoir while protecting internal components from debris and weather.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_semi_trailer_truck": {
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable, load-bearing platform for securing cargo or equipment on the trailer deck.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "tabletop surface": {
+    "name": "tabletop_surface",
+    "function": "Provides a flat, stable surface for securing cargo or equipment inside the trailer.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "bc_ship": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural integrity, buoyancy, and watertight containment for the vessel.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "rotation blade": {
+    "name": "Rotation Blade",
+    "function": "Propels the ship through water by converting rotational energy into thrust.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "bc_skid_steer_loader": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body provides the primary structural frame to support the engine, hydraulics, and operator while withstanding extreme impact and torsional loads.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_snowmobile": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the structural chassis and mounting points for the engine, suspension, and track system.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "The button activates or deactivates specific vehicle functions like the engine start, kill switch, or lights.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "lens": {
+    "name": "Lens",
+    "function": "The lens protects the headlight bulb and focuses the light beam for visibility.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   }
+  },
+  "bc_steam_locomotive": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body provides the structural framework to support the boiler, wheels, and mechanical components while withstanding high heat and pressure.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_submarine": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural integrity and pressure resistance to withstand deep-sea hydrostatic forces.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "rotation blade": {
+    "name": "Rotation Blade",
+    "function": "Propels the submarine through water by converting rotational energy into thrust.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "bc_table_football": {
+   "foosball handle": {
+    "name": "foosball_handle",
+    "function": "The handle allows the player to grip and rotate the rod to control the player figures.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "tabletop frame": {
+    "name": "tabletop_frame",
+    "function": "Provides structural rigidity and support for the playing surface and rods.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "tabletop surface": {
+    "name": "tabletop_surface",
+    "function": "Provides a smooth, low-friction playing surface for the ball to roll across.",
+    "classes": [
+     "glass",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "bc_table_saw": {
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable, vibration-dampening foundation to support the saw's weight and ensure cutting accuracy.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "tabletop frame": {
+    "name": "tabletop_frame",
+    "function": "Provides a rigid, flat, and vibration-dampening foundation to support the workpiece and ensure cutting accuracy.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "tabletop surface": {
+    "name": "tabletop_surface",
+    "function": "Provides a flat, stable, and rigid support surface for guiding workpieces during cutting.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "wood"
+    ]
+   }
+  },
+  "bc_tank": {
+   "lamp base part": {
+    "name": "lamp_base_part",
+    "function": "Provides structural support and stability for the tank's lighting fixture.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "lamp body vertical bar": {
+    "name": "lamp_body_vertical_bar",
+    "function": "Provides structural support and mounting for the tank's lighting fixture.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "lamp unit": {
+    "name": "lamp_unit",
+    "function": "Provides illumination for the crew compartment or external visibility.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_tank_car": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body contains and transports bulk liquids or gases under pressure.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "Controls the opening and closing of the discharge valve to regulate cargo flow.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "lens": {
+    "name": "Lens",
+    "function": "Allows visual inspection of the tank's interior or liquid level without opening the vessel.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   }
+  },
+  "bc_tank_truck": {
+   "base": {
+    "name": "base",
+    "function": "The base supports the tank's weight and distributes loads to the chassis and wheels.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "container box": {
+    "name": "container_box",
+    "function": "Holds and transports liquid or gaseous cargo under pressure or vacuum.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "container foot tap": {
+    "name": "container_foot_tap",
+    "function": "Controls the flow of liquid cargo out of the tank for unloading.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "cover lid": {
+    "name": "cover_lid",
+    "function": "Seals the tank opening to prevent cargo leakage and contamination.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "other": {
+    "name": "other",
+    "function": "Provides structural support, sealing, and protection for auxiliary components like valves, pumps, and piping.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "bc_tow_truck": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and chassis to support the vehicle's weight and towing loads.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_tower_crane": {
+   "jib support": {
+    "name": "jib_support",
+    "function": "The jib support transfers the bending and torsional loads from the horizontal jib to the main mast.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bc_tram": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and load-bearing chassis for the vehicle.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "The button allows passengers to signal the driver to stop the tram at the next station.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "lens": {
+    "name": "Lens",
+    "function": "Protects the light source and focuses the beam for visibility.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   }
+  },
+  "bc_tricycle": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame to support the rider and connect the wheels, handlebars, and seat.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "handle": {
+    "name": "Handle",
+    "function": "The handle provides grip and control for steering the tricycle.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "bc_van": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and cargo/passenger enclosure for the vehicle.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "knob": {
+    "name": "Knob",
+    "function": "The knob allows the driver to manually adjust the position of the sliding door or window.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "bc_vending_machine": {
+   "board": {
+    "name": "board",
+    "function": "The board serves as the structural back panel or internal mounting frame to secure mechanical components and wiring.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "table base": {
+    "name": "table_base",
+    "function": "Provides structural stability and supports the machine's weight.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "bc_wind_turbine": {
+   "connector": {
+    "name": "connector",
+    "function": "Transfers mechanical torque and electrical power between the rotor and the generator.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "lamp finial": {
+    "name": "lamp_finial",
+    "function": "A lamp finial is not a functional part of a real wind turbine.",
+    "classes": []
+   },
+   "lamp post": {
+    "name": "lamp_post",
+    "function": "Provides illumination for safety and navigation at the turbine base or nacelle.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "lamp unit": {
+    "name": "lamp_unit",
+    "function": "Provides illumination for maintenance access and safety signaling on the turbine nacelle or tower.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "other leaf": {
+    "name": "other_leaf",
+    "function": "Captures wind energy to rotate the rotor and drive the generator.",
+    "classes": [
+     "plastic"
+    ]
+   }
+  },
+  "bench_drill_press": {
+   "board": {
+    "name": "board",
+    "function": "Provides a stable, flat surface to support the workpiece during drilling operations.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "drill head casting clamps the column houses the rack and pinion feed the quill barrel and the plate": {
+    "name": "drill head casting: clamps the column, houses the rack-and-pinion feed, the quill barrel and the top plate",
+    "function": "It secures the drill press to the column while housing the feed mechanism and quill barrel to ensure precise vertical movement and structural rigidity.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable, rigid support surface for workpieces during drilling operations.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "bookcase": {
+   "board": {
+    "name": "Board",
+    "function": "Provides structural support and a flat surface to hold books and other items.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "leg": {
+    "name": "Leg",
+    "function": "Supports the weight of the bookcase and its contents while elevating the structure off the floor.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "chest_of_drawers": {
+   "countertop": {
+    "name": "countertop",
+    "function": "Provides a flat, stable surface for placing items and supports the weight of objects.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "computer_keyboard": {
+   "other leaf": {
+    "name": "other_leaf",
+    "function": "Provides tactile feedback and structural support for the keycap.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "screen": {
+    "name": "screen_side",
+    "function": "Provides a structural base and aesthetic finish for the top surface of the keyboard.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "shaft": {
+    "name": "shaft",
+    "function": "The shaft provides the mechanical structure and spring force to actuate the switch and return the key to its resting position.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "computer_mouse": {
+   "frame": {
+    "name": "Frame",
+    "function": "The frame provides the structural skeleton that houses internal components and defines the mouse's shape.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "key": {
+    "name": "Key",
+    "function": "The key (click button) registers user input by actuating an internal microswitch.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "silver ergonomic palm housing": {
+    "name": "silver ergonomic palm housing",
+    "function": "Provides structural support and an ergonomic grip for the user's hand.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "touchpad": {
+    "name": "Touchpad",
+    "function": "A touchpad is not a standard part of a computer mouse; it is a separate input surface found on laptops.",
+    "classes": []
+   }
+  },
+  "desk_lamp": {
+   "lamp cover": {
+    "name": "lamp_cover",
+    "function": "Diffuses light to reduce glare and protect the bulb.",
+    "classes": [
+     "glass",
+     "plastic",
+     "textile"
+    ]
+   }
+  },
+  "dining_table": {
+   "board": {
+    "name": "Board",
+    "function": "Provides a flat, stable surface for placing objects or performing tasks.",
+    "classes": [
+     "glass",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "f360_air_compressor": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and houses internal components while dissipating heat.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "The lid seals the compressor housing to contain pressure and protect internal components from debris.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "outlier": {
+    "name": "Outlier",
+    "function": "The term 'Outlier' is not a standard functional part of a compressor, so it has no defined function or material class in real products.",
+    "classes": []
+   }
+  },
+  "f360_arbor_press": {
+   "connector": {
+    "name": "connector",
+    "function": "The connector joins the handle to the screw mechanism to transmit rotational force for pressing.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "lamp arm": {
+    "name": "lamp_arm",
+    "function": "Provides adjustable illumination to the work area for visibility during pressing operations.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "lamp head": {
+    "name": "lamp_head",
+    "function": "Provides focused illumination on the work area to ensure visibility during pressing operations.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_beam_engine": {
+   "base surface": {
+    "name": "base_surface",
+    "function": "Provides a stable, load-bearing foundation to anchor the engine and absorb operational vibrations.",
+    "classes": [
+     "ceramic",
+     "heavy_metal"
+    ]
+   },
+   "box": {
+    "name": "box",
+    "function": "The box (crankcase or stuffing box) houses moving components, retains lubrication, and seals the piston rod against pressure.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "pendulum clock": {
+    "name": "pendulum_clock_top",
+    "function": "The pendulum clock top regulates the engine's speed by providing a precise timekeeping mechanism for the governor or indicator.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "support bar": {
+    "name": "support_bar",
+    "function": "The support bar provides structural rigidity to hold the beam and pivot points in place against heavy dynamic loads.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "surface": {
+    "name": "surface",
+    "function": "The surface provides a durable, low-friction interface for mechanical contact and wear resistance.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "f360_bench_vise": {
+   "frame": {
+    "name": "Frame",
+    "function": "The frame provides the rigid structural support and mounting base that resists the high clamping forces generated by the vise.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "hand": {
+    "name": "Hand_2",
+    "function": "Provides manual leverage to tighten or loosen the jaws by turning the screw mechanism.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "surface": {
+    "name": "Surface",
+    "function": "Provides a flat, durable gripping surface to hold workpieces securely without slipping.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "f360_bicycle": {
+   "arm horizontal bar": {
+    "name": "Left Arm Horizontal Bar",
+    "function": "Provides structural rigidity and connects the handlebars to the head tube to support steering and rider weight.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "arm near vertical bar": {
+    "name": "Left Arm Near Vertical Bar",
+    "function": "Provides structural support and connects the handlebars to the frame for steering control.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "chair base": {
+    "name": "Chair Base",
+    "function": "Provides a stable mounting point for the saddle to support the rider's weight.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "seat support": {
+    "name": "Seat Support",
+    "function": "Supports the seat post and transfers rider weight to the frame.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "seat surface": {
+    "name": "Seat Surface",
+    "function": "Supports the rider's weight and provides cushioning for comfort.",
+    "classes": [
+     "foam",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "support": {
+    "name": "Back Support",
+    "function": "Provides lumbar support and comfort for the rider's back.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Provides structural support and connects the rear wheel to the frame.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_binoculars": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Houses and aligns the optical components while providing a rigid structural frame.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "The button activates a specific function such as locking the focus, engaging image stabilization, or switching between viewing modes.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "knob": {
+    "name": "Knob (Other)",
+    "function": "Adjusts the focus or interpupillary distance for clear viewing.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_calipers": {
+   "blade handle set": {
+    "name": "Blade Handle Set",
+    "function": "Provides the gripping surface and structural leverage to open, close, and hold the caliper jaws securely.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_clock": {
+   "frame": {
+    "name": "Frame",
+    "function": "The frame provides structural support and protection for the internal mechanism while defining the clock's aesthetic appearance.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "surface": {
+    "name": "Surface (Clock Face)",
+    "function": "Displays time markings and provides a background for the hands to be read against.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_coilover": {
+   "seat support": {
+    "name": "seat_support",
+    "function": "Provides a rigid mounting interface to secure the coilover assembly to the vehicle chassis or suspension arm.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "seat surface": {
+    "name": "seat_surface",
+    "function": "Provides a stable mounting interface for the spring to transfer suspension loads.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "support": {
+    "name": "back_support",
+    "function": "Provides structural rigidity and mounting points for the shock body and spring perch.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "surface": {
+    "name": "back_surface",
+    "function": "Provides a mounting interface for the shock absorber body and protects internal components from debris.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "f360_concrete_mixer": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Supports the rotating drum and houses the drive mechanism while withstanding heavy loads and vibration.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "f360_door_lock": {
+   "board": {
+    "name": "board",
+    "function": "The board (faceplate) covers the lock mechanism and secures it to the door frame.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable mounting surface to secure the lock mechanism to the door or frame.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "f360_dust_collector": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and houses the motor and collection bin.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_electric_guitar": {
+   "board": {
+    "name": "board",
+    "function": "The board (pickguard) protects the guitar body from scratches and provides a mounting surface for electronics.",
+    "classes": [
+     "plastic",
+     "wood"
+    ]
+   },
+   "leg": {
+    "name": "leg",
+    "function": "Supports the guitar's weight and provides stability when the instrument is placed on a stand or floor.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "tabletop connector": {
+    "name": "tabletop_connector",
+    "function": "Connects the guitar to an amplifier or effects unit via a cable.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "f360_electric_toothbrush": {
+   "bed frame": {
+    "name": "Bed Frame",
+    "function": "A bed frame is not a part of an electric toothbrush.",
+    "classes": []
+   },
+   "footrest": {
+    "name": "Footrest",
+    "function": "This part does not exist in a real electric toothbrush.",
+    "classes": []
+   },
+   "footrest connector": {
+    "name": "Footrest Connector",
+    "function": "This part does not exist in a real electric toothbrush as footrests are not a component of the device.",
+    "classes": []
+   },
+   "pillow": {
+    "name": "Pillow",
+    "function": "Provides a soft, cushioned grip for comfortable handling during brushing.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "seat frame": {
+    "name": "Seat Frame",
+    "function": "Provides structural support and alignment for the charging contacts within the base.",
+    "classes": [
+     "plastic"
+    ]
+   },
+   "seat support": {
+    "name": "Seat Support",
+    "function": "Provides a stable base to hold the toothbrush upright for drying and storage.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "seat surface": {
+    "name": "Seat Surface",
+    "function": "Provides a stable, non-slip base for the toothbrush to rest and charge.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "support": {
+    "name": "Back Support",
+    "function": "Provides a stable base for the toothbrush to stand upright and dry.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Provides a non-slip grip and houses internal electronics while protecting the user from moisture.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_espresso_machine": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and houses internal components like the pump and boiler.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "Initiates the brewing cycle or activates specific machine functions when pressed.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "container": {
+    "name": "Container",
+    "function": "Holds and dispenses hot water or collects used coffee grounds.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "knob": {
+    "name": "Knob",
+    "function": "Controls the flow of water or steam by adjusting valve pressure.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_fighter_jet": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural framework to house the engine, cockpit, and fuel while withstanding extreme aerodynamic loads.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "fan": {
+    "name": "Fan",
+    "function": "The fan compresses incoming air to increase pressure and mass flow for the engine core.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_fuel_injector": {
+   "surface base": {
+    "name": "Surface Base",
+    "function": "Provides a rigid mounting interface and structural foundation for the injector assembly.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "The switch (solenoid) converts electrical signals into mechanical motion to open and close the fuel valve.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_gear_pump": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body houses the rotating gears and provides the structural casing to contain fluid pressure and maintain alignment.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "handle": {
+    "name": "Handle",
+    "function": "The handle provides a manual grip to rotate the pump shaft for fluid transfer.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "The lid seals the pump housing to contain the fluid and maintain internal pressure while supporting the gear shafts.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "lock": {
+    "name": "Lock",
+    "function": "Secures the pump housing or cover to prevent leakage and maintain internal pressure.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "f360_glider": {
+   "board": {
+    "name": "board",
+    "function": "Provides a rigid, aerodynamic surface for the pilot to stand on and control the glider.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "table base": {
+    "name": "table_base",
+    "function": "Provides structural support and stability for the glider's frame.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "wood"
+    ]
+   }
+  },
+  "f360_globe_valve": {
+   "frame": {
+    "name": "Frame",
+    "function": "The frame provides the main structural body and pressure containment for the valve.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "f360_hair_dryer": {
+   "spout": {
+    "name": "Spout",
+    "function": "Directs the airflow onto the hair for styling.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "vertical support": {
+    "name": "Vertical Support",
+    "function": "Provides a stable base to hold the hair dryer upright when not in use.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_hand_drill": {
+   "spout": {
+    "name": "Spout",
+    "function": "The spout guides the flow of cutting fluid or coolant to the drill bit to reduce heat and friction.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "switch": {
+    "name": "Left Switch",
+    "function": "Controls the power flow to start and stop the motor.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_kick_scooter": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body serves as the central structural frame that connects the handlebars, deck, and wheels while supporting the rider's weight.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_lathe": {
+   "surface base": {
+    "name": "Surface Base",
+    "function": "Provides a rigid, vibration-dampening foundation to support the lathe's weight and maintain machining precision.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "Controls the electrical power supply to start or stop the lathe motor.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_master_cylinder": {
+   "base body": {
+    "name": "Base Body (Frame and Lenses)",
+    "function": "The base body houses the internal pistons and seals to generate and regulate hydraulic pressure for the braking system.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "leg": {
+    "name": "Leg (Left Temple Arm)",
+    "function": "This part does not exist in a master cylinder as it is a component of eyeglasses.",
+    "classes": []
+   }
+  },
+  "f360_microscope": {
+   "lamp base part": {
+    "name": "lamp_base_part",
+    "function": "Provides a stable, heavy foundation to support the microscope and house the illumination source.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "lamp body horizontal panel": {
+    "name": "lamp_body_horizontal_panel",
+    "function": "Provides structural support and houses the illumination source within the microscope base.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "lamp unit": {
+    "name": "lamp_unit",
+    "function": "Provides stable, focused illumination for viewing specimens.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_moka_pot": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Holds water and withstands high pressure and heat to generate steam for brewing.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "The button (safety valve) releases excess pressure to prevent the pot from exploding.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "container": {
+    "name": "Container",
+    "function": "Holds the brewed coffee and withstands high pressure and heat during extraction.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "f360_motorcycle_fork": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body houses the internal suspension components and connects the fork to the motorcycle frame to support weight and absorb impacts.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "wheel": {
+    "name": "Wheel",
+    "function": "The wheel supports the motorcycle's weight, provides traction, and enables steering and braking.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "rubber"
+    ]
+   }
+  },
+  "f360_newtons_cradle": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides a stable, heavy foundation to anchor the suspension frame and absorb momentum.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "wheel": {
+    "name": "Wheel",
+    "function": "The term 'wheel' is incorrect as Newton's cradles do not contain wheels; the swinging components are spheres or balls that transfer momentum.",
+    "classes": []
+   }
+  },
+  "f360_pan_tilt_head": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and houses the motors and electronics for the pan-tilt mechanism.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "The button allows the user to manually control or lock the pan and tilt movements of the head.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "lens": {
+    "name": "Lens",
+    "function": "The lens focuses and transmits light to the camera sensor to capture the image.",
+    "classes": [
+     "glass"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "Protects internal electronics and mechanical components from dust, moisture, and physical impact.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_pipe_wrench": {
+   "lamp arm": {
+    "name": "lamp_arm",
+    "function": "A pipe wrench does not contain a lamp_arm part.",
+    "classes": []
+   },
+   "lamp base part": {
+    "name": "lamp_base_part",
+    "function": "The lamp_base_part is not a component of a real pipe wrench.",
+    "classes": []
+   },
+   "lamp head": {
+    "name": "lamp_head",
+    "function": "A pipe wrench does not have a lamp_head part.",
+    "classes": []
+   }
+  },
+  "f360_pumpjack": {
+   "lamp base part": {
+    "name": "lamp_base_part",
+    "function": "Provides structural support and stability for the lamp fixture mounted on the pumpjack.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "lamp unit": {
+    "name": "lamp_unit",
+    "function": "Provides illumination for the pumpjack unit during low-light or nighttime operations.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_quadcopter": {
+   "chain": {
+    "name": "chain",
+    "function": "Transmits rotational power from the motor to the propeller.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "lamp base part": {
+    "name": "lamp_base_part",
+    "function": "Houses and protects the LED light source while providing a mounting point for the quadcopter frame.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "lamp head": {
+    "name": "lamp_head",
+    "function": "Provides illumination for visibility and navigation.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   }
+  },
+  "f360_railway_bogie": {
+   "arm vertical bar": {
+    "name": "arm_vertical_bar",
+    "function": "Provides vertical structural support and transmits loads between the bogie frame and the vehicle body.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "armrest hard surface": {
+    "name": "armrest_hard_surface",
+    "function": "Provides a rigid, durable surface for passengers to rest their arms.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "leg": {
+    "name": "leg",
+    "function": "Supports the bogie frame and transfers loads to the wheels or track.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "seat frame": {
+    "name": "seat_frame",
+    "function": "Provides the structural support and mounting interface for the passenger seat within the bogie assembly.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "seat support": {
+    "name": "seat_support",
+    "function": "Provides structural attachment and load transfer between the seat and the bogie frame.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "seat surface": {
+    "name": "seat_surface",
+    "function": "Provides a comfortable and supportive surface for passengers to sit on.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "surface": {
+    "name": "back_surface",
+    "function": "Provides structural rigidity and protects internal components from rear impacts and debris.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "f360_record_player": {
+   "board": {
+    "name": "board",
+    "function": "Provides a rigid, vibration-dampening base to support the turntable mechanism and ensure stable playback.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "central support": {
+    "name": "central_support",
+    "function": "Supports the tonearm pivot and maintains precise alignment for tracking records.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "pedestal": {
+    "name": "pedestal",
+    "function": "Provides a stable, vibration-dampening base to support the turntable mechanism and ensure accurate playback.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "f360_remote_control": {
+   "frame": {
+    "name": "Frame",
+    "function": "Provides structural rigidity and houses internal electronics while offering a durable grip.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_robotic_gripper": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and houses internal components like motors and electronics.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "wheel": {
+    "name": "Wheel",
+    "function": "Provides traction and enables smooth rolling motion for the end effector.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_roller_conveyor": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and stability for the rollers and frame.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "door": {
+    "name": "Door",
+    "function": "Provides access to the conveyor interior for maintenance or cleaning while protecting internal components.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "Controls the activation or direction of the conveyor motor or power flow.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_sailboat": {
+   "chair arm": {
+    "name": "Left Chair Arm",
+    "function": "Provides structural support and comfort for the sailor's arm while steering or resting.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "chair base": {
+    "name": "Chair Base",
+    "function": "Provides a stable mounting point for the seat to support crew weight and movement.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "frame": {
+    "name": "Back Frame",
+    "function": "Provides structural support and attachment points for the mainsail and rigging at the stern.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "seat frame": {
+    "name": "Seat Frame",
+    "function": "Provides structural support and mounting points for the sailor's seat or cushion.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "seat surface": {
+    "name": "Seat Surface",
+    "function": "Provides a stable and comfortable seating area for the crew to sit while sailing.",
+    "classes": [
+     "plastic",
+     "textile",
+     "wood"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Provides structural integrity and hydrodynamic shape to the hull's rear section.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "f360_scissor_lift": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and houses the drive system and power unit.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "f360_smartphone": {
+   "glass cover": {
+    "name": "Glass Cover",
+    "function": "Protects the display from scratches and impacts while providing a smooth touch interface.",
+    "classes": [
+     "glass"
+    ]
+   },
+   "hour hand": {
+    "name": "Hour Hand",
+    "function": "Displays the current hour on the screen's clock interface.",
+    "classes": [
+     "glass"
+    ]
+   },
+   "minute hand": {
+    "name": "Minute Hand",
+    "function": "This part does not exist in a real smartphone as they are digital devices without mechanical hands.",
+    "classes": []
+   },
+   "second hand": {
+    "name": "Second Hand",
+    "function": "Indicates the device's pre-owned status for resale or identification purposes.",
+    "classes": [
+     "glass",
+     "plastic",
+     "textile"
+    ]
+   },
+   "surface": {
+    "name": "Surface",
+    "function": "Provides a durable, scratch-resistant protective layer for the display and touch interface.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   }
+  },
+  "f360_tape_dispenser": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and stability to hold the tape roll and cutting mechanism in place.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "door": {
+    "name": "Door",
+    "function": "The door covers the tape roll to protect it from dust and damage while allowing easy access for loading.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "The switch activates the cutting blade to sever the tape.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "f360_telescope": {
+   "lamp base": {
+    "name": "lamp_base",
+    "function": "Provides a stable, weighted foundation to support the telescope tube and minimize vibrations.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   },
+   "lamp body": {
+    "name": "lamp_body",
+    "function": "The lamp_body is not a component of a real refracting telescope.",
+    "classes": []
+   },
+   "lamp cover": {
+    "name": "lamp_cover",
+    "function": "The lamp cover is not a standard component of a refracting telescope as these instruments use lenses to gather light rather than internal lamps.",
+    "classes": []
+   },
+   "light bulb": {
+    "name": "light_bulb",
+    "function": "A light bulb is not a functional part of a real refracting telescope.",
+    "classes": []
+   }
+  },
+  "f360_toggle_clamp": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides a stable mounting foundation to anchor the clamp to a work surface and absorb reaction forces.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "The switch acts as the manual lever or handle to engage and disengage the clamping mechanism.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_unicycle": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body (frame) supports the rider's weight and connects the wheel, pedals, and seat.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "leg": {
+    "name": "Leg",
+    "function": "Transfers the rider's pedaling force to the crank to rotate the wheel.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "f360_universal_joint": {
+   "lamp arm accordion": {
+    "name": "lamp_arm_accordion",
+    "function": "The lamp_arm_accordion is not a component of a real universal joint.",
+    "classes": []
+   },
+   "lamp cover": {
+    "name": "lamp_cover",
+    "function": "The lamp_cover is not a functional part of a universal joint.",
+    "classes": []
+   },
+   "lamp cover holder": {
+    "name": "lamp_cover_holder",
+    "function": "This part does not exist in a real universal joint as it is a component of a lamp, not a mechanical drivetrain.",
+    "classes": []
+   },
+   "lamp finial": {
+    "name": "lamp_finial",
+    "function": "A lamp finial is not a functional part of a universal joint; it is a decorative cap used on lampshades.",
+    "classes": []
+   },
+   "light bulb": {
+    "name": "light_bulb",
+    "function": "A light bulb is not a functional part of a universal joint.",
+    "classes": []
+   }
+  },
+  "f360_vacuum_cleaner": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Houses the motor, fan, and filtration system while providing structural support and airflow channels.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "The lid seals the dust container to prevent debris from escaping and allows for easy access to empty the bin.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   }
+  },
+  "f360_weight_bench": {
+   "arm holistic frame": {
+    "name": "arm_holistic_frame_left",
+    "function": "Provides structural support and a resting surface for the user's arm.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "wood"
+    ]
+   },
+   "chair base": {
+    "name": "chair_base",
+    "function": "Provides structural support and stability to the bench while elevating it from the ground.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "wood"
+    ]
+   },
+   "seat frame": {
+    "name": "seat_frame",
+    "function": "Provides the primary structural support to hold the seat surface and bear the weight of users.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "wood"
+    ]
+   },
+   "seat surface": {
+    "name": "seat_surface",
+    "function": "Provides a stable, load-bearing surface for sitting or placing items.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "surface": {
+    "name": "back_surface",
+    "function": "Provides structural support and a surface for leaning or resting the back.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "f360_winch": {
+   "frame": {
+    "name": "Frame",
+    "function": "The frame provides the rigid structural support to anchor the winch and withstand high tensile loads during operation.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "spout": {
+    "name": "Spout",
+    "function": "The spout guides the cable or rope to prevent tangling and ensure smooth winding.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "The switch controls the electrical circuit to start, stop, or reverse the winch motor.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "f360_worm_gearbox": {
+   "base surface": {
+    "name": "base_surface",
+    "function": "Provides a rigid mounting foundation to support the worm gear and housing while resisting operational loads.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "box": {
+    "name": "box",
+    "function": "The box encloses and protects the worm and worm wheel while containing lubricant to reduce friction and wear.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "clock body": {
+    "name": "clock_body",
+    "function": "Houses and supports the worm gear and worm wheel assembly while providing structural rigidity.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "pendulum": {
+    "name": "pendulum",
+    "function": "The pendulum is not a functional part of a real worm drive.",
+    "classes": []
+   },
+   "pendulum clock": {
+    "name": "pendulum_clock_top",
+    "function": "The pendulum clock top is not a functional part of a worm drive mechanism.",
+    "classes": []
+   }
+  },
+  "farm_tractor": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the structural foundation to support the engine, transmission, and operator while withstanding heavy loads and vibrations.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "headphones": {
+   "band": {
+    "name": "Top Band",
+    "function": "Provides structural support and distributes weight evenly across the head.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "connecting arm": {
+    "name": "left connecting arm",
+    "function": "Connects the earcup to the headband while providing structural support and adjustable flexibility.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "earcup pad": {
+    "name": "Left Earcup Pad",
+    "function": "Provides cushioning and acoustic isolation for the ear.",
+    "classes": [
+     "foam",
+     "rubber",
+     "textile"
+    ]
+   },
+   "headphone holder": {
+    "name": "headphone holder",
+    "function": "Supports and secures the headphones when not in use to prevent damage.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "stand vertical support": {
+    "name": "stand vertical support",
+    "function": "Provides structural rigidity to hold the headphones upright when not in use.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "helicopter": {
+   "base body": {
+    "name": "Base Body (Frame and Lenses)",
+    "function": "Provides structural integrity and houses optical sensors or windows for visibility.",
+    "classes": [
+     "glass",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "leg": {
+    "name": "Leg (Left Temple Arm)",
+    "function": "Supports the helicopter's weight on the ground and absorbs landing impact.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "kitchen_oven": {
+   "button": {
+    "name": "Button",
+    "function": "The button allows the user to input commands or settings to control the oven's operation.",
+    "classes": [
+     "glass",
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "mixer_faucet": {
+   "mouth": {
+    "name": "Mouth",
+    "function": "The mouth directs and shapes the water flow from the tap body to the user.",
+    "classes": [
+     "ceramic",
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "surface base": {
+    "name": "Surface Base",
+    "function": "Provides a stable mounting foundation and structural support for the tap mechanism.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "tube": {
+    "name": "Tube",
+    "function": "The tube channels water from the internal valve mechanism to the spout outlet.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "vertical support": {
+    "name": "Vertical Support",
+    "function": "Provides structural rigidity to hold the tap body and handle against water pressure and user torque.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "monitor_arm": {
+   "desk edge clamp and pivot socket": {
+    "name": "desk-edge clamp and lower pivot socket",
+    "function": "Secures the mount to the desk edge and provides a pivot point for vertical and tilt adjustments.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "frame": {
+    "name": "Frame",
+    "function": "The frame provides the primary structural support to hold the monitor's weight and maintain its position.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "spout": {
+    "name": "Spout",
+    "function": "The spout acts as a rigid lever arm that extends the monitor from the base to provide reach and support the screen's weight.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "The switch locks or releases the monitor arm to allow height, tilt, or rotation adjustments.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "tilting vesa monitor mounting head": {
+    "name": "tilting VESA monitor mounting head",
+    "function": "Allows the monitor to pivot vertically for ergonomic viewing angles while securely holding the screen weight.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "offroad_jeep": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides the primary structural frame and chassis to support the vehicle's weight and withstand off-road impacts.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "body panel mid": {
+    "name": "body panel mid left",
+    "function": "Protects the vehicle's internal components and provides structural rigidity while defining the exterior shape.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "clear upright windscreen": {
+    "name": "clear upright front windscreen",
+    "function": "Protects occupants from wind, debris, and weather while providing clear visibility.",
+    "classes": [
+     "glass"
+    ]
+   },
+   "communications whip antenna": {
+    "name": "rear communications whip antenna",
+    "function": "Transmits and receives radio signals for long-range communication in remote terrain.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "oscillating_fan": {
+   "fan": {
+    "name": "Fan",
+    "function": "The fan blades rotate to displace air and create a cooling breeze.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "vertical support column": {
+    "name": "vertical support column (pedestal stem)",
+    "function": "Supports the fan head and allows for height adjustment and oscillation.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "oscillating_steam_engine": {
+   "armrest": {
+    "name": "Left Armrest",
+    "function": "The part does not exist in a real oscillating steam engine as they lack armrests.",
+    "classes": []
+   },
+   "backrest": {
+    "name": "Backrest",
+    "function": "The term 'backrest' is not a functional part of an oscillating steam engine, as this component belongs to seating furniture rather than mechanical power generation.",
+    "classes": []
+   },
+   "seat cushion": {
+    "name": "Seat Cushion",
+    "function": "The seat cushion is not a functional component of an oscillating steam engine.",
+    "classes": []
+   }
+  },
+  "passenger_car": {
+   "armrest": {
+    "name": "Left Armrest",
+    "function": "Provides a comfortable resting surface for the driver's or passenger's arm.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "car cabin": {
+    "name": "car cabin",
+    "function": "Provides a protected, climate-controlled environment for passengers and the driver.",
+    "classes": [
+     "glass",
+     "plastic",
+     "textile"
+    ]
+   },
+   "leg": {
+    "name": "Back Left Leg",
+    "function": "Supports the vehicle's weight and enables steering or suspension movement.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "rubber"
+    ]
+   },
+   "support": {
+    "name": "Back Support",
+    "function": "Provides structural support and comfort for the occupant's back while maintaining seat shape.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Protects the trunk interior and provides a structural mounting surface for the rear bumper and license plate.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_3d_printer": {
+   "bag body": {
+    "name": "bag_body",
+    "function": "Holds and protects the internal electronics and mechanical components of the printer.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "buckle": {
+    "name": "buckle",
+    "function": "Secures the print bed or filament spool to the printer frame to prevent movement during operation.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "handle": {
+    "name": "handle",
+    "function": "The handle allows the user to manually lift, move, or adjust the printer or its components.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_3d_scanner": {
+   "armrest": {
+    "name": "Left Armrest",
+    "function": "Provides ergonomic support and stability for the user's arm during scanning operations.",
+    "classes": [
+     "foam",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "central support column": {
+    "name": "Central Support Column",
+    "function": "Provides rigid structural stability and precise vertical alignment for the scanning head.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "pedestal base": {
+    "name": "Pedestal Base",
+    "function": "Provides a stable, vibration-dampening foundation to support the scanner and object during operation.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "seat cushion": {
+    "name": "Seat Cushion",
+    "function": "Provides ergonomic support and comfort for the operator during scanning sessions.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "seat support base": {
+    "name": "Seat Support Base",
+    "function": "Provides a stable, rigid foundation to support the scanner's weight and ensure precise positioning during operation.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_camera_slider": {
+   "cord": {
+    "name": "cord",
+    "function": "The cord transmits electrical power or data signals between the camera and external equipment.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "lamp arm": {
+    "name": "lamp_arm",
+    "function": "The lamp arm supports and positions a light source or monitor above the camera rig.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "lamp base part": {
+    "name": "lamp_base_part",
+    "function": "Provides a stable, weighted foundation to support the camera and ensure smooth movement.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "lamp head": {
+    "name": "lamp_head",
+    "function": "The lamp head houses and directs the lighting source to illuminate the subject or scene.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_card_shuffler": {
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable, vibration-dampening foundation to support the machine's weight and internal mechanisms.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "tabletop frame": {
+    "name": "tabletop_frame",
+    "function": "Provides a rigid structural base to support the shuffling mechanism and maintain stability during operation.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "tabletop surface": {
+    "name": "tabletop_surface",
+    "function": "Provides a stable, flat base to support the machine's weight and ensure safe operation on a surface.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "pc_ceb_press": {
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable, rigid foundation to support the press mechanism and absorb high compressive loads during block formation.",
+    "classes": [
+     "ceramic",
+     "heavy_metal"
+    ]
+   },
+   "tabletop frame": {
+    "name": "tabletop_frame",
+    "function": "Provides a rigid, stable base to support the mold and withstand high compression forces during block formation.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "tabletop surface": {
+    "name": "tabletop_surface",
+    "function": "Provides a rigid, flat support surface for the mold and block during the compression cycle.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "pc_cubesat": {
+   "screen": {
+    "name": "screen",
+    "function": "Displays telemetry data and system status for ground operators.",
+    "classes": [
+     "glass",
+     "plastic"
+    ]
+   },
+   "surface": {
+    "name": "surface",
+    "function": "The surface provides structural integrity, thermal regulation, and radiation shielding for the satellite.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_equatorial_mount": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides a rigid, stable foundation to support the mount's weight and resist vibration during tracking.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "fan": {
+    "name": "Fan",
+    "function": "Dissipates heat generated by the mount's motors and electronics to prevent overheating.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_heat_press": {
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable, heat-resistant foundation to support the press mechanism and withstand high temperatures.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "tabletop frame": {
+    "name": "tabletop_frame",
+    "function": "Provides a rigid structural base to support the heating platen and withstand high temperatures and pressure.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "tabletop surface": {
+    "name": "tabletop_surface",
+    "function": "Provides a stable, heat-resistant base to support the press mechanism and work surface.",
+    "classes": [
+     "heavy_metal",
+     "wood"
+    ]
+   }
+  },
+  "pc_injection_moulder": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides a rigid, vibration-dampening foundation to support the machine's weight and withstand high clamping forces.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "door": {
+    "name": "Door",
+    "function": "Provides safe access to the mold area while containing heat and preventing operator injury.",
+    "classes": [
+     "glass",
+     "heavy_metal"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "The switch controls the electrical circuit to start, stop, or adjust machine operations.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "pc_mobile_robot": {
+   "base frame": {
+    "name": "base_frame",
+    "function": "Serves as the primary structural chassis to mount wheels, electronics, and sensors while supporting the robot's weight.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "keyboard": {
+    "name": "keyboard",
+    "function": "Provides a tactile interface for manual command input and navigation control.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "screen": {
+    "name": "screen_side",
+    "function": "Displays visual information and user interface controls for the operator.",
+    "classes": [
+     "glass",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "shaft": {
+    "name": "shaft",
+    "function": "Transmits rotational torque from the motor to the wheels or drive mechanism.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "pc_pen_plotter": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides a rigid, stable foundation to support internal mechanisms and resist vibration during operation.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "connector": {
+    "name": "Connector (Other)",
+    "function": "Provides a secure mechanical interface for attaching cables or external devices to the plotter's internal electronics.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "Protects the internal print head and media from dust and damage when the device is idle.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_racing_pedal": {
+   "board": {
+    "name": "board",
+    "function": "Provides a rigid structural base to mount sensors, springs, and the pedal mechanism.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "table base": {
+    "name": "table_base",
+    "function": "Provides a stable, heavy foundation to prevent the pedal unit from sliding or tipping during aggressive driving inputs.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   }
+  },
+  "pc_raman_spectrometer": {
+   "chain": {
+    "name": "chain",
+    "function": "Transmits mechanical force to drive the grating or filter mechanism for wavelength selection.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "handle": {
+    "name": "handle",
+    "function": "Provides a secure grip for manual handling and transport of the instrument.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "hook": {
+    "name": "hook",
+    "function": "The hook secures the sample holder or cuvette in the optical path for stable measurement.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "lamp cover": {
+    "name": "lamp_cover",
+    "function": "Protects the light source from physical damage and blocks stray light to ensure measurement accuracy.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "lamp cover holder": {
+    "name": "lamp_cover_holder",
+    "function": "Secures the light source lamp in place while providing thermal insulation and electrical isolation.",
+    "classes": [
+     "ceramic",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "light bulb": {
+    "name": "light_bulb",
+    "function": "Emits light to illuminate the sample for spectral analysis.",
+    "classes": [
+     "glass"
+    ]
+   }
+  },
+  "pc_rheometer": {
+   "cap switch": {
+    "name": "Top Cap Switch",
+    "function": "The top cap switch acts as a mechanical actuator to engage or disengage the drive motor from the measuring spindle.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "surface base": {
+    "name": "Surface Base",
+    "function": "Provides a stable, vibration-dampening foundation to ensure precise torque and displacement measurements.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   },
+   "switch lever": {
+    "name": "Switch Lever",
+    "function": "The switch lever mechanically actuates the internal mechanism to start, stop, or change the measurement mode of the rheometer.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_robotic_mower": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Houses the motor, battery, and electronics while protecting them from water and debris.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_shredder": {
+   "board": {
+    "name": "Board",
+    "function": "The board serves as a structural mounting surface for electrical components or a protective cover for internal mechanisms.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "table base": {
+    "name": "Table Base",
+    "function": "Provides a stable, high-load foundation to support the shredder's weight and absorb operational vibrations.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "pc_testing_machine": {
+   "board": {
+    "name": "board",
+    "function": "The board serves as a rigid structural base or mounting platform to support the load frame and testing components.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "pedestal": {
+    "name": "pedestal",
+    "function": "The pedestal provides a rigid, stable base to support the machine frame and absorb reaction forces during testing.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "tabletop connector": {
+    "name": "tabletop_connector",
+    "function": "Provides a rigid, vibration-dampening interface to securely mount the testing machine to a stable work surface.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "pc_thermal_cycler": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support, houses internal electronics, and ensures thermal stability for the heating block.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_underwater_rov": {
+   "armrest": {
+    "name": "Left Armrest",
+    "function": "Provides a comfortable and stable support surface for the operator's arm during vehicle control.",
+    "classes": [
+     "foam",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "ground surface": {
+    "name": "Ground Surface",
+    "function": "Provides structural support and buoyancy to maintain the vehicle's orientation and stability on the seabed.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "seat support": {
+    "name": "Seat Support",
+    "function": "Provides structural support and mounting for the operator's seat within the control station.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "seat surface": {
+    "name": "Seat Surface",
+    "function": "Provides a comfortable and stable seating surface for the operator controlling the vehicle.",
+    "classes": [
+     "foam",
+     "plastic",
+     "textile"
+    ]
+   },
+   "support": {
+    "name": "Back Support",
+    "function": "Provides structural rigidity and mounting points for internal electronics and external payloads.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Provides structural protection and houses internal components while resisting hydrostatic pressure and corrosion.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_ventilator": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body houses internal electronics and provides structural support for the ventilator.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "Initiates specific control commands or alarms for the ventilator system.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "Protects internal electronics and sensors from dust, fluids, and physical impact while allowing access for maintenance.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pc_vinyl_cutter": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural rigidity and houses internal components to ensure precise cutting motion.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "The button is pressed by the user to initiate or stop the cutting operation.",
+    "classes": [
+     "plastic"
+    ]
+   },
+   "lens": {
+    "name": "Lens",
+    "function": "The lens focuses the laser beam to cut or engrave the material.",
+    "classes": [
+     "glass"
+    ]
+   }
+  },
+  "pc_wire_stripper": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and houses the cutting mechanism while offering a grip for the user.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "connector": {
+    "name": "Connector (Other)",
+    "function": "Connects the wire stripper to a power source or auxiliary device.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "The lid covers the cutting blades to protect the user and prevent debris from entering the tool when not in use.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "wheel": {
+    "name": "Wheel",
+    "function": "The wheel rotates to grip and strip the wire insulation without damaging the conductor.",
+    "classes": [
+     "heavy_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pn_backpack": {
+   "bag body": {
+    "name": "bag_body",
+    "function": "Stores and protects the contents of the backpack.",
+    "classes": [
+     "plastic",
+     "rubber",
+     "textile"
+    ]
+   }
+  },
+  "pn_bucket": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and holds the contents of the bucket.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pn_computer_monitor": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Provides structural support and stability to hold the screen upright.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "button": {
+    "name": "Button",
+    "function": "Controls power and adjusts display settings like brightness and input source.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "The lid protects internal components and provides a structural frame for the display panel.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pn_eyeglasses": {
+   "base body": {
+    "name": "Base Body (Lens and Frame)",
+    "function": "Holds the lenses in place and provides structural support for the face.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "leg": {
+    "name": "Leg (Left Temple Arm)",
+    "function": "Supports the frame on the ears and secures the glasses in place.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "outlier": {
+    "name": "Outlier (Nose Bridge)",
+    "function": "Supports the weight of the frame on the nose and maintains proper lens alignment.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "pn_pen": {
+   "base body": {
+    "name": "Base Body",
+    "function": "Houses the ink reservoir and provides the structural grip for writing.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "pn_sword": {
+   "leg": {
+    "name": "Leg",
+    "function": "Provides a secure grip for the wielder to control the blade.",
+    "classes": [
+     "heavy_metal",
+     "textile",
+     "wood"
+    ]
+   },
+   "seat support": {
+    "name": "Seat Support",
+    "function": "The term 'Seat Support' does not exist as a functional part of a real sword.",
+    "classes": []
+   },
+   "seat surface": {
+    "name": "Seat Surface",
+    "function": "The term 'Seat Surface' is not a valid part of a real sword, as swords do not have seats.",
+    "classes": []
+   },
+   "support": {
+    "name": "Back Support",
+    "function": "Provides structural rigidity and protects the hand from sliding onto the blade.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "wood"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Provides structural rigidity and balances the blade's weight for effective cutting and thrusting.",
+    "classes": [
+     "heavy_metal"
+    ]
+   }
+  },
+  "refrigerator": {
+   "other": {
+    "name": "Other (Control Panel)",
+    "function": "Allows the user to set and adjust temperature, modes, and other settings.",
+    "classes": [
+     "glass",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "robot_arm": {
+   "clock body": {
+    "name": "Clock Body",
+    "function": "Houses the internal electronics, motors, and control systems while providing structural rigidity.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "foot": {
+    "name": "Foot_0",
+    "function": "Provides a stable mounting base to secure the robotic arm to a surface.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "robotic_hand": {
+   "base body": {
+    "name": "Base Body",
+    "function": "The base body provides structural support, houses internal components, and serves as the mounting interface for the wrist or arm.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "lid": {
+    "name": "Lid",
+    "function": "The lid encloses internal components to protect them from dust and debris while providing structural rigidity.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "wheel": {
+    "name": "Wheel",
+    "function": "The wheel enables rolling locomotion or smooth surface interaction for the robotic hand.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   }
+  },
+  "scissor_car_jack": {
+   "lamp arm": {
+    "name": "lamp_arm",
+    "function": "This part does not exist in a real scissor jack.",
+    "classes": []
+   },
+   "lamp base part": {
+    "name": "lamp_base_part",
+    "function": "This part does not exist in a real scissor jack as it is a component of a lamp.",
+    "classes": []
+   },
+   "lamp joint": {
+    "name": "lamp_joint",
+    "function": "The lamp_joint does not exist in a real scissor jack as it is a component of a lamp, not a lifting device.",
+    "classes": []
+   },
+   "lamp unit": {
+    "name": "lamp_unit",
+    "function": "This part does not exist in a real scissor jack.",
+    "classes": []
+   }
+  },
+  "skateboard": {
+   "leg": {
+    "name": "Leg",
+    "function": "The trucks (often referred to as legs) connect the wheels to the deck and allow the board to turn.",
+    "classes": [
+     "heavy_metal",
+     "light_metal"
+    ]
+   }
+  },
+  "spinal_quadruped_robot": {
+   "mouth": {
+    "name": "mouth",
+    "function": "The mouth serves as a protective cover for sensors or a speaker grille for audio output.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "other leaf": {
+    "name": "other_leaf",
+    "function": "The term 'other_leaf' is not a standard component in legged robots, so it has no defined function or material class in real products.",
+    "classes": []
+   },
+   "switch": {
+    "name": "switch",
+    "function": "The switch controls the robot's power state or mode selection by completing or breaking an electrical circuit.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "tube": {
+    "name": "tube",
+    "function": "Transmits hydraulic or pneumatic fluid to actuate joints.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "vertical support": {
+    "name": "vertical_support",
+    "function": "The vertical support bears the robot's weight and transmits ground reaction forces to the chassis.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "stepladder": {
+   "chair base": {
+    "name": "Chair Base",
+    "function": "Provides a stable, non-slip foundation to support the ladder's weight and prevent tipping.",
+    "classes": [
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "seat surface": {
+    "name": "Seat Surface",
+    "function": "Provides a stable, non-slip platform for the user to stand on while working at height.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "surface": {
+    "name": "Back Surface",
+    "function": "Provides structural rigidity and a mounting surface for rungs and feet.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "tool_box": {
+   "none": {
+    "name": "None",
+    "function": "No part exists to perform a function.",
+    "classes": []
+   }
+  },
+  "trackball": {
+   "mouth": {
+    "name": "Mouth",
+    "function": "The mouth acts as the entry aperture for the ball, guiding it into the housing while preventing it from falling out.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "other leaf": {
+    "name": "Other Leaf",
+    "function": "Provides a textured, high-friction surface for the user to grip and roll the ball with their fingers.",
+    "classes": [
+     "plastic",
+     "rubber"
+    ]
+   },
+   "switch": {
+    "name": "Switch",
+    "function": "The switch detects button presses to register clicks or commands.",
+    "classes": [
+     "light_metal",
+     "plastic",
+     "rubber"
+    ]
+   },
+   "tube": {
+    "name": "Tube",
+    "function": "The tube acts as a structural housing or guide to support the ball and internal sensors while maintaining alignment.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   },
+   "vertical support": {
+    "name": "Vertical Support",
+    "function": "Provides structural stability and maintains the trackball's position relative to the base.",
+    "classes": [
+     "heavy_metal",
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "umbrella": {
+   "board": {
+    "name": "board",
+    "function": "The term 'board' is not a standard part of a real umbrella; umbrellas typically use a 'canopy' (textile) or 'shaft/ribs' (metal/plastic) instead.",
+    "classes": []
+   },
+   "star leg set": {
+    "name": "star_leg_set",
+    "function": "Provides structural support and flexibility to the canopy ribs.",
+    "classes": [
+     "light_metal",
+     "plastic"
+    ]
+   }
+  },
+  "wheeled_excavator": {
+   "arm tip": {
+    "name": "arm tip",
+    "function": "The arm tip connects the bucket to the boom and transmits high forces for digging and lifting.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "base body": {
+    "name": "Base Body (Frame and Lenses)",
+    "function": "Provides structural support for the machine and houses the operator's visibility windows.",
+    "classes": [
+     "glass",
+     "heavy_metal"
+    ]
+   },
+   "leg": {
+    "name": "Leg (Left Temple Arm)",
+    "function": "Provides structural support and articulation for the boom and arm assembly to enable digging and lifting.",
+    "classes": [
+     "heavy_metal"
+    ]
+   },
+   "wheel mount": {
+    "name": "wheel mount left",
+    "function": "Supports the track wheel and transfers heavy loads from the undercarriage to the ground.",
+    "classes": [
+     "heavy_metal",
+     "rubber"
+    ]
+   }
+  }
+ },
+ "_source": {
+  "model": "qwen3.5-27b",
+  "prompt": "scripts/judge_part_materials_v35.py PROMPT (unchanged)",
+  "input": "object name + the part's name as the design wrote it; never the design's material",
+  "generated": "2026-10-02 16:32"
+ }
+}

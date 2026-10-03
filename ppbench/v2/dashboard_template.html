@@ -1,0 +1,1054 @@
+<title>PP-Bench Results Board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  color-scheme: light;
+  --plane:#edf0f1; --surface:#ffffff; --surface-2:#f5f7f8; --ink:#101619; --ink-2:#48545d; --muted:#78848d;
+  --line:#d8dee2; --line-strong:#bcc6cc; --accent:#1f6fd0; --accent-ink:#17549e; --accent-soft:#e3eefb;
+  --tierA:#eb6834; --tierA-soft:#fdeae1; --tierB:#1f6fd0; --tierB-soft:#e3eefb;
+  --tierC:#0f9b8e; --tierC-soft:#ddf3f0;
+  --good:#0ca30c; --warn:#fab219; --serious:#ec835a; --critical:#d03b3b; --good-ink:#006300; --critical-ink:#b12f2f;
+  --stage:#eceef0; --stage-grid:#cfd6da;
+  --shadow:0 1px 2px rgba(16,22,25,.05), 0 6px 20px rgba(16,22,25,.05);
+  --sans:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --cond:"IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --plane:#0c1013; --surface:#141a1e; --surface-2:#1a2126; --ink:#eef2f4; --ink-2:#b0bac1; --muted:#78838b;
+    --line:#262f35; --line-strong:#39444b; --accent:#3987e5; --accent-ink:#8fbcf0; --accent-soft:#132840;
+    --tierA:#d95926; --tierA-soft:#33190f; --tierB:#3987e5; --tierB-soft:#132840;
+    --tierC:#20b3a4; --tierC-soft:#0d2b28;
+    --good-ink:#2fc22f; --critical-ink:#e66767; --stage:#121719; --stage-grid:#2b343a; --shadow:none;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --plane:#0c1013; --surface:#141a1e; --surface-2:#1a2126; --ink:#eef2f4; --ink-2:#b0bac1; --muted:#78838b;
+  --line:#262f35; --line-strong:#39444b; --accent:#3987e5; --accent-ink:#8fbcf0; --accent-soft:#132840;
+  --tierA:#d95926; --tierA-soft:#33190f; --tierB:#3987e5; --tierB-soft:#132840;
+  --tierC:#20b3a4; --tierC-soft:#0d2b28;
+  --good-ink:#2fc22f; --critical-ink:#e66767; --stage:#121719; --stage-grid:#2b343a; --shadow:none;
+}
+*{box-sizing:border-box}
+body{background:var(--plane); color:var(--ink); font:14px/1.45 var(--sans); margin:0}
+.wrap{max-width:1560px; margin:0 auto; padding-inline:16px; padding-block:20px 60px}
+h1,h2,h3,h4{font-family:var(--cond); font-weight:600; text-wrap:balance; margin:0}
+h1{font-size:27px; line-height:1.08; letter-spacing:.004em}
+h2{font-size:19px}
+h3{font-size:15px}
+h4{font-size:13px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); font-weight:600}
+.mono{font-family:var(--mono); font-size:12px}
+.muted{color:var(--muted)}
+button,select,input,textarea{font:inherit; color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+a{color:var(--accent-ink)}
+
+.mast{display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:12px 24px; padding-bottom:14px}
+.mast .sub{display:flex; flex-wrap:wrap; gap:4px 14px; margin-top:6px; color:var(--ink-2); font-size:13px}
+.live-dot{display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--good); margin-right:6px; vertical-align:1px}
+.live-dot.snap{background:var(--muted)}
+.btn{border:1px solid var(--line-strong); background:var(--surface); border-radius:6px; padding:6px 12px; cursor:pointer}
+.btn:hover{border-color:var(--accent); color:var(--accent-ink)}
+.btn.sm{padding:3px 9px; font-size:12px}
+
+.bar{position:sticky; top:env(safe-area-inset-top, 0px); z-index:30; background:var(--plane); border-bottom:1px solid var(--line);
+     display:flex; flex-wrap:wrap; gap:10px 16px; align-items:center; padding-block:10px; margin-bottom:16px}
+.field{display:flex; align-items:center; gap:7px}
+.field label, .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); font-weight:500}
+select{border:1px solid var(--line-strong); background:var(--surface); border-radius:6px; padding:5px 8px; max-width:100%}
+.seg{display:inline-flex; border:1px solid var(--line-strong); border-radius:6px; overflow:hidden; background:var(--surface)}
+.seg button{border:0; background:transparent; padding:5px 11px; cursor:pointer; border-right:1px solid var(--line)}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--accent); color:#fff}
+.tabs{display:flex; gap:2px; margin-left:auto; flex-wrap:wrap}
+.tabs button{border:0; background:transparent; padding:6px 12px; border-radius:6px; cursor:pointer; color:var(--ink-2); font-weight:500}
+.tabs button[aria-selected="true"]{background:var(--surface); color:var(--ink); box-shadow:inset 0 -2px 0 var(--accent)}
+
+.summary{display:grid; grid-template-columns:repeat(auto-fit, minmax(168px, 1fr)); gap:1px; background:var(--line);
+         border:1px solid var(--line); border-radius:8px; overflow:hidden; margin-bottom:14px}
+.stat{background:var(--surface); padding:10px 14px}
+.stat .v{font-family:var(--cond); font-size:24px; font-weight:600; line-height:1.15; font-variant-numeric:tabular-nums}
+.stat .v small{font-size:14px; color:var(--muted); font-weight:500}
+.stat .k{font-size:12px; color:var(--ink-2)}
+.callout{border:1px solid var(--line); border-left:3px solid var(--warn); background:var(--surface); border-radius:6px;
+         padding:8px 12px; margin-bottom:16px; color:var(--ink-2); font-size:13px}
+.callout b{color:var(--ink)}
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:9px; box-shadow:var(--shadow); margin-bottom:16px}
+.panel-head{display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid var(--line)}
+.panel-head .lede{flex:1 1 320px; font-size:12.5px; color:var(--ink-2); margin:0}
+.scroll{overflow-x:auto}
+.note{padding:10px 14px; font-size:12.5px; color:var(--ink-2); border-top:1px solid var(--line)}
+.empty{padding:28px; text-align:center; color:var(--muted)}
+
+/* status glyphs: shape and colour together, never colour alone */
+.g{display:inline-block; width:10px; height:10px; flex:none; border-radius:50%}
+.g.done{background:var(--good)}
+.g.ended{width:0; height:0; border-radius:0; border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:10px solid var(--warn)}
+.g.running{border:2px solid var(--accent); background:transparent}
+.g.partial{background:linear-gradient(90deg, var(--warn) 50%, transparent 50%); border:1.5px solid var(--warn)}
+.g.stalled,.g.interrupted{background:var(--serious); border-radius:2px}
+.g.invalid{background:var(--critical); border-radius:2px; transform:rotate(45deg) scale(.85)}
+.g.queued{border:1.5px dashed var(--muted)}
+.g.none{width:4px; height:4px; background:var(--line-strong)}
+@media (prefers-reduced-motion: no-preference){ .g.running{animation:pulse 1.6s ease-in-out infinite} }
+@keyframes pulse{50%{opacity:.35}}
+.legend{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:12px; color:var(--ink-2)}
+.legend span{display:inline-flex; align-items:center; gap:6px}
+.sw{width:11px; height:11px; border-radius:3px; display:inline-block}
+.ev{font-family:var(--mono); font-size:10px; padding:0 4px; border-radius:3px; background:var(--accent-soft); color:var(--accent-ink); font-weight:500}
+.pill{display:inline-flex; align-items:center; gap:6px; font-size:12px; padding:2px 8px; border-radius:999px; border:1px solid var(--line); white-space:nowrap; color:var(--ink-2)}
+
+/* leaderboard */
+.lb{padding:6px 14px 14px}
+.lbrow{display:grid; grid-template-columns:minmax(140px, 200px) minmax(0, 1fr) minmax(116px, auto); gap:12px; align-items:center; padding:4px 0}
+.lbrow + .lbrow{border-top:1px solid color-mix(in oklab, var(--line) 60%, transparent)}
+.lb .axis{display:flex; justify-content:space-between; font-size:10.5px; color:var(--muted); font-family:var(--mono); border-bottom:1px solid var(--line); padding-bottom:2px}
+.lb .nm{font-size:13px; overflow-wrap:anywhere}
+.lb .nm small{display:block; color:var(--muted); font-size:11px; font-family:var(--mono)}
+.lb .track{position:relative; height:100%; min-height:30px; display:flex; flex-direction:column; justify-content:center; gap:3px;
+           background:linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0/25% 100%}
+.lb .b{height:11px; border-radius:0 3px 3px 0; position:relative; min-width:1px}
+.lb .b.A{background:var(--tierA)}
+.lb .b.B{background:var(--tierB)}
+.lb .b.C{background:var(--tierC)}
+.lb .vals{display:flex; flex-direction:column; gap:3px; font-family:var(--mono); font-size:12px; font-variant-numeric:tabular-nums; text-align:right}
+.lb .vals i{font-style:normal; display:flex; align-items:center; gap:6px; justify-content:flex-end; height:11px; color:var(--ink-2)}
+.lb .vals b{color:var(--ink); font-weight:600}
+.spark{vertical-align:middle}
+
+/* tables */
+.chips{display:flex; flex-wrap:wrap; gap:6px}
+.chip{border:1px solid var(--line-strong); background:var(--surface); border-radius:999px; padding:3px 10px; font-size:12px; cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--accent); background:var(--accent-soft); color:var(--accent-ink)}
+.check{display:inline-flex; align-items:center; gap:6px; font-size:13px; color:var(--ink-2)}
+.ptable{font-size:13px; width:100%; border-collapse:collapse}
+.ptable th,.ptable td{padding:6px 10px; border-bottom:1px solid var(--line); white-space:nowrap}
+.ptable thead th{background:var(--surface-2); font-weight:500; color:var(--ink-2); text-align:right; cursor:pointer; user-select:none; vertical-align:bottom}
+.ptable thead th .grp{display:block; font-size:10px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
+.ptable thead th.tierA{box-shadow:inset 0 3px 0 var(--tierA)}
+.ptable thead th.tierB{box-shadow:inset 0 3px 0 var(--tierB)}
+.ptable thead th.tierC{box-shadow:inset 0 3px 0 var(--tierC)}
+.ptable thead th:first-child,.ptable td:first-child{text-align:left; position:sticky; left:0; background:var(--surface); z-index:1}
+.ptable thead th:first-child{background:var(--surface-2)}
+.ptable td{text-align:right; font-variant-numeric:tabular-nums; font-family:var(--mono); font-size:12.5px}
+.ptable td.sys{font-family:var(--sans); font-size:13px}
+.ptable td .n{font-size:10px; color:var(--muted); margin-left:3px; vertical-align:super}
+.ptable tr.famsep td{background:var(--surface-2); font-family:var(--sans); font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); padding:4px 10px}
+.heat{background:color-mix(in oklab, var(--accent) var(--h), var(--surface))}
+.heat.strong{color:#fff}
+.best{font-weight:600; text-decoration:underline; text-decoration-thickness:1.5px; text-underline-offset:3px}
+.export{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:12px; padding:14px}
+.export textarea{width:100%; min-height:140px; font-family:var(--mono); font-size:11.5px; background:var(--surface-2); border:1px solid var(--line); border-radius:6px; padding:8px; resize:vertical; color:var(--ink)}
+.export .row{display:flex; justify-content:space-between; align-items:center; margin-bottom:6px}
+
+/* coverage matrix */
+.matrix{width:100%; font-size:12px; border-collapse:collapse}
+.matrix th,.matrix td{border-bottom:1px solid var(--line); padding:0}
+.matrix thead th{position:sticky; top:0; background:var(--surface-2); font-weight:500; color:var(--ink-2); text-align:center; padding:6px 4px; vertical-align:bottom; z-index:1}
+.matrix thead .famrow th{font-size:11px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); border-bottom:0; padding-bottom:0}
+.matrix thead .sysrow th{font-family:var(--cond); font-size:12px; min-width:92px; line-height:1.15}
+.matrix .taskcell{position:sticky; left:0; background:var(--surface); text-align:left; padding:6px 10px; min-width:170px; z-index:1; border-right:1px solid var(--line)}
+.matrix thead .taskcell{background:var(--surface-2); z-index:2}
+.taskcell .tn{font-weight:500}
+.taskcell .ti{font-family:var(--mono); font-size:10.5px; color:var(--muted)}
+.cell{display:flex; align-items:center; justify-content:center; gap:5px; width:100%; min-height:36px; border:0; background:transparent; cursor:pointer; padding:4px 6px; font-variant-numeric:tabular-nums}
+.cell:hover{background:var(--accent-soft)}
+.cell .pj{font-family:var(--mono); font-size:11px; color:var(--ink-2)}
+.matrix tfoot td{padding:6px 4px; text-align:center; font-family:var(--mono); font-size:11px; color:var(--ink-2); background:var(--surface-2)}
+
+/* objects + viewer */
+.objgrid{display:grid; grid-template-columns:minmax(260px, 310px) minmax(0, 1fr); gap:0}
+@media (max-width:900px){ .objgrid{grid-template-columns:1fr} }
+.picker{border-right:1px solid var(--line); max-height:78vh; overflow-y:auto}
+.picker .ph{position:sticky; top:0; background:var(--surface); padding:10px 12px; border-bottom:1px solid var(--line); z-index:2}
+.picker .grp{padding:7px 12px 2px; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
+.pick{display:grid; grid-template-columns:auto 1fr auto; gap:8px; align-items:center; width:100%; border:0; border-bottom:1px solid var(--line);
+      background:transparent; text-align:left; padding:7px 12px; cursor:pointer}
+.pick:hover{background:var(--surface-2)}
+.pick[aria-current="true"]{background:var(--accent-soft)}
+.pick .nm{font-size:13px; overflow-wrap:anywhere}
+.pick .nm small{display:block; color:var(--muted); font-size:11px; font-family:var(--mono)}
+.pick .sc{font-family:var(--mono); font-size:12px; font-variant-numeric:tabular-nums; color:var(--ink-2)}
+.stagewrap{padding:12px 14px; min-width:0}
+.stagehead{display:flex; flex-wrap:wrap; gap:8px 14px; align-items:center; justify-content:space-between; margin-bottom:8px}
+.stage{position:relative; width:100%; height:min(56vh, 460px); background:var(--stage); border:1px solid var(--line); border-radius:8px; overflow:hidden}
+.stage canvas{display:block; width:100%; height:100%}
+.stage .msg{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; color:var(--ink-2); font-size:13px; pointer-events:none}
+.modes{display:inline-flex; flex-wrap:wrap; gap:4px}
+.modes button{border:1px solid var(--line-strong); background:var(--surface); border-radius:6px; padding:4px 10px; font-size:12.5px; cursor:pointer}
+.modes button[aria-pressed="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+.sidepanel{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:12px; margin-top:12px}
+.joint{border:1px solid var(--line); border-radius:6px; padding:7px 9px; display:grid; gap:5px; cursor:pointer; background:var(--surface-2)}
+.joint[aria-current="true"]{border-color:var(--accent); box-shadow:inset 3px 0 0 var(--accent)}
+.joint .t{display:flex; justify-content:space-between; gap:8px; font-size:12.5px}
+.joint .t b{font-weight:500}
+.joint .mono{color:var(--muted)}
+.joint input[type=range]{width:100%}
+.rolelist{display:flex; flex-wrap:wrap; gap:5px}
+.rolelist span{display:inline-flex; align-items:center; gap:5px; font-size:12px; border:1px solid var(--line); border-radius:999px; padding:2px 8px; background:var(--surface-2)}
+.seqlist{max-height:230px; overflow-y:auto; display:grid; gap:2px}
+.seqrow{display:grid; grid-template-columns:auto 1fr auto; gap:8px; font-size:12.5px; padding:3px 7px; border-radius:4px; cursor:pointer; background:transparent; border:0; text-align:left; color:inherit}
+.seqrow[aria-current="true"]{background:var(--accent-soft); color:var(--accent-ink)}
+.seqrow .i{font-family:var(--mono); color:var(--muted)}
+.strip{display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); gap:8px; margin-top:12px}
+.strip figure{margin:0}
+.strip img{width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; border:1px solid var(--line); background:var(--surface-2); cursor:zoom-in; display:block}
+.strip figcaption{font-size:11px; color:var(--muted); text-align:center; margin-top:3px}
+.mini{width:100%; font-size:12px; margin-top:12px; border-collapse:collapse}
+.mini th,.mini td{padding:3px 8px; border-bottom:1px solid var(--line); text-align:right; font-variant-numeric:tabular-nums}
+.mini th:first-child,.mini td:first-child{text-align:left; color:var(--ink-2); font-weight:400; white-space:nowrap}
+.mini thead th{color:var(--muted); font-weight:500; font-size:11px}
+.mini td{font-family:var(--mono); font-size:11.5px}
+.mini tr.sep td{border-bottom:0; padding-top:7px; font-family:var(--sans); font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--muted)}
+.fail{color:var(--critical-ink); font-weight:600}
+.taskpick{display:flex; flex-wrap:wrap; gap:6px; padding:12px 14px; border-bottom:1px solid var(--line)}
+.taskpick .chip{display:inline-flex; gap:6px; align-items:center}
+.taskpick .chip .c{font-family:var(--mono); font-size:10.5px; color:var(--muted)}
+.taskhead{display:flex; flex-wrap:wrap; gap:16px; padding:14px; align-items:flex-start; border-bottom:1px solid var(--line)}
+.taskhead img{width:150px; max-width:100%; aspect-ratio:1; object-fit:cover; border-radius:6px; border:1px solid var(--line); background:var(--surface-2); cursor:zoom-in}
+.facts{display:grid; grid-template-columns:auto 1fr; gap:3px 14px; font-size:13px; margin-top:8px}
+.facts dt{color:var(--muted)}
+.facts dd{margin:0; font-family:var(--mono); font-size:12.5px}
+
+/* batches */
+.btable{width:100%; font-size:13px; border-collapse:collapse}
+.btable th,.btable td{padding:8px 12px; border-bottom:1px solid var(--line); text-align:left; white-space:nowrap}
+.btable thead th{background:var(--surface-2); color:var(--ink-2); font-weight:500}
+.btable td.num{font-family:var(--mono); font-variant-numeric:tabular-nums; text-align:right}
+.prog{width:160px; height:6px; background:var(--surface-2); border:1px solid var(--line); border-radius:3px; overflow:hidden}
+.prog i{display:block; height:100%; background:var(--accent)}
+
+dialog{border:0; padding:0; background:transparent; max-width:min(94vw, 1000px)}
+dialog::backdrop{background:rgba(8,12,14,.72)}
+dialog img{display:block; max-width:100%; max-height:86vh; border-radius:6px; background:#fff}
+dialog p{color:#fff; margin:6px 0 0; font-family:var(--mono); font-size:12px; overflow-wrap:anywhere}
+@media (max-width:640px){ h1{font-size:22px} .tabs{margin-left:0} }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <h1>PP-Bench Results Board</h1>
+      <div class="sub" id="sub"></div>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center">
+      <button class="btn" id="refresh" type="button">Rescan now</button>
+    </div>
+  </header>
+
+  <div class="bar" role="toolbar" aria-label="Board controls">
+    <div class="field"><label for="cond">Prompt</label><select id="cond"></select></div>
+    <div class="field"><span class="lbl">Rounds</span><div class="seg" id="rounds"></div></div>
+    <div class="field"><span class="lbl">Tier</span><div class="seg" id="tiers"></div></div>
+    <div class="field"><span class="lbl">Checkpoint</span><div class="seg" id="round"></div></div>
+    <div class="field"><span class="lbl">Tasks</span><div class="seg" id="taskset"></div></div>
+    <nav class="tabs" role="tablist" id="tabs"></nav>
+  </div>
+
+  <section class="summary" id="summary" aria-label="Summary"></section>
+  <div id="callout"></div>
+  <main id="view"><div class="panel empty">Loading results…</div></main>
+</div>
+<dialog id="lightbox"><img id="lb-img" alt=""><p id="lb-cap"></p></dialog>
+
+<script>/*BOOT*/</script>
+<script src="vendor/three.min.js"></script>
+<script src="vendor/OrbitControls-classic.js"></script>
+<script>
+(function () {
+  "use strict";
+  const MODE = window.BOARD_MODE || "live";
+  const THUMBS = window.BOARD_THUMBS || {};
+  let DATA = window.BOARD_DATA || null;
+  let IDX = null;
+
+  const $ = (s, el = document) => el.querySelector(s);
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem("ppboard." + k); return v == null ? d : JSON.parse(v); } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem("ppboard." + k, JSON.stringify(v)); } catch (e) { /* storage unavailable */ } },
+  };
+  const S = {
+    tab: store.get("tab", "leaderboard"), cond: store.get("cond", "name_only+image"), rounds: store.get("rounds", 3),
+    tiers: store.get("tiers", ["A", "B"]), round: store.get("round", 3), taskset: store.get("taskset", "all"),
+    task: store.get("task", null), design: store.get("design", null), vmode: store.get("vmode", "structure"),
+    metric: store.get("metric", "overall"), groups: store.get("groups", ["Evaluator"]), paired: store.get("paired", false),
+    sort: store.get("sort", null), scale100: store.get("scale100", true),
+  };
+  const save = () => { for (const k in S) store.set(k, S[k]); };
+
+  const STATUS = {
+    done: "Done", ended: "Ended early (model stopped)", running: "Running", partial: "Partial (not final)",
+    interrupted: "Interrupted", stalled: "Stalled (no design, idle > 30 min)", invalid: "Invalid (old LDraw pool)",
+    queued: "Queued", none: "Not run",
+  };
+  const TABS = [["leaderboard", "Leaderboard"], ["table", "Paper tables"], ["objects", "Objects & 3D"], ["coverage", "Coverage"], ["batches", "Batches"]];
+  const TIERNAME = { A: "Tier A (pool only)", B: "Tier B (pool + created parts)", C: "Tier C (created parts only, no pool)" };
+
+  const imgURL = (rel, w) => !rel ? null : (MODE === "live" ? "img?w=" + (w == null ? 360 : w) + "&p=" + encodeURIComponent(rel) : (THUMBS[rel] || null));
+
+  // A stable colour per role string, the same hash render_hq uses, so a part reads the same in the picture and in 3D.
+  function roleColor(role) {
+    if (!role) return "#9ea3a8";
+    let h = 0;
+    for (const ch of role) h = (h * 131 + ch.charCodeAt(0)) >>> 0;
+    return `hsl(${((h % 997) / 997 * 360).toFixed(1)}, 42%, 62%)`;
+  }
+
+  function index() {
+    const bySet = {};
+    for (const r of DATA.runs) {
+      (bySet[r.setting] = bySet[r.setting] || {});
+      (bySet[r.setting][r.task] = bySet[r.setting][r.task] || {})[r.system] = r;
+    }
+    const conds = [...new Set(DATA.settings.map((s) => s.cond))];
+    const roundsFor = (c) => [...new Set(DATA.settings.filter((s) => s.cond === c).map((s) => s.rounds))].sort((a, b) => b - a);
+    IDX = { bySet, metrics: Object.fromEntries(DATA.metrics.map((m) => [m.key, m])), conds, roundsFor };
+    if (!conds.includes(S.cond)) S.cond = conds.includes("name_only+image") ? "name_only+image" : conds[0];
+    const rs = roundsFor(S.cond);
+    if (!rs.includes(S.rounds)) S.rounds = rs[0];
+    if (!S.tiers.length) S.tiers = ["B"];
+    S.round = Math.min(S.round, S.rounds);
+  }
+  const setId = (tier) => `${tier}|${S.cond}|${S.rounds}`;
+  const taskList = () => DATA.task_sets[S.taskset] || DATA.task_sets.all || [];
+  const runOf = (tier, task, sys) => ((IDX.bySet[setId(tier)] || {})[task] || {})[sys] || null;
+  const rowAt = (run, r) => run ? (run.rounds[Math.min(r, run.rounds.length) - 1] || null) : null;
+
+  function systemsFor(tiers = S.tiers) {
+    const present = new Set(), tasks = new Set(taskList());
+    for (const tier of tiers) for (const t in (IDX.bySet[setId(tier)] || {})) {
+      if (tasks.has(t)) for (const s in IDX.bySet[setId(tier)][t]) present.add(s);
+    }
+    return DATA.system_order.filter((s) => present.has(s));
+  }
+  function statusOf(tier, task, sys) {
+    const run = runOf(tier, task, sys);
+    if (run) return run.status;
+    return (DATA.queued || []).includes(sys) ? "queued" : "none";
+  }
+  function value(run, key, r) {
+    const m = IDX.metrics[key];
+    if (!run || !m) return null;
+    if (m.level === "run") return run.status === "done" && run.m[key] != null ? run.m[key] : null;
+    const row = rowAt(run, r);
+    return row && row.checkpoint && row.m[key] != null ? row.m[key] : null;
+  }
+  // The mean over the tasks that have a value. Tiers are never merged: every aggregate is per tier, as the
+  // benchmark's own rule requires (a Tier A run may not use created parts, so the two are different problems).
+  function agg(tier, sys, key, r, tasks = taskList()) {
+    const vals = tasks.map((t) => value(runOf(tier, t, sys), key, r)).filter((v) => v != null);
+    return { mean: vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null, n: vals.length };
+  }
+  function fmt(m, v, aggd) {
+    if (v == null || Number.isNaN(v)) return "—";
+    if (m.kind === "score") return S.scale100 ? (v * 100).toFixed(1) : v.toFixed(3);
+    if (m.kind === "usd") return "$" + v.toFixed(2);
+    if (m.kind === "count") return aggd ? v.toFixed(1) : String(Math.round(v));
+    return v.toFixed(1);
+  }
+  function heat(m, v) {
+    if (m.kind !== "score" || v == null) return "";
+    const h = Math.round(Math.max(0, Math.min(1, v)) * 72);
+    return ` class="heat${h > 40 ? " strong" : ""}" style="--h:${h}%"`;
+  }
+  const ago = (s) => s < 90 ? Math.round(s) + " s" : s < 5400 ? Math.round(s / 60) + " min" : s < 172800 ? (s / 3600).toFixed(1) + " h" : Math.round(s / 86400) + " d";
+  const clock = (t) => new Date(t * 1000).toLocaleString([], { month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit" });
+
+  // ---------------------------------------------------------------- chrome
+  function renderChrome() {
+    const age = Date.now() / 1000 - DATA.generated;
+    $("#sub").innerHTML = MODE === "live"
+      ? `<span><span class="live-dot"></span>Live from <span class="mono">results/v2</span></span><span>scanned ${esc(clock(DATA.generated))} (${ago(age)} ago, ${DATA.scan_s}s)</span><span>refreshes every 60 s</span>`
+      : `<span><span class="live-dot snap"></span>Snapshot of <span class="mono">results/v2</span></span><span>generated ${esc(clock(DATA.generated))}</span>`;
+    $("#refresh").hidden = MODE !== "live";
+    $("#cond").innerHTML = IDX.conds.map((c) => `<option value="${esc(c)}"${c === S.cond ? " selected" : ""}>${esc(c)}</option>`).join("");
+    $("#rounds").innerHTML = IDX.roundsFor(S.cond).map((r) => `<button type="button" data-v="${r}" aria-pressed="${S.rounds === r}">${r}</button>`).join("");
+    $("#tiers").innerHTML = ["A", "B", "C"].map((t) => `<button type="button" data-v="${t}" aria-pressed="${S.tiers.includes(t)}" title="${esc(TIERNAME[t])}">${t}</button>`).join("");
+    $("#round").innerHTML = Array.from({ length: S.rounds }, (_, i) => `<button type="button" data-v="${i + 1}" aria-pressed="${S.round === i + 1}">R${i + 1}</button>`).join("");
+    const sets = [["top20", "Top 20"], ["all", "All " + (DATA.task_sets.all || []).length]].filter(([k]) => (DATA.task_sets[k] || []).length);
+    $("#taskset").innerHTML = sets.map(([k, l]) => `<button type="button" data-v="${k}" aria-pressed="${S.taskset === k}">${l}</button>`).join("");
+    $("#tabs").innerHTML = TABS.map(([k, l]) => `<button type="button" role="tab" data-v="${k}" aria-selected="${S.tab === k}">${l}</button>`).join("");
+  }
+
+  function renderSummary() {
+    const tasks = taskList(), sys = systemsFor();
+    let done = 0, ended = 0, running = 0, attention = 0, ckpt = 0, evald = 0, spend = 0, expected = 0;
+    const evalTasks = new Set();
+    for (const tier of S.tiers) for (const t of tasks) for (const s of sys) {
+      expected++;
+      const run = runOf(tier, t, s);
+      if (!run) continue;
+      if (run.status === "done") done++;
+      else if (run.status === "ended") ended++;
+      else if (run.status === "running") running++;
+      else attention++;
+      for (const row of run.rounds) if (row.checkpoint) { ckpt++; if (row.evaluated) { evald++; evalTasks.add(t); } }
+      spend += run.m.cost_usd || 0;
+    }
+    $("#summary").innerHTML = [
+      [`${done}<small> / ${expected}</small>`, `trajectories done · ${S.tiers.map((t) => "Tier " + t).join(" + ")} × ${sys.length} systems × ${tasks.length} tasks`],
+      [String(ended), "ended early (model stopped: context overflow, no tool calls, step limit)"],
+      [`${evald}<small> / ${ckpt}</small>`, "saved checkpoints with an evaluator record"],
+      [String(running), "running now"],
+      [String(attention), "need attention (partial, stalled, interrupted, invalid)"],
+      ["$" + spend.toFixed(2), "Claude spend in this view"],
+    ].map(([v, k]) => `<div class="stat"><div class="v">${v}</div><div class="k">${k}</div></div>`).join("");
+    const missing = tasks.length - evalTasks.size;
+    $("#callout").innerHTML = missing
+      ? `<div class="callout"><b>Evaluator coverage: ${evalTasks.size} of ${tasks.length} tasks in this view.</b> Scores appear as soon as <span class="mono">results/v2/&lt;task&gt;/eval_v3/*.json</span> lands; harness columns are available for every saved checkpoint now.</div>`
+      : "";
+  }
+
+  // ---------------------------------------------------------------- leaderboard
+  function sparkline(tier, sys, key) {
+    const pts = Array.from({ length: S.rounds }, (_, i) => agg(tier, sys, key, i + 1).mean);
+    if (pts.filter((p) => p != null).length < 2) return "";
+    const w = 46, h = 14, col = `var(--tier${tier})`;
+    const xs = (i) => 1 + i * (w - 2) / (S.rounds - 1), ys = (v) => h - 1 - v * (h - 2);
+    const d = pts.map((v, i) => v == null ? null : `${xs(i)},${ys(v)}`).filter(Boolean).join(" ");
+    const last = pts[pts.length - 1];
+    return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="rounds trend">
+      <polyline points="${d}" fill="none" stroke="${col}" stroke-width="1.5"></polyline>
+      ${last == null ? "" : `<circle cx="${xs(S.rounds - 1)}" cy="${ys(last)}" r="2" fill="${col}"></circle>`}</svg>`;
+  }
+
+  function renderLeaderboard() {
+    const key = S.metric, m = IDX.metrics[key], tasks = taskList(), sys = systemsFor();
+    const rows = sys.map((s) => {
+      const per = {};
+      for (const tier of S.tiers) per[tier] = agg(tier, s, key, S.round, tasks);
+      const best = Math.max(...S.tiers.map((t) => per[t].mean == null ? -1 : per[t].mean));
+      return { sys: s, family: DATA.systems[s].family, per, best };
+    }).filter((r) => S.tiers.some((t) => r.per[t].n));
+    rows.sort((a, b) => b.best - a.best);
+    const scoreLike = m.kind === "score";
+    const max = scoreLike ? 1 : Math.max(0.0001, ...rows.map((r) => r.best));
+    let body = "";
+    for (const r of rows) {
+      let bars = "", vals = "";
+      for (const tier of S.tiers) {
+        const c = r.per[tier];
+        bars += `<div class="b ${tier}" style="width:${c.mean == null ? 0 : Math.max(0.4, (c.mean / max) * 100)}%" title="Tier ${tier}: ${fmt(m, c.mean, true)} over ${c.n} tasks"></div>`;
+        vals += `<i>${sparkline(tier, r.sys, key)}<b>${fmt(m, c.mean, true)}</b><span class="muted">${tier}·${c.n}</span></i>`;
+      }
+      body += `<div class="lbrow"><div class="nm">${esc(r.sys)}<small>${esc(r.family)}</small></div><div class="track">${bars}</div><div class="vals">${vals}</div></div>`;
+    }
+    const metricOptions = DATA.metrics.filter((x) => x.kind === "score" || x.kind === "count" || x.kind === "usd" || x.kind === "num");
+    return `<div class="panel">
+      <div class="panel-head">
+        <h2>Leaderboard · ${esc(m.label)} at R${S.round}</h2>
+        <p class="lede">${esc(m.desc)} Mean over the ${tasks.length} selected tasks that have a value; the small chart traces R1→R${S.rounds}. Tiers stay separate — they are different problems.</p>
+        <div class="field"><label for="metric">Metric</label><select id="metric">${metricOptions.map((x) => `<option value="${esc(x.key)}"${x.key === key ? " selected" : ""}>${esc(x.label)}</option>`).join("")}</select></div>
+      </div>
+      <div class="lb">
+        <div class="lbrow"><span></span><div class="axis"><span>0</span><span>${scoreLike ? (S.scale100 ? "50" : "0.5") : (max / 2).toFixed(1)}</span><span>${scoreLike ? (S.scale100 ? "100" : "1") : max.toFixed(1)}</span></div><span></span></div>
+        ${body || '<div class="empty">No values yet for this metric.</div>'}
+      </div>
+      <div class="note"><span class="legend">${S.tiers.map((t) => `<span><i class="sw" style="background:var(--tier${t})"></i>${esc(TIERNAME[t])}</span>`).join("")}</span></div>
+    </div>${renderDimTable()}`;
+  }
+
+  function renderDimTable() {
+    const dims = DATA.metrics.filter((m) => m.group === "Evaluator" && m.kind === "score");
+    const sys = systemsFor(), tasks = taskList();
+    let body = "";
+    for (const tier of S.tiers) {
+      body += `<tr class="famsep"><td colspan="${dims.length + 2}">${esc(TIERNAME[tier])}</td></tr>`;
+      for (const s of sys) {
+        const cells = dims.map((m) => agg(tier, s, m.key, S.round, tasks));
+        if (!cells.some((c) => c.n)) continue;
+        body += `<tr><td class="sys">${esc(s)}</td><td>${cells[0].n}</td>` + cells.map((c, i) => `<td${heat(dims[i], c.mean)}>${fmt(dims[i], c.mean, true)}</td>`).join("") + "</tr>";
+      }
+    }
+    return `<div class="panel">
+      <div class="panel-head"><h2>Every dimension at R${S.round}</h2><p class="lede">v3 generic metrics, mean over tasks with a value.</p></div>
+      <div class="scroll"><table class="ptable"><thead><tr><th>System</th><th><span class="grp">coverage</span>tasks</th>${dims.map((m) => `<th title="${esc(m.desc)}">${esc(m.label)}</th>`).join("")}</tr></thead>
+      <tbody>${body || `<tr><td colspan="2" class="sys muted">No evaluator records in this view.</td></tr>`}</tbody></table></div></div>`;
+  }
+
+  // ---------------------------------------------------------------- paper tables
+  function tableModel() {
+    const tasks = taskList();
+    const byRound = S.groups.includes("__rounds");
+    const metrics = byRound ? [IDX.metrics[S.metric]] : DATA.metrics.filter((m) => S.groups.includes(m.group));
+    let sys = systemsFor();
+    const cols = [];
+    for (const tier of S.tiers) {
+      if (byRound) for (let r = 1; r <= S.rounds; r++) cols.push({ tier, r, m: metrics[0], label: `R${r}`, group: `Tier ${tier}` });
+      else for (const m of metrics) cols.push({ tier, r: S.round, m, label: m.label, group: `Tier ${tier} · ${m.group}` });
+    }
+    let useTasks = tasks;
+    if (S.paired) useTasks = tasks.filter((t) => S.tiers.every((tier) => sys.every((s) => {
+      const row = rowAt(runOf(tier, t, s), S.round); return row && row.checkpoint;
+    })));
+    const rows = sys.map((s) => {
+      const cells = cols.map((c) => agg(c.tier, s, c.m.key, c.r, useTasks));
+      return { sys: s, family: DATA.systems[s].family, cells };
+    }).filter((x) => x.cells.some((c) => c.n));
+    const shown = cols.filter((c, i) => rows.some((x) => x.cells[i].n));
+    const keep = cols.map((c, i) => rows.some((x) => x.cells[i].n)).map((v, i) => v ? i : -1).filter((i) => i >= 0);
+    for (const x of rows) x.cells = keep.map((i) => x.cells[i]);
+    const best = shown.map((c, i) => {
+      if (c.m.kind !== "score") return null;
+      const vs = rows.map((x) => x.cells[i].mean).filter((v) => v != null);
+      return vs.length > 1 ? Math.max(...vs) : null;
+    });
+    if (S.sort && S.sort.key >= 0 && S.sort.key < shown.length) {
+      const k = S.sort.key, dir = S.sort.dir;
+      rows.sort((a, b) => {
+        const va = a.cells[k].mean, vb = b.cells[k].mean;
+        if (va == null) return 1; if (vb == null) return -1;
+        return dir * (vb - va);
+      });
+    }
+    return { rows, shown, best, useTasks, byRound };
+  }
+
+  function renderTable() {
+    const M = tableModel();
+    const sorted = !!S.sort;
+    let body = "", lastFam = null;
+    for (const x of M.rows) {
+      if (!sorted && x.family !== lastFam) { body += `<tr class="famsep"><td colspan="${M.shown.length + 1}">${esc(x.family)}</td></tr>`; lastFam = x.family; }
+      body += `<tr><td class="sys">${esc(x.sys)}</td>` + M.shown.map((c, i) => {
+        const cell = x.cells[i], isBest = M.best[i] != null && cell.mean != null && Math.abs(cell.mean - M.best[i]) < 1e-12;
+        return `<td${heat(c.m, cell.mean)}><span class="${isBest ? "best" : ""}">${fmt(c.m, cell.mean, true)}</span>${cell.n && cell.n < M.useTasks.length ? `<span class="n">${cell.n}</span>` : ""}</td>`;
+      }).join("") + "</tr>";
+    }
+    const head = `<th data-sort="-1">System</th>` + M.shown.map((c, i) =>
+      `<th class="tier${c.tier}" data-sort="${i}" title="${esc(c.m.desc)}"><span class="grp">${esc(c.group)}</span>${esc(c.label)}${S.sort && S.sort.key === i ? (S.sort.dir > 0 ? " ↓" : " ↑") : ""}</th>`).join("");
+    const { latex, tsv } = exportText(M);
+    const groups = ["Harness", "Evaluator", "VLM", "Cost"];
+    return `<div class="panel">
+      <div class="panel-head">
+        <h2>${M.byRound ? `${esc(IDX.metrics[S.metric].label)} across rounds` : `All metrics at R${S.round}`} · ${esc(S.cond)}</h2>
+        <p class="lede">Columns are grouped by tier and never averaged across tiers. Each cell is the mean over the selected tasks that have a value; a superscript gives that count when it is below ${M.useTasks.length}.</p>
+        <div class="chips">
+          <button type="button" class="chip" data-group="__rounds" aria-pressed="${M.byRound}">R1→R${S.rounds} of one metric</button>
+          ${groups.map((g) => `<button type="button" class="chip" data-group="${g}" aria-pressed="${!M.byRound && S.groups.includes(g)}">${g}</button>`).join("")}
+        </div>
+        ${M.byRound ? `<div class="field"><label for="metric">Metric</label><select id="metric">${DATA.metrics.map((x) => `<option value="${esc(x.key)}"${x.key === S.metric ? " selected" : ""}>${esc(x.label)}</option>`).join("")}</select></div>` : ""}
+        <label class="check"><input type="checkbox" id="paired"${S.paired ? " checked" : ""}> only tasks every system has in every shown tier (${M.useTasks.length})</label>
+        <label class="check"><input type="checkbox" id="scale100"${S.scale100 ? " checked" : ""}> scores × 100</label>
+      </div>
+      <div class="scroll"><table class="ptable"><thead><tr>${head}</tr></thead><tbody>${body || `<tr><td class="sys muted">No runs.</td></tr>`}</tbody></table></div>
+      <div class="export">
+        <div><div class="row"><span class="lbl">LaTeX (booktabs)</span><button type="button" class="btn sm" data-copy="latex">Copy</button></div><textarea id="latex" readonly spellcheck="false">${esc(latex)}</textarea></div>
+        <div><div class="row"><span class="lbl">TSV</span><button type="button" class="btn sm" data-copy="tsv">Copy</button></div><textarea id="tsv" readonly spellcheck="false">${esc(tsv)}</textarea></div>
+      </div></div>`;
+  }
+
+  function exportText(M) {
+    const tex = (s) => String(s).replace(/([&%_#$])/g, "\\$1");
+    const lines = [`\\begin{tabular}{l${"r".repeat(M.shown.length)}}`, "\\toprule",
+      ["System", ...M.shown.map((c) => tex(`${c.group} ${c.label}`))].join(" & ") + " \\\\", "\\midrule"];
+    const tsv = [["system", "family", ...M.shown.map((c) => `${c.group} ${c.label}`)].join("\t")];
+    let lastFam = null;
+    for (const x of M.rows) {
+      if (x.family !== lastFam && lastFam !== null) lines.push("\\midrule");
+      lastFam = x.family;
+      lines.push([tex(x.sys), ...M.shown.map((c, i) => {
+        const cell = x.cells[i];
+        let s = fmt(c.m, cell.mean, true).replace("—", "--").replace("$", "\\$");
+        if (M.best[i] != null && cell.mean != null && Math.abs(cell.mean - M.best[i]) < 1e-12) s = `\\textbf{${s}}`;
+        if (cell.n && cell.n < M.useTasks.length) s += `$^{${cell.n}}$`;
+        return s;
+      })].join(" & ") + " \\\\");
+      tsv.push([x.sys, x.family, ...M.shown.map((c, i) => {
+        const v = x.cells[i].mean;
+        return v == null ? "" : (c.m.kind === "score" && S.scale100 ? v * 100 : v).toFixed(4);
+      })].join("\t"));
+    }
+    lines.push("\\bottomrule", "\\end{tabular}");
+    return { latex: lines.join("\n"), tsv: tsv.join("\n") };
+  }
+
+  // ---------------------------------------------------------------- coverage
+  function renderCoverage() {
+    const tasks = taskList(), sys = systemsFor();
+    let out = "";
+    for (const tier of S.tiers) {
+      const legend = ["done", "ended", "running", "partial", "interrupted", "stalled", "invalid", "queued"]
+        .map((k) => `<span><i class="g ${k}"></i>${esc(STATUS[k])}</span>`).join("")
+        + `<span><span class="ev">E</span>evaluated at R${S.round}</span><span class="mono">9·8 = parts·joints</span>`;
+      let body = "";
+      for (const t of tasks) {
+        const tm = DATA.tasks[t] || { name: t };
+        body += `<tr><th class="taskcell" scope="row"><div class="tn">${esc(tm.name)}</div><div class="ti">${esc(t)}</div></th>`;
+        for (const s of sys) {
+          const run = runOf(tier, t, s), st = statusOf(tier, t, s), row = rowAt(run, S.round);
+          const pj = row && row.checkpoint && row.m.parts != null ? `${row.m.parts}·${row.m.joints ?? 0}`
+            : run && run.status === "running" ? `R${run.rounds_completed || 0}/${run.rounds.length}` : "";
+          const tip = `${tm.name} × ${s} · Tier ${tier}: ${STATUS[st]}${run && run.stop ? ` (${run.stop})` : ""}${run ? ` · ${run.ns}` : ""}${row && row.evaluated ? " · evaluated" : ""}`;
+          body += `<td><button type="button" class="cell" data-task="${esc(t)}" data-sys="${esc(s)}" data-tier="${tier}" title="${esc(tip)}" aria-label="${esc(tip)}"><i class="g ${st}"></i>${pj ? `<span class="pj">${esc(pj)}</span>` : ""}${row && row.evaluated ? '<span class="ev">E</span>' : ""}</button></td>`;
+        }
+        body += "</tr>";
+      }
+      const fams = [];
+      for (const s of sys) { const f = DATA.systems[s].family; if (!fams.length || fams[fams.length - 1][0] !== f) fams.push([f, 0]); fams[fams.length - 1][1]++; }
+      out += `<div class="panel">
+        <div class="panel-head"><h2>${esc(TIERNAME[tier])} · ${esc(S.cond)} · ${S.rounds}-round</h2><div class="legend">${legend}</div></div>
+        <div class="scroll"><table class="matrix">
+          <thead><tr class="famrow"><th class="taskcell"></th>${fams.map(([f, n]) => `<th colspan="${n}">${esc(f)}</th>`).join("")}</tr>
+          <tr class="sysrow"><th class="taskcell" style="text-align:left">Task</th>${sys.map((s) => `<th scope="col">${esc(s)}</th>`).join("")}</tr></thead>
+          <tbody>${body}</tbody>
+          <tfoot><tr><td class="taskcell" style="text-align:left">done</td>${sys.map((s) => `<td>${tasks.filter((t) => statusOf(tier, t, s) === "done").length}/${tasks.length}</td>`).join("")}</tr></tfoot>
+        </table></div></div>`;
+    }
+    return out || `<div class="panel empty">Pick at least one tier.</div>`;
+  }
+
+  // ---------------------------------------------------------------- batches
+  function renderBatches() {
+    const now = Date.now() / 1000;
+    const rows = (DATA.batches || []).map((b) => {
+      const pct = b.total ? Math.min(100, (100 * (b.done || 0)) / b.total) : 0;
+      return `<tr><td>${esc(b.name)}</td><td><div class="prog" role="img" aria-label="${pct.toFixed(0)} percent"><i style="width:${pct}%"></i></div></td>
+        <td class="num">${b.done ?? "—"} / ${b.total ?? "—"}</td><td class="num">${b.failed ?? 0}</td>
+        <td class="num">${b.cost_usd != null ? "$" + b.cost_usd.toFixed(2) : "—"}${b.budget_usd ? " / $" + b.budget_usd : ""}</td>
+        <td class="num">${b.updated ? ago(now - b.updated) + " ago" : "—"}</td></tr>`;
+    }).join("");
+    return `<div class="panel"><div class="panel-head"><h2>Batch progress files</h2><span class="mono muted">results/v2/_core/progress/*.json</span></div>
+      <div class="scroll"><table class="btable"><thead><tr><th>Batch</th><th>Progress</th><th style="text-align:right">Done</th><th style="text-align:right">Failed</th><th style="text-align:right">Cost / budget</th><th style="text-align:right">Updated</th></tr></thead>
+      <tbody>${rows || '<tr><td colspan="6" class="muted">No progress files.</td></tr>'}</tbody></table></div></div>`;
+  }
+
+  // ---------------------------------------------------------------- objects + 3D viewer
+  const VMODES = [["structure", "Parts"], ["material", "Materials"], ["sequence", "Build order"], ["kinematics", "Joints"], ["verdict", "Verdict"]];
+  const VIEWNAMES = { iso: "Front right", cond: "Condition camera", front: "Front", side: "Right side" };
+  const V = { key: null, design: null, jointSel: null, step: null, playing: false, meshes: null };
+  let three = null;
+
+  function designList() {
+    const out = [];
+    for (const tier of S.tiers) for (const s of systemsFor([tier])) {
+      const run = runOf(tier, S.task, s);
+      if (!run) continue;
+      const row = rowAt(run, S.round);
+      out.push({ tier, sys: s, run, row, family: DATA.systems[s].family, score: row && row.m ? row.m.overall : null });
+    }
+    return out;
+  }
+  const designId = (d) => `${d.tier}|${d.sys}`;
+
+  function initThree() {
+    const host = $("#stage");
+    if (!host || !window.THREE || !THREE.OrbitControls) return null;
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    host.prepend(renderer.domElement);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(35, 1, 0.01, 50);
+    camera.up.set(0, 0, 1);
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x8a9290, 0.9));
+    const sun = new THREE.DirectionalLight(0xffffff, 0.75); sun.position.set(-1.2, -2, 3); scene.add(sun);
+    const fill = new THREE.DirectionalLight(0xffffff, 0.3); fill.position.set(2, 1.5, 1); scene.add(fill);
+    const grid = new THREE.GridHelper(3, 30); grid.rotation.x = Math.PI / 2; scene.add(grid);
+    const root = new THREE.Group(); scene.add(root);
+    const overlay = new THREE.Group(); scene.add(overlay);
+    const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#888";
+    function resize() { const w = host.clientWidth, h = host.clientHeight || 380; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+    new ResizeObserver(resize).observe(host); resize();
+    scene.background = new THREE.Color(cssVar("--stage"));
+    grid.material.color = new THREE.Color(cssVar("--stage-grid"));
+    const ctx = { renderer, scene, camera, controls, root, overlay, grid, cssVar };
+    three = ctx;
+    const t0 = performance.now();
+    // Every redraw replaces the canvas, so this loop must retire when its context is no longer the current one;
+    // otherwise each visit leaves another animation running against a detached renderer.
+    (function tick(now) {
+      if (three !== ctx) { renderer.dispose(); return; }
+      requestAnimationFrame(tick);
+      controls.update();
+      animate((now - t0) / 1000);
+      renderer.render(scene, camera);
+    })(t0);
+    return ctx;
+  }
+
+  function b64(str, Type) { const bin = atob(str), buf = new ArrayBuffer(bin.length), u8 = new Uint8Array(buf); for (let i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i); return new Type(buf); }
+
+  // The exported file registers itself under the bare checkpoint key (namespace, run, round), which repeats
+  // across objects: the same system at the same setting has that key for every task. Caching on it alone served
+  // the jeep's geometry for the chair, so each design is re-filed under task::key the moment it arrives.
+  function loadDesign(task, key, dir) {
+    const reg = (window.__DESIGNS = window.__DESIGNS || {}), ck = task + "::" + key;
+    if (reg[ck]) return Promise.resolve(reg[ck]);
+    return new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = `viewer.js?task=${encodeURIComponent(task)}&key=${encodeURIComponent(key)}&p=${encodeURIComponent(dir)}`;
+      s.onload = () => {
+        const D = reg[key];
+        delete reg[key];
+        D ? res((reg[ck] = D)) : rej(new Error(window.__VIEWER_ERROR || "no geometry"));
+      };
+      s.onerror = () => rej(new Error("the board server did not answer"));
+      document.head.append(s);
+    });
+  }
+
+  function buildMeshes(D) {
+    const { root, overlay } = three;
+    root.clear(); overlay.clear();
+    const meshes = {};
+    for (const p of D.parts) {
+      const q = b64(p.pos, Uint16Array), pos = new Float32Array(q.length);
+      for (let i = 0; i < q.length; i += 3) for (let a = 0; a < 3; a++) pos[i + a] = D.lo[a] + q[i + a] / 65535 * D.span[a];
+      const g = new THREE.BufferGeometry();
+      g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+      g.setIndex(new THREE.BufferAttribute(b64(p.idx, p.idx32 ? Uint32Array : Uint16Array), 1));
+      g.computeVertexNormals();
+      const mat = new THREE.MeshStandardMaterial({ color: 0x9ea3a8, roughness: 0.62, metalness: 0.05, side: THREE.DoubleSide, transparent: true });
+      const mesh = new THREE.Mesh(g, mat); mesh.matrixAutoUpdate = false;
+      root.add(mesh); meshes[p.id] = mesh;
+    }
+    V.meshes = meshes;
+    const c = [D.lo[0] + D.span[0] / 2, D.lo[1] + D.span[1] / 2, D.lo[2] + D.span[2] / 2];
+    const r = Math.hypot(...D.span) / 2 || 0.5;
+    three.controls.target.set(...c);
+    const dist = r / Math.sin(THREE.MathUtils.degToRad(17.5)) * 1.05;
+    const az = THREE.MathUtils.degToRad(-60), el = THREE.MathUtils.degToRad(22);
+    three.camera.position.set(c[0] + dist * Math.cos(el) * Math.cos(az), c[1] + dist * Math.cos(el) * Math.sin(az), c[2] + dist * Math.sin(el));
+    three.camera.near = r / 100; three.camera.far = r * 50; three.camera.updateProjectionMatrix();
+    three.grid.scale.setScalar(Math.max(1, r * 2));
+    D._q = {}; for (const j of D.joints) D._q[j.id] = 0;
+  }
+
+  function jointRange(j) {
+    if (j.type === "continuous" || ((j.type === "revolute" || j.type === "cylindrical") && !j.limits)) return [-Math.PI, Math.PI, "rad"];
+    if (j.type === "revolute") return [j.limits[0], j.limits[1], "rad"];
+    if (j.type === "prismatic" || j.type === "cylindrical") return [j.limits ? j.limits[0] : 0, j.limits ? j.limits[1] : 0, "m"];
+    return [0, 0, ""];
+  }
+  function applyPose(D) {
+    const M = {};
+    for (const p of D.parts) M[p.id] = new THREE.Matrix4();
+    for (const j of D.joints) {                       // outer joints come first, so inner ones compose on the right
+      if (j.type === "fixed" || !j.axis || !j.origin) continue;
+      const q = D._q[j.id] || 0; if (!q) continue;
+      const o = new THREE.Vector3(...j.origin), ax = new THREE.Vector3(...j.axis).normalize(), T = new THREE.Matrix4();
+      const lin = j.type === "prismatic" || (j.type === "cylindrical" && Math.abs(q) < 1.5 && jointRange(j)[2] === "m");
+      if (lin) T.makeTranslation(ax.x * q, ax.y * q, ax.z * q);
+      else T.makeTranslation(o.x, o.y, o.z).multiply(new THREE.Matrix4().makeRotationAxis(ax, q)).multiply(new THREE.Matrix4().makeTranslation(-o.x, -o.y, -o.z));
+      for (const id of j.moving) if (M[id]) M[id].multiply(T);
+    }
+    for (const [id, mesh] of Object.entries(V.meshes || {})) { mesh.matrix.copy(M[id]); mesh.matrixWorldNeedsUpdate = true; }
+  }
+
+  function paint() {
+    const D = V.design; if (!D || !three || !V.meshes) return;
+    const { overlay, cssVar } = three;
+    overlay.clear();
+    const floating = new Set(D.verdict.floating || []);
+    const coll = new Set((D.verdict.colliding || []).flatMap((c) => [c[0], c[1]]));
+    const selJ = D.joints.find((j) => j.id === V.jointSel);
+    const moving = new Set(selJ ? selJ.moving : []);
+    const seqIdx = {}; (D.sequence || []).forEach((s, i) => { seqIdx[s.part] = i; });
+    D.parts.forEach((p, i) => {
+      const mesh = V.meshes[p.id], mat = mesh.material;
+      mesh.visible = true; mat.opacity = 1; mat.emissive = new THREE.Color(0x000000);
+      let c = roleColor(p.role || `part-${i}`);
+      if (S.vmode === "material") c = p.mclass ? roleColor("mat:" + p.mclass) : "#c9ced2";
+      else if (S.vmode === "verdict") c = floating.has(p.id) ? "#d03b3b" : (coll.has(p.id) ? "#fab219" : "#c3c8cc");
+      else if (S.vmode === "kinematics" && selJ) {
+        if (moving.has(p.id)) { mat.emissive = new THREE.Color(cssVar("--accent")); mat.emissive.multiplyScalar(0.35); }
+        else mat.opacity = 0.3;
+      } else if (S.vmode === "sequence") {
+        const k = seqIdx[p.id], step = V.step == null ? (D.sequence.length - 1) : V.step;
+        if (k === undefined) mat.opacity = 0.18;
+        else if (k > step) mesh.visible = false;
+        else if (k === step) { mat.emissive = new THREE.Color(cssVar("--accent")); mat.emissive.multiplyScalar(0.45); }
+      }
+      mat.color = new THREE.Color(c); mat.depthWrite = mat.opacity > 0.5; mat.needsUpdate = true;
+    });
+    if (S.vmode === "kinematics") {
+      for (const j of D.joints) {
+        if (!j.axis || !j.origin || j.type === "fixed") continue;
+        const o = new THREE.Vector3(...j.origin), ax = new THREE.Vector3(...j.axis).normalize();
+        const len = Math.hypot(...D.span) * (j.id === V.jointSel ? 0.22 : 0.1);
+        const col = j.id === V.jointSel ? cssVar("--accent") : "#7a8288";
+        overlay.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([o.clone().addScaledVector(ax, -len), o.clone().addScaledVector(ax, len)]),
+          new THREE.LineBasicMaterial({ color: new THREE.Color(col), depthTest: false })));
+        const s = new THREE.Mesh(new THREE.SphereGeometry(Math.hypot(...D.span) * 0.008, 12, 8), new THREE.MeshBasicMaterial({ color: new THREE.Color(col), depthTest: false }));
+        s.position.copy(o); overlay.add(s);
+      }
+    }
+    if (S.vmode === "sequence" && (D.sequence || []).length) {
+      const step = Math.min(V.step == null ? D.sequence.length - 1 : V.step, D.sequence.length - 1);
+      const st = D.sequence[step], mesh = st && V.meshes[st.part];
+      if (mesh && st.direction) {
+        mesh.geometry.computeBoundingBox();
+        const c = new THREE.Vector3(); mesh.geometry.boundingBox.getCenter(c);
+        const d = new THREE.Vector3(...st.direction).normalize(), L = Math.hypot(...D.span) * 0.25;
+        overlay.add(new THREE.ArrowHelper(d, c.clone().addScaledVector(d, -L), L * 0.9, new THREE.Color(cssVar("--accent")).getHex(), L * 0.18, L * 0.09));
+      }
+    }
+    applyPose(D);
+  }
+
+  function animate(t) {
+    const D = V.design; if (!D || !V.playing || !V.meshes) return;
+    if (S.vmode === "kinematics") {
+      for (const j of D.joints) {
+        if (j.type === "fixed" || !j.axis) continue;
+        if (V.jointSel && j.id !== V.jointSel) continue;
+        const [lo, hi] = jointRange(j);
+        D._q[j.id] = lo + (hi - lo) * (0.5 - 0.5 * Math.cos(t * 1.4));
+        const sl = document.getElementById("q-" + j.id); if (sl) sl.value = D._q[j.id];
+      }
+      applyPose(D);
+    } else if (S.vmode === "sequence" && (D.sequence || []).length) {
+      const s = Math.min(Math.floor(t / 0.8) % (D.sequence.length + 2), D.sequence.length - 1);
+      if (s !== V.step) { V.step = s; paint(); $("#side") && (($("#side").innerHTML = sidePanel())); }
+    }
+  }
+
+  function sidePanel() {
+    const D = V.design;
+    if (!D) return "";
+    if (S.vmode === "kinematics") {
+      if (!D.joints.length) return `<div><h4>Joints</h4><p class="muted">This design declares no joints, so nothing moves. 2.2 Kinematics is skipped for it.</p></div>`;
+      return `<div><h4>Joints (${D.joints.length}) — click one, then drag its slider or play</h4>
+        <div style="display:grid; gap:6px; max-height:260px; overflow-y:auto">${D.joints.map((j) => {
+        const [lo, hi, unit] = jointRange(j);
+        const q = D._q[j.id] || 0;
+        return `<div class="joint" data-joint="${esc(j.id)}" aria-current="${V.jointSel === j.id}">
+            <div class="t"><b>${esc(j.id)}</b><span class="mono">${esc(j.type)}${j.looped ? " · loop" : ""}</span></div>
+            <div class="t mono"><span>${esc(j.parent)} → ${esc(j.child)}</span><span>${j.moving.length} parts move</span></div>
+            <input type="range" id="q-${esc(j.id)}" min="${lo}" max="${hi}" step="${(hi - lo) / 100 || 0.01}" value="${q}" data-q="${esc(j.id)}"
+                   aria-label="${esc(j.id)} pose in ${esc(unit || "units")}">
+          </div>`;
+      }).join("")}</div></div>`;
+    }
+    if (S.vmode === "sequence") {
+      const seq = D.sequence || [];
+      if (!seq.length) return `<div><h4>Build order</h4><p class="muted">This design declares no assembly sequence, so 4.2 Assembly has nothing to check.</p></div>`;
+      const step = V.step == null ? seq.length - 1 : V.step;
+      return `<div><h4>Build order (${seq.length} steps)</h4><div class="seqlist">${seq.map((s, i) =>
+        `<button type="button" class="seqrow" data-step="${i}" aria-current="${i === step}"><span class="i">${String(i + 1).padStart(2, "0")}</span><span>${esc(s.part)}</span><span class="i">${s.direction ? s.direction.map((x) => (+x).toFixed(1)).join(" ") : ""}</span></button>`).join("")}</div></div>`;
+    }
+    if (S.vmode === "material") {
+      const byClass = {};
+      for (const p of D.parts) (byClass[p.mclass || "undeclared"] = byClass[p.mclass || "undeclared"] || []).push(p);
+      return `<div><h4>Declared materials</h4><div class="rolelist">${Object.entries(byClass).map(([c, ps]) =>
+        `<span><i class="sw" style="background:${c === "undeclared" ? "#c9ced2" : roleColor("mat:" + c)}"></i>${esc(c)} · ${ps.length}</span>`).join("")}</div>
+        <div class="mono muted" style="margin-top:6px">${esc([...new Set(D.parts.map((p) => p.material).filter(Boolean))].join(", ") || "no material declared")}</div></div>`;
+    }
+    if (S.vmode === "verdict") {
+      const f = D.verdict.floating || [], c = D.verdict.colliding || [];
+      return `<div><h4>What the evaluator flagged</h4>
+        <p class="${f.length ? "fail" : "muted"}">${f.length ? `${f.length} floating: ${esc(f.join(", "))}` : "no floating parts"}</p>
+        <p class="${c.length ? "fail" : "muted"}">${c.length ? `${c.length} colliding pairs` : "no interpenetrating pairs"}</p></div>`;
+    }
+    const roles = {};
+    for (const p of D.parts) (roles[p.role || "no role"] = (roles[p.role || "no role"] || 0) + 1);
+    return `<div><h4>Parts by declared role (${D.parts.length})</h4><div class="rolelist">${Object.entries(roles).sort((a, b) => b[1] - a[1]).map(([r, n]) =>
+      `<span><i class="sw" style="background:${roleColor(r === "no role" ? "" : r)}"></i>${esc(r)}${n > 1 ? ` · ${n}` : ""}</span>`).join("")}</div>
+      <div class="mono muted" style="margin-top:6px">${D.n_faces.toLocaleString()} triangles shown (decimated for the browser)</div></div>`;
+  }
+
+  function renderObjects() {
+    const tasks = taskList();
+    if (!tasks.includes(S.task)) S.task = tasks[0];
+    const t = S.task, tm = DATA.tasks[t] || { name: t };
+    const list = designList();
+    // designList walks S.tiers in order, so list[0] is always a Tier A design: falling back to it parked every
+    // object on Tier A even though the benchmark's main setting is Tier B. Fall back to the main tier, to a
+    // design that actually has a checkpoint at this round, and to the best score among those.
+    if (!list.some((d) => designId(d) === S.design)) {
+      const mainTier = (DATA.main_setting || "B").split("|")[0];
+      const withCkpt = list.filter((d) => d.row && d.row.checkpoint);
+      const pick = (withCkpt.length ? withCkpt : list).slice().sort((a, b) =>
+        (a.tier === mainTier ? 0 : 1) - (b.tier === mainTier ? 0 : 1) || (b.score ?? -1) - (a.score ?? -1))[0];
+      S.design = pick ? designId(pick) : null;
+    }
+    const cur = list.find((d) => designId(d) === S.design);
+    const picks = tasks.map((x) => `<button type="button" class="chip" data-task="${esc(x)}" aria-pressed="${x === S.task}">${esc((DATA.tasks[x] || {}).name || x)}</button>`).join("");
+    const timg = imgURL(tm.image, 360);
+    let lastGroup = null, pickrows = "";
+    for (const d of list.sort((a, b) => a.tier.localeCompare(b.tier) || (b.score ?? -1) - (a.score ?? -1))) {
+      const grp = TIERNAME[d.tier];
+      if (grp !== lastGroup) { pickrows += `<div class="grp">${esc(grp)}</div>`; lastGroup = grp; }
+      pickrows += `<button type="button" class="pick" data-design="${esc(designId(d))}" aria-current="${designId(d) === S.design}">
+        <i class="g ${d.run.status}" title="${esc(STATUS[d.run.status])}"></i>
+        <span class="nm">${esc(d.sys)}<small>${d.row && d.row.checkpoint ? `${d.row.m.parts ?? 0} parts · ${d.row.m.joints ?? 0} joints` : (d.run.stop ? esc(d.run.stop) : "no checkpoint at R" + S.round)}</small></span>
+        <span class="sc">${d.score != null ? (d.score * 100).toFixed(0) : "—"}</span></button>`;
+    }
+    const stage = cur ? stageBlock(cur) : `<div class="empty">No system has a run for this object in the selected tiers.</div>`;
+    return `<div class="panel">
+      <div class="taskpick">${picks}</div>
+      <div class="taskhead">
+        ${timg ? `<img src="${esc(timg)}" alt="Condition image for ${esc(tm.name)}" data-full="${esc(tm.image)}" loading="lazy">` : ""}
+        <div><h2>${esc(tm.name)}</h2><div class="mono muted">${esc(t)}</div>
+          <dl class="facts"><dt>part pool</dt><dd>${tm.pool ?? "—"}</dd><dt>required parts</dt><dd>${tm.required_parts ?? "—"}</dd>
+          <dt>kinematics claims</dt><dd>${tm.required_kinematics ?? "—"}</dd><dt>prompt</dt><dd>${esc(S.cond)} · ${S.rounds} rounds · R${S.round}</dd></dl></div>
+      </div>
+      <div class="objgrid">
+        <div class="picker"><div class="ph"><span class="lbl">Designs at R${S.round}</span> <span class="muted" style="font-size:12px">score = v3 overall ×100</span></div>${pickrows || '<div class="empty">none</div>'}</div>
+        <div class="stagewrap">${stage}</div>
+      </div></div>`;
+  }
+
+  function stageBlock(d) {
+    const row = d.row;
+    const views = (row && row.views) || {};
+    const strip = Object.keys(views).length
+      ? `<div class="strip">${["iso", "cond", "front", "side"].filter((v) => views[v]).map((v) =>
+        `<figure><img src="${esc(imgURL(views[v], 420))}" alt="${esc(VIEWNAMES[v])}" data-full="${esc(views[v])}" loading="lazy"><figcaption>${esc(VIEWNAMES[v])}${row.hq ? "" : " · 448px harness render"}</figcaption></figure>`).join("")}</div>`
+      : row && row.img ? `<div class="strip"><figure><img src="${esc(imgURL(row.img, 420))}" alt="render" data-full="${esc(row.img)}" loading="lazy"><figcaption>${row.hq ? "page render" : "harness render"}</figcaption></figure></div>` : "";
+    const keys = DATA.metrics.filter((m) => m.level === "round" && d.run.rounds.some((r) => r.m[m.key] != null));
+    let lastGroup = null;
+    const mrows = keys.map((m) => {
+      let sep = "";
+      if (m.group !== lastGroup) { sep = `<tr class="sep"><td colspan="${d.run.rounds.length + 1}">${esc(m.group)}</td></tr>`; lastGroup = m.group; }
+      return sep + `<tr><td title="${esc(m.desc)}">${esc(m.label)}</td>` + d.run.rounds.map((r) => {
+        const v = r.m[m.key], st = r.st && r.st[m.key];
+        return `<td${heat(m, v)}${st ? ` title="${esc(st)}"` : ""}><span class="${st === "fail" ? "fail" : ""}">${fmt(m, v, false)}</span></td>`;
+      }).join("") + "</tr>";
+    }).join("");
+    const meta = [d.run.ns];
+    if (d.run.m.wall_min != null) meta.push(`${d.run.m.wall_min.toFixed(1)} min`);
+    if (d.run.m.cost_usd != null) meta.push(`$${d.run.m.cost_usd.toFixed(2)}`);
+    if (d.run.stop) meta.push(`stopped: ${d.run.stop}`);
+    const canView = MODE === "live" && row && row.viewer;
+    return `<div class="stagehead">
+        <div><h3>${esc(d.sys)} · ${esc(TIERNAME[d.tier])} · R${S.round}</h3><div class="mono muted">${esc(meta.join(" · "))}</div></div>
+        <div class="modes" id="modes">${VMODES.map(([m, l]) => `<button type="button" data-vmode="${m}" aria-pressed="${S.vmode === m}">${l}</button>`).join("")}
+          <button type="button" id="play" aria-pressed="${V.playing}" ${["kinematics", "sequence"].includes(S.vmode) ? "" : "disabled"}>${V.playing ? "❚❚ Pause" : "▶ Play"}</button></div>
+      </div>
+      <div class="stage" id="stage"><div class="msg" id="stage-msg">${canView ? "Loading 3D…" : MODE === "live" ? "No saved design at this checkpoint." : "The 3D viewer needs the live board (python -m ppbench.v2.dashboard serve)."}</div></div>
+      <div class="sidepanel" id="side"></div>
+      ${strip}
+      ${mrows ? `<div class="scroll"><table class="mini"><thead><tr><th></th>${d.run.rounds.map((r) => `<th>R${r.r}</th>`).join("")}</tr></thead><tbody>${mrows}</tbody></table></div>` : ""}
+      <div class="mono muted" style="margin-top:8px">${esc(d.run.dir)}</div>`;
+  }
+
+  async function mountViewer() {
+    if (S.tab !== "objects") return;
+    const d = designList().find((x) => designId(x) === S.design);
+    const row = d && d.row;
+    if (!row || !row.viewer || MODE !== "live") return;
+    if (!three) initThree();                 // initThree publishes the context itself, so its loop can retire later
+    if (!three) { $("#stage-msg").textContent = "three.js could not load from /vendor; the renders below still show the design."; return; }
+    const key = row.viewer, ck = S.task + "::" + key;   // the bare key is not unique across objects
+    if (V.key !== ck) { V.key = ck; V.jointSel = null; V.step = null; V.playing = false; V.design = null; }
+    try {
+      const D = await loadDesign(S.task, key, row.design_dir);
+      if (V.key !== ck) return;
+      V.design = D;
+      buildMeshes(D);
+      $("#stage-msg").textContent = D.parts.length ? "" : "This checkpoint has no parts.";
+      paint();
+      $("#side").innerHTML = sidePanel();
+    } catch (e) {
+      $("#stage-msg").textContent = "3D data unavailable: " + e.message;
+    }
+  }
+
+  // ---------------------------------------------------------------- wiring
+  function render() {
+    if (!DATA) return;
+    renderChrome();
+    renderSummary();
+    const v = { leaderboard: renderLeaderboard, table: renderTable, objects: renderObjects, coverage: renderCoverage, batches: renderBatches }[S.tab] || renderLeaderboard;
+    const y = window.scrollY;
+    three = null; V.meshes = null;          // the canvas lives inside #view, so every redraw needs a fresh renderer
+    $("#view").innerHTML = v();
+    window.scrollTo(0, y);
+    save();
+    if (S.tab === "objects") mountViewer();
+  }
+
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("button, img[data-full], th[data-sort], .joint");
+    if (!el) return;
+    if (el.closest("#rounds")) { S.rounds = +el.dataset.v; S.round = Math.min(S.round, S.rounds); render(); }
+    else if (el.closest("#tiers")) {
+      const t = el.dataset.v;
+      S.tiers = S.tiers.includes(t) ? S.tiers.filter((x) => x !== t) : [...S.tiers, t].sort();
+      if (!S.tiers.length) S.tiers = [t];
+      render();
+    }
+    else if (el.closest("#round")) { S.round = +el.dataset.v; render(); }
+    else if (el.closest("#taskset")) { S.taskset = el.dataset.v; render(); }
+    else if (el.closest("#tabs")) { S.tab = el.dataset.v; render(); }
+    else if (el.id === "refresh") load(true);
+    else if (el.id === "play") { V.playing = !V.playing; render(); }
+    else if (el.dataset.vmode) { S.vmode = el.dataset.vmode; V.playing = false; V.step = null; V.jointSel = null; if (V.design) for (const j of V.design.joints) V.design._q[j.id] = 0; render(); }
+    else if (el.dataset.design) { S.design = el.dataset.design; render(); }
+    else if (el.dataset.joint) { V.jointSel = V.jointSel === el.dataset.joint ? null : el.dataset.joint; paint(); $("#side").innerHTML = sidePanel(); }
+    else if (el.dataset.step != null) { V.step = +el.dataset.step; V.playing = false; paint(); $("#side").innerHTML = sidePanel(); }
+    else if (el.classList.contains("cell")) { S.tab = "objects"; S.task = el.dataset.task; S.design = `${el.dataset.tier}|${el.dataset.sys}`; render(); }
+    else if (el.dataset.task) { S.task = el.dataset.task; render(); }   // keep the tier+system pick across objects
+    else if (el.dataset.group) {
+      const g = el.dataset.group;
+      if (g === "__rounds") S.groups = S.groups.includes(g) ? ["Evaluator"] : ["__rounds"];
+      else S.groups = S.groups.includes(g) ? S.groups.filter((x) => x !== g && x !== "__rounds") : [...S.groups.filter((x) => x !== "__rounds"), g];
+      if (!S.groups.length) S.groups = ["Evaluator"];
+      render();
+    }
+    else if (el.dataset.sort != null) {
+      const k = +el.dataset.sort;
+      S.sort = k < 0 ? null : (S.sort && S.sort.key === k ? (S.sort.dir > 0 ? { key: k, dir: -1 } : null) : { key: k, dir: 1 });
+      render();
+    }
+    else if (el.dataset.copy) {
+      const ta = document.getElementById(el.dataset.copy);
+      ta.select();
+      const done = () => { el.textContent = "Copied"; setTimeout(() => (el.textContent = "Copy"), 1400); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(ta.value).then(done, () => { document.execCommand("copy"); done(); });
+      else { document.execCommand("copy"); done(); }
+    }
+    else if (el.matches("img[data-full]")) {
+      $("#lb-img").src = MODE === "live" ? imgURL(el.dataset.full, 0) : el.src;
+      $("#lb-cap").textContent = el.dataset.full;
+      $("#lightbox").showModal();
+    }
+  });
+  $("#lightbox").addEventListener("click", () => $("#lightbox").close());
+  document.addEventListener("change", (e) => {
+    if (e.target.id === "cond") { S.cond = e.target.value; render(); }
+    else if (e.target.id === "metric") { S.metric = e.target.value; render(); }
+    else if (e.target.id === "paired") { S.paired = e.target.checked; render(); }
+    else if (e.target.id === "scale100") { S.scale100 = e.target.checked; render(); }
+  });
+  document.addEventListener("input", (e) => {
+    if (e.target.dataset && e.target.dataset.q && V.design) {
+      V.playing = false;
+      V.design._q[e.target.dataset.q] = +e.target.value;
+      if (V.jointSel !== e.target.dataset.q) { V.jointSel = e.target.dataset.q; paint(); }
+      else applyPose(V.design);
+    }
+  });
+
+  let busy = false;
+  async function load(force) {
+    if (MODE !== "live" || busy) return;
+    busy = true;
+    $("#refresh").textContent = "Scanning…";
+    try {
+      const res = await fetch("data.json" + (force ? "?force=1" : ""), { cache: "no-store" });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      DATA = await res.json();
+      index();
+      render();
+    } catch (err) {
+      if (!DATA) $("#view").innerHTML = `<div class="panel empty">Could not read data.json (${esc(err.message)}). Is <span class="mono">python -m ppbench.v2.dashboard serve</span> still running?</div>`;
+    } finally {
+      busy = false;
+      $("#refresh").textContent = "Rescan now";
+    }
+  }
+
+  if (DATA) { index(); render(); }
+  if (MODE === "live") { load(false); setInterval(() => { if (S.tab !== "objects") load(false); }, 60000); }
+})();
+</script>

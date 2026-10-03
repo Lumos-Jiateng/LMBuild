@@ -1,0 +1,193 @@
+{
+ "task": "barbecue_grill",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Combustion System",
+   "function": "Generates heat through the controlled burning of gas or solid fuel.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "burner",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "fuel tank",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "valves",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "venturi",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "charcoal pan",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Cooking Surface",
+   "function": "Provides a stable platform for food while distributing heat and protecting the burner.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "cooking grate",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "heat shield",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "rock grate",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "burner",
+     "to": "heat shield",
+     "carries": "heat",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "cooking grate",
+     "type": "prismatic",
+     "axis": "vertical axis",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Mobility System",
+   "function": "Supports the grill and allows it to be moved or tilted for transport.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "legs",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "frame",
+     "to": "wheels",
+     "carries": "load",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "legs",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K2"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "rotisserie skewer",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P2",
+    "P3",
+    "P4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "heat source",
+     "claim": "P2"
+    },
+    {
+     "pred": "part_present",
+     "role": "support structure",
+     "claim": "P3"
+    },
+    {
+     "pred": "part_present",
+     "role": "lid",
+     "claim": "P4"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "food sits on the grate at working height",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "cooking grate",
+     "min_area_m2": 0.06,
+     "height_range_m": [
+      0.4,
+      1.3
+     ],
+     "claim": "P1"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "cooking grate",
+     "placement": "above",
+     "w": 0.3,
+     "d": 0.3,
+     "h": 0.12,
+     "min_free": 0.8,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

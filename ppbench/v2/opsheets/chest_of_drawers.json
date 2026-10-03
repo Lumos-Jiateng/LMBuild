@@ -1,0 +1,188 @@
+{
+ "task": "chest_of_drawers",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Storage containment",
+   "function": "Provides enclosed space to hold and organize items like clothing.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "drawers",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "cabinet frame",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "drawers",
+     "to": "cabinet frame",
+     "carries": "load",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Drawer motion mechanism",
+   "function": "Enables the drawers to slide horizontally in and out of the cabinet.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "drawer slides",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "drawers",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "cabinet frame",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "drawer slides",
+     "to": "drawers",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "drawer slides",
+     "to": "cabinet frame",
+     "carries": "motion",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "User interface",
+   "function": "Allows the user to grasp and pull the drawers open.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "handles",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "drawers",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "handles",
+     "to": "drawers",
+     "carries": "force",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "Support structure",
+   "function": "Supports the weight of the cabinet and its contents on the floor.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "legs",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "cabinet frame",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "legs",
+     "to": "cabinet frame",
+     "carries": "load",
+     "claim": "F4"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "drawer",
+     "type": "prismatic",
+     "axis": "horizontal axis along the depth of the cabinet",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P6"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "top surface",
+     "claim": "P6"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "drawers hold contents and open by hand",
+   "claims": [
+    "P1",
+    "P4"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "drawers",
+     "placement": "inside",
+     "margin_m": 0.02,
+     "min_free": 0.6,
+     "claim": "P1"
+    },
+    {
+     "pred": "grip",
+     "role": "handles",
+     "claim": "P4"
+    },
+    {
+     "pred": "reachable",
+     "target": "handles",
+     "reach_m": 1.2,
+     "claim": "P4"
+    }
+   ]
+  }
+ ]
+}

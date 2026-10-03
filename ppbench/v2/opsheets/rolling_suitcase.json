@@ -1,0 +1,143 @@
+{
+ "task": "rolling_suitcase",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Storage System",
+   "function": "Encloses and secures personal belongings during transport.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "container body",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "lid",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Mobility System",
+   "function": "Reduces friction to allow the heavy suitcase to be moved easily by rolling.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "caster assembly",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "telescoping handle",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "caster assembly",
+     "to": "container body",
+     "carries": "load",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheels",
+     "type": "revolute",
+     "axis": "axle center",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "telescoping handle",
+     "type": "prismatic",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K2"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "caster fork",
+     "type": "revolute",
+     "axis": "vertical shaft axis",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "handle",
+     "claim": "P2"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "it is pulled by the handle on its wheels",
+   "claims": [
+    "P2",
+    "P3"
+   ],
+   "requirements": [
+    {
+     "pred": "grip",
+     "role": "handle",
+     "claim": "P2"
+    },
+    {
+     "pred": "ground_contact",
+     "role": "wheels",
+     "min_clusters": 2,
+     "claim": "P3"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "it holds luggage",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "container body",
+     "placement": "inside",
+     "margin_m": 0.03,
+     "min_free": 0.4,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

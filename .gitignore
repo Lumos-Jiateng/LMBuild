@@ -1,0 +1,22 @@
+# local environments and caches
+.venv_eval/
+.venv_render/
+.cache/
+__pycache__/
+*.pyc
+dist/
+*.bak*
+
+# data hosted on Hugging Face (python scripts/download_data.py puts it in place)
+benchmark/*
+!benchmark/README.md
+!benchmark/task_ids.txt
+designs/
+demos/*
+!demos/README.md
+results/v2/
+human_evaluation/renders/
+
+# outputs of new runs and evaluations
+results/scores/my_scores.csv
+vllm_*.log

@@ -1,0 +1,108 @@
+{
+ "task": "dining_table",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Support Structure",
+   "function": "Elevates the tabletop and maintains its position above the floor.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "legs",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "pedestal",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "stretchers",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "legs",
+     "to": "tabletop",
+     "carries": "load",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Surface System",
+   "function": "Provides a flat, stable area for placing objects or performing tasks.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "tabletop",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "leaves",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Storage System",
+   "function": "Contains and organizes items within the table structure.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "drawers",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "shelves",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a usable top with legroom under it",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "tabletop",
+     "min_area_m2": 0.5,
+     "height_range_m": [
+      0.6,
+      0.85
+     ],
+     "claim": "P1"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "tabletop",
+     "placement": "below",
+     "box": "seated_legs",
+     "min_free": 0.8,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,812 @@
+{
+ "d9833_3.2": {
+  "item_id": "d9833_3.2",
+  "design": "d9833",
+  "task": "wheelchair",
+  "dim": "3.2",
+  "score": 4,
+  "seconds": 35,
+  "saved_at": "2026-09-21T12:06:21"
+ },
+ "d4675_3.2": {
+  "item_id": "d4675_3.2",
+  "design": "d4675",
+  "task": "oscillating_fan",
+  "dim": "3.2",
+  "score": 4,
+  "seconds": 6,
+  "saved_at": "2026-09-21T12:06:27"
+ },
+ "d1049_3.2": {
+  "item_id": "d1049_3.2",
+  "design": "d1049",
+  "task": "swivel_office_chair",
+  "dim": "3.2",
+  "score": 3,
+  "seconds": 10,
+  "saved_at": "2026-09-21T12:06:37"
+ },
+ "d1167_3.2": {
+  "item_id": "d1167_3.2",
+  "design": "d1167",
+  "task": "oscillating_fan",
+  "dim": "3.2",
+  "score": 1,
+  "seconds": 4,
+  "saved_at": "2026-09-21T12:06:41"
+ },
+ "d3791_3.2": {
+  "item_id": "d3791_3.2",
+  "design": "d3791",
+  "task": "oscillating_steam_engine",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 29,
+  "saved_at": "2026-09-21T12:07:11"
+ },
+ "d3586_3.2": {
+  "item_id": "d3586_3.2",
+  "design": "d3586",
+  "task": "refrigerator",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 14,
+  "saved_at": "2026-09-21T12:07:25"
+ },
+ "d2830_3.2": {
+  "item_id": "d2830_3.2",
+  "design": "d2830",
+  "task": "oscillating_fan",
+  "dim": "3.2",
+  "score": 1,
+  "seconds": 26,
+  "saved_at": "2026-09-21T12:07:51"
+ },
+ "d6861_3.2": {
+  "item_id": "d6861_3.2",
+  "design": "d6861",
+  "task": "wheeled_excavator",
+  "dim": "3.2",
+  "score": 4,
+  "seconds": 8,
+  "saved_at": "2026-09-21T12:07:59"
+ },
+ "d4085_3.2": {
+  "item_id": "d4085_3.2",
+  "design": "d4085",
+  "task": "chest_of_drawers",
+  "dim": "3.2",
+  "score": 4,
+  "seconds": 12,
+  "saved_at": "2026-09-21T12:08:11"
+ },
+ "d5680_3.2": {
+  "item_id": "d5680_3.2",
+  "design": "d5680",
+  "task": "scissor_car_jack",
+  "dim": "3.2",
+  "score": 3,
+  "seconds": 14,
+  "saved_at": "2026-09-21T12:08:25"
+ },
+ "d7491_3.2": {
+  "item_id": "d7491_3.2",
+  "design": "d7491",
+  "task": "dining_table",
+  "dim": "3.2",
+  "score": 5,
+  "seconds": 5,
+  "saved_at": "2026-09-21T12:08:30"
+ },
+ "d2019_3.2": {
+  "item_id": "d2019_3.2",
+  "design": "d2019",
+  "task": "dining_table",
+  "dim": "3.2",
+  "score": 5,
+  "seconds": 3,
+  "saved_at": "2026-09-21T12:08:33"
+ },
+ "d4024_3.2": {
+  "item_id": "d4024_3.2",
+  "design": "d4024",
+  "task": "swivel_office_chair",
+  "dim": "3.2",
+  "score": 5,
+  "seconds": 9,
+  "saved_at": "2026-09-21T12:08:42"
+ },
+ "d2153_3.2": {
+  "item_id": "d2153_3.2",
+  "design": "d2153",
+  "task": "passenger_car",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 6,
+  "saved_at": "2026-09-21T12:08:48"
+ },
+ "d6715_3.2": {
+  "item_id": "d6715_3.2",
+  "design": "d6715",
+  "task": "passenger_car",
+  "dim": "3.2",
+  "score": 3,
+  "seconds": 7,
+  "saved_at": "2026-09-21T12:08:55"
+ },
+ "d6656_3.2": {
+  "item_id": "d6656_3.2",
+  "design": "d6656",
+  "task": "refrigerator",
+  "dim": "3.2",
+  "score": 5,
+  "seconds": 2,
+  "saved_at": "2026-09-21T12:08:57"
+ },
+ "d7287_3.2": {
+  "item_id": "d7287_3.2",
+  "design": "d7287",
+  "task": "desk_lamp",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 13,
+  "saved_at": "2026-09-21T12:09:10"
+ },
+ "d8272_3.2": {
+  "item_id": "d8272_3.2",
+  "design": "d8272",
+  "task": "bed_frame",
+  "dim": "3.2",
+  "score": 4,
+  "seconds": 7,
+  "saved_at": "2026-09-21T12:09:17"
+ },
+ "d6218_3.2": {
+  "item_id": "d6218_3.2",
+  "design": "d6218",
+  "task": "swivel_office_chair",
+  "dim": "3.2",
+  "score": 5,
+  "seconds": 3,
+  "saved_at": "2026-09-21T12:09:20"
+ },
+ "d3585_3.2": {
+  "item_id": "d3585_3.2",
+  "design": "d3585",
+  "task": "stepladder",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 47,
+  "saved_at": "2026-09-21T12:10:07"
+ },
+ "d4253_3.2": {
+  "item_id": "d4253_3.2",
+  "design": "d4253",
+  "task": "wheeled_excavator",
+  "dim": "3.2",
+  "score": 3,
+  "seconds": 6,
+  "saved_at": "2026-09-21T12:10:13"
+ },
+ "d5691_3.2": {
+  "item_id": "d5691_3.2",
+  "design": "d5691",
+  "task": "chest_of_drawers",
+  "dim": "3.2",
+  "score": 3,
+  "seconds": 19,
+  "saved_at": "2026-09-21T12:10:32"
+ },
+ "d3055_3.2": {
+  "item_id": "d3055_3.2",
+  "design": "d3055",
+  "task": "bench_drill_press",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 17,
+  "saved_at": "2026-09-21T12:10:49"
+ },
+ "d9090_3.2": {
+  "item_id": "d9090_3.2",
+  "design": "d9090",
+  "task": "oscillating_steam_engine",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 29,
+  "saved_at": "2026-09-21T12:11:18"
+ },
+ "d7950_3.2": {
+  "item_id": "d7950_3.2",
+  "design": "d7950",
+  "task": "oscillating_steam_engine",
+  "dim": "3.2",
+  "score": 1,
+  "seconds": 4,
+  "saved_at": "2026-09-21T12:11:22"
+ },
+ "d9723_3.2": {
+  "item_id": "d9723_3.2",
+  "design": "d9723",
+  "task": "wheelchair",
+  "dim": "3.2",
+  "score": 5,
+  "seconds": 4,
+  "saved_at": "2026-09-21T12:11:26"
+ },
+ "d4120_3.2": {
+  "item_id": "d4120_3.2",
+  "design": "d4120",
+  "task": "offroad_jeep",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 4,
+  "saved_at": "2026-09-21T12:11:30"
+ },
+ "d7955_3.2": {
+  "item_id": "d7955_3.2",
+  "design": "d7955",
+  "task": "scissor_car_jack",
+  "dim": "3.2",
+  "score": 2,
+  "seconds": 28,
+  "saved_at": "2026-09-21T12:11:58"
+ },
+ "d3066_3.2": {
+  "item_id": "d3066_3.2",
+  "design": "d3066",
+  "task": "stepladder",
+  "dim": "3.2",
+  "score": 3,
+  "seconds": 11,
+  "saved_at": "2026-09-21T12:12:09"
+ },
+ "d8731_3.2": {
+  "item_id": "d8731_3.2",
+  "design": "d8731",
+  "task": "wheelchair",
+  "dim": "3.2",
+  "score": 4,
+  "seconds": 4,
+  "saved_at": "2026-09-21T12:12:13"
+ },
+ "d1332_3.3": {
+  "item_id": "d1332_3.3",
+  "design": "d1332",
+  "task": "desk_lamp",
+  "dim": "3.3",
+  "score": 1,
+  "seconds": 62,
+  "saved_at": "2026-09-21T12:13:14"
+ },
+ "d1602_3.3": {
+  "item_id": "d1602_3.3",
+  "design": "d1602",
+  "task": "offroad_jeep",
+  "dim": "3.3",
+  "score": 4,
+  "seconds": 30,
+  "saved_at": "2026-09-21T12:13:44"
+ },
+ "d1635_3.3": {
+  "item_id": "d1635_3.3",
+  "design": "d1635",
+  "task": "swivel_office_chair",
+  "dim": "3.3",
+  "score": 4,
+  "seconds": 7,
+  "saved_at": "2026-09-21T12:13:51"
+ },
+ "d8737_3.3": {
+  "item_id": "d8737_3.3",
+  "design": "d8737",
+  "task": "chest_of_drawers",
+  "dim": "3.3",
+  "score": 5,
+  "seconds": 16,
+  "saved_at": "2026-09-21T12:14:07"
+ },
+ "d4806_3.3": {
+  "item_id": "d4806_3.3",
+  "design": "d4806",
+  "task": "stepladder",
+  "dim": "3.3",
+  "score": 1,
+  "seconds": 29,
+  "saved_at": "2026-09-21T12:14:36"
+ },
+ "d2975_3.3": {
+  "item_id": "d2975_3.3",
+  "design": "d2975",
+  "task": "refrigerator",
+  "dim": "3.3",
+  "score": 5,
+  "seconds": 3,
+  "saved_at": "2026-09-21T12:14:39"
+ },
+ "d9798_3.3": {
+  "item_id": "d9798_3.3",
+  "design": "d9798",
+  "task": "stepladder",
+  "dim": "3.3",
+  "score": 1,
+  "seconds": 9,
+  "saved_at": "2026-09-21T12:14:48"
+ },
+ "d7950_3.3": {
+  "item_id": "d7950_3.3",
+  "design": "d7950",
+  "task": "oscillating_steam_engine",
+  "dim": "3.3",
+  "score": 2,
+  "seconds": 17,
+  "saved_at": "2026-09-21T12:15:05"
+ },
+ "d4245_3.3": {
+  "item_id": "d4245_3.3",
+  "design": "d4245",
+  "task": "scissor_car_jack",
+  "dim": "3.3",
+  "score": 1,
+  "seconds": 5,
+  "saved_at": "2026-09-21T12:15:10"
+ },
+ "d8426_3.3": {
+  "item_id": "d8426_3.3",
+  "design": "d8426",
+  "task": "wheelchair",
+  "dim": "3.3",
+  "score": 1,
+  "seconds": 52,
+  "saved_at": "2026-09-21T12:16:02"
+ },
+ "d3993_3.3": {
+  "item_id": "d3993_3.3",
+  "design": "d3993",
+  "task": "oscillating_steam_engine",
+  "dim": "3.3",
+  "score": 4,
+  "seconds": 11,
+  "saved_at": "2026-09-21T12:16:13"
+ },
+ "d1134_3.3": {
+  "item_id": "d1134_3.3",
+  "design": "d1134",
+  "task": "swivel_office_chair",
+  "dim": "3.3",
+  "score": 3,
+  "seconds": 16,
+  "saved_at": "2026-09-21T12:16:29"
+ },
+ "d5335_3.3": {
+  "item_id": "d5335_3.3",
+  "design": "d5335",
+  "task": "desk_lamp",
+  "dim": "3.3",
+  "score": 4,
+  "seconds": 6,
+  "saved_at": "2026-09-21T12:16:35"
+ },
+ "d1922_3.3": {
+  "item_id": "d1922_3.3",
+  "design": "d1922",
+  "task": "bench_drill_press",
+  "dim": "3.3",
+  "score": 2,
+  "seconds": 3,
+  "saved_at": "2026-09-21T12:16:38"
+ },
+ "d1746_3.3": {
+  "item_id": "d1746_3.3",
+  "design": "d1746",
+  "task": "chest_of_drawers",
+  "dim": "3.3",
+  "score": 5,
+  "seconds": 3,
+  "saved_at": "2026-09-21T12:16:41"
+ },
+ "d4081_3.3": {
+  "item_id": "d4081_3.3",
+  "design": "d4081",
+  "task": "passenger_car",
+  "dim": "3.3",
+  "score": 3,
+  "seconds": 5,
+  "saved_at": "2026-09-21T12:16:46"
+ },
+ "d7645_3.3": {
+  "item_id": "d7645_3.3",
+  "design": "d7645",
+  "task": "wheeled_excavator",
+  "dim": "3.3",
+  "score": 1,
+  "seconds": 28,
+  "saved_at": "2026-09-21T12:17:14"
+ },
+ "d7735_3.3": {
+  "item_id": "d7735_3.3",
+  "design": "d7735",
+  "task": "chest_of_drawers",
+  "dim": "3.3",
+  "score": 3,
+  "seconds": 1,
+  "saved_at": "2026-09-21T12:17:21"
+ },
+ "d1669_3.3": {
+  "item_id": "d1669_3.3",
+  "design": "d1669",
+  "task": "bed_frame",
+  "dim": "3.3",
+  "score": 3,
+  "seconds": 10,
+  "saved_at": "2026-09-21T12:17:31"
+ },
+ "d7211_3.3": {
+  "item_id": "d7211_3.3",
+  "design": "d7211",
+  "task": "passenger_car",
+  "dim": "3.3",
+  "score": 4,
+  "seconds": 9,
+  "saved_at": "2026-09-21T12:17:40"
+ },
+ "d5356_3.3": {
+  "item_id": "d5356_3.3",
+  "design": "d5356",
+  "task": "oscillating_steam_engine",
+  "dim": "3.3",
+  "score": 4,
+  "seconds": 9,
+  "saved_at": "2026-09-21T12:17:49"
+ },
+ "d4160_3.3": {
+  "item_id": "d4160_3.3",
+  "design": "d4160",
+  "task": "bed_frame",
+  "dim": "3.3",
+  "score": 4,
+  "seconds": 6,
+  "saved_at": "2026-09-21T12:17:55"
+ },
+ "d9345_3.3": {
+  "item_id": "d9345_3.3",
+  "design": "d9345",
+  "task": "bench_drill_press",
+  "dim": "3.3",
+  "score": 4,
+  "seconds": 12,
+  "saved_at": "2026-09-21T12:18:07"
+ },
+ "d6353_3.3": {
+  "item_id": "d6353_3.3",
+  "design": "d6353",
+  "task": "dining_table",
+  "dim": "3.3",
+  "score": 5,
+  "seconds": 3,
+  "saved_at": "2026-09-21T12:18:10"
+ },
+ "d3189_3.3": {
+  "item_id": "d3189_3.3",
+  "design": "d3189",
+  "task": "chest_of_drawers",
+  "dim": "3.3",
+  "score": 1,
+  "seconds": 4,
+  "saved_at": "2026-09-21T12:18:14"
+ },
+ "d9090_3.3": {
+  "item_id": "d9090_3.3",
+  "design": "d9090",
+  "task": "oscillating_steam_engine",
+  "dim": "3.3",
+  "score": 2,
+  "seconds": 4,
+  "saved_at": "2026-09-21T12:18:17"
+ },
+ "d6704_3.3": {
+  "item_id": "d6704_3.3",
+  "design": "d6704",
+  "task": "oscillating_fan",
+  "dim": "3.3",
+  "score": 3,
+  "seconds": 5,
+  "saved_at": "2026-09-21T12:18:22"
+ },
+ "d4007_3.3": {
+  "item_id": "d4007_3.3",
+  "design": "d4007",
+  "task": "oscillating_fan",
+  "dim": "3.3",
+  "score": 5,
+  "seconds": 3,
+  "saved_at": "2026-09-21T12:18:26"
+ },
+ "d3580_3.3": {
+  "item_id": "d3580_3.3",
+  "design": "d3580",
+  "task": "offroad_jeep",
+  "dim": "3.3",
+  "score": 2,
+  "seconds": 4,
+  "saved_at": "2026-09-21T12:18:30"
+ },
+ "d6358_3.3": {
+  "item_id": "d6358_3.3",
+  "design": "d6358",
+  "task": "passenger_car",
+  "dim": "3.3",
+  "score": 5,
+  "seconds": 6,
+  "saved_at": "2026-09-21T12:18:36"
+ },
+ "d9558_3.1": {
+  "item_id": "d9558_3.1",
+  "design": "d9558",
+  "task": "refrigerator",
+  "dim": "3.1",
+  "score": 2,
+  "seconds": 14226,
+  "saved_at": "2026-09-21T16:15:43"
+ },
+ "d9690_3.1": {
+  "item_id": "d9690_3.1",
+  "design": "d9690",
+  "task": "dining_table",
+  "dim": "3.1",
+  "score": 5,
+  "seconds": 11,
+  "saved_at": "2026-09-21T16:15:54"
+ },
+ "d9787_3.1": {
+  "item_id": "d9787_3.1",
+  "design": "d9787",
+  "task": "bench_drill_press",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 9,
+  "saved_at": "2026-09-21T16:16:03"
+ },
+ "d3262_3.1": {
+  "item_id": "d3262_3.1",
+  "design": "d3262",
+  "task": "dining_table",
+  "dim": "3.1",
+  "score": 5,
+  "seconds": 4,
+  "saved_at": "2026-09-21T16:16:07"
+ },
+ "d1746_3.1": {
+  "item_id": "d1746_3.1",
+  "design": "d1746",
+  "task": "chest_of_drawers",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 7,
+  "saved_at": "2026-09-21T16:16:14"
+ },
+ "d3973_3.1": {
+  "item_id": "d3973_3.1",
+  "design": "d3973",
+  "task": "refrigerator",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 3,
+  "saved_at": "2026-09-21T16:16:17"
+ },
+ "d4342_3.1": {
+  "item_id": "d4342_3.1",
+  "design": "d4342",
+  "task": "oscillating_steam_engine",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 9,
+  "saved_at": "2026-09-21T16:16:27"
+ },
+ "d5529_3.1": {
+  "item_id": "d5529_3.1",
+  "design": "d5529",
+  "task": "wheelchair",
+  "dim": "3.1",
+  "score": 3,
+  "seconds": 10,
+  "saved_at": "2026-09-21T16:16:36"
+ },
+ "d8613_3.1": {
+  "item_id": "d8613_3.1",
+  "design": "d8613",
+  "task": "scissor_car_jack",
+  "dim": "3.1",
+  "score": 3,
+  "seconds": 8,
+  "saved_at": "2026-09-21T16:16:44"
+ },
+ "d6417_3.1": {
+  "item_id": "d6417_3.1",
+  "design": "d6417",
+  "task": "passenger_car",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 10,
+  "saved_at": "2026-09-21T16:16:54"
+ },
+ "d3541_3.1": {
+  "item_id": "d3541_3.1",
+  "design": "d3541",
+  "task": "oscillating_fan",
+  "dim": "3.1",
+  "score": 5,
+  "seconds": 6,
+  "saved_at": "2026-09-21T16:17:00"
+ },
+ "d4179_3.1": {
+  "item_id": "d4179_3.1",
+  "design": "d4179",
+  "task": "bed_frame",
+  "dim": "3.1",
+  "score": 5,
+  "seconds": 3,
+  "saved_at": "2026-09-21T16:17:03"
+ },
+ "d3580_3.1": {
+  "item_id": "d3580_3.1",
+  "design": "d3580",
+  "task": "offroad_jeep",
+  "dim": "3.1",
+  "score": 2,
+  "seconds": 9,
+  "saved_at": "2026-09-21T16:17:13"
+ },
+ "d9798_3.1": {
+  "item_id": "d9798_3.1",
+  "design": "d9798",
+  "task": "stepladder",
+  "dim": "3.1",
+  "score": 3,
+  "seconds": 8,
+  "saved_at": "2026-09-21T16:17:21"
+ },
+ "d7261_3.1": {
+  "item_id": "d7261_3.1",
+  "design": "d7261",
+  "task": "swivel_office_chair",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 3,
+  "saved_at": "2026-09-21T16:17:26"
+ },
+ "d3486_3.1": {
+  "item_id": "d3486_3.1",
+  "design": "d3486",
+  "task": "desk_lamp",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 128,
+  "saved_at": "2026-09-21T16:19:34"
+ },
+ "d3221_3.1": {
+  "item_id": "d3221_3.1",
+  "design": "d3221",
+  "task": "refrigerator",
+  "dim": "3.1",
+  "score": 5,
+  "seconds": 2,
+  "saved_at": "2026-09-21T16:19:36"
+ },
+ "d7293_3.1": {
+  "item_id": "d7293_3.1",
+  "design": "d7293",
+  "task": "desk_lamp",
+  "dim": "3.1",
+  "score": 5,
+  "seconds": 2,
+  "saved_at": "2026-09-21T16:19:38"
+ },
+ "d7735_3.1": {
+  "item_id": "d7735_3.1",
+  "design": "d7735",
+  "task": "chest_of_drawers",
+  "dim": "3.1",
+  "score": 3,
+  "seconds": 6,
+  "saved_at": "2026-09-21T16:19:45"
+ },
+ "d8991_3.1": {
+  "item_id": "d8991_3.1",
+  "design": "d8991",
+  "task": "bed_frame",
+  "dim": "3.1",
+  "score": 1,
+  "seconds": 3,
+  "saved_at": "2026-09-21T16:19:48"
+ },
+ "d4960_3.1": {
+  "item_id": "d4960_3.1",
+  "design": "d4960",
+  "task": "offroad_jeep",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 4,
+  "saved_at": "2026-09-21T16:19:52"
+ },
+ "d9230_3.1": {
+  "item_id": "d9230_3.1",
+  "design": "d9230",
+  "task": "scissor_car_jack",
+  "dim": "3.1",
+  "score": 3,
+  "seconds": 6,
+  "saved_at": "2026-09-21T16:19:59"
+ },
+ "d1573_3.1": {
+  "item_id": "d1573_3.1",
+  "design": "d1573",
+  "task": "bench_drill_press",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 7,
+  "saved_at": "2026-09-21T16:20:05"
+ },
+ "d2153_3.1": {
+  "item_id": "d2153_3.1",
+  "design": "d2153",
+  "task": "passenger_car",
+  "dim": "3.1",
+  "score": 1,
+  "seconds": 5,
+  "saved_at": "2026-09-21T16:20:10"
+ },
+ "d2137_3.1": {
+  "item_id": "d2137_3.1",
+  "design": "d2137",
+  "task": "wheeled_excavator",
+  "dim": "3.1",
+  "score": 3,
+  "seconds": 13,
+  "saved_at": "2026-09-21T16:20:23"
+ },
+ "d8108_3.1": {
+  "item_id": "d8108_3.1",
+  "design": "d8108",
+  "task": "bench_drill_press",
+  "dim": "3.1",
+  "score": 3,
+  "seconds": 3,
+  "saved_at": "2026-09-21T16:20:26"
+ },
+ "d3189_3.1": {
+  "item_id": "d3189_3.1",
+  "design": "d3189",
+  "task": "chest_of_drawers",
+  "dim": "3.1",
+  "score": 1,
+  "seconds": 2,
+  "saved_at": "2026-09-21T16:20:28"
+ },
+ "d4085_3.1": {
+  "item_id": "d4085_3.1",
+  "design": "d4085",
+  "task": "chest_of_drawers",
+  "dim": "3.1",
+  "score": 5,
+  "seconds": 4,
+  "saved_at": "2026-09-21T16:20:32"
+ },
+ "d5698_3.1": {
+  "item_id": "d5698_3.1",
+  "design": "d5698",
+  "task": "wheeled_excavator",
+  "dim": "3.1",
+  "score": 5,
+  "seconds": 3,
+  "saved_at": "2026-09-21T16:20:35"
+ },
+ "d1745_3.1": {
+  "item_id": "d1745_3.1",
+  "design": "d1745",
+  "task": "offroad_jeep",
+  "dim": "3.1",
+  "score": 4,
+  "seconds": 5,
+  "saved_at": "2026-09-21T16:20:40"
+ }
+}

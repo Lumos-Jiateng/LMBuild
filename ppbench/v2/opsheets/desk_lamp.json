@@ -1,0 +1,169 @@
+{
+ "task": "desk_lamp",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Support and Positioning",
+   "function": "Provides a stable structure that allows the lamp head to be positioned in various locations.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "base",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "stand or body",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "upper arm",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "forearm",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "lamp head",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "stand or body",
+     "type": "revolute",
+     "axis": "vertical axis through the base",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "upper arm",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "forearm",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Balancing System",
+   "function": "Counteracts the force of gravity to hold the arms in place without slipping.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "springs",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "counterweights",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "friction elements",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Lighting System",
+   "function": "Generates and directs light to illuminate the workspace.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "lightbulb socket",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "electric light",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "lampshade",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "electric light",
+     "to": "lightbulb socket",
+     "carries": "electricity",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "lampshade",
+     "to": "electric light",
+     "carries": "light",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P6"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "balancing mechanism",
+     "claim": "P6"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the head is carried at the end of the arm",
+   "claims": [
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "colocated",
+     "a": "lamp head",
+     "b": "forearm",
+     "max_gap_m": 0.06,
+     "claim": "P5"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "lamp head",
+     "placement": "below",
+     "w": 0.25,
+     "d": 0.25,
+     "h": 0.25,
+     "min_free": 0.7,
+     "claim": "P5"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,140 @@
+{
+ "task": "hinged_door",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Pivoting mechanism",
+   "function": "Allows the door to rotate relative to the frame to open and close the passage.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Door panel",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Hinges",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Door frame",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Hinges",
+     "to": "Door panel",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Door panel",
+     "type": "revolute",
+     "axis": "vertical axis along the side of the door",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Latching mechanism",
+   "function": "Secures the door in the closed position and releases it upon user input.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Door handle",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Latch bolt",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Strike plate",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Door handle",
+     "to": "Latch bolt",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Latch bolt",
+     "to": "Strike plate",
+     "carries": "force",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1",
+    "P3",
+    "P4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Door panel (leaf)",
+     "claim": "P1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Door frame (jamb)",
+     "claim": "P3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Latch or lock",
+     "claim": "P4"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a person can open it by the handle",
+   "claims": [
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "grip",
+     "role": "Door handle",
+     "claim": "P5"
+    },
+    {
+     "pred": "colocated",
+     "a": "Door handle",
+     "b": "Door panel",
+     "max_gap_m": 0.08,
+     "claim": "P5"
+    },
+    {
+     "pred": "reachable",
+     "target": "Door handle",
+     "reach_m": 1.1,
+     "claim": "P5"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,276 @@
+{
+ "_comment": "Authored synonym bridges, one group per canonical role. They join the word a claim uses to the word the reference dataset uses and to the words a design is likely to use. Applied on top of the automatic table built from the task's own vocabulary. A phrase listed here is removed from every other role, so matching stays unambiguous. Nothing here encodes a measurement -- only which words mean the same part.",
+
+ "baby_stroller": {"table": {
+  "frame": ["frame", "base frame", "chassis", "stroller frame"],
+  "seat": ["seat", "seat pan", "child seat", "seat unit"],
+  "wheels": ["wheel", "wheels", "caster", "castor", "front wheel", "rear wheel"],
+  "handle": ["handle", "push handle", "handlebar", "push bar"]}},
+
+ "barbecue_grill": {"table": {
+  "cooking grate": ["cooking grate", "grate", "grill grate", "cooking grid", "grid", "cooking surface"],
+  "support structure": ["support structure", "base", "frame", "legs", "cart", "stand", "trolley"],
+  "heat source": ["heat source", "burner", "charcoal pan", "firebox", "heating element", "gas burner"],
+  "lid": ["lid", "hood", "cover", "dome"]}},
+
+ "bed_frame": {"table": {
+  "bed base": ["bed base", "slat support", "slats", "wooden slats", "platform", "mattress support", "base"],
+  "bed frame": ["bed frame", "frame", "rail frame"],
+  "side rails": ["side rails", "side rail", "rail"]}},
+
+ "bench_drill_press": {"table": {
+  "Spindle": ["spindle", "spindle extension", "quill"],
+  "Chuck": ["chuck", "chuck body", "chuck cover", "drill chuck"],
+  "Table": ["table", "work table", "worktable", "clamp", "workholding table"],
+  "Base": ["base", "base plate"],
+  "Feed Handle": ["feed handle", "crank handle", "crank arm", "feed lever", "handle", "lever"],
+  "Motor": ["motor", "drill head", "head", "head cover", "electric motor"],
+  "Column": ["column", "post", "pillar"]}},
+
+ "bookcase": {"table": {
+  "shelf": ["shelf", "shelves", "shelf board"],
+  "frame or cabinet structure": ["frame or cabinet structure", "frame", "cabinet", "carcass", "case",
+                                 "side panel", "top panel", "bottom panel", "back panel", "body"]}},
+
+ "camera": {"table": {
+  "camera body": ["camera body", "body", "base", "chassis", "housing"],
+  "shutter release": ["shutter release", "button", "shutter button", "release", "trigger"],
+  "viewfinder": ["viewfinder", "finder", "eyepiece"],
+  "lens": ["lens", "lens barrel", "lens elements", "objective"],
+  "aperture": ["aperture", "aperture ring", "iris"]}},
+
+ "casement_window": {"table": {
+  "sash": ["sash", "panel", "window panel", "casement", "leaf"],
+  "frame": ["frame", "window frame", "base", "jamb"],
+  "latch": ["latch", "handle", "lever handle", "lock", "catch", "fastener"],
+  "glazing": ["glazing", "glass", "pane", "glass pane"]}},
+
+ "chest_of_drawers": {"table": {
+  "cabinet frame": ["cabinet frame", "carcass", "cabinet", "case", "body", "frame", "chest", "casework"],
+  "drawers": ["drawers", "drawer", "drawer box"],
+  "handles": ["handles", "handle", "pull", "knob", "drawer pull"],
+  "top surface": ["top surface", "top", "top panel", "table top", "tabletop"],
+  "legs": ["legs", "leg", "foot", "feet", "plinth", "base"]}},
+
+ "desk_lamp": {"table": {
+  "lamp head": ["lamp head", "shade", "lampshade", "head", "reflector", "lamp shade"],
+  "stand or body": ["stand or body", "stand", "body", "pole", "post", "column", "stem"],
+  "upper arm": ["upper arm", "arm"],
+  "forearm": ["forearm", "lower arm"],
+  "base": ["base", "foot"]}},
+
+ "dining_chair": {"table": {
+  "seat": ["seat", "seat pan", "seat cushion", "contoured seat", "sitting surface"],
+  "back-rest": ["back-rest", "backrest", "back rest", "back", "back support"],
+  "legs": ["legs", "leg", "foot"]}},
+
+ "dining_table": {"table": {
+  "tabletop": ["tabletop", "table top", "top", "top panel", "surface", "leaves"],
+  "legs": ["legs", "leg", "pedestal", "trestle", "stretchers"],
+  "drawers": ["drawers", "drawer"]}},
+
+ "dishwasher": {"table": {
+  "Door": ["door", "door panel"],
+  "Racks": ["racks", "rack", "basket", "dish rack"],
+  "Wash chamber": ["wash chamber", "tub", "chamber", "cabinet", "body", "base", "wash tub"],
+  "Sprayers": ["sprayers", "spray bar", "spray arm", "sprayer"],
+  "Heating element": ["heating element", "heater"],
+  "Control system": ["control system", "control panel", "panel", "knob", "button"]}},
+
+ "farm_tractor": {"table": {
+  "brakes": ["brakes", "brake", "brake drum", "brake disc", "brake pedal", "brake caliper"],
+  "wheels": ["wheels", "wheel", "tire", "tyre", "track", "front wheels", "rear wheel"],
+  "operator seat": ["operator seat", "seat", "driver seat", "driving seat"],
+  "engine": ["engine", "motor", "engine block"],
+  "steering wheel": ["steering wheel"],
+  "three-point hitch": ["three-point hitch", "hitch", "three point hitch", "lift arms"]}},
+
+ "helicopter": {"table": {
+  "Main rotor": ["main rotor", "rotor", "main rotor blade", "rotor blades", "blade"],
+  "Mast": ["mast", "rotor mast", "rotor shaft"],
+  "Tail rotor": ["tail rotor", "tail rotor blade"],
+  "Rotor hub": ["rotor hub", "hub"],
+  "Engine": ["engine", "motor", "turbine"]}},
+
+ "hinged_door": {"table": {
+  "Door panel": ["door panel", "door leaf", "leaf", "panel", "door", "door slab"],
+  "Door handle": ["door handle", "lever handle", "handle", "handle rose", "knob", "door knob"],
+  "Door frame": ["door frame", "frame", "jamb"],
+  "Hinges": ["hinges", "hinge"],
+  "Latch bolt": ["latch bolt", "latch", "lock", "strike plate", "bolt"]}},
+
+ "kitchen_oven": {"table": {
+  "heating chamber": ["heating chamber", "body", "cavity", "chamber", "oven cavity", "combustion chamber"],
+  "rack": ["rack", "shelf", "grid", "oven rack"],
+  "control interface": ["control interface", "knob", "control panel", "dial", "control knob"],
+  "door": ["door", "door panel"],
+  "handle": ["handle", "door handle"],
+  "heating element": ["heating element", "burner", "element"]}},
+
+ "laptop": {"table": {
+  "clamshell chassis": ["clamshell chassis", "base", "chassis", "body", "bottom case", "lower case"],
+  "display screen": ["display screen", "screen", "display", "panel", "lid"],
+  "keyboard": ["keyboard", "key", "keys", "keycap"],
+  "pointing device": ["pointing device", "touchpad", "trackpad"],
+  "hinge": ["hinge"],
+  "battery": ["battery", "battery pack"]}},
+
+ "microwave_oven": {"table": {
+  "cooking chamber": ["cooking chamber", "body", "cavity", "chamber", "interior", "oven cavity"],
+  "oven door": ["oven door", "door", "door panel"],
+  "control panel": ["control panel", "panel", "keypad", "button", "knob", "display panel"],
+  "turntable": ["turntable", "plate", "tray", "glass tray"],
+  "handle": ["handle", "door handle"]}},
+
+ "mixer_faucet": {"table": {
+  "valve body": ["valve body", "faucet body", "body", "valve housing"],
+  "handle": ["handle", "lever handle", "lever", "mixer handle"],
+  "outlet spout": ["outlet spout", "spout", "nozzle", "neck"],
+  "aerator": ["aerator", "tip", "outlet tip"]}},
+
+ "monitor_arm": {"table": {
+  "Mounting base": ["mounting base", "base", "clamp", "clamp hardware", "mount base", "desk clamp"],
+  "Arm": ["arm", "upper arm", "lower arm", "extension arm", "arm segment"],
+  "Monitor": ["monitor", "monitor mount", "vesa plate", "display", "display attachment"]}},
+
+ "office_desk": {"table": {
+  "work surface": ["work surface", "desk body", "desktop", "table top", "tabletop", "top", "surface"],
+  "drawers": ["drawers", "drawer"],
+  "handle": ["handle", "pull", "knob"]}},
+
+ "offroad_jeep": {"table": {
+  "brakes": ["brakes", "brake", "brake disc", "brake drum", "brake caliper", "brake rotor", "disc brake"],
+  "wheels": ["wheels", "wheel", "rim", "front wheels"],
+  "tires": ["tires", "tire", "tyre"],
+  "engine": ["engine", "motor", "engine block"],
+  "fuel tank": ["fuel tank", "tank", "gas tank"],
+  "steering wheel": ["steering wheel"],
+  "suspension system": ["suspension system", "suspension", "springs", "shock absorbers", "spring", "shock absorber"]}},
+
+ "oscillating_fan": {"table": {
+  "blades": ["blades", "blade", "fan blade", "impeller"],
+  "housing": ["housing", "motor head", "head", "casing", "motor housing"],
+  "hub": ["hub", "rotor hub", "rotor"],
+  "blade guard": ["blade guard", "guard", "grille", "cage", "front guard", "rear guard"],
+  "base": ["base", "stand", "foot", "pedestal"],
+  "electric motor": ["electric motor", "motor"]}},
+
+ "oscillating_steam_engine": {"table": {
+  "crankshaft": ["crankshaft", "crank", "crank pin", "crank shaft"],
+  "piston rod": ["piston rod"],
+  "connecting rod": ["connecting rod", "conrod"],
+  "port face": ["port face", "valve port block", "port block", "port plate"],
+  "cylinder": ["cylinder"],
+  "piston": ["piston"],
+  "flywheel": ["flywheel", "flywheel rim", "flywheel hub", "flywheel post"]}},
+
+ "passenger_car": {"table": {
+  "Brakes": ["brakes", "brake", "brake disc", "brake drum", "caliper", "brake rotor", "disc brake"],
+  "Wheels and Tires": ["wheels and tires", "wheel", "wheels", "tire", "tyre", "rim"],
+  "Seats": ["seats", "seat"],
+  "Doors": ["doors", "door"],
+  "Engine": ["engine", "motor", "engine block"],
+  "Steering Wheel": ["steering wheel"],
+  "Fuel Tank": ["fuel tank", "tank", "gas tank"]}},
+
+ "refrigerator": {"table": {
+  "thermally insulated compartment": ["thermally insulated compartment", "cabinet", "compartment", "body",
+                                      "interior", "case", "insulated compartment"],
+  "door": ["door", "door panel", "fridge door"],
+  "shelf": ["shelf", "shelves"],
+  "drawer": ["drawer", "crisper", "door bin", "bin"],
+  "handle": ["handle", "door handle"],
+  "compressor": ["compressor"]}},
+
+ "rolling_suitcase": {"table": {
+  "container body": ["container body", "body", "shell", "case", "box", "base", "lid"],
+  "telescoping handle": ["telescoping handle", "telescopic handle", "trolley handle", "pull handle", "retractable handle"],
+  "handle": ["handle", "carry handle", "grip", "side handle", "top handle"],
+  "wheels": ["wheels", "wheel", "caster", "caster connector", "castor"]}},
+
+ "scissor_car_jack": {"table": {
+  "leadscrew": ["leadscrew", "lead screw", "screw", "threaded rod", "drive screw"],
+  "scissor linkage": ["scissor linkage", "upper arm", "lower arm", "arm", "linkage", "link", "scissor arm"],
+  "handle socket": ["handle socket", "crank handle", "socket", "crank", "drive socket"],
+  "lift plate": ["lift plate", "saddle", "load plate"],
+  "base": ["base", "base plate", "foot"]}},
+
+ "scissors": {"table": {
+  "pivot": ["pivot", "pivot screw", "screw", "rivet", "pivot pin"],
+  "blade": ["blade", "cutting blade"],
+  "handle": ["handle", "grip", "bow", "finger ring", "ring"]}},
+
+ "shopping_cart": {"table": {
+  "basket": ["basket", "container", "cage", "cargo basket"],
+  "frame": ["frame", "base", "chassis"],
+  "wheels": ["wheels", "wheel", "caster", "swivel casters", "rigid casters", "castor"],
+  "handle": ["handle", "handlebar", "push handle", "push bar"]}},
+
+ "skateboard": {"table": {
+  "trucks": ["trucks", "truck", "hanger", "baseplate"],
+  "deck": ["deck", "board", "skateboard deck"],
+  "wheels": ["wheels", "wheel"],
+  "bearings": ["bearings", "bearing"],
+  "axle": ["axle"]}},
+
+ "stepladder": {"table": {
+  "steps": ["steps", "step", "tread", "rung"],
+  "feet": ["feet", "foot", "shoe", "pad", "ladder foot"],
+  "stringers": ["stringers", "stringer", "side rail", "stile", "rail", "ladder rail"],
+  "stays": ["stays", "stay", "spreader", "brace", "connecting rod", "rod"],
+  "hinge": ["hinge", "pivot"]}},
+
+ "toilet": {"table": {
+  "bowl": ["bowl", "pan", "toilet bowl", "bowl and cistern"],
+  "cistern": ["cistern", "tank", "water tank", "flush tank"],
+  "flush mechanism": ["flush mechanism", "flush handle", "flush button", "flush lever", "handle", "lever", "flush valve"],
+  "seat": ["seat", "toilet seat"],
+  "lid": ["lid", "cover", "tank lid", "seat lid"]}},
+
+ "tool_box": {"table": {
+  "container body": ["container body", "box", "body", "base", "case", "tote tray"],
+  "lid": ["lid", "cover", "top"],
+  "handle": ["handle", "carry handle", "grip"],
+  "latch": ["latch", "clasp", "catch"],
+  "hinge": ["hinge"]}},
+
+ "umbrella": {"table": {
+  "canopy": ["canopy", "fabric", "cover", "gore", "canopy panel"],
+  "ribs": ["ribs", "rib", "rib rod", "stretcher"],
+  "pole": ["pole", "central rod", "central shaft", "shaft", "rod", "mast"],
+  "handle": ["handle", "grip"],
+  "tip": ["tip", "ferrule"]}},
+
+ "washing_machine": {"table": {
+  "Drum": ["drum", "inner drum", "basket"],
+  "Outer tub": ["outer tub", "tub"],
+  "Door or Lid": ["door or lid", "door", "lid", "door panel"],
+  "Control system": ["control system", "control knob", "control panel", "controller", "knob", "button", "panel"],
+  "cabinet": ["cabinet", "body", "case", "housing"],
+  "Motor": ["motor", "electric motor"]}},
+
+ "wheelchair": {"table": {
+  "push-rims": ["push-rims", "push rim", "handrim", "hand rim", "pushrim"],
+  "brakes": ["brakes", "brake", "wheel lock", "brake lever"],
+  "frame": ["frame", "base frame", "chassis"],
+  "seat": ["seat", "seat cushion", "seat pan"],
+  "footrests": ["footrests", "footrest", "foot rest", "footplate"],
+  "armrests": ["armrests", "armrest", "arm rest"],
+  "wheels": ["wheels", "wheel", "rear wheels", "caster", "caster wheels", "caster connector", "caster forks"],
+  "backrest": ["backrest", "back rest", "back support"]}},
+
+ "wheeled_dumpster": {"table": {
+  "container body": ["container body", "container", "bin", "body", "box"],
+  "wheels": ["wheels", "wheel", "caster", "castor"],
+  "lid": ["lid", "cover", "top"],
+  "handle": ["handle", "grab handle"]}},
+
+ "wheeled_excavator": {"table": {
+  "Boom": ["boom"],
+  "Stick": ["stick", "dipper", "dipper arm", "arm"],
+  "Bucket": ["bucket"],
+  "House": ["house", "cab", "upper structure", "superstructure", "cabin"],
+  "Undercarriage": ["undercarriage", "track frame", "chassis", "lower structure"],
+  "Engine": ["engine", "motor"],
+  "Hydraulic Cylinders": ["hydraulic cylinders", "hydraulic cylinder", "cylinder", "ram"]}}
+}

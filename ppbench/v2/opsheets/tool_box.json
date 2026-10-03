@@ -1,0 +1,152 @@
+{
+ "task": "tool_box",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Storage System",
+   "function": "Organizes and holds tools and accessories securely.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "container body",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "drawers",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "tote tray",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "tote tray",
+     "to": "container body",
+     "carries": "load",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "drawers",
+     "type": "prismatic",
+     "axis": null,
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Access Mechanism",
+   "function": "Allows the user to open and close the container while securing it when closed.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "lid",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "hinge",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "latch",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "lid",
+     "to": "container body",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "lid",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Mobility System",
+   "function": "Enables the user to carry or roll the toolbox to different locations.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "handle",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "casters",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "handle",
+     "to": "container body",
+     "carries": "force",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "it is carried by the handle and opens",
+   "claims": [
+    "P4",
+    "P2"
+   ],
+   "requirements": [
+    {
+     "pred": "grip",
+     "role": "handle",
+     "claim": "P4"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "lid",
+     "type": "revolute",
+     "claim": "P2"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "it holds tools",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "container body",
+     "placement": "inside",
+     "margin_m": 0.02,
+     "min_free": 0.4,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

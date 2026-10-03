@@ -1,0 +1,1095 @@
+{
+ "system": "claude-sonnet-5",
+ "tier": "B",
+ "meta": {
+  "protocol": "v2.2",
+  "task_id": "offroad_jeep",
+  "tier": "B",
+  "condition_id": "name_only+image",
+  "rounds": 3,
+  "rounds_completed": 1,
+  "submitted_final": false,
+  "counters": {
+   "tool_calls": 51,
+   "errors": 0,
+   "check": 1,
+   "render": 1,
+   "create": 0
+  },
+  "round_counters": [
+   {
+    "tool_calls": 51,
+    "errors": 0,
+    "check": 1,
+    "render": 1,
+    "create": 0
+   }
+  ],
+  "created_parts": {},
+  "scale_mode": "metric",
+  "declares": {
+   "roles": true,
+   "materials": true,
+   "joints": true,
+   "sequence": true
+  },
+  "task_source": {
+   "file": "reference_data/benchmark_v2/core_v2.json",
+   "frozen_for": "core-set runs, harness v2.3",
+   "frozen": "2026-09-14",
+   "sha256": "442ae84645556b8876c5130c3443ee8f9c02ac701ee173c2c9c4f56c79efa486"
+  },
+  "wall_s": 429.7,
+  "pool_mesh_version": 2,
+  "transport": "shell session",
+  "checkpoint_round": 1
+ },
+ "item": {
+  "kind": "tool",
+  "system": "claude-sonnet-5",
+  "tier": "B",
+  "condition": "name_only+image",
+  "trajectory_rounds": 3,
+  "seed": 0,
+  "namespace": "core_v2.4",
+  "task": "offroad_jeep",
+  "snapshot": "task_snapshot_core.json",
+  "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+  "rounds": 1,
+  "checkpoint_round": 1,
+  "path": "results/v2/offroad_jeep/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design"
+ },
+ "notes": [
+  "no reference object for this task: reference terms are dropped, not scored 0",
+  "Level 1 recomputed under spec v3.3",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.8166666666666668,
+   "metrics": {
+    "n_parts": 21,
+    "n_components": 1,
+    "n_breaks": 0,
+    "anchored_volume_frac": 1.0,
+    "break_score": 1.0,
+    "fastening_spec_rate": 0.45,
+    "n_fastened_connections": 9,
+    "connections_needed_to_span": 20,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 0.6320680018630648,
+    "n_components_fastened_only": 12,
+    "n_interfacing_pairs": 57,
+    "connection_evidence": {
+     "interlock": 4,
+     "fastened_joint": 5,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 48,
+    "resting_contacts": [
+     [
+      "chassis",
+      "tyre_fl"
+     ],
+     [
+      "chassis",
+      "tyre_fr"
+     ],
+     [
+      "chassis",
+      "tyre_rl"
+     ],
+     [
+      "chassis",
+      "tyre_rr"
+     ],
+     [
+      "chassis",
+      "hood"
+     ],
+     [
+      "chassis",
+      "bumper_front"
+     ],
+     [
+      "chassis",
+      "grille_front"
+     ],
+     [
+      "chassis",
+      "seat"
+     ],
+     [
+      "chassis",
+      "steering_wheel"
+     ],
+     [
+      "chassis",
+      "front_frame"
+     ],
+     [
+      "chassis",
+      "rear_deck"
+     ],
+     [
+      "tyre_fl",
+      "hood"
+     ],
+     [
+      "tyre_fl",
+      "bumper_front"
+     ],
+     [
+      "tyre_fl",
+      "grille_front"
+     ],
+     [
+      "rim_fl",
+      "hood"
+     ],
+     [
+      "rim_fl",
+      "bumper_front"
+     ],
+     [
+      "rim_fl",
+      "grille_front"
+     ],
+     [
+      "tyre_fr",
+      "hood"
+     ],
+     [
+      "tyre_fr",
+      "bumper_front"
+     ],
+     [
+      "tyre_fr",
+      "grille_front"
+     ]
+    ],
+    "n_declared_joint_pairs": 9,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [],
+    "shell_only_parts": [
+     "chassis",
+     "tyre_fl",
+     "rim_fl",
+     "tyre_fr",
+     "rim_fr",
+     "tyre_rl",
+     "rim_rl",
+     "tyre_rr",
+     "rim_rr",
+     "hood",
+     "bumper_front",
+     "grille_front",
+     "seat",
+     "steering_wheel",
+     "roll_panel",
+     "front_frame",
+     "roof",
+     "cap_left",
+     "cap_right",
+     "rear_deck"
+    ]
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "collision_free_pair_rate": 1.0,
+    "n_interfacing_pairs": 57,
+    "n_colliding_pairs": 0,
+    "n_declared_joint_pairs": 9,
+    "n_colliding_joint_pairs": 0,
+    "pen_volume_frac": 0.007452258965999069,
+    "pen_volume_cm3": 1.024,
+    "worst_pair_frac_of_smaller": 0.06349206349206349,
+    "graded_penetration_score": 0.9254774103400093,
+    "voxel_res_m": 0.004,
+    "colliding_pairs": []
+   },
+   "notes": [
+    "score = 1 - n_colliding / n_interfacing_pairs over EVERY interfacing pair, declared joints included",
+    "a pair collides when the eroded-core overlap exceeds 1 cm3 and 10% of the smaller part (25% when the design declares a joint there)"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "critical_tilt_deg": 50.488307530679734,
+    "tilt_direction_deg": 180.0,
+    "support_margin_m": 0.027483558453656267,
+    "support_margin_norm": 0.746071939597206,
+    "support_area_m2": 0.0042631870275,
+    "n_support_vertices": 12,
+    "com_height_m": 0.022665118690352357,
+    "ground_z": -4.577636936176077e-09,
+    "total_weight": 0.000137408,
+    "com": [
+     -0.0001164415463437356,
+     0.0035724266418258026,
+     0.02266511411271542
+    ],
+    "ground_band_m": 0.005,
+    "z_top_m": 0.052299998700618744,
+    "push_force_ratio": 0.5254982166527487,
+    "shell_corrected_parts": [],
+    "n_parts_in_main_group": 21,
+    "n_parts": 21,
+    "stand_score": 1.0,
+    "push_score": 1.0,
+    "target_tilt_deg": 30.0,
+    "target_push_ratio": 0.2,
+    "reference_tilt_deg": null,
+    "reference_push_ratio": null,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {},
+   "notes": [
+    "no reference object: shape is not measurable for this task"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "n_joints": 9,
+    "n_moving": 5,
+    "n_scored_joints": 5,
+    "reference_n_moving": null,
+    "joint_count_ratio": null,
+    "claims_recall": 0.0,
+    "claims": [
+     {
+      "id": "K1",
+      "moving_part": "wheels",
+      "joint_type": "revolute",
+      "n_candidate_parts": 0,
+      "score": 0.0
+     }
+    ],
+    "mean_completeness": 1.0,
+    "mean_placement": 1.0,
+    "mean_mobility": 1.0,
+    "mean_effectiveness": 1.0,
+    "per_joint": [
+     {
+      "joint": "wheel_fl_axle",
+      "type": "continuous",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.006523802302959312,
+      "moving_volume_frac": 0.06753609687936657,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 11,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "wheel_fr_axle",
+      "type": "continuous",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.006523802302959312,
+      "moving_volume_frac": 0.06753609687936657,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 11,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "wheel_rl_axle",
+      "type": "continuous",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.006523802302959312,
+      "moving_volume_frac": 0.06753609687936657,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 11,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "wheel_rr_axle",
+      "type": "continuous",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.006523802302959312,
+      "moving_volume_frac": 0.06753609687936657,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 11,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "steering_joint",
+      "type": "revolute",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.0025530596106989947,
+      "moving_volume_frac": 0.020959478341872385,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 1,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     }
+    ]
+   },
+   "notes": [
+    "2.2 is the mean per-joint quality; claim recall and joint count are reported, not scored",
+    "joints are swept independently; coupled mechanisms are not sampled jointly"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.9166666666666665,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6666666666666666,
+     "qwen2.5-vl-32b": 0.7777777777777777
+    },
+    "judge_mean": 0.7222222222222221,
+    "n_judges": 2,
+    "computed_score": 1.0,
+    "computed": {
+     "granularity_score": null,
+     "consolidation_score": 1.0,
+     "joint_placement_rate": 1.0,
+     "consolidation_violations": 0,
+     "n_declared_joint_pairs": 9
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.537037037037037,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5185185185185185,
+     "qwen2.5-vl-32b": 0.5555555555555556
+    },
+    "judge_mean": 0.537037037037037,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": null
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "declared+computed",
+   "status": "pass",
+   "score": 0.75,
+   "metrics": {
+    "coverage_volume_frac": 1.0,
+    "claim_class_coverage": 0.5,
+    "claimed_class_groups": [
+     [
+      "rubber"
+     ],
+     [
+      "textile"
+     ]
+    ],
+    "design_classes": [
+     "foam",
+     "heavy_metal",
+     "plastic",
+     "rubber"
+    ],
+    "total_mass_kg": 0.30455668480000003
+   },
+   "notes": [
+    "densities are Artiverse medians; volumes of open meshes are under-counted",
+    "the population prior and the per-task load case of v2 are dropped as task-specific"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.9285714285714286,
+   "metrics": {
+    "coverage": 1.0,
+    "insertion_feasible_frac": 1.0,
+    "declared_direction_feasible_frac": 0.7619047619047619,
+    "first_infeasible_step": null,
+    "supported_prefix_frac": 0.9523809523809523,
+    "stable_prefix_frac": 0.7619047619047619,
+    "n_steps": 21
+   },
+   "notes": [
+    "insertion paths are straight translations along the declared direction or the six axes"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": false,
+    "n_requirements_disabled_by_ceiling": 0,
+    "n_requirements_declared_only": 0,
+    "declared_part_coverage": null,
+    "n_capabilities": 7,
+    "n_capabilities_zero": 7,
+    "capability_scores": {
+     "F1": 0.0,
+     "F2": 0.0,
+     "F3": 0.0,
+     "F4": 0.0,
+     "P": 0.0,
+     "H1": 0.0,
+     "H2": 0.0
+    },
+    "mean_of_means": 0.10595238095238095,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Drivetrain",
+      "claims": [
+       "F1"
+      ],
+      "score": 0.0,
+      "mean": 0.125,
+      "n_requirements": 8,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "engine",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "hood"
+         ]
+        }
+       },
+       {
+        "role": "transfer case",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "differentials",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "axles",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "wheels",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "from": "transfer case",
+        "to": "differentials",
+        "carries": "power",
+        "claim": "F1",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        }
+       },
+       {
+        "from": "differentials",
+        "to": "wheels",
+        "carries": "motion",
+        "claim": "F1",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        }
+       },
+       {
+        "role": "wheels",
+        "type": "revolute",
+        "axis": "axle centerline",
+        "claim": "K1",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        }
+       }
+      ]
+     },
+     {
+      "id": "F2",
+      "name": "Suspension",
+      "claims": [
+       "F2"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 5,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "springs",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "shock absorbers",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "axles",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "wheels",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "wheels",
+        "type": "revolute",
+        "axis": "axle centerline",
+        "claim": "K1",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        }
+       }
+      ]
+     },
+     {
+      "id": "F3",
+      "name": "Steering",
+      "claims": [
+       "F3"
+      ],
+      "score": 0.0,
+      "mean": 0.16666666666666666,
+      "n_requirements": 6,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "steering wheel",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "steering_wheel"
+         ]
+        }
+       },
+       {
+        "role": "steering column",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "linkages",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "front wheels",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "from": "steering wheel",
+        "to": "linkages",
+        "carries": "motion",
+        "claim": "F3",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 1,
+         "to_n": 0
+        }
+       },
+       {
+        "from": "linkages",
+        "to": "front wheels",
+        "carries": "motion",
+        "claim": "F3",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        }
+       }
+      ]
+     },
+     {
+      "id": "F4",
+      "name": "Propulsion",
+      "claims": [
+       "F4"
+      ],
+      "score": 0.0,
+      "mean": 0.25,
+      "n_requirements": 4,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "engine",
+        "claim": "F4",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "hood"
+         ]
+        }
+       },
+       {
+        "role": "fuel tank",
+        "claim": "F4",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "fuel pump",
+        "claim": "F4",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "from": "fuel tank",
+        "to": "engine",
+        "carries": "fluid",
+        "claim": "F4",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 1
+        }
+       }
+      ]
+     },
+     {
+      "id": "P",
+      "name": "required subsystems the claims name but no subsystem covers",
+      "claims": [
+       "P2",
+       "P3",
+       "P4",
+       "P6",
+       "P10"
+      ],
+      "score": 0.0,
+      "mean": 0.2,
+      "n_requirements": 5,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "tires",
+        "claim": "P2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 4,
+         "need": 1,
+         "parts": [
+          "tyre_fl",
+          "tyre_fr",
+          "tyre_rl",
+          "tyre_rr"
+         ]
+        }
+       },
+       {
+        "role": "suspension system",
+        "claim": "P3",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "four-wheel drive system",
+        "claim": "P4",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "steering system",
+        "claim": "P6",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "role": "brakes",
+        "claim": "P10",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "can be stopped",
+      "claims": [
+       "P10"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 2,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "brakes",
+        "claim": "P10",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        }
+       },
+       {
+        "a": "brakes",
+        "b": "wheels",
+        "max_gap_m": 0.2,
+        "claim": "P10",
+        "pred": "colocated",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "a_n": 0,
+         "b_n": 0
+        }
+       }
+      ]
+     },
+     {
+      "id": "H2",
+      "name": "rolls on a wheel at each corner",
+      "claims": [
+       "P1"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 1,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "ground_contact",
+      "requirements": [
+       {
+        "role": "wheels",
+        "min_clusters": 4,
+        "claim": "P1",
+        "pred": "ground_contact",
+        "score": 0.0,
+        "detail": {
+         "clusters": 0,
+         "need": 4,
+         "parts": []
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.11794871794871796,
+   "metrics": {
+    "declared_roles": true,
+    "n_parts": 21,
+    "required_part_coverage": 0.2,
+    "subsystem_part_coverage": 0.15384615384615385,
+    "kinematic_part_coverage": 0.0,
+    "groups": {
+     "required_parts": {
+      "n": 10,
+      "score": 0.2,
+      "missing": [
+       "wheels",
+       "suspension system",
+       "four-wheel drive system",
+       "steering system",
+       "fuel tank",
+       "transfer case",
+       "differentials",
+       "brakes"
+      ],
+      "present_but_floating": []
+     },
+     "subsystem_parts": {
+      "n": 13,
+      "score": 0.15384615384615385,
+      "missing": [
+       "axles",
+       "differentials",
+       "front wheels",
+       "fuel pump",
+       "fuel tank",
+       "linkages",
+       "shock absorbers",
+       "springs",
+       "steering column",
+       "transfer case",
+       "wheels"
+      ],
+      "present_but_floating": []
+     },
+     "kinematic_parts": {
+      "n": 2,
+      "score": 0.0,
+      "missing": [
+       "axles",
+       "wheels"
+      ],
+      "present_but_floating": []
+     }
+    },
+    "unrecognised_roles": [
+     "chassis frame",
+     "driver seat",
+     "front bumper",
+     "front grille",
+     "front roll bar / windshield frame",
+     "rear bumper",
+     "rear deck",
+     "rear roll cage panel",
+     "roll bar decorative cap",
+     "roof panel"
+    ],
+    "unrecognised_role_frac": 0.47619047619047616,
+    "subsystem_connection": 0.0,
+    "subsystem_presence_v31": 0.19583333333333333
+   },
+   "notes": [
+    "score = mean of the three claim-group coverages; a role that exists but floats off the assembly scores 0.5",
+    "matching is the task's own auto lexicon plus its authored bridges, never a hand-written per-object predicate"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.6805555555555556,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6111111111111112,
+     "qwen2.5-vl-32b": 0.75
+    },
+    "judge_mean": 0.6805555555555556,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "part_correspondence_iou": null,
+     "symmetry_match": null,
+     "symmetry_iou": 0.9320388349514563,
+     "reference_symmetry_iou": null
+    }
+   },
+   "notes": [
+    "judge only (no computed half for this task)"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [],
+  "buildable": true,
+  "overall": 0.7043132793132793,
+  "n_scored_dims": 11,
+  "gate_pending": true
+ },
+ "stamp": "1789500885.8147752|v3.1|v3.2|v3.3|v3.4.3"
+}

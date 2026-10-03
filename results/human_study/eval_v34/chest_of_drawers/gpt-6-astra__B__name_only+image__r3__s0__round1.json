@@ -1,0 +1,899 @@
+{
+ "system": "gpt-6-astra",
+ "tier": "B",
+ "meta": {
+  "protocol": "v2.2",
+  "task_id": "chest_of_drawers",
+  "tier": "B",
+  "condition_id": "name_only+image",
+  "rounds": 3,
+  "rounds_completed": 1,
+  "submitted_final": false,
+  "counters": {
+   "tool_calls": 35,
+   "errors": 0,
+   "check": 1,
+   "render": 1,
+   "create": 0
+  },
+  "round_counters": [
+   {
+    "tool_calls": 35,
+    "errors": 0,
+    "check": 1,
+    "render": 1,
+    "create": 0
+   }
+  ],
+  "created_parts": {},
+  "scale_mode": "metric",
+  "declares": {
+   "roles": true,
+   "materials": true,
+   "joints": true,
+   "sequence": true
+  },
+  "task_source": {
+   "file": "reference_data/benchmark_v2/core_v2.json",
+   "frozen_for": "core-set runs, harness v2.3",
+   "frozen": "2026-09-14",
+   "sha256": "442ae84645556b8876c5130c3443ee8f9c02ac701ee173c2c9c4f56c79efa486"
+  },
+  "wall_s": 194.5,
+  "pool_mesh_version": 2,
+  "transport": "shell session",
+  "checkpoint_round": 1
+ },
+ "item": {
+  "kind": "tool",
+  "system": "gpt-6-astra",
+  "tier": "B",
+  "condition": "name_only+image",
+  "trajectory_rounds": 3,
+  "seed": 0,
+  "namespace": "core_v2.4_clean",
+  "task": "chest_of_drawers",
+  "snapshot": "task_snapshot_core.json",
+  "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+  "rounds": 1,
+  "checkpoint_round": 1,
+  "path": "results/v2/chest_of_drawers/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design"
+ },
+ "notes": [
+  "Level 1 recomputed under spec v3.3",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 1.0,
+   "metrics": {
+    "n_parts": 12,
+    "n_components": 1,
+    "n_breaks": 0,
+    "anchored_volume_frac": 1.0,
+    "break_score": 1.0,
+    "fastening_spec_rate": 1.0,
+    "n_fastened_connections": 11,
+    "connections_needed_to_span": 11,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 1.0,
+    "n_components_fastened_only": 1,
+    "n_interfacing_pairs": 14,
+    "connection_evidence": {
+     "interlock": 0,
+     "fastened_joint": 11,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 3,
+    "resting_contacts": [
+     [
+      "drawer_1",
+      "drawer_2"
+     ],
+     [
+      "drawer_2",
+      "drawer_3"
+     ],
+     [
+      "drawer_3",
+      "drawer_4"
+     ]
+    ],
+    "n_declared_joint_pairs": 11,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [],
+    "shell_only_parts": [
+     "knob_left",
+     "knob_right"
+    ]
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "collision_free_pair_rate": 1.0,
+    "n_interfacing_pairs": 14,
+    "n_colliding_pairs": 0,
+    "n_declared_joint_pairs": 11,
+    "n_colliding_joint_pairs": 0,
+    "pen_volume_frac": 0.0,
+    "pen_volume_cm3": 0.0,
+    "worst_pair_frac_of_smaller": 0.0,
+    "graded_penetration_score": 1.0,
+    "voxel_res_m": 0.004,
+    "colliding_pairs": []
+   },
+   "notes": [
+    "score = 1 - n_colliding / n_interfacing_pairs over EVERY interfacing pair, declared joints included",
+    "a pair collides when the eroded-core overlap exceeds 1 cm3 and 10% of the smaller part (25% when the design declares a joint there)"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.944953161847572,
+   "metrics": {
+    "critical_tilt_deg": 14.613150277584818,
+    "tilt_direction_deg": 270.0,
+    "support_margin_m": 0.19060589079088483,
+    "support_margin_norm": 0.5440542216917107,
+    "support_area_m2": 0.3856009904045,
+    "n_support_vertices": 21,
+    "com_height_m": 0.731059383662502,
+    "ground_z": 4.944152642849531e-09,
+    "total_weight": 0.08038713600000001,
+    "com": [
+     -0.005071475714721318,
+     -0.02777210920911524,
+     0.7310593886066546
+    ],
+    "ground_band_m": 0.013648431251675417,
+    "z_top_m": 1.3648431301116943,
+    "push_force_ratio": 0.1396540652007072,
+    "shell_corrected_parts": [],
+    "n_parts_in_main_group": 12,
+    "n_parts": 12,
+    "stand_score": 0.9487312224141873,
+    "push_score": 0.9411751012809568,
+    "target_tilt_deg": 15.402834788550008,
+    "target_push_ratio": 0.14838266015604898,
+    "reference_tilt_deg": 15.402834788550008,
+    "reference_push_ratio": 0.14838266015604898,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "shape_normalised": {
+     "chamfer_m": 0.007143548269471925,
+     "fscore@0.01": 0.8103226668312097,
+     "fscore@0.025": 1.0
+    },
+    "best_yaw_deg": 0,
+    "front_consistent": true,
+    "shape_normalised_as_oriented": {
+     "chamfer_m": 0.007143548269471925,
+     "fscore@0.01": 0.8103226668312097,
+     "fscore@0.025": 1.0
+    },
+    "design_diagonal_m": 1.722175076132607,
+    "reference_diagonal_m": 1.7188512217087386,
+    "scale_ratio": 1.0019337650530125,
+    "size_log2_ratio_vs_reference": 0.0027871392836444587,
+    "tau_rel": [
+     0.01,
+     0.025
+    ]
+   },
+   "notes": [
+    "the reference is rescaled to the design's bounding diagonal: 2.1 is shape only",
+    "absolute size is reported as scale_ratio and size_log2_ratio_vs_reference, and is not scored"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "n_joints": 11,
+    "n_moving": 5,
+    "n_scored_joints": 5,
+    "reference_n_moving": 5,
+    "joint_count_ratio": 1.0,
+    "claims_recall": 1.0,
+    "claims": [
+     {
+      "id": "K1",
+      "moving_part": "drawer",
+      "joint_type": "prismatic",
+      "n_candidate_parts": 5,
+      "score": 1.0
+     }
+    ],
+    "mean_completeness": 1.0,
+    "mean_placement": 1.0,
+    "mean_mobility": 1.0,
+    "mean_effectiveness": 1.0,
+    "per_joint": [
+     {
+      "joint": "drawer_1_slide",
+      "type": "prismatic",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.015267641370240849,
+      "moving_volume_frac": 0.13489919581162835,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "drawer_2_slide",
+      "type": "prismatic",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.014002499023181807,
+      "moving_volume_frac": 0.1357709770876773,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "drawer_3_slide",
+      "type": "prismatic",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.014940227914135015,
+      "moving_volume_frac": 0.1347328010292592,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "drawer_4_slide",
+      "type": "prismatic",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.013832041340384306,
+      "moving_volume_frac": 0.13601698659845277,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "top_drawer_slide",
+      "type": "prismatic",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.013887505706039192,
+      "moving_volume_frac": 0.0874464292396236,
+      "welded_by_contact": false,
+      "declared_loop": false,
+      "n_moving_parts": 3,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     }
+    ]
+   },
+   "notes": [
+    "2.2 is the mean per-joint quality; claim recall and joint count are reported, not scored",
+    "joints are swept independently; coupled mechanisms are not sampled jointly"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.853030303030303,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6666666666666666,
+     "qwen2.5-vl-32b": 0.7777777777777777
+    },
+    "judge_mean": 0.7222222222222221,
+    "n_judges": 2,
+    "computed_score": 0.9090909090909092,
+    "computed": {
+     "granularity_score": 1.0,
+     "consolidation_score": 0.7272727272727273,
+     "joint_placement_rate": 1.0,
+     "consolidation_violations": 3,
+     "n_declared_joint_pairs": 11
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.7222222222222221,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6666666666666666,
+     "qwen2.5-vl-32b": 0.7777777777777777
+    },
+    "judge_mean": 0.7222222222222221,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": 0.9889318082339333
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "declared+computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "coverage_volume_frac": 1.0000000000000002,
+    "claim_class_coverage": 1.0,
+    "claimed_class_groups": [
+     [
+      "wood"
+     ]
+    ],
+    "design_classes": [
+     "light_metal",
+     "wood"
+    ],
+    "total_mass_kg": 52.841844153600015
+   },
+   "notes": [
+    "densities are Artiverse medians; volumes of open meshes are under-counted",
+    "the population prior and the per-task load case of v2 are dropped as task-specific"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "coverage": 1.0,
+    "insertion_feasible_frac": 1.0,
+    "declared_direction_feasible_frac": null,
+    "first_infeasible_step": null,
+    "supported_prefix_frac": 1.0,
+    "stable_prefix_frac": 1.0,
+    "n_steps": 12
+   },
+   "notes": [
+    "insertion paths are straight translations along the declared direction or the six axes"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": true,
+    "n_requirements_disabled_by_ceiling": 4,
+    "n_requirements_declared_only": 3,
+    "declared_part_coverage": 0.0,
+    "n_capabilities": 6,
+    "n_capabilities_zero": 0,
+    "capability_scores": {
+     "F1": 1.0,
+     "F2": 1.0,
+     "F3": 1.0,
+     "F4": 1.0,
+     "K": 1.0,
+     "H1": 1.0
+    },
+    "mean_of_means": 1.0,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Storage containment",
+      "claims": [
+       "F1"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 3,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "drawers",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 5,
+         "need": 1,
+         "parts": [
+          "drawer_1",
+          "drawer_2",
+          "drawer_3",
+          "drawer_4",
+          "top_drawer"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "cabinet frame",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "carcass"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "drawers",
+        "to": "cabinet frame",
+        "carries": "load",
+        "claim": "F1",
+        "pred": "chain",
+        "score": 1.0,
+        "detail": {
+         "from_n": 5,
+         "to_n": 1,
+         "carries": "load"
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "F2",
+      "name": "Drawer motion mechanism",
+      "claims": [
+       "F2"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 2,
+      "n_disabled": 2,
+      "n_declared_only": 1,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "drawer slides",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "drawers",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 5,
+         "need": 1,
+         "parts": [
+          "drawer_1",
+          "drawer_2",
+          "drawer_3",
+          "drawer_4",
+          "top_drawer"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "cabinet frame",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "carcass"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "drawer slides",
+        "to": "drawers",
+        "carries": "motion",
+        "claim": "F2",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 5
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "from": "drawer slides",
+        "to": "cabinet frame",
+        "carries": "motion",
+        "claim": "F2",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 1
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     },
+     {
+      "id": "F3",
+      "name": "User interface",
+      "claims": [
+       "F3"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 3,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "handles",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 6,
+         "need": 1,
+         "parts": [
+          "pull_1",
+          "pull_2",
+          "pull_3",
+          "pull_4",
+          "knob_left",
+          "knob_right"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "drawers",
+        "claim": "F3",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 5,
+         "need": 1,
+         "parts": [
+          "drawer_1",
+          "drawer_2",
+          "drawer_3",
+          "drawer_4",
+          "top_drawer"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "handles",
+        "to": "drawers",
+        "carries": "force",
+        "claim": "F3",
+        "pred": "chain",
+        "score": 1.0,
+        "detail": {
+         "from_n": 6,
+         "to_n": 5,
+         "carries": "force"
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "F4",
+      "name": "Support structure",
+      "claims": [
+       "F4"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 1,
+      "n_disabled": 1,
+      "n_declared_only": 1,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "legs",
+        "claim": "F4",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "cabinet frame",
+        "claim": "F4",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "carcass"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "legs",
+        "to": "cabinet frame",
+        "carries": "load",
+        "claim": "F4",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 1
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     },
+     {
+      "id": "K",
+      "name": "declared mechanisms move",
+      "claims": [
+       "K1"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 1,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "joint_enables",
+      "requirements": [
+       {
+        "role": "drawer",
+        "type": "prismatic",
+        "axis": "horizontal axis along the depth of the cabinet",
+        "claim": "K1",
+        "pred": "joint_enables",
+        "score": 1.0,
+        "detail": {
+         "joint": "drawer_1_slide",
+         "type": "prismatic",
+         "mobility": 1.0,
+         "type_score": 1.0,
+         "axis_score": 1.0,
+         "min_sweep": 0.5
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "drawers hold contents and open by hand",
+      "claims": [
+       "P1",
+       "P4"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 2,
+      "n_disabled": 1,
+      "n_declared_only": 0,
+      "weakest": "grip",
+      "requirements": [
+       {
+        "anchor": "drawers",
+        "placement": "inside",
+        "margin_m": 0.02,
+        "min_free": 0.6,
+        "claim": "P1",
+        "pred": "clearance",
+        "score": 0.0,
+        "detail": {
+         "error": "KeyError: 'w'"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "role": "handles",
+        "claim": "P4",
+        "pred": "grip",
+        "score": 1.0,
+        "detail": {
+         "part": "pull_1",
+         "cross_section_m": [
+          0.0242,
+          0.0392
+         ],
+         "band_m": [
+          0.015,
+          0.07
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "target": "handles",
+        "reach_m": 1.2,
+        "claim": "P4",
+        "pred": "reachable",
+        "score": 1.0,
+        "detail": {
+         "distance_m": 0.3778283520362853,
+         "reach_m": 1.2,
+         "from": "standing",
+         "target": [
+          "pull_1",
+          "pull_2",
+          "pull_3",
+          "pull_4",
+          "knob_left",
+          "knob_right"
+         ]
+        },
+        "reference_score": 1.0
+       }
+      ]
+     }
+    ]
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared",
+    "4 requirement(s) disabled: the task's own reference object does not pass them",
+    "3 part(s) the reference cannot show either are reported as declared_part_coverage, not scored"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.7000000000000001,
+   "metrics": {
+    "declared_roles": true,
+    "n_parts": 12,
+    "required_part_coverage": 0.5,
+    "subsystem_part_coverage": 0.6,
+    "kinematic_part_coverage": 1.0,
+    "groups": {
+     "required_parts": {
+      "n": 6,
+      "score": 0.5,
+      "missing": [
+       "drawer slides",
+       "legs",
+       "top surface"
+      ],
+      "present_but_floating": []
+     },
+     "subsystem_parts": {
+      "n": 5,
+      "score": 0.6,
+      "missing": [
+       "drawer slides",
+       "legs"
+      ],
+      "present_but_floating": []
+     },
+     "kinematic_parts": {
+      "n": 2,
+      "score": 1.0,
+      "missing": [],
+      "present_but_floating": []
+     }
+    },
+    "unrecognised_roles": [],
+    "unrecognised_role_frac": 0.0,
+    "subsystem_connection": 0.5,
+    "subsystem_presence_v31": 0.7916666666666666
+   },
+   "notes": [
+    "score = mean of the three claim-group coverages; a role that exists but floats off the assembly scores 0.5",
+    "matching is the task's own auto lexicon plus its authored bridges, never a hand-written per-object predicate"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.7841528154477257,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.75,
+     "qwen2.5-vl-32b": 0.6666666666666666
+    },
+    "judge_mean": 0.7083333333333333,
+    "n_judges": 2,
+    "computed_score": 0.9610649403813082,
+    "computed": {
+     "part_correspondence_iou": 0.9368661649537651,
+     "symmetry_match": 0.9852637158088513,
+     "symmetry_iou": 0.7240463433621834,
+     "reference_symmetry_iou": 0.7135315398121634
+    }
+   },
+   "notes": [
+    "0.70 judge + 0.30 computed"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [],
+  "buildable": true,
+  "overall": 0.9170298752123186,
+  "n_scored_dims": 12,
+  "gate_pending": true
+ },
+ "stamp": "1789498767.2848587|v3.1|v3.2|v3.3|v3.4.3"
+}

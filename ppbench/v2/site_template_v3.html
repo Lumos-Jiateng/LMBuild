@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Office Chair Build Trials</title>
+<meta name="description" content="PP-Bench v2: every system's office chair, scored on structure, affordance, design and realization, with a 3D viewer for parts, materials, build order and joints.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=JetBrains+Mono:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<style>
+:root{
+  --ground:#F2F4F3; --surface:#FFFFFF; --sunk:#E8ECEB; --ink:#16202A; --graphite:#5B686F; --rule:#D3DAD9;
+  --accent:#0F6E75; --accent-ink:#FFFFFF; --pass:#2F7D4E; --warn:#A86A12; --fail:#B8322A; --skip:#8C969B;
+  --heat:15,110,117; --stage:#E9EDEC; --stage-grid:#CBD3D2;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0F1417; --surface:#161D21; --sunk:#1C252A; --ink:#E3E9EA; --graphite:#94A2A7; --rule:#2B363B;
+    --accent:#5BBCC3; --accent-ink:#0F1417; --pass:#6CC28F; --warn:#E0A84A; --fail:#EE7B70; --skip:#7C888D;
+    --heat:91,188,195; --stage:#1B2328; --stage-grid:#2E393F;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0F1417; --surface:#161D21; --sunk:#1C252A; --ink:#E3E9EA; --graphite:#94A2A7; --rule:#2B363B;
+  --accent:#5BBCC3; --accent-ink:#0F1417; --pass:#6CC28F; --warn:#E0A84A; --fail:#EE7B70; --skip:#7C888D;
+  --heat:91,188,195; --stage:#1B2328; --stage-grid:#2E393F;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{background:var(--ground);color:var(--ink);font:16px/1.55 var(--body);margin:0;padding-inline:clamp(16px,3vw,40px);padding-block:0 64px}
+h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:.01em;text-wrap:balance;margin:0}
+h2{font-size:1.9rem;line-height:1.1}
+h3{font-size:1.3rem}
+.wrap{max-width:1400px;margin-inline:auto}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.label{font-family:var(--display);text-transform:uppercase;letter-spacing:.09em;font-size:.8rem;color:var(--graphite);font-weight:600}
+button,select,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sub{display:block;font-size:.76rem;color:var(--graphite);font-weight:400}
+.lede{max-width:70ch;color:var(--graphite);margin:8px 0 0}
+section{padding-block:40px 8px}
+
+header.sheet{display:grid;grid-template-columns:minmax(0,1.6fr) repeat(4,minmax(0,1fr));border:1.5px solid var(--ink);margin-block:28px 0;background:var(--surface)}
+header.sheet>div{padding:12px 16px;border-left:1px solid var(--rule)}
+header.sheet>div:first-child{border-left:0}
+header.sheet h1{font-size:clamp(2rem,4vw,3.1rem);line-height:.95;font-weight:700}
+header.sheet .v{font-family:var(--mono);font-size:.9rem;margin-top:4px}
+nav.tabs{position:sticky;top:0;z-index:20;background:var(--ground);display:flex;gap:4px;flex-wrap:wrap;align-items:center;padding-block:10px;border-bottom:1px solid var(--rule)}
+nav.tabs a{font-family:var(--display);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:.9rem;text-decoration:none;color:var(--graphite);padding:6px 10px;border-radius:3px}
+nav.tabs a:hover{color:var(--ink);background:var(--sunk)}
+.theme{margin-left:auto;border:1px solid var(--rule);background:var(--surface);border-radius:3px;padding:4px 10px;cursor:pointer;font-size:.85rem}
+
+/* segmented controls */
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:4px;overflow:hidden;background:var(--surface)}
+.seg button{border:0;background:transparent;padding:5px 12px;cursor:pointer;font-family:var(--display);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.85rem;color:var(--graphite)}
+.seg button+button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.controls{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:14px}
+
+/* task */
+.task{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:28px;margin-top:20px}
+.photo{margin:0}
+.photo img{width:100%;display:block;border:1px solid var(--rule)}
+.photo figcaption{font-size:.84rem;color:var(--graphite);margin-top:6px}
+.prompt{font-family:var(--mono);font-size:.95rem;background:var(--surface);border:1px solid var(--rule);padding:10px 12px;margin:8px 0 16px}
+.claims{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 26px}
+.claims ol{list-style:none;padding:0;margin:6px 0 0;display:grid;gap:4px}
+.claims li{display:grid;grid-template-columns:2.4rem 1fr;gap:6px;font-size:.92rem;line-height:1.35}
+.cid{font-family:var(--mono);font-size:.8rem;color:var(--accent);padding-top:2px}
+
+/* viewer */
+.viewer{display:grid;grid-template-columns:260px minmax(0,1fr) 320px;gap:0;margin-top:18px;border:1px solid var(--rule);background:var(--surface);min-height:680px}
+.picker{border-right:1px solid var(--rule);overflow-y:auto;max-height:760px}
+.picker h4{font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--graphite);padding:10px 12px 4px;position:sticky;top:0;background:var(--surface)}
+.picker button{display:block;width:100%;text-align:left;border:0;background:transparent;padding:6px 12px;cursor:pointer;border-left:3px solid transparent}
+.picker button:hover{background:var(--sunk)}
+.picker button[aria-current="true"]{border-left-color:var(--accent);background:var(--sunk)}
+.picker .nm{font-weight:600;font-size:.92rem}
+.stagewrap{position:relative;display:grid;grid-template-rows:auto 1fr auto}
+.stagebar{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid var(--rule)}
+#stage{position:relative;background:var(--stage);min-height:560px}
+#stage canvas{display:block;width:100%;height:100%}
+.stagemsg{position:absolute;inset:0;display:grid;place-items:center;color:var(--graphite);font-size:.95rem;pointer-events:none;text-align:center;padding:20px}
+.hint{font-size:.78rem;color:var(--graphite);padding:6px 12px;border-top:1px solid var(--rule)}
+.side{border-left:1px solid var(--rule);padding:12px 14px;overflow-y:auto;max-height:760px;display:grid;gap:14px;align-content:start}
+.side h4{font-size:1.05rem}
+.legend-list{list-style:none;padding:0;margin:4px 0 0;display:grid;gap:3px;font-size:.86rem}
+.legend-list li{display:grid;grid-template-columns:14px 1fr auto;gap:8px;align-items:center}
+.sw{width:14px;height:14px;border-radius:2px;border:1px solid rgba(0,0,0,.15)}
+.kv{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:.86rem}
+.kv dt{color:var(--graphite)}
+.kv dd{margin:0;font-family:var(--mono);font-variant-numeric:tabular-nums;text-align:right}
+.joint{border:1px solid var(--rule);border-radius:3px;padding:6px 8px;display:grid;gap:4px;cursor:pointer;background:var(--ground)}
+.joint[aria-current="true"]{border-color:var(--accent);box-shadow:inset 3px 0 0 var(--accent)}
+.joint .t{display:flex;justify-content:space-between;gap:8px;font-size:.86rem}
+.joint input[type=range]{width:100%}
+.btn{border:1px solid var(--rule);background:var(--surface);border-radius:3px;padding:5px 10px;cursor:pointer;font-size:.86rem}
+.btn:hover{border-color:var(--accent)}
+.stepnow{font-size:.9rem;line-height:1.35}
+.empty{color:var(--graphite);font-size:.88rem}
+
+.renders{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:14px}
+.renders figure{margin:0;background:var(--surface);border:1px solid var(--rule)}
+.renders img{width:100%;display:block;cursor:zoom-in;aspect-ratio:1;object-fit:cover}
+.renders figcaption{font-size:.78rem;color:var(--graphite);padding:4px 8px}
+dialog.zoom{border:0;padding:0;background:transparent;max-width:min(96vw,1100px)}
+dialog.zoom::backdrop{background:rgba(8,12,14,.8)}
+dialog.zoom img{width:100%;display:block}
+
+/* scoreboard */
+.board-wrap{overflow-x:auto;margin-top:14px;border:1px solid var(--rule);background:var(--surface)}
+table.board{border-collapse:collapse;width:100%;min-width:1000px;font-size:.84rem}
+.board th,.board td{padding:6px 5px;border-bottom:1px solid var(--rule);text-align:center;white-space:nowrap}
+.board thead th{background:var(--surface);vertical-align:bottom;font-weight:600}
+.board thead .code{font-family:var(--display);font-size:1.08rem;display:block}
+.board thead .nm{font-size:.7rem;color:var(--graphite);font-weight:400;display:block}
+.board thead .depth{font-size:.64rem;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;display:block}
+.board .lvl{border-left:1.5px solid var(--rule)}
+.board td.sys{text-align:left;min-width:180px;white-space:normal}
+.board tr.group td{background:var(--sunk);text-align:left;font-family:var(--display);text-transform:uppercase;letter-spacing:.09em;font-size:.8rem;color:var(--graphite);font-weight:600}
+.board tbody tr.row{cursor:pointer}
+.board tbody tr.row:hover td.sys .nm2{color:var(--accent)}
+.nm2{font-weight:600}
+.cell{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.cell .sd{color:var(--graphite);font-size:.68rem}
+.mark{display:inline-block;width:.52rem;height:.52rem;border-radius:50%;margin-right:4px;vertical-align:1px}
+.m-pass{background:var(--pass)}
+.m-degraded{box-shadow:inset 0 0 0 2px var(--warn)}
+.m-fail{background:var(--fail);border-radius:1px;transform:rotate(45deg)}
+.m-skipped,.m-not_built{box-shadow:inset 0 0 0 1px var(--skip)}
+.na{color:var(--skip)}
+.tri{display:inline-flex;gap:2px}
+.tri span{font-size:.72rem;padding:1px 3px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.84rem;color:var(--graphite);margin-top:10px}
+
+/* rounds */
+.rounds{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;margin-top:16px}
+.rcard{background:var(--surface);border:1px solid var(--rule);padding:10px 12px}
+.rcard h4{font-size:1.05rem;display:flex;justify-content:space-between;gap:8px}
+.rthumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:8px 0}
+.rthumbs figure{margin:0;position:relative}
+.rthumbs img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--sunk);cursor:pointer}
+.rthumbs figcaption{position:absolute;left:4px;top:2px;font-family:var(--mono);font-size:.7rem;background:var(--surface);padding:0 4px;border-radius:2px}
+.rthumbs .none{aspect-ratio:1;display:grid;place-items:center;background:var(--sunk);color:var(--graphite);font-size:.75rem}
+svg.slope text{fill:var(--graphite);font-family:var(--mono);font-size:10px}
+svg.slope .grid{stroke:var(--rule)}
+
+table.cm{border-collapse:collapse;font-size:.85rem;min-width:900px;width:100%}
+.cm th,.cm td{border-bottom:1px solid var(--rule);padding:6px 5px;text-align:center}
+.cm td.sys{text-align:left;white-space:nowrap}
+.cm th{font-family:var(--mono);font-weight:600;font-size:.78rem}
+.cm th .t{display:block;font-family:var(--body);font-weight:400;color:var(--graphite);font-size:.7rem;white-space:normal;max-width:9ch;margin-inline:auto;line-height:1.15}
+.dot{display:inline-block;width:20px;height:20px;border-radius:50%;border:1px solid var(--rule);vertical-align:middle}
+.scroll{overflow-x:auto;margin-top:16px;border:1px solid var(--rule);background:var(--surface)}
+table.method{border-collapse:collapse;width:100%;min-width:900px;font-size:.88rem}
+.method th,.method td{border-bottom:1px solid var(--rule);padding:9px 10px;text-align:left;vertical-align:top}
+.method th{font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--graphite)}
+.method td:first-child{font-family:var(--display);font-size:1.05rem;white-space:nowrap}
+.pool img{width:100%;display:block;border:1px solid var(--rule);margin-top:14px}
+details summary{cursor:pointer;font-family:var(--display);font-weight:600;letter-spacing:.04em;margin-top:16px}
+@media (max-width:1100px){
+  .viewer{grid-template-columns:1fr}
+  .picker{max-height:220px;border-right:0;border-bottom:1px solid var(--rule)}
+  .side{border-left:0;border-top:1px solid var(--rule);max-height:none}
+  .renders{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  header.sheet{grid-template-columns:1fr 1fr}
+  header.sheet>div:first-child{grid-column:1/-1}
+  header.sheet>div{border-left:0;border-top:1px solid var(--rule)}
+  .task,.claims{grid-template-columns:1fr}
+  #stage{min-height:380px}
+}
+.evsheets{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.evsheets figure,.claimbox figure{margin:0}
+.evimg{width:100%;height:auto;cursor:zoom-in;border:1px solid var(--line, #ddd);border-radius:4px;display:block}
+.claimbox{border-top:1px solid var(--line, #ddd);padding:6px 0}
+.claimbox summary{cursor:pointer}
+.judgeans{display:flex;flex-direction:column;gap:2px;margin:6px 0 0 10px}
+figcaption{font-size:12px}
+.catsub{display:block;margin:8px 0 2px;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+tr.catrow td{font-size:11px;text-transform:uppercase;letter-spacing:.04em;padding-top:10px;color:var(--muted, #667)}
+.speccard{border-top:1px solid var(--line, #ddd);padding:6px 0}
+.speccard summary{cursor:pointer}
+.specsec{margin:6px 0 0 14px}
+.specsec ol,.specsec ul{margin:2px 0 0 18px;padding:0}
+code.formula{display:block;white-space:pre-wrap;font-size:12px;padding:4px 6px;background:rgba(127,127,127,.08);border-radius:4px}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<header class="sheet" aria-label="Title block">
+  <div><span class="label">PP-Bench v2 · results sheet</span><h1>Office Chair Build Trials</h1></div>
+  <div><span class="label">Task</span><div class="v" id="tb-task"></div></div>
+  <div><span class="label">Condition</span><div class="v">name only + image W2</div></div>
+  <div><span class="label">Designs</span><div class="v" id="tb-arms"></div></div>
+  <div><span class="label">Protocol</span><div class="v">v2.2 + v2.4 · rounds 1 / 2 / 3</div></div>
+</header>
+<nav class="tabs" aria-label="Sections">
+  <a href="#task">Task</a><a href="#viewer">Viewer</a><a href="#board">Scoreboard</a><a href="#rounds">Rounds</a><a href="#claims">Claims</a><a href="#method">Method</a><a href="#caveats">Caveats</a>
+  <button class="theme" id="theme" type="button">Theme: system</button>
+</nav>
+
+<section id="task">
+  <h2>What every system was asked to build</h2>
+  <p class="lede">One core-set object with a reference assembly, cited real-world claims and annotated joints. Every system got the prompt and the in-the-wild photo. Tool-using models also got the 57-part mixed pool (Tier A), or the pool plus part creation (Tier B). GPT-5.6 Sol and GPT-6 Astra use one cumulative trajectory whose second and third designs revise the prior-round result.</p>
+  <div class="task">
+    <figure class="photo"><img src="img/condition.jpg" alt="Condition image W2: a black quilted swivel office chair with armrests and a five-star base, on a wooden floor"><figcaption>Condition image W2 · generated from the reference render, fidelity check passed</figcaption></figure>
+    <div>
+      <span class="label">Prompt given</span>
+      <div class="prompt" id="prompt"></div>
+      <div class="claims" id="claims"></div>
+    </div>
+  </div>
+</section>
+
+<section id="viewer">
+  <h2>Design viewer</h2>
+  <p class="lede">Pick a design, then choose what to see on it: its parts by role, its declared materials, its build order step by step, its joints moving through their declared ranges, or what the evaluator flagged. Drag to orbit, scroll to zoom.</p>
+  <div class="controls">
+    <span class="label">Rounds</span><div class="seg" id="v-rounds"></div>
+  </div>
+  <div class="viewer">
+    <div class="picker" id="picker" aria-label="Designs"></div>
+    <div class="stagewrap">
+      <div class="stagebar">
+        <div class="seg" id="modes" role="group" aria-label="View mode"></div>
+        <span class="sub" id="stage-title"></span>
+      </div>
+      <div id="stage"><div class="stagemsg" id="stage-msg">Loading the viewer…</div></div>
+      <div class="hint" id="stage-hint">Grey plane: the ground, z = 0. Front of the chair faces the camera's lower left in the default view.</div>
+    </div>
+    <aside class="side" id="side"></aside>
+  </div>
+  <div class="renders" id="renders"></div>
+</section>
+
+<section id="board">
+  <h2>Scoreboard</h2>
+  <p class="lede">Graded scores in [0, 1], mean over seeds (± spread); the mark is the worst status across seeds. Tiers and round counts are never averaged together. Click a row to open that design in the viewer.</p>
+  <div class="controls"><span class="label">Rounds</span><div class="seg" id="b-rounds"></div></div>
+  <div class="legend" id="legend"></div>
+  <div class="board-wrap"><table class="board" id="board-table"></table></div>
+</section>
+
+<section id="rounds">
+  <h2>What review rounds change</h2>
+  <p class="lede">The same system and tier with 1, 2 and 3 rounds. A round ends with submit; before the next one the model sees a check of its design and four renders. Lines connect the mean score per round for four dimensions; thumbnails are seed 0.</p>
+  <div class="rounds" id="round-cards"></div>
+</section>
+
+<section id="claims">
+  <h2>Claim coverage</h2>
+  <p class="lede">The rule-based score per claim, mean over seeds, at the selected round count. Required parts P by role coverage, attributes A by computed proxies, subsystems F as the mean of presence, placement and connection, kinematics K by joint matching.</p>
+  <div class="controls"><span class="label">Rounds</span><div class="seg" id="c-rounds"></div></div>
+  <div class="scroll"><table class="cm" id="cm"></table></div>
+</section>
+
+<section id="method">
+  <h2>How each number is computed</h2>
+  <p class="lede">Rule-based first, on the 3D structure. Every design is voxelised once (4 mm); the rule-based dimensions read that grid, the declared roles, materials, joints and sequence, the task's claims (P, A, F, K), the reference chair, and 117 other Artiverse swivel chairs. No rendered image enters a rule-based score. Where a rule cannot decide what a structure means (does this part look like a lever, does this joint realise a slide), VLM columns judge evidence rendered from the same 3D design and must cite labelled parts.</p>
+  <div class="scroll"><table class="method" id="method-table"></table></div>
+  <h3 id="spec">Evaluator specification, metric by metric</h3>
+  <p class="lede">Each card is derived from the evaluator's code (file:line references) and says exactly what is read, how every sub-metric is computed, how they combine, when a status is set, which constants are used, what the golden tests cover and what is known to be imperfect.</p>
+  <div id="spec-cards"></div>
+</section>
+
+<section id="caveats">
+  <h2>Caveats</h2>
+  <ul class="lede" id="caveat-list"></ul>
+  <details class="pool"><summary>The 57-part pool the tool arms chose from</summary><img src="img/pool.jpg" alt="Thumbnails of all 57 catalog parts with ids, names and sizes" loading="lazy"></details>
+</section>
+</div>
+<dialog class="zoom" id="zoom"><img id="zoom-img" alt=""></dialog>
+
+<script>
+const DATA = /*__DATA__*/null;
+const DIMS = [
+  {k:"1.1", n:"Integrity", d:"computed", L:1},{k:"1.2", n:"Stability", d:"computed", L:1},
+  {k:"2.1", n:"Geometry", d:"computed", L:2},{k:"2.2", n:"Kinematics", d:"computed", L:2},
+  {k:"3.1", n:"Decomposition", d:"computed", L:3},{k:"3.2", n:"Aesthetics", d:"comp.+adjud.", L:3},
+  {k:"4.1", n:"Material", d:"declared+comp.", L:4},{k:"4.2", n:"Assembly", d:"computed", L:4},
+  {k:"4.3", n:"Function", d:"pres.·place·conn", L:4},
+];
+const ARMS = [["A","Tier A · catalog only"],["B","Tier B · catalog + creation"],["extA","External · Tier A-like · assemble from a fixed part library"],["extB","External · Tier B-like · synthesise new part geometry"],["ref","Reference object · ceiling"]];
+// categories: tool arms by how the model is accessed; external systems by what the method is, and whether it assembles from a
+// fixed library (Tier A-like) or synthesises new part geometry (Tier B-like), which is how the tiers are defined for tool arms
+const CATEGORY = s => {
+  if (s.includes("+")) return "Generator + annotator agent (declarations added on fixed geometry)";
+  if (s.startsWith("claude-") || s.startsWith("gpt-5.6") || s.startsWith("gpt-6")) return "Frontier API agents";
+  if (["qwen3-4b-instruct-2507","gpt-oss-120b"].includes(s)) return "Open text-only agents";
+  if (/^(qwen3-vl|qwen3\.5|internvl|gemma|minicpm|glm|mistral)/.test(s)) return "Open vision-language agents";
+  if (/^(brickgpt|legoace|bricknet)/.test(s)) return "Brick generators (standard LEGO bricks)";
+  if (s.startsWith("infinite-mobility")) return "Procedural articulated generators";
+  if (s.startsWith("particulate-")) return "3D generator + articulation predictor (Particulate)";
+  if (s.startsWith("physx-anything")) return "Image → articulated physical asset";
+  if (/^(partcrafter|partpacker|cubepart)/.test(s)) return "Part-aware 3D generators";
+  return "Other";
+};
+const EXT_TIER = s => /^(brickgpt|legoace|bricknet|infinite-mobility)/.test(s.split("+")[0]) ? "extA" : "extB";
+const STATUS_RANK = {fail:4, degraded:3, pass:2, skipped:1, not_built:0};
+const PRETTY = {"claude-fable-5.1":"Claude Fable 5.1","claude-opus-5":"Claude Opus 5","claude-sonnet-5":"Claude Sonnet 5","claude-haiku-4.5":"Claude Haiku 4.5",
+  "gemma-4-31b-it":"Gemma 4 31B","qwen3-vl-8b-instruct":"Qwen3-VL 8B","qwen3-vl-32b-instruct":"Qwen3-VL 32B","qwen3.5-27b":"Qwen3.5 27B",
+  "internvl3.5-8b":"InternVL3.5 8B","qwen3-4b-instruct-2507":"Qwen3 4B (text only)","brickgpt":"BrickGPT","bricknet-0.6b":"BrickNet 0.6B","legoace":"LegoACE",
+  "partcrafter_np15":"PartCrafter (15 parts)","partcrafter_np8":"PartCrafter (8 parts)","partpacker":"PartPacker","cubepart_short_full":"Cube3D + CubePart",
+  "cubepart_short_short":"Cube3D + CubePart (6-part schema)","physx-anything":"PhysX-Anything","reference":"Reference (Artiverse)",
+  "qwen3-vl-30b-a3b-instruct":"Qwen3-VL 30B-A3B","qwen3.5-35b-a3b":"Qwen3.5 35B-A3B","internvl3.5-38b":"InternVL3.5 38B","gpt-oss-120b":"gpt-oss 120B (text only)",
+  "mistral-small-3.2-24b":"Mistral Small 3.2 24B","minicpm-v-4.5":"MiniCPM-V 4.5","glm-4.6v-flash":"GLM-4.6V Flash","infinite-mobility":"Infinite-Mobility",
+  "particulate-cube3d":"Cube3D → Particulate","particulate-partcrafter":"PartCrafter (15) → Particulate","particulate-partcrafter-np8":"PartCrafter (8) → Particulate","particulate-partpacker":"PartPacker → Particulate","gpt-5.6-sol":"GPT-5.6 Sol","gpt-6-astra":"GPT-6 Astra"};
+const ROLE_COLORS = {"seat":"#3373C7","backrest":"#5C9EDB","armrest":"#8C66C7","gas lift cylinder":"#CC8529","swivel mechanism":"#DBB338","base":"#4D545E","caster":"#26948A","caster wheel":"#1F665C","lever":"#D14D4D"};
+const MAT_COLORS = {"plastic":"#E0E3E6","heavy_metal":"#7C8791","light_metal":"#B9C3CC","wood":"#A9774A","foam":"#E8A87C","textile":"#6D5A8F","rubber":"#2B2B2B","glass":"#9FD4E0","ceramic":"#F2EFE6"};
+const UNKNOWN = "#9EA3A8";
+
+const $ = s => document.querySelector(s);
+const el = (t, a={}, ...kids) => { const e=document.createElement(t); for (const [k,v] of Object.entries(a)) { if(k==="class") e.className=v; else if(k==="text") e.textContent=v; else e.setAttribute(k,v);} for (const c of kids) if(c!=null) e.append(c); return e; };
+const fmt = (v, d=2) => v==null || Number.isNaN(v) ? "—" : (typeof v==="number" ? (Math.abs(v)>=1000? v.toFixed(0) : v.toFixed(d)) : String(v));
+const mean = a => a.length ? a.reduce((s,x)=>s+x,0)/a.length : null;
+const sd = a => a.length>1 ? Math.sqrt(mean(a.map(x=>(x-mean(a))**2))) : null;
+const get = (o, path) => path.split(".").reduce((x,k)=> x==null? null : x[k], o);
+const cssVar = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+(function(){
+  const b=$("#theme"); const st=["system","light","dark"]; let i=0;
+  try { const s=localStorage.getItem("oct-theme"); if(st.includes(s)) i=st.indexOf(s); } catch(e){}
+  const apply=()=>{ const s=st[i]; if(s==="system") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", s); b.textContent="Theme: "+s; try{localStorage.setItem("oct-theme", s);}catch(e){} window.dispatchEvent(new Event("themechange")); };
+  b.addEventListener("click", ()=>{ i=(i+1)%3; apply(); }); apply();
+})();
+
+// ---------------------------------------------------------------- groups
+const recs = Object.entries(DATA.records).map(([key,r])=>({key, ...r}));
+const roundsOf = r => r.item.rounds || null;
+const groups = {};
+for (const r of recs) {
+  const it = r.item; const tier = it.tier === "external" ? EXT_TIER(it.system) : it.tier;
+  const gk = [tier, it.system, it.rounds||0].join("|");
+  (groups[gk] ||= {key: gk, tier, system: it.system, rounds: it.rounds||0, category: CATEGORY(it.system), seeds: []}).seeds.push(r);
+}
+for (const g of Object.values(groups)) g.seeds.sort((a,b)=>a.item.seed-b.item.seed);
+const ROUNDS_AVAILABLE = [...new Set(recs.map(roundsOf).filter(Boolean))].sort();
+let ROUND = ROUNDS_AVAILABLE.includes(2) ? 2 : ROUNDS_AVAILABLE[0];
+const visibleGroups = () => Object.values(groups).filter(g => g.rounds===0 || g.rounds===ROUND);
+const pretty = s => s.includes("+") ? `${PRETTY[s.split("+")[0]] || s.split("+")[0]} + ${PRETTY[s.split("+")[1]] || s.split("+")[1]} (annotator)` : (PRETTY[s] || s);
+function dimAgg(g, k) {
+  const ss = g.seeds.map(r=>r.dims[k]).filter(Boolean); if (!ss.length) return null;
+  const scores = ss.map(d=>d.score).filter(v=>v!=null);
+  return {mean: mean(scores), sd: sd(scores), status: ss.map(d=>d.status).sort((a,b)=>STATUS_RANK[b]-STATUS_RANK[a])[0]};
+}
+const heat = v => v==null ? "transparent" : `rgba(${cssVar("--heat")},${(0.06 + 0.5*v).toFixed(3)})`;
+const markEl = s => el("span",{class:"mark m-"+s, title:s.replace("_"," ")});
+const roundSegs = [];
+function makeRoundSeg(host){
+  const box = $(host);
+  for (const r of ROUNDS_AVAILABLE) {
+    const b = el("button",{type:"button","aria-pressed": String(r===ROUND), "data-r": r, text: `r = ${r}`});
+    b.addEventListener("click", ()=>setRound(r)); box.append(b);
+  }
+  roundSegs.push(box);
+}
+function setRound(r){
+  ROUND = r;
+  for (const s of roundSegs) s.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed", String(+b.dataset.r===r)));
+  buildBoard(); buildPicker(); buildClaims();
+  const cur = groups[VIEW.group];
+  if (cur && cur.rounds && cur.rounds !== r) {
+    const alt = Object.values(groups).find(g => g.tier===cur.tier && g.system===cur.system && g.rounds===r);
+    if (alt) openGroup(alt.key, VIEW.seed);
+  }
+}
+
+// ---------------------------------------------------------------- task
+(function(){
+  const T = DATA.task;
+  $("#tb-task").textContent = T.id;
+  $("#tb-arms").textContent = `${new Set(recs.map(r=>r.item.system)).size} systems · ${recs.length} designs`;
+  $("#prompt").textContent = T.condition.text;
+  const blocks = [["Required parts", T.required_parts.map(p=>[p.id, `${p.part} — ${p.why}`])],
+    ["Attributes", T.attributes.map(a=>[a.id, a.statement])],
+    ["Functional subsystems", T.subsystems.map(f=>[f.id, `${f.subsystem}: ${f.parts.join(", ")}`])],
+    ["Kinematics", T.kinematics.map(k=>[k.id, `${k.moving_part} ${k.motion} relative to ${k.relative_to} (${k.joint_type}, ${k.axis})`])]];
+  for (const [title, rows] of blocks) {
+    const ol = el("ol"); for (const [id, t] of rows) ol.append(el("li",{}, el("span",{class:"cid", text:id}), el("span",{text:t})));
+    $("#claims").append(el("div",{}, el("span",{class:"label", text:title}), ol));
+  }
+})();
+
+// ---------------------------------------------------------------- 3D viewer
+const VIEW = {group:null, seed:0, key:null, mode:"structure", design:null, jointSel:null, step:null, playing:false};
+const MODES = [["structure","Structure"],["material","Material"],["sequence","Build order"],["kinematics","Kinematics"],["verdict","Verdict"],["evidence","VLM checks"]];
+let three = null;
+
+function initThree(){
+  const host = $("#stage");
+  if (!window.THREE || !THREE.OrbitControls) { $("#stage-msg").textContent = "The 3D viewer could not load (three.js blocked); the renders below still show every design."; return null; }
+  const renderer = new THREE.WebGLRenderer({antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  host.append(renderer.domElement);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(35, 1, 0.01, 50);
+  camera.up.set(0,0,1);
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a9290, 0.85));
+  const sun = new THREE.DirectionalLight(0xffffff, 0.75); sun.position.set(-1.2,-2,3); scene.add(sun);
+  const fill = new THREE.DirectionalLight(0xffffff, 0.3); fill.position.set(2,1.5,1); scene.add(fill);
+  const grid = new THREE.GridHelper(3, 30); grid.rotation.x = Math.PI/2; scene.add(grid);
+  const root = new THREE.Group(); scene.add(root);
+  const overlay = new THREE.Group(); scene.add(overlay);
+  function resize(){ const w = host.clientWidth, h = Math.max(host.clientHeight, 380); renderer.setSize(w, h, false); camera.aspect = w/h; camera.updateProjectionMatrix(); }
+  new ResizeObserver(resize).observe(host); resize();
+  function themeColors(){ scene.background = new THREE.Color(cssVar("--stage")); grid.material.color = new THREE.Color(cssVar("--stage-grid")); grid.material.opacity = 0.9; }
+  window.addEventListener("themechange", themeColors); themeColors();
+  let t0 = performance.now();
+  function tick(now){ requestAnimationFrame(tick); controls.update(); animate((now - t0)/1000); renderer.render(scene, camera); }
+  requestAnimationFrame(tick);
+  $("#stage-msg").textContent = "";
+  return {renderer, scene, camera, controls, root, overlay};
+}
+
+// assets come in one pack per system/tier/round group (viewer data, renders, evidence sheets), loaded on first use
+const PACKS = {};
+function loadPack(gid){
+  if (!gid) return Promise.reject(new Error("no pack"));
+  if (PACKS[gid]) return PACKS[gid];
+  PACKS[gid] = new Promise((resolve, reject) => {
+    if (window.__PACKS && window.__PACKS[gid]) return resolve(window.__PACKS[gid]);
+    const s = el("script",{src:`packs/${encodeURIComponent(gid)}.js`});
+    s.onload = () => (window.__PACKS && window.__PACKS[gid]) ? resolve(window.__PACKS[gid]) : reject(new Error("no data"));
+    s.onerror = () => { delete PACKS[gid]; reject(new Error("missing")); };
+    document.head.append(s);
+  });
+  return PACKS[gid];
+}
+async function loadDesign(key){
+  const P = await loadPack((DATA.assets[key]||{}).pack);
+  if (!P.designs[key]) throw new Error("no data");
+  return P.designs[key];
+}
+function b64(str, Type){ const bin = atob(str); const buf = new ArrayBuffer(bin.length); const u8 = new Uint8Array(buf); for (let i=0;i<bin.length;i++) u8[i]=bin.charCodeAt(i); return new Type(buf); }
+
+function buildMeshes(D){
+  const {root, overlay} = three;
+  root.clear(); overlay.clear();
+  const meshes = {};
+  for (const p of D.parts) {
+    const q = b64(p.pos, Uint16Array); const pos = new Float32Array(q.length);
+    for (let i=0;i<q.length;i+=3) for (let a=0;a<3;a++) pos[i+a] = D.lo[a] + q[i+a]/65535*D.span[a];
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+    g.setIndex(new THREE.BufferAttribute(b64(p.idx, p.idx32 ? Uint32Array : Uint16Array), 1));
+    g.computeVertexNormals();
+    const mat = new THREE.MeshStandardMaterial({color:0x9ea3a8, roughness:0.62, metalness:0.05, side:THREE.DoubleSide, transparent:true});
+    const m = new THREE.Mesh(g, mat); m.userData.part = p; m.matrixAutoUpdate = false;
+    root.add(m); meshes[p.id] = m;
+  }
+  D._meshes = meshes;
+  // frame
+  const c = [D.lo[0]+D.span[0]/2, D.lo[1]+D.span[1]/2, D.lo[2]+D.span[2]/2];
+  const r = Math.hypot(...D.span)/2 || 0.5;
+  three.controls.target.set(...c);
+  const dist = r / Math.sin(THREE.MathUtils.degToRad(17.5)) * 1.05;
+  const az = THREE.MathUtils.degToRad(-60), el_ = THREE.MathUtils.degToRad(22);
+  three.camera.position.set(c[0]+dist*Math.cos(el_)*Math.cos(az), c[1]+dist*Math.cos(el_)*Math.sin(az), c[2]+dist*Math.sin(el_));
+  three.camera.near = r/100; three.camera.far = r*50; three.camera.updateProjectionMatrix();
+  // joint defaults
+  D._q = {}; for (const j of D.joints) D._q[j.id] = 0;
+}
+
+function jointRange(j){
+  if (j.type==="continuous" || ((j.type==="revolute"||j.type==="cylindrical") && !j.limits)) return [-Math.PI, Math.PI, "rad"];
+  if (j.type==="revolute") return [j.limits[0], j.limits[1], "rad"];
+  if (j.type==="prismatic" || j.type==="cylindrical") return [j.limits ? j.limits[0] : 0, j.limits ? j.limits[1] : 0, "m"];
+  return [0,0,""];
+}
+function applyPose(D){
+  // outer joints first: a part's pose = T_outer ∘ ... ∘ T_inner applied to the rest geometry
+  const M = {};
+  for (const p of D.parts) M[p.id] = new THREE.Matrix4();
+  for (const j of D.joints) {
+    if (j.type==="fixed" || !j.axis || !j.origin) continue;
+    const q = D._q[j.id] || 0; if (!q) continue;
+    const o = new THREE.Vector3(...j.origin), ax = new THREE.Vector3(...j.axis).normalize();
+    const T = new THREE.Matrix4();
+    const lin = j.type==="prismatic" || (j.type==="cylindrical" && Math.abs(q) < 1.5 && jointRange(j)[2]==="m");
+    if (lin) T.makeTranslation(ax.x*q, ax.y*q, ax.z*q);
+    else { const R = new THREE.Matrix4().makeRotationAxis(ax, q); T.makeTranslation(o.x,o.y,o.z).multiply(R).multiply(new THREE.Matrix4().makeTranslation(-o.x,-o.y,-o.z)); }
+    for (const id of j.moving) if (M[id]) M[id].multiply(T);   // outer joints come first in D.joints, so later (inner) ones compose on the right
+  }
+  // three.js Matrix4.multiply is M = M * T; for outer-first order that is T_outer * T_inner, as required
+  for (const [id, m] of Object.entries(D._meshes)) { m.matrix.copy(M[id]); m.matrixWorldNeedsUpdate = true; }
+}
+
+function color(hex){ return new THREE.Color(hex); }
+function paint(){
+  const D = VIEW.design; if (!D || !three) return;
+  const {overlay} = three; overlay.clear();
+  const M = D._meshes;
+  const floating = new Set(D.verdict.floating || []);
+  const coll = new Set((D.verdict.colliding||[]).flatMap(c=>[c[0],c[1]]));
+  const selJ = D.joints.find(j=>j.id===VIEW.jointSel);
+  const moving = new Set(selJ ? selJ.moving : []);
+  const seqIdx = {}; (D.sequence||[]).forEach((s,i)=>seqIdx[s.part]=i);
+  const hasRoles = D.parts.some(p=>p.role);
+  D.parts.forEach((p, i) => {
+    const m = M[p.id]; const mat = m.material; m.visible = true; mat.opacity = 1; mat.emissive = new THREE.Color(0x000000);
+    let c = UNKNOWN;
+    if (VIEW.mode==="structure" || VIEW.mode==="evidence") c = hasRoles ? (ROLE_COLORS[p.canon] || UNKNOWN) : `hsl(${(i*137.5)%360},45%,62%)`;
+    else if (VIEW.mode==="material") c = p.mclass ? MAT_COLORS[p.mclass] : "#D9DCDF";
+    else if (VIEW.mode==="kinematics") { c = hasRoles ? (ROLE_COLORS[p.canon] || UNKNOWN) : "#B6BBBF"; if (selJ) { if (moving.has(p.id)) { mat.emissive = color(cssVar("--accent")); mat.emissive.multiplyScalar(0.35);} else mat.opacity = 0.35; } }
+    else if (VIEW.mode==="verdict") c = floating.has(p.id) ? cssVar("--fail") : (coll.has(p.id) ? cssVar("--warn") : "#C3C8CC");
+    else if (VIEW.mode==="sequence") {
+      c = hasRoles ? (ROLE_COLORS[p.canon] || UNKNOWN) : "#B6BBBF";
+      const k = seqIdx[p.id]; const step = VIEW.step ?? (D.sequence.length-1);
+      if (k === undefined) { mat.opacity = 0.18; }
+      else if (k > step) m.visible = false;
+      else if (k === step) { mat.emissive = color(cssVar("--accent")); mat.emissive.multiplyScalar(0.45); }
+    }
+    mat.color = color(c); mat.depthWrite = mat.opacity > 0.5; mat.needsUpdate = true;
+  });
+  if (VIEW.mode==="kinematics") {
+    for (const j of D.joints) {
+      if (!j.axis || !j.origin || j.type==="fixed") continue;
+      const o = new THREE.Vector3(...j.origin), ax = new THREE.Vector3(...j.axis).normalize();
+      const len = Math.hypot(...D.span) * (j.id===VIEW.jointSel ? 0.22 : 0.1);
+      const geo = new THREE.BufferGeometry().setFromPoints([o.clone().addScaledVector(ax,-len), o.clone().addScaledVector(ax,len)]);
+      overlay.add(new THREE.Line(geo, new THREE.LineBasicMaterial({color: j.id===VIEW.jointSel ? cssVar("--accent") : "#7a8288", depthTest:false})));
+      const s = new THREE.Mesh(new THREE.SphereGeometry(Math.hypot(...D.span)*0.008, 12, 8), new THREE.MeshBasicMaterial({color: j.id===VIEW.jointSel ? cssVar("--accent") : "#7a8288", depthTest:false}));
+      s.position.copy(o); overlay.add(s);
+    }
+  }
+  if (VIEW.mode==="sequence" && D.sequence.length) {
+    const step = VIEW.step ?? (D.sequence.length-1); const st = D.sequence[step];
+    const m = M[st.part];
+    if (m && st.direction) {
+      m.geometry.computeBoundingBox(); const bb = m.geometry.boundingBox; const c = new THREE.Vector3(); bb.getCenter(c);
+      const d = new THREE.Vector3(...st.direction).normalize(); const L = Math.hypot(...D.span)*0.25;
+      overlay.add(new THREE.ArrowHelper(d, c.clone().addScaledVector(d, -L), L*0.9, new THREE.Color(cssVar("--accent")).getHex(), L*0.18, L*0.09));
+    }
+  }
+  applyPose(D);
+}
+
+let ANIM = {kind:null, t0:0};
+function animate(t){
+  const D = VIEW.design; if (!D) return;
+  if (VIEW.mode==="kinematics" && VIEW.playing) {
+    for (const j of D.joints) {
+      if (j.type==="fixed" || !j.axis) continue;
+      if (VIEW.jointSel && j.id!==VIEW.jointSel) { continue; }
+      const [lo, hi] = jointRange(j); const u = 0.5 - 0.5*Math.cos(t*1.4);
+      D._q[j.id] = lo + (hi-lo)*u;
+      const sl = document.getElementById("q-"+j.id); if (sl) sl.value = D._q[j.id];
+    }
+    applyPose(D);
+  }
+  if (VIEW.mode==="sequence" && VIEW.playing && D.sequence.length) {
+    const step = Math.floor(t/0.9) % (D.sequence.length + 2);
+    const s = Math.min(step, D.sequence.length-1);
+    if (s !== VIEW.step) { VIEW.step = s; paint(); sideSequence(); }
+  }
+}
+
+function buildModes(){
+  const box = $("#modes"); box.innerHTML = "";
+  for (const [m, label] of MODES) {
+    const b = el("button",{type:"button","aria-pressed":String(VIEW.mode===m), text:label});
+    b.addEventListener("click", ()=>{ VIEW.mode = m; VIEW.playing = false; if (VIEW.design) { for (const j of VIEW.design.joints) VIEW.design._q[j.id]=0; } box.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed", String(x===b))); paint(); side(); });
+    box.append(b);
+  }
+}
+
+function buildPicker(){
+  const P = $("#picker"); P.innerHTML = "";
+  for (const [tier, title] of ARMS) {
+    const gs = visibleGroups().filter(g=>g.tier===tier); if (!gs.length) continue;
+    P.append(el("h4",{text: title.split(" · ").slice(0, 2).join(" · ")}));
+    let lastCat = null;
+    for (const g of gs.sort((a,b)=>a.category.localeCompare(b.category) || pretty(a.system).localeCompare(pretty(b.system)))) {
+      if (g.category !== lastCat) { P.append(el("span",{class:"sub catsub", text: g.category})); lastCat = g.category; }
+      const b = el("button",{type:"button","aria-current": String(VIEW.group===g.key)}, el("span",{class:"nm", text: pretty(g.system)}),
+        el("span",{class:"sub", text: `${g.seeds.length} seed${g.seeds.length>1?"s":""}${g.rounds?` · r = ${g.rounds}`:""}`}));
+      b.addEventListener("click", ()=>openGroup(g.key, 0));
+      P.append(b);
+    }
+  }
+}
+
+async function openGroup(gk, seed=0){
+  const g = groups[gk]; if (!g) return;
+  VIEW.group = gk; VIEW.seed = Math.min(seed, g.seeds.length-1);
+  const r = g.seeds[VIEW.seed]; VIEW.key = r.key; VIEW.jointSel = null; VIEW.step = null; VIEW.playing = false;
+  document.querySelectorAll("#picker button").forEach(b=>b.setAttribute("aria-current","false"));
+  buildPicker();
+  $("#stage-title").textContent = `${pretty(g.system)} · ${ARMS.find(a=>a[0]===g.tier)[1].split(" · ").slice(0, 2).join(" · ")}${g.rounds?` · r = ${g.rounds}`:""} · seed ${r.item.seed}`;
+  renderStrip(r);
+  side();
+  if (!three) return;
+  if (!(DATA.assets[r.key]||{}).design) { VIEW.design = null; three.root.clear(); three.overlay.clear();
+    const np = r.dims["1.1"]?.metrics?.n_parts;
+    $("#stage-msg").textContent = !np ? "This episode produced no parts (empty design): nothing to show; every dimension fails with 0." : "This seed's 3D data is not in the published page (size budget). Its scores are complete."; return; }
+  $("#stage-msg").textContent = "Loading design…";
+  try { const D = await loadDesign(r.key); if (VIEW.key !== r.key) return; VIEW.design = D; buildMeshes(D); $("#stage-msg").textContent = ""; paint(); side(); }
+  catch(e){ $("#stage-msg").textContent = "This design's 3D data is missing."; }
+}
+
+async function renderStrip(r){
+  const R = $("#renders"); R.innerHTML = "";
+  const a = DATA.assets[r.key]||{};
+  if (!a.img) return;
+  let P; try { P = await loadPack(a.pack); } catch(e) { return; }
+  if (VIEW.key !== r.key) return;
+  R.innerHTML = "";
+  const names = {cond:"Condition camera", iso:"Front right", front:"Front", side:"Right side"};
+  for (const v of ["cond","iso","front","side"]) {
+    const src = P.imgs[r.key]?.[v]; if (!src) continue;
+    const img = el("img",{src, alt:`${pretty(r.item.system)} seed ${r.item.seed}, ${names[v]} view`, loading:"lazy"});
+    img.addEventListener("click", ()=>{ $("#zoom-img").src = src; $("#zoom-img").alt = img.alt; $("#zoom").showModal(); });
+    R.append(el("figure",{}, img, el("figcaption",{text: names[v]})));
+  }
+}
+$("#zoom").addEventListener("click", ()=>$("#zoom").close());
+
+function side(){
+  const S = $("#side"); S.innerHTML = "";
+  const g = groups[VIEW.group]; if (!g) return;
+  const r = g.seeds[VIEW.seed];
+  if (g.seeds.length > 1) {
+    const seg = el("div",{class:"seg"});
+    g.seeds.forEach((s,i)=>{ const b = el("button",{type:"button","aria-pressed":String(i===VIEW.seed), text:`seed ${s.item.seed}`}); b.addEventListener("click", ()=>openGroup(g.key, i)); seg.append(b); });
+    S.append(el("div",{}, el("span",{class:"label", text:"Seed"}), el("div",{}, seg)));
+  }
+  const D = VIEW.design;
+  if (VIEW.mode==="structure") sideStructure(S, r, D);
+  else if (VIEW.mode==="material") sideMaterial(S, r, D);
+  else if (VIEW.mode==="sequence") { S.append(el("div",{id:"seq-box"})); sideSequence(); }
+  else if (VIEW.mode==="kinematics") sideKinematics(S, r, D);
+  else if (VIEW.mode==="evidence") sideEvidence(S, r, D);
+  else sideVerdict(S, r, D);
+}
+function evImg(src, alt){
+  const img = el("img",{src, alt, loading:"lazy", class:"evimg"});
+  img.addEventListener("click", ()=>{ $("#zoom-img").src = src; $("#zoom-img").alt = alt; $("#zoom").showModal(); });
+  return img;
+}
+function sideEvidence(S, r, D){
+  S.append(el("div",{}, el("h4",{text:"Evidence-grounded VLM checks"}),
+    el("span",{class:"sub", text:"Each judge sees only images rendered from this design's own 3D parts (labels L# drawn where a part is visible) plus its part and joint tables, and must cite labels. An answer with no valid citation scores 0; a judge that says a claim is not met is capped at 0.3."})));
+  const E = (DATA.evidence||{})[r.key];
+  const js = (VLM.designs||{})[r.key] || {};
+  if (!E) { S.append(el("p",{class:"empty", text:"No evidence was rendered for this design."})); return; }
+  const a = DATA.assets[r.key]||{};
+  const P = window.__PACKS?.[a.pack];
+  if (a.evid && !P) { S.append(el("p",{class:"empty", text:"Loading evidence…"})); loadPack(a.pack).then(()=>{ if (VIEW.key===r.key && VIEW.mode==="evidence") side(); }).catch(()=>{}); return; }
+  const W = P?.evid?.[r.key] || {};
+  if (!a.evid) S.append(el("span",{class:"sub", text:"Evidence images for this seed are not in the published page (size budget); the verdicts below are complete."}));
+  const sheets = el("div",{class:"evsheets"});
+  for (const [n, t] of [["overview","labelled parts"],["materials","declared materials"],["clay","clay views"]]) if (W[n]) sheets.append(el("figure",{}, evImg(W[n], `${t}, ${r.key}`), el("figcaption",{text:t})));
+  S.append(sheets);
+  S.append(el("details",{}, el("summary",{text:`Label table (${E.labels.length} parts)`}), kv(E.labels.map(([l, id, role, mat]) => [l, `${role || id}${mat ? " · "+mat : ""}`]))));
+  const tags = Object.keys(js);
+  if (!tags.length) { S.append(el("p",{class:"empty", text:"The judges have not scored this design yet."})); return; }
+  const motionFor = {}; for (const m of E.motion) for (const c of m.claims) motionFor[c] = m;
+  const T = DATA.task;
+  const text = {}; for (const p of T.required_parts) text[p.id] = p.part; for (const a of T.attributes) text[a.id] = a.statement;
+  for (const k of T.kinematics) text[k.id] = `${k.moving_part} ${k.motion} relative to ${k.relative_to} (${k.joint_type}, ${k.axis})`;
+  const ids = [...T.kinematics.map(k=>k.id), ...T.required_parts.map(p=>p.id), ...T.attributes.map(a=>a.id)];
+  for (const id of ids) {
+    const per = tags.map(t => [js[t].model || t, js[t].claims?.[id]]).filter(([, c]) => c);
+    if (!per.length) continue;
+    const scores = per.map(([, c]) => c.score).filter(x=>x!=null);
+    const v = scores.length ? mean(scores) : null;
+    const box = el("details",{class:"claimbox"},
+      el("summary",{}, el("span",{class:"cid", text:id}), el("span",{text:" "+(text[id]||"")}), el("span",{class:"mono", style: v==null ? "" : `background:${heat(v)};padding:0 4px;margin-left:6px`, text: v==null ? per[0][1].status : fmt(v)})));
+    const m = motionFor[id];
+    if (m && W[`joint_${m.joint}`]) box.append(el("figure",{}, evImg(W[`joint_${m.joint}`], `joint ${m.joint} poses`),
+      el("figcaption",{text:`${m.joint}: ${m.type}, ${m.axis_words} axis, moves ${m.moving_labels.join(", ")} on ${m.parent_label}${m.zoomed ? " (zoomed)" : ""}`})));
+    for (const [model, c] of per) {
+      const verdict = Object.entries(c.verdict||{}).map(([k, b]) => `${k.replaceAll("_"," ")}: ${b}`).join(" · ");
+      box.append(el("div",{class:"judgeans"}, el("b",{text:`${model} — ${c.score==null ? "n/a" : fmt(c.score)} (${c.status})`}),
+        verdict ? el("span",{class:"sub", text:verdict}) : null, c.reason ? el("span",{text:c.reason}) : null,
+        ...(c.evidence||[]).map(e => el("span",{class:"sub", text:`↳ ${e.label} (${e.image}): ${e.observation}`}))));
+    }
+    S.append(box);
+  }
+  const dbox = el("details",{class:"claimbox"}, el("summary",{}, el("span",{class:"cid", text:"D"}), el("span",{text:" design quality (clay views vs the photo)"}),
+    el("span",{class:"mono", text:" "+fmt(judgeScore(r.key))})));
+  for (const t of tags) {
+    const j = js[t];
+    dbox.append(el("div",{class:"judgeans"}, el("b",{text: j.model || t}), el("span",{class:"sub", text: Object.entries(j.aesthetics||{}).map(([k, x]) => `${k} ${fmt(x)}`).join(" · ")}),
+      j.aesthetics_reason ? el("span",{text:j.aesthetics_reason}) : null,
+      ...(j.aesthetics_observations||[]).map(o => el("span",{class:"sub", text:`↳ ${o.criterion} (${o.view}): ${o.observation}`}))));
+  }
+  S.append(dbox);
+}
+function legend(items){ const ul = el("ul",{class:"legend-list"}); for (const [c, t, n] of items) ul.append(el("li",{}, el("span",{class:"sw", style:`background:${c}`}), el("span",{text:t}), el("span",{class:"mono", text: n ?? ""}))); return ul; }
+function kv(pairs){ const dl = el("dl",{class:"kv"}); for (const [k,v] of pairs) dl.append(el("dt",{text:k}), el("dd",{text:v})); return dl; }
+function sideStructure(S, r, D){
+  const m = r.dims;
+  S.append(el("div",{}, el("h4",{text:"Parts by role"}), el("span",{class:"sub", text:"Colours are the evaluator's canonical roles, the same in every design."})));
+  if (D) {
+    const counts = {}; for (const p of D.parts) { const k = p.canon || (p.role ? "unrecognised" : "no role"); counts[k] = (counts[k]||0)+1; }
+    S.append(legend(Object.entries(counts).map(([k,n])=>[ROLE_COLORS[k]||UNKNOWN, k, n])));
+  }
+  S.append(kv([["parts", fmt(m["1.1"]?.metrics.n_parts,0)], ["moving joints", fmt(m["2.2"]?.metrics?.n_moving ?? 0,0)],
+    ["connected groups", fmt(m["1.1"]?.metrics.n_components,0)], ["critical tilt", fmt(m["1.2"]?.metrics.critical_tilt_deg,1)+"°"],
+    ["F-score @5 cm vs reference", fmt(m["2.1"]?.metrics?.shape_vs_reference_as_oriented?.["fscore@0.05"])],
+    ["seat top", fmt(get(m["2.1"]||{}, "metrics.role_predicates.seat_height.seat_top_m"))+" m"]]));
+  if (hasJudge && vlmOf(r.key).length) {
+    S.append(kv(["recognisable","resemblance","proportion","coherence","overall"].map(c => [`VLM design · ${c}`, fmt(judgeScore(r.key, c))])));
+    S.append(el("span",{class:"sub", text:"Per-claim verdicts and the evidence the judges saw: the VLM checks tab."}));
+  }
+  const c = r.meta.counters;
+  if (c) S.append(kv([["tool calls", fmt(c.tool_calls,0)], ["checks · renders", `${c.check} · ${c.render}`], ["parts created", fmt(c.create||0,0)], ["wall time", fmt(r.meta.wall_s,0)+" s"]]));
+  for (const n of r.notes||[]) S.append(el("span",{class:"sub", text:n}));
+}
+function sideMaterial(S, r, D){
+  const m = r.dims["4.1"];
+  S.append(el("div",{}, el("h4",{text:"Declared materials"}), el("span",{class:"sub", text:"Grouped by class; densities are Artiverse medians."})));
+  if (!D || !D.parts.some(p=>p.material)) { S.append(el("p",{class:"empty", text:"This design declares no materials."})); return; }
+  const by = {}; for (const p of D.parts) { const k = p.mclass || "undeclared"; (by[k] ||= new Set()).add(p.material || "—"); }
+  S.append(legend(Object.entries(by).map(([k, s])=>[MAT_COLORS[k]||"#D9DCDF", `${k.replace("_"," ")}: ${[...s].join(", ")}`, ""])));
+  const rows = D.parts.map(p=>[`${p.id} (${p.canon||p.role||"?"})`, p.material||"—"]);
+  S.append(el("details",{}, el("summary",{text:"Per part"}), kv(rows)));
+  if (m && m.metrics) S.append(kv([["coverage", fmt(m.metrics.coverage_volume_frac)], ["population likelihood", fmt(m.metrics.population_material_likelihood)],
+    ["agrees with reference", fmt(m.metrics.reference_role_material_agreement)], ["claim A1 groups", fmt(m.metrics.claim_class_coverage)],
+    ["mass", fmt(m.metrics.total_mass_kg,1)+" kg"], ["tilt with 75 kg sitter", fmt(m.metrics.loaded_tilt_deg,1)+"°"]]));
+}
+function sideSequence(){
+  const S = document.getElementById("seq-box"); if (!S) return; S.innerHTML = "";
+  const D = VIEW.design; const r = groups[VIEW.group].seeds[VIEW.seed];
+  S.append(el("h4",{text:"Build order"}));
+  if (!D || !D.sequence.length) { S.append(el("p",{class:"empty", text:"This design declares no assembly sequence."})); return; }
+  const n = D.sequence.length; const step = VIEW.step ?? (n-1);
+  const slider = el("input",{type:"range", min:"0", max:String(n-1), step:"1", value:String(step), id:"seq-step", "aria-label":"Build step"});
+  slider.addEventListener("input", ()=>{ VIEW.playing = false; VIEW.step = +slider.value; paint(); sideSequence(); });
+  const play = el("button",{class:"btn", type:"button", text: VIEW.playing ? "Pause" : "Play build"});
+  play.addEventListener("click", ()=>{ VIEW.playing = !VIEW.playing; if (VIEW.playing) VIEW.step = 0; paint(); sideSequence(); });
+  const st = D.sequence[step]; const p = D.parts.find(x=>x.id===st.part);
+  S.append(el("div",{class:"stepnow"}, el("span",{class:"mono", text:`step ${step+1} of ${n}`}), el("br"), el("b",{text: st.part}), ` · ${p?.canon || p?.role || ""}`, el("br"),
+    el("span",{class:"sub", text: st.direction ? `inserted along [${st.direction.map(v=>v.toFixed(2)).join(", ")}]` : "no insertion direction declared"})), slider, play);
+  const m = r.dims["4.2"]?.metrics || {};
+  S.append(kv([["parts in sequence", fmt(m.coverage)], ["straight insertion feasible", fmt(m.insertion_feasible_frac)], ["declared direction feasible", fmt(m.declared_direction_feasible_frac)],
+    ["steps with no loose part", fmt(m.supported_prefix_frac)], ["stable prefixes", fmt(m.stable_prefix_frac)], ["first infeasible step", m.first_infeasible_step==null ? "none" : String(m.first_infeasible_step+1)]]));
+}
+function sideKinematics(S, r, D){
+  S.append(el("div",{}, el("h4",{text:"Declared joints"}), el("span",{class:"sub", text:"Select a joint to tint what it moves and draw its axis; drag its slider, or play."})));
+  if (!D || !D.joints.filter(j=>j.type!=="fixed").length) { S.append(el("p",{class:"empty", text:"This design declares no moving joints."})); }
+  else {
+    const play = el("button",{class:"btn", type:"button", text: VIEW.playing ? "Pause" : (VIEW.jointSel ? "Play selected joint" : "Play all joints")});
+    play.addEventListener("click", ()=>{ VIEW.playing = !VIEW.playing; if (!VIEW.playing) { applyPose(D); } side(); });
+    S.append(play);
+    const sweeps = Object.fromEntries((r.dims["2.2"]?.metrics?.sweeps||[]).map(s=>[s.joint, s]));
+    for (const j of D.joints) {
+      if (j.type==="fixed") continue;
+      const [lo, hi, unit] = jointRange(j);
+      const sw = sweeps[j.id];
+      const box = el("div",{class:"joint", tabindex:"0", "aria-current": String(VIEW.jointSel===j.id)},
+        el("div",{class:"t"}, el("b",{text:j.id}), el("span",{class:"mono", text:j.type})),
+        el("span",{class:"sub", text:`${j.child} on ${j.parent} · moves ${j.moving.length} part${j.moving.length>1?"s":""}${sw?` · free range ${fmt(sw.ratio)}`:""}${j.welded?" · welded by contact":""}`}));
+      if (hi > lo) {
+        const s = el("input",{type:"range", id:"q-"+j.id, min:String(lo), max:String(hi), step:String((hi-lo)/200), value:String(D._q[j.id]||0), "aria-label":`${j.id} position (${unit})`});
+        s.addEventListener("input", e=>{ e.stopPropagation(); VIEW.playing = false; D._q[j.id] = +s.value; applyPose(D); });
+        s.addEventListener("click", e=>e.stopPropagation());
+        box.append(s);
+      }
+      const selectJ = ()=>{ VIEW.jointSel = VIEW.jointSel===j.id ? null : j.id; paint(); side(); };
+      box.addEventListener("click", selectJ);
+      box.addEventListener("keydown", e=>{ if (e.key==="Enter") selectJ(); });
+      S.append(box);
+    }
+  }
+  const m = r.dims["2.2"]?.metrics || {};
+  S.append(kv([["claims K recall", fmt(m.claims_recall)], ["reference joint F1", fmt(m.reference_f1)], ["achievable range", fmt(m.achievable_range_ratio)], ["joints on a boundary", fmt(m.joint_on_boundary)]]));
+}
+function sideVerdict(S, r, D){
+  S.append(el("div",{}, el("h4",{text:"What the evaluator flagged"})));
+  S.append(legend([[cssVar("--fail"), "not connected to the main group", (D?.verdict.floating||[]).length], [cssVar("--warn"), "in a collision", (D?.verdict.colliding||[]).length], ["#C3C8CC", "fine", ""]]));
+  const m11 = r.dims["1.1"]?.metrics || {}, m12 = r.dims["1.2"]?.metrics || {};
+  S.append(kv([["collision-free touching pairs", fmt(m11.collision_free_pair_rate)], ["interpenetration / volume", fmt(m11.pen_volume_frac,3)],
+    ["parts in main group", fmt(m11.connected_part_frac)], ["critical tilt", fmt(m12.critical_tilt_deg,1)+"°"], ["below ground", fmt(m11.below_ground_m,3)+" m"]]));
+  for (const c of (D?.verdict.colliding||[]).slice(0,8)) S.append(el("span",{class:"sub", text:`${c[0]} × ${c[1]}: ${fmt(c[2],1)} cm³`}));
+  const st = Object.entries(r.dims).map(([k,d])=>[`${k}`, d.status.replace("_"," ")]);
+  S.append(el("details",{}, el("summary",{text:"Status of every dimension"}), kv(st)));
+}
+
+// ---------------------------------------------------------------- scoreboard
+function buildLegend(){
+  const L = $("#legend");
+  for (const [s, t] of [["pass","pass"],["degraded","degraded: part measured with a weaker instrument"],["fail","fail: a critical threshold fired"],["skipped","skipped: not declared by the producer"]]) L.append(el("span",{}, markEl(s), t));
+  L.append(el("span",{text:"cell shade = score"}));
+}
+// evidence-grounded VLM checks: per design, per judge; families are means over claims, design is the overall criterion
+const VLM = DATA.vlm || {};
+const VLM_JUDGES = VLM.judges || [];
+const hasJudge = VLM_JUDGES.length > 0;
+const vlmOf = key => Object.values((VLM.designs||{})[key] || {});
+const vlmFam = (key, fam) => {
+  const v = vlmOf(key).map(j => fam==="design" ? j.aesthetics?.overall : fam==="pa" ? mean([j.parts, j.attributes].filter(x=>x!=null)) : j[fam]).filter(x=>x!=null);
+  return v.length ? mean(v) : null;
+};
+const judgeScore = (key, crit="overall") => { const v = vlmOf(key).map(j => j.aesthetics?.[crit]).filter(x=>x!=null); return v.length ? mean(v) : null; };
+const VLM_COLS = [["kinematics","VLM · K","kinematics claims"],["pa","VLM · P+A","parts & attributes"],["design","VLM · design","overall quality"]];
+function buildBoard(){
+  const t = $("#board-table"); t.innerHTML = "";
+  const hasSim = Object.keys(DATA.imagesim||{}).length > 0;
+  const head = el("tr",{}, el("th",{style:"text-align:left"}, el("span",{class:"label", text:"System"})));
+  let last = 0;
+  for (const D of DIMS) { head.append(el("th",{class: D.L!==last ? "lvl":""}, el("span",{class:"code", text:D.k}), el("span",{class:"nm", text:D.n}), el("span",{class:"depth", text:D.d}))); last = D.L; }
+  if (hasSim) head.append(el("th",{class:"lvl"}, el("span",{class:"code", text:"img"}), el("span",{class:"nm", text:"DINOv2 cos"}), el("span",{class:"depth", text:"model"})));
+  if (hasJudge) VLM_COLS.forEach(([f, code, nm], i) => head.append(el("th",{class: i===0 ? "lvl" : ""}, el("span",{class:"code", text:code}), el("span",{class:"nm", text:nm}), el("span",{class:"depth", text:`${VLM_JUDGES.length} VLM${VLM_JUDGES.length>1?"s":""} · cited`}))));
+  head.append(el("th",{class:"lvl"}, el("span",{class:"code", text:"cost"}), el("span",{class:"nm", text:"tool calls / parts"}), el("span",{class:"depth", text:"episode"})));
+  t.append(el("thead",{}, head));
+  const body = el("tbody");
+  for (const [tier, title] of ARMS) {
+    const gs = visibleGroups().filter(g=>g.tier===tier); if (!gs.length) continue;
+    body.append(el("tr",{class:"group"}, el("td",{colspan:String(DIMS.length+2+(hasSim?1:0)+(hasJudge?VLM_COLS.length:0)), text: title + (tier==="A"||tier==="B" ? ` · r = ${ROUND}` : "")})));
+    gs.sort((a,b)=>a.category.localeCompare(b.category) || (dimAgg(b,"2.1")?.mean??0)-(dimAgg(a,"2.1")?.mean??0));
+    let lastCat = null;
+    for (const g of gs) {
+      if (g.category !== lastCat) { body.append(el("tr",{class:"catrow"}, el("td",{colspan:String(DIMS.length+2+(hasSim?1:0)+(hasJudge?VLM_COLS.length:0)), text: g.category}))); lastCat = g.category; }
+      const tr = el("tr",{class:"row", tabindex:"0"});
+      tr.append(el("td",{class:"sys"}, el("span",{class:"nm2", text:pretty(g.system)}), el("span",{class:"sub", text:`${g.seeds.length} seed${g.seeds.length>1?"s":""} · ${g.seeds[0].meta.family || g.seeds[0].meta.transport || "ceiling"}`})));
+      last = 0;
+      for (const D of DIMS) {
+        const td = el("td",{class:"cell"+(D.L!==last?" lvl":"")}); last = D.L;
+        if (D.k==="4.3") {
+          const ms = g.seeds.map(r=>r.dims["4.3"]).filter(Boolean);
+          if (!ms.length || ms.every(d=>d.status==="skipped")) td.append(markEl("skipped"), el("span",{class:"na", text:"—"}));
+          else { const tri = el("span",{class:"tri"}); for (const f of ["presence","placement","connection"]) { const v = mean(ms.map(d=>d.metrics[f]).filter(x=>x!=null)); tri.append(el("span",{title:f, style:`background:${heat(v)}`, text:fmt(v,1)})); } td.append(tri); }
+        } else {
+          const a = dimAgg(g, D.k);
+          if (!a || a.mean==null) td.append(markEl(a?a.status:"not_built"), el("span",{class:"na", text:"—"}));
+          else { td.style.background = heat(a.mean); td.append(markEl(a.status), fmt(a.mean)); if (a.sd!=null) td.append(el("span",{class:"sd", text:" ±"+fmt(a.sd)})); }
+        }
+        tr.append(td);
+      }
+      if (hasSim) tr.append(el("td",{class:"cell lvl", text: fmt(mean(g.seeds.map(r=>DATA.imagesim[r.key]).filter(x=>x!=null)))}));
+      if (hasJudge) VLM_COLS.forEach(([f], i) => { const v = mean(g.seeds.map(r=>vlmFam(r.key, f)).filter(x=>x!=null)); tr.append(el("td",{class:"cell"+(i===0?" lvl":""), style: v==null ? "" : `background:${heat(v)}`, text: fmt(v)})); });
+      const calls = mean(g.seeds.map(r=>get(r,"meta.counters.tool_calls")).filter(x=>x!=null));
+      tr.append(el("td",{class:"cell lvl", text:`${calls==null?"—":fmt(calls,0)} / ${fmt(mean(g.seeds.map(r=>r.dims["1.1"]?.metrics?.n_parts).filter(x=>x!=null)),0)}`}));
+      const go = ()=>{ openGroup(g.key, 0); $("#viewer").scrollIntoView(); };
+      tr.addEventListener("click", go); tr.addEventListener("keydown", e=>{ if (e.key==="Enter") go(); });
+      body.append(tr);
+    }
+  }
+  t.append(body);
+}
+
+// ---------------------------------------------------------------- rounds
+function buildRounds(){
+  const host = $("#round-cards"); host.innerHTML = "";
+  const tool = {};
+  for (const g of Object.values(groups)) if (g.rounds) (tool[g.tier+"|"+g.system] ||= {}) [g.rounds] = g;
+  const DIMR = [["1.1","integrity"],["2.1","geometry"],["2.2","kinematics"],["4.2","assembly"]];
+  const COLORS = ["#0F6E75","#A86A12","#6D5A8F","#2F7D4E"];
+  const entries = Object.entries(tool).filter(([,v])=>Object.keys(v).length>1).sort((a,b)=>a[0].localeCompare(b[0]));
+  if (!entries.length) { host.append(el("p",{class:"empty", text:"Round comparisons appear once a system has results for more than one round count."})); return; }
+  for (const [k, byR] of entries) {
+    const [tier, sys] = k.split("|");
+    const card = el("div",{class:"rcard"}, el("h4",{}, el("span",{text:pretty(sys)}), el("span",{class:"sub", text:`Tier ${tier}`})));
+    const th = el("div",{class:"rthumbs"});
+    for (const r of [1,2,3]) {
+      const g = byR[r]; const rec = g?.seeds[0];
+      if (rec && (DATA.thumbs||{})[rec.key]) {
+        const img = el("img",{src:DATA.thumbs[rec.key], alt:`${pretty(sys)} tier ${tier}, ${r} round${r>1?"s":""}`, loading:"lazy"});
+        img.addEventListener("click", ()=>{ setRound(r); openGroup(g.key, 0); $("#viewer").scrollIntoView(); });
+        th.append(el("figure",{}, img, el("figcaption",{text:`r=${r}`})));
+      } else th.append(el("figure",{}, el("div",{class:"none", text: g ? "no render" : "not run"}), el("figcaption",{text:`r=${r}`})));
+    }
+    card.append(th);
+    const W = 280, H = 110, padL = 26, padR = 8, padT = 8, padB = 18;
+    const x = r => padL + (r-1)*(W-padL-padR)/2, y = v => padT + (1-v)*(H-padT-padB);
+    const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
+    svg.setAttribute("viewBox", `0 0 ${W} ${H}`); svg.setAttribute("class","slope"); svg.setAttribute("role","img");
+    svg.setAttribute("aria-label", `Scores by round for ${pretty(sys)} tier ${tier}`);
+    const ns = (t, a) => { const e = document.createElementNS("http://www.w3.org/2000/svg", t); for (const [kk,vv] of Object.entries(a)) e.setAttribute(kk, vv); return e; };
+    for (const v of [0, 0.5, 1]) { svg.append(ns("line",{x1:padL, x2:W-padR, y1:y(v), y2:y(v), class:"grid"})); const tx = ns("text",{x:2, y:y(v)+3}); tx.textContent = v.toFixed(1); svg.append(tx); }
+    for (const r of [1,2,3]) { const tx = ns("text",{x:x(r)-8, y:H-4}); tx.textContent = `r${r}`; svg.append(tx); }
+    DIMR.forEach(([dk], i) => {
+      const pts = [1,2,3].map(r=>{ const g = byR[r]; const a = g ? dimAgg(g, dk) : null; return a && a.mean!=null ? [x(r), y(a.mean)] : null; }).filter(Boolean);
+      if (pts.length > 1) svg.append(ns("polyline",{points: pts.map(p=>p.join(",")).join(" "), fill:"none", stroke:COLORS[i], "stroke-width":"1.8"}));
+      for (const p of pts) svg.append(ns("circle",{cx:p[0], cy:p[1], r:"2.8", fill:COLORS[i]}));
+    });
+    card.append(svg, el("div",{class:"legend"}, ...DIMR.map(([dk,n],i)=>el("span",{}, el("span",{class:"sw", style:`display:inline-block;background:${COLORS[i]};width:10px;height:10px;margin-right:4px`}), `${dk} ${n}`))));
+    host.append(card);
+  }
+}
+
+// ---------------------------------------------------------------- claims
+function claimScores(r){
+  const out = {};
+  for (const p of r.dims["3.1"]?.metrics?.required_parts || []) out[p.id] = r.dims["3.1"].status==="skipped" ? null : p.score;
+  for (const a of r.attributes || []) out[a.id] = a.score;
+  for (const k of r.dims["2.2"]?.metrics?.claims || []) out[k.id] = k.score;
+  for (const f of r.dims["4.3"]?.metrics?.subsystems || []) out[f.id] = r.dims["4.3"].status==="skipped" ? null : mean([f.presence, f.placement, f.connection].map(x=>x??0));
+  return out;
+}
+function buildClaims(){
+  const T = DATA.task; const t = $("#cm"); t.innerHTML = "";
+  const cols = [...T.required_parts.map(p=>[p.id,p.part]), ...T.attributes.map(a=>[a.id,a.kind.replace("_"," ")]), ...T.subsystems.map(f=>[f.id,f.subsystem]), ...T.kinematics.map(k=>[k.id,`${k.moving_part} ${k.motion}`])];
+  const h = el("tr",{}, el("th",{style:"text-align:left", text:"system"})); for (const [id,t2] of cols) h.append(el("th",{}, id, el("span",{class:"t", text:t2})));
+  t.append(el("thead",{},h));
+  const body = el("tbody");
+  for (const [tier, title] of ARMS) {
+    const gs = visibleGroups().filter(g=>g.tier===tier); if (!gs.length) continue;
+    body.append(el("tr",{}, el("td",{colspan:String(cols.length+1), style:"text-align:left;background:var(--sunk);font-family:var(--display);text-transform:uppercase;letter-spacing:.08em;font-size:.8rem;color:var(--graphite)", text:title})));
+    for (const g of gs) {
+      const tr = el("tr",{}, el("td",{class:"sys", text:pretty(g.system)})); const S = g.seeds.map(claimScores);
+      for (const [id] of cols) { const vals = S.map(s=>s[id]).filter(v=>v!=null); const v = vals.length ? mean(vals) : null;
+        tr.append(el("td",{title: v==null ? `${id}: not declared` : `${id}: ${fmt(v)}`}, v==null ? el("span",{class:"na", text:"·"}) : el("span",{class:"dot", style:`background:${heat(v)}`}))); }
+      body.append(tr);
+    }
+  }
+  t.append(body);
+}
+
+// ---------------------------------------------------------------- method + caveats
+(function(){
+  const rows = [
+    ["Every dimension","status and empty designs","—","pass / degraded (measured with a weaker instrument, e.g. open meshes filled as shells) / fail (a critical threshold fired) / skipped (the producer does not declare what the dimension needs; never scored 0). A design with no parts fails 1.1, 1.2, 2.1, 2.2, 3.1, 3.2, 4.1 and 4.2 with 0. degraded is also used for partial coverage (4.1, 4.2) and for stability computed on ≤ 2 support points or on the largest of several groups (1.2). Scores are graded 0–1; the scoreboard shows the mean over seeds ± SD. Full detail per metric: the specification cards below."],
+    ["1.1 Integrity","3D parts only (4 mm voxels)","the design itself","Are the parts one solid, non-colliding object? score = mean(collision-free share of touching part pairs; (volume share + part share of the largest connected group)/2; share of parts that are single closed bodies). Two parts collide when their eroded cores overlap by > 1 cm³ and > 10% of the smaller part; parts connect when their voxels touch or a declared joint's origin lies within 2 cm of both. Fails if the largest group holds < 95% of the volume or < 90% of the parts, or interpenetration exceeds 10% of the volume."],
+    ["1.2 Stability","3D parts only","reference chair: 22.4°","Would it stand? Critical tilt angle of the largest connected group with uniform density: min over 720 horizontal directions of atan(distance from the centre of mass to the support-polygon edge / centre-of-mass height); the support polygon is every voxel within max(5 mm, 1% of height) of the lowest point. score = tilt / reference tilt (capped at 1); fails when ≤ 0°."],
+    ["2.1 Geometry","3D parts + declared roles","reference mesh; extents of 117 Artiverse swivel chairs","Is it the right size and shape? score = mean(size agreement 2^−mean|log2(width, depth, height ratio to the reference)|; F-score at 5 cm between 20k surface samples of the design and the reference; role predicates for the declared roles: seat top within the reference seat-height range plus gas-lift travel, backrest above/behind the seat and upright, wheels round with horizontal axles, gas column vertical, 5 ground contact clusters, armrests on both sides). Unitless outputs get oracle scale and yaw and are not scored on size."],
+    ["2.2 Kinematics","declared joints + 3D parts","claims K1–K5; 12 annotated reference joints","Does it move the way an office chair must? score = mean(claim recall: for each claim, every part carrying the moving role is matched to its best declared joint (parent role, joint type, axis direction, range) and the claim scores the mean over those parts; reference-joint F1 by Hungarian matching on role, type, axis angle and origin distance; achievable range: share of sampled positions in each joint's range where its moving parts collide with nothing (first 24 joints); declaration completeness). Skipped when no joints are declared; fails when none moves."],
+    ["3.1 Decomposition","declared roles + part count","claims P1–P6; reference role counts (18 parts)","Does it have the right parts? score = mean(required-part coverage including counts, e.g. 5 casters; max(0, 1 − L1 distance between role histograms / reference parts); granularity 2^−|log2(parts / 18)|; 1 − share of unrecognised roles). Without roles only granularity is computed, reported as degraded."],
+    ["3.2 Aesthetics (computed)","3D parts only","reference mirror symmetry 0.97; reference proportions","score = mean(min(1, mirror-symmetry IoU / reference), proportion 2^−mean|log2 of height/width and depth/width relative to the reference|). The adjudicated design-quality score is the separate “VLM · design” column, never folded in."],
+    ["3.3 Creativity","3D parts + provenance","reference; other seeds","Not scored. Reported: novelty 1 − F-score@5 cm to the reference, distinct catalog parts used and their origin (reference / same type / distractor), share of created parts, and diversity across seeds (mean pairwise 1 − F-score)."],
+    ["4.1 Material","declared materials + 3D volumes","claim A1; Artiverse reference materials; P(material | role) over 117 chairs","Are the materials plausible and do they carry a sitter? score = mean(share of volume with a declared material; population likelihood of each part's material given its role; agreement with the reference's material for the same role; critical tilt with Artiverse densities and a 75 kg sitter on the seat / reference, capped at 1). Degraded below full coverage; fails with none."],
+    ["4.2 Assembly","declared sequence + 3D parts","the declared build order","Can it be built in the stated order? score = mean(share of parts in the sequence; share of steps whose part can be inserted along a straight line (declared direction or one of six axes) without passing through placed parts; share of steps where nothing placed is left floating; share of prefixes that stand)."],
+    ["4.3 Function","declared roles + contact/joint graph","subsystems F1–F3 (height adjustment, mobility, rotation)","Three numbers per subsystem: presence of the named parts; placement of their centres vs the reference's normalised role centres; connection = the parts are linked within 4 hops of contacts/joints (0.5 when linked but not through the moving joint a motion subsystem needs). The scoreboard shows the three separately; only the claims matrix shows their mean."],
+    ["Attributes A1–A4","rule proxies on the above","claims A1–A4","A1 declared material classes cover the claimed classes; A2 seat height in the reference range; A3 an adjustable (prismatic/cylindrical) joint moves the seat, back or arms; A4 a lever within 8 cm of the column, swivel mechanism or seat. Shown per design; the VLM checks re-examine the same claims."],
+    ["img · DINOv2 cosine","clay renders","the condition photo","Cosine similarity of DINOv2 embeddings between the design's clay render from the photo's camera and the photo. A model-based similarity, reported in its own column."],
+    ["VLM · K","evidence rendered from the 3D design + joint table","claims K1–K5","For each claim, the joint the rule matcher picked is rendered at three poses (moving parts orange, parent blue, axis red, small parts zoomed); the judge also gets the required vs declared joint type and axis and a labelled overview. It answers parts-match / type-axis-match / motion-realises-claim / physically-sensible and scores 0–10. Must cite part labels (L#) that belong to the joint; otherwise ungrounded = 0. If its own verdict says the claim is not met, the score is capped at 0.3. No matched joint = 0; no joints declared = skipped."],
+    ["VLM · P+A","labelled part views, material views, part table","claims P1–P6, A1–A4","Required parts: for each, the candidate labels are the parts the design declared with that role; the judge says whether they look like that part and sit where it belongs, citing labels (none declared = 0). Attributes: the judge checks each statement against the labelled and material views and computed facts (extent, seat height, symmetry), citing labels; 'not satisfied' caps at 0.3. Labels are drawn only where a flat part-ID render shows the part visible."],
+    ["VLM · design","clay views + the condition photo","the condition photo","Recognisable / resemblance / proportion / coherence / overall, 1–10 with written anchors, each with an observation naming the view; (s−1)/9. Judged per design, no pairwise comparison. Judges are not contestants (Gemma-3-27B and Qwen2.5-VL-32B); columns show their mean and the caveats give their rank agreement per family."],
+  ];
+  const t = $("#method-table"); t.append(el("thead",{}, el("tr",{}, ...["Dimension","Depth","Compared against","Rule"].map(x=>el("th",{text:x})))));
+  const b = el("tbody"); for (const r of rows) b.append(el("tr",{}, ...r.map(x=>el("td",{text:x})))); t.append(b);
+  const cav = [
+    "One task and one condition (name only + image). Earlier v2.2 rows are independent episodes configured for 1, 2 or 3 rounds. GPT-5.6 Sol and GPT-6 Astra use the corrected v2.4 protocol: one three-round episode with immutable checkpoints after each submit, so round 2 revises round 1 and round 3 revises round 2. Both have one seed. Claude runs are one seed each; open models run three seeds unless stated otherwise.",
+    "The viewer shows each design exactly as evaluated: the meshes are decimated for the browser, but joints, moving sets, sequence and flags come from the scored record. Unitless external outputs are shown after the evaluator's oracle scale and yaw.",
+    "Joint playback composes outer joints before inner ones along the evaluator's moving sets. Continuous joints and revolute joints without limits sweep ±180°; a cylindrical joint plays its sliding range.",
+    "Integrity, connectivity, collisions, stability, geometry, kinematics sweeps, materials and assembly are computed from the 3D parts and the producer's declarations only; renders are read only by the DINOv2 column and the VLM columns. Every constant is in the method table and in ppbench/v2/evaluate.py. VLM columns are adjudicated, evidence-grounded, and never folded into the rule-based dimensions; no human agreement figure exists yet.",
+    "This is a demo version: one task, one condition, and a harness whose tool-call parser is still being improved (see below). Both judges (Gemma-3-27B in bf16, Qwen2.5-VL-32B with fp8 weights) scored every design with evidence; VLM columns are their mean.",
+    "Tool-call format, not structure building, sank several open models: the text parser accepts only <tool_call>{JSON}</tool_call>. MiniCPM-V-4.5 and InternVL3.5-38B wrote calls as bare or fenced JSON and lost 15 of 18 episodes each; Qwen-family models often wrote arithmetic inside arguments (e.g. 0.1165 + 0.05455), which is not JSON, and the harness answered with a generic nudge. Their scores understate the models; a harness that accepts these formats and explains parse errors is the next step, with reruns of the episodes that failed only on format.",
+    "Generator + annotator rows (external, Tier A-like/B-like sections): the generator's geometry is fixed and Claude Sonnet 5 declares roles, materials, joints and the assembly sequence with the same declaration tools as the tool arms (geometry tools refused). Scores belong to the pair, not to the generator alone; the generator's raw rows stay alongside. Geometry (2.1) can drop against the raw row because role predicates (round horizontal wheels, vertical column, seat height, ...) only apply once roles exist. Fused parts (seat, column and base as one mesh) limit what can be declared, and annotators report that in each trace. Brick generators are not annotated: their parts are standard bricks, not functional parts.",
+    "Mistral Small 3.2 (image processor not loadable from the local snapshot) and GLM-4.6V-Flash (weights not on disk) have no results. The published page keeps 3D data, renders and evidence sheets for seed 0 of every group and fills the rest up to the size limit; scores are complete for every seed.",
+    "Voxel resolution is 4 mm, so touching means within one dilated cell (about 4 mm to 1 cm), and open pool meshes fill as shells (degraded status).",
+    "External generators emit no roles, materials, joints or sequences unless stated; undeclared dimensions are skipped, never scored zero. Brick generators output real LEGO scale.",
+    "2.3 operability and simulated settle tests are not built. v2.0 and v2.1 runs were pilots and are archived.",
+    "BrickNet-0.6B is absent from the tables: for the caption 'An office chair.' all three generations fail BrickNet's own LDraw decoder (the first part is not labelled 'a'). Its generations are kept unedited; hand-fixing them would invent geometry.",
+    "PhysX-Anything's VLM read the photo as a fixed 'lounge chair': seven parts in one fixed group, no swivel, gas lift or casters, and the seat floats about 0.2 m above a 7 mm pedestal. It ran in int8 to fit memory, and one VLM decode is shared by the three seeds; only the decoder seed differs.",
+    "Infinite-Mobility is a procedural generator, not conditioned on the prompt or photo: a category-level oracle for articulation. Its office chairs have 5–8 legs and 'wood' legs, casters and column, which the material and geometry scores reflect as they are.",
+    "Particulate needs a whole mesh and predicts parts and joints without names. It runs on the Cube3D (text) and PartCrafter (image) meshes; PartCrafter meshes are simplified to 50k faces, and the connected-component post-process runs only when the largest piece covers under half of the faces (the default collapsed Cube3D chairs to two parts).",
+    "PartPacker's official background removal (rembg) erases most of the silver base against the sunlit floor in this photo, so its chairs start without a clear base.",
+    "Compute: open models and Particulate ran on a GPU handed over from another of the author's services; judges run on it after the open models.",
+  ];
+  if (hasJudge) { const ag = VLM.agreement || {}; cav.push(`VLM checks are adjudicated, not measured: they bound what a rule cannot see (does this part look like a lever, does this joint realise a slide), and every verdict cites labelled evidence from the design. Judge agreement (Spearman): ${Object.entries(ag).map(([k, a]) => `${k} ${fmt(a.spearman)} (n=${a.n})`).join(", ") || "not yet computed"}.`); }
+  for (const c of cav) $("#caveat-list").append(el("li",{text:c}));
+})();
+
+// ---------------------------------------------------------------- evaluator specification
+(function(){
+  const host = $("#spec-cards"); const spec = DATA.spec || [];
+  if (!spec.length) { host.append(el("p",{class:"empty", text:"The specification file was not found when this page was built."})); return; }
+  for (const m of spec) {
+    const card = el("details",{class:"speccard"}, el("summary",{}, el("span",{class:"cid", text:m.key}), el("b",{text:" " + m.name}), el("span",{class:"sub", text:" — " + (m.question||"")})));
+    const sec = (title, node) => { if (node) card.append(el("div",{class:"specsec"}, el("span",{class:"label", text:title}), node)); };
+    const list = (xs, ordered) => { if (!xs || !xs.length) return null; const l = el(ordered ? "ol" : "ul"); for (const x of xs) l.append(el("li",{text:x})); return l; };
+    sec("Reads", list(m.inputs));
+    sec("Computation", list(m.steps, true));
+    sec("Score", m.score ? el("code",{class:"formula", text:m.score}) : null);
+    sec("Status", m.status ? el("p",{text:m.status}) : null);
+    if (m.constants && Object.keys(m.constants).length) sec("Constants", kv(Object.entries(m.constants).map(([k, v]) => [k, String(v)])));
+    sec("Golden tests", m.golden ? el("p",{text:m.golden}) : null);
+    sec("Known limitations", list(m.limitations));
+    sec("Code", m.code && m.code.length ? el("p",{class:"mono", text:m.code.join("  ·  ")}) : null);
+    host.append(card);
+  }
+})();
+
+// ---------------------------------------------------------------- boot
+buildLegend(); makeRoundSeg("#v-rounds"); makeRoundSeg("#b-rounds"); makeRoundSeg("#c-rounds");
+buildModes(); buildPicker(); buildBoard(); buildRounds(); buildClaims();
+three = initThree();
+const first = Object.values(groups).find(g=>g.system==="gpt-6-astra" && g.tier==="B" && g.rounds===ROUND) || Object.values(groups).find(g=>g.system==="gpt-5.6-sol" && g.tier==="B" && g.rounds===ROUND) || Object.values(groups).find(g=>g.system==="claude-fable-5.1" && g.tier==="B" && g.rounds===ROUND) || visibleGroups().find(g=>g.tier==="A") || Object.values(groups)[0];
+if (first) openGroup(first.key, 0);
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+You assemble a physical object out of 3D parts by calling tools. The result is judged as a real,
+buildable, working product: it must hold together, stand, look like what was asked for, move where the
+real object moves, be made of sensible materials, and be buildable in the order you give.
+
+WORLD FRAME
+- Units are metres. +Z is up. The ground is the plane z = 0. The FRONT of the object faces -Y
+  (a person sitting on a chair faces -Y). Standing in front of the object (at -Y) and looking at it,
+  +X is to your right.
+- Real-world size matters. Build the object at its real size.
+
+PARTS
+- list_parts shows the catalog: every part has an id, a name and size_m = [x, y, z] extents in metres
+  in its default orientation. Parts are reusable: place the same part id as many times as you need.
+- Every part's local origin is the centre of its bounding box. place_part puts that centre at
+  `position` and applies `rotation` = [rx, ry, rz] degrees about the world X, then Y, then Z axes.
+  So an unrotated part placed at z = size_z / 2 rests exactly on the ground.
+- attach moves a part so that one face centre of its bounding box (top, bottom, left, right, front,
+  back, center) lands on a face centre of another part's box, plus an optional offset. It is the
+  easiest way to stack parts exactly: attach(child, "bottom", parent, "top").
+- Parts count as connected when their real surfaces touch (gap under about 4 mm), or when a joint joins
+  them at a place where both parts are: the joint's origin within 2 cm of each part's surface. A joint
+  whose origin is far from either part connects nothing.
+  Parts that interpenetrate a lot collide. Anything not connected to the rest is floating.
+
+DECLARATIONS (all are scored)
+- role: say what each part is, in plain words ("seat", "backrest", "caster wheel", ...).
+- material: choose one per part from list_materials.
+- joints: declare every place the real object moves. add_joint(joint_id, type, parent, child, axis,
+  origin, limits). type is one of fixed, revolute, continuous, prismatic, cylindrical, ball. axis is a
+  direction in world coordinates; origin is a world point on the axis where parent and child meet;
+  limits = [low, high] in radians (revolute) or metres (prismatic, cylindrical = the sliding range);
+  omit limits for continuous. The child moves relative to the parent, carrying whatever is attached
+  to the child.
+- assembly sequence: set_assembly_sequence with every part once, in the order a person would build
+  the object, each step optionally with the direction the part travels as it is put in place
+  (e.g. [0, 0, -1] for lowering it from above).
+
+ROUNDS AND BUDGETS
+- submit ends a round. If review rounds remain you are shown a check of the design and renders, and
+  you may revise it and submit again. After the final round the episode ends.
+- check and render are metered; use them to verify, not to search. Tool calls are budgeted.
+
+Keep reasoning brief. Prefer making tool calls over explaining.
+
+TOOLS
+- list_parts(query: optional substring filter on the part name)
+    The catalog (and parts you created): id, name, size_m.
+- inspect_part(part_id: catalog id or created part name)
+    Size, volume and a thumbnail image path for one part.
+- view_catalog_sheet()
+    A picture of every catalog part, labelled with id, name and size (not metered).
+- list_materials()
+    The material vocabulary with densities.
+- place_part(part_id: str, instance_id: your name for this placed copy, position: [x,y,z] m, rotation: [rx,ry,rz] deg, optional, role: str, optional, material: str, optional)
+    Place a copy of a part. Returns its world bounding box, what it touches and any collision.
+- move_part(instance_id: str, position: [x,y,z], optional, rotation: [rx,ry,rz], optional, translate_by: [dx,dy,dz], optional)
+    Move or rotate a placed part.
+- attach(instance_id: part to move, anchor: center|top|bottom|left|right|front|back, target: instance id, or 'ground', target_anchor: center|top|bottom|left|right|front|back, offset: [dx,dy,dz], optional)
+    Move a part so its anchor lands on the target's anchor plus offset (target 'ground': the point (x, y, 0) below it).
+- measure(a: instance id, b: instance id, or 'ground')
+    Closest distance between the two parts' real surfaces (not their boxes), the closest points on each, whether they count as touching, and any overlap. Use it to close gaps and to place joint origins.
+- remove_part(instance_id: str)
+    Remove a placed part (and joints that use it).
+- set_part_info(instance_id: str, role: optional, material: optional)
+    Set role and/or material.
+- add_joint(joint_id: str, type: fixed|revolute|continuous|prismatic|cylindrical|ball, parent: instance id, child: instance id, axis: [x,y,z], origin: [x,y,z], limits: [low, high], optional)
+    Declare a joint.
+- remove_joint(joint_id: str)
+    Remove a joint.
+- set_assembly_sequence(steps: [{"part": instance_id, "direction": [x,y,z] optional}, ...])
+    Declare the build order (every part exactly once).
+- get_scene()
+    Every placed part with pose, world box, role, material; joints; sequence; budgets left.
+- check()
+    METERED. Collisions, connectivity, ground contact, stability, joint issues, missing declarations.
+- render(views: optional list from cond, iso, front, side, back_iso, top)
+    METERED. Pictures of the current design (paths to PNG files).
+- submit()
+    End the current round.
+
+TASK: According to image W1, build a desk.
+The condition image W1 is attached (benchmark/tasks/office_desk/images/wild_01.png).
+Tier A: use catalog parts only.
+A picture of every catalog part, labelled with id, name and size, is attached: benchmark/tasks/office_desk/pool_sheet/pool_sheet_all.png. view_catalog_sheet shows it again.
+Start with list_parts and list_materials.
+
+HOW TO CALL A TOOL FROM THE SHELL
+  .venv_eval/bin/python -m ppbench.v2.session call --state <run>/A.json <tool_name> '<JSON arguments>'
+Each call prints one JSON result. Image results are PNG file paths: open them to look at them.

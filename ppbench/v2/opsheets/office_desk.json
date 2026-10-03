@@ -1,0 +1,91 @@
+{
+ "task": "office_desk",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Storage subsystem",
+   "function": "Stores office supplies, papers, and documents to keep the work surface clear.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "drawers",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "compartments",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "pigeonholes",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "drawer",
+     "type": "prismatic",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "work surface",
+     "claim": "P1"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a usable work surface with legroom",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "work surface",
+     "min_area_m2": 0.4,
+     "height_range_m": [
+      0.6,
+      0.85
+     ],
+     "claim": "P1"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "work surface",
+     "placement": "below",
+     "box": "seated_legs",
+     "min_free": 0.8,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

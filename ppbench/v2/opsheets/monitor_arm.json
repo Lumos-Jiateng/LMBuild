@@ -1,0 +1,102 @@
+{
+ "task": "monitor_arm",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Mounting Interface",
+   "function": "Anchors the entire assembly to a wall or desk surface.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Mounting base",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Clamp hardware",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Grommet hardware",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Positioning Mechanism",
+   "function": "Allows the display to be moved up, down, rotated, tilted, retracted, and swiveled.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Arm",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Joints",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Display Attachment",
+   "function": "Connects the monitor to the arm using a standardized hole pattern.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "VESA plate",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Monitor",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "VESA plate",
+     "to": "Monitor",
+     "carries": "load",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the arm carries a display away from its base",
+   "claims": [
+    "P2"
+   ],
+   "requirements": [
+    {
+     "pred": "colocated",
+     "a": "Arm",
+     "b": "Mounting base",
+     "max_gap_m": 0.08,
+     "claim": "P2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Arm",
+     "claim": "P2"
+    }
+   ]
+  }
+ ]
+}

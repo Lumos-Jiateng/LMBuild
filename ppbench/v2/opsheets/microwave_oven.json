@@ -1,0 +1,228 @@
+{
+ "task": "microwave_oven",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Power Generation",
+   "function": "Converts mains electricity into high-voltage DC and then into microwave radiation.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "high-voltage transformer",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "voltage doubler",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "magnetron",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "high-voltage transformer",
+     "to": "magnetron",
+     "carries": "electricity",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Radiation Distribution",
+   "function": "Transfers microwaves to the chamber and distributes energy evenly across the food.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "waveguide",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "stirrer fan",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "turntable",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "magnetron",
+     "to": "waveguide",
+     "carries": "power",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "waveguide",
+     "to": "cooking chamber",
+     "carries": "power",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "turntable",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "stirrer fan",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Containment and Access",
+   "function": "Confines radiation within the chamber and prevents emission when the door is open.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "cooking chamber",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "oven door",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "safety interlocks",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "safety interlocks",
+     "to": "magnetron",
+     "carries": "signal",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "oven door",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "User Control",
+   "function": "Accepts user input to regulate the duration and duty cycle of the magnetron.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "control panel",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "microcontroller",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "timer",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "control panel",
+     "to": "magnetron control circuit",
+     "carries": "signal",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "magnetron control circuit",
+     "to": "magnetron",
+     "carries": "signal",
+     "claim": "F4"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1",
+    "P4",
+    "P8"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "cavity magnetron",
+     "claim": "P1"
+    },
+    {
+     "pred": "part_present",
+     "role": "high-voltage power source",
+     "claim": "P4"
+    },
+    {
+     "pred": "part_present",
+     "role": "turntable or stirrer",
+     "claim": "P8"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "food goes into the chamber through the door",
+   "claims": [
+    "P2",
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "cooking chamber",
+     "placement": "inside",
+     "margin_m": 0.03,
+     "min_free": 0.5,
+     "claim": "P2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "oven door",
+     "type": "revolute",
+     "claim": "P5"
+    },
+    {
+     "pred": "reachable",
+     "target": "control panel",
+     "reach_m": 0.9,
+     "claim": "P6"
+    }
+   ]
+  }
+ ]
+}

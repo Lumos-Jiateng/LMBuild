@@ -1,0 +1,737 @@
+{
+ "system": "claude-sonnet-5",
+ "tier": "B",
+ "meta": {
+  "protocol": "v2.2",
+  "task_id": "scissor_car_jack",
+  "tier": "B",
+  "condition_id": "name_only+image",
+  "rounds": 3,
+  "rounds_completed": 1,
+  "submitted_final": false,
+  "counters": {
+   "tool_calls": 91,
+   "errors": 0,
+   "check": 1,
+   "render": 1,
+   "create": 0
+  },
+  "round_counters": [
+   {
+    "tool_calls": 91,
+    "errors": 0,
+    "check": 1,
+    "render": 1,
+    "create": 0
+   }
+  ],
+  "created_parts": {},
+  "scale_mode": "metric",
+  "declares": {
+   "roles": true,
+   "materials": true,
+   "joints": true,
+   "sequence": true
+  },
+  "task_source": {
+   "file": "reference_data/benchmark_v2/core_v2.json",
+   "frozen_for": "core-set runs, harness v2.3",
+   "frozen": "2026-09-14",
+   "sha256": "442ae84645556b8876c5130c3443ee8f9c02ac701ee173c2c9c4f56c79efa486"
+  },
+  "wall_s": 653.7,
+  "pool_mesh_version": 2,
+  "transport": "shell session",
+  "checkpoint_round": 1
+ },
+ "item": {
+  "kind": "tool",
+  "system": "claude-sonnet-5",
+  "tier": "B",
+  "condition": "name_only+image",
+  "trajectory_rounds": 3,
+  "seed": 0,
+  "namespace": "core_v2.4",
+  "task": "scissor_car_jack",
+  "snapshot": "task_snapshot_core.json",
+  "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+  "rounds": 1,
+  "checkpoint_round": 1,
+  "path": "results/v2/scissor_car_jack/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design"
+ },
+ "notes": [
+  "Level 1 recomputed under spec v3.3",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.9393939393939394,
+   "metrics": {
+    "n_parts": 12,
+    "n_components": 1,
+    "n_breaks": 0,
+    "anchored_volume_frac": 1.0,
+    "break_score": 1.0,
+    "fastening_spec_rate": 0.8181818181818182,
+    "n_fastened_connections": 9,
+    "connections_needed_to_span": 11,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 0.8626940680247689,
+    "n_components_fastened_only": 4,
+    "n_interfacing_pairs": 15,
+    "connection_evidence": {
+     "interlock": 3,
+     "fastened_joint": 6,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 6,
+    "resting_contacts": [
+     [
+      "arm_BL",
+      "arm_BR"
+     ],
+     [
+      "arm_BL",
+      "pin_bottom"
+     ],
+     [
+      "arm_BR",
+      "pin_right"
+     ],
+     [
+      "arm_TR",
+      "pin_top"
+     ],
+     [
+      "arm_TR",
+      "pin_right"
+     ],
+     [
+      "arm_TR",
+      "screw"
+     ]
+    ],
+    "n_declared_joint_pairs": 8,
+    "n_declared_joints_rejected": 1,
+    "unattached_parts": [],
+    "shell_only_parts": [
+     "base",
+     "arm_BL",
+     "arm_BR",
+     "arm_TL",
+     "arm_TR",
+     "pin_bottom",
+     "pin_top",
+     "nut_left",
+     "crank"
+    ]
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "collision_free_pair_rate": 1.0,
+    "n_interfacing_pairs": 15,
+    "n_colliding_pairs": 0,
+    "n_declared_joint_pairs": 8,
+    "n_colliding_joint_pairs": 0,
+    "pen_volume_frac": 0.001316222441592629,
+    "pen_volume_cm3": 1.536,
+    "worst_pair_frac_of_smaller": 0.08583690987124463,
+    "graded_penetration_score": 0.9868377755840737,
+    "voxel_res_m": 0.004,
+    "colliding_pairs": []
+   },
+   "notes": [
+    "score = 1 - n_colliding / n_interfacing_pairs over EVERY interfacing pair, declared joints included",
+    "a pair collides when the eroded-core overlap exceeds 1 cm3 and 10% of the smaller part (25% when the design declares a joint there)"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.6957609597410306,
+   "metrics": {
+    "critical_tilt_deg": 14.761735785903854,
+    "tilt_direction_deg": 270.0,
+    "support_margin_m": 0.04107251949764582,
+    "support_margin_norm": 0.6854324177870459,
+    "support_area_m2": 0.011280368319500004,
+    "n_support_vertices": 27,
+    "com_height_m": 0.15587467484293718,
+    "ground_z": -2.354383354941092e-10,
+    "total_weight": 0.001969712191909362,
+    "com": [
+     0.003829910838049327,
+     -0.003377480502354194,
+     0.15587467460749885
+    ],
+    "ground_band_m": 0.005,
+    "z_top_m": 0.2831000089645386,
+    "push_force_ratio": 0.14508130753409093,
+    "shell_corrected_parts": [
+     {
+      "part": "base",
+      "voxel_m3": 0.000121664,
+      "hull_m3": 0.0002910403004083273
+     },
+     {
+      "part": "arm_BL",
+      "voxel_m3": 7.2704e-05,
+      "hull_m3": 0.000262733102451219
+     },
+     {
+      "part": "arm_BR",
+      "voxel_m3": 7.3088e-05,
+      "hull_m3": 0.00026221492716541354
+     },
+     {
+      "part": "arm_TL",
+      "voxel_m3": 0.000116224,
+      "hull_m3": 0.00023511804488709226
+     },
+     {
+      "part": "arm_TR",
+      "voxel_m3": 0.000114432,
+      "hull_m3": 0.00023558264607767418
+     },
+     {
+      "part": "crank",
+      "voxel_m3": 3.3600000000000004e-05,
+      "hull_m3": 4.775917091963545e-05
+     }
+    ],
+    "n_parts_in_main_group": 12,
+    "n_parts": 12,
+    "stand_score": 0.5618852218780452,
+    "push_score": 0.8296366976040159,
+    "target_tilt_deg": 26.271799312614462,
+    "target_push_ratio": 0.17487330050983108,
+    "reference_tilt_deg": 26.271799312614462,
+    "reference_push_ratio": 0.17487330050983108,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge",
+    "6 open-mesh part(s) re-weighted by their convex hull"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.13290296531145093,
+   "metrics": {
+    "shape_normalised": {
+     "chamfer_m": 0.132392540650729,
+     "fscore@0.01": 0.06069898538961038,
+     "fscore@0.025": 0.13290296531145093
+    },
+    "best_yaw_deg": 90,
+    "front_consistent": false,
+    "shape_normalised_as_oriented": {
+     "chamfer_m": 0.13352147409142784,
+     "fscore@0.01": 0.023591419491525423,
+     "fscore@0.025": 0.03250285505124451
+    },
+    "design_diagonal_m": 0.5937603526886273,
+    "reference_diagonal_m": 0.5950849317451189,
+    "scale_ratio": 0.9977741344372353,
+    "size_log2_ratio_vs_reference": -0.0032148244213650087,
+    "tau_rel": [
+     0.01,
+     0.025
+    ]
+   },
+   "notes": [
+    "the reference is rescaled to the design's bounding diagonal: 2.1 is shape only",
+    "absolute size is reported as scale_ratio and size_log2_ratio_vs_reference, and is not scored"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "n_joints": 11,
+    "n_moving": 8,
+    "n_scored_joints": 8,
+    "reference_n_moving": 14,
+    "joint_count_ratio": 0.5714285714285714,
+    "claims_recall": null,
+    "claims": [],
+    "mean_completeness": 1.0,
+    "mean_placement": 1.0,
+    "mean_mobility": 1.0,
+    "mean_effectiveness": 1.0,
+    "per_joint": [
+     {
+      "joint": "j_base_bl",
+      "type": "revolute",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.016008093944314426,
+      "moving_volume_frac": 0.8957442141055171,
+      "welded_by_contact": true,
+      "declared_loop": true,
+      "n_moving_parts": 11,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "j_base_br",
+      "type": "revolute",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.01920079878749329,
+      "moving_volume_frac": 0.8957442141055171,
+      "welded_by_contact": true,
+      "declared_loop": true,
+      "n_moving_parts": 11,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "j_top_tl",
+      "type": "revolute",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 7.494948376462126e-05,
+      "moving_volume_frac": 0.5804540967423494,
+      "welded_by_contact": true,
+      "declared_loop": true,
+      "n_moving_parts": 10,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "j_top_tr",
+      "type": "revolute",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.0001342186133448528,
+      "moving_volume_frac": 0.5804540967423494,
+      "welded_by_contact": true,
+      "declared_loop": true,
+      "n_moving_parts": 10,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "j_left",
+      "type": "revolute",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 6.924960302773408e-05,
+      "moving_volume_frac": 0.9315564330371832,
+      "welded_by_contact": true,
+      "declared_loop": true,
+      "n_moving_parts": 10,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "j_right",
+      "type": "revolute",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.0002331953027840633,
+      "moving_volume_frac": 0.9373697488208841,
+      "welded_by_contact": true,
+      "declared_loop": true,
+      "n_moving_parts": 11,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "j_screw_slide",
+      "type": "prismatic",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 3.659268361687634e-05,
+      "moving_volume_frac": 0.987221673796205,
+      "welded_by_contact": true,
+      "declared_loop": true,
+      "n_moving_parts": 11,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "j_screw_rot",
+      "type": "continuous",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.00010311460082465427,
+      "moving_volume_frac": 0.9840408028956893,
+      "welded_by_contact": true,
+      "declared_loop": true,
+      "n_moving_parts": 11,
+      "n_sweep_samples": 11,
+      "first_block": null,
+      "score": 1.0
+     }
+    ]
+   },
+   "notes": [
+    "2.2 is the mean per-joint quality; claim recall and joint count are reported, not scored",
+    "joints are swept independently; coupled mechanisms are not sampled jointly"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.7529545454545454,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6296296296296297,
+     "qwen2.5-vl-32b": 0.3703703703703704
+    },
+    "judge_mean": 0.5,
+    "n_judges": 2,
+    "computed_score": 0.8613636363636363,
+    "computed": {
+     "granularity_score": 0.8,
+     "consolidation_score": 0.9090909090909091,
+     "joint_placement_rate": 0.875,
+     "consolidation_violations": 1,
+     "n_declared_joint_pairs": 8
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.5555555555555556,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5555555555555556,
+     "qwen2.5-vl-32b": 0.5555555555555556
+    },
+    "judge_mean": 0.5555555555555556,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": 0.8736890473612092
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "declared+computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "coverage_volume_frac": 1.0000000000000002,
+    "claim_class_coverage": null,
+    "claimed_class_groups": [],
+    "design_classes": [
+     "heavy_metal"
+    ],
+    "total_mass_kg": 9.2656727424
+   },
+   "notes": [
+    "densities are Artiverse medians; volumes of open meshes are under-counted",
+    "the population prior and the per-task load case of v2 are dropped as task-specific"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.7708333333333334,
+   "metrics": {
+    "coverage": 1.0,
+    "insertion_feasible_frac": 1.0,
+    "declared_direction_feasible_frac": 0.75,
+    "first_infeasible_step": null,
+    "supported_prefix_frac": 0.08333333333333333,
+    "stable_prefix_frac": 1.0,
+    "n_steps": 12
+   },
+   "notes": [
+    "insertion paths are straight translations along the declared direction or the six axes"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": true,
+    "n_requirements_disabled_by_ceiling": 1,
+    "n_requirements_declared_only": 0,
+    "declared_part_coverage": null,
+    "n_capabilities": 3,
+    "n_capabilities_zero": 0,
+    "capability_scores": {
+     "F1": 1.0,
+     "P": 1.0,
+     "H1": 1.0
+    },
+    "mean_of_means": 1.0,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Actuation mechanism",
+      "claims": [
+       "F1"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 3,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "leadscrew",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "screw"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "handle socket",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "crank"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "threaded nut",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "nut_left"
+         ]
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "P",
+      "name": "required subsystems the claims name but no subsystem covers",
+      "claims": [
+       "P2"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 1,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "scissor linkage",
+        "claim": "P2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 4,
+         "need": 1,
+         "parts": [
+          "arm_BL",
+          "arm_BR",
+          "arm_TL",
+          "arm_TR"
+         ]
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "the screw drives the linkage",
+      "claims": [
+       "P1",
+       "P2"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 1,
+      "n_disabled": 1,
+      "n_declared_only": 0,
+      "weakest": "chain",
+      "requirements": [
+       {
+        "from": "leadscrew",
+        "to": "scissor linkage",
+        "carries": "motion",
+        "max_hops": 3,
+        "claim": "P1",
+        "pred": "chain",
+        "score": 1.0,
+        "detail": {
+         "from_n": 1,
+         "to_n": 4,
+         "carries": "motion"
+        },
+        "reference_score": 0.5
+       },
+       {
+        "role": "scissor linkage",
+        "claim": "P2",
+        "pred": "joint_enables",
+        "score": 1.0,
+        "detail": {
+         "joint": "j_base_bl",
+         "type": "revolute",
+         "mobility": 1.0,
+         "type_score": null,
+         "axis_score": null,
+         "min_sweep": 0.5
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     }
+    ]
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared",
+    "1 requirement(s) disabled: the task's own reference object does not pass them"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "declared_roles": true,
+    "n_parts": 12,
+    "required_part_coverage": 1.0,
+    "subsystem_part_coverage": 1.0,
+    "kinematic_part_coverage": null,
+    "groups": {
+     "required_parts": {
+      "n": 3,
+      "score": 1.0,
+      "missing": [],
+      "present_but_floating": []
+     },
+     "subsystem_parts": {
+      "n": 3,
+      "score": 1.0,
+      "missing": [],
+      "present_but_floating": []
+     },
+     "kinematic_parts": {
+      "n": 0,
+      "score": null,
+      "missing": [],
+      "present_but_floating": []
+     }
+    },
+    "unrecognised_roles": [
+     "right pivot bracket (screw bearing)"
+    ],
+    "unrecognised_role_frac": 0.08333333333333333,
+    "subsystem_connection": null,
+    "subsystem_presence_v31": 1.0
+   },
+   "notes": [
+    "score = mean of the three claim-group coverages; a role that exists but floats off the assembly scores 0.5",
+    "matching is the task's own auto lexicon plus its authored bridges, never a hand-written per-object predicate"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.6138725302591942,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.7222222222222221,
+     "qwen2.5-vl-32b": 0.6111111111111112
+    },
+    "judge_mean": 0.6666666666666666,
+    "n_judges": 2,
+    "computed_score": 0.4906862119750919,
+    "computed": {
+     "part_correspondence_iou": 0.02372658351532304,
+     "symmetry_match": 0.9576458404348607,
+     "symmetry_iou": 0.5095457537853851,
+     "reference_symmetry_iou": 0.48785425101214575
+    }
+   },
+   "notes": [
+    "0.70 judge + 0.30 computed"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [],
+  "buildable": true,
+  "overall": 0.7884394857540874,
+  "n_scored_dims": 12,
+  "gate_pending": true
+ },
+ "stamp": "1789501109.77172|v3.1|v3.2|v3.3|v3.4.3"
+}

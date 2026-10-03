@@ -1,0 +1,137 @@
+{
+ "spec": "v3.4.5",
+ "fitted": "2026-09-23T01:47:23",
+ "method": "per half: clipped linear map, lo/hi matching the human mean and sd on the fitting items; blend = (a*J' + b*C')/(a+b); one half missing -> the other calibrated half",
+ "source": {
+  "human": "human_evaluation/annotations/A*.json (latest rating per rater, mean over raters, (s-1)/4)",
+  "judge": "results/v2/<task>/judge_l3/{gemma-3-27b,qwen2.5-vl-32b}.json, mean of the two",
+  "computed": "results/v2/<task>/eval_v34/<key>.json computed_score"
+ },
+ "dims": {
+  "3.1": {
+   "weights": [
+    1,
+    1
+   ],
+   "judge": [
+    0.361098595910615,
+    0.7644482055694082
+   ],
+   "computed": [
+    0.12761948890919605,
+    1.0246941813514066
+   ],
+   "n_items": 48,
+   "n_items_with_computed": 46,
+   "human_mean": 0.5911458333333334,
+   "human_sd": 0.3334045334114483,
+   "ratio_selection_loo_mae": {
+    "1:0": 0.24614278707060916,
+    "4:1": 0.2254586151275357,
+    "3:1": 0.2204787131776409,
+    "2:1": 0.21292418726099935,
+    "3:2": 0.21001125584163458,
+    "1:1": 0.20933410211520784,
+    "2:3": 0.20991897093542267,
+    "1:2": 0.2136084094638466,
+    "1:3": 0.21828699055987122,
+    "0:1": 0.23410034344983485
+   }
+  },
+  "3.2": {
+   "weights": [
+    1,
+    0
+   ],
+   "judge": [
+    0.374144242014298,
+    0.7251003039981829
+   ],
+   "computed": null,
+   "n_items": 48,
+   "n_items_with_computed": 0,
+   "human_mean": 0.5520833333333334,
+   "human_sd": 0.3515528548059626,
+   "ratio_selection_loo_mae": {
+    "1:0": null
+   }
+  },
+  "3.3": {
+   "weights": [
+    3,
+    1
+   ],
+   "judge": [
+    0.450001044152948,
+    0.7765900239285473
+   ],
+   "computed": [
+    0.15358897088851234,
+    0.6057168520591678
+   ],
+   "n_items": 48,
+   "n_items_with_computed": 42,
+   "human_mean": 0.609375,
+   "human_sd": 0.3577863436582416,
+   "ratio_selection_loo_mae": {
+    "1:0": 0.21339552018101046,
+    "4:1": 0.20620661362121268,
+    "3:1": 0.2048681816819768,
+    "2:1": 0.20537409563177664,
+    "3:2": 0.2092615601711624,
+    "1:1": 0.21737517388979574,
+    "2:3": 0.22629350145245763,
+    "1:2": 0.23223905316089888,
+    "1:3": 0.24072115249556597,
+    "0:1": 0.2718314725517815
+   }
+  }
+ },
+ "split": {
+  "rule": "alphabetical within category; positions 1, 3 -> fit; 2, 4 -> test",
+  "categories": {
+   "vehicles": [
+    "offroad_jeep",
+    "passenger_car",
+    "wheelchair",
+    "wheeled_excavator"
+   ],
+   "mechanisms": [
+    "bench_drill_press",
+    "oscillating_steam_engine",
+    "scissor_car_jack",
+    "stepladder"
+   ],
+   "furniture": [
+    "bed_frame",
+    "chest_of_drawers",
+    "dining_table",
+    "swivel_office_chair"
+   ],
+   "appliances": [
+    "desk_lamp",
+    "oscillating_fan",
+    "refrigerator"
+   ]
+  },
+  "fit": [
+   "bed_frame",
+   "bench_drill_press",
+   "desk_lamp",
+   "dining_table",
+   "offroad_jeep",
+   "refrigerator",
+   "scissor_car_jack",
+   "wheelchair"
+  ],
+  "test": [
+   "chest_of_drawers",
+   "oscillating_fan",
+   "oscillating_steam_engine",
+   "passenger_car",
+   "stepladder",
+   "swivel_office_chair",
+   "wheeled_excavator"
+  ]
+ }
+}

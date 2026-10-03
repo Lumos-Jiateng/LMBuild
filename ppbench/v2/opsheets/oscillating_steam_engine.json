@@ -1,0 +1,130 @@
+{
+ "task": "oscillating_steam_engine",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Steam admission and exhaust",
+   "function": "Directs steam into and out of the cylinder by aligning ports through oscillation.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "cylinder",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "trunnion",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "port face",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "cylinder",
+     "to": "port face",
+     "carries": "fluid",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "cylinder",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Motion conversion",
+   "function": "Converts the linear force of the piston into rotational motion of the crankshaft.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "piston",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "piston rod",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "connecting rod",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "crankshaft",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "connecting rod",
+     "to": "crankshaft",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "piston",
+     "type": "prismatic",
+     "axis": "longitudinal axis of the cylinder",
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "crankshaft",
+     "type": "revolute",
+     "axis": "central axis of the crankshaft",
+     "claim": "K3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "connecting rod",
+     "type": "revolute",
+     "axis": "axis of the crankpin and piston rod connection",
+     "claim": "K4"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the piston drives the crankshaft",
+   "claims": [
+    "P2",
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "chain",
+     "from": "piston",
+     "to": "crankshaft",
+     "carries": "motion",
+     "max_hops": 4,
+     "claim": "P2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "crankshaft",
+     "type": "revolute",
+     "claim": "P5"
+    }
+   ]
+  }
+ ]
+}

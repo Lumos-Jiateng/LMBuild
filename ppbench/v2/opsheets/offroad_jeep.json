@@ -1,0 +1,252 @@
+{
+ "task": "offroad_jeep",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Drivetrain",
+   "function": "Converts engine power into rotational motion at all wheels to propel the vehicle.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "engine",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "transfer case",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "differentials",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "axles",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "transfer case",
+     "to": "differentials",
+     "carries": "power",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "differentials",
+     "to": "wheels",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheels",
+     "type": "revolute",
+     "axis": "axle centerline",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Suspension",
+   "function": "Maintains wheel contact with uneven surfaces and absorbs shocks from the terrain.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "springs",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "shock absorbers",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "axles",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheels",
+     "type": "revolute",
+     "axis": "axle centerline",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Steering",
+   "function": "Controls the direction of the vehicle by turning the front wheels.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "steering wheel",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "steering column",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "linkages",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "front wheels",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "steering wheel",
+     "to": "linkages",
+     "carries": "motion",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "linkages",
+     "to": "front wheels",
+     "carries": "motion",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "Propulsion",
+   "function": "Generates mechanical energy from fuel to drive the vehicle.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "engine",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "fuel tank",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "fuel pump",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "fuel tank",
+     "to": "engine",
+     "carries": "fluid",
+     "claim": "F4"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P2",
+    "P3",
+    "P4",
+    "P6",
+    "P10"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "tires",
+     "claim": "P2"
+    },
+    {
+     "pred": "part_present",
+     "role": "suspension system",
+     "claim": "P3"
+    },
+    {
+     "pred": "part_present",
+     "role": "four-wheel drive system",
+     "claim": "P4"
+    },
+    {
+     "pred": "part_present",
+     "role": "steering system",
+     "claim": "P6"
+    },
+    {
+     "pred": "part_present",
+     "role": "brakes",
+     "claim": "P10"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "can be stopped",
+   "claims": [
+    "P10"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "brakes",
+     "claim": "P10"
+    },
+    {
+     "pred": "colocated",
+     "a": "brakes",
+     "b": "wheels",
+     "max_gap_m": 0.2,
+     "claim": "P10"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "rolls on a wheel at each corner",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "ground_contact",
+     "role": "wheels",
+     "min_clusters": 4,
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

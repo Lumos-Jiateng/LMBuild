@@ -1,0 +1,227 @@
+{
+ "task": "wheeled_excavator",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Hydraulic Power System",
+   "function": "Converts engine mechanical energy into hydraulic fluid pressure to actuate all moving parts.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Engine",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Hydraulic Pumps",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Hydraulic Oil Tanks",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Hydraulic Cylinders",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Hydraulic Motors",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Engine",
+     "to": "Hydraulic Pumps",
+     "carries": "power",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Arm Assembly",
+   "function": "Performs the digging, lifting, and dumping motions required for excavation.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Boom",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Stick",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Bucket",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Hydraulic Cylinders",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Boom",
+     "to": "Stick",
+     "carries": "load",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Stick",
+     "to": "Bucket",
+     "carries": "load",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Stick",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Bucket",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Travel System",
+   "function": "Propels the machine forward, backward, and turns via independent track drive.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Undercarriage",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Tracks",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Track Motors",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Final Drives",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "Track Motors",
+     "to": "Tracks",
+     "carries": "motion",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "Final Drives",
+     "to": "Tracks",
+     "carries": "motion",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1",
+    "K4"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "House",
+     "type": "revolute",
+     "axis": "vertical center pin",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Piston Rod",
+     "type": "prismatic",
+     "axis": null,
+     "claim": "K4"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P2",
+    "P4",
+    "P9"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "House",
+     "claim": "P2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Stick (Dipper)",
+     "claim": "P4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Swing Motor",
+     "claim": "P9"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the arm reaches out and the bucket moves",
+   "claims": [
+    "P3",
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "chain",
+     "from": "Boom",
+     "to": "Bucket",
+     "carries": "motion",
+     "max_hops": 4,
+     "claim": "P3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Boom",
+     "type": "revolute",
+     "claim": "P3"
+    }
+   ]
+  }
+ ]
+}

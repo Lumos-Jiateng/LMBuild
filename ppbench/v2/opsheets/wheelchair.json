@@ -1,0 +1,235 @@
+{
+ "task": "wheelchair",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Propulsion System",
+   "function": "Generates the force required to move the wheelchair forward or backward.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "rear wheels",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "push-rims",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "push-rims",
+     "to": "rear wheels",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "rear wheels",
+     "type": "revolute",
+     "axis": "axle",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Steering System",
+   "function": "Allows the wheelchair to change direction by swiveling the front wheels.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "caster wheels",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "caster forks",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "frame",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "caster wheels",
+     "to": "caster forks",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "caster wheels",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "caster forks",
+     "type": "revolute",
+     "axis": "vertical swivel axis",
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Support System",
+   "function": "Provides postural support and comfort for the user.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "seat",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "backrest",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "armrests",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "footrests",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "backrest",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K4"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "Braking System",
+   "function": "Prevents the wheelchair from rolling when stationary.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "brakes",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "rear wheels",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "brakes",
+     "to": "rear wheels",
+     "carries": "force",
+     "claim": "F4"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "rear wheels",
+     "type": "revolute",
+     "axis": "axle",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "P3"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a person sits and can reach the push-rims",
+   "claims": [
+    "P2",
+    "P6"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "seat",
+     "min_area_m2": 0.09,
+     "height_range_m": [
+      0.35,
+      0.6
+     ],
+     "claim": "P2"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "seat",
+     "placement": "above",
+     "box": "seated_torso",
+     "min_free": 0.7,
+     "claim": "P2"
+    },
+    {
+     "pred": "reachable",
+     "target": "push-rims",
+     "from": "seat",
+     "reach_m": 0.8,
+     "claim": "P6"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "can be stopped",
+   "claims": [
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "brakes",
+     "claim": "P7"
+    },
+    {
+     "pred": "colocated",
+     "a": "brakes",
+     "b": "wheels",
+     "max_gap_m": 0.15,
+     "claim": "P7"
+    }
+   ]
+  }
+ ]
+}

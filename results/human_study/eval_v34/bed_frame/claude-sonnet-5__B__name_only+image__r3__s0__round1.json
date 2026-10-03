@@ -1,0 +1,656 @@
+{
+ "system": "claude-sonnet-5",
+ "tier": "B",
+ "meta": {
+  "protocol": "v2.2",
+  "task_id": "bed_frame",
+  "tier": "B",
+  "condition_id": "name_only+image",
+  "rounds": 3,
+  "rounds_completed": 1,
+  "submitted_final": false,
+  "counters": {
+   "tool_calls": 13,
+   "errors": 0,
+   "check": 1,
+   "render": 1,
+   "create": 0
+  },
+  "round_counters": [
+   {
+    "tool_calls": 13,
+    "errors": 0,
+    "check": 1,
+    "render": 1,
+    "create": 0
+   }
+  ],
+  "created_parts": {},
+  "scale_mode": "metric",
+  "declares": {
+   "roles": true,
+   "materials": true,
+   "joints": true,
+   "sequence": true
+  },
+  "task_source": {
+   "file": "reference_data/benchmark_v2/core_v2.json",
+   "frozen_for": "core-set runs, harness v2.3",
+   "frozen": "2026-09-14",
+   "sha256": "442ae84645556b8876c5130c3443ee8f9c02ac701ee173c2c9c4f56c79efa486"
+  },
+  "wall_s": 155.8,
+  "pool_mesh_version": 2,
+  "transport": "shell session",
+  "checkpoint_round": 1
+ },
+ "item": {
+  "kind": "tool",
+  "system": "claude-sonnet-5",
+  "tier": "B",
+  "condition": "name_only+image",
+  "trajectory_rounds": 3,
+  "seed": 0,
+  "namespace": "core_v2.4",
+  "task": "bed_frame",
+  "snapshot": "task_snapshot_core.json",
+  "key": "claude-sonnet-5__B__name_only+image__r3__s0__round1",
+  "rounds": 1,
+  "checkpoint_round": 1,
+  "path": "results/v2/bed_frame/runs/core_v2.4/claude-sonnet-5__B__name_only+image__r3__s0/rounds/round_1/design"
+ },
+ "notes": [
+  "Level 1 recomputed under spec v3.3",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.6666666666666666,
+   "metrics": {
+    "n_parts": 3,
+    "n_components": 1,
+    "n_breaks": 0,
+    "anchored_volume_frac": 1.0,
+    "break_score": 1.0,
+    "fastening_spec_rate": 0.0,
+    "n_fastened_connections": 0,
+    "connections_needed_to_span": 2,
+    "whole_body_rate": 0.6666666666666666,
+    "fastening_strict_score": 0.3768588680797588,
+    "n_components_fastened_only": 3,
+    "n_interfacing_pairs": 2,
+    "connection_evidence": {
+     "interlock": 0,
+     "fastened_joint": 0,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 2,
+    "resting_contacts": [
+     [
+      "base",
+      "footboard"
+     ],
+     [
+      "base",
+      "headboard"
+     ]
+    ],
+    "n_declared_joint_pairs": 0,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [],
+    "shell_only_parts": []
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "collision_free_pair_rate": 1.0,
+    "n_interfacing_pairs": 2,
+    "n_colliding_pairs": 0,
+    "n_declared_joint_pairs": 0,
+    "n_colliding_joint_pairs": 0,
+    "pen_volume_frac": 0.0,
+    "pen_volume_cm3": 0.0,
+    "worst_pair_frac_of_smaller": 0.0,
+    "graded_penetration_score": 1.0,
+    "voxel_res_m": 0.004,
+    "colliding_pairs": []
+   },
+   "notes": [
+    "score = 1 - n_colliding / n_interfacing_pairs over EVERY interfacing pair, declared joints included",
+    "a pair collides when the eroded-core overlap exceeds 1 cm3 and 10% of the smaller part (25% when the design declares a joint there)"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "critical_tilt_deg": 60.71063878346325,
+    "tilt_direction_deg": 90.0,
+    "support_margin_m": 0.7670466062030066,
+    "support_margin_norm": 0.6974861157130583,
+    "support_area_m2": 3.799463216859,
+    "n_support_vertices": 22,
+    "com_height_m": 0.43025922062469335,
+    "ground_z": -1.1920929132713809e-08,
+    "total_weight": 0.069907776,
+    "com": [
+     0.033654229709724925,
+     0.28882839379699327,
+     0.4302592087037642
+    ],
+    "ground_band_m": 0.011000000357627871,
+    "z_top_m": 1.100000023841858,
+    "push_force_ratio": 0.6973150738773419,
+    "shell_corrected_parts": [],
+    "n_parts_in_main_group": 3,
+    "n_parts": 3,
+    "stand_score": 1.0,
+    "push_score": 1.0,
+    "target_tilt_deg": 30.0,
+    "target_push_ratio": 0.35,
+    "reference_tilt_deg": 63.418878933422704,
+    "reference_push_ratio": 0.7066818159337843,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.9897204051221176,
+   "metrics": {
+    "shape_normalised": {
+     "chamfer_m": 0.006575635834992379,
+     "fscore@0.01": 0.8602129880316058,
+     "fscore@0.025": 0.9897204051221176
+    },
+    "best_yaw_deg": 0,
+    "front_consistent": true,
+    "shape_normalised_as_oriented": {
+     "chamfer_m": 0.006575635834992379,
+     "fscore@0.01": 0.8602129880316058,
+     "fscore@0.025": 0.9897204051221176
+    },
+    "design_diagonal_m": 3.035775290057242,
+    "reference_diagonal_m": 2.986835843211815,
+    "scale_ratio": 1.0163850473927623,
+    "size_log2_ratio_vs_reference": 0.023447056368733503,
+    "tau_rel": [
+     0.01,
+     0.025
+    ]
+   },
+   "notes": [
+    "the reference is rescaled to the design's bounding diagonal: 2.1 is shape only",
+    "absolute size is reported as scale_ratio and size_log2_ratio_vs_reference, and is not scored"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "fail",
+   "score": 0.0,
+   "metrics": {
+    "n_joints": 0,
+    "n_moving": 0,
+    "n_claimed_mechanisms": 2
+   },
+   "notes": [
+    "the task claims kinematics and the design declares no moving joint"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.7488888888888888,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6666666666666666,
+     "qwen2.5-vl-32b": 0.5925925925925926
+    },
+    "judge_mean": 0.6296296296296295,
+    "n_judges": 2,
+    "computed_score": 0.8,
+    "computed": {
+     "granularity_score": 0.6,
+     "consolidation_score": 1.0,
+     "joint_placement_rate": null,
+     "consolidation_violations": 0,
+     "n_declared_joint_pairs": 0
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.7222222222222221,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6666666666666666,
+     "qwen2.5-vl-32b": 0.7777777777777777
+    },
+    "judge_mean": 0.7222222222222221,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": 0.9636315148097472
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "declared+computed",
+   "status": "pass",
+   "score": 0.625,
+   "metrics": {
+    "coverage_volume_frac": 1.0,
+    "claim_class_coverage": 0.25,
+    "claimed_class_groups": [
+     [
+      "wood"
+     ],
+     [
+      "heavy_metal",
+      "light_metal"
+     ],
+     [
+      "foam"
+     ],
+     [
+      "rubber"
+     ]
+    ],
+    "design_classes": [
+     "wood"
+    ],
+    "total_mass_kg": 38.5034416896
+   },
+   "notes": [
+    "densities are Artiverse medians; volumes of open meshes are under-counted",
+    "the population prior and the per-task load case of v2 are dropped as task-specific"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.9166666666666666,
+   "metrics": {
+    "coverage": 1.0,
+    "insertion_feasible_frac": 1.0,
+    "declared_direction_feasible_frac": 0.3333333333333333,
+    "first_infeasible_step": null,
+    "supported_prefix_frac": 1.0,
+    "stable_prefix_frac": 0.6666666666666666,
+    "n_steps": 3
+   },
+   "notes": [
+    "insertion paths are straight translations along the declared direction or the six axes"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.6666666666666666,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": true,
+    "n_requirements_disabled_by_ceiling": 3,
+    "n_requirements_declared_only": 3,
+    "declared_part_coverage": 0.0,
+    "n_capabilities": 3,
+    "n_capabilities_zero": 1,
+    "capability_scores": {
+     "F1": 0.0,
+     "F2": 1.0,
+     "H1": 1.0
+    },
+    "mean_of_means": 0.8333333333333334,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Support Structure",
+      "claims": [
+       "F1"
+      ],
+      "score": 0.0,
+      "mean": 0.5,
+      "n_requirements": 4,
+      "n_disabled": 0,
+      "n_declared_only": 1,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "bed frame",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "side rails",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "headboard",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "headboard"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "footboard",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "footboard"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "center support rail",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "F2",
+      "name": "Sleeping Surface",
+      "claims": [
+       "F2"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 2,
+      "n_disabled": 1,
+      "n_declared_only": 2,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "mattress",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "bed base",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "base"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "wooden slats",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "base"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "box spring",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "from": "mattress",
+        "to": "bed base",
+        "carries": "load",
+        "claim": "F2",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 1
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "a person can lie on it",
+      "claims": [
+       "P3"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 2,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "surface",
+      "requirements": [
+       {
+        "role": "bed base",
+        "min_area_m2": 1.2,
+        "height_range_m": [
+         0.1,
+         0.8
+        ],
+        "claim": "P3",
+        "pred": "surface",
+        "score": 1.0,
+        "detail": {
+         "area_m2": 1.952944,
+         "need_m2": 1.2,
+         "top_z_m": 0.38269951939582825,
+         "height_m": 0.3826995313167574,
+         "height_range_m": [
+          0.1,
+          0.8
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "anchor": "bed base",
+        "placement": "above",
+        "w": 0.8,
+        "d": 1.7,
+        "h": 0.35,
+        "min_free": 0.85,
+        "claim": "P3",
+        "pred": "clearance",
+        "score": 1.0,
+        "detail": {
+         "free_frac": 1.0,
+         "need_free": 0.85,
+         "box_m3": 0.476,
+         "placement": "above",
+         "anchor": [
+          "base"
+         ]
+        },
+        "reference_score": 1.0
+       }
+      ]
+     }
+    ]
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared",
+    "3 requirement(s) disabled: the task's own reference object does not pass them",
+    "3 part(s) the reference cannot show either are reported as declared_part_coverage, not scored"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.23148148148148148,
+   "metrics": {
+    "declared_roles": true,
+    "n_parts": 3,
+    "required_part_coverage": 0.25,
+    "subsystem_part_coverage": 0.4444444444444444,
+    "kinematic_part_coverage": 0.0,
+    "groups": {
+     "required_parts": {
+      "n": 4,
+      "score": 0.25,
+      "missing": [
+       "mattress",
+       "bed frame",
+       "side rails"
+      ],
+      "present_but_floating": []
+     },
+     "subsystem_parts": {
+      "n": 9,
+      "score": 0.4444444444444444,
+      "missing": [
+       "bed frame",
+       "box spring",
+       "center support rail",
+       "mattress",
+       "side rails"
+      ],
+      "present_but_floating": []
+     },
+     "kinematic_parts": {
+      "n": 4,
+      "score": 0.0,
+      "missing": [
+       "floor",
+       "roll-away bed frame",
+       "sofa",
+       "sofa bed frame"
+      ],
+      "present_but_floating": []
+     }
+    },
+    "unrecognised_roles": [],
+    "unrecognised_role_frac": 0.0,
+    "subsystem_connection": 0.0,
+    "subsystem_presence_v31": 0.45
+   },
+   "notes": [
+    "score = mean of the three claim-group coverages; a role that exists but floats off the assembly scores 0.5",
+    "matching is the task's own auto lexicon plus its authored bridges, never a hand-written per-object predicate"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.658801116477819,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.7222222222222221,
+     "qwen2.5-vl-32b": 0.75
+    },
+    "judge_mean": 0.736111111111111,
+    "n_judges": 2,
+    "computed_score": 0.4784111290001377,
+    "computed": {
+     "part_correspondence_iou": 0.31557440686503757,
+     "symmetry_match": 0.6412478511352379,
+     "symmetry_iou": 0.6047164436291881,
+     "reference_symmetry_iou": 0.9430307525532037
+    }
+   },
+   "notes": [
+    "0.70 judge + 0.30 computed"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [
+   "2.3"
+  ],
+  "buildable": true,
+  "overall": 0.6855095095160442,
+  "n_scored_dims": 12,
+  "gate_pending": true
+ },
+ "stamp": "1789501067.1955404|v3.1|v3.2|v3.3|v3.4.3"
+}

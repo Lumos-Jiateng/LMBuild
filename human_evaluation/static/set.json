@@ -1,0 +1,2634 @@
+{
+ "version": 2,
+ "tasks": {
+  "offroad_jeep": {
+   "photo": "img/photo_offroad_jeep.jpg",
+   "name": "offroad jeep"
+  },
+  "passenger_car": {
+   "photo": "img/photo_passenger_car.jpg",
+   "name": "passenger car"
+  },
+  "wheeled_excavator": {
+   "photo": "img/photo_wheeled_excavator.jpg",
+   "name": "wheeled excavator"
+  },
+  "scissor_car_jack": {
+   "photo": "img/photo_scissor_car_jack.jpg",
+   "name": "scissor car jack"
+  },
+  "bench_drill_press": {
+   "photo": "img/photo_bench_drill_press.jpg",
+   "name": "bench drill press"
+  },
+  "oscillating_steam_engine": {
+   "photo": "img/photo_oscillating_steam_engine.jpg",
+   "name": "oscillating steam engine"
+  },
+  "dining_table": {
+   "photo": "img/photo_dining_table.jpg",
+   "name": "dining table"
+  },
+  "bed_frame": {
+   "photo": "img/photo_bed_frame.jpg",
+   "name": "bed frame"
+  },
+  "chest_of_drawers": {
+   "photo": "img/photo_chest_of_drawers.jpg",
+   "name": "chest of drawers"
+  },
+  "swivel_office_chair": {
+   "photo": "img/photo_swivel_office_chair.jpg",
+   "name": "swivel office chair"
+  },
+  "stepladder": {
+   "photo": "img/photo_stepladder.jpg",
+   "name": "stepladder"
+  },
+  "refrigerator": {
+   "photo": "img/photo_refrigerator.jpg",
+   "name": "refrigerator"
+  },
+  "desk_lamp": {
+   "photo": "img/photo_desk_lamp.jpg",
+   "name": "desk lamp"
+  },
+  "oscillating_fan": {
+   "photo": "img/photo_oscillating_fan.jpg",
+   "name": "oscillating fan"
+  },
+  "wheelchair": {
+   "photo": "img/photo_wheelchair.jpg",
+   "name": "wheelchair"
+  }
+ },
+ "designs": {
+  "d4960": {
+   "task": "offroad_jeep",
+   "n_parts": 26
+  },
+  "d1602": {
+   "task": "offroad_jeep",
+   "n_parts": 21
+  },
+  "d4120": {
+   "task": "offroad_jeep",
+   "n_parts": 41
+  },
+  "d2274": {
+   "task": "offroad_jeep",
+   "n_parts": 12
+  },
+  "d1745": {
+   "task": "offroad_jeep",
+   "n_parts": 12
+  },
+  "d3580": {
+   "task": "offroad_jeep",
+   "n_parts": 147
+  },
+  "d7211": {
+   "task": "passenger_car",
+   "n_parts": 27
+  },
+  "d6715": {
+   "task": "passenger_car",
+   "n_parts": 31
+  },
+  "d4081": {
+   "task": "passenger_car",
+   "n_parts": 14
+  },
+  "d6417": {
+   "task": "passenger_car",
+   "n_parts": 11
+  },
+  "d6358": {
+   "task": "passenger_car",
+   "n_parts": 22
+  },
+  "d2153": {
+   "task": "passenger_car",
+   "n_parts": 209
+  },
+  "d6861": {
+   "task": "wheeled_excavator",
+   "n_parts": 29
+  },
+  "d5698": {
+   "task": "wheeled_excavator",
+   "n_parts": 32
+  },
+  "d2137": {
+   "task": "wheeled_excavator",
+   "n_parts": 6
+  },
+  "d7645": {
+   "task": "wheeled_excavator",
+   "n_parts": 7
+  },
+  "d4253": {
+   "task": "wheeled_excavator",
+   "n_parts": 18
+  },
+  "d1456": {
+   "task": "wheeled_excavator",
+   "n_parts": 488
+  },
+  "d9987": {
+   "task": "scissor_car_jack",
+   "n_parts": 13
+  },
+  "d9230": {
+   "task": "scissor_car_jack",
+   "n_parts": 12
+  },
+  "d4245": {
+   "task": "scissor_car_jack",
+   "n_parts": 6
+  },
+  "d7955": {
+   "task": "scissor_car_jack",
+   "n_parts": 4
+  },
+  "d5680": {
+   "task": "scissor_car_jack",
+   "n_parts": 22
+  },
+  "d8613": {
+   "task": "scissor_car_jack",
+   "n_parts": 69
+  },
+  "d9787": {
+   "task": "bench_drill_press",
+   "n_parts": 10
+  },
+  "d9345": {
+   "task": "bench_drill_press",
+   "n_parts": 15
+  },
+  "d3055": {
+   "task": "bench_drill_press",
+   "n_parts": 8
+  },
+  "d1573": {
+   "task": "bench_drill_press",
+   "n_parts": 3
+  },
+  "d8108": {
+   "task": "bench_drill_press",
+   "n_parts": 9
+  },
+  "d1922": {
+   "task": "bench_drill_press",
+   "n_parts": 90
+  },
+  "d5356": {
+   "task": "oscillating_steam_engine",
+   "n_parts": 10
+  },
+  "d7950": {
+   "task": "oscillating_steam_engine",
+   "n_parts": 15
+  },
+  "d9090": {
+   "task": "oscillating_steam_engine",
+   "n_parts": 6
+  },
+  "d4342": {
+   "task": "oscillating_steam_engine",
+   "n_parts": 6
+  },
+  "d3993": {
+   "task": "oscillating_steam_engine",
+   "n_parts": 12
+  },
+  "d3791": {
+   "task": "oscillating_steam_engine",
+   "n_parts": 69
+  },
+  "d2019": {
+   "task": "dining_table",
+   "n_parts": 5
+  },
+  "d3262": {
+   "task": "dining_table",
+   "n_parts": 9
+  },
+  "d9690": {
+   "task": "dining_table",
+   "n_parts": 9
+  },
+  "d6353": {
+   "task": "dining_table",
+   "n_parts": 5
+  },
+  "d7491": {
+   "task": "dining_table",
+   "n_parts": 6
+  },
+  "d7270": {
+   "task": "dining_table",
+   "n_parts": 64
+  },
+  "d4160": {
+   "task": "bed_frame",
+   "n_parts": 5
+  },
+  "d4179": {
+   "task": "bed_frame",
+   "n_parts": 3
+  },
+  "d1669": {
+   "task": "bed_frame",
+   "n_parts": 19
+  },
+  "d8272": {
+   "task": "bed_frame",
+   "n_parts": 5
+  },
+  "d3017": {
+   "task": "bed_frame",
+   "n_parts": 2
+  },
+  "d8991": {
+   "task": "bed_frame",
+   "n_parts": 172
+  },
+  "d1746": {
+   "task": "chest_of_drawers",
+   "n_parts": 12
+  },
+  "d8737": {
+   "task": "chest_of_drawers",
+   "n_parts": 16
+  },
+  "d5691": {
+   "task": "chest_of_drawers",
+   "n_parts": 13
+  },
+  "d4085": {
+   "task": "chest_of_drawers",
+   "n_parts": 15
+  },
+  "d7735": {
+   "task": "chest_of_drawers",
+   "n_parts": 6
+  },
+  "d3189": {
+   "task": "chest_of_drawers",
+   "n_parts": 79
+  },
+  "d1635": {
+   "task": "swivel_office_chair",
+   "n_parts": 16
+  },
+  "d4024": {
+   "task": "swivel_office_chair",
+   "n_parts": 13
+  },
+  "d6218": {
+   "task": "swivel_office_chair",
+   "n_parts": 12
+  },
+  "d7261": {
+   "task": "swivel_office_chair",
+   "n_parts": 6
+  },
+  "d1134": {
+   "task": "swivel_office_chair",
+   "n_parts": 10
+  },
+  "d1049": {
+   "task": "swivel_office_chair",
+   "n_parts": 107
+  },
+  "d3066": {
+   "task": "stepladder",
+   "n_parts": 18
+  },
+  "d8429": {
+   "task": "stepladder",
+   "n_parts": 15
+  },
+  "d9798": {
+   "task": "stepladder",
+   "n_parts": 8
+  },
+  "d4806": {
+   "task": "stepladder",
+   "n_parts": 3
+  },
+  "d3585": {
+   "task": "stepladder",
+   "n_parts": 2
+  },
+  "d7337": {
+   "task": "stepladder",
+   "n_parts": 288
+  },
+  "d3221": {
+   "task": "refrigerator",
+   "n_parts": 5
+  },
+  "d3973": {
+   "task": "refrigerator",
+   "n_parts": 5
+  },
+  "d2975": {
+   "task": "refrigerator",
+   "n_parts": 5
+  },
+  "d6656": {
+   "task": "refrigerator",
+   "n_parts": 5
+  },
+  "d3586": {
+   "task": "refrigerator",
+   "n_parts": 4
+  },
+  "d9558": {
+   "task": "refrigerator",
+   "n_parts": 105
+  },
+  "d7293": {
+   "task": "desk_lamp",
+   "n_parts": 5
+  },
+  "d5335": {
+   "task": "desk_lamp",
+   "n_parts": 7
+  },
+  "d7287": {
+   "task": "desk_lamp",
+   "n_parts": 5
+  },
+  "d5366": {
+   "task": "desk_lamp",
+   "n_parts": 3
+  },
+  "d3486": {
+   "task": "desk_lamp",
+   "n_parts": 15
+  },
+  "d1332": {
+   "task": "desk_lamp",
+   "n_parts": 105
+  },
+  "d4007": {
+   "task": "oscillating_fan",
+   "n_parts": 8
+  },
+  "d4675": {
+   "task": "oscillating_fan",
+   "n_parts": 8
+  },
+  "d1167": {
+   "task": "oscillating_fan",
+   "n_parts": 6
+  },
+  "d3541": {
+   "task": "oscillating_fan",
+   "n_parts": 3
+  },
+  "d6704": {
+   "task": "oscillating_fan",
+   "n_parts": 4
+  },
+  "d2830": {
+   "task": "oscillating_fan",
+   "n_parts": 357
+  },
+  "d9723": {
+   "task": "wheelchair",
+   "n_parts": 19
+  },
+  "d6271": {
+   "task": "wheelchair",
+   "n_parts": 17
+  },
+  "d5529": {
+   "task": "wheelchair",
+   "n_parts": 11
+  },
+  "d8426": {
+   "task": "wheelchair",
+   "n_parts": 15
+  },
+  "d8731": {
+   "task": "wheelchair",
+   "n_parts": 5
+  },
+  "d9833": {
+   "task": "wheelchair",
+   "n_parts": 347
+  }
+ },
+ "questions": {
+  "3.2": {
+   "name": "aesthetics",
+   "photo": false,
+   "question": "Is the design itself elegant \u2014 does it look like a well-designed object that agrees with human aesthetic sense?",
+   "anchors": {
+    "1": "ugly or incoherent: a heap of unrelated shapes, grossly distorted proportions",
+    "3": "acceptable but plain or awkward: crude shapes, parts that do not quite belong together",
+    "5": "elegant: balanced proportions, parts that belong together, a finished-looking form"
+   }
+  },
+  "3.3": {
+   "name": "structure_alignment",
+   "photo": true,
+   "question": "How faithfully does the design reproduce the structure of the object in the photograph \u2014 its parts, their placement, their relative sizes and the fine details (e.g. how many legs, wheels or shelves)?",
+   "anchors": {
+    "1": "a different object, or the structure is unrelated",
+    "3": "the right kind of object, but clear structural differences (missing / invented / misplaced parts, wrong counts)",
+    "5": "structurally faithful in every visible respect"
+   }
+  },
+  "3.1": {
+   "name": "decomposition",
+   "photo": true,
+   "question": "Is the object broken into parts the way the real product is made and assembled? (One colour = one part.)",
+   "anchors": {
+    "1": "unusable: a pile of fragments / bricks, or the whole object is one lump",
+    "3": "partly right: some real components chopped into pieces, or moving components fused to what they move against",
+    "5": "every real component is one part, and components that move or are made separately are separate parts"
+   }
+  }
+ },
+ "dim_order": [
+  "3.2",
+  "3.3",
+  "3.1"
+ ],
+ "assignments": {
+  "A1": [
+   {
+    "item_id": "d2137_3.2",
+    "design": "d2137",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3541_3.2",
+    "design": "d3541",
+    "task": "oscillating_fan",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8991_3.2",
+    "design": "d8991",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1134_3.2",
+    "design": "d1134",
+    "task": "swivel_office_chair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9345_3.2",
+    "design": "d9345",
+    "task": "bench_drill_press",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8108_3.2",
+    "design": "d8108",
+    "task": "bench_drill_press",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5356_3.2",
+    "design": "d5356",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4342_3.2",
+    "design": "d4342",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4179_3.2",
+    "design": "d4179",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7735_3.2",
+    "design": "d7735",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7211_3.2",
+    "design": "d7211",
+    "task": "passenger_car",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3973_3.2",
+    "design": "d3973",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3486_3.2",
+    "design": "d3486",
+    "task": "desk_lamp",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7293_3.2",
+    "design": "d7293",
+    "task": "desk_lamp",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4960_3.2",
+    "design": "d4960",
+    "task": "offroad_jeep",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4245_3.2",
+    "design": "d4245",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5335_3.2",
+    "design": "d5335",
+    "task": "desk_lamp",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9787_3.2",
+    "design": "d9787",
+    "task": "bench_drill_press",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9690_3.2",
+    "design": "d9690",
+    "task": "dining_table",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5529_3.2",
+    "design": "d5529",
+    "task": "wheelchair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7261_3.2",
+    "design": "d7261",
+    "task": "swivel_office_chair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9230_3.2",
+    "design": "d9230",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1922_3.2",
+    "design": "d1922",
+    "task": "bench_drill_press",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1746_3.2",
+    "design": "d1746",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1745_3.2",
+    "design": "d1745",
+    "task": "offroad_jeep",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6417_3.2",
+    "design": "d6417",
+    "task": "passenger_car",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7645_3.2",
+    "design": "d7645",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8613_3.2",
+    "design": "d8613",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9798_3.2",
+    "design": "d9798",
+    "task": "stepladder",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9558_3.2",
+    "design": "d9558",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4081_3.3",
+    "design": "d4081",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3221_3.3",
+    "design": "d3221",
+    "task": "refrigerator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9833_3.3",
+    "design": "d9833",
+    "task": "wheelchair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1573_3.3",
+    "design": "d1573",
+    "task": "bench_drill_press",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9987_3.3",
+    "design": "d9987",
+    "task": "scissor_car_jack",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3017_3.3",
+    "design": "d3017",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4085_3.3",
+    "design": "d4085",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7270_3.3",
+    "design": "d7270",
+    "task": "dining_table",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4160_3.3",
+    "design": "d4160",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1456_3.3",
+    "design": "d1456",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6271_3.3",
+    "design": "d6271",
+    "task": "wheelchair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d5698_3.3",
+    "design": "d5698",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3586_3.3",
+    "design": "d3586",
+    "task": "refrigerator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1332_3.3",
+    "design": "d1332",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8429_3.3",
+    "design": "d8429",
+    "task": "stepladder",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3993_3.3",
+    "design": "d3993",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4245_3.3",
+    "design": "d4245",
+    "task": "scissor_car_jack",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1167_3.3",
+    "design": "d1167",
+    "task": "oscillating_fan",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2274_3.3",
+    "design": "d2274",
+    "task": "offroad_jeep",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3189_3.3",
+    "design": "d3189",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8426_3.3",
+    "design": "d8426",
+    "task": "wheelchair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d5680_3.3",
+    "design": "d5680",
+    "task": "scissor_car_jack",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3262_3.3",
+    "design": "d3262",
+    "task": "dining_table",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1635_3.3",
+    "design": "d1635",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d5366_3.3",
+    "design": "d5366",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9090_3.3",
+    "design": "d9090",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8737_3.3",
+    "design": "d8737",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7337_3.3",
+    "design": "d7337",
+    "task": "stepladder",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8991_3.3",
+    "design": "d8991",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6218_3.3",
+    "design": "d6218",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2019_3.1",
+    "design": "d2019",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6715_3.1",
+    "design": "d6715",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3791_3.1",
+    "design": "d3791",
+    "task": "oscillating_steam_engine",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6656_3.1",
+    "design": "d6656",
+    "task": "refrigerator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4675_3.1",
+    "design": "d4675",
+    "task": "oscillating_fan",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3055_3.1",
+    "design": "d3055",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8731_3.1",
+    "design": "d8731",
+    "task": "wheelchair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7955_3.1",
+    "design": "d7955",
+    "task": "scissor_car_jack",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7950_3.1",
+    "design": "d7950",
+    "task": "oscillating_steam_engine",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3585_3.1",
+    "design": "d3585",
+    "task": "stepladder",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4081_3.1",
+    "design": "d4081",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6353_3.1",
+    "design": "d6353",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1049_3.1",
+    "design": "d1049",
+    "task": "swivel_office_chair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7287_3.1",
+    "design": "d7287",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6358_3.1",
+    "design": "d6358",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4253_3.1",
+    "design": "d4253",
+    "task": "wheeled_excavator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d2830_3.1",
+    "design": "d2830",
+    "task": "oscillating_fan",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3066_3.1",
+    "design": "d3066",
+    "task": "stepladder",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8272_3.1",
+    "design": "d8272",
+    "task": "bed_frame",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4806_3.1",
+    "design": "d4806",
+    "task": "stepladder",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9723_3.1",
+    "design": "d9723",
+    "task": "wheelchair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d2153_3.1",
+    "design": "d2153",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1602_3.1",
+    "design": "d1602",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4120_3.1",
+    "design": "d4120",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1669_3.1",
+    "design": "d1669",
+    "task": "bed_frame",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6861_3.1",
+    "design": "d6861",
+    "task": "wheeled_excavator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1167_3.1",
+    "design": "d1167",
+    "task": "oscillating_fan",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4024_3.1",
+    "design": "d4024",
+    "task": "swivel_office_chair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5691_3.1",
+    "design": "d5691",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7491_3.1",
+    "design": "d7491",
+    "task": "dining_table",
+    "dim": "3.1"
+   }
+  ],
+  "A2": [
+   {
+    "item_id": "d3993_3.2",
+    "design": "d3993",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1922_3.2",
+    "design": "d1922",
+    "task": "bench_drill_press",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4007_3.2",
+    "design": "d4007",
+    "task": "oscillating_fan",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1134_3.2",
+    "design": "d1134",
+    "task": "swivel_office_chair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6704_3.2",
+    "design": "d6704",
+    "task": "oscillating_fan",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6271_3.2",
+    "design": "d6271",
+    "task": "wheelchair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6353_3.2",
+    "design": "d6353",
+    "task": "dining_table",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d2975_3.2",
+    "design": "d2975",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4253_3.2",
+    "design": "d4253",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1456_3.2",
+    "design": "d1456",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3189_3.2",
+    "design": "d3189",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3580_3.2",
+    "design": "d3580",
+    "task": "offroad_jeep",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6656_3.2",
+    "design": "d6656",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1602_3.2",
+    "design": "d1602",
+    "task": "offroad_jeep",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6358_3.2",
+    "design": "d6358",
+    "task": "passenger_car",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7950_3.2",
+    "design": "d7950",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7645_3.2",
+    "design": "d7645",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4245_3.2",
+    "design": "d4245",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4160_3.2",
+    "design": "d4160",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4806_3.2",
+    "design": "d4806",
+    "task": "stepladder",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5335_3.2",
+    "design": "d5335",
+    "task": "desk_lamp",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1332_3.2",
+    "design": "d1332",
+    "task": "desk_lamp",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9345_3.2",
+    "design": "d9345",
+    "task": "bench_drill_press",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5356_3.2",
+    "design": "d5356",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8272_3.2",
+    "design": "d8272",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8737_3.2",
+    "design": "d8737",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7211_3.2",
+    "design": "d7211",
+    "task": "passenger_car",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1635_3.2",
+    "design": "d1635",
+    "task": "swivel_office_chair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8426_3.2",
+    "design": "d8426",
+    "task": "wheelchair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1669_3.2",
+    "design": "d1669",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7261_3.3",
+    "design": "d7261",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3066_3.3",
+    "design": "d3066",
+    "task": "stepladder",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1134_3.3",
+    "design": "d1134",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8108_3.3",
+    "design": "d8108",
+    "task": "bench_drill_press",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2137_3.3",
+    "design": "d2137",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1745_3.3",
+    "design": "d1745",
+    "task": "offroad_jeep",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2153_3.3",
+    "design": "d2153",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1746_3.3",
+    "design": "d1746",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9690_3.3",
+    "design": "d9690",
+    "task": "dining_table",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4253_3.3",
+    "design": "d4253",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3973_3.3",
+    "design": "d3973",
+    "task": "refrigerator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d5529_3.3",
+    "design": "d5529",
+    "task": "wheelchair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d5335_3.3",
+    "design": "d5335",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9787_3.3",
+    "design": "d9787",
+    "task": "bench_drill_press",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8991_3.3",
+    "design": "d8991",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3541_3.3",
+    "design": "d3541",
+    "task": "oscillating_fan",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9558_3.3",
+    "design": "d9558",
+    "task": "refrigerator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4675_3.3",
+    "design": "d4675",
+    "task": "oscillating_fan",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4179_3.3",
+    "design": "d4179",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6417_3.3",
+    "design": "d6417",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9230_3.3",
+    "design": "d9230",
+    "task": "scissor_car_jack",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7293_3.3",
+    "design": "d7293",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4960_3.3",
+    "design": "d4960",
+    "task": "offroad_jeep",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8613_3.3",
+    "design": "d8613",
+    "task": "scissor_car_jack",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9798_3.3",
+    "design": "d9798",
+    "task": "stepladder",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7645_3.3",
+    "design": "d7645",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4342_3.3",
+    "design": "d4342",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3486_3.3",
+    "design": "d3486",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7735_3.3",
+    "design": "d7735",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9723_3.3",
+    "design": "d9723",
+    "task": "wheelchair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4960_3.1",
+    "design": "d4960",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d2274_3.1",
+    "design": "d2274",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9798_3.1",
+    "design": "d9798",
+    "task": "stepladder",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3221_3.1",
+    "design": "d3221",
+    "task": "refrigerator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1167_3.1",
+    "design": "d1167",
+    "task": "oscillating_fan",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3486_3.1",
+    "design": "d3486",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8429_3.1",
+    "design": "d8429",
+    "task": "stepladder",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9833_3.1",
+    "design": "d9833",
+    "task": "wheelchair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7337_3.1",
+    "design": "d7337",
+    "task": "stepladder",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3586_3.1",
+    "design": "d3586",
+    "task": "refrigerator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4081_3.1",
+    "design": "d4081",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7270_3.1",
+    "design": "d7270",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5366_3.1",
+    "design": "d5366",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4085_3.1",
+    "design": "d4085",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6218_3.1",
+    "design": "d6218",
+    "task": "swivel_office_chair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5698_3.1",
+    "design": "d5698",
+    "task": "wheeled_excavator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1456_3.1",
+    "design": "d1456",
+    "task": "wheeled_excavator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4160_3.1",
+    "design": "d4160",
+    "task": "bed_frame",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7491_3.1",
+    "design": "d7491",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6271_3.1",
+    "design": "d6271",
+    "task": "wheelchair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5335_3.1",
+    "design": "d5335",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3017_3.1",
+    "design": "d3017",
+    "task": "bed_frame",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3791_3.1",
+    "design": "d3791",
+    "task": "oscillating_steam_engine",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9090_3.1",
+    "design": "d9090",
+    "task": "oscillating_steam_engine",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1573_3.1",
+    "design": "d1573",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5680_3.1",
+    "design": "d5680",
+    "task": "scissor_car_jack",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1049_3.1",
+    "design": "d1049",
+    "task": "swivel_office_chair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3262_3.1",
+    "design": "d3262",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7645_3.1",
+    "design": "d7645",
+    "task": "wheeled_excavator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9987_3.1",
+    "design": "d9987",
+    "task": "scissor_car_jack",
+    "dim": "3.1"
+   }
+  ],
+  "A3": [
+   {
+    "item_id": "d9833_3.2",
+    "design": "d9833",
+    "task": "wheelchair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4675_3.2",
+    "design": "d4675",
+    "task": "oscillating_fan",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1049_3.2",
+    "design": "d1049",
+    "task": "swivel_office_chair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1167_3.2",
+    "design": "d1167",
+    "task": "oscillating_fan",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3791_3.2",
+    "design": "d3791",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3586_3.2",
+    "design": "d3586",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d2830_3.2",
+    "design": "d2830",
+    "task": "oscillating_fan",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6861_3.2",
+    "design": "d6861",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4085_3.2",
+    "design": "d4085",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5680_3.2",
+    "design": "d5680",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7491_3.2",
+    "design": "d7491",
+    "task": "dining_table",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d2019_3.2",
+    "design": "d2019",
+    "task": "dining_table",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4024_3.2",
+    "design": "d4024",
+    "task": "swivel_office_chair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d2153_3.2",
+    "design": "d2153",
+    "task": "passenger_car",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6715_3.2",
+    "design": "d6715",
+    "task": "passenger_car",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6656_3.2",
+    "design": "d6656",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7287_3.2",
+    "design": "d7287",
+    "task": "desk_lamp",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8272_3.2",
+    "design": "d8272",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6218_3.2",
+    "design": "d6218",
+    "task": "swivel_office_chair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3585_3.2",
+    "design": "d3585",
+    "task": "stepladder",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4253_3.2",
+    "design": "d4253",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5691_3.2",
+    "design": "d5691",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3055_3.2",
+    "design": "d3055",
+    "task": "bench_drill_press",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9090_3.2",
+    "design": "d9090",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7950_3.2",
+    "design": "d7950",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9723_3.2",
+    "design": "d9723",
+    "task": "wheelchair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4120_3.2",
+    "design": "d4120",
+    "task": "offroad_jeep",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7955_3.2",
+    "design": "d7955",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3066_3.2",
+    "design": "d3066",
+    "task": "stepladder",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8731_3.2",
+    "design": "d8731",
+    "task": "wheelchair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1332_3.3",
+    "design": "d1332",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1602_3.3",
+    "design": "d1602",
+    "task": "offroad_jeep",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1635_3.3",
+    "design": "d1635",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8737_3.3",
+    "design": "d8737",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4806_3.3",
+    "design": "d4806",
+    "task": "stepladder",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2975_3.3",
+    "design": "d2975",
+    "task": "refrigerator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9798_3.3",
+    "design": "d9798",
+    "task": "stepladder",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7950_3.3",
+    "design": "d7950",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4245_3.3",
+    "design": "d4245",
+    "task": "scissor_car_jack",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8426_3.3",
+    "design": "d8426",
+    "task": "wheelchair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3993_3.3",
+    "design": "d3993",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1134_3.3",
+    "design": "d1134",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d5335_3.3",
+    "design": "d5335",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1922_3.3",
+    "design": "d1922",
+    "task": "bench_drill_press",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1746_3.3",
+    "design": "d1746",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4081_3.3",
+    "design": "d4081",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7645_3.3",
+    "design": "d7645",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7735_3.3",
+    "design": "d7735",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1669_3.3",
+    "design": "d1669",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7211_3.3",
+    "design": "d7211",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d5356_3.3",
+    "design": "d5356",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4160_3.3",
+    "design": "d4160",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9345_3.3",
+    "design": "d9345",
+    "task": "bench_drill_press",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6353_3.3",
+    "design": "d6353",
+    "task": "dining_table",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3189_3.3",
+    "design": "d3189",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9090_3.3",
+    "design": "d9090",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6704_3.3",
+    "design": "d6704",
+    "task": "oscillating_fan",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4007_3.3",
+    "design": "d4007",
+    "task": "oscillating_fan",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3580_3.3",
+    "design": "d3580",
+    "task": "offroad_jeep",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6358_3.3",
+    "design": "d6358",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9558_3.1",
+    "design": "d9558",
+    "task": "refrigerator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9690_3.1",
+    "design": "d9690",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9787_3.1",
+    "design": "d9787",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3262_3.1",
+    "design": "d3262",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1746_3.1",
+    "design": "d1746",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3973_3.1",
+    "design": "d3973",
+    "task": "refrigerator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4342_3.1",
+    "design": "d4342",
+    "task": "oscillating_steam_engine",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5529_3.1",
+    "design": "d5529",
+    "task": "wheelchair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8613_3.1",
+    "design": "d8613",
+    "task": "scissor_car_jack",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6417_3.1",
+    "design": "d6417",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3541_3.1",
+    "design": "d3541",
+    "task": "oscillating_fan",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4179_3.1",
+    "design": "d4179",
+    "task": "bed_frame",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3580_3.1",
+    "design": "d3580",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9798_3.1",
+    "design": "d9798",
+    "task": "stepladder",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7261_3.1",
+    "design": "d7261",
+    "task": "swivel_office_chair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3486_3.1",
+    "design": "d3486",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3221_3.1",
+    "design": "d3221",
+    "task": "refrigerator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7293_3.1",
+    "design": "d7293",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7735_3.1",
+    "design": "d7735",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8991_3.1",
+    "design": "d8991",
+    "task": "bed_frame",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4960_3.1",
+    "design": "d4960",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9230_3.1",
+    "design": "d9230",
+    "task": "scissor_car_jack",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1573_3.1",
+    "design": "d1573",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d2153_3.1",
+    "design": "d2153",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d2137_3.1",
+    "design": "d2137",
+    "task": "wheeled_excavator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8108_3.1",
+    "design": "d8108",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3189_3.1",
+    "design": "d3189",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4085_3.1",
+    "design": "d4085",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5698_3.1",
+    "design": "d5698",
+    "task": "wheeled_excavator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1745_3.1",
+    "design": "d1745",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   }
+  ],
+  "A4": [
+   {
+    "item_id": "d1456_3.2",
+    "design": "d1456",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7337_3.2",
+    "design": "d7337",
+    "task": "stepladder",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9833_3.2",
+    "design": "d9833",
+    "task": "wheelchair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3973_3.2",
+    "design": "d3973",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7735_3.2",
+    "design": "d7735",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5680_3.2",
+    "design": "d5680",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6271_3.2",
+    "design": "d6271",
+    "task": "wheelchair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3262_3.2",
+    "design": "d3262",
+    "task": "dining_table",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9090_3.2",
+    "design": "d9090",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d7270_3.2",
+    "design": "d7270",
+    "task": "dining_table",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9987_3.2",
+    "design": "d9987",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4342_3.2",
+    "design": "d4342",
+    "task": "oscillating_steam_engine",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6218_3.2",
+    "design": "d6218",
+    "task": "swivel_office_chair",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3017_3.2",
+    "design": "d3017",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1167_3.2",
+    "design": "d1167",
+    "task": "oscillating_fan",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4960_3.2",
+    "design": "d4960",
+    "task": "offroad_jeep",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1573_3.2",
+    "design": "d1573",
+    "task": "bench_drill_press",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8613_3.2",
+    "design": "d8613",
+    "task": "scissor_car_jack",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4160_3.2",
+    "design": "d4160",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d9798_3.2",
+    "design": "d9798",
+    "task": "stepladder",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d2274_3.2",
+    "design": "d2274",
+    "task": "offroad_jeep",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3586_3.2",
+    "design": "d3586",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5366_3.2",
+    "design": "d5366",
+    "task": "desk_lamp",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4085_3.2",
+    "design": "d4085",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d3221_3.2",
+    "design": "d3221",
+    "task": "refrigerator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d5698_3.2",
+    "design": "d5698",
+    "task": "wheeled_excavator",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d1746_3.2",
+    "design": "d1746",
+    "task": "chest_of_drawers",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8429_3.2",
+    "design": "d8429",
+    "task": "stepladder",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d4081_3.2",
+    "design": "d4081",
+    "task": "passenger_car",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d8991_3.2",
+    "design": "d8991",
+    "task": "bed_frame",
+    "dim": "3.2"
+   },
+   {
+    "item_id": "d6656_3.3",
+    "design": "d6656",
+    "task": "refrigerator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7491_3.3",
+    "design": "d7491",
+    "task": "dining_table",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4024_3.3",
+    "design": "d4024",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3486_3.3",
+    "design": "d3486",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2137_3.3",
+    "design": "d2137",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7955_3.3",
+    "design": "d7955",
+    "task": "scissor_car_jack",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3541_3.3",
+    "design": "d3541",
+    "task": "oscillating_fan",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8731_3.3",
+    "design": "d8731",
+    "task": "wheelchair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d8272_3.3",
+    "design": "d8272",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6417_3.3",
+    "design": "d6417",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7950_3.3",
+    "design": "d7950",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7261_3.3",
+    "design": "d7261",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3585_3.3",
+    "design": "d3585",
+    "task": "stepladder",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3066_3.3",
+    "design": "d3066",
+    "task": "stepladder",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2830_3.3",
+    "design": "d2830",
+    "task": "oscillating_fan",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6715_3.3",
+    "design": "d6715",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2019_3.3",
+    "design": "d2019",
+    "task": "dining_table",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3791_3.3",
+    "design": "d3791",
+    "task": "oscillating_steam_engine",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d3055_3.3",
+    "design": "d3055",
+    "task": "bench_drill_press",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4675_3.3",
+    "design": "d4675",
+    "task": "oscillating_fan",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d5691_3.3",
+    "design": "d5691",
+    "task": "chest_of_drawers",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d9723_3.3",
+    "design": "d9723",
+    "task": "wheelchair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d6861_3.3",
+    "design": "d6861",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1049_3.3",
+    "design": "d1049",
+    "task": "swivel_office_chair",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d2153_3.3",
+    "design": "d2153",
+    "task": "passenger_car",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4120_3.3",
+    "design": "d4120",
+    "task": "offroad_jeep",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d7287_3.3",
+    "design": "d7287",
+    "task": "desk_lamp",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4253_3.3",
+    "design": "d4253",
+    "task": "wheeled_excavator",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d4179_3.3",
+    "design": "d4179",
+    "task": "bed_frame",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1922_3.3",
+    "design": "d1922",
+    "task": "bench_drill_press",
+    "dim": "3.3"
+   },
+   {
+    "item_id": "d1332_3.1",
+    "design": "d1332",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7211_3.1",
+    "design": "d7211",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4007_3.1",
+    "design": "d4007",
+    "task": "oscillating_fan",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6358_3.1",
+    "design": "d6358",
+    "task": "passenger_car",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9787_3.1",
+    "design": "d9787",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7293_3.1",
+    "design": "d7293",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1922_3.1",
+    "design": "d1922",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3993_3.1",
+    "design": "d3993",
+    "task": "oscillating_steam_engine",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3189_3.1",
+    "design": "d3189",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1134_3.1",
+    "design": "d1134",
+    "task": "swivel_office_chair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9690_3.1",
+    "design": "d9690",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5356_3.1",
+    "design": "d5356",
+    "task": "oscillating_steam_engine",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1745_3.1",
+    "design": "d1745",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d3580_3.1",
+    "design": "d3580",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9230_3.1",
+    "design": "d9230",
+    "task": "scissor_car_jack",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4806_3.1",
+    "design": "d4806",
+    "task": "stepladder",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8737_3.1",
+    "design": "d8737",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d5335_3.1",
+    "design": "d5335",
+    "task": "desk_lamp",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8426_3.1",
+    "design": "d8426",
+    "task": "wheelchair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d4245_3.1",
+    "design": "d4245",
+    "task": "scissor_car_jack",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d9345_3.1",
+    "design": "d9345",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d8108_3.1",
+    "design": "d8108",
+    "task": "bench_drill_press",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1602_3.1",
+    "design": "d1602",
+    "task": "offroad_jeep",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1746_3.1",
+    "design": "d1746",
+    "task": "chest_of_drawers",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1669_3.1",
+    "design": "d1669",
+    "task": "bed_frame",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d7645_3.1",
+    "design": "d7645",
+    "task": "wheeled_excavator",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6704_3.1",
+    "design": "d6704",
+    "task": "oscillating_fan",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d6353_3.1",
+    "design": "d6353",
+    "task": "dining_table",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d1635_3.1",
+    "design": "d1635",
+    "task": "swivel_office_chair",
+    "dim": "3.1"
+   },
+   {
+    "item_id": "d2975_3.1",
+    "design": "d2975",
+    "task": "refrigerator",
+    "dim": "3.1"
+   }
+  ]
+ }
+}

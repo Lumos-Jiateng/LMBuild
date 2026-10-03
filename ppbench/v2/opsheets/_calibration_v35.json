@@ -1,0 +1,150 @@
+{
+ "baby_stroller": {
+  "H1|surface|role=seat": 1.0,
+  "H1|clearance|anchor=seat": 1.0,
+  "H2|ground_contact|role=wheels": 1.0,
+  "OF1|reachable|from=seat|target=handle": 1.0
+ },
+ "barbecue_grill": {
+  "H1|surface|role=cooking grate": 0.0,
+  "H1|clearance|anchor=cooking grate": 0.0
+ },
+ "bed_frame": {
+  "H1|surface|role=bed base": 1.0,
+  "H1|clearance|anchor=bed base": 1.0
+ },
+ "bench_drill_press": {
+  "H1|grip|role=Feed Handle": 0.0,
+  "H1|reachable|target=Feed Handle": 0.0,
+  "H1|surface|role=Table": 0.05279999999999999,
+  "OF2|reachable|target=Feed Handle": 0.0
+ },
+ "bookcase": {
+  "H1|surface|role=shelf": 1.0,
+  "H1|clearance|anchor=shelf": 1.0
+ },
+ "camera": {
+  "H1|colocated|a=shutter release|b=camera body": 1.0
+ },
+ "casement_window": {
+  "H1|colocated|a=latch|b=sash": 1.0,
+  "H1|reachable|target=latch": 1.0
+ },
+ "chest_of_drawers": {
+  "H1|grip|role=handles": 1.0,
+  "H1|reachable|target=handles": 1.0,
+  "OF3|reachable|target=handles": 1.0
+ },
+ "computer_mouse": {},
+ "desk_lamp": {
+  "H1|colocated|a=lamp head|b=forearm": 1.0,
+  "H1|clearance|anchor=lamp head": 1.0
+ },
+ "dining_chair": {
+  "H1|surface|role=seat": 1.0,
+  "H1|clearance|anchor=seat": 1.0
+ },
+ "dining_table": {
+  "H1|surface|role=tabletop": 1.0,
+  "H1|clearance|anchor=tabletop": 1.0
+ },
+ "dishwasher": {
+  "H1|clearance|anchor=Racks": 1.0
+ },
+ "headphones": {},
+ "hinged_door": {
+  "H1|grip|role=Door handle": 0.0,
+  "H1|colocated|a=Door handle|b=Door panel": 0.0,
+  "H1|reachable|target=Door handle": 0.0,
+  "OF2|reachable|target=Door handle": 0.0
+ },
+ "kitchen_oven": {
+  "H1|surface|role=rack": 0.9804,
+  "OF3|reachable|target=handle": 0.8011688279610522
+ },
+ "laptop": {
+  "H1|surface|role=keyboard": 1.0,
+  "H1|colocated|a=display screen|b=hinge": 0.0,
+  "OF3|reachable|target=Keyboard": 0.5166882989271064,
+  "OF3|reachable|target=Touchpad": 0.5147496575325674
+ },
+ "microwave_oven": {
+  "H1|reachable|target=control panel": 0.0
+ },
+ "mixer_faucet": {
+  "H1|grip|role=handle": 1.0,
+  "H1|colocated|a=handle|b=valve body": 1.0,
+  "OF1|reachable|from=valve seat|target=handle": 0.6007078377655988
+ },
+ "monitor_arm": {
+  "H1|colocated|a=Arm|b=Mounting base": 0.0
+ },
+ "office_desk": {
+  "H1|surface|role=work surface": 1.0,
+  "H1|clearance|anchor=work surface": 0.0
+ },
+ "oscillating_fan": {
+  "H1|colocated|a=blade guard|b=blades": 0.0
+ },
+ "oscillating_steam_engine": {},
+ "refrigerator": {},
+ "robot_arm": {},
+ "rolling_suitcase": {
+  "H1|grip|role=handle": 1.0,
+  "H1|ground_contact|role=wheels": 1.0,
+  "OF2|reachable|target=telescoping handle": 0.0
+ },
+ "scissor_car_jack": {},
+ "scissors": {
+  "H1|grip|role=handle": 0.9354595602635257,
+  "OF1|reachable|target=handle": 0.5042847782965052,
+  "OF2|reachable|target=handle": 0.5042847782965052
+ },
+ "shopping_cart": {
+  "H1|grip|role=handle": 0.0,
+  "H1|reachable|target=handle": 0.0,
+  "H1|ground_contact|role=wheels": 1.0,
+  "OF2|reachable|target=handle": 0.0
+ },
+ "skateboard": {
+  "H1|surface|role=deck": 1.0,
+  "H1|ground_contact|role=wheels": 1.0
+ },
+ "spinal_quadruped_robot": {},
+ "stepladder": {
+  "H1|surface|role=steps": 1.0,
+  "H1|clearance|anchor=steps": 1.0
+ },
+ "swivel_office_chair": {
+  "H1|surface|role=seat": 1.0,
+  "H1|clearance|anchor=seat": 1.0,
+  "H2|ground_contact|role=casters": 1.0,
+  "OF1|reachable|from=seat|target=lever": 0.9972469876147569
+ },
+ "toilet": {
+  "H1|surface|role=bowl": 0.4601926326751712,
+  "H1|reachable|from=bowl|target=flush mechanism": 1.0,
+  "OF3|reachable|from=seat|target=flush handle": 1.0,
+  "OF3|reachable|from=seat|target=flush button": 1.0
+ },
+ "tool_box": {
+  "H1|grip|role=handle": 0.9315933990229834,
+  "OF3|reachable|target=handle": 0.6996210374345901
+ },
+ "trackball": {},
+ "umbrella": {
+  "H1|grip|role=handle": 0.9009389146539925,
+  "H1|colocated|a=handle|b=pole": 1.0,
+  "H1|clearance|anchor=canopy": 1.0
+ },
+ "washing_machine": {},
+ "wheelchair": {
+  "H1|surface|role=seat": 1.0,
+  "H1|clearance|anchor=seat": 1.0,
+  "H1|reachable|from=seat|target=push-rims": 0.0,
+  "H2|colocated|a=brakes|b=wheels": 0.0
+ },
+ "wheeled_dumpster": {
+  "H1|ground_contact|role=wheels": 1.0
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "task": "bed_frame",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Support Structure",
+   "function": "Provides the rigid framework that holds the bed base and mattress in place and distributes weight.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "bed frame",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "side rails",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "headboard",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "footboard",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "center support rail",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Sleeping Surface",
+   "function": "Creates a cushioned and supported surface for the sleeper to lie on.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "mattress",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "bed base",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "wooden slats",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "box spring",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "mattress",
+     "to": "bed base",
+     "carries": "load",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1",
+    "K2"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "roll-away bed frame",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "sofa bed frame",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a person can lie on it",
+   "claims": [
+    "P3"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "bed base",
+     "min_area_m2": 1.2,
+     "height_range_m": [
+      0.1,
+      0.8
+     ],
+     "claim": "P3"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "bed base",
+     "placement": "above",
+     "w": 0.8,
+     "d": 1.7,
+     "h": 0.35,
+     "min_free": 0.85,
+     "claim": "P3"
+    }
+   ]
+  }
+ ]
+}

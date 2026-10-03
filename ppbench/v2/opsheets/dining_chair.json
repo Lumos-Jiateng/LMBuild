@@ -1,0 +1,100 @@
+{
+ "task": "dining_chair",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Support Structure",
+   "function": "Provides the structural framework to hold the occupant's weight and maintain the chair's position.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "legs",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "seat",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "back-rest",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "legs",
+     "to": "seat",
+     "carries": "load",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "seat",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Comfort System",
+   "function": "Distributes the occupant's weight to reduce pressure points and increase comfort.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "padding",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "upholstery",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "contoured seat",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a person can sit on it",
+   "claims": [
+    "P2"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "seat",
+     "min_area_m2": 0.08,
+     "height_range_m": [
+      0.35,
+      0.55
+     ],
+     "claim": "P2"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "seat",
+     "placement": "above",
+     "box": "seated_torso",
+     "min_free": 0.8,
+     "claim": "P2"
+    }
+   ]
+  }
+ ]
+}

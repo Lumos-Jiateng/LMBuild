@@ -1,0 +1,649 @@
+[
+ {
+  "key": "1.1",
+  "name": "Integrity",
+  "question": "Are the parts one connected object, free of real interpenetration, with every part a single body?",
+  "inputs": [
+   "3D part meshes",
+   "declared joints (parent, child, origin) for connectivity and joint-pair exclusion"
+  ],
+  "steps": [
+   "Preprocess with prepare(): unitless designs are scaled by s = ref_diag / max(design_diag, 1e-9) about (XY bbox centre, min z); unitless or front_declared=False designs are rotated in place by the yaw in {0,90,180,270} maximising fscore@0.05 against the reference (6000 samples each). Joint origins and axes are transformed with the parts, and prismatic limits are scaled by s (fixed 2026-09-14).",
+   "Voxelise every part at res = 0.004 m (surface samples, hit cells, binary_fill_holes); build the pair table of touching pairs with deep_m3 = |core_a ∩ core_b|·res³ and collides = deep_m3 > 1e-6 ∧ deep_m3/min(vol) > 0.10.",
+   "nonjoint = pair rows with joint_pair False; pen_frac = Σ_nonjoint deep_m3 / max(Σ vol_i, 1e-12).",
+   "cfree = 1 − |nonjoint rows with collides| / max(|nonjoint|, 1); collision_frac_sweep counts nonjoint rows with deep_m3 > 1e-6 and frac_of_smaller > f for f in (0, 0.01, 0.05, 0.10, 0.25), reported only.",
+   "edges = every pair row plus each joint (parent, child) with origin non-null and max(surface_distance to parent, to child) ≤ 0.02 m; components by union-find, sorted by volume.",
+   "largest_frac = vol(largest component) / Σ vol; connected_part_frac = |largest component| / n_parts.",
+   "whole_i = 1 if the part's filled grid has ≤ 1 26-connected component, else 1 iff exactly one component holds ≥ 5% of its cells; whole_body_rate = mean(whole_i).",
+   "shells = parts with filled_frac = 1 − shell_count/count < 0.05; lowest_z_m, below_ground_m, lifted_m reported only."
+  ],
+  "score": "s11 = mean(cfree, (largest_frac + connected_part_frac)/2, whole_body_rate)",
+  "status": "fail if largest_frac < 0.95 or connected_part_frac < 0.90 or pen_frac > 0.10; else degraded if any shell-only part; else pass. Empty design: fail, 0.",
+  "constants": {
+   "RES": "0.004 m — voxel edge",
+   "COLLIDE_ABS_M3": "1e-6 m³ — collision floor",
+   "COLLIDE_FRAC": "0.10 — collision share of the smaller part",
+   "FRAC_SWEEP": "(0, 0.01, 0.05, 0.10, 0.25) — reported sweep",
+   "CONTACT_JOINT_TOL_M": "0.02 m — joint origin distance to both parts that connects them",
+   "PEN_FRAC_FAIL": "0.10 — interpenetration volume share that fails (reference 0.039)",
+   "LARGEST_COMPONENT_FAIL": "0.95 — largest-group volume share below which 1.1 fails",
+   "CONNECTED_PARTS_FAIL": "0.90 — largest-group part share below which 1.1 fails",
+   "whole-body share": "0.05 — literal, evaluate.py:371",
+   "shell filled_frac": "0.05 — literal, evaluate.py:373"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:34-37",
+   "ppbench/v2/evaluate.py:66-102",
+   "ppbench/v2/evaluate.py:338-340",
+   "ppbench/v2/evaluate.py:345-392",
+   "ppbench/v2/analysis.py:19-24",
+   "ppbench/v2/analysis.py:31-74",
+   "ppbench/v2/voxel.py:22",
+   "ppbench/v2/voxel.py:87-130"
+  ],
+  "golden": "floating_part (n_components > 1), interpenetration (n_colliding > 0), joint_origin_off_boundary (joint_issue > 0), via analysis.summarize, not evaluate() (golden.py:40-57, 72-77).",
+  "limitations": [
+   "Touch tolerance is one dilated 4 mm cell (about 4–10 mm); thin parts are over-counted.",
+   "pen_frac divides by the sum of part volumes, so overlap is double-counted in the denominator.",
+   "Overlap between declared joint pairs is excluded from collisions however deep; joint_pair_overlap_cm3 is reported only.",
+   "Open meshes stay shells: volumes under-counted and status degraded (the reference itself is degraded).",
+   "Ground penetration and lift are not scored."
+  ]
+ },
+ {
+  "key": "1.2",
+  "name": "Stability",
+  "question": "As one rigid body of uniform density on flat ground, how far can the largest connected group tilt before its centre of mass passes the support edge?",
+  "inputs": [
+   "3D part meshes (voxel occupancies of the largest 1.1 component)",
+   "reference anchor tilt_deg = 22.380°"
+  ],
+  "steps": [
+   "Preprocess with prepare(): unitless designs are scaled by s = ref_diag / max(design_diag, 1e-9) about (XY bbox centre, min z); unitless or front_declared=False designs are rotated in place by the yaw in {0,90,180,270} maximising fscore@0.05 against the reference (6000 samples each). Joint origins and axes are transformed with the parts, and prismatic limits are scaled by s (fixed 2026-09-14).",
+   "Voxelise every part at res = 0.004 m (surface samples, hit cells, binary_fill_holes); build the pair table of touching pairs with deep_m3 = |core_a ∩ core_b|·res³ and collides = deep_m3 > 1e-6 ∧ deep_m3/min(vol) > 0.10.",
+   "main = largest connected component from 1.1; band = max(0.005, 0.01·(z range of all parts)).",
+   "com = Σ centroid_i·vol_i / Σ vol_i over main; pts = kept surface samples of main.",
+   "Support set = pts with z ≤ z0 + band (z0 = min z); H = XY convex hull; h = max(com_z − z0, 1e-6).",
+   "For 720 azimuths u: d(u) = max_{p∈H} u·p − u·com_xy, angle(u) = atan2(d(u), h) in degrees; critical_tilt_deg = min angle, tilt_direction_deg = argmin.",
+   "support_margin_m = min d(u); support_margin_norm = margin / √(hull area/π); n_support_vertices = |H|."
+  ],
+  "score": "score = clip(critical_tilt_deg / tilt_ref, 0, 1); without tilt_ref, 1 if critical_tilt_deg > 0 else 0",
+  "status": "fail if critical_tilt_deg ≤ 0; degraded if n_support_vertices ≤ 2 (pose_sensitive) or the design has > 1 connected component; else pass. Empty design: fail, 0.",
+  "constants": {
+   "band floor": "0.005 m",
+   "band fraction": "0.01 of design height",
+   "n_dirs": "720 azimuths",
+   "tilt_ref": "22.380° — reference critical tilt"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:394-413",
+   "ppbench/v2/analysis.py:77-95",
+   "ppbench/v2/voxel.py:149-195"
+  ],
+  "golden": "com_outside_support (tilt < 0); all other scenes must keep tilt > 0; via summarize with band 0.005 on all parts (golden.py:50-53, 181-182).",
+  "limitations": [
+   "Statics only; no settling simulation; joints are not moved.",
+   "Uniform density = voxel volume, so shell-only parts weigh almost nothing.",
+   "Floating parts are excluded from the body but set the band height.",
+   "Support set uses surface samples (≤ 60000 per part), not voxels.",
+   "A lifted main group is not penalised; stability above the reference caps at 1."
+  ]
+ },
+ {
+  "key": "2.1",
+  "name": "Geometry",
+  "question": "Is the design the reference's size and shape, and do its declared parts sit in chair-like configurations?",
+  "inputs": [
+   "3D part meshes",
+   "declared roles (canonical)",
+   "meta.scale_mode",
+   "reference meshes, roles, bounds, joint prismatic_range",
+   "population extent_m p5/p95",
+   "anchor ground_clusters = 5"
+  ],
+  "steps": [
+   "Preprocess with prepare(): unitless designs are scaled by s = ref_diag / max(design_diag, 1e-9) about (XY bbox centre, min z); unitless or front_declared=False designs are rotated in place by the yaw in {0,90,180,270} maximising fscore@0.05 against the reference (6000 samples each). Joint origins and axes are transformed with the parts, and prismatic limits are scaled by s (fixed 2026-09-14).",
+   "Extents: width = max(ext_x, ext_y), depth = min(ext_x, ext_y), height = ext_z; same for the reference bounds.",
+   "If not unitless: lr_k = log2(max(ext_k, 1e-6)/rext_k), size_score = 2^(−mean_k |lr_k|); within_population_p5_p95_frac = mean_k [p5 ≤ ext_k ≤ p95], reported only.",
+   "Sample 20000 area-weighted surface points of design (seed 0) and reference (seed 1); _center_ground both (XY bbox centre → reference XY centre, min z → 0).",
+   "fscore: da, db = nearest-neighbour distances both ways; P = mean(da < τ), R = mean(db < τ), F = 2PR/(P+R), τ ∈ {0.02, 0.05}; chamfer = (mean da + mean db)/2.",
+   "Best yaw over {0,90,180,270} is reported (best_yaw_deg, front_consistent); the scored term is f0 = fscore@0.05 as oriented.",
+   "seat_height: top = max seat z; range [rtop, rtop + max_j prismatic_range_j[1]] over all reference joints; out = distance outside range; score = max(0, 1 − out/0.15).",
+   "backrest_above_behind_upright: mean of [back z-centre > seat z_max − 0.02], [back y-centre > seat y-centre], [back z-extent ≥ back y-extent].",
+   "wheel_round_horizontal_axle: roundness = best over 3 PCA axes of max(0, 1 − (std/mean of 36-bin max radius)/0.2); axle_horizontal = [|axis_z| < 0.5]; score = 0.5·mean roundness + 0.5·mean axle_horizontal.",
+   "column_vertical: mean |z-component| of the largest-variance eigenvector of each gas-lift part's vertices.",
+   "ground_contact_points (always): n = 8-connected clusters of vertices with z ≤ zmin + 0.01 on a 3 cm XY grid; score = min(n, 5)/5.",
+   "armrests_both_sides: |{sign(armrest x-centre − seat x-centre)} ∖ {0}| / 2."
+  ],
+  "score": "score = mean(size_score [metric designs only], f0 fscore@0.05, mean(role predicate scores))",
+  "status": "always pass for a non-empty design; empty design: fail, 0.",
+  "constants": {
+   "FSCORE_TAU_M": "(0.02, 0.05) m — F-score thresholds",
+   "N_SHAPE_POINTS": "20000 — surface samples",
+   "SEAT_DECAY_M": "0.15 m — seat height distance outside range that scores 0",
+   "backrest z tolerance": "0.02 m",
+   "roundness": "CV scale 0.2, 36 bins, 4000 samples",
+   "axle test": "|a_z| < 0.5",
+   "ground clusters": "3 cm cell, 1 cm band, reference n = 5"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:38-41",
+   "ppbench/v2/evaluate.py:151-189",
+   "ppbench/v2/evaluate.py:227-275",
+   "ppbench/v2/evaluate.py:415-489"
+  ],
+  "golden": "none; LEXICON_CASES pins role names the predicates read (golden.py:107-129).",
+  "limitations": [
+   "Scored F-score is as oriented; a design facing the wrong way loses shape score although best yaw is reported.",
+   "Population ranges are not scored; unitless designs have no size term (oracle scale).",
+   "Seat range uses the largest prismatic travel of any reference joint.",
+   "Extra ground clusters are not penalised; armrest sides use sign of x only.",
+   "Predicates exist only for declared roles and are chair-specific."
+  ]
+ },
+ {
+  "key": "2.2",
+  "name": "Kinematics",
+  "question": "Do the declared joints realise the claimed motions and the reference articulation, and can each joint move through its range without collision?",
+  "inputs": [
+   "declared joints (type, parent, child, axis, origin, limits)",
+   "3D part meshes and contacts",
+   "declared roles",
+   "claims K (moving_part, relative_to, joint_type, axis text, range text)",
+   "reference joints (type, axis, origin, prismatic_range, roles) and bounds",
+   "meta.declares.joints"
+  ],
+  "steps": [
+   "Preprocess with prepare(): unitless designs are scaled by s = ref_diag / max(design_diag, 1e-9) about (XY bbox centre, min z); unitless or front_declared=False designs are rotated in place by the yaw in {0,90,180,270} maximising fscore@0.05 against the reference (6000 samples each). Joint origins and axes are transformed with the parts, and prismatic limits are scaled by s (fixed 2026-09-14).",
+   "Voxelise every part at res = 0.004 m (surface samples, hit cells, binary_fill_holes); build the pair table of touching pairs with deep_m3 = |core_a ∩ core_b|·res³ and collides = deep_m3 > 1e-6 ∧ deep_m3/min(vol) > 0.10.",
+   "moving = joints with type ≠ fixed and both endpoints present; rigid groups = components of contact rows minus moving-joint pairs plus fixed-joint pairs.",
+   "Completeness per moving joint: [(ball ∨ ‖axis‖ > 0) ∧ origin ≠ None ∧ (continuous ∨ ball ∨ limits ≠ None)]; declaration_completeness = mean.",
+   "joint_on_boundary = mean of max(0, 1 − max(0, d − 0.02)/0.1), d = max surface distance of origin to parent and child; reported only.",
+   "Claims: kids = parts strictly matching moving_part; for each kid and each moving joint whose child rigid group contains it, q = rs·(0.4·type_score + 0.4·axis_score + 0.2·range_score), rs = 1 if the parent group strictly matches relative_to else 0.5; claim score = mean over kids of best q (0 if no kids); claims_recall = mean over K.",
+   "type_score = 1 if equal else TYPE_COMPAT; axis_score = max(0, 1 − err/45°) with err = acos|a_z| (vertical) or asin|a_z| (horizontal), 1 if no requirement, 0 if no axis.",
+   "range_score: continuous joint → 1 if claim is full ('continuous'/'360'/'freely') or requires revolute/continuous else 0.5; no limits → 0.5 (0.25 if full); full → min(1, span/2π); else [span > 0].",
+   "Reference match: Q[a,b] = role·(0.35·ts + 0.35·ax + 0.3·org), role = 0.5·[child roles meet child group] + 0.5·[parent roles meet parent group or none] (0 if child fails), ts = max type_score vs type and alt_type, ax = max(0, 1 − angle/45°), org = max(0, 1 − dist/(0.25·ref_diag)).",
+   "Hungarian assignment maximising ΣQ; tp = Σ matched Q (> 0); recall = tp/|ref joints|, precision = tp/|moving|, reference_f1 = 2PR/(P+R).",
+   "Sweep (first 24 moving joints): moving set = BFS from child over contacts and other joints, not through the parent; samples = 11 angles 2πk/12 (continuous or unlimited revolute), 8 over limits (revolute, prismatic), 8 offsets + 11 angles (cylindrical); ball or no axis/origin → ratio 0.",
+   "At each sample re-voxelise the moving parts; blocked if Σ max(0, deep overlap − rest overlap)·res³ > max(1e-6, 0.05·moving volume); ratio = free/n; achievable_range_ratio = mean ratio."
+  ],
+  "score": "score = mean(claims_recall or 0, reference_f1, achievable_range_ratio, declaration_completeness or 0)",
+  "status": "skipped (None) iff declares.joints is false and no joints exist; fail if no moving joints (score still computed); else pass; no degraded. Empty design: fail, 0.",
+  "constants": {
+   "AXIS_TOL_DEG": "45° — axis error scoring 0",
+   "ORIGIN_SCALE_FRAC": "0.25 — origin error normaliser, fraction of reference diagonal",
+   "TYPE_COMPAT": "prismatic↔cylindrical 0.75, revolute↔continuous 0.75, cylindrical→revolute/continuous 0.5, revolute/continuous→cylindrical 0.5",
+   "SWEEP_STEPS_ROT": "12 — angular steps (11 samples, 0 excluded)",
+   "SWEEP_STEPS_LIN": "8 — samples over limits",
+   "SWEEP_BLOCK_ABS_M3": "1e-6 m³ — absolute blocking floor",
+   "SWEEP_BLOCK_FRAC": "0.05 — blocking fraction of moving volume",
+   "claim weights": "0.4 type / 0.4 axis / 0.2 range; parent factor 1 or 0.5",
+   "reference weights": "0.35 type / 0.35 axis / 0.30 origin",
+   "swept joint cap": "24",
+   "placement decay": "0.1 m beyond 0.02 m"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:42-52",
+   "ppbench/v2/evaluate.py:107-148",
+   "ppbench/v2/evaluate.py:278-317",
+   "ppbench/v2/evaluate.py:491-623"
+  ],
+  "golden": "joint_origin_off_boundary (2 cm rule) and blocked_sweep, but golden measure re-implements the sweep (child only, 1e-6 m³ threshold) and does not call evaluate() (golden.py:55-64, 78-91).",
+  "limitations": [
+   "Joints are swept independently; coupled mechanisms are not sampled jointly; only the first 24 joints are swept.",
+   "ratio counts free samples anywhere in the range, not the range reachable from rest; unlimited prismatic joints sample only offset 0.",
+   "welded_by_contact and joint_on_boundary are reported, not scored.",
+   "A claim's score is diluted over every part with the moving role (five wheels need five joints).",
+   "Axis and range requirements are keyword tests on claim text."
+  ]
+ },
+ {
+  "key": "2.3",
+  "name": "Operability",
+  "question": "Can a user operate the design (grip, reach, pass)?",
+  "inputs": [],
+  "steps": [
+   "Not built: the dimension is written with status not_built and no metrics."
+  ],
+  "score": "None",
+  "status": "always not_built; absent from the empty-design record.",
+  "constants": {},
+  "code": [
+   "ppbench/v2/evaluate.py:625"
+  ],
+  "golden": "none",
+  "limitations": [
+   "Operability probes (grip, reach, pass) are not built."
+  ]
+ },
+ {
+  "key": "3.1",
+  "name": "Decomposition",
+  "question": "Does the design have the claimed parts, in reference-like counts and granularity, under recognisable names?",
+  "inputs": [
+   "declared roles (canonical)",
+   "part count",
+   "3D part meshes (IoU)",
+   "declared materials (consolidation count)",
+   "claims P",
+   "reference roles and meshes (18 parts)",
+   "meta.declares.roles"
+  ],
+  "steps": [
+   "Canonicalise roles with the task lexicon: strip parentheticals, first conjunct, drop positional words, singularise, longest synonym match (ties: later end).",
+   "Per P: c = canon(part), acc = ACCEPT.get(c, {c}); n = Σ design counts over acc; need = max(1, max reference count over acc); score = min(n, need)/need; coverage = mean.",
+   "hist = max(0, 1 − Σ_k |design_k − ref_k| / max(Σ ref_k, 1)).",
+   "gran = 2^(−|log2(n_parts / max(n_ref_parts, 1))|).",
+   "unrec = #(parts with a role whose canon is None) / n_parts.",
+   "consolidation_violations = touching non-joint pairs with the same canonical role and material; reported only.",
+   "part_iou_vs_reference_volume_weighted: design shifted to reference XY centre and z = 0, 1 cm voxels, best IoU per reference part weighted by its cell count; reported only."
+  ],
+  "score": "if roles declared or any role present: mean(coverage or 0, hist, gran, 1 − unrec); else gran",
+  "status": "pass when roles exist; degraded otherwise (only granularity is measurable), with score = gran. Empty design: fail, 0.",
+  "constants": {
+   "ACCEPT": "{caster: {caster, caster wheel}} — broad presence matching",
+   "IoU voxel": "0.01 m",
+   "reference parts": "18"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:627-680",
+   "ppbench/v2/lexicon.py:22-126"
+  ],
+  "golden": "check_lexicon: 10 real names and strict/broad caster matching (golden.py:107-129); no scene for the 3.1 formulas.",
+  "limitations": [
+   "Granularity penalises too many parts as much as too few.",
+   "A single mesh representing several parts counts once.",
+   "Part IoU has no yaw search and is not scored; ref_occ is computed and unused (evaluate.py:652).",
+   "The lexicon is one hand-written table per task."
+  ]
+ },
+ {
+  "key": "3.2",
+  "name": "Aesthetics (computed)",
+  "question": "Is the form mirror-symmetric and proportioned like the reference?",
+  "inputs": [
+   "3D part voxel occupancies",
+   "extents",
+   "reference bounds",
+   "anchor symmetry_iou = 0.9696"
+  ],
+  "steps": [
+   "Preprocess with prepare(): unitless designs are scaled by s = ref_diag / max(design_diag, 1e-9) about (XY bbox centre, min z); unitless or front_declared=False designs are rotated in place by the yaw in {0,90,180,270} maximising fscore@0.05 against the reference (6000 samples each). Joint origins and axes are transformed with the parts, and prismatic limits are scaled by s (fixed 2026-09-14).",
+   "Voxelise every part at res = 0.004 m (surface samples, hit cells, binary_fill_holes); build the pair table of touching pairs with deep_m3 = |core_a ∩ core_b|·res³ and collides = deep_m3 > 1e-6 ∧ deep_m3/min(vol) > 0.10.",
+   "Take all filled cell centres, centre them at their mean, quantise on a 1 cm grid.",
+   "For plane normals at 0, 5, …, 175° in XY: mirror M = Q − 2(Q·n)n, quantise, IoU = |base ∩ mirror| / |base ∪ mirror|; symmetry_iou = best.",
+   "prop = 2^(−mean(|log2((H/W)/(H_r/W_r))|, |log2((D/W)/(D_r/W_r))|)) with W = max horizontal extent, D = min."
+  ],
+  "score": "score = mean(min(1, symmetry_iou / reference_symmetry_iou), prop)",
+  "status": "always pass (depth computed+adjudicated, but no adjudicated input is used here). Empty design: fail, 0.",
+  "constants": {
+   "mirror grid": "0.01 m",
+   "angle step": "5°",
+   "reference_symmetry_iou": "0.9696"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:203-224",
+   "ppbench/v2/evaluate.py:682-689"
+  ],
+  "golden": "none",
+  "limitations": [
+   "Mirror planes pass through the voxel centroid; the offset is not fitted.",
+   "Proportion cannot tell which horizontal axis is the width.",
+   "Designs more symmetric than the reference cap at 1."
+  ]
+ },
+ {
+  "key": "3.3",
+  "name": "Creativity",
+  "question": "How far is the design from the reference, and how much of it is catalogue versus created parts?",
+  "inputs": [
+   "part.source (kind, id)",
+   "task pool_part_origin",
+   "f0 fscore@0.05 from 2.1"
+  ],
+  "steps": [
+   "novelty_1_minus_fscore@0.05 = 1 − f0 fscore@0.05 (as oriented).",
+   "distinct_pool_parts = number of distinct pool ids; pool_instances_by_origin = instance counts by origin kind (reference, standard, same_type, other_type).",
+   "created_instances = parts with source kind created; created_frac = created_instances / n_parts.",
+   "Diversity across seeds is attached at report time (see 'diversity')."
+  ],
+  "score": "None (reported, not scored)",
+  "status": "pass for a non-empty design; absent for an empty design.",
+  "constants": {},
+  "code": [
+   "ppbench/v2/evaluate.py:691-699"
+  ],
+  "golden": "none",
+  "limitations": [
+   "Novelty is 1 − similarity, so a broken design reads as novel.",
+   "Origin counts are instance counts."
+  ]
+ },
+ {
+  "key": "4.1",
+  "name": "Material",
+  "question": "Are declared materials present, plausible per role against the reference and population, and does the design carry a 75 kg sitter with their densities?",
+  "inputs": [
+   "declared material names",
+   "3D voxel volumes",
+   "declared roles",
+   "claims A with kind material",
+   "reference material_class per role",
+   "population material_class_by_role (117 chairs)",
+   "anchor loaded_tilt_deg = 25.022°"
+  ],
+  "steps": [
+   "Resolve each material name case-insensitively to a LIBRARY submaterial id → (submaterial, class, density), else None.",
+   "cov = Σ volume of resolved parts / Σ volume.",
+   "Claim groups = one class set per material word in material claims; claim_class_coverage = groups met by any design class / groups (reported, used by A1).",
+   "agree = volume-weighted share of role-bearing parts whose class equals the reference's most common class for that role.",
+   "like = volume-weighted mean of p(class | role) / max_k p(k | role), p = (count + 1)/(Σ count + 9) over population counts; unresolved = 0.",
+   "mass_i = density_i·vol_i; if seat parts and Σ mass > 0: loaded tilt = critical tilt of the main group with these masses plus 75 kg at (seat bbox XY centre, seat max z), band as in 1.2.",
+   "lscore = max(0, loaded)/loaded_tilt_ref (or [loaded > 0] without reference; 0 if not computed)."
+  ],
+  "score": "score = mean(cov, like or 0, agree or 0, min(1, lscore))",
+  "status": "skipped if declares.materials is false and no part has a material; else pass if cov > 0.99, fail if cov = 0, degraded otherwise. Empty design: fail, 0.",
+  "constants": {
+   "OCCUPANT_KG": "75 kg — point load at the seat top",
+   "LIBRARY": "23 submaterials, 9 classes, Artiverse median densities",
+   "smoothing": "+1 per class",
+   "pass coverage": "> 0.99"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:39",
+   "ppbench/v2/evaluate.py:701-756",
+   "ppbench/v2/materials.py:14-77",
+   "ppbench/v2/analysis.py:77-95"
+  ],
+  "golden": "none for 4.1; check_bundle tests map_material (golden.py:160-161).",
+  "limitations": [
+   "Densities are Artiverse medians; open-mesh volumes and masses are under-counted.",
+   "Names that do not resolve to a library id count as undeclared.",
+   "Agreement uses the reference's majority class only; claim class coverage is not in the score.",
+   "The occupant is a point mass."
+  ]
+ },
+ {
+  "key": "4.2",
+  "name": "Assembly",
+  "question": "Can the parts be placed in the declared order along straight collision-free paths with every prefix supported and standing?",
+  "inputs": [
+   "declared sequence (part, optional direction)",
+   "3D part voxels and contact rows",
+   "meta.declares.sequence"
+  ],
+  "steps": [
+   "Preprocess with prepare(): unitless designs are scaled by s = ref_diag / max(design_diag, 1e-9) about (XY bbox centre, min z); unitless or front_declared=False designs are rotated in place by the yaw in {0,90,180,270} maximising fscore@0.05 against the reference (6000 samples each). Joint origins and axes are transformed with the parts, and prismatic limits are scaled by s (fixed 2026-09-14).",
+   "Voxelise every part at res = 0.004 m (surface samples, hit cells, binary_fill_holes); build the pair table of touching pairs with deep_m3 = |core_a ∩ core_b|·res³ and collides = deep_m3 > 1e-6 ∧ deep_m3/min(vol) > 0.10.",
+   "order = sequence parts that exist; coverage = |set(order)| / n_parts.",
+   "Per step, candidates = [declared direction] + the six axis directions; the first step is always feasible.",
+   "For each candidate d: shift the part's grid by round(−d·t) cells for t = 1, 3, 5, … up to int((bbox diagonal + 0.05)/res) + 1; blocked if deep overlap with the union of placed parts exceeds its rest overlap + 2 cells.",
+   "insertion_feasible = any candidate unblocked; declared_direction_feasible = declared candidate unblocked (reported only).",
+   "supported = every contact component of placed parts contains a part with min z ≤ design zmin + 0.01.",
+   "stable = critical tilt of all grounded placed components as one body (band 0.005) > 0; 0 if nothing grounded."
+  ],
+  "score": "score = mean(coverage, mean insertion_feasible, mean supported, mean stable)",
+  "status": "no sequence: fail with 0 if declares.sequence, else skipped; otherwise pass if coverage = 1, else degraded. Empty design: fail, 0.",
+  "constants": {
+   "INSERT_EXTRA_M": "0.05 m — extra insertion travel",
+   "clearance": "2 cells",
+   "step stride": "2 cells",
+   "grounded tolerance": "0.01 m",
+   "prefix stability band": "0.005 m"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:48",
+   "ppbench/v2/evaluate.py:758-822",
+   "ppbench/v2/voxel.py:133-144"
+  ],
+  "golden": "unsupported_first_step (supported_prefix_frac < 1), via a re-implementation in measure (golden.py:66-68, 92-103).",
+  "limitations": [
+   "Insertion paths are straight translations along the declared direction or the six axes.",
+   "Joints do not count as support.",
+   "A 2-cell stride can pass 1-cell obstacles.",
+   "Infeasible steps never fail the dimension."
+  ]
+ },
+ {
+  "key": "4.3",
+  "name": "Function",
+  "question": "For each claimed subsystem: are its parts present, placed where the reference places them, and linked (through a moving joint when motion is carried)?",
+  "inputs": [
+   "declared roles",
+   "part bboxes",
+   "contact rows and all declared joints",
+   "moving joints",
+   "claims F (parts, connections)",
+   "reference roles and bounds"
+  ],
+  "steps": [
+   "Role centres = mean bbox centre per canonical role, normalised to the design bounds (design) or reference bounds (reference).",
+   "presence = mean over named parts of [some part satisfies the name, broad matching].",
+   "placement = mean over named parts with centres in both of max(0, 1 − ‖design centre − reference centre‖/0.5); 0 if none.",
+   "Adjacency = contact rows plus every declared joint (no origin test); moving pairs = non-fixed joints.",
+   "connection per link: A, B = parts strictly matching from/to; BFS ≤ 4 hops scores 1 if a B part is reached (crossing a moving joint when carries = motion), 0.5 if reached without the needed moving joint, 0 otherwise or if A or B is empty.",
+   "Aggregates: mean presence, mean placement, mean connection (None → 0) over subsystems."
+  ],
+  "score": "None — presence, placement and connection are reported separately",
+  "status": "skipped if roles are not declared and no part has a role; else pass; absent for an empty design.",
+  "constants": {
+   "max_hops": "4",
+   "placement decay": "0.5 in normalised bbox units",
+   "partial motion credit": "0.5"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:192-200",
+   "ppbench/v2/evaluate.py:824-888"
+  ],
+  "golden": "none",
+  "limitations": [
+   "Joints connect regardless of the 2 cm rule used in 1.1.",
+   "carries = force and load are treated alike.",
+   "Bbox normalisation removes aspect ratio.",
+   "The page claims matrix averages the three numbers (site_template_v3.html:861)."
+  ]
+ },
+ {
+  "key": "A1-A4",
+  "name": "Attribute proxies",
+  "question": "Is each attribute claim satisfied, as far as a rule over computed metrics can tell?",
+  "inputs": [
+   "attribute kind and statement",
+   "4.1 claim_class_coverage",
+   "2.1 seat_height predicate",
+   "moving joints and rigid groups",
+   "roles and voxels"
+  ],
+  "steps": [
+   "kind = material → score = 4.1 claim_class_coverage (None if 4.1 skipped).",
+   "statement contains 'desk' → score = seat_height predicate score (0 if absent).",
+   "contains 'adjust' and not 'lever' → 1 if a moving prismatic/cylindrical joint's child group contains a seat, armrest, backrest or gas lift cylinder part, else 0.",
+   "contains 'lever' → 0 without lever parts, else 0.5 + 0.5·[a lever's voxel centroid is within 0.08 m of a gas lift cylinder, swivel mechanism or seat surface].",
+   "Otherwise proxy None, score None."
+  ],
+  "score": "per attribute, not combined and not folded into any dimension",
+  "status": "no status field; absent for an empty design",
+  "constants": {
+   "lever distance": "0.08 m"
+  },
+  "code": [
+   "ppbench/v2/evaluate.py:890-917"
+  ],
+  "golden": "none",
+  "limitations": [
+   "Keyword dispatch is task-specific.",
+   "A2 tests seat height, not desk use.",
+   "A lever at any distance earns 0.5."
+  ]
+ },
+ {
+  "key": "img",
+  "name": "DINOv2 image similarity",
+  "question": "How similar is the design's clay render to the condition photo?",
+  "inputs": [
+   "clay render from the cond camera (azimuth 300°, elevation 22°, 384 px, 16 samples) of the evaluated parts",
+   "condition photo of name_only+image"
+  ],
+  "steps": [
+   "Render clay views cond, iso, front, side from the parts after evaluate() (so after oracle scale and yaw).",
+   "Embed each image with facebook/dinov2-large: e = pooler_output[0] / ‖pooler_output[0]‖.",
+   "cosine = e_render · e_photo; the reference render is scored as an item too."
+  ],
+  "score": "raw cosine; page shows the mean over seeds",
+  "status": "no status; designs without parts have no render and no value",
+  "constants": {
+   "model": "facebook/dinov2-large (CPU, 16 threads)",
+   "render": "cond view, 384 px, 16 samples"
+  },
+  "code": [
+   "ppbench/v2/report.py:120-129",
+   "ppbench/v2/report.py:156-165",
+   "ppbench/v2/imagesim.py:16-35",
+   "ppbench/v2/render.py:21"
+  ],
+  "golden": "none",
+  "limitations": [
+   "One fixed camera, not fitted to the photo.",
+   "Clay render versus photograph domain gap."
+  ]
+ },
+ {
+  "key": "diversity",
+  "name": "Diversity across seeds",
+  "question": "How different are a system's designs from one another?",
+  "inputs": [
+   "6000 surface samples per design saved after evaluate() (<key>_points.npy)"
+  ],
+  "steps": [
+   "Group records by (system, tier).",
+   "For groups with ≥ 2 point sets, shift each set so its XY bbox centre is 0 and min z is 0.",
+   "For every pair: 1 − fscore@0.05; report the mean over pairs and n_seeds."
+  ],
+  "score": "mean_pairwise_1_minus_fscore@0.05, reported only",
+  "status": "no status",
+  "constants": {
+   "tau": "0.05 m",
+   "points": "6000"
+  },
+  "code": [
+   "ppbench/v2/report.py:128-129",
+   "ppbench/v2/report.py:204-223",
+   "ppbench/v2/evaluate.py:166-176"
+  ],
+  "golden": "none",
+  "limitations": [
+   "The group key omits rounds and condition, so r1/r2/r3 tool-arm records are pooled as seeds.",
+   "No yaw alignment between designs."
+  ]
+ },
+ {
+  "key": "VLM-K",
+  "name": "VLM · kinematics claims",
+  "question": "Does the joint the rule matcher picked really realise the kinematics claim?",
+  "inputs": [
+   "2.2 claim matches",
+   "joint motion sheet (three poses, moving parts orange, parent blue, axis red)",
+   "labelled role-coloured overview",
+   "part table",
+   "declared joint record"
+  ],
+  "steps": [
+   "Per claim, pick the 2.2 best entry with q > 0 and an existing joint; render three poses (0/90/180° for continuous or unlimited revolute, lo/mid/hi for revolute and prismatic); other joint types get no sheet.",
+   "Labels L# are drawn only where the part covers ≥ 25 px in the flat ID render; first 124 parts only.",
+   "No sheet: score None if 2.2 is skipped, else 0 ('no candidate joint').",
+   "Ask the judge (temperature 0) for parts_match, type_axis_match, motion_realises_claim, physically_sensible, score 0–10, evidence.",
+   "grounded = cited labels meet (moving labels ∪ parent label) and all cited labels exist; score = score/10 if grounded else 0.",
+   "If grounded and any of parts_match, type_axis_match, motion_realises_claim is not true: score = min(score, 0.3)."
+  ],
+  "score": "family = mean over claims per judge; page column = mean over judges, then over seeds",
+  "status": "per claim: judged / ungrounded / no candidate joint / skipped (no joints declared)",
+  "constants": {
+   "cap": "0.3",
+   "label min pixels": "25",
+   "sheet": "512 px per view",
+   "max_tokens": "900",
+   "zoom": "moving bbox diagonal < 0.3 of design diagonal"
+  },
+  "code": [
+   "ppbench/v2/vlm_checks.py:78-105",
+   "ppbench/v2/vlm_checks.py:199-268",
+   "ppbench/v2/vlm_checks.py:333-363",
+   "ppbench/v2/vlm_checks.py:376-391",
+   "ppbench/v2/vlm_checks.py:442-466",
+   "ppbench/v2/vlm_checks.py:558-605",
+   "ppbench/v2/site_template_v3.html:764-768"
+  ],
+  "golden": "none",
+  "limitations": [
+   "Cylindrical and ball joints are shown turning about their declared axis; the sliding of a cylindrical joint is not shown.",
+   "physically_sensible is asked but not used.",
+   "A parse failure is ungrounded and scores 0."
+  ]
+ },
+ {
+  "key": "VLM-PA",
+  "name": "VLM · required parts and attributes",
+  "question": "Do the parts declared with each required role look like that part, and does the design satisfy each attribute claim?",
+  "inputs": [
+   "labelled role-coloured overview",
+   "materials sheet (material attributes) or clay sheet",
+   "part table",
+   "computed facts (extent, seat top and reference range, symmetry)",
+   "declared moving joints as text"
+  ],
+  "steps": [
+   "If no label row has a role, every P and A is skipped (score None).",
+   "Parts: candidates per P = labels whose canonical role satisfies the part (broad); one call for all P.",
+   "Part grounded = candidates non-empty ∧ answer labels meet candidates ∧ all labels exist; score = score/10 if grounded and present is true, else 0.",
+   "Attributes: one call each; grounded = at least one cited label and all cited labels exist; score = score/10 if grounded else 0; if satisfied is not true, min(score, 0.3)."
+  ],
+  "score": "page column = mean over judges of mean(parts mean, attributes mean), then over seeds",
+  "status": "per claim: judged / ungrounded / no candidate / skipped (no roles)",
+  "constants": {
+   "cap": "0.3 (attributes)",
+   "max_tokens": "2000 parts, 900 attributes"
+  },
+  "code": [
+   "ppbench/v2/vlm_checks.py:393-412",
+   "ppbench/v2/vlm_checks.py:468-510",
+   "ppbench/v2/site_template_v3.html:766"
+  ],
+  "golden": "none",
+  "limitations": [
+   "Attribute grounding accepts any existing label, relevant or not.",
+   "Parts under 25 visible pixels in a view are unlabelled there."
+  ]
+ },
+ {
+  "key": "VLM-design",
+  "name": "VLM · design quality",
+  "question": "How good is the design as an office chair, compared with the photo, from neutral clay views?",
+  "inputs": [
+   "condition photo",
+   "clay sheet (condition camera, front-right, front, right side)",
+   "computed facts"
+  ],
+  "steps": [
+   "Ask for recognisable, resemblance, proportion, coherence, overall on 1–10 with written anchors, each with an observation naming a view.",
+   "Per criterion: (s − 1)/9 clipped to [0, 1]; None if not numeric.",
+   "grounded = observations with a view cover ≥ 3 distinct criteria; if not grounded every criterion is 0."
+  ],
+  "score": "page column = mean over judges of the overall criterion, then over seeds; Spearman agreement between the first two judges is reported",
+  "status": "grounded / not grounded",
+  "constants": {
+   "scale": "1–10 → (s − 1)/9",
+   "grounding": "≥ 3 criteria with a view"
+  },
+  "code": [
+   "ppbench/v2/vlm_checks.py:414-424",
+   "ppbench/v2/vlm_checks.py:512-525",
+   "ppbench/v2/vlm_checks.py:594-604",
+   "ppbench/v2/site_template_v3.html:766-769"
+  ],
+  "golden": "none",
+  "limitations": [
+   "Grounding does not check that views or observations are valid.",
+   "Absolute per-design scores drift more than pairwise preferences."
+  ]
+ }
+]

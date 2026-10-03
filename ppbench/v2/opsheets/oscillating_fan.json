@@ -1,0 +1,146 @@
+{
+ "task": "oscillating_fan",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Airflow generation",
+   "function": "Rotates blades to move air parallel to the shaft in axial fans or radially in centrifugal fans.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "blades",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "hub",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "electric motor",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "hub",
+     "to": "blades",
+     "carries": "motion",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Oscillation mechanism",
+   "function": "Moves the fan head from side to side to distribute airflow.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "oscillator gearbox",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "oscillator shaft",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "base",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "oscillator gearbox",
+     "to": "oscillator shaft",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "oscillator shaft",
+     "to": "base",
+     "carries": "motion",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Safety enclosure",
+   "function": "Prevents objects from contacting the fan blades while allowing air to pass through.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "housing",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "blade guard",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "blade guard",
+     "to": "motor case",
+     "carries": "load",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "fan head",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the blades turn inside the guard",
+   "claims": [
+    "P1",
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "blades",
+     "type": "revolute",
+     "claim": "P1"
+    },
+    {
+     "pred": "colocated",
+     "a": "blade guard",
+     "b": "blades",
+     "max_gap_m": 0.1,
+     "claim": "P5"
+    }
+   ]
+  }
+ ]
+}

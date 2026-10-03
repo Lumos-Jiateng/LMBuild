@@ -1,0 +1,243 @@
+{
+ "task": "swivel_office_chair",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Height adjustment",
+   "function": "Allows the user to raise or lower the seat to a comfortable height.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "gas lift",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "lever",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "seat",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "lever",
+     "to": "gas lift",
+     "carries": "signal",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "seat",
+     "type": "revolute",
+     "axis": "vertical axis through the center of the chair",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "seat",
+     "type": "prismatic",
+     "axis": "vertical axis",
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "seat",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K7"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Mobility",
+   "function": "Enables the chair to move across the floor in any direction.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "base",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "casters",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "wheels",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "base",
+     "to": "casters",
+     "carries": "load",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "casters",
+     "to": "wheels",
+     "carries": "motion",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Support",
+   "function": "Provides ergonomic support to the user's back and pelvis.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "backrest",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "seat",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "lumbar support",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "seat",
+     "type": "revolute",
+     "axis": "vertical axis through the center of the chair",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "seat",
+     "type": "prismatic",
+     "axis": "vertical axis",
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "seat",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K7"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K3",
+    "K4",
+    "K5",
+    "K6"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "caster fork",
+     "type": "revolute",
+     "axis": "vertical shaft of the caster",
+     "claim": "K3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "wheel",
+     "type": "revolute",
+     "axis": "horizontal axle of the wheel",
+     "claim": "K4"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "armrest",
+     "type": "prismatic",
+     "axis": "vertical axis",
+     "claim": "K5"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "armrest",
+     "type": "prismatic",
+     "axis": "horizontal axis",
+     "claim": "K6"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P5"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "armrests",
+     "claim": "P5"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a person can sit on it",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "seat",
+     "min_area_m2": 0.09,
+     "height_range_m": [
+      0.35,
+      0.6
+     ],
+     "claim": "P1"
+    },
+    {
+     "pred": "clearance",
+     "anchor": "seat",
+     "placement": "above",
+     "box": "seated_torso",
+     "min_free": 0.75,
+     "claim": "P1"
+    }
+   ]
+  },
+  {
+   "id": "H2",
+   "name": "it rolls on its casters",
+   "claims": [
+    "P3"
+   ],
+   "requirements": [
+    {
+     "pred": "ground_contact",
+     "role": "casters",
+     "min_clusters": 4,
+     "claim": "P3"
+    }
+   ]
+  }
+ ]
+}

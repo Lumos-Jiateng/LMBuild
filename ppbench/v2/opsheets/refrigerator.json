@@ -1,0 +1,217 @@
+{
+ "task": "refrigerator",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Vapor-compression cooling cycle",
+   "function": "Transfers heat from the interior compartment to the external environment to cool the interior.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "compressor",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "condenser",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "expansion valve",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "evaporator",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "refrigerant",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "compressor",
+     "to": "condenser",
+     "carries": "fluid",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "condenser",
+     "to": "expansion valve",
+     "carries": "fluid",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "expansion valve",
+     "to": "evaporator",
+     "carries": "fluid",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Air circulation system",
+   "function": "Circulates cooled air from the evaporator throughout the refrigerator and freezer compartments.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "fan",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "evaporator",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "ducts",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "vents",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "fan",
+     "to": "compartment air",
+     "carries": "motion",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Temperature control system",
+   "function": "Senses internal temperature and activates or deactivates the cooling components to maintain the setpoint.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "thermostat",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "compressor",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "fan",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "thermostat",
+     "to": "compressor",
+     "carries": "signal",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "thermostat",
+     "to": "fan",
+     "carries": "signal",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1",
+    "K2",
+    "K3"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "door",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "fan blades",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "compressor piston",
+     "type": "prismatic",
+     "axis": "linear axis within the cylinder",
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1",
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "thermally insulated compartment",
+     "claim": "P1"
+    },
+    {
+     "pred": "part_present",
+     "role": "door",
+     "claim": "P7"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the compartment holds food behind a door",
+   "claims": [
+    "P1",
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "thermally insulated compartment",
+     "placement": "inside",
+     "margin_m": 0.03,
+     "min_free": 0.5,
+     "claim": "P1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "door",
+     "type": "revolute",
+     "claim": "P7"
+    }
+   ]
+  }
+ ]
+}

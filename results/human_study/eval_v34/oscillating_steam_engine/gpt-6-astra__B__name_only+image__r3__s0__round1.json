@@ -1,0 +1,889 @@
+{
+ "system": "gpt-6-astra",
+ "tier": "B",
+ "meta": {
+  "protocol": "v2.2",
+  "task_id": "oscillating_steam_engine",
+  "tier": "B",
+  "condition_id": "name_only+image",
+  "rounds": 3,
+  "rounds_completed": 1,
+  "submitted_final": false,
+  "counters": {
+   "tool_calls": 34,
+   "errors": 0,
+   "check": 2,
+   "render": 1,
+   "create": 4
+  },
+  "round_counters": [
+   {
+    "tool_calls": 34,
+    "errors": 0,
+    "check": 2,
+    "render": 1,
+    "create": 4
+   }
+  ],
+  "created_parts": {
+   "crank_web": {
+    "size_m": [
+     0.028,
+     0.028,
+     0.016
+    ],
+    "volume_m3": 3.3220899918124873e-06,
+    "n_pieces": 1,
+    "piece_volumes_m3": [
+     3.322e-06
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     -0.006
+    ],
+    "n_triangles": 380
+   },
+   "oscillating_barrel": {
+    "size_m": [
+     0.014,
+     0.014,
+     0.032
+    ],
+    "volume_m3": 2.602337241624991e-06,
+    "n_pieces": 1,
+    "piece_volumes_m3": [
+     2.602e-06
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     -0.0
+    ],
+    "n_triangles": 384
+   },
+   "piston_rod": {
+    "size_m": [
+     0.0092,
+     0.0092,
+     0.0405
+    ],
+    "volume_m3": 6.687535563632789e-07,
+    "n_pieces": 1,
+    "piece_volumes_m3": [
+     6.69e-07
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     0.00075
+    ],
+    "n_triangles": 380
+   },
+   "crank_pin": {
+    "size_m": [
+     0.0044,
+     0.0044,
+     0.011
+    ],
+    "volume_m3": 1.6678114737109312e-07,
+    "n_pieces": 1,
+    "piece_volumes_m3": [
+     1.67e-07
+    ],
+    "recentred_by_m": [
+     -0.0,
+     -0.0,
+     -0.0
+    ],
+    "n_triangles": 188
+   }
+  },
+  "scale_mode": "metric",
+  "declares": {
+   "roles": true,
+   "materials": true,
+   "joints": true,
+   "sequence": true
+  },
+  "task_source": {
+   "file": "reference_data/benchmark_v2/core_v2.json",
+   "frozen_for": "core-set runs, harness v2.3",
+   "frozen": "2026-09-14",
+   "sha256": "442ae84645556b8876c5130c3443ee8f9c02ac701ee173c2c9c4f56c79efa486"
+  },
+  "wall_s": 172.0,
+  "pool_mesh_version": 2,
+  "transport": "shell session",
+  "checkpoint_round": 1
+ },
+ "item": {
+  "kind": "tool",
+  "system": "gpt-6-astra",
+  "tier": "B",
+  "condition": "name_only+image",
+  "trajectory_rounds": 3,
+  "seed": 0,
+  "namespace": "core_v2.4_clean",
+  "task": "oscillating_steam_engine",
+  "snapshot": "task_snapshot_core.json",
+  "key": "gpt-6-astra__B__name_only+image__r3__s0__round1",
+  "rounds": 1,
+  "checkpoint_round": 1,
+  "path": "results/v2/oscillating_steam_engine/runs/core_v2.4_clean/gpt-6-astra__B__name_only+image__r3__s0/rounds/round_1/design"
+ },
+ "notes": [
+  "Level 1 recomputed under spec v3.3",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.9629629629629629,
+   "metrics": {
+    "n_parts": 10,
+    "n_components": 1,
+    "n_breaks": 0,
+    "anchored_volume_frac": 1.0,
+    "break_score": 1.0,
+    "fastening_spec_rate": 0.8888888888888888,
+    "n_fastened_connections": 8,
+    "connections_needed_to_span": 9,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 0.7668313422557561,
+    "n_components_fastened_only": 3,
+    "n_interfacing_pairs": 16,
+    "connection_evidence": {
+     "interlock": 1,
+     "fastened_joint": 7,
+     "lattice_stud": 0
+    },
+    "n_resting_contacts": 8,
+    "resting_contacts": [
+     [
+      "base",
+      "front_standard"
+     ],
+     [
+      "base",
+      "rear_standard"
+     ],
+     [
+      "base",
+      "cylinder"
+     ],
+     [
+      "front_standard",
+      "piston"
+     ],
+     [
+      "front_standard",
+      "crankpin"
+     ],
+     [
+      "rear_standard",
+      "shaft"
+     ],
+     [
+      "crank",
+      "piston"
+     ],
+     [
+      "piston",
+      "crankpin"
+     ]
+    ],
+    "n_declared_joint_pairs": 7,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [],
+    "shell_only_parts": [
+     "flywheel_rim",
+     "flywheel_spokes",
+     "shaft",
+     "crank",
+     "cylinder",
+     "piston",
+     "crankpin"
+    ]
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "collision_free_pair_rate": 1.0,
+    "n_interfacing_pairs": 16,
+    "n_colliding_pairs": 0,
+    "n_declared_joint_pairs": 7,
+    "n_colliding_joint_pairs": 0,
+    "pen_volume_frac": 0.0014551333872271626,
+    "pen_volume_cm3": 0.5760000000000001,
+    "worst_pair_frac_of_smaller": 0.05714285714285714,
+    "graded_penetration_score": 0.9854486661277284,
+    "voxel_res_m": 0.004,
+    "colliding_pairs": []
+   },
+   "notes": [
+    "score = 1 - n_colliding / n_interfacing_pairs over EVERY interfacing pair, declared joints included",
+    "a pair collides when the eroded-core overlap exceeds 1 cm3 and 10% of the smaller part (25% when the design declares a joint there)"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "critical_tilt_deg": 48.5234202723121,
+    "tilt_direction_deg": 270.0,
+    "support_margin_m": 0.04844627044669665,
+    "support_margin_norm": 0.8586877861525756,
+    "support_area_m2": 0.010000000000000002,
+    "n_support_vertices": 4,
+    "com_height_m": 0.042826348730107204,
+    "ground_z": 1.1175870645585562e-10,
+    "total_weight": 0.0004758634853561011,
+    "com": [
+     0.0006544165648432915,
+     -0.001553729553303361,
+     0.04282634884186591
+    ],
+    "ground_band_m": 0.005,
+    "z_top_m": 0.11742556095123291,
+    "push_force_ratio": 0.41257005800402174,
+    "shell_corrected_parts": [
+     {
+      "part": "flywheel_rim",
+      "voxel_m3": 7.616e-05,
+      "hull_m3": 0.00015618348535610107
+     }
+    ],
+    "n_parts_in_main_group": 10,
+    "n_parts": 10,
+    "stand_score": 1.0,
+    "push_score": 1.0,
+    "target_tilt_deg": 30.0,
+    "target_push_ratio": 0.35,
+    "reference_tilt_deg": 51.22998416492878,
+    "reference_push_ratio": 0.3785525524792948,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge",
+    "1 open-mesh part(s) re-weighted by their convex hull"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.7302445326671003,
+   "metrics": {
+    "shape_normalised": {
+     "chamfer_m": 0.020272973274846645,
+     "fscore@0.01": 0.4721690116986925,
+     "fscore@0.025": 0.7302445326671003
+    },
+    "best_yaw_deg": 180,
+    "front_consistent": false,
+    "shape_normalised_as_oriented": {
+     "chamfer_m": 0.02229182781781949,
+     "fscore@0.01": 0.46429805621365494,
+     "fscore@0.025": 0.6906678724863714
+    },
+    "design_diagonal_m": 0.18381670176831766,
+    "reference_diagonal_m": 0.18097559095067026,
+    "scale_ratio": 1.0156988619444367,
+    "size_log2_ratio_vs_reference": 0.02247273008574168,
+    "tau_rel": [
+     0.01,
+     0.025
+    ]
+   },
+   "notes": [
+    "the reference is rescaled to the design's bounding diagonal: 2.1 is shape only",
+    "absolute size is reported as scale_ratio and size_log2_ratio_vs_reference, and is not scored"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "n_joints": 7,
+    "n_moving": 3,
+    "n_scored_joints": 3,
+    "reference_n_moving": 18,
+    "joint_count_ratio": 0.16666666666666666,
+    "claims_recall": 0.5,
+    "claims": [
+     {
+      "id": "K1",
+      "moving_part": "cylinder",
+      "joint_type": "revolute",
+      "n_candidate_parts": 1,
+      "score": 0.5
+     },
+     {
+      "id": "K2",
+      "moving_part": "piston",
+      "joint_type": "prismatic",
+      "n_candidate_parts": 1,
+      "score": 1.0
+     },
+     {
+      "id": "K3",
+      "moving_part": "crankshaft",
+      "joint_type": "revolute",
+      "n_candidate_parts": 3,
+      "score": 0.5
+     },
+     {
+      "id": "K4",
+      "moving_part": "connecting rod",
+      "joint_type": "revolute",
+      "n_candidate_parts": 0,
+      "score": 0.0
+     }
+    ],
+    "mean_completeness": 1.0,
+    "mean_placement": 1.0,
+    "mean_mobility": 1.0,
+    "mean_effectiveness": 1.0,
+    "per_joint": [
+     {
+      "joint": "shaft_rotation",
+      "type": "continuous",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.001229212970571917,
+      "moving_volume_frac": 0.3382376717865805,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 5,
+      "n_sweep_samples": 11,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "cylinder_oscillation",
+      "type": "revolute",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.0011248071233134383,
+      "moving_volume_frac": 0.03427647534357316,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 2,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     },
+     {
+      "joint": "piston_stroke",
+      "type": "prismatic",
+      "completeness": 1.0,
+      "placement": 1.0,
+      "mobility": 1.0,
+      "effectiveness": 1.0,
+      "origin_offset_m": 0.004786582055492549,
+      "moving_volume_frac": 0.009377526273241715,
+      "welded_by_contact": true,
+      "declared_loop": false,
+      "n_moving_parts": 1,
+      "n_sweep_samples": 8,
+      "first_block": null,
+      "score": 1.0
+     }
+    ]
+   },
+   "notes": [
+    "2.2 is the mean per-joint quality; claim recall and joint count are reported, not scored",
+    "joints are swept independently; coupled mechanisms are not sampled jointly"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.8236111111111111,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6296296296296297,
+     "qwen2.5-vl-32b": 0.7777777777777777
+    },
+    "judge_mean": 0.7037037037037037,
+    "n_judges": 2,
+    "computed_score": 0.875,
+    "computed": {
+     "granularity_score": 0.625,
+     "consolidation_score": 1.0,
+     "joint_placement_rate": 1.0,
+     "consolidation_violations": 0,
+     "n_declared_joint_pairs": 7
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.6111111111111112,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5555555555555556,
+     "qwen2.5-vl-32b": 0.6666666666666666
+    },
+    "judge_mean": 0.6111111111111112,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": 0.9806517406129123
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "declared+computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "coverage_volume_frac": 1.0,
+    "claim_class_coverage": 1.0,
+    "claimed_class_groups": [
+     [
+      "heavy_metal"
+     ]
+    ],
+    "design_classes": [
+     "heavy_metal"
+    ],
+    "total_mass_kg": 3.1429300159999998
+   },
+   "notes": [
+    "densities are Artiverse medians; volumes of open meshes are under-counted",
+    "the population prior and the per-task load case of v2 are dropped as task-specific"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.925,
+   "metrics": {
+    "coverage": 1.0,
+    "insertion_feasible_frac": 0.9,
+    "declared_direction_feasible_frac": null,
+    "first_infeasible_step": 5,
+    "supported_prefix_frac": 0.8,
+    "stable_prefix_frac": 1.0,
+    "n_steps": 10
+   },
+   "notes": [
+    "insertion paths are straight translations along the declared direction or the six axes"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 0.6666666666666666,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": true,
+    "n_requirements_disabled_by_ceiling": 6,
+    "n_requirements_declared_only": 3,
+    "declared_part_coverage": 0.0,
+    "n_capabilities": 3,
+    "n_capabilities_zero": 1,
+    "capability_scores": {
+     "F1": 0.0,
+     "F2": 1.0,
+     "H1": 1.0
+    },
+    "mean_of_means": 0.7777777777777777,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Steam admission and exhaust",
+      "claims": [
+       "F1"
+      ],
+      "score": 0.0,
+      "mean": 0.3333333333333333,
+      "n_requirements": 3,
+      "n_disabled": 1,
+      "n_declared_only": 1,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "cylinder",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "cylinder"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "trunnion",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "port face",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "cylinder",
+        "to": "port face",
+        "carries": "fluid",
+        "claim": "F1",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 1,
+         "to_n": 0
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "cylinder",
+        "type": "revolute",
+        "axis": null,
+        "claim": "K1",
+        "pred": "joint_enables",
+        "score": 1.0,
+        "detail": {
+         "joint": "cylinder_oscillation",
+         "type": "revolute",
+         "mobility": 1.0,
+         "type_score": 1.0,
+         "axis_score": null,
+         "min_sweep": 0.5
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     },
+     {
+      "id": "F2",
+      "name": "Motion conversion",
+      "claims": [
+       "F2"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 2,
+      "n_disabled": 4,
+      "n_declared_only": 2,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "piston",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 1,
+         "need": 1,
+         "parts": [
+          "piston"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "piston rod",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "connecting rod",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 0.0,
+        "declared_only": true
+       },
+       {
+        "role": "crankshaft",
+        "claim": "F2",
+        "pred": "part_present",
+        "score": 1.0,
+        "detail": {
+         "n": 3,
+         "need": 1,
+         "parts": [
+          "shaft",
+          "crank",
+          "crankpin"
+         ]
+        },
+        "reference_score": 1.0
+       },
+       {
+        "from": "connecting rod",
+        "to": "crankshaft",
+        "carries": "motion",
+        "claim": "F2",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 3
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "role": "piston",
+        "type": "prismatic",
+        "axis": "longitudinal axis of the cylinder",
+        "claim": "K2",
+        "pred": "joint_enables",
+        "score": 1.0,
+        "detail": {
+         "joint": "piston_stroke",
+         "type": "prismatic",
+         "mobility": 1.0,
+         "type_score": 1.0,
+         "axis_score": null,
+         "min_sweep": 0.5
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "role": "crankshaft",
+        "type": "revolute",
+        "axis": "central axis of the crankshaft",
+        "claim": "K3",
+        "pred": "joint_enables",
+        "score": 1.0,
+        "detail": {
+         "joint": "cylinder_oscillation",
+         "type": "revolute",
+         "mobility": 1.0,
+         "type_score": 1.0,
+         "axis_score": null,
+         "min_sweep": 0.5
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       },
+       {
+        "role": "connecting rod",
+        "type": "revolute",
+        "axis": "axis of the crankpin and piston rod connection",
+        "claim": "K4",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "the piston drives the crankshaft",
+      "claims": [
+       "P2",
+       "P5"
+      ],
+      "score": 1.0,
+      "mean": 1.0,
+      "n_requirements": 1,
+      "n_disabled": 1,
+      "n_declared_only": 0,
+      "weakest": "chain",
+      "requirements": [
+       {
+        "from": "piston",
+        "to": "crankshaft",
+        "carries": "motion",
+        "max_hops": 4,
+        "claim": "P2",
+        "pred": "chain",
+        "score": 1.0,
+        "detail": {
+         "from_n": 1,
+         "to_n": 3,
+         "carries": "motion"
+        },
+        "reference_score": 0.5
+       },
+       {
+        "role": "crankshaft",
+        "type": "revolute",
+        "claim": "P5",
+        "pred": "joint_enables",
+        "score": 1.0,
+        "detail": {
+         "joint": "cylinder_oscillation",
+         "type": "revolute",
+         "mobility": 1.0,
+         "type_score": 1.0,
+         "axis_score": null,
+         "min_sweep": 0.5
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     }
+    ]
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared",
+    "6 requirement(s) disabled: the task's own reference object does not pass them",
+    "3 part(s) the reference cannot show either are reported as declared_part_coverage, not scored"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.5,
+   "metrics": {
+    "declared_roles": true,
+    "n_parts": 10,
+    "required_part_coverage": 0.5,
+    "subsystem_part_coverage": 0.42857142857142855,
+    "kinematic_part_coverage": 0.5714285714285714,
+    "groups": {
+     "required_parts": {
+      "n": 6,
+      "score": 0.5,
+      "missing": [
+       "piston rod",
+       "connecting rod",
+       "port face"
+      ],
+      "present_but_floating": []
+     },
+     "subsystem_parts": {
+      "n": 7,
+      "score": 0.42857142857142855,
+      "missing": [
+       "connecting rod",
+       "piston rod",
+       "port face",
+       "trunnion"
+      ],
+      "present_but_floating": []
+     },
+     "kinematic_parts": {
+      "n": 7,
+      "score": 0.5714285714285714,
+      "missing": [
+       "connecting rod",
+       "engine frame",
+       "trunnion"
+      ],
+      "present_but_floating": []
+     }
+    },
+    "unrecognised_roles": [],
+    "unrecognised_role_frac": 0.0,
+    "subsystem_connection": 0.0,
+    "subsystem_presence_v31": 0.41666666666666663
+   },
+   "notes": [
+    "score = mean of the three claim-group coverages; a role that exists but floats off the assembly scores 0.5",
+    "matching is the task's own auto lexicon plus its authored bridges, never a hand-written per-object predicate"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.680021945341973,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.6111111111111112,
+     "qwen2.5-vl-32b": 0.75
+    },
+    "judge_mean": 0.6805555555555556,
+    "n_judges": 2,
+    "computed_score": 0.6787768548436138,
+    "computed": {
+     "part_correspondence_iou": 0.40203633664408156,
+     "symmetry_match": 0.9555173730431461,
+     "symmetry_iou": 0.7938144329896907,
+     "reference_symmetry_iou": 0.8307692307692308
+    }
+   },
+   "notes": [
+    "0.70 judge + 0.30 computed"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [],
+  "buildable": true,
+  "overall": 0.8249681941550772,
+  "n_scored_dims": 12,
+  "gate_pending": true
+ },
+ "stamp": "1789497968.4525013|v3.1|v3.2|v3.3|v3.4.3"
+}

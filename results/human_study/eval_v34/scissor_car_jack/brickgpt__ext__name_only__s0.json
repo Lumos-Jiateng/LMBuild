@@ -1,0 +1,578 @@
+{
+ "system": "brickgpt",
+ "tier": "external",
+ "meta": {
+  "scale_mode": "metric",
+  "units_note": "LDraw units at 0.4 mm (real brick scale)",
+  "front_declared": false,
+  "declares": {
+   "roles": false,
+   "materials": false,
+   "joints": false,
+   "sequence": false
+  },
+  "ingest": {
+   "n_lines_parts": 69,
+   "n_missing_meshes": 0,
+   "lines_skipped": 0,
+   "subfile_refs": 0,
+   "n_aliased": 0,
+   "n_pattern_substituted": 0,
+   "n_created": 0,
+   "n_missing_mesh": 0,
+   "missing_stems": [],
+   "missing_idx": [],
+   "resolve_rate": 1.0
+  },
+  "family": "brick LLM (text -> LDraw)",
+  "input": "core task, condition name_only",
+  "producer_meta": {
+   "system": "brickgpt",
+   "model": "AvaLovelace/BrickGPT (Llama-3.2-1B)",
+   "caption": "Build a scissor jack.",
+   "seed": 0,
+   "n_bricks": 69,
+   "wall_s": 44.7,
+   "rejections": {},
+   "n_regenerations": 3,
+   "use_gurobi": false,
+   "note": "stability rejection is connectivity-based, not Gurobi physics"
+  },
+  "oracle_yaw_deg": 270
+ },
+ "item": {
+  "key": "brickgpt__ext__name_only__s0",
+  "kind": "external",
+  "system": "brickgpt",
+  "prefix": "brickgpt",
+  "tier": "external",
+  "condition": "name_only",
+  "input": "core task, condition name_only",
+  "seed": 0,
+  "task": "scissor_car_jack",
+  "snapshot": "task_snapshot_core.json",
+  "path": "results/v2/scissor_car_jack/external_core/name_only/brickgpt_s0.ldr"
+ },
+ "notes": [
+  "no declared front: rotated 270 deg about Z to best match the reference (oracle yaw)",
+  "Level 1 recomputed under spec v3.3 (external design: oracle scale/yaw applied first, fix of 2026-09-21): no declared front: rotated 270 deg about Z to best match the reference (oracle yaw)",
+  "Level 3 rescored under spec v3.4"
+ ],
+ "spec": "v3.4.3",
+ "derived_from": "v3.3",
+ "dims": {
+  "1.1": {
+   "depth": "computed",
+   "status": "degraded",
+   "score": 1.0,
+   "metrics": {
+    "n_parts": 69,
+    "n_components": 1,
+    "n_breaks": 0,
+    "anchored_volume_frac": 1.0,
+    "break_score": 1.0,
+    "fastening_spec_rate": 1.0,
+    "n_fastened_connections": 172,
+    "connections_needed_to_span": 68,
+    "whole_body_rate": 1.0,
+    "fastening_strict_score": 1.0,
+    "n_components_fastened_only": 1,
+    "n_interfacing_pairs": 254,
+    "connection_evidence": {
+     "interlock": 0,
+     "fastened_joint": 0,
+     "lattice_stud": 172
+    },
+    "n_resting_contacts": 82,
+    "resting_contacts": [
+     [
+      "brick_000",
+      "brick_001"
+     ],
+     [
+      "brick_000",
+      "brick_002"
+     ],
+     [
+      "brick_001",
+      "brick_002"
+     ],
+     [
+      "brick_002",
+      "brick_003"
+     ],
+     [
+      "brick_002",
+      "brick_004"
+     ],
+     [
+      "brick_003",
+      "brick_004"
+     ],
+     [
+      "brick_005",
+      "brick_006"
+     ],
+     [
+      "brick_005",
+      "brick_007"
+     ],
+     [
+      "brick_005",
+      "brick_008"
+     ],
+     [
+      "brick_006",
+      "brick_007"
+     ],
+     [
+      "brick_006",
+      "brick_008"
+     ],
+     [
+      "brick_006",
+      "brick_011"
+     ],
+     [
+      "brick_007",
+      "brick_008"
+     ],
+     [
+      "brick_007",
+      "brick_009"
+     ],
+     [
+      "brick_007",
+      "brick_010"
+     ],
+     [
+      "brick_008",
+      "brick_009"
+     ],
+     [
+      "brick_008",
+      "brick_010"
+     ],
+     [
+      "brick_008",
+      "brick_011"
+     ],
+     [
+      "brick_009",
+      "brick_010"
+     ],
+     [
+      "brick_009",
+      "brick_012"
+     ]
+    ],
+    "n_declared_joint_pairs": 0,
+    "n_declared_joints_rejected": 0,
+    "unattached_parts": [],
+    "shell_only_parts": [
+     "brick_000",
+     "brick_001",
+     "brick_002",
+     "brick_003",
+     "brick_004",
+     "brick_005",
+     "brick_006",
+     "brick_007",
+     "brick_008",
+     "brick_009",
+     "brick_010",
+     "brick_011",
+     "brick_012",
+     "brick_013",
+     "brick_014",
+     "brick_015",
+     "brick_016",
+     "brick_017",
+     "brick_018",
+     "brick_019"
+    ]
+   },
+   "notes": [
+    "score = mean(anchored_volume_frac, break_score, fastening_spec_rate), one third each",
+    "break_score = 1 - (n_components - 1) / (n_parts - 1); the graph is the protocol's rule: surfaces touching, or a declared joint whose origin is within 2 cm of both surfaces",
+    "fastening_spec_rate = min(1, n_fastened_connections / (n_parts - 1)): of the n-1 connections a body of n parts needs to span, the share the design backs with an interlock, a declared joint on a real interface (>= 1 cm2) or a lattice stud. Resting contacts do not count toward it",
+    "whole_body_rate and fastening_strict_score are reported, not scored"
+   ]
+  },
+  "1.2": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 1.0,
+   "metrics": {
+    "collision_free_pair_rate": 1.0,
+    "n_interfacing_pairs": 254,
+    "n_colliding_pairs": 0,
+    "n_declared_joint_pairs": 0,
+    "n_colliding_joint_pairs": 0,
+    "pen_volume_frac": 0.0,
+    "pen_volume_cm3": 0.0,
+    "worst_pair_frac_of_smaller": 0.0,
+    "graded_penetration_score": 1.0,
+    "voxel_res_m": 0.004,
+    "colliding_pairs": []
+   },
+   "notes": [
+    "score = 1 - n_colliding / n_interfacing_pairs over EVERY interfacing pair, declared joints included",
+    "a pair collides when the eroded-core overlap exceeds 1 cm3 and 10% of the smaller part (25% when the design declares a joint there)"
+   ]
+  },
+  "1.3": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.616386781239123,
+   "metrics": {
+    "critical_tilt_deg": 16.904656000656797,
+    "tilt_direction_deg": 0.0,
+    "support_margin_m": 0.017952434456928887,
+    "support_margin_norm": 0.8432140416772398,
+    "support_area_m2": 0.0014240358154999997,
+    "n_support_vertices": 8,
+    "com_height_m": 0.05907116104868914,
+    "ground_z": 0.0,
+    "total_weight": 0.000136704,
+    "com": [
+     -0.13805243445692889,
+     -0.02065917602996254,
+     0.05907116104868914
+    ],
+    "ground_band_m": 0.005,
+    "z_top_m": 0.1741999032,
+    "push_force_ratio": 0.10305651224339421,
+    "shell_corrected_parts": [],
+    "n_parts_in_main_group": 69,
+    "n_parts": 69,
+    "stand_score": 0.6434525400983856,
+    "push_score": 0.5893210223798604,
+    "target_tilt_deg": 26.271799312614462,
+    "target_push_ratio": 0.17487330050983108,
+    "reference_tilt_deg": 26.271799312614462,
+    "reference_push_ratio": 0.17487330050983108,
+    "pose_sensitive": false
+   },
+   "notes": [
+    "statics only; no settling simulation",
+    "score = mean(stand_score, push_score)",
+    "stand_score = clip(critical_tilt, 0, target) / target",
+    "push_score = clip(f / f_target, 0, 1), f = the horizontal force at the top of the object, in multiples of its own weight, that tips it about its weakest support edge"
+   ]
+  },
+  "2.1": {
+   "depth": "computed",
+   "status": "pass",
+   "score": 0.005244094488188976,
+   "metrics": {
+    "shape_normalised": {
+     "chamfer_m": 0.1529536304616177,
+     "fscore@0.01": 0.0015555555555555553,
+     "fscore@0.025": 0.005244094488188976
+    },
+    "best_yaw_deg": 0,
+    "front_consistent": true,
+    "shape_normalised_as_oriented": {
+     "chamfer_m": 0.1529536304616177,
+     "fscore@0.01": 0.0015555555555555553,
+     "fscore@0.025": 0.005244094488188976
+    },
+    "design_diagonal_m": 0.18306727911840703,
+    "reference_diagonal_m": 0.5950849317451189,
+    "scale_ratio": 0.30763218719309915,
+    "size_log2_ratio_vs_reference": -1.7007216362089113,
+    "tau_rel": [
+     0.01,
+     0.025
+    ]
+   },
+   "notes": [
+    "the reference is rescaled to the design's bounding diagonal: 2.1 is shape only",
+    "absolute size is reported as scale_ratio and size_log2_ratio_vs_reference, and is not scored"
+   ]
+  },
+  "2.3": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "n_joints": 0,
+    "n_moving": 0
+   },
+   "notes": [
+    "no moving joint declared, the task claims none, so there is nothing to score"
+   ]
+  },
+  "3.1": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.25772946859903384,
+   "metrics": {
+    "judge_weight": 0.3,
+    "judge_per_model": {
+     "gemma-3-27b": 0.3703703703703704,
+     "qwen2.5-vl-32b": 0.3333333333333333
+    },
+    "judge_mean": 0.35185185185185186,
+    "n_judges": 2,
+    "computed_score": 0.2173913043478261,
+    "computed": {
+     "granularity_score": 0.2173913043478261,
+     "consolidation_score": null,
+     "joint_placement_rate": null,
+     "consolidation_violations": 0,
+     "n_declared_joint_pairs": 0
+    }
+   },
+   "notes": [
+    "0.30 judge + 0.70 computed"
+   ]
+  },
+  "3.2": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.3333333333333333,
+   "metrics": {
+    "judge_weight": 1.0,
+    "judge_per_model": {
+     "gemma-3-27b": 0.4444444444444444,
+     "qwen2.5-vl-32b": 0.22222222222222224
+    },
+    "judge_mean": 0.3333333333333333,
+    "n_judges": 2,
+    "computed_score": null,
+    "computed": {
+     "proportion_score_info_only": 0.2822343440420338
+    }
+   },
+   "notes": [
+    "judge only, by design"
+   ]
+  },
+  "4.1": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "declared": false,
+    "n_parts_with_material": 0
+   },
+   "notes": [
+    "no part carries a material"
+   ]
+  },
+  "4.2": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "declared": false
+   },
+   "notes": [
+    "no assembly sequence declared"
+   ]
+  },
+  "4.3": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "sheet_spec": "op-v1",
+    "operator": "adult_p50",
+    "calibrated": true,
+    "n_requirements_disabled_by_ceiling": 1,
+    "n_requirements_declared_only": 0,
+    "declared_part_coverage": null,
+    "n_capabilities": 3,
+    "n_capabilities_zero": 3,
+    "capability_scores": {
+     "F1": 0.0,
+     "P": 0.0,
+     "H1": 0.0
+    },
+    "mean_of_means": 0.0,
+    "capabilities": [
+     {
+      "id": "F1",
+      "name": "Actuation mechanism",
+      "claims": [
+       "F1"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 3,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "leadscrew",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "handle socket",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       },
+       {
+        "role": "threaded nut",
+        "claim": "F1",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "P",
+      "name": "required subsystems the claims name but no subsystem covers",
+      "claims": [
+       "P2"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 1,
+      "n_disabled": 0,
+      "n_declared_only": 0,
+      "weakest": "part_present",
+      "requirements": [
+       {
+        "role": "scissor linkage",
+        "claim": "P2",
+        "pred": "part_present",
+        "score": 0.0,
+        "detail": {
+         "n": 0,
+         "need": 1,
+         "parts": []
+        },
+        "reference_score": 1.0
+       }
+      ]
+     },
+     {
+      "id": "H1",
+      "name": "the screw drives the linkage",
+      "claims": [
+       "P1",
+       "P2"
+      ],
+      "score": 0.0,
+      "mean": 0.0,
+      "n_requirements": 1,
+      "n_disabled": 1,
+      "n_declared_only": 0,
+      "weakest": "chain",
+      "requirements": [
+       {
+        "from": "leadscrew",
+        "to": "scissor linkage",
+        "carries": "motion",
+        "max_hops": 3,
+        "claim": "P1",
+        "pred": "chain",
+        "score": 0.0,
+        "detail": {
+         "reason": "role missing",
+         "from_n": 0,
+         "to_n": 0
+        },
+        "reference_score": 0.5
+       },
+       {
+        "role": "scissor linkage",
+        "claim": "P2",
+        "pred": "joint_enables",
+        "score": 0.0,
+        "detail": {
+         "reason": "no part with this role"
+        },
+        "reference_score": 0.0,
+        "disabled_by_ceiling": true
+       }
+      ]
+     }
+    ],
+    "score_when_roleless_v31": 0.0
+   },
+   "notes": [
+    "capability = min(its requirements): one broken requirement disables the capability",
+    "affordance only: geometry, placement, path and motion. The internal physics stays declared",
+    "1 requirement(s) disabled: the task's own reference object does not pass them",
+    "no part carries a role: capabilities cannot be located"
+   ]
+  },
+  "2.2": {
+   "depth": "computed",
+   "status": "skipped",
+   "score": null,
+   "metrics": {
+    "declared_roles": false,
+    "n_parts": 0,
+    "claims": {
+     "required_parts": 3,
+     "subsystem_parts": 3,
+     "kinematic_parts": 0
+    },
+    "subsystem_connection": null,
+    "subsystem_presence_v31": null
+   },
+   "notes": [
+    "no part carries a role: which part is which cannot be located, so presence is not measurable"
+   ]
+  },
+  "3.3": {
+   "depth": "judge+computed",
+   "status": "pass",
+   "score": 0.4390243010315389,
+   "metrics": {
+    "judge_weight": 0.7,
+    "judge_per_model": {
+     "gemma-3-27b": 0.5277777777777778,
+     "qwen2.5-vl-32b": 0.5833333333333334
+    },
+    "judge_mean": 0.5555555555555556,
+    "n_judges": 2,
+    "computed_score": 0.16711804047549997,
+    "computed": {
+     "part_correspondence_iou": 0.0006312981436828395,
+     "symmetry_match": 0.3336047828073171,
+     "symmetry_iou": 0.8291457286432161,
+     "reference_symmetry_iou": 0.48785425101214575
+    }
+   },
+   "notes": [
+    "0.70 judge + 0.30 computed"
+   ]
+  }
+ },
+ "headline": {
+  "critical_fail": [],
+  "buildable": true,
+  "overall": 0.5216739969558883,
+  "n_scored_dims": 7,
+  "gate_pending": true
+ },
+ "stamp": "1789718013.02805|v3.1|v3.2|v3.3|v3.4.3"
+}

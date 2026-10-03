@@ -1,0 +1,56 @@
+{
+\renewcommand{\arraystretch}{1.12}
+\begin{table*}[t]
+\centering
+\caption{Level scores (mean of the three metrics in each level; N/A metrics excluded) on the full 200-object core set and on two disjoint stratified 50-object samples. Sample~A holds 13 objects with a catalog contact sheet and 37 without; sample~B holds 12 and 38, matching the 1:4 ratio of the full set. No new runs are involved: all three columns are computed from the same episodes.}
+\label{tab:resample_results}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{l|cccc|cccc|cccc}
+\toprule
+\multirow{2}{*}{\textbf{Models}} & \multicolumn{4}{c|}{\textbf{Full core (200)}} & \multicolumn{4}{c|}{\textbf{Sample A (50)}} & \multicolumn{4}{c}{\textbf{Sample B (50)}} \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}\cmidrule(lr){10-13}
+ & \textbf{S} & \textbf{A} & \textbf{D} & \textbf{R} & \textbf{S} & \textbf{A} & \textbf{D} & \textbf{R} & \textbf{S} & \textbf{A} & \textbf{D} & \textbf{R} \\
+\midrule
+\rowcolor{gray!20}
+\multicolumn{13}{c}{\textbf{State-of-the-art Closed-Source APIs}} \\
+GPT-6 Astra & \score{88.5} & \score{50.0} & \score{74.0} & \score{53.5} & \score{86.4} & \score{50.6} & \score{72.5} & \score{55.7} & \score{91.5} & \score{48.2} & \score{73.1} & \score{52.0} \\
+GPT-5.6 Sol & \score{88.8} & \score{41.9} & \score{71.5} & \score{57.4} & \score{88.0} & \score{43.8} & \score{70.4} & \score{56.8} & \score{89.5} & \score{41.1} & \score{72.9} & \score{57.1} \\
+Claude Opus 5 & \score{88.8} & \score{46.6} & \score{71.3} & \score{55.1} & \score{88.0} & \score{48.9} & \score{71.5} & \score{57.7} & \score{87.4} & \score{43.3} & \score{72.6} & \score{50.9} \\
+Claude Fable 5.1 & \score{89.1} & \score{47.3} & \score{71.8} & \score{55.3} & \score{86.1} & \score{49.7} & \score{70.9} & \score{56.0} & \score{85.7} & \score{42.7} & \score{72.5} & \score{53.7} \\
+Claude Sonnet 5 & \score{86.1} & \score{41.5} & \score{66.3} & \score{56.2} & \score{86.0} & \score{43.3} & \score{66.1} & \score{58.7} & \score{86.8} & \score{37.5} & \score{66.9} & \score{53.7} \\
+Claude Haiku 4.5 & \score{80.8} & \score{30.5} & \score{57.8} & \score{51.3} & \score{82.0} & \score{29.2} & \score{57.9} & \score{50.3} & \score{81.1} & \score{29.8} & \score{58.6} & \score{51.1} \\
+\midrule
+\rowcolor{gray!20}
+\multicolumn{13}{c}{\textbf{Open-Source (Multi-modal) Large Language Models}} \\
+Qwen3.5-27B & \score{82.9} & \score{28.3} & \score{52.7} & \score{57.2} & \score{84.6} & \score{28.2} & \score{53.1} & \score{60.1} & \score{84.2} & \score{27.3} & \score{53.2} & \score{55.2} \\
+Qwen3.5-35B-A3B & \score{72.1} & \score{24.0} & \score{47.0} & \score{44.9} & \score{69.2} & \score{23.6} & \score{45.8} & \score{44.1} & \score{78.7} & \score{25.4} & \score{48.9} & \score{47.4} \\
+GPT-OSS-120B & \score{78.5} & \score{25.8} & \score{49.3} & \score{51.7} & \score{79.6} & \score{25.4} & \score{48.8} & \score{51.1} & \score{76.4} & \score{24.0} & \score{49.8} & \score{50.7} \\
+Gemma-4-31B-IT & \score{59.7} & \score{20.1} & \score{41.2} & \score{36.7} & \score{61.6} & \score{21.1} & \score{43.2} & \score{34.3} & \score{63.5} & \score{22.2} & \score{43.1} & \score{39.7} \\
+Ministral-3-8B & \score{65.7} & \score{18.8} & \score{46.8} & \score{39.9} & \score{67.5} & \score{18.9} & \score{46.7} & \score{40.1} & \score{67.3} & \score{19.5} & \score{49.6} & \score{37.0} \\
+InternVL3.5-38B & \score{49.3} & \score{11.4} & \score{34.8} & \score{21.5} & \score{50.2} & \score{9.6} & \score{33.8} & \score{17.2} & \score{45.7} & \score{12.9} & \score{36.7} & \score{22.6} \\
+Qwen3-VL-30B-A3B & \score{48.7} & \score{13.8} & \score{32.1} & \score{33.0} & \score{51.9} & \score{15.0} & \score{36.9} & \score{37.1} & \score{50.2} & \score{13.0} & \score{35.0} & \score{30.2} \\
+MiniCPM-V-4.5 & \score{40.0} & \score{9.5} & \score{27.1} & \score{18.6} & \score{45.2} & \score{10.4} & \score{27.8} & \score{19.6} & \score{38.7} & \score{8.9} & \score{25.1} & \score{19.5} \\
+Qwen3-4B-Instruct & \score{65.5} & \score{15.6} & \score{30.3} & \score{38.8} & \score{67.8} & \score{13.8} & \score{30.3} & \score{36.6} & \score{66.1} & \score{18.5} & \score{34.0} & \score{40.7} \\
+Qwen3-VL-32B & \score{48.5} & \score{13.5} & \score{30.2} & \score{31.8} & \score{43.0} & \score{11.6} & \score{27.3} & \score{27.9} & \score{49.6} & \score{14.3} & \score{32.8} & \score{31.1} \\
+ERNIE-4.5-VL-28B-A3B & \score{20.0} & \score{4.4} & \score{15.0} & \score{9.6} & \score{22.7} & \score{4.9} & \score{15.0} & \score{8.1} & \score{20.6} & \score{6.3} & \score{17.2} & \score{10.4} \\
+InternVL3.5-8B & \score{39.1} & \score{7.4} & \score{26.2} & \score{18.1} & \score{36.1} & \score{6.5} & \score{22.3} & \score{17.2} & \score{45.2} & \score{9.0} & \score{29.0} & \score{18.2} \\
+Qwen3-VL-8B & \score{27.9} & \score{6.9} & \score{15.1} & \score{17.8} & \score{31.8} & \score{8.9} & \score{18.0} & \score{22.8} & \score{19.5} & \score{4.0} & \score{10.6} & \score{11.3} \\
+\midrule
+\rowcolor{gray!20}
+\multicolumn{13}{c}{\textbf{State-of-the-art Domain-Specific Models}} \\
+BrickGPT & \score{94.7} & \score{34.5} & \score{24.2} & \scoreNA & \score{94.3} & \score{34.5} & \score{24.2} & \scoreNA & \score{94.9} & \score{40.0} & \score{23.4} & \scoreNA \\
+LegoACE & \score{78.0} & \score{29.6} & \score{27.7} & \scoreNA & \score{79.1} & \score{28.8} & \score{28.4} & \scoreNA & \score{81.6} & \score{31.5} & \score{25.9} & \scoreNA \\
+PartCrafter-15 & \score{61.3} & \score{32.2} & \score{57.5} & \scoreNA & \score{62.6} & \score{33.1} & \score{57.1} & \scoreNA & \score{65.6} & \score{36.5} & \score{60.4} & \scoreNA \\
+PartCrafter-8 & \score{57.1} & \score{28.2} & \score{53.0} & \scoreNA & \score{58.1} & \score{27.7} & \score{52.8} & \scoreNA & \score{60.5} & \score{32.8} & \score{56.4} & \scoreNA \\
+PartPacker & \score{75.1} & \score{36.4} & \score{61.3} & \scoreNA & \score{75.7} & \score{34.9} & \score{61.3} & \scoreNA & \score{79.7} & \score{40.8} & \score{63.3} & \scoreNA \\
+Cube3D+CubePart & \score{69.4} & \score{28.7} & \score{56.5} & \score{13.4} & \score{70.4} & \score{29.9} & \score{55.2} & \score{16.6} & \score{70.8} & \score{30.4} & \score{58.2} & \score{13.5} \\
+PartCrafter15$^{\dagger}$(P) & \score{61.2} & \score{18.0} & \score{37.4} & \scoreNA & \score{61.8} & \score{18.4} & \score{37.7} & \scoreNA & \score{65.8} & \score{19.9} & \score{40.1} & \scoreNA \\
+PartCrafter8$^{\dagger}$(P) & \score{60.2} & \score{17.3} & \score{43.1} & \scoreNA & \score{61.8} & \score{17.5} & \score{42.9} & \scoreNA & \score{63.5} & \score{18.4} & \score{44.3} & \scoreNA \\
+PartPacker$^{\dagger}$(P) & \score{77.9} & \score{21.7} & \score{55.0} & \scoreNA & \score{77.0} & \score{20.7} & \score{55.3} & \scoreNA & \score{81.1} & \score{24.7} & \score{54.3} & \scoreNA \\
+Cube3D$^{\dagger}$(P) & \score{79.8} & \score{17.6} & \score{61.0} & \scoreNA & \score{82.7} & \score{19.6} & \score{61.5} & \scoreNA & \score{81.7} & \score{19.1} & \score{62.6} & \scoreNA \\
+PhysX-Anything & \score{63.7} & \score{11.3} & \score{44.7} & \score{31.6} & \score{67.1} & \score{11.7} & \score{43.8} & \score{34.3} & \score{62.8} & \score{10.6} & \score{46.1} & \score{30.5} \\
+\bottomrule
+\end{tabular}
+}
+\end{table*}
+}

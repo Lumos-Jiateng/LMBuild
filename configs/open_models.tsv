@@ -1,0 +1,17 @@
+# The 13 open models of the paper, as they were served (vLLM, one 80 GB A100 each) and driven (ppbench.v2.core_batch).
+# Base vLLM flags for every model: --max-model-len 32768 --limit-mm-per-prompt '{"image": 2}'; the vllm_args column
+# is appended and overrides them. extra_body is sent with every chat request. no_vision models never see an image.
+# system_name	hf_repo	served_name	extra_body	no_vision	concurrency	vllm_args
+gemma-4-31b-it	google/gemma-4-31B-it	gemma-4-31b-it	{}		32	--quantization fp8
+internvl3.5-38b	OpenGVLab/InternVL3_5-38B	internvl3.5-38b	{}		24	--trust-remote-code --quantization fp8 --enforce-eager --max-model-len 40960
+internvl3.5-8b	OpenGVLab/InternVL3_5-8B	internvl3.5-8b	{}		48	--trust-remote-code --max-model-len 40960
+minicpm-v-4.5	openbmb/MiniCPM-V-4_5	minicpm-v-4.5	{}		48	--trust-remote-code --max-model-len 40960
+qwen3.5-27b	Qwen/Qwen3.5-27B	qwen3.5-27b	{"chat_template_kwargs": {"enable_thinking": false}}		32	--quantization fp8
+qwen3.5-35b-a3b	Qwen/Qwen3.5-35B-A3B	qwen3.5-35b-a3b	{"chat_template_kwargs": {"enable_thinking": false}}		40	--quantization fp8
+qwen3-4b-instruct-2507	Qwen/Qwen3-4B-Instruct-2507	qwen3-4b	{}	--no-vision	64	
+qwen3-vl-32b-instruct	Qwen/Qwen3-VL-32B-Instruct	qwen3-vl-32b	{}		16	--quantization fp8 --max-model-len 49152
+qwen3-vl-8b-instruct	Qwen/Qwen3-VL-8B-Instruct	qwen3-vl-8b	{}		32	--max-model-len 49152
+qwen3-vl-30b-a3b-instruct	Qwen/Qwen3-VL-30B-A3B-Instruct	qwen3-vl-30b-a3b	{}		32	--quantization fp8 --max-model-len 49152
+gpt-oss-120b	openai/gpt-oss-120b	gpt-oss-120b	{}	--no-vision	32	
+ministral-3-8b-instruct-2512	mistralai/Ministral-3-8B-Instruct-2512	ministral-3-8b	{}		16	--tokenizer-mode mistral
+ernie-4.5-vl-28b-a3b	baidu/ERNIE-4.5-VL-28B-A3B-PT	ernie-4.5-vl-28b-a3b	{}		16	--trust-remote-code

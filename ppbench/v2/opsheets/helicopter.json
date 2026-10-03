@@ -1,0 +1,311 @@
+{
+ "task": "helicopter",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Main Rotor System",
+   "function": "Generates lift and thrust to support the helicopter's weight and propel it through the air.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Main rotor",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Rotor blades",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Mast",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Rotor hub",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Swashplate",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Engine",
+     "to": "Transmission",
+     "carries": "power",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Transmission",
+     "to": "Mast",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Rotor blades",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K6"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Rotor blades",
+     "type": "revolute",
+     "axis": "Horizontal flapping hinge",
+     "claim": "K7"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Anti-Torque System",
+   "function": "Counters the torque produced by the main rotor to maintain directional control.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Tail rotor",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Tail rotor drive shaft",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Tail rotor gearbox",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Transmission",
+     "to": "Tail rotor drive shaft",
+     "carries": "power",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Tail rotor drive shaft",
+     "to": "Tail rotor gearbox",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "Tail rotor gearbox",
+     "to": "Tail rotor",
+     "carries": "motion",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Tail rotor",
+     "type": "revolute",
+     "axis": "Vertical axis at tail",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Flight Control System",
+   "function": "Translates pilot inputs into changes in rotor blade pitch to control attitude and altitude.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Cyclic",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Collective",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Anti-torque pedals",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Swashplate",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Pitch links",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "Anti-torque pedals",
+     "to": "Tail rotor",
+     "carries": "signal",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "Swashplate",
+     "to": "Rotor blades",
+     "carries": "signal",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "Power Transmission System",
+   "function": "Converts engine power into the appropriate speed and direction to drive the rotors.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Engine",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Transmission",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Drive shafts",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Clutches",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "Engine",
+     "to": "Transmission",
+     "carries": "power",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "Transmission",
+     "to": "Main rotor",
+     "carries": "motion",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "Transmission",
+     "to": "Tail rotor",
+     "carries": "motion",
+     "claim": "F4"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K1",
+    "K3",
+    "K4",
+    "K5",
+    "K8"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "Main rotor blades",
+     "type": "revolute",
+     "axis": "Vertical mast axis",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Swashplate (rotating)",
+     "type": "revolute",
+     "axis": "Vertical mast axis",
+     "claim": "K3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Swashplate (stationary)",
+     "type": "planar",
+     "axis": "Horizontal axes (pitch and roll)",
+     "claim": "K4"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Swashplate (entire assembly)",
+     "type": "prismatic",
+     "axis": "Vertical mast axis",
+     "claim": "K5"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Tail rotor blades",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K8"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Flight controls",
+     "claim": "P7"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the main rotor is mounted on the mast and can turn",
+   "claims": [
+    "P1",
+    "P8"
+   ],
+   "requirements": [
+    {
+     "pred": "colocated",
+     "a": "Main rotor",
+     "b": "Mast",
+     "max_gap_m": 0.2,
+     "claim": "P8"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Main rotor",
+     "type": "revolute",
+     "axis": "vertical",
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

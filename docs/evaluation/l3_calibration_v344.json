@@ -1,0 +1,63 @@
+{
+ "spec": "v3.4.4",
+ "fitted": "2026-09-23T01:07:15",
+ "method": "per half: clipped linear map, lo/hi matching the human mean and sd on the rated items; blend = (a*J' + b*C')/(a+b); one half missing -> the other calibrated half",
+ "source": {
+  "human": "human_evaluation/annotations/A*.json (latest rating per rater, mean over raters, (s-1)/4)",
+  "judge": "results/v2/<task>/judge_l3/{gemma-3-27b,qwen2.5-vl-32b}.json, mean of the two",
+  "computed": "results/v2/<task>/eval_v34/<key>.json computed_score"
+ },
+ "dims": {
+  "3.1": {
+   "weights": [
+    1,
+    1
+   ],
+   "judge": [
+    0.365578838475444,
+    0.755904952611451
+   ],
+   "computed": [
+    0.14279063497681865,
+    1.0400708083260746
+   ],
+   "n_items": 90,
+   "n_items_with_computed": 84,
+   "human_mean": 0.5958333333333333,
+   "human_sd": 0.3441222731659328
+  },
+  "3.2": {
+   "weights": [
+    1,
+    0
+   ],
+   "judge": [
+    0.3715306873760676,
+    0.7433564754647725
+   ],
+   "computed": null,
+   "n_items": 90,
+   "n_items_with_computed": 0,
+   "human_mean": 0.5458333333333333,
+   "human_sd": 0.3377056986325355
+  },
+  "3.3": {
+   "weights": [
+    3,
+    1
+   ],
+   "judge": [
+    0.47083950693766985,
+    0.7856887313451405
+   ],
+   "computed": [
+    0.20595166566761242,
+    0.6578529514935805
+   ],
+   "n_items": 90,
+   "n_items_with_computed": 72,
+   "human_mean": 0.5680555555555555,
+   "human_sd": 0.3511692330585263
+  }
+ }
+}

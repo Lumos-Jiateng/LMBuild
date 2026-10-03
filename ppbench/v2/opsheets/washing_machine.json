@@ -1,0 +1,233 @@
+{
+ "task": "washing_machine",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Wash Mechanism",
+   "function": "Moves clothes and water to clean fabrics through agitation or tumbling.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Drum",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Agitator",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Motor",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "Transmission",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "Motor",
+     "to": "Agitator",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Drum",
+     "type": "revolute",
+     "axis": "horizontal axis in front-loaders, vertical axis in top-loaders",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Agitator",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Water Management",
+   "function": "Fills the tub with water and drains it after washing and rinsing.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Water inlet valve",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Outer tub",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "Drain pump",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Spin System",
+   "function": "Rotates the drum at high speed to extract water from clothes.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Drum",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Motor",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Suspension system",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "Balance ring",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Drum",
+     "type": "revolute",
+     "axis": "horizontal axis in front-loaders, vertical axis in top-loaders",
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "F4",
+   "name": "Control System",
+   "function": "Automates the sequence of filling, washing, rinsing, and spinning.",
+   "claims": [
+    "F4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Controller",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Sensors",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Valves",
+     "claim": "F4"
+    },
+    {
+     "pred": "part_present",
+     "role": "Motors",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "Controller",
+     "to": "Valves",
+     "carries": "signal",
+     "claim": "F4"
+    },
+    {
+     "pred": "chain",
+     "from": "Controller",
+     "to": "Motors",
+     "carries": "signal",
+     "claim": "F4"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K3",
+    "K4"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "Door",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Lid",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K4"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P6",
+    "P7"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "Door or Lid",
+     "claim": "P6"
+    },
+    {
+     "pred": "part_present",
+     "role": "Control system",
+     "claim": "P7"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "laundry goes into the drum through the door",
+   "claims": [
+    "P1",
+    "P6"
+   ],
+   "requirements": [
+    {
+     "pred": "clearance",
+     "anchor": "Drum",
+     "placement": "inside",
+     "margin_m": 0.03,
+     "min_free": 0.5,
+     "claim": "P1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "Door",
+     "claim": "P6"
+    }
+   ]
+  }
+ ]
+}

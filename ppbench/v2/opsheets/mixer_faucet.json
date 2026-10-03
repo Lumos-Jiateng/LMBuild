@@ -1,0 +1,180 @@
+{
+ "task": "mixer_faucet",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Flow Control Mechanism",
+   "function": "Regulates the volume of fluid passing through the tap by opening or closing the aperture.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "handle",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "valve shaft",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "sealing element",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "valve seat",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "handle",
+     "to": "valve shaft",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "sealing element",
+     "to": "valve seat",
+     "carries": "force",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "handle",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "handle",
+     "type": "prismatic",
+     "axis": "vertical axis",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Mixing System",
+   "function": "Combines hot and cold water supplies to achieve a desired temperature before discharge.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "hot inlet",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "cold inlet",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "mixing chamber",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "outlet spout",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "hot inlet",
+     "to": "mixing chamber",
+     "carries": "fluid",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "cold inlet",
+     "to": "mixing chamber",
+     "carries": "fluid",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "mixing chamber",
+     "to": "outlet spout",
+     "carries": "fluid",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "Flow Modification",
+   "function": "Introduces air into the water stream to reduce splashing and limit flow rate.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "aerator",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "outlet spout",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "outlet spout",
+     "to": "aerator",
+     "carries": "fluid",
+     "claim": "F3"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "valve body",
+     "claim": "P1"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "the handle is grippable and on the valve body",
+   "claims": [
+    "P2"
+   ],
+   "requirements": [
+    {
+     "pred": "grip",
+     "role": "handle",
+     "claim": "P2"
+    },
+    {
+     "pred": "colocated",
+     "a": "handle",
+     "b": "valve body",
+     "max_gap_m": 0.06,
+     "claim": "P2"
+    }
+   ]
+  }
+ ]
+}

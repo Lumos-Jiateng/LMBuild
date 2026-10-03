@@ -1,0 +1,122 @@
+{
+ "task": "scissors",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Cutting mechanism",
+   "function": "Divides target material by sliding sharpened edges against each other through shearing and cutting.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "blade",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "pivot",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "handle",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "pivot",
+     "to": "blade",
+     "carries": "motion",
+     "claim": "F1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "blade",
+     "type": "revolute",
+     "axis": "pivot point",
+     "claim": "K1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "handle",
+     "type": "revolute",
+     "axis": "pivot point",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Grip system",
+   "function": "Provides a surface for the user to grasp and apply force to operate the tool.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "handle",
+     "claim": "F2"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "handle",
+     "type": "revolute",
+     "axis": "pivot point",
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K3"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "blade edge",
+     "type": "planar",
+     "axis": "along the cutting edge",
+     "claim": "K3"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a hand closes the handles and the blades follow",
+   "claims": [
+    "P2",
+    "P1"
+   ],
+   "requirements": [
+    {
+     "pred": "grip",
+     "role": "handle",
+     "claim": "P2"
+    },
+    {
+     "pred": "chain",
+     "from": "handle",
+     "to": "blade",
+     "carries": "motion",
+     "max_hops": 3,
+     "claim": "P1"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "blade",
+     "type": "revolute",
+     "claim": "P1"
+    }
+   ]
+  }
+ ]
+}

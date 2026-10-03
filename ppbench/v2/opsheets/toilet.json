@@ -1,0 +1,197 @@
+{
+ "task": "toilet",
+ "spec": "op-v1",
+ "operator": "adult_p50",
+ "dropped_requirements": [],
+ "generated_from": "functional_subsystems F, required_kinematics K, required_parts P, plus the authored human layer",
+ "capabilities": [
+  {
+   "id": "F1",
+   "name": "Waste Collection and Disposal",
+   "function": "Collects waste and uses a water seal to prevent gas entry while channeling waste to the sewer.",
+   "claims": [
+    "F1"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "bowl",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "trap",
+     "claim": "F1"
+    },
+    {
+     "pred": "part_present",
+     "role": "drain pipe",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "bowl",
+     "to": "trap",
+     "carries": "fluid",
+     "claim": "F1"
+    },
+    {
+     "pred": "chain",
+     "from": "trap",
+     "to": "drain pipe",
+     "carries": "fluid",
+     "claim": "F1"
+    }
+   ]
+  },
+  {
+   "id": "F2",
+   "name": "Water Storage and Delivery",
+   "function": "Stores water and releases it rapidly into the bowl to flush waste.",
+   "claims": [
+    "F2"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "cistern",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "fill valve",
+     "claim": "F2"
+    },
+    {
+     "pred": "part_present",
+     "role": "flush valve",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "fill valve",
+     "to": "cistern",
+     "carries": "fluid",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "cistern",
+     "to": "flush valve",
+     "carries": "fluid",
+     "claim": "F2"
+    },
+    {
+     "pred": "chain",
+     "from": "flush valve",
+     "to": "bowl",
+     "carries": "fluid",
+     "claim": "F2"
+    }
+   ]
+  },
+  {
+   "id": "F3",
+   "name": "User Interface",
+   "function": "Allows the user to initiate the flush and provides a seating surface.",
+   "claims": [
+    "F3"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "flush handle",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "flush button",
+     "claim": "F3"
+    },
+    {
+     "pred": "part_present",
+     "role": "seat",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "flush handle",
+     "to": "flush valve",
+     "carries": "motion",
+     "claim": "F3"
+    },
+    {
+     "pred": "chain",
+     "from": "flush button",
+     "to": "flush valve",
+     "carries": "motion",
+     "claim": "F3"
+    },
+    {
+     "pred": "joint_enables",
+     "role": "flush handle",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K1"
+    }
+   ]
+  },
+  {
+   "id": "K",
+   "name": "declared mechanisms move",
+   "claims": [
+    "K2"
+   ],
+   "requirements": [
+    {
+     "pred": "joint_enables",
+     "role": "flush valve (flapper)",
+     "type": "revolute",
+     "axis": null,
+     "claim": "K2"
+    }
+   ]
+  },
+  {
+   "id": "P",
+   "name": "required subsystems the claims name but no subsystem covers",
+   "claims": [
+    "P4"
+   ],
+   "requirements": [
+    {
+     "pred": "part_present",
+     "role": "flush mechanism",
+     "claim": "P4"
+    }
+   ]
+  },
+  {
+   "id": "H1",
+   "name": "a person can sit on the bowl and flush it",
+   "claims": [
+    "P1",
+    "P4"
+   ],
+   "requirements": [
+    {
+     "pred": "surface",
+     "role": "bowl",
+     "min_area_m2": 0.05,
+     "height_range_m": [
+      0.3,
+      0.55
+     ],
+     "claim": "P1"
+    },
+    {
+     "pred": "reachable",
+     "target": "flush mechanism",
+     "from": "bowl",
+     "reach_m": 0.8,
+     "claim": "P4"
+    }
+   ]
+  }
+ ]
+}
