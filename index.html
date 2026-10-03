@@ -19,7 +19,7 @@ h1,h2{color:var(--ink)}
 .btn-dark{background:var(--ink);border-color:var(--ink)}.btn-dark:hover{background:var(--teal);border-color:var(--teal)}
 .btn-outline-dark{color:var(--ink);border-color:var(--ink)}.btn-outline-dark:hover{background:var(--ink);border-color:var(--ink)}
 .tag{display:inline-block;font:600 .72rem "Source Sans 3",sans-serif;letter-spacing:.03em;padding:.1rem .45rem;border-radius:999px;margin-left:.3rem;vertical-align:1px}
-.tag.baseline{background:#dbe8f5;color:#0d3b66}.tag.retrieval-only{background:#e8e4f3;color:#4b3a8a}.tag.creation-only{background:#d6efe9;color:#0f6b5e}
+.tag.baseline{background:#dbe8f5;color:#0d3b66}.tag.retrieval-only{background:#e8e4f3;color:#4b3a8a}.tag.creation-only{background:#d6efe9;color:#0f6b5e}.tag.product{background:#fde4cf;color:#9a3412}.tag.open{background:#ececec;color:#444}
 .table-responsive{background:#fff;border-radius:8px;padding:.25rem}
 pre.bib{background:#fff!important}
 .obj{background:#fff}
@@ -82,7 +82,7 @@ pre.bib{background:#f7f7f7;border-radius:6px;padding:1rem;font-size:.85rem;font-
 <!-- step by step -->
 <section class="mx-auto max-w-xl">
   <h2 class="text-center fs-3 mb-2">Step-by-step generation of buildable structures</h2>
-  <p class="text-center small-sans text-muted mb-3"><span class="tag baseline">baseline</span> retrieve and create parts (Baseline Interaction Protocol) <span class="tag retrieval-only">retrieval-only</span> catalogue parts only <span class="tag creation-only">creation-only</span> every part created by the agent</p>
+  <p class="text-center small-sans text-muted mb-3"><span class="tag baseline">retrieval + creation</span> retrieve and create parts (Baseline Interaction Protocol) <span class="tag retrieval-only">retrieval-only</span> catalogue parts only <span class="tag creation-only">creation-only</span> every part created by the agent</p>
   <div class="d-flex flex-wrap justify-content-center gap-1 mb-3 filter" id="stepf"></div>
   <div class="row g-3" id="steps"></div>
 </section>
@@ -160,20 +160,26 @@ document.getElementById('authors2').innerHTML=AUTH.slice(6).map(badge).join("");
 const NAME={"gpt-6-astra":"GPT-6 Astra","gpt-5.6-sol":"GPT-5.6 Sol","claude-opus-5":"Claude Opus 5","claude-fable-5.1":"Claude Fable 5.1","claude-sonnet-5":"Claude Sonnet 5","qwen3.5-27b":"Qwen3.5-27B","physx-anything":"PhysX-Anything"};
 const pretty=s=>s.replace(/_/g," ").replace(/^j /,"");
 const col=(w,html)=>`<div class="${w}">${html}</div>`;
-function mediaCard(m,w){const tag=m.protocol?`<span class="tag ${m.protocol}">${m.protocol}</span>`:"";
+const PLAB={"baseline":"retrieval + creation","retrieval-only":"retrieval-only","creation-only":"creation-only"};
+const GORD={product:0,sota:1,open:2};
+const GLAB={product:"Product-level CAD (open-source hardware)",sota:"Everyday objects, mechanisms and LEGO models",open:"Open-source LLM agents"};
+const byGroup=xs=>[...xs].sort((a,b)=>(GORD[a.group||"sota"]-GORD[b.group||"sota"]));
+function grouped(xs,w,extra){return byGroup(xs).map(m=>{let c=mediaCard(m,w);if(extra)c=extra(c);return c}).join("")}
+function mediaCard(m,w){const tag=(m.protocol?`<span class="tag ${m.protocol}">${PLAB[m.protocol]||m.protocol}</span>`:"")+(m.group==="product"?`<span class="tag product">real product</span>`:m.group==="open"?`<span class="tag open">open-source</span>`:"");
   const sub=m.joint?`: ${m.joint_label||m.joint.replace(/_/g," ")}`:"";
   return col(w,`<figure><img class="gif" src="${m.file||m.path}" loading="lazy" alt="${m.object}"><figcaption><span class="text-capitalize">${m.object}</span>${sub} · ${m.system}${tag}</figcaption></figure>`)}
 fetch("data/media.json").then(r=>r.ok?r.json():null).then(M=>{if(!M)return;
   const teaser=(M.step||[]).filter(m=>m.teaser).slice(0,4);
-  document.getElementById('teaser').innerHTML=teaser.map(m=>mediaCard(m,"col-6 col-lg-3")).join("");
+  const share=m=>m.created_share==null?"":(m.created_share<=0.05?"all parts retrieved from the catalogue":m.created_share>=0.95?"all parts created by the agent":`${Math.round(100*m.created_share)}% of parts created`);
+  document.getElementById('teaser').innerHTML=teaser.map(m=>mediaCard(m,"col-6 col-lg-3").replace("</figcaption>",`<br><span class="text-muted">${share(m)}</span></figcaption>`)).join("");
   let P="all";const PR=["all","baseline","retrieval-only","creation-only"];
-  const drawSteps=()=>document.getElementById('steps').innerHTML=(M.step||[]).filter(m=>P==="all"||m.protocol===P).map(m=>mediaCard(m,"col-6 col-md-3")).join("");
-  document.getElementById('stepf').innerHTML=PR.map((p,i)=>`<button class="btn btn-sm ${i?'btn-outline-dark':'btn-dark'}" data-p="${p}">${p}</button>`).join("");
+  const drawSteps=()=>document.getElementById('steps').innerHTML=grouped((M.step||[]).filter(m=>P==="all"||m.protocol===P),"col-6 col-md-3");
+  document.getElementById('stepf').innerHTML=PR.map((p,i)=>`<button class="btn btn-sm ${i?'btn-outline-dark':'btn-dark'}" data-p="${p}">${p==="all"?"all":PLAB[p]}</button>`).join("");
   document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{P=b.dataset.p;document.querySelectorAll('[data-p]').forEach(x=>x.className="btn btn-sm "+(x===b?"btn-dark":"btn-outline-dark"));drawSteps()});
   drawSteps();
-  document.getElementById('joints').innerHTML=(M.joints||[]).map(m=>mediaCard(m,"col-6 col-md-3")).join("");
-  document.getElementById('materials').innerHTML=(M.materials||[]).map(m=>mediaCard(m,"col-12 col-md-6 col-lg-4").replace('class="gif"','class="gif mat"')).join("");
-  document.getElementById('sequences').innerHTML=(M.sequence||[]).map(m=>mediaCard(m,"col-6 col-md-3")).join("");
+  document.getElementById('joints').innerHTML=grouped(M.joints||[],"col-6 col-md-3");
+  document.getElementById('materials').innerHTML=grouped(M.materials||[],"col-12 col-md-6 col-lg-3",c=>c.replace('class="gif"','class="gif mat"'));
+  document.getElementById('sequences').innerHTML=grouped(M.sequence||[],"col-6 col-md-3");
 });
 document.getElementById('jointfigs').innerHTML=[5,6,7,8,9,10,11,12].map(n=>col("col-12 col-md-6",`<figure><img class="img-fluid" src="assets/paper/fig${n}.webp" loading="lazy" alt="Figure ${n}"><p class="fig-cap" data-cap="Figure ${n}"></p></figure>`)).join("");
 const TT=["wheelchair__gpt-6-astra__B","office_desk__gpt-5.6-sol__B","bookcase__gpt-6-astra__B","toilet__qwen3.5-27b__B"];
