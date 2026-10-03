@@ -1,0 +1,701 @@
+{
+ "step": [
+  {
+   "file": "assets/media/step/barbecue_grill__gpt-5.6-sol__C.gif",
+   "task": "barbecue_grill",
+   "object": "barbecue grill",
+   "system": "GPT-5.6 Sol",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "teaser": true,
+   "frames": 25
+  },
+  {
+   "file": "assets/media/step/hinged_door__claude-fable-5.1__C.gif",
+   "task": "hinged_door",
+   "object": "door",
+   "system": "Claude Fable 5.1",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "teaser": true,
+   "frames": 21
+  },
+  {
+   "file": "assets/media/step/offroad_jeep__gpt-6-astra__A.gif",
+   "task": "offroad_jeep",
+   "object": "off-road vehicle",
+   "system": "GPT-6 Astra",
+   "protocol": "retrieval-only",
+   "source": "BrickNet",
+   "teaser": true,
+   "frames": 32
+  },
+  {
+   "file": "assets/media/step/swivel_office_chair__gpt-6-astra__A.gif",
+   "task": "swivel_office_chair",
+   "object": "office chair",
+   "system": "GPT-6 Astra",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "teaser": true,
+   "frames": 19
+  },
+  {
+   "file": "assets/media/step/baby_stroller__claude-sonnet-5__C.gif",
+   "task": "baby_stroller",
+   "object": "stroller",
+   "system": "Claude Sonnet 5",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 27
+  },
+  {
+   "file": "assets/media/step/laptop__gpt-5.6-sol__C.gif",
+   "task": "laptop",
+   "object": "laptop",
+   "system": "GPT-5.6 Sol",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 11
+  },
+  {
+   "file": "assets/media/step/skateboard__claude-sonnet-5__C.gif",
+   "task": "skateboard",
+   "object": "skateboard",
+   "system": "Claude Sonnet 5",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 8
+  },
+  {
+   "file": "assets/media/step/toilet__claude-fable-5.1__C.gif",
+   "task": "toilet",
+   "object": "toilet",
+   "system": "Claude Fable 5.1",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 15
+  },
+  {
+   "file": "assets/media/step/umbrella__gpt-6-astra__C.gif",
+   "task": "umbrella",
+   "object": "umbrella",
+   "system": "GPT-6 Astra",
+   "protocol": "creation-only",
+   "source": "PartNeXt",
+   "teaser": false,
+   "frames": 16
+  },
+  {
+   "file": "assets/media/step/wheeled_dumpster__claude-opus-5__C.gif",
+   "task": "wheeled_dumpster",
+   "object": "dumpster",
+   "system": "Claude Opus 5",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 13
+  },
+  {
+   "file": "assets/media/step/oscillating_steam_engine__claude-fable-5.1__A.gif",
+   "task": "oscillating_steam_engine",
+   "object": "oscillating steam engine",
+   "system": "Claude Fable 5.1",
+   "protocol": "retrieval-only",
+   "source": "Fusion 360",
+   "teaser": false,
+   "frames": 21
+  },
+  {
+   "file": "assets/media/step/refrigerator__claude-fable-5.1__A.gif",
+   "task": "refrigerator",
+   "object": "refrigerator",
+   "system": "Claude Fable 5.1",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 20
+  },
+  {
+   "file": "assets/media/step/rolling_suitcase__claude-opus-5__A.gif",
+   "task": "rolling_suitcase",
+   "object": "suitcase",
+   "system": "Claude Opus 5",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 23
+  },
+  {
+   "file": "assets/media/step/av_blender__claude-fable-5.1__B.gif",
+   "task": "av_blender",
+   "object": "blender",
+   "system": "Claude Fable 5.1",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 15
+  },
+  {
+   "file": "assets/media/step/av_safe__gpt-6-astra__B.gif",
+   "task": "av_safe",
+   "object": "safe",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "teaser": false,
+   "frames": 34
+  },
+  {
+   "file": "assets/media/step/bc_fire_engine__gpt-6-astra__B.gif",
+   "task": "bc_fire_engine",
+   "object": "fire engine",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "BrickComposer",
+   "teaser": false,
+   "frames": 33
+  },
+  {
+   "file": "assets/media/step/f360_microscope__claude-opus-5__B.gif",
+   "task": "f360_microscope",
+   "object": "optical microscope",
+   "system": "Claude Opus 5",
+   "protocol": "baseline",
+   "source": "Fusion 360",
+   "teaser": false,
+   "frames": 23
+  },
+  {
+   "file": "assets/media/step/f360_worm_gearbox__gpt-5.6-sol__B.gif",
+   "task": "f360_worm_gearbox",
+   "object": "worm drive",
+   "system": "GPT-5.6 Sol",
+   "protocol": "baseline",
+   "source": "Fusion 360",
+   "teaser": false,
+   "frames": 17
+  },
+  {
+   "file": "assets/media/step/pc_wire_stripper__claude-opus-5__B.gif",
+   "task": "pc_wire_stripper",
+   "object": "wire stripper",
+   "system": "Claude Opus 5",
+   "protocol": "baseline",
+   "source": "Product CAD",
+   "teaser": false,
+   "frames": 22
+  },
+  {
+   "file": "assets/media/step/spinal_quadruped_robot__gpt-6-astra__B.gif",
+   "task": "spinal_quadruped_robot",
+   "object": "legged robot",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Product CAD",
+   "teaser": false,
+   "frames": 23
+  }
+ ],
+ "joints": [
+  {
+   "file": "assets/media/joints/office_desk__gpt-6-astra__left_drawer_slide.gif",
+   "task": "office_desk",
+   "object": "desk",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "joint": "left_drawer_slide",
+   "joint_type": "prismatic",
+   "joint_label": "left drawer slide"
+  },
+  {
+   "file": "assets/media/joints/kitchen_oven__gpt-6-astra__door_hinge.gif",
+   "task": "kitchen_oven",
+   "object": "oven",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "joint": "door_hinge",
+   "joint_type": "revolute",
+   "joint_label": "door hinge"
+  },
+  {
+   "file": "assets/media/joints/refrigerator__claude-fable-5.1__fridge_door_hinge.gif",
+   "task": "refrigerator",
+   "object": "refrigerator",
+   "system": "Claude Fable 5.1",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "joint": "fridge_door_hinge",
+   "joint_type": "revolute",
+   "joint_label": "fridge door hinge"
+  },
+  {
+   "file": "assets/media/joints/laptop__gpt-5.6-sol__lid_hinge.gif",
+   "task": "laptop",
+   "object": "laptop",
+   "system": "GPT-5.6 Sol",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "joint": "lid_hinge",
+   "joint_type": "revolute",
+   "joint_label": "lid hinge"
+  },
+  {
+   "file": "assets/media/joints/wheeled_dumpster__claude-opus-5__hinge_lid_left.gif",
+   "task": "wheeled_dumpster",
+   "object": "dumpster",
+   "system": "Claude Opus 5",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "joint": "hinge_lid_left",
+   "joint_type": "revolute",
+   "joint_label": "hinge lid left"
+  },
+  {
+   "file": "assets/media/joints/rolling_suitcase__claude-opus-5__lid_hinge.gif",
+   "task": "rolling_suitcase",
+   "object": "suitcase",
+   "system": "Claude Opus 5",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "joint": "lid_hinge",
+   "joint_type": "revolute",
+   "joint_label": "lid hinge"
+  },
+  {
+   "file": "assets/media/joints/desk_lamp__gpt-5.6-sol__elbow_front.gif",
+   "task": "desk_lamp",
+   "object": "balanced-arm lamp",
+   "system": "GPT-5.6 Sol",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "joint": "elbow_front",
+   "joint_type": "revolute",
+   "joint_label": "elbow front"
+  },
+  {
+   "file": "assets/media/joints/hinged_door__claude-fable-5.1__door_swing_hinge.gif",
+   "task": "hinged_door",
+   "object": "door",
+   "system": "Claude Fable 5.1",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "joint": "door_swing_hinge",
+   "joint_type": "revolute",
+   "joint_label": "door swing hinge"
+  },
+  {
+   "file": "assets/media/joints/washing_machine__claude-opus-5__door_hinge.gif",
+   "task": "washing_machine",
+   "object": "washing machine",
+   "system": "Claude Opus 5",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "joint": "door_hinge",
+   "joint_type": "revolute",
+   "joint_label": "door hinge"
+  },
+  {
+   "file": "assets/media/joints/dishwasher__claude-fable-5.1__door_hinge.gif",
+   "task": "dishwasher",
+   "object": "dishwasher",
+   "system": "Claude Fable 5.1",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "joint": "door_hinge",
+   "joint_type": "revolute",
+   "joint_label": "door hinge"
+  },
+  {
+   "file": "assets/media/joints/chest_of_drawers__gpt-5.6-sol__rail_2.gif",
+   "task": "chest_of_drawers",
+   "object": "chest of drawers",
+   "system": "GPT-5.6 Sol",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "joint": "rail_2",
+   "joint_type": "prismatic",
+   "joint_label": "rail 2"
+  },
+  {
+   "file": "assets/media/joints/av_safe__gpt-6-astra__door_hinge.gif",
+   "task": "av_safe",
+   "object": "safe",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "joint": "door_hinge",
+   "joint_type": "revolute",
+   "joint_label": "door hinge"
+  },
+  {
+   "file": "assets/media/joints/av_tv_stand__gpt-5.6-sol__left_door_slide.gif",
+   "task": "av_tv_stand",
+   "object": "entertainment center",
+   "system": "GPT-5.6 Sol",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "joint": "left_door_slide",
+   "joint_type": "prismatic",
+   "joint_label": "left door slide"
+  },
+  {
+   "file": "assets/media/joints/av_standing_mirror__gpt-6-astra__mirror_tilt.gif",
+   "task": "av_standing_mirror",
+   "object": "cheval mirror",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "joint": "mirror_tilt",
+   "joint_type": "revolute",
+   "joint_label": "mirror tilt"
+  },
+  {
+   "file": "assets/media/joints/f360_microscope__claude-opus-5__j_focus_slide.gif",
+   "task": "f360_microscope",
+   "object": "optical microscope",
+   "system": "Claude Opus 5",
+   "protocol": "baseline",
+   "source": "Fusion 360",
+   "joint": "j_focus_slide",
+   "joint_type": "prismatic",
+   "joint_label": "focus slide"
+  },
+  {
+   "file": "assets/media/joints/casement_window__gpt-5.6-sol__left_casement_hinge.gif",
+   "task": "casement_window",
+   "object": "window",
+   "system": "GPT-5.6 Sol",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "joint": "left_casement_hinge",
+   "joint_type": "revolute",
+   "joint_label": "left casement hinge"
+  },
+  {
+   "file": "assets/media/joints/f360_bench_vise__gpt-6-astra__jaw_slide.gif",
+   "task": "f360_bench_vise",
+   "object": "vise",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Fusion 360",
+   "joint": "jaw_slide",
+   "joint_type": "prismatic",
+   "joint_label": "jaw slide"
+  },
+  {
+   "file": "assets/media/joints/mixer_faucet__claude-fable-5.1__hot_valve_spindle.gif",
+   "task": "mixer_faucet",
+   "object": "tap",
+   "system": "Claude Fable 5.1",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "joint": "hot_valve_spindle",
+   "joint_type": "revolute",
+   "joint_label": "hot valve spindle"
+  },
+  {
+   "file": "assets/media/joints/scissors__gpt-6-astra__scissor_pivot.gif",
+   "task": "scissors",
+   "object": "scissors",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "joint": "scissor_pivot",
+   "joint_type": "revolute",
+   "joint_label": "scissor pivot"
+  },
+  {
+   "file": "assets/media/joints/toilet__gpt-6-astra__seat_hinge.gif",
+   "task": "toilet",
+   "object": "toilet",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "joint": "seat_hinge",
+   "joint_type": "revolute",
+   "joint_label": "seat hinge"
+  }
+ ],
+ "materials": [
+  {
+   "file": "assets/media/materials/barbecue_grill__gpt-5.6-sol.webp",
+   "task": "barbecue_grill",
+   "object": "barbecue grill",
+   "system": "GPT-5.6 Sol",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "materials": [
+    "steel",
+    "stainless steel",
+    "synthetic rubber",
+    "aluminum",
+    "solid wood hardwood"
+   ]
+  },
+  {
+   "file": "assets/media/materials/refrigerator__claude-fable-5.1.webp",
+   "task": "refrigerator",
+   "object": "refrigerator",
+   "system": "Claude Fable 5.1",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "materials": [
+    "steel",
+    "ABS",
+    "acrylic PMMA",
+    "tempered glass",
+    "synthetic rubber",
+    "aluminum",
+    "stainless steel"
+   ]
+  },
+  {
+   "file": "assets/media/materials/laptop__gpt-6-astra.webp",
+   "task": "laptop",
+   "object": "laptop",
+   "system": "GPT-6 Astra",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "materials": [
+    "aluminum",
+    "natural rubber",
+    "ABS",
+    "tempered glass",
+    "steel",
+    "acrylic PMMA"
+   ]
+  },
+  {
+   "file": "assets/media/materials/pc_vr_headset__claude-opus-5.webp",
+   "task": "pc_vr_headset",
+   "object": "virtual reality headset",
+   "system": "Claude Opus 5",
+   "protocol": "baseline",
+   "source": "Product CAD",
+   "materials": [
+    "ABS",
+    "tempered glass",
+    "acrylic PMMA",
+    "memory foam",
+    "synthetic rubber"
+   ]
+  },
+  {
+   "file": "assets/media/materials/av_standing_mirror__claude-opus-5.webp",
+   "task": "av_standing_mirror",
+   "object": "cheval mirror",
+   "system": "Claude Opus 5",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "materials": [
+    "steel",
+    "polyvinyl chloride PVC",
+    "aluminum",
+    "soda lime glass",
+    "stainless steel"
+   ]
+  },
+  {
+   "file": "assets/media/materials/bc_box_truck__gpt-6-astra.webp",
+   "task": "bc_box_truck",
+   "object": "box truck",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "BrickComposer",
+   "materials": [
+    "ABS",
+    "steel",
+    "natural rubber",
+    "acrylic PMMA",
+    "synthetic rubber"
+   ]
+  },
+  {
+   "file": "assets/media/materials/baby_stroller__claude-sonnet-5.webp",
+   "task": "baby_stroller",
+   "object": "stroller",
+   "system": "Claude Sonnet 5",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "materials": [
+    "aluminum",
+    "synthetic rubber",
+    "ABS",
+    "natural rubber",
+    "cotton fabric",
+    "polyester mesh"
+   ]
+  },
+  {
+   "file": "assets/media/materials/skateboard__claude-sonnet-5.webp",
+   "task": "skateboard",
+   "object": "skateboard",
+   "system": "Claude Sonnet 5",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "materials": [
+    "plywood",
+    "synthetic rubber",
+    "aluminum",
+    "polyurethane foam",
+    "steel"
+   ]
+  },
+  {
+   "file": "assets/media/materials/pc_wire_stripper__claude-opus-5.webp",
+   "task": "pc_wire_stripper",
+   "object": "wire stripper",
+   "system": "Claude Opus 5",
+   "protocol": "baseline",
+   "source": "Product CAD",
+   "materials": [
+    "aluminum",
+    "steel",
+    "ABS",
+    "stainless steel",
+    "synthetic rubber"
+   ]
+  },
+  {
+   "file": "assets/media/materials/washing_machine__claude-fable-5.1.webp",
+   "task": "washing_machine",
+   "object": "washing machine",
+   "system": "Claude Fable 5.1",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "materials": [
+    "steel",
+    "stainless steel",
+    "aluminum",
+    "tempered glass",
+    "ABS"
+   ]
+  },
+  {
+   "file": "assets/media/materials/f360_electric_motor__claude-fable-5.1.webp",
+   "task": "f360_electric_motor",
+   "object": "electric motor",
+   "system": "Claude Fable 5.1",
+   "protocol": "baseline",
+   "source": "Fusion 360",
+   "materials": [
+    "aluminum",
+    "steel",
+    "polypropylene PP",
+    "ABS"
+   ]
+  },
+  {
+   "file": "assets/media/materials/spinal_quadruped_robot__gpt-6-astra.webp",
+   "task": "spinal_quadruped_robot",
+   "object": "legged robot",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "Product CAD",
+   "materials": [
+    "aluminum",
+    "steel",
+    "natural rubber"
+   ]
+  }
+ ],
+ "sequence": [
+  {
+   "file": "assets/media/sequence/hinged_door__claude-fable-5.1.gif",
+   "task": "hinged_door",
+   "object": "door",
+   "system": "Claude Fable 5.1",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "n_steps": 29
+  },
+  {
+   "file": "assets/media/sequence/barbecue_grill__gpt-5.6-sol.gif",
+   "task": "barbecue_grill",
+   "object": "barbecue grill",
+   "system": "GPT-5.6 Sol",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "n_steps": 23
+  },
+  {
+   "file": "assets/media/sequence/offroad_jeep__gpt-6-astra.gif",
+   "task": "offroad_jeep",
+   "object": "off-road vehicle",
+   "system": "GPT-6 Astra",
+   "protocol": "retrieval-only",
+   "source": "BrickNet",
+   "n_steps": 30
+  },
+  {
+   "file": "assets/media/sequence/swivel_office_chair__gpt-6-astra.gif",
+   "task": "swivel_office_chair",
+   "object": "office chair",
+   "system": "GPT-6 Astra",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "n_steps": 17
+  },
+  {
+   "file": "assets/media/sequence/f360_worm_gearbox__gpt-5.6-sol.gif",
+   "task": "f360_worm_gearbox",
+   "object": "worm drive",
+   "system": "GPT-5.6 Sol",
+   "protocol": "baseline",
+   "source": "Fusion 360",
+   "n_steps": 27
+  },
+  {
+   "file": "assets/media/sequence/toilet__claude-fable-5.1.gif",
+   "task": "toilet",
+   "object": "toilet",
+   "system": "Claude Fable 5.1",
+   "protocol": "creation-only",
+   "source": "Artiverse",
+   "n_steps": 11
+  },
+  {
+   "file": "assets/media/sequence/av_blender__claude-fable-5.1.gif",
+   "task": "av_blender",
+   "object": "blender",
+   "system": "Claude Fable 5.1",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "n_steps": 11
+  },
+  {
+   "file": "assets/media/sequence/dining_chair__gpt-6-astra.gif",
+   "task": "dining_chair",
+   "object": "chair",
+   "system": "GPT-6 Astra",
+   "protocol": "baseline",
+   "source": "PartNeXt",
+   "n_steps": 12
+  },
+  {
+   "file": "assets/media/sequence/rolling_suitcase__claude-opus-5.gif",
+   "task": "rolling_suitcase",
+   "object": "suitcase",
+   "system": "Claude Opus 5",
+   "protocol": "retrieval-only",
+   "source": "Artiverse",
+   "n_steps": 12
+  },
+  {
+   "file": "assets/media/sequence/desk_lamp__claude-opus-5.gif",
+   "task": "desk_lamp",
+   "object": "balanced-arm lamp",
+   "system": "Claude Opus 5",
+   "protocol": "baseline",
+   "source": "Artiverse",
+   "n_steps": 8
+  }
+ ]
+}

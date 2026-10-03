@@ -7,11 +7,24 @@
 <meta name="description" content="LMBuild: a benchmark for evaluating LLM agents on generating buildable and functional structures.">
 <meta property="og:title" content="LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures">
 <meta property="og:description" content="LMBuild: a benchmark for evaluating LLM agents on generating buildable and functional structures.">
+<link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 <style>
-:root{--bs-body-font-family:"Source Serif 4",serif;--bs-body-font-size:1.05rem}
+:root{--bs-body-font-family:"Source Serif 4",serif;--bs-body-font-size:1.05rem;--bs-body-bg:#e7f1f0;--ink:#0d3b66;--teal:#17807e}
+body{background:#e7f1f0}
+h1,h2{color:var(--ink)}
+.panel{background:#fff;border-radius:10px;padding:1.4rem 1.6rem;box-shadow:0 1px 2px rgba(13,59,102,.06)}
+.btn-dark{background:var(--ink);border-color:var(--ink)}.btn-dark:hover{background:var(--teal);border-color:var(--teal)}
+.btn-outline-dark{color:var(--ink);border-color:var(--ink)}.btn-outline-dark:hover{background:var(--ink);border-color:var(--ink)}
+.tag{display:inline-block;font:600 .72rem "Source Sans 3",sans-serif;letter-spacing:.03em;padding:.1rem .45rem;border-radius:999px;margin-left:.3rem;vertical-align:1px}
+.tag.baseline{background:#dbe8f5;color:#0d3b66}.tag.retrieval-only{background:#e8e4f3;color:#4b3a8a}.tag.creation-only{background:#d6efe9;color:#0f6b5e}
+.table-responsive{background:#fff;border-radius:8px;padding:.25rem}
+pre.bib{background:#fff!important}
+.obj{background:#fff}
+.gif.mat{aspect-ratio:4/3;object-fit:contain}
+.title-icon{height:3.4rem;width:auto;vertical-align:middle;margin-right:.6rem}
 h1,h2,h3,h4,.font-sans,.btn,.badge,table,figcaption,.small-sans{font-family:"Source Sans 3",system-ui,sans-serif}
 .max-w-md{max-width:768px}.max-w-lg{max-width:992px}.max-w-xl{max-width:1140px}
 .text-balance{text-wrap:balance}
@@ -35,8 +48,9 @@ pre.bib{background:#f7f7f7;border-radius:6px;padding:1rem;font-size:.85rem;font-
 
 <!-- title -->
 <div class="text-center mx-auto max-w-lg">
-  <h1 class="display-5 fw-semibold text-balance mb-3">LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures</h1>
-  <div class="d-flex flex-wrap justify-content-center gap-2 mb-2" id="authors"></div>
+  <h1 class="display-5 fw-semibold text-balance mb-3"><img class="title-icon" src="assets/icon.png" alt="LMBuild logo">LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures</h1>
+  <div class="d-flex flex-wrap justify-content-center gap-2 mb-1" id="authors1"></div>
+  <div class="d-flex flex-wrap justify-content-center gap-2 mb-2" id="authors2"></div>
   <p class="mb-1 small-sans">University of Illinois Urbana-Champaign</p>
   <p class="mb-3 small-sans text-muted">jiateng5@illinois.edu, hengji@illinois.edu</p>
   <div class="d-flex flex-wrap justify-content-center gap-2">
@@ -48,9 +62,9 @@ pre.bib{background:#f7f7f7;border-radius:6px;padding:1rem;font-size:.85rem;font-
 </div>
 
 <!-- teaser -->
-<section class="mx-auto max-w-md text-center">
-  <img class="gif" style="max-width:520px" src="assets/gifs/wheelchair__gpt-6-astra__B.gif" alt="Step-by-step construction of a wheelchair by GPT-6 Astra">
-  <figcaption>Step-by-step construction of a wheelchair by GPT-6 Astra: each frame is one tool call that changes the structure.</figcaption>
+<section class="mx-auto max-w-xl text-center">
+  <div class="row g-3" id="teaser"></div>
+  <figcaption class="mt-2">Step-by-step construction by frontier LLM agents: each frame is one tool call that changes the structure.</figcaption>
 </section>
 
 <!-- abstract -->
@@ -67,7 +81,9 @@ pre.bib{background:#f7f7f7;border-radius:6px;padding:1rem;font-size:.85rem;font-
 
 <!-- step by step -->
 <section class="mx-auto max-w-xl">
-  <h2 class="text-center fs-3 mb-4">Step-by-step generation of buildable structures</h2>
+  <h2 class="text-center fs-3 mb-2">Step-by-step generation of buildable structures</h2>
+  <p class="text-center small-sans text-muted mb-3"><span class="tag baseline">baseline</span> retrieve and create parts (Baseline Interaction Protocol) <span class="tag retrieval-only">retrieval-only</span> catalogue parts only <span class="tag creation-only">creation-only</span> every part created by the agent</p>
+  <div class="d-flex flex-wrap justify-content-center gap-1 mb-3 filter" id="stepf"></div>
   <div class="row g-3" id="steps"></div>
 </section>
 
@@ -82,6 +98,18 @@ pre.bib{background:#f7f7f7;border-radius:6px;padding:1rem;font-size:.85rem;font-
   <h2 class="text-center fs-3 mb-4">Declared joints and kinematics</h2>
   <div class="row g-3" id="joints"></div>
   <div class="row g-4 mt-2" id="jointfigs"></div>
+</section>
+
+<!-- materials -->
+<section class="mx-auto max-w-xl">
+  <h2 class="text-center fs-3 mb-4">Declared materials</h2>
+  <div class="row g-3" id="materials"></div>
+</section>
+
+<!-- assembly sequences -->
+<section class="mx-auto max-w-xl">
+  <h2 class="text-center fs-3 mb-4">Declared assembly sequences</h2>
+  <div class="row g-3" id="sequences"></div>
 </section>
 
 <!-- final designs -->
@@ -126,18 +154,27 @@ pre.bib{background:#f7f7f7;border-radius:6px;padding:1rem;font-size:.85rem;font-
 
 <script>
 const AUTH=["Jiateng Liu","Rushi Wang","Cheng Qian","Xuejun Zhang","Sun Li","Jiayu Liu","Yifan Shen","Xu Cao","Jiarui Yao","Bingxuan Li","Ruhi Sarikaya","Heng Ji"];
-document.getElementById('authors').innerHTML=AUTH.map(a=>`<span class="badge text-bg-light fs-6 fw-normal">${a}</span>`).join("");
+const badge=a=>`<span class="badge text-bg-light fs-6 fw-normal">${a}</span>`;
+document.getElementById('authors1').innerHTML=AUTH.slice(0,6).map(badge).join("");
+document.getElementById('authors2').innerHTML=AUTH.slice(6).map(badge).join("");
 const NAME={"gpt-6-astra":"GPT-6 Astra","gpt-5.6-sol":"GPT-5.6 Sol","claude-opus-5":"Claude Opus 5","claude-fable-5.1":"Claude Fable 5.1","claude-sonnet-5":"Claude Sonnet 5","qwen3.5-27b":"Qwen3.5-27B","physx-anything":"PhysX-Anything"};
 const pretty=s=>s.replace(/_/g," ").replace(/^j /,"");
 const col=(w,html)=>`<div class="${w}">${html}</div>`;
-// step by step (B = baseline interaction protocol, C = creation-only)
-const STEPS=[["kitchen_oven__claude-opus-5__B","Kitchen oven"],["washing_machine__gpt-6-astra__B","Washing machine"],["camera__gpt-6-astra__B","Camera"],["camera__claude-sonnet-5__C","Camera (creation-only)"],
- ["oscillating_fan__claude-sonnet-5__C","Oscillating fan (creation-only)"],["cart_caster_fork__gpt-6-astra__B","Shopping cart: creating a caster fork"],["tractor_front_tire__claude-fable-5.1__C","Farm tractor: creating a front tire"],["fan_rotor__gpt-5.6-sol__B","Fan: creating a three-blade rotor"]];
-document.getElementById('steps').innerHTML=STEPS.map(([f,t])=>col("col-6 col-md-3",`<figure><img class="gif" src="assets/gifs/${f}.gif" loading="lazy" alt="${t}"><figcaption>“${t}” · ${NAME[f.split("__")[1]]}</figcaption></figure>`)).join("");
-const JOINTS=["kitchen_oven__gpt-6-astra__B__door_hinge","kitchen_oven__claude-opus-5__B__rack_lower_slide","office_desk__gpt-6-astra__B__left_drawer_slide","laptop__claude-fable-5.1__B__lid_hinge",
- "passenger_car__claude-opus-5__B__door_left_hinge","oscillating_fan__claude-opus-5__B__j_oscillate","wheeled_excavator__claude-opus-5__C__slew","wheeled_excavator__gpt-5.6-sol__B__boom_pivot",
- "toilet__gpt-6-astra__B__seat_hinge","wheelchair__gpt-6-astra__B__foot_fold_right","office_desk__claude-sonnet-5__C__j_drawer_right","passenger_car__claude-sonnet-5__B__j_hatch"];
-document.getElementById('joints').innerHTML=JOINTS.map(k=>{const [t,s,,j]=k.split("__");return col("col-6 col-md-3",`<figure><img class="gif" src="assets/gifs/${k}.gif" loading="lazy" alt="${pretty(t)}"><figcaption><span class="text-capitalize">${pretty(t)}</span>: ${pretty(j)} · ${NAME[s]}</figcaption></figure>`)}).join("");
+function mediaCard(m,w){const tag=m.protocol?`<span class="tag ${m.protocol}">${m.protocol}</span>`:"";
+  const sub=m.joint?`: ${m.joint_label||m.joint.replace(/_/g," ")}`:"";
+  return col(w,`<figure><img class="gif" src="${m.file||m.path}" loading="lazy" alt="${m.object}"><figcaption><span class="text-capitalize">${m.object}</span>${sub} · ${m.system}${tag}</figcaption></figure>`)}
+fetch("data/media.json").then(r=>r.ok?r.json():null).then(M=>{if(!M)return;
+  const teaser=(M.step||[]).filter(m=>m.teaser).slice(0,4);
+  document.getElementById('teaser').innerHTML=teaser.map(m=>mediaCard(m,"col-6 col-lg-3")).join("");
+  let P="all";const PR=["all","baseline","retrieval-only","creation-only"];
+  const drawSteps=()=>document.getElementById('steps').innerHTML=(M.step||[]).filter(m=>P==="all"||m.protocol===P).map(m=>mediaCard(m,"col-6 col-md-3")).join("");
+  document.getElementById('stepf').innerHTML=PR.map((p,i)=>`<button class="btn btn-sm ${i?'btn-outline-dark':'btn-dark'}" data-p="${p}">${p}</button>`).join("");
+  document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{P=b.dataset.p;document.querySelectorAll('[data-p]').forEach(x=>x.className="btn btn-sm "+(x===b?"btn-dark":"btn-outline-dark"));drawSteps()});
+  drawSteps();
+  document.getElementById('joints').innerHTML=(M.joints||[]).map(m=>mediaCard(m,"col-6 col-md-3")).join("");
+  document.getElementById('materials').innerHTML=(M.materials||[]).map(m=>mediaCard(m,"col-12 col-md-6 col-lg-4").replace('class="gif"','class="gif mat"')).join("");
+  document.getElementById('sequences').innerHTML=(M.sequence||[]).map(m=>mediaCard(m,"col-6 col-md-3")).join("");
+});
 document.getElementById('jointfigs').innerHTML=[5,6,7,8,9,10,11,12].map(n=>col("col-12 col-md-6",`<figure><img class="img-fluid" src="assets/paper/fig${n}.webp" loading="lazy" alt="Figure ${n}"><p class="fig-cap" data-cap="Figure ${n}"></p></figure>`)).join("");
 const TT=["wheelchair__gpt-6-astra__B","office_desk__gpt-5.6-sol__B","bookcase__gpt-6-astra__B","toilet__qwen3.5-27b__B"];
 document.getElementById('turn').innerHTML=TT.map(k=>{const [t,s]=k.split("__");return col("col-6 col-md-3",`<figure><img class="gif" src="assets/gifs/${k}_turntable.gif" loading="lazy" alt="${pretty(t)}"><figcaption class="text-capitalize">${pretty(t)} · ${NAME[s]}</figcaption></figure>`)}).join("");
