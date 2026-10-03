@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LMBuild: Building Working Objects from Parts</title>
+<meta name="description" content="LMBuild is a benchmark in which language-model agents build real, working objects as assemblies of parts, scored on soundness, affordance, design and realization.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="index.html">LMBuild</a>
+  <div class="links">
+    <a href="index.html" aria-current="page">Overview</a>
+    <a href="results.html">Results</a>
+    <a href="benchmark.html">Benchmark</a>
+    <a href="findings.html">Findings</a>
+    <a href="https://github.com/Lumos-Jiateng/LMBuild">Code</a>
+    <a href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Data</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+<header class="hero">
+  <div class="eyebrow">Benchmark · Language-model agents · 3D assembly</div>
+  <h1>Can language models build objects that work?</h1>
+  <p class="lede">LMBuild asks a system to build a real object, such as an office desk, a wheelchair, a scissor car jack, a 3D printer or a LEGO fire engine, as an assembly of parts. The agent picks catalogue parts or creates new ones and declares what each part is, what it is made of, how the object moves and in what order it is assembled. We then score the result as a physical product, not as a picture.</p>
+  <div class="btns">
+    <a class="btn primary" href="https://github.com/Lumos-Jiateng/LMBuild">Code &amp; environment</a>
+    <a class="btn" href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Dataset on Hugging Face</a>
+    <a class="btn" href="results.html">Leaderboard</a>
+    <span class="btn" aria-disabled="true" style="opacity:.55">Paper (coming soon)</span>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>200</b><span>core objects with reference assemblies</span></div>
+    <div class="stat"><b>2,549</b><span>objects in LMBuild-Full</span></div>
+    <div class="stat"><b>30</b><span>systems evaluated: APIs, open models, 3D generators</span></div>
+    <div class="stat"><b>12</b><span>metrics across four levels</span></div>
+    <div class="stat"><b>27</b><span>open-source hardware products as references</span></div>
+  </div>
+</header>
+</div>
+
+<section><div class="wrap">
+  <div class="grid g2" style="align-items:center">
+    <div>
+      <div class="eyebrow">An episode</div>
+      <h2>From a name and a photo to an assembly</h2>
+      <p class="intro">The agent receives the object's name and an in-the-wild photo. Through a tool environment it lists and inspects catalogue parts, creates new parts from code, places them, declares joints, materials and an assembly order, renders its work and revises it over up to three review rounds. Every frame on the right is one tool call that changed the design; the caption gives the step and the call.</p>
+      <div class="grid g2" style="gap:10px">
+        <div class="card"><h3>Input</h3><p>Object name, an in-the-wild photo, and a mixed catalogue of real parts from the reference and from other objects.</p></div>
+        <div class="card"><h3>Tiers</h3><p><b>A</b> catalogue only, <b>B</b> catalogue plus part creation (main setting), <b>C</b> creation only.</p></div>
+        <div class="card"><h3>Output</h3><p>Parts with roles and materials, joints with axes and ranges, and an executable assembly sequence.</p></div>
+        <div class="card"><h3>Ground truth</h3><p>A reference assembly with joints, plus Wikipedia/Wikidata-cited parts, attributes, subsystems and kinematics.</p></div>
+      </div>
+    </div>
+    <figure class="gifcard"><img src="assets/gifs/wheelchair__gpt-6-astra__B.gif" alt="Step-by-step assembly of a wheelchair by GPT-6 Astra" loading="lazy">
+      <figcaption><b>Wheelchair</b> · GPT-6 Astra · Tier B · 40 design steps over 2 rounds</figcaption></figure>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Evaluation</div>
+  <h2>Twelve metrics in four levels</h2>
+  <p class="intro">A design is scored as a product. Lower levels ask whether it stands; higher levels ask whether it is the right object and whether it could be built and used.</p>
+  <div class="levels">
+    <div class="level" style="--c:var(--s)"><h3>S · Soundness</h3><ul><li>S.1 connectivity</li><li>S.2 collision</li><li>S.3 stability under gravity</li></ul></div>
+    <div class="level" style="--c:var(--a)"><h3>A · Affordance</h3><ul><li>A.1 geometry against the reference</li><li>A.2 required parts, placed where they belong</li><li>A.3 kinematics: the right joints move the right parts</li></ul></div>
+    <div class="level" style="--c:var(--d)"><h3>D · Design</h3><ul><li>D.1 decomposition into parts</li><li>D.2 aesthetics (VLM judges, human-calibrated)</li><li>D.3 fidelity to the photographed object</li></ul></div>
+    <div class="level" style="--c:var(--r)"><h3>R · Realization</h3><ul><li>R.1 executable assembly sequence</li><li>R.2 plausible materials per part</li><li>R.3 operability: functions work in simulation</li></ul></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Step by step</div>
+  <h2>How agents assemble objects</h2>
+  <p class="intro">Each animation replays one episode: every frame is the design after a tool call that changed it (placing, creating or moving a part, declaring a joint), rendered with one colour per part.</p>
+  <div class="grid g3" id="assembly"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="eyebrow">Articulation</div>
+  <h2>Objects that move</h2>
+  <p class="intro">Declared joints are driven through their ranges: drawers slide, doors and lids swing, a fan oscillates, an excavator slews. Affordance and Operability check that these motions are the ones the object needs.</p>
+  <div class="grid g4" id="joints"></div>
+  <h3 style="margin-top:28px">Final designs</h3>
+  <div class="grid g4" id="turntable" style="margin-top:10px"></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="grid g3">
+    <a class="card" href="results.html" style="text-decoration:none"><h3>Results →</h3><p>All 30 systems on the 200 core objects, by metric, with original and new object splits.</p></a>
+    <a class="card" href="benchmark.html" style="text-decoration:none"><h3>Benchmark →</h3><p>Sources, statistics and a gallery of all 200 core reference assemblies.</p></a>
+    <a class="card" href="findings.html" style="text-decoration:none"><h3>Findings →</h3><p>What the scores mean, why some systems look strong on single metrics, and where frontier models fail.</p></a>
+  </div>
+</div></section>
+
+<footer><div class="wrap">LMBuild · code under MIT, data under CC BY-NC-SA 4.0 · <a href="https://github.com/Lumos-Jiateng/LMBuild">GitHub</a> · <a href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Hugging Face</a></div></footer>
+
+<script>
+const NAME={"gpt-6-astra":"GPT-6 Astra","gpt-5.6-sol":"GPT-5.6 Sol","claude-opus-5":"Claude Opus 5","claude-fable-5.1":"Claude Fable 5.1","claude-sonnet-5":"Claude Sonnet 5","qwen3.5-27b":"Qwen3.5-27B","physx-anything":"PhysX-Anything"};
+const ASSEMBLY=[["kitchen_oven__claude-opus-5__B","Kitchen oven","claude-opus-5","B",29],["washing_machine__gpt-6-astra__B","Washing machine","gpt-6-astra","B",27],["camera__gpt-6-astra__B","Camera","gpt-6-astra","B",18],
+ ["camera__claude-sonnet-5__C","Camera","claude-sonnet-5","C",15],["oscillating_fan__claude-sonnet-5__C","Oscillating fan","claude-sonnet-5","C",15],["cart_caster_fork__gpt-6-astra__B","Shopping cart (caster fork)","gpt-6-astra","B",10],
+ ["tractor_front_tire__claude-fable-5.1__C","Farm tractor (front tyre)","claude-fable-5.1","C",6],["fan_rotor__gpt-5.6-sol__B","Fan rotor","gpt-5.6-sol","B",4]];
+const tierName={A:"Tier A",B:"Tier B",C:"Tier C"};
+document.getElementById('assembly').innerHTML=ASSEMBLY.map(([f,t,s,tier,n])=>`<figure class="gifcard"><img src="assets/gifs/${f}.gif" alt="${t} assembled by ${NAME[s]}" loading="lazy"><figcaption><b>${t}</b> · ${NAME[s]} · ${tierName[tier]} · ${n} steps</figcaption></figure>`).join("");
+const JOINTS=["kitchen_oven__gpt-6-astra__B__door_hinge","kitchen_oven__claude-opus-5__B__rack_lower_slide","office_desk__gpt-6-astra__B__left_drawer_slide","laptop__claude-fable-5.1__B__lid_hinge",
+ "passenger_car__claude-opus-5__B__door_left_hinge","oscillating_fan__claude-opus-5__B__j_oscillate","wheeled_excavator__claude-opus-5__C__slew","wheeled_excavator__gpt-5.6-sol__B__boom_pivot",
+ "toilet__gpt-6-astra__B__seat_hinge","wheelchair__gpt-6-astra__B__foot_fold_right","office_desk__claude-sonnet-5__C__j_drawer_right","passenger_car__claude-sonnet-5__B__j_hatch"];
+const pretty=s=>s.replace(/_/g," ").replace(/^j /,"");
+document.getElementById('joints').innerHTML=JOINTS.map(k=>{const [t,s,tier,j]=k.split("__");return `<figure class="gifcard"><img src="assets/gifs/${k}.gif" alt="${pretty(t)}: ${pretty(j)}" loading="lazy"><figcaption><b style="text-transform:capitalize">${pretty(t)}</b> · ${pretty(j)} · ${NAME[s]||s}</figcaption></figure>`}).join("");
+const TT=["wheelchair__gpt-6-astra__B","office_desk__gpt-5.6-sol__B","bookcase__gpt-6-astra__B","toilet__qwen3.5-27b__B"];
+document.getElementById('turntable').innerHTML=TT.map(k=>{const [t,s]=k.split("__");return `<figure class="gifcard"><img src="assets/gifs/${k}_turntable.gif" alt="${pretty(t)} by ${NAME[s]}" loading="lazy"><figcaption><b style="text-transform:capitalize">${pretty(t)}</b> · ${NAME[s]} · Tier B</figcaption></figure>`}).join("");
+</script>
+</body>
+</html>

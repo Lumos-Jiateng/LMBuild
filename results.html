@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LMBuild Results</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="index.html">LMBuild</a>
+  <div class="links">
+    <a href="index.html">Overview</a>
+    <a href="results.html" aria-current="page">Results</a>
+    <a href="benchmark.html">Benchmark</a>
+    <a href="findings.html">Findings</a>
+    <a href="https://github.com/Lumos-Jiateng/LMBuild">Code</a>
+    <a href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Data</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+<header class="hero" style="padding-bottom:20px">
+  <div class="eyebrow">Leaderboard · LMBuild-Core (200 objects)</div>
+  <h1>Results</h1>
+  <p class="lede">Main setting: object name plus in-the-wild photo, Tier B (catalogue plus part creation), first review round, seed 0. Domain-specific generators run in their native single-output setting. Scores are ×100 and averaged over the 200 objects; a missing design scores 0. N/A marks metrics a system's output cannot support.</p>
+</header>
+
+<div class="bar">
+  <div class="seg" role="group" aria-label="Object split">
+    <button data-split="scores" aria-pressed="true">All 200</button>
+    <button data-split="orig" aria-pressed="false">Original 50</button>
+    <button data-split="new" aria-pressed="false">New 150</button>
+  </div>
+  <div class="seg" role="group" aria-label="Systems">
+    <button data-grp="all" aria-pressed="true">All systems</button>
+    <button data-grp="closed" aria-pressed="false">Closed APIs</button>
+    <button data-grp="open" aria-pressed="false">Open models</button>
+    <button data-grp="ext" aria-pressed="false">3D generators</button>
+  </div>
+</div>
+<div class="tw"><table id="tab"></table></div>
+<p class="note">Bold marks the best score per column among the agents (closed APIs and open models). Several generator scores are high by construction (for example, brick generators cannot produce colliding parts); see <a href="findings.html#reading">how to read single metrics</a>.</p>
+
+<section style="margin-top:36px">
+  <div class="eyebrow">Stability</div>
+  <h2>Any balanced 50 objects give the same ranking</h2>
+  <p class="intro">We split the 200 objects into two disjoint 50-object samples with the same mix of harness conditions (13 + 37 and 12 + 38 objects with and without a catalogue contact sheet) and repeated the draw 1,000 times. Without running anything new, system scores on the two halves agree closely on every metric.</p>
+  <div class="tw"><table id="corr"></table></div>
+</section>
+</div>
+
+<footer><div class="wrap">LMBuild · <a href="https://github.com/Lumos-Jiateng/LMBuild">GitHub</a> · <a href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Hugging Face</a></div></footer>
+
+<script>
+const NM=["S.1","S.2","S.3","A.1","A.2","A.3","D.1","D.2","D.3","R.1","R.2","R.3"];
+const FULL={"S.1":"Connectivity","S.2":"Collision","S.3":"Stability","A.1":"Geometry","A.2":"Parts","A.3":"Kinematics","D.1":"Decomposition","D.2":"Aesthetics","D.3":"Fidelity","R.1":"Assembly sequence","R.2":"Material","R.3":"Operability"};
+const LV=[["Soundness","var(--s)"],["Affordance","var(--a)"],["Design","var(--d)"],["Realization","var(--r)"]];
+const GRP={closed:["Closed-source APIs","var(--closed)"],open:["Open-source models","var(--open)"],ext:["Domain-specific 3D generators","var(--ext)"]};
+let D,SPLIT="scores",G="all";
+const bg=v=>v==null?"":`background:color-mix(in srgb, var(--accent) ${Math.round(Math.max(0,Math.min(100,v))*0.38)}%, transparent)`;
+function render(){
+  const agents=D.rows.filter(r=>r.group!=="ext");
+  const best=NM.map((_,i)=>Math.max(...agents.map(r=>r[SPLIT][i]??-1)));
+  let h=`<tr><th class="sys" rowspan="2">System</th>`+LV.map(([n,c])=>`<th class="lv gl" colspan="3" style="--c:${c}">${n}</th>`).join("")+`</tr><tr>`+NM.map((m,i)=>`<th class="${i%3==0?'gl':''}" title="${FULL[m]}">${m}</th>`).join("")+`</tr>`;
+  for(const g of ["closed","open","ext"]){
+    if(G!=="all"&&G!==g)continue;
+    h+=`<tr class="grp"><td colspan="13">${GRP[g][0]}</td></tr>`;
+    for(const r of D.rows.filter(r=>r.group===g)){
+      h+=`<tr><td class="sys"><span class="dot" style="background:${GRP[g][1]}"></span>${r.name}</td>`+r[SPLIT].map((v,i)=>{
+        const b=g!=="ext"&&v!=null&&v===best[i];
+        return `<td class="${i%3==0?'gl':''}" style="${bg(v)}">${v==null?'<span style="color:var(--muted)">N/A</span>':(b?`<b>${v.toFixed(1)}</b>`:v.toFixed(1))}</td>`}).join("")+`</tr>`;
+    }
+  }
+  document.getElementById('tab').innerHTML=h;
+}
+function renderCorr(){
+  let h=`<tr><th class="sys">Metric</th><th>Pearson r, two disjoint samples</th><th>Spearman ρ</th><th>1,000 draws: mean r</th><th>95% interval</th></tr>`;
+  D.metrics.forEach((m,i)=>{const c=D.corr[m];h+=`<tr><td class="sys">${NM[i]} ${FULL[NM[i]]}</td><td>${c.A_vs_B[0].toFixed(3)}</td><td>${c.A_vs_B[1].toFixed(2)}</td><td>${c.disjoint.mean.toFixed(3)}</td><td>[${c.disjoint["p2.5"].toFixed(2)}, ${c.disjoint["p97.5"].toFixed(2)}]</td></tr>`});
+  document.getElementById('corr').innerHTML=h;
+}
+fetch("data/results.json").then(r=>r.json()).then(d=>{D=d;render();renderCorr()});
+document.querySelectorAll('[data-split]').forEach(b=>b.onclick=()=>{SPLIT=b.dataset.split;document.querySelectorAll('[data-split]').forEach(x=>x.setAttribute('aria-pressed',x===b));render()});
+document.querySelectorAll('[data-grp]').forEach(b=>b.onclick=()=>{G=b.dataset.grp;document.querySelectorAll('[data-grp]').forEach(x=>x.setAttribute('aria-pressed',x===b));render()});
+</script>
+</body>
+</html>

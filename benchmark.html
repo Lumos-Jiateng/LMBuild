@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LMBuild Benchmark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="top"><div class="wrap">
+  <a class="brand" href="index.html">LMBuild</a>
+  <div class="links">
+    <a href="index.html">Overview</a>
+    <a href="results.html">Results</a>
+    <a href="benchmark.html" aria-current="page">Benchmark</a>
+    <a href="findings.html">Findings</a>
+    <a href="https://github.com/Lumos-Jiateng/LMBuild">Code</a>
+    <a href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Data</a>
+  </div>
+</div></nav>
+
+<div class="wrap">
+<header class="hero" style="padding-bottom:20px">
+  <div class="eyebrow">Data</div>
+  <h1>The benchmark</h1>
+  <p class="lede">No single dataset covers the range of structures LMBuild targets, so we combine LEGO models, part-segmented shapes, engineering CAD assemblies, articulated everyday objects and complete open-source hardware products. Every object comes with a reference assembly and with parts, attributes, subsystems and kinematics grounded in cited Wikipedia and Wikidata evidence.</p>
+</header>
+
+<div class="tw"><table>
+<tr><th class="sys">Geometry type</th><th class="sys" style="position:static">Source</th><th>Original size</th><th class="gl">Core</th><th>Avg. parts / aff.</th><th class="gl">Full</th><th>Avg. parts / aff.</th></tr>
+<tr><td class="sys">LEGO toy data</td><td style="text-align:left;font-family:var(--body)">BrickNet</td><td>320,808</td><td class="gl">5</td><td>13.80 / 14.60</td><td class="gl">888</td><td>8.79 / 10.82</td></tr>
+<tr><td class="sys"></td><td style="text-align:left;font-family:var(--body)">BrickComposer</td><td>9,977</td><td class="gl">50</td><td>10.16 / 10.34</td><td class="gl">50</td><td>10.16 / 10.34</td></tr>
+<tr><td class="sys">Static structures</td><td style="text-align:left;font-family:var(--body)">PartNeXt</td><td>23,519</td><td class="gl">14</td><td>5.07 / 8.00</td><td class="gl">589</td><td>6.00 / 7.92</td></tr>
+<tr><td class="sys">Mechanical structures</td><td style="text-align:left;font-family:var(--body)">Fusion 360 Gallery</td><td>8,251</td><td class="gl">55</td><td>6.85 / 8.91</td><td class="gl">80</td><td>6.20 / 8.41</td></tr>
+<tr><td class="sys">Daily objects / furniture</td><td style="text-align:left;font-family:var(--body)">Artiverse</td><td>5,402</td><td class="gl">42</td><td>6.50 / 8.57</td><td class="gl">908</td><td>5.90 / 7.43</td></tr>
+<tr><td class="sys">Product-level CAD</td><td style="text-align:left;font-family:var(--body)">27 open-source hardware projects</td><td>34</td><td class="gl">34</td><td>6.62 / 8.76</td><td class="gl">34</td><td>6.62 / 8.76</td></tr>
+<tr><td class="sys"><b>Total</b></td><td></td><td>367,991</td><td class="gl"><b>200</b></td><td>7.62 / 9.25</td><td class="gl"><b>2,549</b></td><td>7.03 / 8.83</td></tr>
+</table></div>
+<p class="note">Avg. parts / aff.: Wikipedia-grounded required parts and affordances (attributes plus kinematics) per object. Product-level CAD covers robots and vehicles (e.g. a spinal quadruped, a dexterous hand, an underwater ROV, a CubeSat), consumer devices (Ploopy, Framework, a DIY VR headset, a Curta calculator), lab and medical instruments (OpenRAMAN, NinjaPCR, PolyVent) and fabrication machines (Voron 2.4, Precious Plastic, Open Source Ecology's CEB press).</p>
+
+<section style="margin-top:30px">
+  <div class="eyebrow">LMBuild-Core</div>
+  <h2>All 200 reference assemblies</h2>
+  <p class="intro">Each reference is shown assembled and exploded, one colour per part.</p>
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Source" id="srcseg"></div>
+    <input id="q" type="search" placeholder="Search objects" aria-label="Search objects" style="font:14px var(--body);padding:8px 12px;border-radius:999px;border:1px solid var(--rule);background:var(--surface);color:var(--ink);min-width:200px">
+    <span class="note" id="count" style="margin:0"></span>
+  </div>
+  <div class="gallery" id="gal"></div>
+</section>
+</div>
+
+<footer><div class="wrap">LMBuild · data under CC BY-NC-SA 4.0; every object keeps its upstream licence · <a href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Hugging Face</a></div></footer>
+
+<script>
+let O=[],SRC="All";
+const SOURCES=["All","Artiverse","Fusion 360","BrickComposer","Product CAD","PartNeXt","BrickNet"];
+function draw(){
+  const q=document.getElementById('q').value.trim().toLowerCase();
+  const xs=O.filter(o=>(SRC==="All"||o.source===SRC)&&(!q||o.name.toLowerCase().includes(q)||o.id.includes(q)));
+  document.getElementById('count').textContent=`${xs.length} objects`;
+  document.getElementById('gal').innerHTML=xs.map(o=>`<figure class="obj"><img src="${o.img}" alt="${o.name}" loading="lazy"><figcaption><b>${o.name}</b><span class="chip">${o.source}</span> · ${o.parts} parts · ${o.kin} motions</figcaption></figure>`).join("");
+}
+document.getElementById('srcseg').innerHTML=SOURCES.map((s,i)=>`<button data-s="${s}" aria-pressed="${i==0}">${s}</button>`).join("");
+document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{SRC=b.dataset.s;document.querySelectorAll('[data-s]').forEach(x=>x.setAttribute('aria-pressed',x===b));draw()});
+document.getElementById('q').oninput=draw;
+fetch("data/objects.json").then(r=>r.json()).then(d=>{O=d;draw()});
+</script>
+</body>
+</html>
