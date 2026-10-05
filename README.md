@@ -27,9 +27,9 @@ Items 1, 4, 5, the evaluator fixtures in `results/v2/` and LMBuild-Full (2,549 o
 [Hugging Face](https://huggingface.co/datasets/Lumos-Jiateng/LMBuild); `scripts/download_data.py` puts them in place.
 
 <p align="center">
-  <img src="https://lumos-jiateng.github.io/LMBuild/assets/gifs/wheelchair__gpt-6-astra__B.gif" width="30%">
-  <img src="https://lumos-jiateng.github.io/LMBuild/assets/gifs/laptop__claude-fable-5.1__B__lid_hinge.gif" width="30%">
-  <img src="https://lumos-jiateng.github.io/LMBuild/assets/gifs/kitchen_oven__gpt-6-astra__B__door_hinge.gif" width="30%">
+  <img src="https://lumos-jiateng.github.io/LMBuild/assets/gifs/wheelchair__gpt-6-astra__B_turntable.gif" width="30%">
+  <img src="https://lumos-jiateng.github.io/LMBuild/assets/media/joints/laptop__gpt-5.6-sol__lid_hinge.gif" width="30%">
+  <img src="https://lumos-jiateng.github.io/LMBuild/assets/media/joints/kitchen_oven__gpt-6-astra__door_hinge.gif" width="30%">
 </p>
 
 ## Quick start
