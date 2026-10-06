@@ -1,0 +1,1 @@
+{"task":"pn_backpack","name":"backpack","source":"PartNeXt","parts":3,"thumb":"assets/explore/pn_backpack/input_t.webp","curated":false,"input":"assets/explore/pn_backpack/input.webp","prompt":"According to image W1, build a backpack.","image_id":"W1","reference":"assets/objects/pn_backpack_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

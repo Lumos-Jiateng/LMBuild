@@ -1,0 +1,1 @@
+{"task":"bc_bus","name":"bus","source":"BrickComposer","parts":16,"thumb":"assets/explore/bc_bus/input_t.webp","curated":false,"input":"assets/explore/bc_bus/input.webp","prompt":"According to image W1, build a bus.","image_id":"W1","reference":"assets/objects/bc_bus_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

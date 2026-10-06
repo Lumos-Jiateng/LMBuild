@@ -1,0 +1,1 @@
+{"task":"bc_tank","name":"tank","source":"BrickComposer","parts":10,"thumb":"assets/explore/bc_tank/input_t.webp","curated":false,"input":"assets/explore/bc_tank/input.webp","prompt":"According to image W1, build a tank.","image_id":"W1","reference":"assets/objects/bc_tank_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,0 +1,1 @@
+{"task":"bc_road_roller","name":"road roller","source":"BrickComposer","parts":6,"thumb":"assets/explore/bc_road_roller/input_t.webp","curated":false,"input":"assets/explore/bc_road_roller/input.webp","prompt":"According to image W1, build a road roller.","image_id":"W1","reference":"assets/objects/bc_road_roller_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

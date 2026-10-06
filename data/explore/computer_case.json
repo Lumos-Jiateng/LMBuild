@@ -1,0 +1,1 @@
+{"task":"computer_case","name":"computer case","source":"Product CAD","parts":9,"thumb":"assets/explore/computer_case/input_t.webp","curated":false,"input":"assets/explore/computer_case/input.webp","prompt":"According to image W1, build a computer case.","image_id":"W1","reference":"assets/objects/computer_case_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

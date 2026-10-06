@@ -1,0 +1,1 @@
+{"task":"av_soap_dispenser","name":"soap dispenser","source":"Artiverse","parts":8,"thumb":"assets/explore/av_soap_dispenser/input_t.webp","curated":false,"input":"assets/explore/av_soap_dispenser/input.webp","prompt":"According to image W1, build a soap dispenser.","image_id":"W1","reference":"assets/objects/av_soap_dispenser_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

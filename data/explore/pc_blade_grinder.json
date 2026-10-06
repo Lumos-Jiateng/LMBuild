@@ -1,0 +1,1 @@
+{"task":"pc_blade_grinder","name":"blade grinder","source":"Product CAD","parts":3,"thumb":"assets/explore/pc_blade_grinder/input_t.webp","curated":false,"input":"assets/explore/pc_blade_grinder/input.webp","prompt":"According to image W1, build a blade grinder.","image_id":"W1","reference":"assets/objects/pc_blade_grinder_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

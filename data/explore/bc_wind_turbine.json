@@ -1,0 +1,1 @@
+{"task":"bc_wind_turbine","name":"wind turbine","source":"BrickComposer","parts":10,"thumb":"assets/explore/bc_wind_turbine/input_t.webp","curated":false,"input":"assets/explore/bc_wind_turbine/input.webp","prompt":"According to image W1, build a wind turbine.","image_id":"W1","reference":"assets/objects/bc_wind_turbine_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

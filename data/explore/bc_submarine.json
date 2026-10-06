@@ -1,0 +1,1 @@
+{"task":"bc_submarine","name":"submarine","source":"BrickComposer","parts":9,"thumb":"assets/explore/bc_submarine/input_t.webp","curated":false,"input":"assets/explore/bc_submarine/input.webp","prompt":"According to image W1, build a submarine.","image_id":"W1","reference":"assets/objects/bc_submarine_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

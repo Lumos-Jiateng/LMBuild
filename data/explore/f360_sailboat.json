@@ -1,0 +1,1 @@
+{"task":"f360_sailboat","name":"sailboat","source":"Fusion 360","parts":10,"thumb":"assets/explore/f360_sailboat/input_t.webp","curated":false,"input":"assets/explore/f360_sailboat/input.webp","prompt":"According to image W1, build a sailboat.","image_id":"W1","reference":"assets/objects/f360_sailboat_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

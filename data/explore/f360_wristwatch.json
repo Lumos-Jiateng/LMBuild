@@ -1,0 +1,1 @@
+{"task":"f360_wristwatch","name":"watch","source":"Fusion 360","parts":10,"thumb":"assets/explore/f360_wristwatch/input_t.webp","curated":false,"input":"assets/explore/f360_wristwatch/input.webp","prompt":"According to image W3, build a watch.","image_id":"W3","reference":"assets/objects/f360_wristwatch_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

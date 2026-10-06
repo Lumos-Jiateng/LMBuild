@@ -1,0 +1,1 @@
+{"task":"bc_tank_truck","name":"tank truck","source":"BrickComposer","parts":7,"thumb":"assets/explore/bc_tank_truck/input_t.webp","curated":false,"input":"assets/explore/bc_tank_truck/input.webp","prompt":"According to image W1, build a tank truck.","image_id":"W1","reference":"assets/objects/bc_tank_truck_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

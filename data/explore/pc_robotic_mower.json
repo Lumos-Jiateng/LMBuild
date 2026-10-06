@@ -1,0 +1,1 @@
+{"task":"pc_robotic_mower","name":"robotic lawn mower","source":"Product CAD","parts":10,"thumb":"assets/explore/pc_robotic_mower/input_t.webp","curated":false,"input":"assets/explore/pc_robotic_mower/input.webp","prompt":"According to image W1, build a robotic lawn mower.","image_id":"W1","reference":"assets/objects/pc_robotic_mower_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

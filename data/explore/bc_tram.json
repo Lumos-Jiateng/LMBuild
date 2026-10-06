@@ -1,0 +1,1 @@
+{"task":"bc_tram","name":"tram","source":"BrickComposer","parts":11,"thumb":"assets/explore/bc_tram/input_t.webp","curated":false,"input":"assets/explore/bc_tram/input.webp","prompt":"According to image W1, build a tram.","image_id":"W1","reference":"assets/objects/bc_tram_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

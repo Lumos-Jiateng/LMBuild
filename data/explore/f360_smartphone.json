@@ -1,0 +1,1 @@
+{"task":"f360_smartphone","name":"smartphone","source":"Fusion 360","parts":11,"thumb":"assets/explore/f360_smartphone/input_t.webp","curated":false,"input":"assets/explore/f360_smartphone/input.webp","prompt":"According to image W1, build a smartphone.","image_id":"W1","reference":"assets/objects/f360_smartphone_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

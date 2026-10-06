@@ -1,0 +1,1 @@
+{"task":"pc_3d_scanner","name":"3D scanner","source":"Product CAD","parts":5,"thumb":"assets/explore/pc_3d_scanner/input_t.webp","curated":false,"input":"assets/explore/pc_3d_scanner/input.webp","prompt":"According to image W1, build a 3D scanner.","image_id":"W1","reference":"assets/objects/pc_3d_scanner_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

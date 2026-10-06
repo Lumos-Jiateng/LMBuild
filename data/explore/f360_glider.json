@@ -1,0 +1,1 @@
+{"task":"f360_glider","name":"glider","source":"Fusion 360","parts":10,"thumb":"assets/explore/f360_glider/input_t.webp","curated":false,"input":"assets/explore/f360_glider/input.webp","prompt":"According to image W1, build a glider.","image_id":"W1","reference":"assets/objects/f360_glider_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

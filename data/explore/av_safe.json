@@ -1,0 +1,1 @@
+{"task":"av_safe","name":"safe","source":"Artiverse","parts":6,"thumb":"assets/explore/av_safe/input_t.webp","curated":false,"input":"assets/explore/av_safe/input.webp","prompt":"According to image W1, build a safe.","image_id":"W1","reference":"assets/objects/av_safe_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,0 +1,1 @@
+{"task":"baby_stroller","name":"stroller","source":"Artiverse","parts":6,"thumb":"assets/explore/baby_stroller/input_t.webp","curated":false,"input":"assets/explore/baby_stroller/input.webp","prompt":"According to image W1, build a stroller.","image_id":"W1","reference":"assets/objects/baby_stroller_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,0 +1,1 @@
+{"task":"bc_boxcar","name":"boxcar","source":"BrickComposer","parts":4,"thumb":"assets/explore/bc_boxcar/input_t.webp","curated":false,"input":"assets/explore/bc_boxcar/input.webp","prompt":"According to image W1, build a boxcar.","image_id":"W1","reference":"assets/objects/bc_boxcar_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

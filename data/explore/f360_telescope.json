@@ -1,0 +1,1 @@
+{"task":"f360_telescope","name":"refracting telescope","source":"Fusion 360","parts":5,"thumb":"assets/explore/f360_telescope/input_t.webp","curated":false,"input":"assets/explore/f360_telescope/input.webp","prompt":"According to image W2, build a refracting telescope.","image_id":"W2","reference":"assets/objects/f360_telescope_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

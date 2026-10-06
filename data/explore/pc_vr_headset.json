@@ -1,0 +1,1 @@
+{"task":"pc_vr_headset","name":"virtual reality headset","source":"Product CAD","parts":7,"thumb":"assets/explore/pc_vr_headset/input_t.webp","curated":false,"input":"assets/explore/pc_vr_headset/input.webp","prompt":"According to image W1, build a virtual reality headset.","image_id":"W1","reference":"assets/objects/pc_vr_headset_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

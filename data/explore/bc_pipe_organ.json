@@ -1,0 +1,1 @@
+{"task":"bc_pipe_organ","name":"pipe organ","source":"BrickComposer","parts":9,"thumb":"assets/explore/bc_pipe_organ/input_t.webp","curated":false,"input":"assets/explore/bc_pipe_organ/input.webp","prompt":"According to image W1, build a pipe organ.","image_id":"W1","reference":"assets/objects/bc_pipe_organ_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,0 +1,1 @@
+{"task":"bc_limousine","name":"limousine","source":"BrickComposer","parts":10,"thumb":"assets/explore/bc_limousine/input_t.webp","curated":false,"input":"assets/explore/bc_limousine/input.webp","prompt":"According to image W1, build a limousine.","image_id":"W1","reference":"assets/objects/bc_limousine_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

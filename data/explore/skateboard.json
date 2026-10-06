@@ -1,0 +1,1 @@
+{"task":"skateboard","name":"skateboard","source":"Artiverse","parts":8,"thumb":"assets/explore/skateboard/input_t.webp","curated":false,"input":"assets/explore/skateboard/input.webp","prompt":"According to image W1, build a skateboard.","image_id":"W1","reference":"assets/objects/skateboard_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

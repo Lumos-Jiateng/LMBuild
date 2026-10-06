@@ -1,0 +1,1 @@
+{"task":"pn_chandelier","name":"chandelier","source":"PartNeXt","parts":5,"thumb":"assets/explore/pn_chandelier/input_t.webp","curated":false,"input":"assets/explore/pn_chandelier/input.webp","prompt":"According to image W1, build a chandelier.","image_id":"W1","reference":"assets/objects/pn_chandelier_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

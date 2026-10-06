@@ -1,0 +1,1 @@
+{"task":"pn_bucket","name":"bucket","source":"PartNeXt","parts":4,"thumb":"assets/explore/pn_bucket/input_t.webp","curated":false,"input":"assets/explore/pn_bucket/input.webp","prompt":"According to image W1, build a bucket.","image_id":"W1","reference":"assets/objects/pn_bucket_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

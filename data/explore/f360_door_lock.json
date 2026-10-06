@@ -1,0 +1,1 @@
+{"task":"f360_door_lock","name":"lock","source":"Fusion 360","parts":6,"thumb":"assets/explore/f360_door_lock/input_t.webp","curated":false,"input":"assets/explore/f360_door_lock/input.webp","prompt":"According to image W1, build a lock.","image_id":"W1","reference":"assets/objects/f360_door_lock_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

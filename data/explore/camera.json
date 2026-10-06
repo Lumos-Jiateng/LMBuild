@@ -1,0 +1,1 @@
+{"task":"camera","name":"camera","source":"Artiverse","parts":8,"thumb":"assets/explore/camera/input_t.webp","curated":false,"input":"assets/explore/camera/input.webp","prompt":"According to image W1, build a camera.","image_id":"W1","reference":"assets/objects/camera_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

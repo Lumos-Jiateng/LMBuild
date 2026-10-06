@@ -1,0 +1,1 @@
+{"task":"pc_camera_slider","name":"camera dolly","source":"Product CAD","parts":6,"thumb":"assets/explore/pc_camera_slider/input_t.webp","curated":false,"input":"assets/explore/pc_camera_slider/input.webp","prompt":"According to image W1, build a camera dolly.","image_id":"W1","reference":"assets/objects/pc_camera_slider_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

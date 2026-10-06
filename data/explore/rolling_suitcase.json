@@ -1,0 +1,1 @@
+{"task":"rolling_suitcase","name":"suitcase","source":"Artiverse","parts":5,"thumb":"assets/explore/rolling_suitcase/input_t.webp","curated":false,"input":"assets/explore/rolling_suitcase/input.webp","prompt":"According to image W1, build a suitcase.","image_id":"W1","reference":"assets/objects/rolling_suitcase_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,0 +1,1 @@
+{"task":"monitor_arm","name":"monitor mount","source":"Artiverse","parts":2,"thumb":"assets/explore/monitor_arm/input_t.webp","curated":false,"input":"assets/explore/monitor_arm/input.webp","prompt":"According to image W1, build a monitor mount.","image_id":"W1","reference":"assets/objects/monitor_arm_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

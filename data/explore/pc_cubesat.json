@@ -1,0 +1,1 @@
+{"task":"pc_cubesat","name":"CubeSat","source":"Product CAD","parts":10,"thumb":"assets/explore/pc_cubesat/input_t.webp","curated":false,"input":"assets/explore/pc_cubesat/input.webp","prompt":"According to image W1, build a CubeSat.","image_id":"W1","reference":"assets/objects/pc_cubesat_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

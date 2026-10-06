@@ -1,0 +1,1 @@
+{"task":"bc_dump_truck","name":"dump truck","source":"BrickComposer","parts":10,"thumb":"assets/explore/bc_dump_truck/input_t.webp","curated":false,"input":"assets/explore/bc_dump_truck/input.webp","prompt":"According to image W2, build a dump truck.","image_id":"W2","reference":"assets/objects/bc_dump_truck_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,0 +1,1 @@
+{"task":"f360_hand_drill","name":"hand drill","source":"Fusion 360","parts":4,"thumb":"assets/explore/f360_hand_drill/input_t.webp","curated":false,"input":"assets/explore/f360_hand_drill/input.webp","prompt":"According to image W1, build a hand drill.","image_id":"W1","reference":"assets/objects/f360_hand_drill_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,344 +1,1402 @@
 {
- "av_blender": {
-  "img": "assets/inputs/av_blender.webp",
-  "prompt": "According to image W1, build a blender.",
-  "name": "blender",
-  "image_id": "W1"
- },
- "av_locker": {
-  "img": "assets/inputs/av_locker.webp",
-  "prompt": "According to image W1, build a locker.",
-  "name": "locker",
-  "image_id": "W1"
- },
- "av_safe": {
-  "img": "assets/inputs/av_safe.webp",
-  "prompt": "According to image W1, build a safe.",
-  "name": "safe",
-  "image_id": "W1"
- },
- "av_standing_mirror": {
-  "img": "assets/inputs/av_standing_mirror.webp",
-  "prompt": "According to image W1, build a cheval mirror.",
-  "name": "cheval mirror",
-  "image_id": "W1"
- },
- "av_tv_stand": {
-  "img": "assets/inputs/av_tv_stand.webp",
-  "prompt": "According to image W1, build an entertainment center.",
-  "name": "entertainment center",
-  "image_id": "W1"
- },
- "baby_stroller": {
-  "img": "assets/inputs/baby_stroller.webp",
-  "prompt": "According to image W1, build a stroller.",
-  "name": "stroller",
-  "image_id": "W1"
- },
- "barbecue_grill": {
-  "img": "assets/inputs/barbecue_grill.webp",
-  "prompt": "According to image W1, build a barbecue grill.",
-  "name": "barbecue grill",
-  "image_id": "W1"
- },
- "bc_box_truck": {
-  "img": "assets/inputs/bc_box_truck.webp",
-  "prompt": "According to image W2, build a box truck.",
-  "name": "box truck",
-  "image_id": "W2"
- },
- "bc_fire_engine": {
-  "img": "assets/inputs/bc_fire_engine.webp",
-  "prompt": "According to image W1, build a fire engine.",
-  "name": "fire engine",
-  "image_id": "W1"
- },
- "bookcase": {
-  "img": "assets/inputs/bookcase.webp",
-  "prompt": "According to image W3, build a bookcase.",
-  "name": "bookcase",
-  "image_id": "W3"
- },
- "casement_window": {
-  "img": "assets/inputs/casement_window.webp",
-  "prompt": "According to image W1, build a window.",
-  "name": "window",
-  "image_id": "W1"
- },
- "chest_of_drawers": {
-  "img": "assets/inputs/chest_of_drawers.webp",
-  "prompt": "According to image W2, build a chest of drawers.",
-  "name": "chest of drawers",
-  "image_id": "W2"
- },
- "computer_case": {
-  "img": "assets/inputs/computer_case.webp",
-  "prompt": "According to image W1, build a computer case.",
-  "name": "computer case",
-  "image_id": "W1"
- },
- "computer_keyboard": {
-  "img": "assets/inputs/computer_keyboard.webp",
-  "prompt": "According to image W1, build a computer keyboard.",
-  "name": "computer keyboard",
-  "image_id": "W1"
- },
- "desk_lamp": {
-  "img": "assets/inputs/desk_lamp.webp",
-  "prompt": "According to image W1, build a balanced-arm lamp.",
-  "name": "balanced-arm lamp",
-  "image_id": "W1"
- },
- "dining_chair": {
-  "img": "assets/inputs/dining_chair.webp",
-  "prompt": "According to image W2, build a chair.",
-  "name": "chair",
-  "image_id": "W2"
- },
- "dishwasher": {
-  "img": "assets/inputs/dishwasher.webp",
-  "prompt": "According to image W1, build a dishwasher.",
-  "name": "dishwasher",
-  "image_id": "W1"
- },
- "f360_bench_vise": {
-  "img": "assets/inputs/f360_bench_vise.webp",
-  "prompt": "According to image W1, build a vise.",
-  "name": "vise",
-  "image_id": "W1"
- },
- "f360_electric_motor": {
-  "img": "assets/inputs/f360_electric_motor.webp",
-  "prompt": "According to image W1, build an electric motor.",
-  "name": "electric motor",
-  "image_id": "W1"
- },
- "f360_microscope": {
-  "img": "assets/inputs/f360_microscope.webp",
-  "prompt": "According to image W1, build an optical microscope.",
-  "name": "optical microscope",
-  "image_id": "W1"
- },
- "f360_quadcopter": {
-  "img": "assets/inputs/f360_quadcopter.webp",
-  "prompt": "According to image W1, build a quadcopter.",
-  "name": "quadcopter",
-  "image_id": "W1"
- },
- "f360_worm_gearbox": {
-  "img": "assets/inputs/f360_worm_gearbox.webp",
-  "prompt": "According to image W3, build a worm drive.",
-  "name": "worm drive",
-  "image_id": "W3"
- },
- "farm_tractor": {
-  "img": "assets/inputs/farm_tractor.webp",
-  "prompt": "According to image W1, build a tractor.",
-  "name": "tractor",
-  "image_id": "W1"
- },
- "hinged_door": {
-  "img": "assets/inputs/hinged_door.webp",
-  "prompt": "According to image W1, build a door.",
-  "name": "door",
-  "image_id": "W1"
- },
- "kitchen_oven": {
-  "img": "assets/inputs/kitchen_oven.webp",
-  "prompt": "According to image W2, build an oven.",
-  "name": "oven",
-  "image_id": "W2"
- },
- "laptop": {
-  "img": "assets/inputs/laptop.webp",
-  "prompt": "According to image W1, build a laptop.",
-  "name": "laptop",
-  "image_id": "W1"
- },
- "mixer_faucet": {
-  "img": "assets/inputs/mixer_faucet.webp",
-  "prompt": "According to image W1, build a tap.",
-  "name": "tap",
-  "image_id": "W1"
- },
- "office_desk": {
-  "img": "assets/inputs/office_desk.webp",
-  "prompt": "According to image W1, build a desk.",
-  "name": "desk",
-  "image_id": "W1"
- },
  "offroad_jeep": {
-  "img": "assets/inputs/offroad_jeep.webp",
+  "img": "assets/explore/offroad_jeep/input_t.webp",
+  "full": "assets/explore/offroad_jeep/input.webp",
   "prompt": "According to image W1, build an off-road vehicle.",
-  "name": "off-road vehicle",
-  "image_id": "W1"
- },
- "oscillating_fan": {
-  "img": "assets/inputs/oscillating_fan.webp",
-  "prompt": "According to image W1, build an electric fan.",
-  "name": "electric fan",
-  "image_id": "W1"
- },
- "oscillating_steam_engine": {
-  "img": "assets/inputs/oscillating_steam_engine.webp",
-  "prompt": "According to image W1, build an oscillating steam engine.",
-  "name": "oscillating steam engine",
-  "image_id": "W1"
+  "image_id": "W1",
+  "name": "off-road vehicle"
  },
  "passenger_car": {
-  "img": "assets/inputs/passenger_car.webp",
+  "img": "assets/explore/passenger_car/input_t.webp",
+  "full": "assets/explore/passenger_car/input.webp",
   "prompt": "According to image W1, build a car.",
-  "name": "car",
-  "image_id": "W1"
+  "image_id": "W1",
+  "name": "car"
  },
- "pc_3d_printer": {
-  "img": "assets/inputs/pc_3d_printer.webp",
-  "prompt": "According to image W2, build a 3D printer.",
-  "name": "3D printer",
-  "image_id": "W2"
+ "farm_tractor": {
+  "img": "assets/explore/farm_tractor/input_t.webp",
+  "full": "assets/explore/farm_tractor/input.webp",
+  "prompt": "According to image W1, build a tractor.",
+  "image_id": "W1",
+  "name": "tractor"
  },
- "pc_camera_slider": {
-  "img": "assets/inputs/pc_camera_slider.webp",
-  "prompt": "According to image W1, build a camera dolly.",
-  "name": "camera dolly",
-  "image_id": "W1"
- },
- "pc_cubesat": {
-  "img": "assets/inputs/pc_cubesat.webp",
-  "prompt": "According to image W1, build a CubeSat.",
-  "name": "CubeSat",
-  "image_id": "W1"
- },
- "pc_mechanical_calculator": {
-  "img": "assets/inputs/pc_mechanical_calculator.webp",
-  "prompt": "According to image W1, build a mechanical calculator.",
-  "name": "mechanical calculator",
-  "image_id": "W1"
- },
- "pc_pen_plotter": {
-  "img": "assets/inputs/pc_pen_plotter.webp",
-  "prompt": "According to image W1, build a plotter.",
-  "name": "plotter",
-  "image_id": "W1"
- },
- "pc_peristaltic_pump": {
-  "img": "assets/inputs/pc_peristaltic_pump.webp",
-  "prompt": "According to image W1, build a peristaltic pump.",
-  "name": "peristaltic pump",
-  "image_id": "W1"
- },
- "pc_thermal_cycler": {
-  "img": "assets/inputs/pc_thermal_cycler.webp",
-  "prompt": "According to image W1, build a thermal cycler.",
-  "name": "thermal cycler",
-  "image_id": "W1"
- },
- "pc_underwater_rov": {
-  "img": "assets/inputs/pc_underwater_rov.webp",
-  "prompt": "According to image W2, build a remotely operated underwater vehicle.",
-  "name": "remotely operated underwater vehicle",
-  "image_id": "W2"
- },
- "pc_vinyl_cutter": {
-  "img": "assets/inputs/pc_vinyl_cutter.webp",
-  "prompt": "According to image W1, build a vinyl cutter.",
-  "name": "vinyl cutter",
-  "image_id": "W1"
- },
- "pc_vr_headset": {
-  "img": "assets/inputs/pc_vr_headset.webp",
-  "prompt": "According to image W1, build a virtual reality headset.",
-  "name": "virtual reality headset",
-  "image_id": "W1"
- },
- "pc_wire_stripper": {
-  "img": "assets/inputs/pc_wire_stripper.webp",
-  "prompt": "According to image W1, build a wire stripper.",
-  "name": "wire stripper",
-  "image_id": "W1"
- },
- "refrigerator": {
-  "img": "assets/inputs/refrigerator.webp",
-  "prompt": "According to image W1, build a refrigerator.",
-  "name": "refrigerator",
-  "image_id": "W1"
- },
- "robot_arm": {
-  "img": "assets/inputs/robot_arm.webp",
-  "prompt": "According to image W1, build a robotic arm.",
-  "name": "robotic arm",
-  "image_id": "W1"
- },
- "robotic_hand": {
-  "img": "assets/inputs/robotic_hand.webp",
-  "prompt": "According to image W3, build a robotic hand.",
-  "name": "robotic hand",
-  "image_id": "W3"
- },
- "rolling_suitcase": {
-  "img": "assets/inputs/rolling_suitcase.webp",
-  "prompt": "According to image W1, build a suitcase.",
-  "name": "suitcase",
-  "image_id": "W1"
- },
- "scissors": {
-  "img": "assets/inputs/scissors.webp",
-  "prompt": "According to image W1, build a pair of scissors.",
-  "name": "scissors",
-  "image_id": "W1"
- },
- "skateboard": {
-  "img": "assets/inputs/skateboard.webp",
-  "prompt": "According to image W1, build a skateboard.",
-  "name": "skateboard",
-  "image_id": "W1"
- },
- "spinal_quadruped_robot": {
-  "img": "assets/inputs/spinal_quadruped_robot.webp",
-  "prompt": "According to image W1, build a legged robot.",
-  "name": "legged robot",
-  "image_id": "W1"
- },
- "swivel_office_chair": {
-  "img": "assets/inputs/swivel_office_chair.webp",
-  "prompt": "According to image W2, build an office chair.",
-  "name": "office chair",
-  "image_id": "W2"
- },
- "toilet": {
-  "img": "assets/inputs/toilet.webp",
-  "prompt": "According to image W1, build a toilet.",
-  "name": "toilet",
-  "image_id": "W1"
- },
- "umbrella": {
-  "img": "assets/inputs/umbrella.webp",
-  "prompt": "According to image W1, build an umbrella.",
-  "name": "umbrella",
-  "image_id": "W1"
- },
- "washing_machine": {
-  "img": "assets/inputs/washing_machine.webp",
-  "prompt": "According to image W1, build a washing machine.",
-  "name": "washing machine",
-  "image_id": "W1"
- },
- "wheelchair": {
-  "img": "assets/inputs/wheelchair.webp",
-  "prompt": "According to image W1, build a wheelchair.",
-  "name": "wheelchair",
-  "image_id": "W1"
- },
- "wheeled_dumpster": {
-  "img": "assets/inputs/wheeled_dumpster.webp",
-  "prompt": "According to image W2, build a dumpster.",
-  "name": "dumpster",
-  "image_id": "W2"
+ "helicopter": {
+  "img": "assets/explore/helicopter/input_t.webp",
+  "full": "assets/explore/helicopter/input.webp",
+  "prompt": "According to image W1, build a helicopter.",
+  "image_id": "W1",
+  "name": "helicopter"
  },
  "wheeled_excavator": {
-  "img": "assets/inputs/wheeled_excavator.webp",
+  "img": "assets/explore/wheeled_excavator/input_t.webp",
+  "full": "assets/explore/wheeled_excavator/input.webp",
   "prompt": "According to image W1, build an excavator.",
-  "name": "excavator",
-  "image_id": "W1"
+  "image_id": "W1",
+  "name": "excavator"
+ },
+ "scissor_car_jack": {
+  "img": "assets/explore/scissor_car_jack/input_t.webp",
+  "full": "assets/explore/scissor_car_jack/input.webp",
+  "prompt": "According to image W2, build a scissor jack.",
+  "image_id": "W2",
+  "name": "scissor jack"
+ },
+ "oscillating_steam_engine": {
+  "img": "assets/explore/oscillating_steam_engine/input_t.webp",
+  "full": "assets/explore/oscillating_steam_engine/input.webp",
+  "prompt": "According to image W1, build an oscillating steam engine.",
+  "image_id": "W1",
+  "name": "oscillating steam engine"
+ },
+ "bench_drill_press": {
+  "img": "assets/explore/bench_drill_press/input_t.webp",
+  "full": "assets/explore/bench_drill_press/input.webp",
+  "prompt": "According to image W1, build a drill press.",
+  "image_id": "W1",
+  "name": "drill press"
+ },
+ "dining_chair": {
+  "img": "assets/explore/dining_chair/input_t.webp",
+  "full": "assets/explore/dining_chair/input.webp",
+  "prompt": "According to image W2, build a chair.",
+  "image_id": "W2",
+  "name": "chair"
+ },
+ "dining_table": {
+  "img": "assets/explore/dining_table/input_t.webp",
+  "full": "assets/explore/dining_table/input.webp",
+  "prompt": "According to image W1, build a table.",
+  "image_id": "W1",
+  "name": "table"
+ },
+ "bookcase": {
+  "img": "assets/explore/bookcase/input_t.webp",
+  "full": "assets/explore/bookcase/input.webp",
+  "prompt": "According to image W3, build a bookcase.",
+  "image_id": "W3",
+  "name": "bookcase"
+ },
+ "bed_frame": {
+  "img": "assets/explore/bed_frame/input_t.webp",
+  "full": "assets/explore/bed_frame/input.webp",
+  "prompt": "According to image W1, build a bed.",
+  "image_id": "W1",
+  "name": "bed"
+ },
+ "stepladder": {
+  "img": "assets/explore/stepladder/input_t.webp",
+  "full": "assets/explore/stepladder/input.webp",
+  "prompt": "According to image W1, build a stepladder.",
+  "image_id": "W1",
+  "name": "stepladder"
+ },
+ "chest_of_drawers": {
+  "img": "assets/explore/chest_of_drawers/input_t.webp",
+  "full": "assets/explore/chest_of_drawers/input.webp",
+  "prompt": "According to image W2, build a chest of drawers.",
+  "image_id": "W2",
+  "name": "chest of drawers"
+ },
+ "office_desk": {
+  "img": "assets/explore/office_desk/input_t.webp",
+  "full": "assets/explore/office_desk/input.webp",
+  "prompt": "According to image W1, build a desk.",
+  "image_id": "W1",
+  "name": "desk"
+ },
+ "swivel_office_chair": {
+  "img": "assets/explore/swivel_office_chair/input_t.webp",
+  "full": "assets/explore/swivel_office_chair/input.webp",
+  "prompt": "According to image W2, build an office chair.",
+  "image_id": "W2",
+  "name": "office chair"
+ },
+ "hinged_door": {
+  "img": "assets/explore/hinged_door/input_t.webp",
+  "full": "assets/explore/hinged_door/input.webp",
+  "prompt": "According to image W1, build a door.",
+  "image_id": "W1",
+  "name": "door"
+ },
+ "casement_window": {
+  "img": "assets/explore/casement_window/input_t.webp",
+  "full": "assets/explore/casement_window/input.webp",
+  "prompt": "According to image W1, build a window.",
+  "image_id": "W1",
+  "name": "window"
+ },
+ "refrigerator": {
+  "img": "assets/explore/refrigerator/input_t.webp",
+  "full": "assets/explore/refrigerator/input.webp",
+  "prompt": "According to image W1, build a refrigerator.",
+  "image_id": "W1",
+  "name": "refrigerator"
+ },
+ "microwave_oven": {
+  "img": "assets/explore/microwave_oven/input_t.webp",
+  "full": "assets/explore/microwave_oven/input.webp",
+  "prompt": "According to image W2, build a microwave oven.",
+  "image_id": "W2",
+  "name": "microwave oven"
+ },
+ "kitchen_oven": {
+  "img": "assets/explore/kitchen_oven/input_t.webp",
+  "full": "assets/explore/kitchen_oven/input.webp",
+  "prompt": "According to image W2, build an oven.",
+  "image_id": "W2",
+  "name": "oven"
+ },
+ "washing_machine": {
+  "img": "assets/explore/washing_machine/input_t.webp",
+  "full": "assets/explore/washing_machine/input.webp",
+  "prompt": "According to image W1, build a washing machine.",
+  "image_id": "W1",
+  "name": "washing machine"
+ },
+ "dishwasher": {
+  "img": "assets/explore/dishwasher/input_t.webp",
+  "full": "assets/explore/dishwasher/input.webp",
+  "prompt": "According to image W1, build a dishwasher.",
+  "image_id": "W1",
+  "name": "dishwasher"
+ },
+ "oscillating_fan": {
+  "img": "assets/explore/oscillating_fan/input_t.webp",
+  "full": "assets/explore/oscillating_fan/input.webp",
+  "prompt": "According to image W1, build an electric fan.",
+  "image_id": "W1",
+  "name": "electric fan"
+ },
+ "desk_lamp": {
+  "img": "assets/explore/desk_lamp/input_t.webp",
+  "full": "assets/explore/desk_lamp/input.webp",
+  "prompt": "According to image W1, build a balanced-arm lamp.",
+  "image_id": "W1",
+  "name": "balanced-arm lamp"
+ },
+ "toilet": {
+  "img": "assets/explore/toilet/input_t.webp",
+  "full": "assets/explore/toilet/input.webp",
+  "prompt": "According to image W1, build a toilet.",
+  "image_id": "W1",
+  "name": "toilet"
+ },
+ "mixer_faucet": {
+  "img": "assets/explore/mixer_faucet/input_t.webp",
+  "full": "assets/explore/mixer_faucet/input.webp",
+  "prompt": "According to image W1, build a tap.",
+  "image_id": "W1",
+  "name": "tap"
+ },
+ "tool_box": {
+  "img": "assets/explore/tool_box/input_t.webp",
+  "full": "assets/explore/tool_box/input.webp",
+  "prompt": "According to image W1, build a toolbox.",
+  "image_id": "W1",
+  "name": "toolbox"
+ },
+ "wheeled_dumpster": {
+  "img": "assets/explore/wheeled_dumpster/input_t.webp",
+  "full": "assets/explore/wheeled_dumpster/input.webp",
+  "prompt": "According to image W2, build a dumpster.",
+  "image_id": "W2",
+  "name": "dumpster"
+ },
+ "skateboard": {
+  "img": "assets/explore/skateboard/input_t.webp",
+  "full": "assets/explore/skateboard/input.webp",
+  "prompt": "According to image W1, build a skateboard.",
+  "image_id": "W1",
+  "name": "skateboard"
+ },
+ "baby_stroller": {
+  "img": "assets/explore/baby_stroller/input_t.webp",
+  "full": "assets/explore/baby_stroller/input.webp",
+  "prompt": "According to image W1, build a stroller.",
+  "image_id": "W1",
+  "name": "stroller"
+ },
+ "shopping_cart": {
+  "img": "assets/explore/shopping_cart/input_t.webp",
+  "full": "assets/explore/shopping_cart/input.webp",
+  "prompt": "According to image W1, build a shopping cart.",
+  "image_id": "W1",
+  "name": "shopping cart"
+ },
+ "wheelchair": {
+  "img": "assets/explore/wheelchair/input_t.webp",
+  "full": "assets/explore/wheelchair/input.webp",
+  "prompt": "According to image W1, build a wheelchair.",
+  "image_id": "W1",
+  "name": "wheelchair"
+ },
+ "rolling_suitcase": {
+  "img": "assets/explore/rolling_suitcase/input_t.webp",
+  "full": "assets/explore/rolling_suitcase/input.webp",
+  "prompt": "According to image W1, build a suitcase.",
+  "image_id": "W1",
+  "name": "suitcase"
+ },
+ "umbrella": {
+  "img": "assets/explore/umbrella/input_t.webp",
+  "full": "assets/explore/umbrella/input.webp",
+  "prompt": "According to image W1, build an umbrella.",
+  "image_id": "W1",
+  "name": "umbrella"
+ },
+ "scissors": {
+  "img": "assets/explore/scissors/input_t.webp",
+  "full": "assets/explore/scissors/input.webp",
+  "prompt": "According to image W1, build a pair of scissors.",
+  "image_id": "W1",
+  "name": "scissors"
+ },
+ "laptop": {
+  "img": "assets/explore/laptop/input_t.webp",
+  "full": "assets/explore/laptop/input.webp",
+  "prompt": "According to image W1, build a laptop.",
+  "image_id": "W1",
+  "name": "laptop"
+ },
+ "camera": {
+  "img": "assets/explore/camera/input_t.webp",
+  "full": "assets/explore/camera/input.webp",
+  "prompt": "According to image W1, build a camera.",
+  "image_id": "W1",
+  "name": "camera"
+ },
+ "monitor_arm": {
+  "img": "assets/explore/monitor_arm/input_t.webp",
+  "full": "assets/explore/monitor_arm/input.webp",
+  "prompt": "According to image W1, build a monitor mount.",
+  "image_id": "W1",
+  "name": "monitor mount"
+ },
+ "barbecue_grill": {
+  "img": "assets/explore/barbecue_grill/input_t.webp",
+  "full": "assets/explore/barbecue_grill/input.webp",
+  "prompt": "According to image W1, build a barbecue grill.",
+  "image_id": "W1",
+  "name": "barbecue grill"
+ },
+ "spinal_quadruped_robot": {
+  "img": "assets/explore/spinal_quadruped_robot/input_t.webp",
+  "full": "assets/explore/spinal_quadruped_robot/input.webp",
+  "prompt": "According to image W1, build a legged robot.",
+  "image_id": "W1",
+  "name": "legged robot"
+ },
+ "robot_arm": {
+  "img": "assets/explore/robot_arm/input_t.webp",
+  "full": "assets/explore/robot_arm/input.webp",
+  "prompt": "According to image W1, build a robotic arm.",
+  "image_id": "W1",
+  "name": "robotic arm"
+ },
+ "computer_mouse": {
+  "img": "assets/explore/computer_mouse/input_t.webp",
+  "full": "assets/explore/computer_mouse/input.webp",
+  "prompt": "According to image W1, build a computer mouse.",
+  "image_id": "W1",
+  "name": "computer mouse"
+ },
+ "trackball": {
+  "img": "assets/explore/trackball/input_t.webp",
+  "full": "assets/explore/trackball/input.webp",
+  "prompt": "According to image W1, build a trackball.",
+  "image_id": "W1",
+  "name": "trackball"
+ },
+ "headphones": {
+  "img": "assets/explore/headphones/input_t.webp",
+  "full": "assets/explore/headphones/input.webp",
+  "prompt": "According to image W1, build headphones.",
+  "image_id": "W1",
+  "name": "headphones"
+ },
+ "bc_tower_crane": {
+  "img": "assets/explore/bc_tower_crane/input_t.webp",
+  "full": "assets/explore/bc_tower_crane/input.webp",
+  "prompt": "According to image W1, build a tower crane.",
+  "image_id": "W1",
+  "name": "tower crane"
+ },
+ "bc_fire_engine": {
+  "img": "assets/explore/bc_fire_engine/input_t.webp",
+  "full": "assets/explore/bc_fire_engine/input.webp",
+  "prompt": "According to image W1, build a fire engine.",
+  "image_id": "W1",
+  "name": "fire engine"
+ },
+ "bc_forklift": {
+  "img": "assets/explore/bc_forklift/input_t.webp",
+  "full": "assets/explore/bc_forklift/input.webp",
+  "prompt": "According to image W1, build a forklift.",
+  "image_id": "W1",
+  "name": "forklift"
+ },
+ "bc_wind_turbine": {
+  "img": "assets/explore/bc_wind_turbine/input_t.webp",
+  "full": "assets/explore/bc_wind_turbine/input.webp",
+  "prompt": "According to image W1, build a wind turbine.",
+  "image_id": "W1",
+  "name": "wind turbine"
+ },
+ "bc_bulldozer": {
+  "img": "assets/explore/bc_bulldozer/input_t.webp",
+  "full": "assets/explore/bc_bulldozer/input.webp",
+  "prompt": "According to image W1, build a bulldozer.",
+  "image_id": "W1",
+  "name": "bulldozer"
+ },
+ "f360_arbor_press": {
+  "img": "assets/explore/f360_arbor_press/input_t.webp",
+  "full": "assets/explore/f360_arbor_press/input.webp",
+  "prompt": "According to image W1, build an arbor press.",
+  "image_id": "W1",
+  "name": "arbor press"
+ },
+ "f360_toggle_clamp": {
+  "img": "assets/explore/f360_toggle_clamp/input_t.webp",
+  "full": "assets/explore/f360_toggle_clamp/input.webp",
+  "prompt": "According to image W1, build a toggle clamp.",
+  "image_id": "W1",
+  "name": "toggle clamp"
+ },
+ "f360_bench_vise": {
+  "img": "assets/explore/f360_bench_vise/input_t.webp",
+  "full": "assets/explore/f360_bench_vise/input.webp",
+  "prompt": "According to image W1, build a vise.",
+  "image_id": "W1",
+  "name": "vise"
+ },
+ "f360_lathe": {
+  "img": "assets/explore/f360_lathe/input_t.webp",
+  "full": "assets/explore/f360_lathe/input.webp",
+  "prompt": "According to image W1, build a lathe.",
+  "image_id": "W1",
+  "name": "lathe"
+ },
+ "f360_concrete_mixer": {
+  "img": "assets/explore/f360_concrete_mixer/input_t.webp",
+  "full": "assets/explore/f360_concrete_mixer/input.webp",
+  "prompt": "According to image W1, build a concrete mixer.",
+  "image_id": "W1",
+  "name": "concrete mixer"
+ },
+ "f360_microscope": {
+  "img": "assets/explore/f360_microscope/input_t.webp",
+  "full": "assets/explore/f360_microscope/input.webp",
+  "prompt": "According to image W1, build an optical microscope.",
+  "image_id": "W1",
+  "name": "optical microscope"
+ },
+ "f360_telescope": {
+  "img": "assets/explore/f360_telescope/input_t.webp",
+  "full": "assets/explore/f360_telescope/input.webp",
+  "prompt": "According to image W2, build a refracting telescope.",
+  "image_id": "W2",
+  "name": "refracting telescope"
+ },
+ "f360_binoculars": {
+  "img": "assets/explore/f360_binoculars/input_t.webp",
+  "full": "assets/explore/f360_binoculars/input.webp",
+  "prompt": "According to image W1, build binoculars.",
+  "image_id": "W1",
+  "name": "binoculars"
+ },
+ "f360_quadcopter": {
+  "img": "assets/explore/f360_quadcopter/input_t.webp",
+  "full": "assets/explore/f360_quadcopter/input.webp",
+  "prompt": "According to image W1, build a quadcopter.",
+  "image_id": "W1",
+  "name": "quadcopter"
+ },
+ "f360_espresso_machine": {
+  "img": "assets/explore/f360_espresso_machine/input_t.webp",
+  "full": "assets/explore/f360_espresso_machine/input.webp",
+  "prompt": "According to image W1, build an espresso machine.",
+  "image_id": "W1",
+  "name": "espresso machine"
+ },
+ "f360_clock": {
+  "img": "assets/explore/f360_clock/input_t.webp",
+  "full": "assets/explore/f360_clock/input.webp",
+  "prompt": "According to image W1, build a clock.",
+  "image_id": "W1",
+  "name": "clock"
+ },
+ "f360_robotic_gripper": {
+  "img": "assets/explore/f360_robotic_gripper/input_t.webp",
+  "full": "assets/explore/f360_robotic_gripper/input.webp",
+  "prompt": "According to image W1, build a robot end effector.",
+  "image_id": "W1",
+  "name": "robot end effector"
+ },
+ "f360_gear_pump": {
+  "img": "assets/explore/f360_gear_pump/input_t.webp",
+  "full": "assets/explore/f360_gear_pump/input.webp",
+  "prompt": "According to image W1, build a gear pump.",
+  "image_id": "W1",
+  "name": "gear pump"
+ },
+ "f360_newtons_cradle": {
+  "img": "assets/explore/f360_newtons_cradle/input_t.webp",
+  "full": "assets/explore/f360_newtons_cradle/input.webp",
+  "prompt": "According to image W1, build a Newton's cradle.",
+  "image_id": "W1",
+  "name": "Newton's cradle"
+ },
+ "f360_globe_valve": {
+  "img": "assets/explore/f360_globe_valve/input_t.webp",
+  "full": "assets/explore/f360_globe_valve/input.webp",
+  "prompt": "According to image W1, build a globe valve.",
+  "image_id": "W1",
+  "name": "globe valve"
+ },
+ "f360_beam_engine": {
+  "img": "assets/explore/f360_beam_engine/input_t.webp",
+  "full": "assets/explore/f360_beam_engine/input.webp",
+  "prompt": "According to image W1, build a beam engine.",
+  "image_id": "W1",
+  "name": "beam engine"
+ },
+ "f360_hand_drill": {
+  "img": "assets/explore/f360_hand_drill/input_t.webp",
+  "full": "assets/explore/f360_hand_drill/input.webp",
+  "prompt": "According to image W1, build a hand drill.",
+  "image_id": "W1",
+  "name": "hand drill"
+ },
+ "f360_pumpjack": {
+  "img": "assets/explore/f360_pumpjack/input_t.webp",
+  "full": "assets/explore/f360_pumpjack/input.webp",
+  "prompt": "According to image W1, build a pumpjack.",
+  "image_id": "W1",
+  "name": "pumpjack"
+ },
+ "f360_air_compressor": {
+  "img": "assets/explore/f360_air_compressor/input_t.webp",
+  "full": "assets/explore/f360_air_compressor/input.webp",
+  "prompt": "According to image W1, build a compressor.",
+  "image_id": "W1",
+  "name": "compressor"
+ },
+ "f360_scissor_lift": {
+  "img": "assets/explore/f360_scissor_lift/input_t.webp",
+  "full": "assets/explore/f360_scissor_lift/input.webp",
+  "prompt": "According to image W1, build an aerial work platform.",
+  "image_id": "W1",
+  "name": "aerial work platform"
+ },
+ "f360_hair_dryer": {
+  "img": "assets/explore/f360_hair_dryer/input_t.webp",
+  "full": "assets/explore/f360_hair_dryer/input.webp",
+  "prompt": "According to image W1, build a hair dryer.",
+  "image_id": "W1",
+  "name": "hair dryer"
+ },
+ "f360_kick_scooter": {
+  "img": "assets/explore/f360_kick_scooter/input_t.webp",
+  "full": "assets/explore/f360_kick_scooter/input.webp",
+  "prompt": "According to image W1, build a kick scooter.",
+  "image_id": "W1",
+  "name": "kick scooter"
+ },
+ "f360_unicycle": {
+  "img": "assets/explore/f360_unicycle/input_t.webp",
+  "full": "assets/explore/f360_unicycle/input.webp",
+  "prompt": "According to image W1, build a unicycle.",
+  "image_id": "W1",
+  "name": "unicycle"
+ },
+ "f360_electric_guitar": {
+  "img": "assets/explore/f360_electric_guitar/input_t.webp",
+  "full": "assets/explore/f360_electric_guitar/input.webp",
+  "prompt": "According to image W1, build an electric guitar.",
+  "image_id": "W1",
+  "name": "electric guitar"
+ },
+ "f360_bicycle": {
+  "img": "assets/explore/f360_bicycle/input_t.webp",
+  "full": "assets/explore/f360_bicycle/input.webp",
+  "prompt": "According to image W1, build a bicycle.",
+  "image_id": "W1",
+  "name": "bicycle"
+ },
+ "f360_sailboat": {
+  "img": "assets/explore/f360_sailboat/input_t.webp",
+  "full": "assets/explore/f360_sailboat/input.webp",
+  "prompt": "According to image W1, build a sailboat.",
+  "image_id": "W1",
+  "name": "sailboat"
+ },
+ "f360_glider": {
+  "img": "assets/explore/f360_glider/input_t.webp",
+  "full": "assets/explore/f360_glider/input.webp",
+  "prompt": "According to image W1, build a glider.",
+  "image_id": "W1",
+  "name": "glider"
+ },
+ "f360_vacuum_cleaner": {
+  "img": "assets/explore/f360_vacuum_cleaner/input_t.webp",
+  "full": "assets/explore/f360_vacuum_cleaner/input.webp",
+  "prompt": "According to image W1, build a vacuum cleaner.",
+  "image_id": "W1",
+  "name": "vacuum cleaner"
+ },
+ "f360_electric_toothbrush": {
+  "img": "assets/explore/f360_electric_toothbrush/input_t.webp",
+  "full": "assets/explore/f360_electric_toothbrush/input.webp",
+  "prompt": "According to image W1, build an electric toothbrush.",
+  "image_id": "W1",
+  "name": "electric toothbrush"
+ },
+ "f360_smartphone": {
+  "img": "assets/explore/f360_smartphone/input_t.webp",
+  "full": "assets/explore/f360_smartphone/input.webp",
+  "prompt": "According to image W1, build a smartphone.",
+  "image_id": "W1",
+  "name": "smartphone"
+ },
+ "f360_pipe_wrench": {
+  "img": "assets/explore/f360_pipe_wrench/input_t.webp",
+  "full": "assets/explore/f360_pipe_wrench/input.webp",
+  "prompt": "According to image W1, build a pipe wrench.",
+  "image_id": "W1",
+  "name": "pipe wrench"
+ },
+ "f360_weight_bench": {
+  "img": "assets/explore/f360_weight_bench/input_t.webp",
+  "full": "assets/explore/f360_weight_bench/input.webp",
+  "prompt": "According to image W1, build a utility bench.",
+  "image_id": "W1",
+  "name": "utility bench"
+ },
+ "f360_worm_gearbox": {
+  "img": "assets/explore/f360_worm_gearbox/input_t.webp",
+  "full": "assets/explore/f360_worm_gearbox/input.webp",
+  "prompt": "According to image W3, build a worm drive.",
+  "image_id": "W3",
+  "name": "worm drive"
+ },
+ "f360_tape_dispenser": {
+  "img": "assets/explore/f360_tape_dispenser/input_t.webp",
+  "full": "assets/explore/f360_tape_dispenser/input.webp",
+  "prompt": "According to image W2, build a tape dispenser.",
+  "image_id": "W2",
+  "name": "tape dispenser"
+ },
+ "f360_electric_motor": {
+  "img": "assets/explore/f360_electric_motor/input_t.webp",
+  "full": "assets/explore/f360_electric_motor/input.webp",
+  "prompt": "According to image W1, build an electric motor.",
+  "image_id": "W1",
+  "name": "electric motor"
+ },
+ "f360_universal_joint": {
+  "img": "assets/explore/f360_universal_joint/input_t.webp",
+  "full": "assets/explore/f360_universal_joint/input.webp",
+  "prompt": "According to image W1, build a universal joint.",
+  "image_id": "W1",
+  "name": "universal joint"
+ },
+ "f360_remote_control": {
+  "img": "assets/explore/f360_remote_control/input_t.webp",
+  "full": "assets/explore/f360_remote_control/input.webp",
+  "prompt": "According to image W1, build a remote control.",
+  "image_id": "W1",
+  "name": "remote control"
+ },
+ "f360_dust_collector": {
+  "img": "assets/explore/f360_dust_collector/input_t.webp",
+  "full": "assets/explore/f360_dust_collector/input.webp",
+  "prompt": "According to image W1, build a dust collector.",
+  "image_id": "W1",
+  "name": "dust collector"
+ },
+ "bc_airliner": {
+  "img": "assets/explore/bc_airliner/input_t.webp",
+  "full": "assets/explore/bc_airliner/input.webp",
+  "prompt": "According to image W1, build an airplane.",
+  "image_id": "W1",
+  "name": "airplane"
+ },
+ "bc_airport_tug": {
+  "img": "assets/explore/bc_airport_tug/input_t.webp",
+  "full": "assets/explore/bc_airport_tug/input.webp",
+  "prompt": "According to image W2, build a pushback tug.",
+  "image_id": "W2",
+  "name": "pushback tug"
+ },
+ "bc_box_truck": {
+  "img": "assets/explore/bc_box_truck/input_t.webp",
+  "full": "assets/explore/bc_box_truck/input.webp",
+  "prompt": "According to image W2, build a box truck.",
+  "image_id": "W2",
+  "name": "box truck"
+ },
+ "bc_boxcar": {
+  "img": "assets/explore/bc_boxcar/input_t.webp",
+  "full": "assets/explore/bc_boxcar/input.webp",
+  "prompt": "According to image W1, build a boxcar.",
+  "image_id": "W1",
+  "name": "boxcar"
+ },
+ "bc_bus": {
+  "img": "assets/explore/bc_bus/input_t.webp",
+  "full": "assets/explore/bc_bus/input.webp",
+  "prompt": "According to image W1, build a bus.",
+  "image_id": "W1",
+  "name": "bus"
+ },
+ "bc_caboose": {
+  "img": "assets/explore/bc_caboose/input_t.webp",
+  "full": "assets/explore/bc_caboose/input.webp",
+  "prompt": "According to image W1, build a caboose.",
+  "image_id": "W1",
+  "name": "caboose"
+ },
+ "bc_carriage": {
+  "img": "assets/explore/bc_carriage/input_t.webp",
+  "full": "assets/explore/bc_carriage/input.webp",
+  "prompt": "According to image W1, build a carriage.",
+  "image_id": "W1",
+  "name": "carriage"
+ },
+ "bc_diesel_locomotive": {
+  "img": "assets/explore/bc_diesel_locomotive/input_t.webp",
+  "full": "assets/explore/bc_diesel_locomotive/input.webp",
+  "prompt": "According to image W1, build a diesel locomotive.",
+  "image_id": "W1",
+  "name": "diesel locomotive"
+ },
+ "bc_dump_truck": {
+  "img": "assets/explore/bc_dump_truck/input_t.webp",
+  "full": "assets/explore/bc_dump_truck/input.webp",
+  "prompt": "According to image W2, build a dump truck.",
+  "image_id": "W2",
+  "name": "dump truck"
+ },
+ "bc_fishing_boat": {
+  "img": "assets/explore/bc_fishing_boat/input_t.webp",
+  "full": "assets/explore/bc_fishing_boat/input.webp",
+  "prompt": "According to image W1, build a fishing vessel.",
+  "image_id": "W1",
+  "name": "fishing vessel"
+ },
+ "bc_food_truck": {
+  "img": "assets/explore/bc_food_truck/input_t.webp",
+  "full": "assets/explore/bc_food_truck/input.webp",
+  "prompt": "According to image W1, build a food truck.",
+  "image_id": "W1",
+  "name": "food truck"
+ },
+ "bc_garbage_truck": {
+  "img": "assets/explore/bc_garbage_truck/input_t.webp",
+  "full": "assets/explore/bc_garbage_truck/input.webp",
+  "prompt": "According to image W1, build a garbage truck.",
+  "image_id": "W1",
+  "name": "garbage truck"
+ },
+ "bc_go_kart": {
+  "img": "assets/explore/bc_go_kart/input_t.webp",
+  "full": "assets/explore/bc_go_kart/input.webp",
+  "prompt": "According to image W1, build a go-kart.",
+  "image_id": "W1",
+  "name": "go-kart"
+ },
+ "bc_hopper_car": {
+  "img": "assets/explore/bc_hopper_car/input_t.webp",
+  "full": "assets/explore/bc_hopper_car/input.webp",
+  "prompt": "According to image W1, build a hopper car.",
+  "image_id": "W1",
+  "name": "hopper car"
+ },
+ "bc_limousine": {
+  "img": "assets/explore/bc_limousine/input_t.webp",
+  "full": "assets/explore/bc_limousine/input.webp",
+  "prompt": "According to image W1, build a limousine.",
+  "image_id": "W1",
+  "name": "limousine"
+ },
+ "bc_logging_truck": {
+  "img": "assets/explore/bc_logging_truck/input_t.webp",
+  "full": "assets/explore/bc_logging_truck/input.webp",
+  "prompt": "According to image W1, build a logging truck.",
+  "image_id": "W1",
+  "name": "logging truck"
+ },
+ "bc_mobile_crane": {
+  "img": "assets/explore/bc_mobile_crane/input_t.webp",
+  "full": "assets/explore/bc_mobile_crane/input.webp",
+  "prompt": "According to image W1, build a mobile crane.",
+  "image_id": "W1",
+  "name": "mobile crane"
+ },
+ "bc_monster_truck": {
+  "img": "assets/explore/bc_monster_truck/input_t.webp",
+  "full": "assets/explore/bc_monster_truck/input.webp",
+  "prompt": "According to image W1, build a monster truck.",
+  "image_id": "W1",
+  "name": "monster truck"
+ },
+ "bc_motor_grader": {
+  "img": "assets/explore/bc_motor_grader/input_t.webp",
+  "full": "assets/explore/bc_motor_grader/input.webp",
+  "prompt": "According to image W1, build a grader.",
+  "image_id": "W1",
+  "name": "grader"
+ },
+ "bc_motorhome": {
+  "img": "assets/explore/bc_motorhome/input_t.webp",
+  "full": "assets/explore/bc_motorhome/input.webp",
+  "prompt": "According to image W1, build a motorhome.",
+  "image_id": "W1",
+  "name": "motorhome"
+ },
+ "bc_piano": {
+  "img": "assets/explore/bc_piano/input_t.webp",
+  "full": "assets/explore/bc_piano/input.webp",
+  "prompt": "According to image W1, build a piano.",
+  "image_id": "W1",
+  "name": "piano"
+ },
+ "bc_pickup_truck": {
+  "img": "assets/explore/bc_pickup_truck/input_t.webp",
+  "full": "assets/explore/bc_pickup_truck/input.webp",
+  "prompt": "According to image W1, build a pickup truck.",
+  "image_id": "W1",
+  "name": "pickup truck"
+ },
+ "bc_pipe_organ": {
+  "img": "assets/explore/bc_pipe_organ/input_t.webp",
+  "full": "assets/explore/bc_pipe_organ/input.webp",
+  "prompt": "According to image W1, build a pipe organ.",
+  "image_id": "W1",
+  "name": "pipe organ"
+ },
+ "bc_police_car": {
+  "img": "assets/explore/bc_police_car/input_t.webp",
+  "full": "assets/explore/bc_police_car/input.webp",
+  "prompt": "According to image W1, build a police car.",
+  "image_id": "W1",
+  "name": "police car"
+ },
+ "bc_race_car": {
+  "img": "assets/explore/bc_race_car/input_t.webp",
+  "full": "assets/explore/bc_race_car/input.webp",
+  "prompt": "According to image W1, build a Formula One car.",
+  "image_id": "W1",
+  "name": "Formula One car"
+ },
+ "bc_semi_trailer_truck": {
+  "img": "assets/explore/bc_semi_trailer_truck/input_t.webp",
+  "full": "assets/explore/bc_semi_trailer_truck/input.webp",
+  "prompt": "According to image W1, build a semi-trailer truck.",
+  "image_id": "W1",
+  "name": "semi-trailer truck"
+ },
+ "bc_ship": {
+  "img": "assets/explore/bc_ship/input_t.webp",
+  "full": "assets/explore/bc_ship/input.webp",
+  "prompt": "According to image W1, build a ship.",
+  "image_id": "W1",
+  "name": "ship"
+ },
+ "bc_skid_steer_loader": {
+  "img": "assets/explore/bc_skid_steer_loader/input_t.webp",
+  "full": "assets/explore/bc_skid_steer_loader/input.webp",
+  "prompt": "According to image W1, build a skid-steer loader.",
+  "image_id": "W1",
+  "name": "skid-steer loader"
+ },
+ "bc_snowmobile": {
+  "img": "assets/explore/bc_snowmobile/input_t.webp",
+  "full": "assets/explore/bc_snowmobile/input.webp",
+  "prompt": "According to image W1, build a snowmobile.",
+  "image_id": "W1",
+  "name": "snowmobile"
+ },
+ "bc_steam_locomotive": {
+  "img": "assets/explore/bc_steam_locomotive/input_t.webp",
+  "full": "assets/explore/bc_steam_locomotive/input.webp",
+  "prompt": "According to image W1, build a steam locomotive.",
+  "image_id": "W1",
+  "name": "steam locomotive"
+ },
+ "bc_submarine": {
+  "img": "assets/explore/bc_submarine/input_t.webp",
+  "full": "assets/explore/bc_submarine/input.webp",
+  "prompt": "According to image W1, build a submarine.",
+  "image_id": "W1",
+  "name": "submarine"
+ },
+ "bc_table_football": {
+  "img": "assets/explore/bc_table_football/input_t.webp",
+  "full": "assets/explore/bc_table_football/input.webp",
+  "prompt": "According to image W1, build a table football.",
+  "image_id": "W1",
+  "name": "table football"
+ },
+ "bc_table_saw": {
+  "img": "assets/explore/bc_table_saw/input_t.webp",
+  "full": "assets/explore/bc_table_saw/input.webp",
+  "prompt": "According to image W1, build a table saw.",
+  "image_id": "W1",
+  "name": "table saw"
+ },
+ "bc_tank": {
+  "img": "assets/explore/bc_tank/input_t.webp",
+  "full": "assets/explore/bc_tank/input.webp",
+  "prompt": "According to image W1, build a tank.",
+  "image_id": "W1",
+  "name": "tank"
+ },
+ "bc_tank_car": {
+  "img": "assets/explore/bc_tank_car/input_t.webp",
+  "full": "assets/explore/bc_tank_car/input.webp",
+  "prompt": "According to image W1, build a tank car.",
+  "image_id": "W1",
+  "name": "tank car"
+ },
+ "bc_tank_truck": {
+  "img": "assets/explore/bc_tank_truck/input_t.webp",
+  "full": "assets/explore/bc_tank_truck/input.webp",
+  "prompt": "According to image W1, build a tank truck.",
+  "image_id": "W1",
+  "name": "tank truck"
+ },
+ "bc_tow_truck": {
+  "img": "assets/explore/bc_tow_truck/input_t.webp",
+  "full": "assets/explore/bc_tow_truck/input.webp",
+  "prompt": "According to image W1, build a tow truck.",
+  "image_id": "W1",
+  "name": "tow truck"
+ },
+ "bc_tram": {
+  "img": "assets/explore/bc_tram/input_t.webp",
+  "full": "assets/explore/bc_tram/input.webp",
+  "prompt": "According to image W1, build a tram.",
+  "image_id": "W1",
+  "name": "tram"
+ },
+ "bc_tricycle": {
+  "img": "assets/explore/bc_tricycle/input_t.webp",
+  "full": "assets/explore/bc_tricycle/input.webp",
+  "prompt": "According to image W1, build a tricycle.",
+  "image_id": "W1",
+  "name": "tricycle"
+ },
+ "bc_van": {
+  "img": "assets/explore/bc_van/input_t.webp",
+  "full": "assets/explore/bc_van/input.webp",
+  "prompt": "According to image W1, build a van.",
+  "image_id": "W1",
+  "name": "van"
+ },
+ "bc_vending_machine": {
+  "img": "assets/explore/bc_vending_machine/input_t.webp",
+  "full": "assets/explore/bc_vending_machine/input.webp",
+  "prompt": "According to image W1, build a vending machine.",
+  "image_id": "W1",
+  "name": "vending machine"
+ },
+ "bc_auto_rickshaw": {
+  "img": "assets/explore/bc_auto_rickshaw/input_t.webp",
+  "full": "assets/explore/bc_auto_rickshaw/input.webp",
+  "prompt": "According to image W1, build an auto rickshaw.",
+  "image_id": "W1",
+  "name": "auto rickshaw"
+ },
+ "bc_road_roller": {
+  "img": "assets/explore/bc_road_roller/input_t.webp",
+  "full": "assets/explore/bc_road_roller/input.webp",
+  "prompt": "According to image W1, build a road roller.",
+  "image_id": "W1",
+  "name": "road roller"
+ },
+ "bc_backhoe_loader": {
+  "img": "assets/explore/bc_backhoe_loader/input_t.webp",
+  "full": "assets/explore/bc_backhoe_loader/input.webp",
+  "prompt": "According to image W1, build a backhoe loader.",
+  "image_id": "W1",
+  "name": "backhoe loader"
+ },
+ "bc_carousel": {
+  "img": "assets/explore/bc_carousel/input_t.webp",
+  "full": "assets/explore/bc_carousel/input.webp",
+  "prompt": "According to image W1, build a carousel.",
+  "image_id": "W1",
+  "name": "carousel"
+ },
+ "robotic_hand": {
+  "img": "assets/explore/robotic_hand/input_t.webp",
+  "full": "assets/explore/robotic_hand/input.webp",
+  "prompt": "According to image W3, build a robotic hand.",
+  "image_id": "W3",
+  "name": "robotic hand"
+ },
+ "computer_keyboard": {
+  "img": "assets/explore/computer_keyboard/input_t.webp",
+  "full": "assets/explore/computer_keyboard/input.webp",
+  "prompt": "According to image W1, build a computer keyboard.",
+  "image_id": "W1",
+  "name": "computer keyboard"
+ },
+ "computer_case": {
+  "img": "assets/explore/computer_case/input_t.webp",
+  "full": "assets/explore/computer_case/input.webp",
+  "prompt": "According to image W1, build a computer case.",
+  "image_id": "W1",
+  "name": "computer case"
+ },
+ "pc_pen_plotter": {
+  "img": "assets/explore/pc_pen_plotter/input_t.webp",
+  "full": "assets/explore/pc_pen_plotter/input.webp",
+  "prompt": "According to image W1, build a plotter.",
+  "image_id": "W1",
+  "name": "plotter"
+ },
+ "pc_underwater_rov": {
+  "img": "assets/explore/pc_underwater_rov/input_t.webp",
+  "full": "assets/explore/pc_underwater_rov/input.webp",
+  "prompt": "According to image W2, build a remotely operated underwater vehicle.",
+  "image_id": "W2",
+  "name": "remotely operated underwater vehicle"
+ },
+ "pc_raman_spectrometer": {
+  "img": "assets/explore/pc_raman_spectrometer/input_t.webp",
+  "full": "assets/explore/pc_raman_spectrometer/input.webp",
+  "prompt": "According to image W2, build a spectrometer.",
+  "image_id": "W2",
+  "name": "spectrometer"
+ },
+ "pc_testing_machine": {
+  "img": "assets/explore/pc_testing_machine/input_t.webp",
+  "full": "assets/explore/pc_testing_machine/input.webp",
+  "prompt": "According to image W1, build a universal testing machine.",
+  "image_id": "W1",
+  "name": "universal testing machine"
+ },
+ "pc_rheometer": {
+  "img": "assets/explore/pc_rheometer/input_t.webp",
+  "full": "assets/explore/pc_rheometer/input.webp",
+  "prompt": "According to image W1, build a rheometer.",
+  "image_id": "W1",
+  "name": "rheometer"
+ },
+ "pc_thermal_cycler": {
+  "img": "assets/explore/pc_thermal_cycler/input_t.webp",
+  "full": "assets/explore/pc_thermal_cycler/input.webp",
+  "prompt": "According to image W1, build a thermal cycler.",
+  "image_id": "W1",
+  "name": "thermal cycler"
+ },
+ "pc_shredder": {
+  "img": "assets/explore/pc_shredder/input_t.webp",
+  "full": "assets/explore/pc_shredder/input.webp",
+  "prompt": "According to image W1, build an industrial shredder.",
+  "image_id": "W1",
+  "name": "industrial shredder"
+ },
+ "pc_injection_moulder": {
+  "img": "assets/explore/pc_injection_moulder/input_t.webp",
+  "full": "assets/explore/pc_injection_moulder/input.webp",
+  "prompt": "According to image W1, build an injection molding machine.",
+  "image_id": "W1",
+  "name": "injection molding machine"
+ },
+ "pc_heat_press": {
+  "img": "assets/explore/pc_heat_press/input_t.webp",
+  "full": "assets/explore/pc_heat_press/input.webp",
+  "prompt": "According to image W1, build a heat press.",
+  "image_id": "W1",
+  "name": "heat press"
+ },
+ "pc_equatorial_mount": {
+  "img": "assets/explore/pc_equatorial_mount/input_t.webp",
+  "full": "assets/explore/pc_equatorial_mount/input.webp",
+  "prompt": "According to image W1, build an equatorial mount.",
+  "image_id": "W1",
+  "name": "equatorial mount"
+ },
+ "pc_cubesat": {
+  "img": "assets/explore/pc_cubesat/input_t.webp",
+  "full": "assets/explore/pc_cubesat/input.webp",
+  "prompt": "According to image W1, build a CubeSat.",
+  "image_id": "W1",
+  "name": "CubeSat"
+ },
+ "pc_blade_grinder": {
+  "img": "assets/explore/pc_blade_grinder/input_t.webp",
+  "full": "assets/explore/pc_blade_grinder/input.webp",
+  "prompt": "According to image W1, build a blade grinder.",
+  "image_id": "W1",
+  "name": "blade grinder"
+ },
+ "pc_camera_slider": {
+  "img": "assets/explore/pc_camera_slider/input_t.webp",
+  "full": "assets/explore/pc_camera_slider/input.webp",
+  "prompt": "According to image W1, build a camera dolly.",
+  "image_id": "W1",
+  "name": "camera dolly"
+ },
+ "pc_3d_scanner": {
+  "img": "assets/explore/pc_3d_scanner/input_t.webp",
+  "full": "assets/explore/pc_3d_scanner/input.webp",
+  "prompt": "According to image W1, build a 3D scanner.",
+  "image_id": "W1",
+  "name": "3D scanner"
+ },
+ "f360_calipers": {
+  "img": "assets/explore/f360_calipers/input_t.webp",
+  "full": "assets/explore/f360_calipers/input.webp",
+  "prompt": "According to image W3, build a pair of calipers.",
+  "image_id": "W3",
+  "name": "calipers"
+ },
+ "f360_coilover": {
+  "img": "assets/explore/f360_coilover/input_t.webp",
+  "full": "assets/explore/f360_coilover/input.webp",
+  "prompt": "According to image W1, build a coilover.",
+  "image_id": "W1",
+  "name": "coilover"
+ },
+ "f360_door_lock": {
+  "img": "assets/explore/f360_door_lock/input_t.webp",
+  "full": "assets/explore/f360_door_lock/input.webp",
+  "prompt": "According to image W1, build a lock.",
+  "image_id": "W1",
+  "name": "lock"
+ },
+ "f360_fighter_jet": {
+  "img": "assets/explore/f360_fighter_jet/input_t.webp",
+  "full": "assets/explore/f360_fighter_jet/input.webp",
+  "prompt": "According to image W1, build a fighter aircraft.",
+  "image_id": "W1",
+  "name": "fighter aircraft"
+ },
+ "f360_fuel_injector": {
+  "img": "assets/explore/f360_fuel_injector/input_t.webp",
+  "full": "assets/explore/f360_fuel_injector/input.webp",
+  "prompt": "According to image W1, build a fuel injector.",
+  "image_id": "W1",
+  "name": "fuel injector"
+ },
+ "f360_master_cylinder": {
+  "img": "assets/explore/f360_master_cylinder/input_t.webp",
+  "full": "assets/explore/f360_master_cylinder/input.webp",
+  "prompt": "According to image W2, build a master cylinder.",
+  "image_id": "W2",
+  "name": "master cylinder"
+ },
+ "f360_moka_pot": {
+  "img": "assets/explore/f360_moka_pot/input_t.webp",
+  "full": "assets/explore/f360_moka_pot/input.webp",
+  "prompt": "According to image W1, build a moka pot.",
+  "image_id": "W1",
+  "name": "moka pot"
+ },
+ "f360_railway_bogie": {
+  "img": "assets/explore/f360_railway_bogie/input_t.webp",
+  "full": "assets/explore/f360_railway_bogie/input.webp",
+  "prompt": "According to image W1, build a bogie.",
+  "image_id": "W1",
+  "name": "bogie"
+ },
+ "f360_record_player": {
+  "img": "assets/explore/f360_record_player/input_t.webp",
+  "full": "assets/explore/f360_record_player/input.webp",
+  "prompt": "According to image W1, build a record player.",
+  "image_id": "W1",
+  "name": "record player"
+ },
+ "f360_pan_tilt_head": {
+  "img": "assets/explore/f360_pan_tilt_head/input_t.webp",
+  "full": "assets/explore/f360_pan_tilt_head/input.webp",
+  "prompt": "According to image W1, build a pan-tilt head.",
+  "image_id": "W1",
+  "name": "pan-tilt head"
+ },
+ "f360_roller_conveyor": {
+  "img": "assets/explore/f360_roller_conveyor/input_t.webp",
+  "full": "assets/explore/f360_roller_conveyor/input.webp",
+  "prompt": "According to image W1, build a roller conveyor.",
+  "image_id": "W1",
+  "name": "roller conveyor"
+ },
+ "f360_winch": {
+  "img": "assets/explore/f360_winch/input_t.webp",
+  "full": "assets/explore/f360_winch/input.webp",
+  "prompt": "According to image W1, build a winch.",
+  "image_id": "W1",
+  "name": "winch"
+ },
+ "f360_wristwatch": {
+  "img": "assets/explore/f360_wristwatch/input_t.webp",
+  "full": "assets/explore/f360_wristwatch/input.webp",
+  "prompt": "According to image W3, build a watch.",
+  "image_id": "W3",
+  "name": "watch"
+ },
+ "f360_motorcycle_fork": {
+  "img": "assets/explore/f360_motorcycle_fork/input_t.webp",
+  "full": "assets/explore/f360_motorcycle_fork/input.webp",
+  "prompt": "According to image W1, build a motorcycle fork.",
+  "image_id": "W1",
+  "name": "motorcycle fork"
+ },
+ "av_wardrobe": {
+  "img": "assets/explore/av_wardrobe/input_t.webp",
+  "full": "assets/explore/av_wardrobe/input.webp",
+  "prompt": "According to image W2, build a wardrobe.",
+  "image_id": "W2",
+  "name": "wardrobe"
+ },
+ "av_tv_stand": {
+  "img": "assets/explore/av_tv_stand/input_t.webp",
+  "full": "assets/explore/av_tv_stand/input.webp",
+  "prompt": "According to image W1, build an entertainment center.",
+  "image_id": "W1",
+  "name": "entertainment center"
+ },
+ "av_bathroom_vanity": {
+  "img": "assets/explore/av_bathroom_vanity/input_t.webp",
+  "full": "assets/explore/av_bathroom_vanity/input.webp",
+  "prompt": "According to image W1, build a bathroom cabinet.",
+  "image_id": "W1",
+  "name": "bathroom cabinet"
+ },
+ "av_blender": {
+  "img": "assets/explore/av_blender/input_t.webp",
+  "full": "assets/explore/av_blender/input.webp",
+  "prompt": "According to image W1, build a blender.",
+  "image_id": "W1",
+  "name": "blender"
+ },
+ "av_electric_kettle": {
+  "img": "assets/explore/av_electric_kettle/input_t.webp",
+  "full": "assets/explore/av_electric_kettle/input.webp",
+  "prompt": "According to image W1, build a kettle.",
+  "image_id": "W1",
+  "name": "kettle"
+ },
+ "av_toaster": {
+  "img": "assets/explore/av_toaster/input_t.webp",
+  "full": "assets/explore/av_toaster/input.webp",
+  "prompt": "According to image W1, build a toaster.",
+  "image_id": "W1",
+  "name": "toaster"
+ },
+ "av_soap_dispenser": {
+  "img": "assets/explore/av_soap_dispenser/input_t.webp",
+  "full": "assets/explore/av_soap_dispenser/input.webp",
+  "prompt": "According to image W1, build a soap dispenser.",
+  "image_id": "W1",
+  "name": "soap dispenser"
+ },
+ "av_flashlight": {
+  "img": "assets/explore/av_flashlight/input_t.webp",
+  "full": "assets/explore/av_flashlight/input.webp",
+  "prompt": "According to image W2, build a flashlight.",
+  "image_id": "W2",
+  "name": "flashlight"
+ },
+ "av_bar_stool": {
+  "img": "assets/explore/av_bar_stool/input_t.webp",
+  "full": "assets/explore/av_bar_stool/input.webp",
+  "prompt": "According to image W1, build a bar stool.",
+  "image_id": "W1",
+  "name": "bar stool"
+ },
+ "av_recliner": {
+  "img": "assets/explore/av_recliner/input_t.webp",
+  "full": "assets/explore/av_recliner/input.webp",
+  "prompt": "According to image W1, build a recliner.",
+  "image_id": "W1",
+  "name": "recliner"
+ },
+ "av_spray_bottle": {
+  "img": "assets/explore/av_spray_bottle/input_t.webp",
+  "full": "assets/explore/av_spray_bottle/input.webp",
+  "prompt": "According to image W1, build a spray bottle.",
+  "image_id": "W1",
+  "name": "spray bottle"
+ },
+ "av_safe": {
+  "img": "assets/explore/av_safe/input_t.webp",
+  "full": "assets/explore/av_safe/input.webp",
+  "prompt": "According to image W1, build a safe.",
+  "image_id": "W1",
+  "name": "safe"
+ },
+ "av_pedal_bin": {
+  "img": "assets/explore/av_pedal_bin/input_t.webp",
+  "full": "assets/explore/av_pedal_bin/input.webp",
+  "prompt": "According to image W1, build a pedal bin.",
+  "image_id": "W1",
+  "name": "pedal bin"
+ },
+ "av_game_controller": {
+  "img": "assets/explore/av_game_controller/input_t.webp",
+  "full": "assets/explore/av_game_controller/input.webp",
+  "prompt": "According to image W1, build a gamepad.",
+  "image_id": "W1",
+  "name": "gamepad"
+ },
+ "av_locker": {
+  "img": "assets/explore/av_locker/input_t.webp",
+  "full": "assets/explore/av_locker/input.webp",
+  "prompt": "According to image W1, build a locker.",
+  "image_id": "W1",
+  "name": "locker"
+ },
+ "av_standing_mirror": {
+  "img": "assets/explore/av_standing_mirror/input_t.webp",
+  "full": "assets/explore/av_standing_mirror/input.webp",
+  "prompt": "According to image W1, build a cheval mirror.",
+  "image_id": "W1",
+  "name": "cheval mirror"
+ },
+ "pn_bucket": {
+  "img": "assets/explore/pn_bucket/input_t.webp",
+  "full": "assets/explore/pn_bucket/input.webp",
+  "prompt": "According to image W1, build a bucket.",
+  "image_id": "W1",
+  "name": "bucket"
+ },
+ "pn_chandelier": {
+  "img": "assets/explore/pn_chandelier/input_t.webp",
+  "full": "assets/explore/pn_chandelier/input.webp",
+  "prompt": "According to image W1, build a chandelier.",
+  "image_id": "W1",
+  "name": "chandelier"
+ },
+ "pn_computer_monitor": {
+  "img": "assets/explore/pn_computer_monitor/input_t.webp",
+  "full": "assets/explore/pn_computer_monitor/input.webp",
+  "prompt": "According to image W1, build a computer monitor.",
+  "image_id": "W1",
+  "name": "computer monitor"
+ },
+ "pn_eyeglasses": {
+  "img": "assets/explore/pn_eyeglasses/input_t.webp",
+  "full": "assets/explore/pn_eyeglasses/input.webp",
+  "prompt": "According to image W2, build a pair of glasses.",
+  "image_id": "W2",
+  "name": "glasses"
+ },
+ "pn_backpack": {
+  "img": "assets/explore/pn_backpack/input_t.webp",
+  "full": "assets/explore/pn_backpack/input.webp",
+  "prompt": "According to image W1, build a backpack.",
+  "image_id": "W1",
+  "name": "backpack"
+ },
+ "pn_pen": {
+  "img": "assets/explore/pn_pen/input_t.webp",
+  "full": "assets/explore/pn_pen/input.webp",
+  "prompt": "According to image W1, build a pen.",
+  "image_id": "W1",
+  "name": "pen"
+ },
+ "pn_teapot": {
+  "img": "assets/explore/pn_teapot/input_t.webp",
+  "full": "assets/explore/pn_teapot/input.webp",
+  "prompt": "According to image W1, build a teapot.",
+  "image_id": "W1",
+  "name": "teapot"
+ },
+ "pn_sword": {
+  "img": "assets/explore/pn_sword/input_t.webp",
+  "full": "assets/explore/pn_sword/input.webp",
+  "prompt": "According to image W1, build a sword.",
+  "image_id": "W1",
+  "name": "sword"
+ },
+ "pc_3d_printer": {
+  "img": "assets/explore/pc_3d_printer/input_t.webp",
+  "full": "assets/explore/pc_3d_printer/input.webp",
+  "prompt": "According to image W2, build a 3D printer.",
+  "image_id": "W2",
+  "name": "3D printer"
+ },
+ "pc_ventilator": {
+  "img": "assets/explore/pc_ventilator/input_t.webp",
+  "full": "assets/explore/pc_ventilator/input.webp",
+  "prompt": "According to image W1, build a medical ventilator.",
+  "image_id": "W1",
+  "name": "medical ventilator"
+ },
+ "pc_peristaltic_pump": {
+  "img": "assets/explore/pc_peristaltic_pump/input_t.webp",
+  "full": "assets/explore/pc_peristaltic_pump/input.webp",
+  "prompt": "According to image W1, build a peristaltic pump.",
+  "image_id": "W1",
+  "name": "peristaltic pump"
+ },
+ "pc_vinyl_cutter": {
+  "img": "assets/explore/pc_vinyl_cutter/input_t.webp",
+  "full": "assets/explore/pc_vinyl_cutter/input.webp",
+  "prompt": "According to image W1, build a vinyl cutter.",
+  "image_id": "W1",
+  "name": "vinyl cutter"
+ },
+ "pc_mechanical_calculator": {
+  "img": "assets/explore/pc_mechanical_calculator/input_t.webp",
+  "full": "assets/explore/pc_mechanical_calculator/input.webp",
+  "prompt": "According to image W1, build a mechanical calculator.",
+  "image_id": "W1",
+  "name": "mechanical calculator"
+ },
+ "pc_card_shuffler": {
+  "img": "assets/explore/pc_card_shuffler/input_t.webp",
+  "full": "assets/explore/pc_card_shuffler/input.webp",
+  "prompt": "According to image W3, build a shuffling machine.",
+  "image_id": "W3",
+  "name": "shuffling machine"
+ },
+ "pc_wire_stripper": {
+  "img": "assets/explore/pc_wire_stripper/input_t.webp",
+  "full": "assets/explore/pc_wire_stripper/input.webp",
+  "prompt": "According to image W1, build a wire stripper.",
+  "image_id": "W1",
+  "name": "wire stripper"
+ },
+ "pc_robotic_mower": {
+  "img": "assets/explore/pc_robotic_mower/input_t.webp",
+  "full": "assets/explore/pc_robotic_mower/input.webp",
+  "prompt": "According to image W1, build a robotic lawn mower.",
+  "image_id": "W1",
+  "name": "robotic lawn mower"
+ },
+ "pc_ceb_press": {
+  "img": "assets/explore/pc_ceb_press/input_t.webp",
+  "full": "assets/explore/pc_ceb_press/input.webp",
+  "prompt": "According to image W1, build a compressed earth block press.",
+  "image_id": "W1",
+  "name": "compressed earth block press"
+ },
+ "pc_mobile_robot": {
+  "img": "assets/explore/pc_mobile_robot/input_t.webp",
+  "full": "assets/explore/pc_mobile_robot/input.webp",
+  "prompt": "According to image W1, build a mobile robot.",
+  "image_id": "W1",
+  "name": "mobile robot"
+ },
+ "pc_racing_pedal": {
+  "img": "assets/explore/pc_racing_pedal/input_t.webp",
+  "full": "assets/explore/pc_racing_pedal/input.webp",
+  "prompt": "According to image W2, build a sim racing pedal.",
+  "image_id": "W2",
+  "name": "sim racing pedal"
+ },
+ "pc_vr_headset": {
+  "img": "assets/explore/pc_vr_headset/input_t.webp",
+  "full": "assets/explore/pc_vr_headset/input.webp",
+  "prompt": "According to image W1, build a virtual reality headset.",
+  "image_id": "W1",
+  "name": "virtual reality headset"
  }
 }

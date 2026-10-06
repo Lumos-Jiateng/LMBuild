@@ -1,0 +1,1 @@
+{"task":"pn_pen","name":"pen","source":"PartNeXt","parts":5,"thumb":"assets/explore/pn_pen/input_t.webp","curated":false,"input":"assets/explore/pn_pen/input.webp","prompt":"According to image W1, build a pen.","image_id":"W1","reference":"assets/objects/pn_pen_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

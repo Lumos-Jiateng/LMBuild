@@ -1,0 +1,1 @@
+{"task":"av_flashlight","name":"flashlight","source":"Artiverse","parts":6,"thumb":"assets/explore/av_flashlight/input_t.webp","curated":false,"input":"assets/explore/av_flashlight/input.webp","prompt":"According to image W2, build a flashlight.","image_id":"W2","reference":"assets/objects/av_flashlight_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

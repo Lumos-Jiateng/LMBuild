@@ -1,0 +1,1 @@
+{"task":"bc_piano","name":"piano","source":"BrickComposer","parts":10,"thumb":"assets/explore/bc_piano/input_t.webp","curated":false,"input":"assets/explore/bc_piano/input.webp","prompt":"According to image W1, build a piano.","image_id":"W1","reference":"assets/objects/bc_piano_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

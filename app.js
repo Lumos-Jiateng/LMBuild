@@ -24,7 +24,12 @@ const ORDER = {
 const GROUP = Object.fromEntries(Object.entries(ORDER).flatMap(([g, ids]) => ids.map(id => [id, g])));
 const BY_NAME = Object.fromEntries(Object.entries(NAME).map(([k, v]) => [v, k]));
 const vendor = id => GROUP[id] === "ext" ? "ext" : GROUP[id] === "open" ? "open" : id.startsWith("claude") ? "anthropic" : id.startsWith("gpt-") && GROUP[id] === "closed" ? "openai" : "open";
-const who = id => `<i class="dot ${vendor(id)}"></i>${esc(NAME[id] || id)}`;
+const LOGO = [[/^gpt-/, "openai.svg"], [/^claude/, "claude-color.svg"], [/^qwen/, "qwen-color.svg"], [/^gemma/, "gemma-color.svg"],
+  [/^ministral/, "mistral-color.svg"], [/^internvl/, "internlm-color.svg"], [/^minicpm/, "openbmb.png"], [/^ernie/, "wenxin-color.svg"],
+  [/partpacker/, "nvidia-color.svg"], [/cube/, "roblox.svg"]];
+const CUBE = `<span class="glyph" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/></svg></span>`;
+const logo = id => { const m = LOGO.find(([re]) => re.test(id)); return m ? `<img class="mlogo${m[1].endsWith(".png") ? " sq" : ""}" src="assets/logos/${m[1]}" alt="" loading="lazy">` : CUBE; };
+const who = id => `${logo(id)}${esc(NAME[id] || id)}`;
 const whoByName = n => BY_NAME[n] ? who(BY_NAME[n]) : esc(n);
 
 const PLAB = {"baseline": "retrieve + create", "retrieval-only": "retrieve only", "creation-only": "create only"};
@@ -51,7 +56,7 @@ let INPUTS = {};
 function inputStrip(task) {
   const i = INPUTS[task];
   if (!i) return "";
-  return `<div class="io-in"><img src="${i.img}" alt="Input image: ${esc(i.name)}" loading="lazy" data-zoom="${i.img}" data-zcap="Input image (${esc(i.image_id)})">
+  return `<div class="io-in"><img src="${i.img}" alt="Input image: ${esc(i.name)}" loading="lazy" data-zoom="${i.full || i.img}" data-zcap="Input image (${esc(i.image_id)})">
     <p class="q"><span class="lab">Input</span>“${esc(i.prompt)}”</p></div>`;
 }
 function ioCard(m, {imgClass = "", extra = ""} = {}) {
@@ -163,46 +168,71 @@ function drawGap() {
   }).join("") + `<p class="gf-key"><span><i class="sw1"></i>Closed-source APIs (${C.length})</span><span><i class="sw2"></i>Open-source LLMs (${O.length})</span></p>`;
 }
 
-// ---- comparison: same input, every agent ----------------------------------
-let CMP = null, CMP_OBJ = null, CMP_TIER = "B", CMP_ROUND = "r1";
-function drawCompare() {
-  if (!CMP) return;
-  const o = CMP.objects.find(x => x.task === CMP_OBJ) || CMP.objects[0];
-  CMP_OBJ = o.task;
-  $$("#objchips .chip").forEach(c => c.setAttribute("aria-pressed", c.dataset.t === o.task));
+// ---- explorer: all 200 tasks, every model's output --------------------------
+let XI = [], XSRC = "All", XALL = false, CUR = null, CMP_TIER = "B", CMP_ROUND = "r1";
+const XCACHE = {};
+function drawThumbs() {
+  const xs = XI.filter(e => XSRC === "All" || e.source === XSRC), ys = XALL ? xs : xs.slice(0, 36);
+  $("#thumbs").innerHTML = ys.map(e => `<button type="button" class="thumb${e.ready ? "" : " pending"}" data-t="${e.task}">
+    <img src="${e.thumb}" alt="" loading="lazy"><span class="tt"><span class="tn">${esc(cap(e.name))}</span>
+    <span class="ts">${esc(e.source)}${e.ready ? ` · ${e.n_out} outputs` : " · rendering"}</span></span></button>`).join("");
+  $$("#thumbs .thumb").forEach(b => b.onclick = () => openTask(b.dataset.t));
+  const more = $("#thumbs-more");
+  more.hidden = XALL || xs.length <= 36; more.textContent = `Show all ${xs.length}`;
+}
+async function openTask(task) {
+  const d = XCACHE[task] || (XCACHE[task] = await getJSON(`data/explore/${task}.json`));
+  if (!d) return;
+  CUR = d;
+  if (!d.C.length && CMP_TIER === "C") CMP_TIER = "B";
+  $("#stage").hidden = false;
+  drawStage();
+  $("#stage").scrollIntoView({behavior: "smooth", block: "start"});
+  history.replaceState(null, "", "#task=" + task);
+}
+function setSeg(el, v) { $$("button", el).forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v)); }
+function drawStage() {
+  const o = CUR;
+  $("#st-title").textContent = cap(o.name);
+  const tc = $('#cmp-tier [data-v="C"]'), r3 = $('#cmp-round [data-v="r3"]');
+  tc.disabled = !o.C.length; tc.style.opacity = o.C.length ? "" : ".4"; tc.title = o.C.length ? "" : "Create-only runs exist for the original 50 tasks";
+  r3.disabled = !o.has_r3; r3.style.opacity = o.has_r3 ? "" : ".4"; r3.title = o.has_r3 ? "" : "Round-3 renders are shown for the ten curated objects";
+  if (!o.C.length) CMP_TIER = "B";
+  if (!o.has_r3) CMP_ROUND = "r1";
+  setSeg($("#cmp-tier"), CMP_TIER); setSeg($("#cmp-round"), CMP_ROUND);
   $("#inputcard").innerHTML = `<span class="lab">Input</span>
     <img src="${o.input}" alt="Input image for ${esc(o.name)}" data-zoom="${o.input}" data-zcap="Input image ${esc(o.image_id)}">
     <p class="prompt"><span class="pl">Instruction</span>${esc(o.prompt)}</p>
-    <p class="facts">${esc(cap(o.name))} · <span class="lvl ${o.difficulty.toLowerCase()}" style="padding:.1rem .35rem;border-radius:.3rem;font-size:.6875rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em">${o.difficulty}</span><br>
-    The same image and sentence went to every agent. Parts are coloured by the role the agent gave them.</p>`;
-  const r3btn = $('#cmp-round [data-v="r3"]');
-  r3btn.disabled = !o.has_r3; r3btn.title = o.has_r3 ? "" : "Round 3 renders for this object are not on the page yet";
-  r3btn.style.opacity = o.has_r3 ? "" : ".4";
-  if (!o.has_r3 && CMP_ROUND === "r3") { CMP_ROUND = "r1"; $$("#cmp-round button").forEach(b => b.setAttribute("aria-pressed", b.dataset.v === "r1")); }
+    <span class="lab2">Reference (not shown to the agent)</span>
+    <img class="refimg" src="${o.reference}" alt="Reference structure, assembled and exploded" data-zoom="${o.reference}" data-zcap="Reference: assembled and exploded">
+    <p class="facts">${esc(o.source)} · ${o.parts} reference parts${o.difficulty ? ` · ${o.difficulty}` : ""}. Parts are coloured by the role each agent gave them.</p>`;
   const rows = o[CMP_TIER] || [];
   const card = r => {
-    const im = r[CMP_ROUND];
-    const stat = im ? `${im.n_parts} part${im.n_parts === 1 ? "" : "s"}${CMP_TIER === "B" && im.n_parts ? ` · ${im.n_created} created` : ""}` : "";
+    const im = r[CMP_ROUND] || (CMP_ROUND === "r3" ? null : r.r1);
+    const stat = im ? `${im.n_parts} part${im.n_parts === 1 ? "" : "s"}${im.n_parts ? ` · ${im.n_created} created` : ""}` : "";
     const shot = im && im.img ? `<div class="shot" data-zoom="${im.img}" data-zcap="${esc(NAME[r.id] || r.id)} · ${esc(o.name)}"><img src="${im.img}" alt="${esc(o.name)} by ${esc(NAME[r.id] || r.id)}" loading="lazy"></div>`
-      : `<div class="none">${im ? "empty design" : "no design submitted"}</div>`;
+      : `<div class="none">${im && im.n_parts === 0 ? "empty design" : "no design submitted"}</div>`;
     return `<article class="card mcard">${shot}<div class="meta"><div class="who">${who(r.id)}</div><div class="stat">${stat || "&nbsp;"}</div></div></article>`;
   };
   const sec = (g, label) => { const xs = ORDER[g].map(id => rows.find(r => r.id === id)).filter(Boolean); return xs.length ? `<p class="grp-title">${label}</p>` + xs.map(card).join("") : ""; };
   let h = sec("closed", "Frontier closed-source APIs") + sec("open", "Open-source LLMs");
-  if (CMP_TIER === "B" && o.EXT && o.EXT.length) {
+  if (CMP_TIER === "B" && CMP_ROUND === "r1" && o.EXT.length) {
     const xs = ORDER.ext.map(id => o.EXT.find(r => r.id === id)).filter(Boolean);
-    h += `<p class="grp-title">Domain-specific generators (one shot, no rounds)</p>` + xs.map(r => {
+    h += `<p class="grp-title">Domain-specific generators (one shot)</p>` + xs.map(r => {
       const shot = r.img ? `<div class="shot" data-zoom="${r.img}" data-zcap="${esc(NAME[r.id])} · ${esc(o.name)}"><img src="${r.img}" alt="${esc(o.name)} by ${esc(NAME[r.id])}" loading="lazy"></div>` : `<div class="none">no output</div>`;
-      return `<article class="card mcard">${shot}<div class="meta"><div class="who">${who(r.id)}</div><div class="stat">${r.n_parts} part${r.n_parts === 1 ? "" : "s"} · ${r.cond === "image" ? "from the image" : "from the name"}</div></div></article>`;
+      return `<article class="card mcard">${shot}<div class="meta"><div class="who">${who(r.id)}</div><div class="stat">${r.n_parts} part${r.n_parts === 1 ? "" : "s"} · ${r.cond === "image" ? "image" : "name"} input</div></div></article>`;
     }).join("");
   }
-  $("#mgrid").innerHTML = h;
+  $("#mgrid").className = "mgrid dense";
+  $("#mgrid").innerHTML = h || `<p class="note">Outputs for this task are still being rendered.</p>`;
   $("#cmp-note").innerHTML = CMP_ROUND === "r1"
-    ? `<b>Round 1</b> is the design the agent first submitted, the one scored in the leaderboard. Main setting: object name + image, seed 0.`
-    : `<b>Round 3</b> is the design after two more rounds of inspecting renders and error reports and revising. These revisions add about 2 points on average.`;
+    ? `<b>Round 1</b>: the design each agent first submitted, the one scored in the leaderboard. Main setting: object name + image.`
+    : `<b>Round 3</b>: the design after two more rounds of inspecting renders and error reports. Revisions add about 2 points on average.`;
 }
-segment($("#cmp-tier"), v => { CMP_TIER = v; drawCompare(); });
-segment($("#cmp-round"), v => { CMP_ROUND = v; drawCompare(); });
+segment($("#cmp-tier"), v => { CMP_TIER = v; drawStage(); });
+segment($("#cmp-round"), v => { CMP_ROUND = v; drawStage(); });
+$("#st-close").onclick = () => { $("#stage").hidden = true; history.replaceState(null, "", "#compare"); $("#srcchips").scrollIntoView({behavior: "smooth", block: "center"}); };
+$("#thumbs-more").onclick = () => { XALL = true; drawThumbs(); };
 
 // ---- step / function galleries -----------------------------------------------
 let MEDIA = null;
@@ -237,14 +267,14 @@ $("#t1").innerHTML = `<thead><tr><th rowspan="2" class="l">Geometry type</th><th
   T1.map((r, i) => `<tr${i === T1.length - 1 ? ' class="tot"' : ""}><td class="l">${r[0]}</td><td class="l">${r[1]}</td>${r.slice(2).map(x => `<td>${x}</td>`).join("")}</tr>`).join("") + "</tbody>";
 
 // ---- load everything -----------------------------------------------------------
-Promise.all(["results", "captions", "objects", "media", "inputs", "compare"].map(n => getJSON(`data/${n}.json`))).then(([R, C, O, M, I, X]) => {
+Promise.all(["results", "captions", "objects", "media", "inputs", "explore/index"].map(n => getJSON(`data/${n}.json`))).then(([R, C, O, M, I, X]) => {
   INPUTS = I || {};
   if (C) $$("[data-cap]").forEach(e => { const k = e.dataset.cap; if (C[k]) e.innerHTML = `<b>${k}.</b> ` + esc(C[k].replace(/^(Figure|Table) \d+:\s*/, "")); });
   if (R) { RES = R; drawLB(); drawGap(); }
 
   if (M) {
     MEDIA = M;
-    const teaser = (M.step || []).filter(m => m.teaser).slice(0, 4);
+    const teaser = (M.step || []).filter(m => m.teaser).slice(0, 6);
     $("#teaser").innerHTML = teaser.map(m => ioCard(m, {extra: `<br><span class="muted">${share(m)}</span>`})).join("");
     const PR = ["all", "baseline", "retrieval-only", "creation-only"];
     chips($("#stepf"), PR.map(p => [p, p === "all" ? "All" : cap(PLAB[p]), (M.step || []).filter(m => p === "all" || m.protocol === p).length]), drawSteps, "all");
@@ -255,12 +285,13 @@ Promise.all(["results", "captions", "objects", "media", "inputs", "compare"].map
   }
 
   if (X) {
-    CMP = X; CMP_OBJ = X.objects[0].task;
-    chips($("#objchips"), X.objects.map(o => [o.task, `${esc(cap(o.name))} <span class="lvl ${o.difficulty.toLowerCase()}">${o.difficulty}</span>`]), t => { CMP_OBJ = t; drawCompare(); }, CMP_OBJ);
-    $$("#objchips .chip").forEach(c => c.dataset.t = c.dataset.v);
-    drawCompare();
+    XI = X;
+    const SRC = ["All", "Product CAD", "Fusion 360", "Artiverse", "PartNeXt", "BrickComposer", "BrickNet"];
+    chips($("#srcchips"), SRC.map(s => [s, s, X.filter(e => s === "All" || e.source === s).length]), v => { XSRC = v; XALL = false; drawThumbs(); }, "All");
+    drawThumbs();
+    const m = location.hash.match(/^#task=(.+)$/);
+    if (m) { showTab("compare"); openTask(decodeURIComponent(m[1])); }
   }
-
   if (O) {
     const SRC = ["All", "Artiverse", "Fusion 360", "BrickComposer", "Product CAD", "PartNeXt", "BrickNet"];
     let S = "All", ALL = false;

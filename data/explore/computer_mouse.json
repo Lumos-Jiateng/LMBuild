@@ -1,0 +1,1 @@
+{"task":"computer_mouse","name":"computer mouse","source":"Product CAD","parts":5,"thumb":"assets/explore/computer_mouse/input_t.webp","curated":false,"input":"assets/explore/computer_mouse/input.webp","prompt":"According to image W1, build a computer mouse.","image_id":"W1","reference":"assets/objects/computer_mouse_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,0 +1,1 @@
+{"task":"pn_sword","name":"sword","source":"PartNeXt","parts":8,"thumb":"assets/explore/pn_sword/input_t.webp","curated":false,"input":"assets/explore/pn_sword/input.webp","prompt":"According to image W1, build a sword.","image_id":"W1","reference":"assets/objects/pn_sword_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

@@ -1,0 +1,1 @@
+{"task":"pc_mobile_robot","name":"mobile robot","source":"Product CAD","parts":7,"thumb":"assets/explore/pc_mobile_robot/input_t.webp","curated":false,"input":"assets/explore/pc_mobile_robot/input.webp","prompt":"According to image W1, build a mobile robot.","image_id":"W1","reference":"assets/objects/pc_mobile_robot_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

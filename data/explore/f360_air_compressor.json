@@ -1,0 +1,1 @@
+{"task":"f360_air_compressor","name":"compressor","source":"Fusion 360","parts":9,"thumb":"assets/explore/f360_air_compressor/input_t.webp","curated":false,"input":"assets/explore/f360_air_compressor/input.webp","prompt":"According to image W1, build a compressor.","image_id":"W1","reference":"assets/objects/f360_air_compressor_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

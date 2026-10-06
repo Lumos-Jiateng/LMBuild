@@ -1,0 +1,1 @@
+{"task":"wheeled_dumpster","name":"dumpster","source":"Artiverse","parts":4,"thumb":"assets/explore/wheeled_dumpster/input_t.webp","curated":false,"input":"assets/explore/wheeled_dumpster/input.webp","prompt":"According to image W2, build a dumpster.","image_id":"W2","reference":"assets/objects/wheeled_dumpster_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

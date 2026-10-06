@@ -1,0 +1,1 @@
+{"task":"shopping_cart","name":"shopping cart","source":"Artiverse","parts":8,"thumb":"assets/explore/shopping_cart/input_t.webp","curated":false,"input":"assets/explore/shopping_cart/input.webp","prompt":"According to image W1, build a shopping cart.","image_id":"W1","reference":"assets/objects/shopping_cart_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

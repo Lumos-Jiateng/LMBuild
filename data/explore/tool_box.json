@@ -1,0 +1,1 @@
+{"task":"tool_box","name":"toolbox","source":"Artiverse","parts":5,"thumb":"assets/explore/tool_box/input_t.webp","curated":false,"input":"assets/explore/tool_box/input.webp","prompt":"According to image W1, build a toolbox.","image_id":"W1","reference":"assets/objects/tool_box_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

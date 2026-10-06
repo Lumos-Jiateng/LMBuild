@@ -1,0 +1,1 @@
+{"task":"pc_thermal_cycler","name":"thermal cycler","source":"Product CAD","parts":5,"thumb":"assets/explore/pc_thermal_cycler/input_t.webp","curated":false,"input":"assets/explore/pc_thermal_cycler/input.webp","prompt":"According to image W1, build a thermal cycler.","image_id":"W1","reference":"assets/objects/pc_thermal_cycler_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

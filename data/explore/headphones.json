@@ -1,0 +1,1 @@
+{"task":"headphones","name":"headphones","source":"Product CAD","parts":9,"thumb":"assets/explore/headphones/input_t.webp","curated":false,"input":"assets/explore/headphones/input.webp","prompt":"According to image W1, build headphones.","image_id":"W1","reference":"assets/objects/headphones_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

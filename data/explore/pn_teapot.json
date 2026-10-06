@@ -1,0 +1,1 @@
+{"task":"pn_teapot","name":"teapot","source":"PartNeXt","parts":5,"thumb":"assets/explore/pn_teapot/input_t.webp","curated":false,"input":"assets/explore/pn_teapot/input.webp","prompt":"According to image W1, build a teapot.","image_id":"W1","reference":"assets/objects/pn_teapot_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

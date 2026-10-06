@@ -1,0 +1,1 @@
+{"task":"bc_fire_engine","name":"fire engine","source":"BrickComposer","parts":13,"thumb":"assets/explore/bc_fire_engine/input_t.webp","curated":false,"input":"assets/explore/bc_fire_engine/input.webp","prompt":"According to image W1, build a fire engine.","image_id":"W1","reference":"assets/objects/bc_fire_engine_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

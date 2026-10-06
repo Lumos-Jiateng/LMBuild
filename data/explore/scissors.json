@@ -1,0 +1,1 @@
+{"task":"scissors","name":"scissors","source":"Artiverse","parts":3,"thumb":"assets/explore/scissors/input_t.webp","curated":false,"input":"assets/explore/scissors/input.webp","prompt":"According to image W1, build a pair of scissors.","image_id":"W1","reference":"assets/objects/scissors_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

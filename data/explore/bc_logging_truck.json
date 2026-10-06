@@ -1,0 +1,1 @@
+{"task":"bc_logging_truck","name":"logging truck","source":"BrickComposer","parts":9,"thumb":"assets/explore/bc_logging_truck/input_t.webp","curated":false,"input":"assets/explore/bc_logging_truck/input.webp","prompt":"According to image W1, build a logging truck.","image_id":"W1","reference":"assets/objects/bc_logging_truck_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

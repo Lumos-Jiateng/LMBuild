@@ -1,0 +1,1 @@
+{"task":"pc_shredder","name":"industrial shredder","source":"Product CAD","parts":7,"thumb":"assets/explore/pc_shredder/input_t.webp","curated":false,"input":"assets/explore/pc_shredder/input.webp","prompt":"According to image W1, build an industrial shredder.","image_id":"W1","reference":"assets/objects/pc_shredder_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

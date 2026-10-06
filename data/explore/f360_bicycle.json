@@ -1,0 +1,1 @@
+{"task":"f360_bicycle","name":"bicycle","source":"Fusion 360","parts":12,"thumb":"assets/explore/f360_bicycle/input_t.webp","curated":false,"input":"assets/explore/f360_bicycle/input.webp","prompt":"According to image W1, build a bicycle.","image_id":"W1","reference":"assets/objects/f360_bicycle_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}

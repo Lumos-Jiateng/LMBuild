@@ -1,0 +1,1 @@
+{"task":"bc_ship","name":"ship","source":"BrickComposer","parts":11,"thumb":"assets/explore/bc_ship/input_t.webp","curated":false,"input":"assets/explore/bc_ship/input.webp","prompt":"According to image W1, build a ship.","image_id":"W1","reference":"assets/objects/bc_ship_r.webp","B":[],"C":[],"EXT":[],"has_r3":false}
