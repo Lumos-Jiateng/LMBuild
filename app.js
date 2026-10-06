@@ -291,7 +291,7 @@ Promise.all(["results", "captions", "objects", "media", "inputs", "explore/index
   if (M) {
     MEDIA = M;
     const teaser = (M.step || []).filter(m => m.teaser).slice(0, 6);
-    $("#teaser").innerHTML = teaser.map(m => ioCard(m, {extra: `<br><span class="muted">${share(m)}</span>`})).join("");
+    $("#teaser").innerHTML = teaser.map(m => ioCard(m)).join("");
     const PR = ["all", "baseline", "retrieval-only", "creation-only"];
     chips($("#stepf"), PR.map(p => [p, p === "all" ? "All" : cap(PLAB[p]), (M.step || []).filter(m => p === "all" || m.protocol === p).length]), drawSteps, "all");
     drawSteps("all");

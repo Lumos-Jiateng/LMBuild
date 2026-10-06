@@ -22,7 +22,7 @@
      hero: name, question, authors, links
      ================================================================== -->
 <header class="container hero" id="overview">
-  <h1 class="title"><img class="tlogo" src="assets/icon.png" alt="LMBuild logo"><span class="ttext"><span class="wordmark">LMBuild</span>: Evaluating LLM Agents for Generating Buildable and Functional Structures</span></h1>
+  <h1 class="title"><img class="tlogo" src="assets/icon.png" alt="LMBuild logo"><span class="ttext"><span class="tl"><span class="wordmark">LMBuild</span>: Evaluating LLM Agents for Generating</span><span class="tl">Buildable and Functional Structures</span></span></h1>
 
   <p class="authors">
     <span class="au">Jiateng Liu</span><span class="au">Rushi Wang</span><span class="au">Cheng Qian</span><span class="au">Xuejun Zhang</span>
@@ -43,10 +43,9 @@
 
   <p class="lede">Can an LLM agent build an object that does more than look right: one that is
   <span class="kw-in">functional</span> as intended and <span class="kw-out">buildable</span> in the real world?</p>
-  <p class="hero-body">We introduce <strong>LMBuild</strong>, a benchmark for evaluating LLM agents on generating buildable and
-  functional structures. Given a <span class="k3">text prompt</span> and an <span class="k3">image</span>, an agent uses tools to
-  retrieve, create and place parts, then declares the <span class="k3">joints</span>, <span class="k3">materials</span> and
-  <span class="k3">assembly sequence</span> that turn its geometry into something that could be fabricated and operated.</p>
+  <p class="hero-body"><strong>LMBuild</strong> evaluates LLM agents on building structures from a <span class="k3">text prompt</span> and an
+  <span class="k3">image</span>: agents retrieve, create and place parts, then declare the <span class="k3">joints</span>,
+  <span class="k3">materials</span> and <span class="k3">assembly sequence</span> that make a design buildable and functional.</p>
   <p class="hero-meta">
     <span><b>30</b> systems evaluated</span>
     <span><b>200</b> core tasks</span>
@@ -60,9 +59,8 @@
      ================================================================== -->
 <section class="container sec" id="task" aria-label="The task">
   <h2 class="part-head"><span class="eyebrow">The task</span>From a photo and one sentence to an assembled structure</h2>
-  <p class="sec-lede">Each task gives the agent an <span class="kw-in">input image</span> and a short
-  <span class="kw-in">instruction</span>. The agent builds the object part by part; each frame below adds the parts of one
-  placement step. These six are real product-level builds from LMBuild-Core.</p>
+  <p class="sec-lede">Each task gives the agent an <span class="kw-in">input image</span> and a one-line
+  <span class="kw-in">instruction</span>. Each frame adds the parts of one placement step. Six real product-level builds:</p>
   <div class="flow six" id="teaser"></div>
   <div class="card figure" style="margin-top:2.5rem">
     <img src="assets/paper/fig1.webp" alt="LMBuild framework: a builder agent inspects, selects, creates and places parts, then declares joints, materials and an assembly sequence" loading="lazy">
@@ -76,9 +74,8 @@
 <section class="container sec" id="takeaways" aria-label="Key takeaways">
   <h2 class="part-head"><span class="eyebrow">Findings</span>Key takeaways</h2>
   <ul class="takeaways">
-    <li><span class="ix">1</span><p><b>Looking right is no longer the bottleneck; working right is.</b> Frontier closed models score
-      in the high 80s on structural soundness and around 70 on design. On joints and kinematics (A.3) the best system reaches
-      42.7, and on simulated operability (R.3) none passes 22.1.</p></li>
+    <li><span class="ix">1</span><p><b>Looking right is no longer the bottleneck; working right is.</b> Frontier models score in the
+      high 80s on soundness and around 70 on design, but at most 42.7 on kinematics (A.3) and 22.1 on simulated operability (R.3).</p></li>
     <li><span class="ix">2</span><p><b>Strong models create, weaker models retrieve.</b> Frontier agents gain from authoring their
       own parts. Weaker models lose ground once creation is allowed: Qwen3-VL-32B drops from 61.7 with retrieval only to 34.1 with
       creation only.</p></li>
@@ -97,9 +94,9 @@
      ================================================================== -->
 <section class="container sec" id="leaderboard" aria-label="Leaderboard">
   <h2 class="part-head"><span class="eyebrow">Results</span>Leaderboard</h2>
-  <p class="sec-lede">All 30 systems on LMBuild-Core under the baseline interaction protocol (retrieve and create parts).
-  Among LLM agents, <span class="k3">GPT-6 Astra</span> has the highest mean, closely followed by <span class="k3">Claude Fable 5.1</span>
-  and <span class="k3">Claude Opus 5</span>. <span class="k3">Qwen3.5-27B</span> is the strongest open model and edges out Claude Haiku 4.5.</p>
+  <p class="sec-lede">All 30 systems on LMBuild-Core under the baseline protocol (retrieve + create).
+  <span class="k3">GPT-6 Astra</span> leads the LLM agents, closely followed by <span class="k3">Claude Fable 5.1</span> and
+  <span class="k3">Claude Opus 5</span>; <span class="k3">Qwen3.5-27B</span> is the strongest open model.</p>
 
   <div class="levels" id="levels"></div>
 
@@ -207,40 +204,31 @@
   <h2 class="part-head"><span class="eyebrow">Analysis</span>Discussion</h2>
 
   <div class="find">
-    <div class="find-t">
-      <h3>Functional affordance and physical operability are the largest gaps</h3>
-      <p>Most systems build connected (S.1), collision-free (S.2) structures, and frontier models already produce reasonable
-      decompositions, appealing designs and reference-aligned shapes (D.1–D.3). Even the strongest systems remain imperfect on
-      functional geometry (A.1) and complete functional parts (A.2). Joints and kinematics (A.3) are hard for everyone: most open
-      models score below 25.</p>
-      <p>These gaps carry into realization. Agents name plausible assembly orders (R.1) and materials (R.2), but simulated
-      operability (R.3) stays low for every system.</p>
-    </div>
+    <h3>Functional affordance and physical operability are the largest gaps</h3>
+    <p>Most systems build connected, collision-free structures, and frontier models already produce sound decompositions and
+    aligned designs. Functional geometry (A.1) and parts (A.2) remain imperfect, and joints (A.3) are hard for all.</p>
+    <p>The gap carries into realization: agents name plausible assembly orders (R.1) and materials (R.2), but simulated
+    operability (R.3) stays low for every system.</p>
     <div class="card figure gapfig" id="gapfig" role="img" aria-label="Mean score per evaluation level for closed and open agents"></div>
   </div>
 
-  <div class="find flip">
-    <div class="find-t">
-      <h3>Strong models create, weaker models retrieve</h3>
-      <p>We compare three part-access protocols: retrieval only, retrieval plus creation (the baseline), and creation only.
-      Weaker models degrade sharply when they must author every part. Even offering creation alongside retrieval can hurt them,
-      because more freedom means more decisions.</p>
-      <p>Frontier models show the opposite trend. They choose to create when both tools are available and stay as strong, or get
-      stronger, when retrieval is removed. For them, the catalog is the constraint.</p>
-    </div>
-    <div class="card figure"><img src="assets/paper/fig3.webp" alt="Performance under three part-access settings" loading="lazy"><p class="cap" data-cap="Figure 3"></p></div>
+  <div class="find">
+    <h3>Strong models create, weaker models retrieve</h3>
+    <p>Weaker models degrade sharply when they must author every part, and even offering creation alongside retrieval can hurt
+    them: more freedom means more decisions.</p>
+    <p>Frontier models choose to create when both tools are available, and stay as strong or stronger without retrieval.
+    For them, the catalog is the constraint.</p>
+    <div class="card figure"><img src="assets/paper/fig3.webp" alt="Performance under three part-access settings" loading="lazy">
+      <p class="cap"><b>Figure 3.</b> Scores under retrieve-only (A), retrieve + create (B) and create-only (C), on 25 sampled objects.</p></div>
   </div>
 
   <div class="find">
-    <div class="find-t">
-      <h3>Tell the agent what the object must do</h3>
-      <p>Letting agents inspect error reports and revise for two more rounds gives steady but small gains, about 2 points overall.
-      Adding attribute and functional descriptions grounded in Wikipedia helps far more where models are weakest:
-      <strong>+10.3 on functional parts and +12.0 on operability</strong> (p&nbsp;&lt;&nbsp;0.001), plus better kinematics.</p>
-      <p>Agents are more reliable at turning stated functional constraints into structure than at inferring them from an object
-      name alone.</p>
-    </div>
-    <div class="card figure"><img src="assets/paper/fig4.webp" alt="Score change from revision rounds and richer prompts" loading="lazy"><p class="cap" data-cap="Figure 4"></p></div>
+    <h3>Tell the agent what the object must do</h3>
+    <p>Two extra rounds of inspecting error reports and revising add only about 2 points. Functional descriptions grounded in
+    Wikipedia add <strong>+10.3 on functional parts and +12.0 on operability</strong> (p&nbsp;&lt;&nbsp;0.001).</p>
+    <p>Agents turn stated functional constraints into structure far more reliably than they infer them from an object name alone.</p>
+    <div class="card figure"><img src="assets/paper/fig4.webp" alt="Score change from revision rounds and richer prompts" loading="lazy">
+      <p class="cap"><b>Figure 4.</b> Average score change from two revision rounds, attribute descriptions and functional descriptions (95% bootstrap CIs).</p></div>
   </div>
 </section>
 
@@ -251,16 +239,12 @@
   <div class="rail">
     <h2 class="part-head">FAQ</h2>
     <details class="qa"><summary>What is LMBuild?</summary><div class="qa-body">
-      <p>LMBuild evaluates LLM agents on generating 3D structures that can be built and that work. A generated object is an
-      <strong>assembled structure</strong>: a meaningful part decomposition, joints, materials and an assembly sequence. The
-      framework has three pieces: an interactive building environment, a curated benchmark built from established CAD datasets
-      and enriched with Wikipedia knowledge, and a four-level evaluation.</p>
+      <p>LMBuild tests whether LLM agents can generate 3D structures that can be built and that work. Each output is an
+      <strong>assembled structure</strong>: parts, joints, materials and an assembly sequence.</p>
     </div></details>
     <details class="qa"><summary>What does the agent get, and what must it produce?</summary><div class="qa-body">
-      <p>In the main setting the agent gets an object name and an image, for example <em>“According to image W1, build a
-      desk.”</em> Using tools, it inspects and selects catalog parts, creates new parts from code, and places and adjusts them.
-      It then declares joints, a material for each part and an assembly order. Other conditions add attribute or functional
-      descriptions, or drop the image.</p>
+      <p>An image and a one-line instruction, e.g. <em>“According to image W1, build a desk.”</em> The agent retrieves or
+      creates parts, places them, then declares joints, materials and an assembly order.</p>
     </div></details>
     <details class="qa"><summary>What are the interaction protocols?</summary><div class="qa-body">
       <ul>
@@ -270,20 +254,17 @@
       </ul>
     </div></details>
     <details class="qa"><summary>How is a build scored?</summary><div class="qa-body">
-      <p>Twelve metrics in four levels. <strong>Soundness</strong>: connectivity, collision and stability, by rule-based geometry
-      checks. <strong>Affordance</strong>: functional geometry against the reference, plus Wikipedia-grounded part and kinematics
-      checks. <strong>Design</strong>: decomposition, aesthetics and alignment, by human-calibrated VLM judges with rule-based
-      parts. <strong>Realization</strong>: assembly sequence, material choice and simulated operability.</p>
+      <p>Twelve metrics in four levels: <strong>soundness</strong> (connectivity, collision, stability), <strong>affordance</strong>
+      (geometry, parts, kinematics), <strong>design</strong> (decomposition, aesthetics, alignment) and <strong>realization</strong>
+      (sequence, material, operability).</p>
     </div></details>
     <details class="qa"><summary>Which systems are evaluated?</summary><div class="qa-body">
-      <p>Six frontier closed-source APIs, thirteen open-source (multimodal) LLMs, and eleven domain-specific generators: brick
-      models (BrickGPT, LegoACE), part-aware 3D generators (PartCrafter, PartPacker, Cube3D with CubePart), the same generators
-      with Particulate for joints, and PhysX-Anything.</p>
+      <p>Six frontier closed-source APIs, thirteen open-source LLMs and eleven domain-specific generators: BrickGPT, LegoACE,
+      PartCrafter, PartPacker, Cube3D + CubePart, their Particulate variants and PhysX-Anything.</p>
     </div></details>
     <details class="qa"><summary>Where do the tasks come from?</summary><div class="qa-body">
-      <p>LMBuild repurposes BrickNet, BrickComposer, PartNeXt, the Fusion 360 Gallery (Joinable), Artiverse and open-source
-      hardware CAD, and grounds each object in verified Wikipedia and Wikidata knowledge. <strong>LMBuild-Core</strong> has 200
-      tasks and <strong>LMBuild-Full</strong> has 2,549. The <a class="a-body" href="#benchmark" data-goto="data">Dataset</a> tab lists them.</p>
+      <p>LMBuild-Core (200 tasks) and LMBuild-Full (2,549) repurpose BrickNet, BrickComposer, PartNeXt, Fusion 360 Gallery,
+      Artiverse and open-source hardware CAD, grounded in Wikipedia and Wikidata. See the <a class="a-body" href="#benchmark" data-goto="data">Dataset</a> tab.</p>
     </div></details>
   </div>
 </section>

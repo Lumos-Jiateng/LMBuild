@@ -28,8 +28,8 @@
   --t-h4:1.125rem;
   --t-p1:1.0625rem; --l-p1:1.75rem;
   --t-p2:.875rem;   --l-p2:1.45rem;
-  --container:76rem;
-  --rail:46rem;
+  --container:max(76rem, 70vw);
+  --rail:max(46rem, 52vw);
   --pad:16px;
   --r-md:.625rem; --r-lg:1rem; --r-pill:2.5rem;
   --ease:cubic-bezier(.25,.1,.25,1);
@@ -99,15 +99,18 @@ b,strong{font-weight:600}
 .hero{padding-top:clamp(2.5rem,7vw,5rem);text-align:center}
 .projlogo{display:flex;justify-content:center;margin-bottom:1.5rem}
 .projlogo img{width:clamp(4.5rem,9vw,6.25rem);height:auto;filter:drop-shadow(0 10px 24px rgba(13,44,82,.18))}
-.title{display:flex;align-items:center;justify-content:center;gap:clamp(.75rem,2vw,1.4rem);max-width:66rem;margin:0 auto;
-  font-size:clamp(1.6rem,1.05rem + 2.3vw,3rem);line-height:1.14;letter-spacing:-.03em;font-weight:650;text-align:left}
+.title{display:flex;align-items:center;justify-content:center;gap:clamp(.75rem,2vw,1.4rem);max-width:none;margin:0 auto;
+  font-size:clamp(1.5rem,2.3vw,3.1rem);line-height:1.14;letter-spacing:-.03em;font-weight:650;text-align:left}
 .title .tlogo{flex:0 0 auto;width:clamp(3.4rem,2.4rem + 4.2vw,6.6rem);height:auto;filter:drop-shadow(0 10px 22px rgba(13,44,82,.18))}
 .title .ttext{text-wrap:balance}
+.title .tlogo{width:auto;height:2.35em}
+.title .tl{display:block}
+@media (min-width:900px){ .title .tl{white-space:nowrap} }
 @media (max-width:560px){ .title{flex-direction:column;text-align:center} }
 .wordmark{font-weight:800;letter-spacing:-.045em;background:linear-gradient(100deg,var(--navy) 10%,var(--teal) 90%);
   -webkit-background-clip:text;background-clip:text;color:transparent}
 .tsub{display:block;margin-top:.5rem;font-size:.5em;line-height:1.25;font-weight:500;color:var(--ink-80);letter-spacing:-.02em}
-.authors{margin:2rem auto 0;max-width:52rem;font-size:1rem;line-height:1.9;font-weight:500}
+.authors{margin:2rem auto 0;max-width:var(--rail);font-size:1rem;line-height:1.9;font-weight:500}
 .authors .au{display:inline-block;white-space:nowrap;margin:0 .55em}
 .authors .au.first{color:var(--navy)}
 .orgs{margin:1rem 0 0;display:flex;justify-content:center}
@@ -119,8 +122,8 @@ b,strong{font-weight:600}
 .lk-text span{font-size:.8125rem;color:var(--ink-60);font-weight:500}
 .mails{margin:.25rem 0 0;font-size:.8125rem;color:var(--ink-60);font-family:var(--mono);letter-spacing:0}
 .hero-links{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:2rem auto 0}
-.lede{margin:4.5rem auto 0;max-width:46rem;font-size:var(--t-h3);line-height:1.38;letter-spacing:-.022em;font-weight:500;text-wrap:balance}
-.hero-body{margin:1.5rem auto 0;max-width:46rem;color:var(--ink-80);text-wrap:pretty}
+.lede{margin:4.5rem auto 0;max-width:var(--rail);font-size:var(--t-h3);line-height:1.38;letter-spacing:-.022em;font-weight:500;text-wrap:balance}
+.hero-body{margin:1.5rem auto 0;max-width:var(--rail);color:var(--ink-80);text-wrap:pretty}
 .hero-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:2rem auto 0}
 .hero-meta span{display:inline-flex;align-items:baseline;gap:.35rem;padding:.5rem 1rem;border-radius:var(--r-pill);background:rgba(255,255,255,.6);
   border:1px solid var(--line);font-size:.875rem;color:var(--ink-60)}
@@ -169,7 +172,7 @@ b,strong{font-weight:600}
 .tag.open{background:#ebeef2;color:#475569}
 
 /* --- takeaways ----------------------------------------------------------- */
-.takeaways{list-style:none;padding:0;display:grid;gap:.75rem;max-width:52rem;margin:0 auto}
+.takeaways{list-style:none;padding:0;display:grid;gap:.75rem;max-width:var(--rail);margin:0 auto}
 .takeaways li{display:grid;grid-template-columns:2.25rem 1fr;gap:.9rem;align-items:start;padding:1.1rem 1.25rem;background:rgba(255,255,255,.72);
   border:1px solid rgba(255,255,255,.8);border-radius:var(--r-lg);box-shadow:0 1px 2px rgba(13,44,82,.04)}
 .takeaways .ix{width:2.25rem;height:2.25rem;border-radius:.7rem;display:grid;place-items:center;color:#fff;font:700 .875rem/1 var(--sans);
@@ -295,7 +298,7 @@ details[open].drop summary::after,details[open].qa summary::after{transform:rota
 
 /* --- discussion ---------------------------------------------------------- */
 .find{display:grid;grid-template-columns:1fr;gap:1.5rem;align-items:center;margin-top:3rem}
-@media (min-width:960px){ .find{grid-template-columns:minmax(0,5fr) minmax(0,7fr)} .find.flip{grid-template-columns:minmax(0,7fr) minmax(0,5fr)} .find.flip .find-t{order:2} }
+
 .find h3{font-size:var(--t-h3);line-height:1.25;letter-spacing:-.02em;font-weight:600;margin-bottom:.75rem;text-wrap:balance}
 .find p{color:var(--ink-80);font-size:1rem;line-height:1.7}
 .find p + p{margin-top:.75rem}
@@ -400,3 +403,17 @@ details.qa summary:hover{color:var(--navy)}
 .mgrid.dense .mcard .who .mlogo,.mgrid.dense .mcard .who .glyph{margin-right:.3rem}
 .mgrid.dense .mcard .who{font-size:.72rem;letter-spacing:-.01em}
 .mgrid.dense .mcard .meta{padding:.45rem .55rem .55rem}
+
+/* discussion: text above a wide figure */
+.find{display:block;margin-top:3.5rem}
+.find > h3,.find > p{max-width:var(--rail);margin-left:auto;margin-right:auto;text-align:center}
+.find > h3{margin-bottom:.75rem}
+.find > .figure{max-width:min(100%,64rem);margin:1.5rem auto 0}
+.find > .gapfig{max-width:min(100%,46rem)}
+/* six-card strip: three lines at most per block */
+.flow.six .io-in .lab{display:none}
+.flow.six .io-in .q{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.flow.six .io-in{min-height:0;align-items:center}
+.flow.six .io-cap .extra{display:none}
+.flow.six .io-cap{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.sec-lede,.hero-body,.authors,.find > p,.cap{text-wrap:balance}
