@@ -88,7 +88,7 @@ $("#copy-bib").onclick = async () => {
 };
 
 // ---- benchmark switch, linkable by hash -----------------------------------
-const TABS = ["compare", "data"];
+const TABS = ["compare", "steps", "function", "data"];
 function showTab(tab, scroll) {
   $$("#switch .sw").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === tab));
   TABS.forEach(t => $(`#pane-${t}`).hidden = t !== tab);
@@ -298,6 +298,43 @@ document.addEventListener("keydown", e => {
 $("#st-close").onclick = () => { $("#stage").hidden = true; history.replaceState(null, "", "#compare"); $("#srcchips").scrollIntoView({behavior: "smooth", block: "center"}); };
 $("#thumbs-more").onclick = () => { XALL = true; drawThumbs(); };
 
+// ---- step / function galleries -----------------------------------------------
+let MEDIA = null, XG = {}, GPAGE = {};
+// curated examples first, then one pick per task from the 200-task renders, 24 more per click
+const PROT = {B: "baseline", C: "creation-only"};
+function extraItems(kind, skip) {
+  return (XG[kind] || []).filter(r => !skip.has(r.task + "|" + (NAME[r.id] || r.id)))
+    .map(r => ({file: r.file, task: r.task, object: r.object, system: NAME[r.id] || r.id, protocol: PROT[r.tier],
+      group: r.source === "Product CAD" ? "product" : "sota", joint: r.label ? "j" : null, joint_label: r.label,
+      materials: r.legend, n_parts: r.n_parts}));
+}
+function paged(el, kind, items, render) {
+  const n = GPAGE[kind] || 24, more = el.nextElementSibling && el.nextElementSibling.classList.contains("more-row") ? el.nextElementSibling : null;
+  el.innerHTML = items.slice(0, n).map(render).join("");
+  let row = more;
+  if (!row) { row = document.createElement("div"); row.className = "more-row"; el.after(row); }
+  row.innerHTML = items.length > n ? `<button type="button" class="btn btn-small">Show more (${items.length - n} left)</button>` : "";
+  if (items.length > n) row.querySelector("button").onclick = () => { GPAGE[kind] = n + 24; paged(el, kind, items, render); };
+}
+function drawSteps(P) {
+  const cur = byGroup((MEDIA.step || []).filter(m => P === "all" || m.protocol === P));
+  const skip = new Set(cur.map(m => m.task + "|" + m.system));
+  const xs = cur.concat(extraItems("step", skip).filter(m => P === "all" || m.protocol === P));
+  paged($("#steps"), "step" + P, xs, m => ioCard(m, {extra: m.created_share != null ? `<br><span class="muted">${share(m)}</span>` : `<br><span class="muted">${m.n_parts} parts</span>`}));
+}
+const FUNC = {
+  joints: {label: "Joints", lede: "Each agent declares joints between its parts. Shown: one declared joint swept through its range, with the moving parts in their declared motion."},
+  materials: {label: "Materials", lede: "Each part is assigned a material. Shown: the build coloured by the material the agent declared for each part.", cls: "mat"},
+  sequence: {label: "Assembly sequences", lede: "Each agent declares the order in which its parts are put together. Shown: the declared assembly sequence, played back step by step."}};
+function drawFunc(k) {
+  const f = FUNC[k];
+  $("#func-lede").textContent = f.lede;
+  const cur = byGroup(MEDIA[k] || []), skip = new Set(cur.map(m => m.task + "|" + m.system));
+  const xs = cur.concat(extraItems(k, skip));
+  paged($("#func"), "f" + k, xs, m => ioCard(m, {imgClass: m.file.endsWith(".webp") ? "" : (f.cls || ""),
+    extra: m.materials ? `<br><span class="muted">${m.materials.slice(0, 5).map(esc).join(", ")}${m.materials.length > 5 ? "…" : ""}</span>` : m.n_steps ? `<br><span class="muted">${m.n_steps} assembly steps</span>` : ""}));
+  $("#jointfigs-wrap").hidden = k !== "joints";
+}
 function chips(el, items, cb, first) {
   el.innerHTML = items.map(([v, label, n]) => `<button type="button" class="chip" data-v="${esc(v)}" aria-pressed="${v === first}">${label}${n != null ? ` <span class="n">${n}</span>` : ""}</button>`).join("");
   $$(".chip", el).forEach(b => b.onclick = () => { $$(".chip", el).forEach(x => x.setAttribute("aria-pressed", x === b)); cb(b.dataset.v); });
@@ -314,7 +351,8 @@ $("#t1").innerHTML = `<thead><tr><th rowspan="2" class="l">Geometry type</th><th
   T1.map((r, i) => `<tr${i === T1.length - 1 ? ' class="tot"' : ""}><td class="l">${r[0]}</td><td class="l">${r[1]}</td>${r.slice(2).map(x => `<td>${x}</td>`).join("")}</tr>`).join("") + "</tbody>";
 
 // ---- load everything -----------------------------------------------------------
-Promise.all(["results", "captions", "objects", "media", "inputs", "explore/index"].map(n => getJSON(`data/${n}.json`))).then(([R, C, O, M, I, X]) => {
+Promise.all(["results", "captions", "objects", "media", "inputs", "explore/index", "gallery_extra"].map(n => getJSON(`data/${n}.json`))).then(([R, C, O, M, I, X, G]) => {
+  XG = G || {};
   INPUTS = I || {};
   if (C) $$("[data-cap]").forEach(e => { const k = e.dataset.cap; if (C[k]) e.innerHTML = `<b>${k}.</b> ` + esc(C[k].replace(/^(Figure|Table) \d+:\s*/, "")); });
   if (R) { RES = R; drawLB(); drawGap(); }
@@ -323,6 +361,12 @@ Promise.all(["results", "captions", "objects", "media", "inputs", "explore/index
     MEDIA = M;
     const teaser = (M.step || []).filter(m => m.teaser).slice(0, 6);
     $("#teaser").innerHTML = teaser.map(m => ioCard(m)).join("");
+    const PR = ["all", "baseline", "retrieval-only", "creation-only"];
+    chips($("#stepf"), PR.map(p => [p, p === "all" ? "All" : cap(PLAB[p]), (M.step || []).filter(m => p === "all" || m.protocol === p).length]), drawSteps, "all");
+    drawSteps("all");
+    chips($("#funcf"), Object.entries(FUNC).map(([k, f]) => [k, f.label, (M[k] || []).length]), drawFunc, "joints");
+    drawFunc("joints");
+    $("#jointfigs").innerHTML = [5, 6, 7, 8, 9, 10, 11, 12].map(n => `<figure class="card figure"><img src="assets/paper/fig${n}.webp" loading="lazy" alt="Figure ${n}" data-zoom="assets/paper/fig${n}.webp"><p class="cap">${C && C["Figure " + n] ? `<b>Figure ${n}.</b> ` + esc(C["Figure " + n].replace(/^Figure \d+:\s*/, "")) : ""}</p></figure>`).join("");
   }
 
   if (X) {

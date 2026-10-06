@@ -131,9 +131,11 @@
      ================================================================== -->
 <section class="container sec" id="benchmark" aria-label="The benchmark">
   <h2 class="part-head"><span class="eyebrow">Explore</span>The benchmark</h2>
-  <div class="switch two" id="switch" role="tablist" aria-label="Browse the benchmark">
-    <button type="button" class="sw" role="tab" data-tab="compare" aria-selected="true"><span class="sw-title">All 200 tasks</span><span class="sw-sub">every working build, step by step</span></button>
-    <button type="button" class="sw" role="tab" data-tab="data" aria-selected="false"><span class="sw-title">Dataset</span><span class="sw-sub">sources, sizes and references</span></button>
+  <div class="switch" id="switch" role="tablist" aria-label="Browse the benchmark">
+    <button type="button" class="sw" role="tab" data-tab="compare" aria-selected="true"><span class="sw-title">All 200 tasks</span><span class="sw-sub">every working build</span></button>
+    <button type="button" class="sw" role="tab" data-tab="steps" aria-selected="false"><span class="sw-title">Step by step</span><span class="sw-sub">builds as they grow</span></button>
+    <button type="button" class="sw" role="tab" data-tab="function" aria-selected="false"><span class="sw-title">Function</span><span class="sw-sub">joints, materials, assembly</span></button>
+    <button type="button" class="sw" role="tab" data-tab="data" aria-selected="false"><span class="sw-title">Dataset</span><span class="sw-sub">sources and sizes</span></button>
   </div>
 
   <!-- compare -->
@@ -164,6 +166,21 @@
     <p class="grid-hint">Click any task to watch every working build, step by step</p>
     <div class="thumbs" id="thumbs"></div>
     <div class="more-row"><button class="btn btn-small" id="thumbs-more" type="button" hidden></button></div>
+  </div>
+
+  <!-- step by step -->
+  <div class="pane" id="pane-steps" role="tabpanel" hidden>
+    <div class="chips" id="stepf" style="margin-bottom:1.5rem"></div>
+    <div class="gal" id="steps"></div>
+  </div>
+
+  <!-- joints / materials / assembly -->
+  <div class="pane" id="pane-function" role="tabpanel" hidden>
+    <div class="chips" id="funcf" style="margin-bottom:1rem"></div>
+    <p class="sec-lede" id="func-lede"></p>
+    <div class="gal" id="func"></div>
+    <details class="drop" id="jointfigs-wrap"><summary>Joint and kinematics figures from the paper</summary>
+      <div class="gal wide" id="jointfigs" style="margin-top:1.25rem"></div></details>
   </div>
 
   <!-- dataset -->
