@@ -1,223 +1,327 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures</title>
-<meta name="description" content="LMBuild: a benchmark for evaluating LLM agents on generating buildable and functional structures.">
+<meta name="description" content="LMBuild evaluates whether LLM agents can build 3D structures that are sound, functional and physically realizable: parts, joints, materials and assembly sequences, scored on 12 metrics across 4 levels.">
 <meta property="og:title" content="LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures">
-<meta property="og:description" content="LMBuild: a benchmark for evaluating LLM agents on generating buildable and functional structures.">
+<meta property="og:description" content="Can an LLM agent build an object that does more than look right? 200 core tasks, 30 systems, 12 metrics.">
+<meta property="og:image" content="assets/paper/fig1.webp">
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-:root{--bs-body-font-family:"Source Serif 4",serif;--bs-body-font-size:1.05rem;--bs-body-bg:#e7f1f0;--ink:#0d3b66;--teal:#17807e}
-body{background:#e7f1f0}
-h1,h2{color:var(--ink)}
-.panel{background:#fff;border-radius:10px;padding:1.4rem 1.6rem;box-shadow:0 1px 2px rgba(13,59,102,.06)}
-.btn-dark{background:var(--ink);border-color:var(--ink)}.btn-dark:hover{background:var(--teal);border-color:var(--teal)}
-.btn-outline-dark{color:var(--ink);border-color:var(--ink)}.btn-outline-dark:hover{background:var(--ink);border-color:var(--ink)}
-.tag{display:inline-block;font:600 .72rem "Source Sans 3",sans-serif;letter-spacing:.03em;padding:.1rem .45rem;border-radius:999px;margin-left:.3rem;vertical-align:1px}
-.tag.baseline{background:#dbe8f5;color:#0d3b66}.tag.retrieval-only{background:#e8e4f3;color:#4b3a8a}.tag.creation-only{background:#d6efe9;color:#0f6b5e}.tag.product{background:#fde4cf;color:#9a3412}.tag.open{background:#ececec;color:#444}
-.table-responsive{background:#fff;border-radius:8px;padding:.25rem}
-pre.bib{background:#fff!important}
-.obj{background:#fff}
-.gif.mat{aspect-ratio:4/3;object-fit:contain}
-.title-icon{height:3.4rem;width:auto;vertical-align:middle;margin-right:.6rem}
-h1,h2,h3,h4,.font-sans,.btn,.badge,table,figcaption,.small-sans{font-family:"Source Sans 3",system-ui,sans-serif}
-.max-w-md{max-width:768px}.max-w-lg{max-width:992px}.max-w-xl{max-width:1140px}
-.text-balance{text-wrap:balance}
-section{padding-top:2.2rem;padding-bottom:1.2rem}
-figure{margin:0}
-figcaption{font-size:.95rem;color:#555;text-align:center;margin-top:.35rem}
-.fig-cap{font-size:.95rem;color:#444;text-align:left;margin-top:.5rem}
-.gif{width:100%;height:auto;border:1px solid #e6e6e6;border-radius:6px;background:#fff}
-.obj{width:100%;aspect-ratio:2/1;object-fit:contain;border:1px solid #eee;border-radius:6px;background:#fff}
-.tbl{font-size:.82rem;white-space:nowrap}
-.tbl th,.tbl td{padding:.28rem .45rem;text-align:center;vertical-align:middle}
-.tbl td.m{text-align:left;font-weight:600}
-.tbl tr.grp td{background:#f3f3f3;font-weight:700;text-align:center;font-style:italic}
-.tbl td.n{font-family:"Source Code Pro",monospace}
-pre.bib{background:#f7f7f7;border-radius:6px;padding:1rem;font-size:.85rem;font-family:"Source Code Pro",monospace;white-space:pre-wrap}
-.filter .btn{font-size:.85rem}
-</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<main class="container py-5">
+<a id="top"></a>
+<main>
 
-<!-- title -->
-<div class="text-center mx-auto max-w-lg">
-  <h1 class="display-5 fw-semibold text-balance mb-3"><img class="title-icon" src="assets/icon.png" alt="LMBuild logo">LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures</h1>
-  <div class="d-flex flex-wrap justify-content-center gap-2 mb-1" id="authors1"></div>
-  <div class="d-flex flex-wrap justify-content-center gap-2 mb-2" id="authors2"></div>
-  <p class="mb-1 small-sans">University of Illinois Urbana-Champaign</p>
-  <p class="mb-3 small-sans text-muted">jiateng5@illinois.edu, hengji@illinois.edu</p>
-  <div class="d-flex flex-wrap justify-content-center gap-2">
-    <a class="btn btn-dark" href="assets/LMBuild.pdf">Paper</a>
-    <a class="btn btn-dark" href="https://github.com/Lumos-Jiateng/LMBuild">Code</a>
-    <a class="btn btn-dark" href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Dataset</a>
-    <a class="btn btn-dark" href="#citation">BibTeX</a>
+<!-- =====================================================================
+     hero: name, question, authors, links
+     ================================================================== -->
+<header class="container hero" id="overview">
+  <figure class="projlogo"><img src="assets/icon.png" alt="LMBuild logo"></figure>
+  <h1 class="title"><span class="wordmark">LMBuild</span><span class="tsub">Evaluating LLM Agents for Generating Buildable and Functional Structures</span></h1>
+
+  <p class="authors">
+    <span class="au">Jiateng Liu</span><span class="au">Rushi Wang</span><span class="au">Cheng Qian</span><span class="au">Xuejun Zhang</span>
+    <span class="au">Sun Li</span><span class="au">Jiayu Liu</span><span class="au">Yifan Shen</span><span class="au">Xu Cao</span>
+    <span class="au">Jiarui Yao</span><span class="au">Bingxuan Li</span><span class="au">Ruhi Sarikaya</span><span class="au">Heng Ji</span>
+  </p>
+  <p class="orgs">University of Illinois Urbana-Champaign</p>
+  <p class="mails">{jiateng5, hengji}@illinois.edu</p>
+
+  <p class="hero-links">
+    <a class="btn btn-solid" href="https://arxiv.org/pdf/2610.04292"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" stroke-linejoin="round"/><path d="M14 3v5h5M9 13h6M9 17h4" stroke-linecap="round"/></svg>Paper</a>
+    <a class="btn" href="https://arxiv.org/abs/2610.04292"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 5.5C5.5 4.5 8.5 4.5 12 6.5c3.5-2 6.5-2 9-1v13c-2.5-1-5.5-1-9 1-3.5-2-6.5-2-9-1z" stroke-linejoin="round"/><path d="M12 6.5v13"/></svg>arXiv</a>
+    <a class="btn" href="#leaderboard"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 20v-7M12 20V5M19 20v-4" stroke-linecap="round"/></svg>Leaderboard</a>
+    <a class="btn" href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8V6M5 12v6c0 1.5 3.1 2.8 7 2.8s7-1.3 7-2.8v-6"/></svg>Data</a>
+    <a class="btn" href="https://github.com/Lumos-Jiateng/LMBuild"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.56 9.56 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>Code</a>
+    <a class="btn" href="#cite"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 7h4v4c0 3-1.5 5-4 6M14 7h4v4c0 3-1.5 5-4 6" stroke-linecap="round" stroke-linejoin="round"/></svg>Citation</a>
+  </p>
+
+  <p class="lede">Can an LLM agent build an object that does more than <span class="kw-in">look right</span>, one that
+  <span class="kw-out">stands, moves and could actually be made</span>?</p>
+  <p class="hero-body">We introduce <strong>LMBuild</strong>, a benchmark for evaluating LLM agents on generating buildable and
+  functional structures. Given a <span class="k3">text prompt</span> and an <span class="k3">image</span>, an agent uses tools to
+  retrieve, create and place parts, then declares the <span class="k3">joints</span>, <span class="k3">materials</span> and
+  <span class="k3">assembly sequence</span> that turn its geometry into something that could be fabricated and operated.</p>
+  <p class="hero-meta">
+    <span><b>30</b> systems evaluated</span>
+    <span><b>200</b> core tasks</span>
+    <span><b>2,549</b> full-set tasks</span>
+    <span><b>12</b> metrics, <b>4</b> levels</span>
+  </p>
+</header>
+
+<!-- =====================================================================
+     the task: one input, one agent, one build
+     ================================================================== -->
+<section class="container sec" id="task" aria-label="The task">
+  <h2 class="part-head"><span class="eyebrow">The task</span>From a photo and one sentence to an assembled structure</h2>
+  <p class="sec-lede">Each task gives the agent an <span class="kw-in">input image</span> and a short
+  <span class="kw-in">instruction</span>. The agent builds the object one tool call at a time; every frame below is a call
+  that changed the structure.</p>
+  <div class="flow" id="teaser"></div>
+  <div class="card figure" style="margin-top:2.5rem">
+    <img src="assets/paper/fig1.webp" alt="LMBuild framework: a builder agent inspects, selects, creates and places parts, then declares joints, materials and an assembly sequence" loading="lazy">
+    <p class="cap" data-cap="Figure 1"></p>
   </div>
-</div>
-
-<!-- teaser -->
-<section class="mx-auto max-w-xl text-center">
-  <div class="row g-3" id="teaser"></div>
-  <figcaption class="mt-2">Step-by-step construction by frontier LLM agents: each frame is one tool call that changes the structure.</figcaption>
 </section>
 
-<!-- abstract -->
-<section class="mx-auto max-w-md">
-  <h2 class="text-center mb-3">Abstract</h2>
-  <p class="text-justify" id="abstract"></p>
+<!-- =====================================================================
+     key takeaways
+     ================================================================== -->
+<section class="container sec" id="takeaways" aria-label="Key takeaways">
+  <h2 class="part-head"><span class="eyebrow">Findings</span>Key takeaways</h2>
+  <ul class="takeaways">
+    <li><span class="ix">1</span><p><b>Looking right is no longer the bottleneck; working right is.</b> Frontier closed models score
+      in the high 80s on structural soundness and around 70 on design. On joints and kinematics (A.3) the best system reaches
+      42.7, and on simulated operability (R.3) none passes 22.1.</p></li>
+    <li><span class="ix">2</span><p><b>Strong models create, weaker models retrieve.</b> Frontier agents gain from authoring their
+      own parts. Weaker models lose ground once creation is allowed: Qwen3-VL-32B drops from 61.7 with retrieval only to 34.1 with
+      creation only.</p></li>
+    <li><span class="ix">3</span><p><b>Specifying beats revising.</b> Two extra revision rounds add about 2 points. Spelling out
+      functional requirements adds <b>+10.3</b> on functional parts and <b>+12.0</b> on operability.</p></li>
+    <li><span class="ix">4</span><p><b>Open models have a part-creation gap.</b> Closed models succeed on 95.7% of part-creation
+      calls, open models on 51.7%. Most failures break CAD-kernel conventions or the program structure, not the geometry.
+      Qwen3.5-27B (89.4%) is the exception.</p></li>
+    <li><span class="ix">5</span><p><b>Open models lose track of the scene.</b> They refer to parts that were never placed
+      7.2 times per 100 calls, against 0.3 for closed models.</p></li>
+  </ul>
 </section>
 
-<!-- framework -->
-<section class="mx-auto max-w-lg">
-  <h2 class="text-center fs-3 mb-4">LMBuild Framework</h2>
-  <figure><img class="img-fluid" src="assets/paper/fig1.webp" alt="Figure 1"><p class="fig-cap" data-cap="Figure 1"></p></figure>
+<!-- =====================================================================
+     leaderboard
+     ================================================================== -->
+<section class="container sec" id="leaderboard" aria-label="Leaderboard">
+  <h2 class="part-head"><span class="eyebrow">Results</span>Leaderboard</h2>
+  <p class="sec-lede">All 30 systems on LMBuild-Core under the baseline interaction protocol (retrieve and create parts).
+  Among LLM agents, <span class="k3">GPT-6 Astra</span> has the highest mean, closely followed by <span class="k3">Claude Fable 5.1</span>
+  and <span class="k3">Claude Opus 5</span>. <span class="k3">Qwen3.5-27B</span> is the strongest open model and edges out Claude Haiku 4.5.</p>
+
+  <div class="levels" id="levels"></div>
+
+  <div class="lb-bar">
+    <div class="seg" role="group" aria-label="Which systems" id="lb-filter">
+      <button type="button" data-g="agents" aria-pressed="true">LLM agents</button>
+      <button type="button" data-g="closed" aria-pressed="false">Closed</button>
+      <button type="button" data-g="open" aria-pressed="false">Open</button>
+      <button type="button" data-g="ext" aria-pressed="false">Domain-specific</button>
+      <button type="button" data-g="all" aria-pressed="false">All 30</button>
+    </div>
+    <div class="lb-key">
+      <span><i class="dot openai"></i>OpenAI</span><span><i class="dot anthropic"></i>Anthropic</span>
+      <span><i class="dot open"></i>Open weights</span><span><i class="dot ext"></i>Domain-specific</span>
+    </div>
+  </div>
+  <div class="card table-wrap"><table class="lb" id="lb"></table></div>
+  <details class="drop"><summary>How the scores are computed</summary>
+    <ul class="mlist">
+      <li><span class="mfam">Scale</span><span class="mwhat">Every metric is on a common 0–100 scale. Cell colour runs from blue (low) through grey to orange (high), as in Table 2 of the paper.</span></li>
+      <li><span class="mfam">Mean</span><span class="mwhat">The unweighted mean of the 12 metrics, shown only for systems that produce all 12. It is a ranking aid on this page; the paper reports the 12 metrics separately.</span></li>
+      <li><span class="mfam">N/A</span><span class="mwhat">The system cannot produce the required output, for example a generator with no joints, materials or assembly order.</span></li>
+      <li><span class="mfam">† (P)</span><span class="mwhat">The generator's parts are passed through Particulate to obtain joints.</span></li>
+    </ul>
+  </details>
+
+  <div class="card figure" style="margin-top:3rem">
+    <img src="assets/paper/fig2.webp" alt="Generated structures and the hierarchical evaluation" loading="lazy">
+    <p class="cap" data-cap="Figure 2"></p>
+  </div>
 </section>
 
-<!-- step by step -->
-<section class="mx-auto max-w-xl">
-  <h2 class="text-center fs-3 mb-2">Step-by-step generation of buildable structures</h2>
-  <p class="text-center small-sans text-muted mb-3"><span class="tag baseline">retrieval + creation</span> retrieve and create parts (Baseline Interaction Protocol) <span class="tag retrieval-only">retrieval-only</span> catalogue parts only <span class="tag creation-only">creation-only</span> every part created by the agent</p>
-  <div class="d-flex flex-wrap justify-content-center gap-1 mb-3 filter" id="stepf"></div>
-  <div class="row g-3" id="steps"></div>
+<!-- =====================================================================
+     the benchmark: four views behind one switch
+     ================================================================== -->
+<section class="container sec" id="benchmark" aria-label="The benchmark">
+  <h2 class="part-head"><span class="eyebrow">Explore</span>The benchmark</h2>
+  <div class="switch" id="switch" role="tablist" aria-label="Browse the benchmark">
+    <button type="button" class="sw" role="tab" data-tab="compare" aria-selected="true"><span class="sw-title">Same input, every agent</span><span class="sw-sub">One photo and one sentence, built by each model</span></button>
+    <button type="button" class="sw" role="tab" data-tab="steps" aria-selected="false"><span class="sw-title">Step by step</span><span class="sw-sub">The structure growing, one tool call per frame</span></button>
+    <button type="button" class="sw" role="tab" data-tab="function" aria-selected="false"><span class="sw-title">Joints, materials, assembly</span><span class="sw-sub">What makes a build work and buildable</span></button>
+    <button type="button" class="sw" role="tab" data-tab="data" aria-selected="false"><span class="sw-title">Dataset</span><span class="sw-sub">Sources, sizes and all 200 core references</span></button>
+  </div>
+
+  <!-- compare -->
+  <div class="pane" id="pane-compare" role="tabpanel">
+    <div class="chips objchips" id="objchips" role="group" aria-label="Object"></div>
+    <div class="stage">
+      <aside class="card inputcard" id="inputcard"></aside>
+      <div>
+        <div class="outhead">
+          <span class="lab">Agent outputs</span>
+          <div class="ctrls">
+            <div class="seg" role="group" aria-label="Interaction protocol" id="cmp-tier">
+              <button type="button" data-v="B" aria-pressed="true">Retrieve + create</button>
+              <button type="button" data-v="C" aria-pressed="false">Create only</button>
+            </div>
+            <div class="seg" role="group" aria-label="Round" id="cmp-round">
+              <button type="button" data-v="r1" aria-pressed="true">Round 1</button>
+              <button type="button" data-v="r3" aria-pressed="false">Round 3</button>
+            </div>
+          </div>
+        </div>
+        <div class="mgrid" id="mgrid"></div>
+        <p class="note" id="cmp-note"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- step by step -->
+  <div class="pane" id="pane-steps" role="tabpanel" hidden>
+    <div class="chips" id="stepf" style="margin-bottom:1.5rem"></div>
+    <div class="gal" id="steps"></div>
+  </div>
+
+  <!-- joints / materials / assembly -->
+  <div class="pane" id="pane-function" role="tabpanel" hidden>
+    <div class="chips" id="funcf" style="margin-bottom:1rem"></div>
+    <p class="sec-lede" id="func-lede"></p>
+    <div class="gal" id="func"></div>
+    <details class="drop" id="jointfigs-wrap"><summary>Joint and kinematics figures from the paper</summary>
+      <div class="gal wide" id="jointfigs" style="margin-top:1.25rem"></div></details>
+  </div>
+
+  <!-- dataset -->
+  <div class="pane" id="pane-data" role="tabpanel" hidden>
+    <p class="sec-lede" data-cap="Table 1"></p>
+    <div class="card table-wrap"><table class="t1" id="t1"></table></div>
+    <h3 class="sub-head">LMBuild-Core: 200 reference structures</h3>
+    <div class="chips" id="srcf" style="margin-bottom:1.25rem"></div>
+    <div class="gal objs" id="gal"></div>
+    <div class="more-row"><button class="btn btn-small" id="more" type="button">Show all</button></div>
+  </div>
 </section>
 
-<!-- metrics -->
-<section class="mx-auto max-w-lg">
-  <h2 class="text-center fs-3 mb-4">Generated structures and hierarchical evaluation</h2>
-  <figure><img class="img-fluid" src="assets/paper/fig2.webp" alt="Figure 2"><p class="fig-cap" data-cap="Figure 2"></p></figure>
+<!-- =====================================================================
+     discussion
+     ================================================================== -->
+<section class="container sec" id="findings" aria-label="Discussion">
+  <h2 class="part-head"><span class="eyebrow">Analysis</span>Discussion</h2>
+
+  <div class="find">
+    <div class="find-t">
+      <h3>Functional affordance and physical operability are the largest gaps</h3>
+      <p>Most systems build connected (S.1), collision-free (S.2) structures, and frontier models already produce reasonable
+      decompositions, appealing designs and reference-aligned shapes (D.1–D.3). Even the strongest systems remain imperfect on
+      functional geometry (A.1) and complete functional parts (A.2). Joints and kinematics (A.3) are hard for everyone: most open
+      models score below 25.</p>
+      <p>These gaps carry into realization. Agents name plausible assembly orders (R.1) and materials (R.2), but simulated
+      operability (R.3) stays low for every system.</p>
+    </div>
+    <div class="card figure gapfig" id="gapfig" role="img" aria-label="Mean score per evaluation level for closed and open agents"></div>
+  </div>
+
+  <div class="find flip">
+    <div class="find-t">
+      <h3>Strong models create, weaker models retrieve</h3>
+      <p>We compare three part-access protocols: retrieval only, retrieval plus creation (the baseline), and creation only.
+      Weaker models degrade sharply when they must author every part. Even offering creation alongside retrieval can hurt them,
+      because more freedom means more decisions.</p>
+      <p>Frontier models show the opposite trend. They choose to create when both tools are available and stay as strong, or get
+      stronger, when retrieval is removed. For them, the catalog is the constraint.</p>
+    </div>
+    <div class="card figure"><img src="assets/paper/fig3.webp" alt="Performance under three part-access settings" loading="lazy"><p class="cap" data-cap="Figure 3"></p></div>
+  </div>
+
+  <div class="find">
+    <div class="find-t">
+      <h3>Tell the agent what the object must do</h3>
+      <p>Letting agents inspect error reports and revise for two more rounds gives steady but small gains, about 2 points overall.
+      Adding attribute and functional descriptions grounded in Wikipedia helps far more where models are weakest:
+      <strong>+10.3 on functional parts and +12.0 on operability</strong> (p&nbsp;&lt;&nbsp;0.001), plus better kinematics.</p>
+      <p>Agents are more reliable at turning stated functional constraints into structure than at inferring them from an object
+      name alone.</p>
+    </div>
+    <div class="card figure"><img src="assets/paper/fig4.webp" alt="Score change from revision rounds and richer prompts" loading="lazy"><p class="cap" data-cap="Figure 4"></p></div>
+  </div>
 </section>
 
-<!-- joints -->
-<section class="mx-auto max-w-xl">
-  <h2 class="text-center fs-3 mb-4">Declared joints and kinematics</h2>
-  <div class="row g-3" id="joints"></div>
-  <div class="row g-4 mt-2" id="jointfigs"></div>
+<!-- =====================================================================
+     FAQ
+     ================================================================== -->
+<section class="container sec" id="faq" aria-label="FAQ">
+  <div class="rail">
+    <h2 class="part-head">FAQ</h2>
+    <details class="qa"><summary>What is LMBuild?</summary><div class="qa-body">
+      <p>LMBuild evaluates LLM agents on generating 3D structures that can be built and that work. A generated object is an
+      <strong>assembled structure</strong>: a meaningful part decomposition, joints, materials and an assembly sequence. The
+      framework has three pieces: an interactive building environment, a curated benchmark built from established CAD datasets
+      and enriched with Wikipedia knowledge, and a four-level evaluation.</p>
+    </div></details>
+    <details class="qa"><summary>What does the agent get, and what must it produce?</summary><div class="qa-body">
+      <p>In the main setting the agent gets an object name and an image, for example <em>“According to image W1, build a
+      desk.”</em> Using tools, it inspects and selects catalog parts, creates new parts from code, and places and adjusts them.
+      It then declares joints, a material for each part and an assembly order. Other conditions add attribute or functional
+      descriptions, or drop the image.</p>
+    </div></details>
+    <details class="qa"><summary>What are the interaction protocols?</summary><div class="qa-body">
+      <ul>
+        <li><strong>Retrieve + create</strong> (baseline): catalog parts and newly created parts.</li>
+        <li><strong>Retrieve only</strong>: catalog parts only.</li>
+        <li><strong>Create only</strong>: every part is authored by the agent.</li>
+      </ul>
+    </div></details>
+    <details class="qa"><summary>How is a build scored?</summary><div class="qa-body">
+      <p>Twelve metrics in four levels. <strong>Soundness</strong>: connectivity, collision and stability, by rule-based geometry
+      checks. <strong>Affordance</strong>: functional geometry against the reference, plus Wikipedia-grounded part and kinematics
+      checks. <strong>Design</strong>: decomposition, aesthetics and alignment, by human-calibrated VLM judges with rule-based
+      parts. <strong>Realization</strong>: assembly sequence, material choice and simulated operability.</p>
+    </div></details>
+    <details class="qa"><summary>Which systems are evaluated?</summary><div class="qa-body">
+      <p>Six frontier closed-source APIs, thirteen open-source (multimodal) LLMs, and eleven domain-specific generators: brick
+      models (BrickGPT, LegoACE), part-aware 3D generators (PartCrafter, PartPacker, Cube3D with CubePart), the same generators
+      with Particulate for joints, and PhysX-Anything.</p>
+    </div></details>
+    <details class="qa"><summary>Where do the tasks come from?</summary><div class="qa-body">
+      <p>LMBuild repurposes BrickNet, BrickComposer, PartNeXt, the Fusion 360 Gallery (Joinable), Artiverse and open-source
+      hardware CAD, and grounds each object in verified Wikipedia and Wikidata knowledge. <strong>LMBuild-Core</strong> has 200
+      tasks and <strong>LMBuild-Full</strong> has 2,549. The <a class="a-body" href="#benchmark" data-goto="data">Dataset</a> tab lists them.</p>
+    </div></details>
+  </div>
 </section>
 
-<!-- materials -->
-<section class="mx-auto max-w-xl">
-  <h2 class="text-center fs-3 mb-4">Declared materials</h2>
-  <div class="row g-3" id="materials"></div>
-</section>
-
-<!-- assembly sequences -->
-<section class="mx-auto max-w-xl">
-  <h2 class="text-center fs-3 mb-4">Declared assembly sequences</h2>
-  <div class="row g-3" id="sequences"></div>
-</section>
-
-<!-- final designs -->
-<section class="mx-auto max-w-xl">
-  <h2 class="text-center fs-3 mb-4">Final structures</h2>
-  <div class="row g-3" id="turn"></div>
-</section>
-
-<!-- dataset -->
-<section class="mx-auto max-w-xl">
-  <h2 class="text-center fs-3 mb-3">Dataset</h2>
-  <p class="fig-cap mx-auto max-w-lg" data-cap="Table 1"></p>
-  <div class="table-responsive"><table class="table table-sm tbl" id="t1"></table></div>
-  <h3 class="text-center fs-5 mt-4 mb-3">LMBuild-Core: 200 reference structures</h3>
-  <div class="d-flex flex-wrap justify-content-center gap-1 mb-3 filter" id="srcf"></div>
-  <div class="row g-2" id="gal"></div>
-  <div class="text-center mt-3"><button class="btn btn-outline-dark btn-sm" id="more">Show all 200</button></div>
-</section>
-
-<!-- results -->
-<section class="mx-auto max-w-xl">
-  <h2 class="text-center fs-3 mb-3">Results</h2>
-  <p class="fig-cap mx-auto max-w-lg" data-cap="Table 2"></p>
-  <div class="table-responsive"><table class="table table-sm tbl" id="t2"></table></div>
-  <figure class="mx-auto max-w-lg mt-4"><img class="img-fluid" src="assets/paper/fig3.webp" alt="Figure 3"><p class="fig-cap" data-cap="Figure 3"></p></figure>
-  <figure class="mx-auto max-w-lg mt-4"><img class="img-fluid" src="assets/paper/fig4.webp" alt="Figure 4"><p class="fig-cap" data-cap="Figure 4"></p></figure>
-</section>
-
-<!-- citation -->
-<section class="mx-auto max-w-md" id="citation">
-  <h2 class="fs-4 mb-3">Citation</h2>
-<pre class="bib">@article{liu2026lmbuild,
-  title   = {LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures},
-  author  = {Liu, Jiateng and Wang, Rushi and Qian, Cheng and Zhang, Xuejun and Li, Sun and Liu, Jiayu and
-             Shen, Yifan and Cao, Xu and Yao, Jiarui and Li, Bingxuan and Sarikaya, Ruhi and Ji, Heng},
-  journal = {arXiv preprint},
-  year    = {2026}
-}</pre>
-  <p class="small-sans text-muted mt-4">Website layout follows the <a href="https://avalovelace1.github.io/BrickGPT/">BrickGPT</a> project page.</p>
+<!-- =====================================================================
+     citation
+     ================================================================== -->
+<section class="container sec" id="cite" aria-label="Citation">
+  <div class="rail">
+    <h2 class="part-head">Citation</h2>
+    <div class="code">
+      <div class="code-head"><span class="code-lang">BibTeX</span>
+        <button type="button" class="copy" id="copy-bib"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span>Copy</span></button></div>
+<pre><code id="bib">@misc{liu2026lmbuildevaluatingllmagents,
+      title={LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures},
+      author={Jiateng Liu and Rushi Wang and Cheng Qian and Xuejun Zhang and Sun Li and Jiayu Liu and Yifan Shen and Xu Cao and Jiarui Yao and Bingxuan Li and Ruhi Sarikaya and Heng Ji},
+      year={2026},
+      eprint={2610.04292},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2610.04292},
+}</code></pre>
+    </div>
+  </div>
 </section>
 </main>
 
-<script>
-const AUTH=["Jiateng Liu","Rushi Wang","Cheng Qian","Xuejun Zhang","Sun Li","Jiayu Liu","Yifan Shen","Xu Cao","Jiarui Yao","Bingxuan Li","Ruhi Sarikaya","Heng Ji"];
-const badge=a=>`<span class="badge text-bg-light fs-6 fw-normal">${a}</span>`;
-document.getElementById('authors1').innerHTML=AUTH.slice(0,6).map(badge).join("");
-document.getElementById('authors2').innerHTML=AUTH.slice(6).map(badge).join("");
-const NAME={"gpt-6-astra":"GPT-6 Astra","gpt-5.6-sol":"GPT-5.6 Sol","claude-opus-5":"Claude Opus 5","claude-fable-5.1":"Claude Fable 5.1","claude-sonnet-5":"Claude Sonnet 5","qwen3.5-27b":"Qwen3.5-27B","physx-anything":"PhysX-Anything"};
-const pretty=s=>s.replace(/_/g," ").replace(/^j /,"");
-const col=(w,html)=>`<div class="${w}">${html}</div>`;
-const PLAB={"baseline":"retrieval + creation","retrieval-only":"retrieval-only","creation-only":"creation-only"};
-const GORD={product:0,sota:1,open:2};
-const GLAB={product:"Product-level CAD (open-source hardware)",sota:"Everyday objects, mechanisms and LEGO models",open:"Open-source LLM agents"};
-const byGroup=xs=>[...xs].sort((a,b)=>(GORD[a.group||"sota"]-GORD[b.group||"sota"]));
-function grouped(xs,w,extra){return byGroup(xs).map(m=>{let c=mediaCard(m,w);if(extra)c=extra(c);return c}).join("")}
-function mediaCard(m,w){const tag=(m.protocol?`<span class="tag ${m.protocol}">${PLAB[m.protocol]||m.protocol}</span>`:"")+(m.group==="product"?`<span class="tag product">real product</span>`:m.group==="open"?`<span class="tag open">open-source</span>`:"");
-  const sub=m.joint?`: ${m.joint_label||m.joint.replace(/_/g," ")}`:"";
-  return col(w,`<figure><img class="gif" src="${m.file||m.path}" loading="lazy" alt="${m.object}"><figcaption><span class="text-capitalize">${m.object}</span>${sub} · ${m.system}${tag}</figcaption></figure>`)}
-fetch("data/media.json").then(r=>r.ok?r.json():null).then(M=>{if(!M)return;
-  const teaser=(M.step||[]).filter(m=>m.teaser).slice(0,4);
-  const share=m=>m.created_share==null?"":(m.created_share<=0.05?"all parts retrieved from the catalogue":m.created_share>=0.95?"all parts created by the agent":`${Math.round(100*m.created_share)}% of parts created`);
-  document.getElementById('teaser').innerHTML=teaser.map(m=>mediaCard(m,"col-6 col-lg-3").replace("</figcaption>",`<br><span class="text-muted">${share(m)}</span></figcaption>`)).join("");
-  let P="all";const PR=["all","baseline","retrieval-only","creation-only"];
-  const drawSteps=()=>document.getElementById('steps').innerHTML=grouped((M.step||[]).filter(m=>P==="all"||m.protocol===P),"col-6 col-md-3");
-  document.getElementById('stepf').innerHTML=PR.map((p,i)=>`<button class="btn btn-sm ${i?'btn-outline-dark':'btn-dark'}" data-p="${p}">${p==="all"?"all":PLAB[p]}</button>`).join("");
-  document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{P=b.dataset.p;document.querySelectorAll('[data-p]').forEach(x=>x.className="btn btn-sm "+(x===b?"btn-dark":"btn-outline-dark"));drawSteps()});
-  drawSteps();
-  document.getElementById('joints').innerHTML=grouped(M.joints||[],"col-6 col-md-3");
-  document.getElementById('materials').innerHTML=grouped(M.materials||[],"col-12 col-md-6 col-lg-3",c=>c.replace('class="gif"','class="gif mat"'));
-  document.getElementById('sequences').innerHTML=grouped(M.sequence||[],"col-6 col-md-3");
-});
-document.getElementById('jointfigs').innerHTML=[5,6,7,8,9,10,11,12].map(n=>col("col-12 col-md-6",`<figure><img class="img-fluid" src="assets/paper/fig${n}.webp" loading="lazy" alt="Figure ${n}"><p class="fig-cap" data-cap="Figure ${n}"></p></figure>`)).join("");
-const TT=["wheelchair__gpt-6-astra__B","office_desk__gpt-5.6-sol__B","bookcase__gpt-6-astra__B","toilet__qwen3.5-27b__B"];
-document.getElementById('turn').innerHTML=TT.map(k=>{const [t,s]=k.split("__");return col("col-6 col-md-3",`<figure><img class="gif" src="assets/gifs/${k}_turntable.gif" loading="lazy" alt="${pretty(t)}"><figcaption class="text-capitalize">${pretty(t)} · ${NAME[s]}</figcaption></figure>`)}).join("");
+<footer class="foot">© 2026 The LMBuild authors · <a href="https://arxiv.org/abs/2610.04292">arXiv:2610.04292</a> · <a href="https://github.com/Lumos-Jiateng/LMBuild">GitHub</a> · <a href="https://huggingface.co/datasets/Lumos-Jiateng/LMBuild">Hugging Face</a></footer>
 
-// Table 1 (paper)
-const T1=[["LEGO Toy Data","BrickNet","320,808","5","13.80 / 14.60","888","8.79 / 10.82"],["","BrickComposer","9,977","50","10.16 / 10.34","50","10.16 / 10.34"],
- ["Static Structures","PartNeXt","23,519","14","5.07 / 8.00","589","6.00 / 7.92"],["Mechanical Structures","Fusion 360 Gallery (Joinable)","8,251","55","6.85 / 8.91","80","6.20 / 8.41"],
- ["Daily Objects / Furniture","Artiverse","5,402","42","6.50 / 8.57","908","5.90 / 7.43"],["Product-level CAD","Robotics & vehicles","7","7","8.29 / 9.29","7","8.29 / 9.29"],
- ["(open-source hardware)","Consumer devices","10","10","6.40 / 7.80","10","6.40 / 7.80"],["","Lab & medical instruments","7","7","5.71 / 8.43","7","5.71 / 8.43"],
- ["","Fabrication machines & tools","10","10","6.30 / 9.60","10","6.30 / 9.60"],["Total in LMBuild","","367,991","200","7.62 / 9.25","2,549","7.03 / 8.83"]];
-document.getElementById('t1').innerHTML=`<thead><tr><th rowspan="2" class="text-start">Geometry Type</th><th rowspan="2" class="text-start">Data Source</th><th rowspan="2">Original Size</th><th colspan="2">LMBuild-Core</th><th colspan="2">LMBuild-Full</th></tr><tr><th>Size</th><th>Avg. Parts / Aff.</th><th>Size</th><th>Avg. Parts / Aff.</th></tr></thead><tbody>`+
- T1.map((r,i)=>`<tr${i==T1.length-1?' class="fw-bold"':''}><td class="text-start">${r[0]}</td><td class="text-start">${r[1]}</td>${r.slice(2).map(x=>`<td class="n">${x}</td>`).join("")}</tr>`).join("")+`</tbody>`;
+<nav class="pnav" id="pnav" aria-label="Sections">
+  <a href="#overview" data-sec="overview"><b></b><span>Overview</span></a>
+  <a href="#task" data-sec="task"><b></b><span>The task</span></a>
+  <a href="#takeaways" data-sec="takeaways"><b></b><span>Key takeaways</span></a>
+  <a href="#leaderboard" data-sec="leaderboard"><b></b><span>Leaderboard</span></a>
+  <a href="#benchmark" data-sec="benchmark"><b></b><span>The benchmark</span></a>
+  <a href="#findings" data-sec="findings"><b></b><span>Discussion</span></a>
+  <a href="#faq" data-sec="faq"><b></b><span>FAQ</span></a>
+  <a href="#cite" data-sec="cite"><b></b><span>Citation</span></a>
+</nav>
 
-// Table 2 colours: blue (low) -> gray -> orange (high), as in the paper
-function heat(v){if(v==null)return"";const lo=[158,197,232],mid=[232,232,232],hi=[245,177,131];const t=v/100,[a,b,u]=t<.5?[lo,mid,t/.5]:[mid,hi,(t-.5)/.5];return `background:rgb(${a.map((x,i)=>Math.round(x+(b[i]-x)*u)).join(",")})`}
-const LAB2={"cubepart_core":"Cube3D+CubePart","particulate-partcrafter":"PartCrafter15† (P)","particulate-partcrafter-np8":"PartCrafter8† (P)","particulate-partpacker":"PartPacker† (P)","particulate-cube3d":"Cube3D† (P)"};
-const ORDER={closed:["gpt-6-astra","gpt-5.6-sol","claude-opus-5","claude-fable-5.1","claude-sonnet-5","claude-haiku-4.5"],
- open:["qwen3.5-27b","qwen3.5-35b-a3b","gpt-oss-120b","gemma-4-31b-it","ministral-3-8b-instruct-2512","internvl3.5-38b","qwen3-vl-30b-a3b-instruct","minicpm-v-4.5","qwen3-4b-instruct-2507","qwen3-vl-32b-instruct","ernie-4.5-vl-28b-a3b","internvl3.5-8b","qwen3-vl-8b-instruct"],
- ext:["brickgpt","legoace","partcrafter_np15","partcrafter_np8","partpacker","cubepart_core","particulate-partcrafter","particulate-partcrafter-np8","particulate-partpacker","particulate-cube3d","physx-anything"]};
-const GT={closed:"State-of-the-art Closed-Source APIs",open:"Open-Source (Multi-modal) Large Language Models",ext:"State-of-the-art Domain-Specific Models"};
-Promise.all([fetch("data/results.json").then(r=>r.json()),fetch("data/captions.json").then(r=>r.json()),fetch("data/objects.json").then(r=>r.json())]).then(([R,C,O])=>{
-  document.getElementById('abstract').textContent=C.abstract;
-  document.querySelectorAll('[data-cap]').forEach(e=>{const k=e.dataset.cap;e.innerHTML=`<b>${k}.</b> `+C[k].replace(/^(Figure|Table) \d+:\s*/,"")});
-  const by=Object.fromEntries(R.rows.map(r=>[r.id,r]));
-  let h=`<thead><tr><th rowspan="2" class="text-start">Models / Metrics</th><th colspan="3">Soundness</th><th colspan="3">Affordance</th><th colspan="3">Design</th><th colspan="3">Realization</th></tr><tr>`+["S.1","S.2","S.3","A.1","A.2","A.3","D.1","D.2","D.3","R.1","R.2","R.3"].map(x=>`<th>${x}</th>`).join("")+`</tr></thead><tbody>`;
-  for(const g of ["closed","open","ext"]){h+=`<tr class="grp"><td colspan="13">${GT[g]}</td></tr>`;
-    for(const id of ORDER[g]){const r=by[id];h+=`<tr><td class="m">${LAB2[id]||r.name}</td>`+r.scores.map(v=>`<td class="n" style="${heat(v)}">${v==null?"N/A":v.toFixed(1)}</td>`).join("")+`</tr>`}}
-  document.getElementById('t2').innerHTML=h+"</tbody>";
-  // gallery
-  const SRC=["All","Artiverse","Fusion 360","BrickComposer","Product CAD","PartNeXt","BrickNet"];let S="All",ALL=false;
-  const draw=()=>{const xs=O.filter(o=>S==="All"||o.source===S);const ys=ALL?xs:xs.slice(0,24);
-    document.getElementById('gal').innerHTML=ys.map(o=>col("col-6 col-md-3",`<figure><img class="obj" src="${o.img}" loading="lazy" alt="${o.name}"><figcaption class="text-capitalize">${o.name} <span class="text-muted">· ${o.source}</span></figcaption></figure>`)).join("");
-    document.getElementById('more').style.display=(ALL||xs.length<=24)?"none":"";};
-  document.getElementById('srcf').innerHTML=SRC.map((s,i)=>`<button class="btn btn-sm ${i?'btn-outline-dark':'btn-dark'}" data-s="${s}">${s}</button>`).join("");
-  document.querySelectorAll('[data-s]').forEach(b=>b.onclick=()=>{S=b.dataset.s;document.querySelectorAll('[data-s]').forEach(x=>x.className="btn btn-sm "+(x===b?"btn-dark":"btn-outline-dark"));draw()});
-  document.getElementById('more').onclick=()=>{ALL=true;draw()};draw();
-});
-</script>
+<div class="lightbox" id="lightbox" hidden><figure><img alt=""><figcaption></figcaption></figure></div>
+
+<script src="app.js"></script>
 </body>
 </html>

@@ -1,0 +1,344 @@
+{
+ "av_blender": {
+  "img": "assets/inputs/av_blender.webp",
+  "prompt": "According to image W1, build a blender.",
+  "name": "blender",
+  "image_id": "W1"
+ },
+ "av_locker": {
+  "img": "assets/inputs/av_locker.webp",
+  "prompt": "According to image W1, build a locker.",
+  "name": "locker",
+  "image_id": "W1"
+ },
+ "av_safe": {
+  "img": "assets/inputs/av_safe.webp",
+  "prompt": "According to image W1, build a safe.",
+  "name": "safe",
+  "image_id": "W1"
+ },
+ "av_standing_mirror": {
+  "img": "assets/inputs/av_standing_mirror.webp",
+  "prompt": "According to image W1, build a cheval mirror.",
+  "name": "cheval mirror",
+  "image_id": "W1"
+ },
+ "av_tv_stand": {
+  "img": "assets/inputs/av_tv_stand.webp",
+  "prompt": "According to image W1, build an entertainment center.",
+  "name": "entertainment center",
+  "image_id": "W1"
+ },
+ "baby_stroller": {
+  "img": "assets/inputs/baby_stroller.webp",
+  "prompt": "According to image W1, build a stroller.",
+  "name": "stroller",
+  "image_id": "W1"
+ },
+ "barbecue_grill": {
+  "img": "assets/inputs/barbecue_grill.webp",
+  "prompt": "According to image W1, build a barbecue grill.",
+  "name": "barbecue grill",
+  "image_id": "W1"
+ },
+ "bc_box_truck": {
+  "img": "assets/inputs/bc_box_truck.webp",
+  "prompt": "According to image W2, build a box truck.",
+  "name": "box truck",
+  "image_id": "W2"
+ },
+ "bc_fire_engine": {
+  "img": "assets/inputs/bc_fire_engine.webp",
+  "prompt": "According to image W1, build a fire engine.",
+  "name": "fire engine",
+  "image_id": "W1"
+ },
+ "bookcase": {
+  "img": "assets/inputs/bookcase.webp",
+  "prompt": "According to image W3, build a bookcase.",
+  "name": "bookcase",
+  "image_id": "W3"
+ },
+ "casement_window": {
+  "img": "assets/inputs/casement_window.webp",
+  "prompt": "According to image W1, build a window.",
+  "name": "window",
+  "image_id": "W1"
+ },
+ "chest_of_drawers": {
+  "img": "assets/inputs/chest_of_drawers.webp",
+  "prompt": "According to image W2, build a chest of drawers.",
+  "name": "chest of drawers",
+  "image_id": "W2"
+ },
+ "computer_case": {
+  "img": "assets/inputs/computer_case.webp",
+  "prompt": "According to image W1, build a computer case.",
+  "name": "computer case",
+  "image_id": "W1"
+ },
+ "computer_keyboard": {
+  "img": "assets/inputs/computer_keyboard.webp",
+  "prompt": "According to image W1, build a computer keyboard.",
+  "name": "computer keyboard",
+  "image_id": "W1"
+ },
+ "desk_lamp": {
+  "img": "assets/inputs/desk_lamp.webp",
+  "prompt": "According to image W1, build a balanced-arm lamp.",
+  "name": "balanced-arm lamp",
+  "image_id": "W1"
+ },
+ "dining_chair": {
+  "img": "assets/inputs/dining_chair.webp",
+  "prompt": "According to image W2, build a chair.",
+  "name": "chair",
+  "image_id": "W2"
+ },
+ "dishwasher": {
+  "img": "assets/inputs/dishwasher.webp",
+  "prompt": "According to image W1, build a dishwasher.",
+  "name": "dishwasher",
+  "image_id": "W1"
+ },
+ "f360_bench_vise": {
+  "img": "assets/inputs/f360_bench_vise.webp",
+  "prompt": "According to image W1, build a vise.",
+  "name": "vise",
+  "image_id": "W1"
+ },
+ "f360_electric_motor": {
+  "img": "assets/inputs/f360_electric_motor.webp",
+  "prompt": "According to image W1, build an electric motor.",
+  "name": "electric motor",
+  "image_id": "W1"
+ },
+ "f360_microscope": {
+  "img": "assets/inputs/f360_microscope.webp",
+  "prompt": "According to image W1, build an optical microscope.",
+  "name": "optical microscope",
+  "image_id": "W1"
+ },
+ "f360_quadcopter": {
+  "img": "assets/inputs/f360_quadcopter.webp",
+  "prompt": "According to image W1, build a quadcopter.",
+  "name": "quadcopter",
+  "image_id": "W1"
+ },
+ "f360_worm_gearbox": {
+  "img": "assets/inputs/f360_worm_gearbox.webp",
+  "prompt": "According to image W3, build a worm drive.",
+  "name": "worm drive",
+  "image_id": "W3"
+ },
+ "farm_tractor": {
+  "img": "assets/inputs/farm_tractor.webp",
+  "prompt": "According to image W1, build a tractor.",
+  "name": "tractor",
+  "image_id": "W1"
+ },
+ "hinged_door": {
+  "img": "assets/inputs/hinged_door.webp",
+  "prompt": "According to image W1, build a door.",
+  "name": "door",
+  "image_id": "W1"
+ },
+ "kitchen_oven": {
+  "img": "assets/inputs/kitchen_oven.webp",
+  "prompt": "According to image W2, build an oven.",
+  "name": "oven",
+  "image_id": "W2"
+ },
+ "laptop": {
+  "img": "assets/inputs/laptop.webp",
+  "prompt": "According to image W1, build a laptop.",
+  "name": "laptop",
+  "image_id": "W1"
+ },
+ "mixer_faucet": {
+  "img": "assets/inputs/mixer_faucet.webp",
+  "prompt": "According to image W1, build a tap.",
+  "name": "tap",
+  "image_id": "W1"
+ },
+ "office_desk": {
+  "img": "assets/inputs/office_desk.webp",
+  "prompt": "According to image W1, build a desk.",
+  "name": "desk",
+  "image_id": "W1"
+ },
+ "offroad_jeep": {
+  "img": "assets/inputs/offroad_jeep.webp",
+  "prompt": "According to image W1, build an off-road vehicle.",
+  "name": "off-road vehicle",
+  "image_id": "W1"
+ },
+ "oscillating_fan": {
+  "img": "assets/inputs/oscillating_fan.webp",
+  "prompt": "According to image W1, build an electric fan.",
+  "name": "electric fan",
+  "image_id": "W1"
+ },
+ "oscillating_steam_engine": {
+  "img": "assets/inputs/oscillating_steam_engine.webp",
+  "prompt": "According to image W1, build an oscillating steam engine.",
+  "name": "oscillating steam engine",
+  "image_id": "W1"
+ },
+ "passenger_car": {
+  "img": "assets/inputs/passenger_car.webp",
+  "prompt": "According to image W1, build a car.",
+  "name": "car",
+  "image_id": "W1"
+ },
+ "pc_3d_printer": {
+  "img": "assets/inputs/pc_3d_printer.webp",
+  "prompt": "According to image W2, build a 3D printer.",
+  "name": "3D printer",
+  "image_id": "W2"
+ },
+ "pc_camera_slider": {
+  "img": "assets/inputs/pc_camera_slider.webp",
+  "prompt": "According to image W1, build a camera dolly.",
+  "name": "camera dolly",
+  "image_id": "W1"
+ },
+ "pc_cubesat": {
+  "img": "assets/inputs/pc_cubesat.webp",
+  "prompt": "According to image W1, build a CubeSat.",
+  "name": "CubeSat",
+  "image_id": "W1"
+ },
+ "pc_mechanical_calculator": {
+  "img": "assets/inputs/pc_mechanical_calculator.webp",
+  "prompt": "According to image W1, build a mechanical calculator.",
+  "name": "mechanical calculator",
+  "image_id": "W1"
+ },
+ "pc_pen_plotter": {
+  "img": "assets/inputs/pc_pen_plotter.webp",
+  "prompt": "According to image W1, build a plotter.",
+  "name": "plotter",
+  "image_id": "W1"
+ },
+ "pc_peristaltic_pump": {
+  "img": "assets/inputs/pc_peristaltic_pump.webp",
+  "prompt": "According to image W1, build a peristaltic pump.",
+  "name": "peristaltic pump",
+  "image_id": "W1"
+ },
+ "pc_thermal_cycler": {
+  "img": "assets/inputs/pc_thermal_cycler.webp",
+  "prompt": "According to image W1, build a thermal cycler.",
+  "name": "thermal cycler",
+  "image_id": "W1"
+ },
+ "pc_underwater_rov": {
+  "img": "assets/inputs/pc_underwater_rov.webp",
+  "prompt": "According to image W2, build a remotely operated underwater vehicle.",
+  "name": "remotely operated underwater vehicle",
+  "image_id": "W2"
+ },
+ "pc_vinyl_cutter": {
+  "img": "assets/inputs/pc_vinyl_cutter.webp",
+  "prompt": "According to image W1, build a vinyl cutter.",
+  "name": "vinyl cutter",
+  "image_id": "W1"
+ },
+ "pc_vr_headset": {
+  "img": "assets/inputs/pc_vr_headset.webp",
+  "prompt": "According to image W1, build a virtual reality headset.",
+  "name": "virtual reality headset",
+  "image_id": "W1"
+ },
+ "pc_wire_stripper": {
+  "img": "assets/inputs/pc_wire_stripper.webp",
+  "prompt": "According to image W1, build a wire stripper.",
+  "name": "wire stripper",
+  "image_id": "W1"
+ },
+ "refrigerator": {
+  "img": "assets/inputs/refrigerator.webp",
+  "prompt": "According to image W1, build a refrigerator.",
+  "name": "refrigerator",
+  "image_id": "W1"
+ },
+ "robot_arm": {
+  "img": "assets/inputs/robot_arm.webp",
+  "prompt": "According to image W1, build a robotic arm.",
+  "name": "robotic arm",
+  "image_id": "W1"
+ },
+ "robotic_hand": {
+  "img": "assets/inputs/robotic_hand.webp",
+  "prompt": "According to image W3, build a robotic hand.",
+  "name": "robotic hand",
+  "image_id": "W3"
+ },
+ "rolling_suitcase": {
+  "img": "assets/inputs/rolling_suitcase.webp",
+  "prompt": "According to image W1, build a suitcase.",
+  "name": "suitcase",
+  "image_id": "W1"
+ },
+ "scissors": {
+  "img": "assets/inputs/scissors.webp",
+  "prompt": "According to image W1, build a pair of scissors.",
+  "name": "scissors",
+  "image_id": "W1"
+ },
+ "skateboard": {
+  "img": "assets/inputs/skateboard.webp",
+  "prompt": "According to image W1, build a skateboard.",
+  "name": "skateboard",
+  "image_id": "W1"
+ },
+ "spinal_quadruped_robot": {
+  "img": "assets/inputs/spinal_quadruped_robot.webp",
+  "prompt": "According to image W1, build a legged robot.",
+  "name": "legged robot",
+  "image_id": "W1"
+ },
+ "swivel_office_chair": {
+  "img": "assets/inputs/swivel_office_chair.webp",
+  "prompt": "According to image W2, build an office chair.",
+  "name": "office chair",
+  "image_id": "W2"
+ },
+ "toilet": {
+  "img": "assets/inputs/toilet.webp",
+  "prompt": "According to image W1, build a toilet.",
+  "name": "toilet",
+  "image_id": "W1"
+ },
+ "umbrella": {
+  "img": "assets/inputs/umbrella.webp",
+  "prompt": "According to image W1, build an umbrella.",
+  "name": "umbrella",
+  "image_id": "W1"
+ },
+ "washing_machine": {
+  "img": "assets/inputs/washing_machine.webp",
+  "prompt": "According to image W1, build a washing machine.",
+  "name": "washing machine",
+  "image_id": "W1"
+ },
+ "wheelchair": {
+  "img": "assets/inputs/wheelchair.webp",
+  "prompt": "According to image W1, build a wheelchair.",
+  "name": "wheelchair",
+  "image_id": "W1"
+ },
+ "wheeled_dumpster": {
+  "img": "assets/inputs/wheeled_dumpster.webp",
+  "prompt": "According to image W2, build a dumpster.",
+  "name": "dumpster",
+  "image_id": "W2"
+ },
+ "wheeled_excavator": {
+  "img": "assets/inputs/wheeled_excavator.webp",
+  "prompt": "According to image W1, build an excavator.",
+  "name": "excavator",
+  "image_id": "W1"
+ }
+}
