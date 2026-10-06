@@ -299,11 +299,11 @@ $("#st-close").onclick = () => { $("#stage").hidden = true; history.replaceState
 $("#thumbs-more").onclick = () => { XALL = true; drawThumbs(); };
 
 // ---- step / function galleries -----------------------------------------------
-let MEDIA = null, XG = {}, GPAGE = {};
+let MEDIA = null, XG = {}, XA = {}, GPAGE = {}, GMODE = "one";
 // curated examples first, then one pick per task from the 200-task renders, 24 more per click
 const PROT = {B: "baseline", C: "creation-only"};
 function extraItems(kind, skip) {
-  return (XG[kind] || []).filter(r => !skip.has(r.task + "|" + (NAME[r.id] || r.id)))
+  return ((GMODE === "all" ? XA[kind] : XG[kind]) || []).filter(r => !skip.has(r.task + "|" + (NAME[r.id] || r.id)))
     .map(r => ({file: r.file, task: r.task, object: r.object, system: NAME[r.id] || r.id, protocol: PROT[r.tier],
       group: r.source === "Product CAD" ? "product" : "sota", joint: r.label ? "j" : null, joint_label: r.label,
       materials: r.legend, n_parts: r.n_parts}));
@@ -316,7 +316,30 @@ function paged(el, kind, items, render) {
   row.innerHTML = items.length > n ? `<button type="button" class="btn btn-small">Show more (${items.length - n} left)</button>` : "";
   if (items.length > n) row.querySelector("button").onclick = () => { GPAGE[kind] = n + 24; paged(el, kind, items, render); };
 }
+// "One per task" (default) or every working build; the full lists load on first use
+function modeBar(el, redraw, kinds) {
+  const bar = document.createElement("div");
+  bar.className = "gmode";
+  bar.innerHTML = `<div class="seg" role="group" aria-label="How many builds"><button type="button" data-v="one" aria-pressed="true">One per task</button><button type="button" data-v="all" aria-pressed="false">All builds</button></div>`;
+  el.before(bar);
+  $$("button", bar).forEach(b => b.onclick = async () => {
+    GMODE = b.dataset.v;
+    $$(".gmode button").forEach(x => x.setAttribute("aria-pressed", x.dataset.v === GMODE));
+    if (GMODE === "all") await Promise.all(["step", "joints", "materials", "sequence"].map(async k => { if (!XA[k]) XA[k] = await getJSON(`data/gallery_all_${k}.json`) || []; }));
+    GPAGE = {};
+    if (window.stepChips) window.stepChips();
+    if (window.funcChips) window.funcChips();
+    redraw();
+  });
+}
+let STEP_P = "all", FUNC_K = "joints";
+function funcCount(k) { const cur = byGroup(MEDIA[k] || []); return cur.length + extraItems(k, new Set(cur.map(m => m.task + "|" + m.system))).length; }
+function stepCount(P) {
+  const cur = (MEDIA.step || []).filter(m => P === "all" || m.protocol === P);
+  return cur.length + extraItems("step", new Set(cur.map(m => m.task + "|" + m.system))).filter(m => P === "all" || m.protocol === P).length;
+}
 function drawSteps(P) {
+  STEP_P = P;
   const cur = byGroup((MEDIA.step || []).filter(m => P === "all" || m.protocol === P));
   const skip = new Set(cur.map(m => m.task + "|" + m.system));
   const xs = cur.concat(extraItems("step", skip).filter(m => P === "all" || m.protocol === P));
@@ -327,6 +350,7 @@ const FUNC = {
   materials: {label: "Materials", lede: "Each part is assigned a material. Shown: the build coloured by the material the agent declared for each part.", cls: "mat"},
   sequence: {label: "Assembly sequences", lede: "Each agent declares the order in which its parts are put together. Shown: the declared assembly sequence, played back step by step."}};
 function drawFunc(k) {
+  FUNC_K = k;
   const f = FUNC[k];
   $("#func-lede").textContent = f.lede;
   const cur = byGroup(MEDIA[k] || []), skip = new Set(cur.map(m => m.task + "|" + m.system));
@@ -362,10 +386,16 @@ Promise.all(["results", "captions", "objects", "media", "inputs", "explore/index
     const teaser = (M.step || []).filter(m => m.teaser).slice(0, 6);
     $("#teaser").innerHTML = teaser.map(m => ioCard(m)).join("");
     const PR = ["all", "baseline", "retrieval-only", "creation-only"];
-    chips($("#stepf"), PR.map(p => [p, p === "all" ? "All" : cap(PLAB[p]), (M.step || []).filter(m => p === "all" || m.protocol === p).length]), drawSteps, "all");
+    const stepChips = () => chips($("#stepf"), PR.map(p => [p, p === "all" ? "All" : cap(PLAB[p]), stepCount(p)]), drawSteps, STEP_P);
+    window.stepChips = stepChips;
+    stepChips();
     drawSteps("all");
-    chips($("#funcf"), Object.entries(FUNC).map(([k, f]) => [k, f.label, (M[k] || []).length]), drawFunc, "joints");
+    modeBar($("#stepf"), () => { drawSteps(STEP_P); drawFunc(FUNC_K); }, () => ["step"]);
+    const funcChips = () => chips($("#funcf"), Object.entries(FUNC).map(([k, f]) => [k, f.label, funcCount(k)]), drawFunc, FUNC_K);
+    window.funcChips = funcChips;
+    funcChips();
     drawFunc("joints");
+    modeBar($("#funcf"), () => { drawSteps(STEP_P); drawFunc(FUNC_K); }, () => ["joints", "materials", "sequence"]);
     $("#jointfigs").innerHTML = [5, 6, 7, 8, 9, 10, 11, 12].map(n => `<figure class="card figure"><img src="assets/paper/fig${n}.webp" loading="lazy" alt="Figure ${n}" data-zoom="assets/paper/fig${n}.webp"><p class="cap">${C && C["Figure " + n] ? `<b>Figure ${n}.</b> ` + esc(C["Figure " + n].replace(/^Figure \d+:\s*/, "")) : ""}</p></figure>`).join("");
   }
 

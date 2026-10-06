@@ -443,3 +443,5 @@ details.qa summary:hover{color:var(--navy)}
 .legend{list-style:none;padding:0;margin-top:.8rem;display:grid;gap:.45rem;font-size:.875rem}
 .legend li{display:flex;gap:.55rem;align-items:baseline}
 .legend i{width:.85rem;height:.85rem;border-radius:.2rem;flex:0 0 auto;transform:translateY(.1rem)}
+
+.gmode{display:flex;justify-content:center;margin-bottom:.75rem}
