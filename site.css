@@ -417,3 +417,29 @@ details.qa summary:hover{color:var(--navy)}
 .flow.six .io-cap .extra{display:none}
 .flow.six .io-cap{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .sec-lede,.hero-body,.authors,.find > p,.cap{text-wrap:balance}
+
+/* --- explorer: working builds + output viewer ----------------------------- */
+.switch.two{grid-template-columns:1fr 1fr}
+.ocard{all:unset;cursor:pointer;display:flex;flex-direction:column;background:#fff;border-radius:var(--r-lg);box-shadow:var(--shadow);
+  overflow:hidden;transition:transform var(--dur) var(--ease)}
+.ocard:hover{transform:translateY(-2px)}
+.ocard:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.ocard .shot{cursor:pointer}
+.mcard .stat.sub{font-size:.6875rem;color:var(--ink-44)}
+.mgrid.dense .mcard .tag{height:1.05rem;font-size:.6rem;padding:0 .4rem}
+.outview{position:fixed;inset:0;z-index:55;background:rgba(9,22,38,.55);backdrop-filter:blur(6px);display:grid;place-items:center;padding:1rem}
+.outview[hidden]{display:none}
+.ov-card{width:min(64rem,100%);max-height:92vh;overflow:auto;padding:1.1rem 1.25rem 1.25rem}
+.ov-head{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.ov-who{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;font-weight:600;font-size:1.05rem}
+.ov-who .muted{font-weight:400;font-size:.875rem}
+.ov-tabs{margin:.9rem 0 1rem;flex-wrap:wrap}
+.ov-body{display:grid;grid-template-columns:1fr;gap:1.25rem;align-items:start}
+@media (min-width:800px){ .ov-body{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)} }
+.ov-media{background:#fff;border-radius:var(--r-md);border:1px solid var(--line);aspect-ratio:1/1;display:grid;place-items:center;overflow:hidden}
+.ov-media img{width:100%;height:100%;object-fit:contain}
+.ov-side{font-size:.9375rem;line-height:1.55;color:var(--ink-80)}
+.ov-side p + p{margin-top:.6rem}
+.legend{list-style:none;padding:0;margin-top:.8rem;display:grid;gap:.45rem;font-size:.875rem}
+.legend li{display:flex;gap:.55rem;align-items:baseline}
+.legend i{width:.85rem;height:.85rem;border-radius:.2rem;flex:0 0 auto;transform:translateY(.1rem)}

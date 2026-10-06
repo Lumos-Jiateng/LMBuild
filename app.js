@@ -88,7 +88,7 @@ $("#copy-bib").onclick = async () => {
 };
 
 // ---- benchmark switch, linkable by hash -----------------------------------
-const TABS = ["compare", "steps", "function", "data"];
+const TABS = ["compare", "data"];
 function showTab(tab, scroll) {
   $$("#switch .sw").forEach(b => b.setAttribute("aria-selected", b.dataset.tab === tab));
   TABS.forEach(t => $(`#pane-${t}`).hidden = t !== tab);
@@ -169,13 +169,13 @@ function drawGap() {
 }
 
 // ---- explorer: all 200 tasks, every model's output --------------------------
-let XI = [], XSRC = "All", XALL = false, CUR = null, CMP_TIER = "B", CMP_ROUND = "r1";
+let XI = [], XSRC = "All", XALL = false, CUR = null, CMP_TIER = "all";
 const XCACHE = {};
 function drawThumbs() {
   const xs = XI.filter(e => XSRC === "All" || e.source === XSRC), ys = XALL ? xs : xs.slice(0, 36);
-  $("#thumbs").innerHTML = ys.map(e => `<button type="button" class="thumb${e.ready ? "" : " pending"}" data-t="${e.task}">
+  $("#thumbs").innerHTML = ys.map(e => `<button type="button" class="thumb" data-t="${e.task}">
     <img src="${e.thumb}" alt="" loading="lazy"><span class="tt"><span class="tn">${esc(cap(e.name))}</span>
-    <span class="ts">${esc(e.source)}${e.ready ? ` · ${e.n_out} outputs` : " · rendering"}</span></span></button>`).join("");
+    <span class="ts">${esc(e.source)} · ${e.n_work} working builds</span></span></button>`).join("");
   $$("#thumbs .thumb").forEach(b => b.onclick = () => openTask(b.dataset.t));
   const more = $("#thumbs-more");
   more.hidden = XALL || xs.length <= 36; more.textContent = `Show all ${xs.length}`;
@@ -184,55 +184,102 @@ async function openTask(task, keepScroll) {
   const d = XCACHE[task] || (XCACHE[task] = await getJSON(`data/explore/${task}.json`));
   if (!d) return;
   CUR = d;
-  if (!d.C.length && CMP_TIER === "C") CMP_TIER = "B";
   $("#stage").hidden = false;
   drawStage();
   if (!keepScroll) $("#stage").scrollIntoView({behavior: "smooth", block: "start"});
   history.replaceState(null, "", "#task=" + task);
 }
 function setSeg(el, v) { $$("button", el).forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v)); }
+const TIERLAB = {B: "retrieve + create", C: "create only"};
 function drawStage() {
   const o = CUR;
   $("#st-title").textContent = cap(o.name);
   const xs = listed(), i = xs.findIndex(e => e.task === o.task);
   $("#st-pos").textContent = i >= 0 ? `${i + 1} / ${xs.length}` : "";
-  const tc = $('#cmp-tier [data-v="C"]'), r3 = $('#cmp-round [data-v="r3"]');
-  tc.disabled = !o.C.length; tc.style.opacity = o.C.length ? "" : ".4"; tc.title = o.C.length ? "" : "Create-only runs exist for the original 50 tasks";
-  r3.disabled = !o.has_r3; r3.style.opacity = o.has_r3 ? "" : ".4"; r3.title = o.has_r3 ? "" : "Round-3 renders are shown for the ten curated objects";
-  if (!o.C.length) CMP_TIER = "B";
-  if (!o.has_r3) CMP_ROUND = "r1";
-  setSeg($("#cmp-tier"), CMP_TIER); setSeg($("#cmp-round"), CMP_ROUND);
+  // animated outputs when rendered; until then the static scored designs with three or more parts
+  const outs = (o.outputs && o.outputs.length) ? o.outputs : ["B", "C"].flatMap(t => (o[t] || [])
+    .filter(r => r.r1 && r.r1.img && r.r1.n_parts >= 3)
+    .map(r => ({tier: t, id: r.id, n_parts: r.r1.n_parts, n_created: r.r1.n_created, still: r.r1.img, joints: []})));
+  const hasC = outs.some(r => r.tier === "C");
+  const tc = $('#cmp-tier [data-v="C"]');
+  tc.disabled = !hasC; tc.style.opacity = hasC ? "" : ".4"; tc.title = hasC ? "" : "No create-only runs for this task";
+  if (!hasC && CMP_TIER === "C") CMP_TIER = "all";
+  setSeg($("#cmp-tier"), CMP_TIER);
   $("#inputcard").innerHTML = `<span class="lab">Input</span>
     <img src="${o.input}" alt="Input image for ${esc(o.name)}" data-zoom="${o.input}" data-zcap="Input image ${esc(o.image_id)}">
     <p class="prompt"><span class="pl">Instruction</span>${esc(o.prompt)}</p>
     <span class="lab2">Reference (not shown to the agent)</span>
     <img class="refimg" src="${o.reference}" alt="Reference structure, assembled and exploded" data-zoom="${o.reference}" data-zcap="Reference: assembled and exploded">
-    <p class="facts">${esc(o.source)} · ${o.parts} reference parts${o.difficulty ? ` · ${o.difficulty}` : ""}. Parts are coloured by the role each agent gave them.</p>`;
-  const rows = o[CMP_TIER] || [];
+    <p class="facts">${esc(o.source)} · ${o.parts} reference parts. Parts are coloured by the role each agent gave them.</p>`;
+  const show = outs.filter(r => CMP_TIER === "all" || r.tier === CMP_TIER);
   const card = r => {
-    const im = r[CMP_ROUND] || (CMP_ROUND === "r3" ? null : r.r1);
-    const stat = im ? `${im.n_parts} part${im.n_parts === 1 ? "" : "s"}${im.n_parts ? ` · ${im.n_created} created` : ""}` : "";
-    const shot = im && im.img ? `<div class="shot" data-zoom="${im.img}" data-zcap="${esc(NAME[r.id] || r.id)} · ${esc(o.name)}"><img src="${im.img}" alt="${esc(o.name)} by ${esc(NAME[r.id] || r.id)}" loading="lazy"></div>`
-      : `<div class="none">${im && im.n_parts === 0 ? "empty design" : "no design submitted"}</div>`;
-    return `<article class="card mcard">${shot}<div class="meta"><div class="who" title="${esc(NAME[r.id] || r.id)}">${who(r.id)}</div><div class="stat">${stat || "&nbsp;"}</div></div></article>`;
+    const k = outs.indexOf(r);
+    const extra = [r.seq ? "sequence" : "", r.joints.length ? `${r.joints.length} joint${r.joints.length > 1 ? "s" : ""}` : ""].filter(Boolean).join(" · ");
+    if (r.still) return `<article class="card mcard"><div class="shot" data-zoom="${r.still}" data-zcap="${esc(NAME[r.id] || r.id)} · ${esc(o.name)}"><img src="${r.still}" alt="${esc(o.name)} by ${esc(NAME[r.id] || r.id)}" loading="lazy"></div>
+      <div class="meta"><div class="who" title="${esc(NAME[r.id] || r.id)}">${who(r.id)}</div>
+      <div class="stat"><span class="tag ${r.tier === "B" ? "baseline" : "creation-only"}">${TIERLAB[r.tier]}</span></div>
+      <div class="stat sub">${r.n_parts} parts · build animation coming soon</div></div></article>`;
+    return `<button type="button" class="card mcard ocard" data-k="${k}" title="${esc(NAME[r.id] || r.id)}: open build steps, sequence, materials and joints">
+      <div class="shot"><img src="${r.step}" alt="${esc(o.name)} built step by step by ${esc(NAME[r.id] || r.id)}" loading="lazy"></div>
+      <div class="meta"><div class="who">${who(r.id)}</div>
+      <div class="stat"><span class="tag ${r.tier === "B" ? "baseline" : "creation-only"}">${TIERLAB[r.tier]}</span></div>
+      <div class="stat sub">${r.n_parts} parts${extra ? " · " + extra : ""}</div></div></button>`;
   };
-  const sec = (g, label) => { const xs = ORDER[g].map(id => rows.find(r => r.id === id)).filter(Boolean); return xs.length ? `<p class="grp-title">${label}</p>` + xs.map(card).join("") : ""; };
+  const sec = (g, label) => {
+    const ys = ORDER[g].flatMap(id => ["B", "C"].map(t => show.find(r => r.id === id && r.tier === t))).filter(Boolean);
+    return ys.length ? `<p class="grp-title">${label}</p>` + ys.map(card).join("") : "";
+  };
   let h = sec("closed", "Frontier closed-source APIs") + sec("open", "Open-source LLMs");
-  if (CMP_TIER === "B" && CMP_ROUND === "r1" && o.EXT.length) {
-    const xs = ORDER.ext.map(id => o.EXT.find(r => r.id === id)).filter(Boolean);
-    h += `<p class="grp-title">Domain-specific generators (one shot)</p>` + xs.map(r => {
-      const shot = r.img ? `<div class="shot" data-zoom="${r.img}" data-zcap="${esc(NAME[r.id])} · ${esc(o.name)}"><img src="${r.img}" alt="${esc(o.name)} by ${esc(NAME[r.id])}" loading="lazy"></div>` : `<div class="none">no output</div>`;
-      return `<article class="card mcard">${shot}<div class="meta"><div class="who" title="${esc(NAME[r.id] || r.id)}">${who(r.id)}</div><div class="stat">${r.n_parts} part${r.n_parts === 1 ? "" : "s"} · ${r.cond === "image" ? "image" : "name"} input</div></div></article>`;
-    }).join("");
+  if (CMP_TIER !== "C" && o.EXT.length) {
+    const ys = ORDER.ext.map(id => o.EXT.find(r => r.id === id && r.img)).filter(Boolean);
+    if (ys.length) h += `<p class="grp-title">Domain-specific generators (one shot, no build steps)</p>` + ys.map(r =>
+      `<article class="card mcard"><div class="shot" data-zoom="${r.img}" data-zcap="${esc(NAME[r.id])} · ${esc(o.name)}"><img src="${r.img}" alt="${esc(o.name)} by ${esc(NAME[r.id])}" loading="lazy"></div>
+      <div class="meta"><div class="who" title="${esc(NAME[r.id] || r.id)}">${who(r.id)}</div><div class="stat">${r.n_parts} part${r.n_parts === 1 ? "" : "s"} · ${r.cond === "image" ? "image" : "name"} input</div></div></article>`).join("");
   }
   $("#mgrid").className = "mgrid dense";
-  $("#mgrid").innerHTML = h || `<p class="note">Outputs for this task are still being rendered.</p>`;
-  $("#cmp-note").innerHTML = CMP_ROUND === "r1"
-    ? `<b>Round 1</b>: the design each agent first submitted, the one scored in the leaderboard. Main setting: object name + image.`
-    : `<b>Round 3</b>: the design after two more rounds of inspecting renders and error reports. Revisions add about 2 points on average.`;
+  $("#mgrid").innerHTML = h || `<p class="note">No working build for this setting.</p>`;
+  $$("#mgrid .ocard").forEach(b => b.onclick = () => openOut(+b.dataset.k));
+  CUR.view = outs;
+  const nB = outs.filter(r => r.tier === "B").length, nC = outs.filter(r => r.tier === "C").length;
+  $("#cmp-note").innerHTML = `Working builds (three or more parts): <b>${nB}</b> of 19 agents with retrieve + create` +
+    (hasC ? `, <b>${nC}</b> of 19 with create only` : "") + `. Each is the design the agent first submitted, as scored in the leaderboard. Click a build for its sequence, materials and joints.`;
 }
 segment($("#cmp-tier"), v => { CMP_TIER = v; drawStage(); });
-segment($("#cmp-round"), v => { CMP_ROUND = v; drawStage(); });
+
+// ---- one output: build steps, declared sequence, materials, joints ---------------
+let OV = null;
+function openOut(k) {
+  const r = (CUR.view || CUR.outputs)[k]; if (!r || r.still) return;
+  const short = s => s.length > 26 ? s.slice(0, 25) + "…" : s;
+  const views = [["step", "Build steps"], r.seq && ["seq", "Assembly sequence"], r.mat && ["mat", "Materials"],
+    ...r.joints.map((j, i) => r["j" + i] && ["j" + i, `Joint: ${short(j.label)}`])].filter(Boolean);
+  OV = {r, views};
+  $("#ov-who").innerHTML = `${who(r.id)} <span class="tag ${r.tier === "B" ? "baseline" : "creation-only"}">${TIERLAB[r.tier]}</span>
+    <span class="muted">${esc(cap(CUR.name))} · ${r.n_parts} parts · ${r.n_created} created</span>`;
+  $("#ov-tabs").innerHTML = views.map(([v, l], i) => `<button type="button" data-v="${v}" aria-pressed="${i === 0}">${esc(l)}</button>`).join("");
+  $$("#ov-tabs button").forEach(b => b.onclick = () => ovShow(b.dataset.v));
+  $("#outview").hidden = false;
+  ovShow("step");
+}
+function ovShow(v) {
+  const r = OV.r;
+  setSeg($("#ov-tabs"), v);
+  $("#ov-img").src = r[v];
+  $("#ov-img").alt = `${NAME[r.id] || r.id}: ${v}`;
+  let side;
+  if (v === "step") side = `<p><b>Build steps.</b> Parts appear in the order the agent placed them; each frame adds one placement step.</p>`;
+  else if (v === "seq") side = `<p><b>Assembly sequence.</b> Parts appear in the order the agent declared for physically assembling the object.</p>`;
+  else if (v === "mat") side = `<p><b>Materials.</b> Each part is coloured by the class of its declared material.</p><ul class="legend">` +
+    r.mat_legend.map(e => `<li><i style="background:${e.rgb}"></i><span><b>${esc(cap(e.class))}</b> <span class="muted">${e.n} part${e.n > 1 ? "s" : ""}${e.materials.length ? " · " + e.materials.map(m => esc(m.replace(/_/g, " "))).join(", ") : ""}</span></span></li>`).join("") + `</ul>`;
+  else {
+    const j = r.joints[+v.slice(1)];
+    side = `<p><b>Declared joint.</b> A ${esc(j.type)} joint moving <i>${esc(j.label)}</i>${j.n_moving > 1 ? ` and ${j.n_moving - 1} attached part${j.n_moving > 2 ? "s" : ""}` : ""}, swept through its declared range.</p>
+      <p class="muted">${r.n_joints} joint${r.n_joints === 1 ? "" : "s"} declared; up to two with the most visible motion are shown.</p>`;
+  }
+  $("#ov-side").innerHTML = side;
+}
+$("#ov-close").onclick = () => { $("#outview").hidden = true; $("#ov-img").src = ""; };
+$("#outview").onclick = e => { if (e.target.id === "outview") $("#ov-close").click(); };
 const listed = () => XI.filter(e => XSRC === "All" || e.source === XSRC);
 function step(d) {
   const xs = listed(), i = xs.findIndex(e => e.task === CUR?.task);
@@ -242,7 +289,8 @@ function step(d) {
 $("#st-prev").onclick = () => step(-1);
 $("#st-next").onclick = () => step(1);
 document.addEventListener("keydown", e => {
-  if ($("#stage").hidden || !lb.hidden || /input|select|textarea/i.test(e.target.tagName)) return;
+  if (e.key === "Escape" && !$("#outview").hidden) { $("#ov-close").click(); return; }
+  if ($("#stage").hidden || !lb.hidden || !$("#outview").hidden || /input|select|textarea/i.test(e.target.tagName)) return;
   if (e.key === "ArrowLeft") step(-1);
   else if (e.key === "ArrowRight") step(1);
   else if (e.key === "Escape") $("#st-close").click();
@@ -250,23 +298,6 @@ document.addEventListener("keydown", e => {
 $("#st-close").onclick = () => { $("#stage").hidden = true; history.replaceState(null, "", "#compare"); $("#srcchips").scrollIntoView({behavior: "smooth", block: "center"}); };
 $("#thumbs-more").onclick = () => { XALL = true; drawThumbs(); };
 
-// ---- step / function galleries -----------------------------------------------
-let MEDIA = null;
-function drawSteps(P) {
-  const xs = byGroup((MEDIA.step || []).filter(m => P === "all" || m.protocol === P));
-  $("#steps").innerHTML = xs.map(m => ioCard(m, {extra: m.created_share != null ? `<br><span class="muted">${share(m)}</span>` : ""})).join("");
-}
-const FUNC = {
-  joints: {label: "Joints", lede: "Each agent declares joints between its parts. Shown: one declared joint swept through its range, with the moving parts in their declared motion."},
-  materials: {label: "Materials", lede: "Each part is assigned a material. Shown: the build coloured by the material the agent declared for each part.", cls: "mat"},
-  sequence: {label: "Assembly sequences", lede: "Each agent declares the order in which its parts are put together. Shown: the declared assembly sequence, played back step by step."}};
-function drawFunc(k) {
-  const f = FUNC[k];
-  $("#func-lede").textContent = f.lede;
-  $("#func").innerHTML = byGroup(MEDIA[k] || []).map(m => ioCard(m, {imgClass: f.cls || "",
-    extra: m.materials ? `<br><span class="muted">${m.materials.slice(0, 5).map(esc).join(", ")}${m.materials.length > 5 ? "…" : ""}</span>` : m.n_steps ? `<br><span class="muted">${m.n_steps} assembly steps</span>` : ""})).join("");
-  $("#jointfigs-wrap").hidden = k !== "joints";
-}
 function chips(el, items, cb, first) {
   el.innerHTML = items.map(([v, label, n]) => `<button type="button" class="chip" data-v="${esc(v)}" aria-pressed="${v === first}">${label}${n != null ? ` <span class="n">${n}</span>` : ""}</button>`).join("");
   $$(".chip", el).forEach(b => b.onclick = () => { $$(".chip", el).forEach(x => x.setAttribute("aria-pressed", x === b)); cb(b.dataset.v); });
@@ -292,12 +323,6 @@ Promise.all(["results", "captions", "objects", "media", "inputs", "explore/index
     MEDIA = M;
     const teaser = (M.step || []).filter(m => m.teaser).slice(0, 6);
     $("#teaser").innerHTML = teaser.map(m => ioCard(m)).join("");
-    const PR = ["all", "baseline", "retrieval-only", "creation-only"];
-    chips($("#stepf"), PR.map(p => [p, p === "all" ? "All" : cap(PLAB[p]), (M.step || []).filter(m => p === "all" || m.protocol === p).length]), drawSteps, "all");
-    drawSteps("all");
-    chips($("#funcf"), Object.entries(FUNC).map(([k, f]) => [k, f.label, (M[k] || []).length]), drawFunc, "joints");
-    drawFunc("joints");
-    $("#jointfigs").innerHTML = [5, 6, 7, 8, 9, 10, 11, 12].map(n => `<figure class="card figure"><img src="assets/paper/fig${n}.webp" loading="lazy" alt="Figure ${n}" data-zoom="assets/paper/fig${n}.webp"><p class="cap">${C && C["Figure " + n] ? `<b>Figure ${n}.</b> ` + esc(C["Figure " + n].replace(/^Figure \d+:\s*/, "")) : ""}</p></figure>`).join("");
   }
 
   if (X) {

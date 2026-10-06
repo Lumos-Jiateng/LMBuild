@@ -131,11 +131,9 @@
      ================================================================== -->
 <section class="container sec" id="benchmark" aria-label="The benchmark">
   <h2 class="part-head"><span class="eyebrow">Explore</span>The benchmark</h2>
-  <div class="switch" id="switch" role="tablist" aria-label="Browse the benchmark">
-    <button type="button" class="sw" role="tab" data-tab="compare" aria-selected="true"><span class="sw-title">All 200 tasks</span><span class="sw-sub">every model's output</span></button>
-    <button type="button" class="sw" role="tab" data-tab="steps" aria-selected="false"><span class="sw-title">Step by step</span><span class="sw-sub">builds as they grow</span></button>
-    <button type="button" class="sw" role="tab" data-tab="function" aria-selected="false"><span class="sw-title">Function</span><span class="sw-sub">joints, materials, assembly</span></button>
-    <button type="button" class="sw" role="tab" data-tab="data" aria-selected="false"><span class="sw-title">Dataset</span><span class="sw-sub">sources and sizes</span></button>
+  <div class="switch two" id="switch" role="tablist" aria-label="Browse the benchmark">
+    <button type="button" class="sw" role="tab" data-tab="compare" aria-selected="true"><span class="sw-title">All 200 tasks</span><span class="sw-sub">every working build, step by step</span></button>
+    <button type="button" class="sw" role="tab" data-tab="data" aria-selected="false"><span class="sw-title">Dataset</span><span class="sw-sub">sources, sizes and references</span></button>
   </div>
 
   <!-- compare -->
@@ -151,12 +149,9 @@
         </div>
         <div class="ctrls">
           <div class="seg" role="group" aria-label="Interaction protocol" id="cmp-tier">
-            <button type="button" data-v="B" aria-pressed="true">Retrieve + create</button>
+            <button type="button" data-v="all" aria-pressed="true">All</button>
+            <button type="button" data-v="B" aria-pressed="false">Retrieve + create</button>
             <button type="button" data-v="C" aria-pressed="false">Create only</button>
-          </div>
-          <div class="seg" role="group" aria-label="Round" id="cmp-round">
-            <button type="button" data-v="r1" aria-pressed="true">Round 1</button>
-            <button type="button" data-v="r3" aria-pressed="false">Round 3</button>
           </div>
         </div>
       </div>
@@ -166,24 +161,9 @@
       </div>
     </section>
     <div class="chips" id="srcchips" role="group" aria-label="Source" style="margin-bottom:1.25rem"></div>
-    <p class="grid-hint">Click any task to see the input and every model's output</p>
+    <p class="grid-hint">Click any task to watch every working build, step by step</p>
     <div class="thumbs" id="thumbs"></div>
     <div class="more-row"><button class="btn btn-small" id="thumbs-more" type="button" hidden></button></div>
-  </div>
-
-  <!-- step by step -->
-  <div class="pane" id="pane-steps" role="tabpanel" hidden>
-    <div class="chips" id="stepf" style="margin-bottom:1.5rem"></div>
-    <div class="gal" id="steps"></div>
-  </div>
-
-  <!-- joints / materials / assembly -->
-  <div class="pane" id="pane-function" role="tabpanel" hidden>
-    <div class="chips" id="funcf" style="margin-bottom:1rem"></div>
-    <p class="sec-lede" id="func-lede"></p>
-    <div class="gal" id="func"></div>
-    <details class="drop" id="jointfigs-wrap"><summary>Joint and kinematics figures from the paper</summary>
-      <div class="gal wide" id="jointfigs" style="margin-top:1.25rem"></div></details>
   </div>
 
   <!-- dataset -->
@@ -305,6 +285,14 @@
   <a href="#cite" data-sec="cite"><b></b><span>Citation</span></a>
 </nav>
 
+<div class="outview" id="outview" hidden role="dialog" aria-modal="true" aria-label="Output detail">
+  <div class="ov-card card">
+    <div class="ov-head"><div class="ov-who" id="ov-who"></div>
+      <button type="button" class="btn btn-small" id="ov-close" aria-label="Close">Close</button></div>
+    <div class="seg ov-tabs" id="ov-tabs" role="group" aria-label="View"></div>
+    <div class="ov-body"><div class="ov-media"><img id="ov-img" alt=""></div><div class="ov-side" id="ov-side"></div></div>
+  </div>
+</div>
 <div class="lightbox" id="lightbox" hidden><figure><img alt=""><figcaption></figcaption></figure></div>
 
 <script src="app.js"></script>
