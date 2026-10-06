@@ -391,3 +391,12 @@ details.qa summary:hover{color:var(--navy)}
 .flow.six .io-in{min-height:5.6rem}
 .flow.six .tag{display:none}
 .flow.six .io-out img{padding:.25rem}
+
+.st-nav{display:flex;align-items:center;gap:.35rem}
+.st-nav .btn{width:2rem;padding:0}
+.st-pos{font-size:.8125rem;color:var(--ink-60);font-variant-numeric:tabular-nums;min-width:4.5rem;text-align:center}
+.code pre{white-space:pre-wrap;overflow-wrap:anywhere}
+.mgrid.dense .mcard .who,.mgrid.dense .mcard .stat{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.mgrid.dense .mcard .who .mlogo,.mgrid.dense .mcard .who .glyph{margin-right:.3rem}
+.mgrid.dense .mcard .who{font-size:.72rem;letter-spacing:-.01em}
+.mgrid.dense .mcard .meta{padding:.45rem .55rem .55rem}

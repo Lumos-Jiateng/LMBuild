@@ -147,6 +147,11 @@
       <div class="stage-top">
         <button type="button" class="btn btn-small" id="st-close"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>All tasks</button>
         <h3 id="st-title"></h3>
+        <div class="st-nav">
+          <button type="button" class="btn btn-small" id="st-prev" aria-label="Previous task" title="Previous task (←)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="st-pos" id="st-pos"></span>
+          <button type="button" class="btn btn-small" id="st-next" aria-label="Next task" title="Next task (→)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </div>
         <div class="ctrls">
           <div class="seg" role="group" aria-label="Interaction protocol" id="cmp-tier">
             <button type="button" data-v="B" aria-pressed="true">Retrieve + create</button>

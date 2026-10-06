@@ -180,20 +180,22 @@ function drawThumbs() {
   const more = $("#thumbs-more");
   more.hidden = XALL || xs.length <= 36; more.textContent = `Show all ${xs.length}`;
 }
-async function openTask(task) {
+async function openTask(task, keepScroll) {
   const d = XCACHE[task] || (XCACHE[task] = await getJSON(`data/explore/${task}.json`));
   if (!d) return;
   CUR = d;
   if (!d.C.length && CMP_TIER === "C") CMP_TIER = "B";
   $("#stage").hidden = false;
   drawStage();
-  $("#stage").scrollIntoView({behavior: "smooth", block: "start"});
+  if (!keepScroll) $("#stage").scrollIntoView({behavior: "smooth", block: "start"});
   history.replaceState(null, "", "#task=" + task);
 }
 function setSeg(el, v) { $$("button", el).forEach(b => b.setAttribute("aria-pressed", b.dataset.v === v)); }
 function drawStage() {
   const o = CUR;
   $("#st-title").textContent = cap(o.name);
+  const xs = listed(), i = xs.findIndex(e => e.task === o.task);
+  $("#st-pos").textContent = i >= 0 ? `${i + 1} / ${xs.length}` : "";
   const tc = $('#cmp-tier [data-v="C"]'), r3 = $('#cmp-round [data-v="r3"]');
   tc.disabled = !o.C.length; tc.style.opacity = o.C.length ? "" : ".4"; tc.title = o.C.length ? "" : "Create-only runs exist for the original 50 tasks";
   r3.disabled = !o.has_r3; r3.style.opacity = o.has_r3 ? "" : ".4"; r3.title = o.has_r3 ? "" : "Round-3 renders are shown for the ten curated objects";
@@ -212,7 +214,7 @@ function drawStage() {
     const stat = im ? `${im.n_parts} part${im.n_parts === 1 ? "" : "s"}${im.n_parts ? ` · ${im.n_created} created` : ""}` : "";
     const shot = im && im.img ? `<div class="shot" data-zoom="${im.img}" data-zcap="${esc(NAME[r.id] || r.id)} · ${esc(o.name)}"><img src="${im.img}" alt="${esc(o.name)} by ${esc(NAME[r.id] || r.id)}" loading="lazy"></div>`
       : `<div class="none">${im && im.n_parts === 0 ? "empty design" : "no design submitted"}</div>`;
-    return `<article class="card mcard">${shot}<div class="meta"><div class="who">${who(r.id)}</div><div class="stat">${stat || "&nbsp;"}</div></div></article>`;
+    return `<article class="card mcard">${shot}<div class="meta"><div class="who" title="${esc(NAME[r.id] || r.id)}">${who(r.id)}</div><div class="stat">${stat || "&nbsp;"}</div></div></article>`;
   };
   const sec = (g, label) => { const xs = ORDER[g].map(id => rows.find(r => r.id === id)).filter(Boolean); return xs.length ? `<p class="grp-title">${label}</p>` + xs.map(card).join("") : ""; };
   let h = sec("closed", "Frontier closed-source APIs") + sec("open", "Open-source LLMs");
@@ -220,7 +222,7 @@ function drawStage() {
     const xs = ORDER.ext.map(id => o.EXT.find(r => r.id === id)).filter(Boolean);
     h += `<p class="grp-title">Domain-specific generators (one shot)</p>` + xs.map(r => {
       const shot = r.img ? `<div class="shot" data-zoom="${r.img}" data-zcap="${esc(NAME[r.id])} · ${esc(o.name)}"><img src="${r.img}" alt="${esc(o.name)} by ${esc(NAME[r.id])}" loading="lazy"></div>` : `<div class="none">no output</div>`;
-      return `<article class="card mcard">${shot}<div class="meta"><div class="who">${who(r.id)}</div><div class="stat">${r.n_parts} part${r.n_parts === 1 ? "" : "s"} · ${r.cond === "image" ? "image" : "name"} input</div></div></article>`;
+      return `<article class="card mcard">${shot}<div class="meta"><div class="who" title="${esc(NAME[r.id] || r.id)}">${who(r.id)}</div><div class="stat">${r.n_parts} part${r.n_parts === 1 ? "" : "s"} · ${r.cond === "image" ? "image" : "name"} input</div></div></article>`;
     }).join("");
   }
   $("#mgrid").className = "mgrid dense";
@@ -231,6 +233,20 @@ function drawStage() {
 }
 segment($("#cmp-tier"), v => { CMP_TIER = v; drawStage(); });
 segment($("#cmp-round"), v => { CMP_ROUND = v; drawStage(); });
+const listed = () => XI.filter(e => XSRC === "All" || e.source === XSRC);
+function step(d) {
+  const xs = listed(), i = xs.findIndex(e => e.task === CUR?.task);
+  if (i < 0 || !xs.length) return;
+  openTask(xs[(i + d + xs.length) % xs.length].task, true);
+}
+$("#st-prev").onclick = () => step(-1);
+$("#st-next").onclick = () => step(1);
+document.addEventListener("keydown", e => {
+  if ($("#stage").hidden || !lb.hidden || /input|select|textarea/i.test(e.target.tagName)) return;
+  if (e.key === "ArrowLeft") step(-1);
+  else if (e.key === "ArrowRight") step(1);
+  else if (e.key === "Escape") $("#st-close").click();
+});
 $("#st-close").onclick = () => { $("#stage").hidden = true; history.replaceState(null, "", "#compare"); $("#srcchips").scrollIntoView({behavior: "smooth", block: "center"}); };
 $("#thumbs-more").onclick = () => { XALL = true; drawThumbs(); };
 
